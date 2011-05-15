@@ -1,0 +1,7 @@
+--- 
+wordpress_id: 51
+layout: post
+title: ">Screen Space Ambient Occlusion"
+wordpress_url: http://www.section9.co.uk/blog/?p=51
+---
+><object width="420" height="236"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=10693239&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=10693239&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="420" height="236"></embed></object><br /><br />I've been looking at lighting and shaders a lot with OpenGL these days. Ambient Occlusion seems like the thing at the moment. In the Crytek engine there was a method called Screen Space Ambient Occlusion. I thought I'd give it a go with a data-set from work. It's a start but theres something not quite right with it yet. Of course it needs to be properly blended with other scenery but I'm convinced something isn't quite right! I'll need to tidy it up but it's a good way to learn more advanced OpenGL. There are about 4 shaders and two separate buffers before it gets to the screen. Mental! <br /><br />Posted code up here: <a href="http://github.com/OniDaito/OpenframeworksSSAO">http://github.com/OniDaito/OpenframeworksSSAO</a>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>>The Woes of Soft Shadows</title>
+   <meta name="author" content="Benjamin Blundell" />
+   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+
+   <link rel="stylesheet" href="/css/960.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/s9.css" type="text/css" media="screen, projection" /> 
+
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="container_10">
+
+  <div class="grid_10">
+  <a href="/"><img id="banner" src="/images/lab.jpg" alt="Section9 Lab" /></a>
+  </div>
+
+ <div class="grid_8">&nbsp;</div>
+  <div class="grid_2" id="breadcrumbs">
+    <a href="/">Home</a>
+    <a href="http://www.section9.co.uk">Section9</a>
+  </div>
+  
+  
+
+
+  <div class="grid_10">  
+
+  <div id="titledate">
+<h2><a href="/2011/04/13/the-woes-of-soft-shadows.html">>The Woes of Soft Shadows</a></h2>
+  <div id="date">13 Apr 2011</div>
+</div>
+
+<div id="post">
+<blockquote><p>I've been playing with soft shadows for a client and it's been one hell of a rocky ride I must say. There isn't really a nice way of doing it that I'm happy with. I've gone through PCF, PCSS, VSM and SAVSM and none of them seem to work right. I must admit, we are on the verge of very hardcore OpenGL here. But the basics of shadowmapping are quite simple.<br /><br />So, Percentage Closer Filtering was the first I tried. It was a bit tricky until I realised its pretty much offset sampling and thats it. Bang. Take an average of a set amount of pixels. Job done. Problem is, this is quite slow when you are averaging over 64 texels. The effect isn't great and a bit wasteful as well. So, that means Percentage Closer Soft Shadows is an option. It sort of looks like this:<br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/-xG5__l4M08Y/TaV5PGF4HHI/AAAAAAAAAyk/-Jdch5Mp4xo/s1600/pcss.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 271px;" src="http://4.bp.blogspot.com/-xG5__l4M08Y/TaV5PGF4HHI/AAAAAAAAAyk/-Jdch5Mp4xo/s320/pcss.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5595011412317969522" /></a><br />Doesnt look that bad but its rather slow and the falloff isn't really big enough. The shadows need to fade away a lot quicker and when the filter gets past about 8x8 you can see lots of artefacts. Not good.<br /><br />So, PCSS and PCF have failed me. Thats really annoying. So, people say that VSM is better. Its certainly simpler in code though you do need to use a colour texture and not a depth buffer. Still, once you are happy with FBOs you can get to it. <br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://farm6.static.flickr.com/5067/5609017825_7937375e5b.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 500px; height: 459px;" src="http://farm6.static.flickr.com/5067/5609017825_7937375e5b.jpg" border="0" alt="" /></a><br />They are smooth but look at the falloff... the shadows are stronger the further away. Clearly that's wrong. I've no idea why VSM does this because Shadows dont work that way in the real world. Im convinced it looks wrong. Boo and hiss!<br /><br />Nevetheless, it was close and it seems to be quite fast in comparison to PCF and the effects are smoother.<br /><br />Summed Area Tables apparently allow us to smooth out and fade the shadows. This is pretty much what we need. Summed Area Tables is an old technique from the 80s that, like most older algorithms, has a new lease of life because of shader technology. So, with that in mind, I managed to write a shader and Ping Pong FBO from scratch and it actually worked! Marvellous. A summed table basically adds up the sums of the texels from the top left to the bottom right (or similar). This means that you can get the sum of any rectangle within the table in constant time. So a 128 x 128 lookup for the average is the same cost as a 2 x 2 with Summed Area Tables. Thats great because we can alter the filter size at any point with our VSM shadows. Brilliant!<br /><br />There is a problem however. Summed Area Tables end up with big big numbers. You are, in effect summing, say 512 x 512 numbers so the last number is going to be very large. You then need to subtract another large number from this which means a loss of precision which results in artefacts like this:<br /><br /> <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://farm6.static.flickr.com/5146/5614133967_c57d44dfdc.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 500px; height: 474px;" src="http://farm6.static.flickr.com/5146/5614133967_c57d44dfdc.jpg" border="0" alt="" /></a><br /><br />There is a certain amount of noise which is really sad because when that doesnt occur, we do get nice soft shadows on the cheap. Pretty cool!<br /><br />So, very close but no cigar yet!</p></blockquote>
+
+</div>
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>15 May 2011</span> &raquo; <a href="/2011/05/15/jekyll-vs-wordpress.html">Jekyll vs Wordpress</a></li>
+    
+      <li><span>08 May 2011</span> &raquo; <a href="/2011/05/08/canned-kinect.html">Canned Kinect</a></li>
+    
+      <li><span>04 May 2011</span> &raquo; <a href="/2011/05/04/saito-js-playing-with-webgl.html">Saito.js - Playing with WebGL</a></li>
+    
+  </ul>
+</div>
+
+  </div>
+  
+  <div class="grid_10">
+    <div class="contact">
+      <p>
+        Benjamin Blundell &dash; Founder of <a href="http://www.section9.co.uk/">Section9</a> &dash; oni@section9.co.uk
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://github.com/OniDaito">github.com/OniDaito</a><br />
+        <a href="http://twitter.com/secti0n9/">twitter.com/secti0n9</a><br />
+        <a href="http://flickr.com/photos/mojombo/">flickr.com/photos/section9</a>
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/secti0n9">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+  <div class="clear">&nbsp;</div>
+</div>
+
+<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub"></a>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
+
+

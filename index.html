@@ -1,0 +1,25 @@
+---
+layout: default
+title: Section9 Lab - Experiments by Benjamin Blundell
+---
+{% assign first_post = site.posts.first %}
+<div id="titledate">
+
+<h2><a href="{{ first_post.url }}">{{ first_post.title }}</a></h2>
+  <div id="date">{{ first_post.date | date_to_string }}</div>
+
+</div>
+
+<div id="post">
+    {{ first_post.content }}
+  <a id="more" href="{{ first_post.url }}#disqus">Read More&raquo;</a>
+</div>
+
+<hr />
+
+<h2>archive</h2>
+<ul id="archive">
+{% for post in site.posts %}
+<li><a href="{{ post.url }}">{{ post.title }}</a> &dash; <abbr>{{ post.date | date_to_string }}</abbr></li>
+{% endfor %}
+</ul>

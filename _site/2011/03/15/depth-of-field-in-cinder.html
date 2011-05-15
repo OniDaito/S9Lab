@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>>Depth of Field in Cinder</title>
+   <meta name="author" content="Benjamin Blundell" />
+   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+
+   <link rel="stylesheet" href="/css/960.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/s9.css" type="text/css" media="screen, projection" /> 
+
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="container_10">
+
+  <div class="grid_10">
+  <a href="/"><img id="banner" src="/images/lab.jpg" alt="Section9 Lab" /></a>
+  </div>
+
+ <div class="grid_8">&nbsp;</div>
+  <div class="grid_2" id="breadcrumbs">
+    <a href="/">Home</a>
+    <a href="http://www.section9.co.uk">Section9</a>
+  </div>
+  
+  
+
+
+  <div class="grid_10">  
+
+  <div id="titledate">
+<h2><a href="/2011/03/15/depth-of-field-in-cinder.html">>Depth of Field in Cinder</a></h2>
+  <div id="date">15 Mar 2011</div>
+</div>
+
+<div id="post">
+<blockquote><p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/-cfpyOGIR_CY/TX9SLWtJJOI/AAAAAAAAAyM/KIgyfEQIOo8/s1600/depthoffield.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 251px;" src="http://4.bp.blogspot.com/-cfpyOGIR_CY/TX9SLWtJJOI/AAAAAAAAAyM/KIgyfEQIOo8/s320/depthoffield.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5584272417989666018" /></a><br />Depth of Field is a lovely effect. I thought I'd have a look at how to do this in Cinder. Oddly enough, the <a href="http://www.minecraftforum.net/viewtopic.php?f=25&t=128043&start=300">Minecraft community have a gorgeous plugin that does this exactly</a>. I have moified the shader to work with just the distance from the near plane. This means that the focus is at the near plane and then drops back. The effect is quite cool!<br /><br />Depth of  field is the effect that occurs with a thin lens when all the light rays fail to converge on the same point. A lens can only focus perfectly at one specific distance but the fall-off in sharpness or the increase in size of  the Circle of Confusion is gradual. It is this effect we want to try and recreate. To do that, we need the colour texture and the depth texture. Sampling the depth, deciding how far away it is from the focal plane and then blending with neighbouring pixels provides a good estimation of this effect.</p></blockquote>
+
+</div>
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>15 May 2011</span> &raquo; <a href="/2011/05/15/jekyll-vs-wordpress.html">Jekyll vs Wordpress</a></li>
+    
+      <li><span>08 May 2011</span> &raquo; <a href="/2011/05/08/canned-kinect.html">Canned Kinect</a></li>
+    
+      <li><span>04 May 2011</span> &raquo; <a href="/2011/05/04/saito-js-playing-with-webgl.html">Saito.js - Playing with WebGL</a></li>
+    
+  </ul>
+</div>
+
+  </div>
+  
+  <div class="grid_10">
+    <div class="contact">
+      <p>
+        Benjamin Blundell &dash; Founder of <a href="http://www.section9.co.uk/">Section9</a> &dash; oni@section9.co.uk
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://github.com/OniDaito">github.com/OniDaito</a><br />
+        <a href="http://twitter.com/secti0n9/">twitter.com/secti0n9</a><br />
+        <a href="http://flickr.com/photos/mojombo/">flickr.com/photos/section9</a>
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/secti0n9">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+  <div class="clear">&nbsp;</div>
+</div>
+
+<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub"></a>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
+
+

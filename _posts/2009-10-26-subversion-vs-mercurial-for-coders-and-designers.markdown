@@ -1,0 +1,7 @@
+--- 
+wordpress_id: 19
+layout: post
+title: ">Subversion .vs Mercurial for Coders and Designers"
+wordpress_url: http://www.section9.co.uk/blog/?p=19
+---
+>I used to use Subversion quite a bit. Despite the wierdness of setting up a new directory, it worked quite well as a personal backup. I could backup work to a web-enabled repos. For designers, it's great to be with a client and simply download the latest versions from the web. All in all, it worked quite well.<br /><br />However, I start my new job with CASA and get back into the code. I start hearing about Perforce, GIT and Mercurial and it dawns on me that although Subversion might be fine for personal work, when you do collaborative coding, something else is needed. I checked out Mercurial, as I'm a python fanboy and after a few hurdles, I began to love it.<br /><br />One thing that did happen was that my server's hard-disk died. When this happened, A lot a few commits from Subversion. I still had the latest works on my mac however. Because of the version history and number I couldnt restore my latest versions back to the server. I think Mercurial, by it's very nature, avoids this issue by not having a "master" server or repository.<br /><br />So far, I can see the benefits of Mercurial, even though I use it more for personal backup and graphics.

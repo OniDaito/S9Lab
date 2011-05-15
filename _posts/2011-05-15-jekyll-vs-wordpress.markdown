@@ -1,0 +1,9 @@
+--- 
+layout: post
+title: Jekyll vs Wordpress
+---
+So I've been playing around with blogging software for a while now and to be honest, I'm really not taken with any of them. Wordpress uses PHP which I cant stand and only supports MySQL and has a significant bloat factor. Nevertheless I had it installed because I liked the way I could upload media easily. Turns out that this is the only benefit. Once I had wordpress installed, it pretty much killed my web server. Not happy.
+
+Russ from the London Hackspace and my friend Adam Challis both recommended [Jekyll](https://github.com/mojombo/jekyll) which is great! Its simple, written in Ruby and has import functions for Wordpress and other such sites. Basically, it creates the pages statically, offline. You then upload the changes to your webserver. Its designed to be run through git so you effectively sync your blog with the one in your repos. Great stuff. For blogs like mine that aren't updated every five seconds, having a database is overkill when what you really need is just a good way to organise things.
+
+I run my own mediawiki and I'm getting into the Ruby and Python and GIT things a lot these last few months and the use of Markdown and GIT to help run a blog is a great idea because it keeps things nice, consistent and simple.

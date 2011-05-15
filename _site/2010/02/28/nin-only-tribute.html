@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>>NIN 'Only' Tribute</title>
+   <meta name="author" content="Benjamin Blundell" />
+   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+
+   <link rel="stylesheet" href="/css/960.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/s9.css" type="text/css" media="screen, projection" /> 
+
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="container_10">
+
+  <div class="grid_10">
+  <a href="/"><img id="banner" src="/images/lab.jpg" alt="Section9 Lab" /></a>
+  </div>
+
+ <div class="grid_8">&nbsp;</div>
+  <div class="grid_2" id="breadcrumbs">
+    <a href="/">Home</a>
+    <a href="http://www.section9.co.uk">Section9</a>
+  </div>
+  
+  
+
+
+  <div class="grid_10">  
+
+  <div id="titledate">
+<h2><a href="/2010/02/28/nin-only-tribute.html">>NIN 'Only' Tribute</a></h2>
+  <div id="date">28 Feb 2010</div>
+</div>
+
+<div id="post">
+<blockquote><p><object width="420" height="236"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=9788437&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=9788437&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="420" height="236"></embed></object><br /><br />The best band in the world? For me, certainly. Trent Reznor has had a massive influence on me and the work that I do and it was high time that I got around to making this little experiment. I wanted to work on my shader, graphics and OpenCV computer vision skills and what better way than to try to recreate the NIN Video 'Only'.<br /><br />The idea is to create a depth map from the brightness of the pixels taken from the camera and then to map these depths to a pin board in real-time. I'd chosen OpenFrameworks as the basis for this as it runs in C++ and contains all the libraries required. To begin with though, I created a couple of tests in both Pyglet and PyGame; two Python libraries that allowed loading of GLSL Shaders and models.<br /><br />Modelling a pin was quite easy using the free tool, Blender. Although Blender's interface is very hard to learn, the program is fully featured and getting a good object was quite easy. Sadly, however, the OBJ format for 3D objects isn't very robust and doesn't translate well over applications. So, in order to sort this out I settled for 3DS format and managed to find a very good library for OpenFrameworks apps. <br /><br />Secondly, I need to get hold of some base code to load GLSL Shaders in OpenFrameworks Apps. Fortunately, there exists such a wrapper. Creating a basic Phong Shader is quite easy and with that, the shiny pins could be drawn.<br /><br />OpenCV has long been a staple of the OF community, so linking that in and processing the video was not hard. Experimenting to get the best results was the trickiest bit of the whole project and I think, there could still be some work to do. Basically, we create a greyscale image, contour it with some threshold value and then create a set of blobs. We then use the original pixel values from the camera with some added background learning algorithm to reduce the background noise. I used a sheet of black material behind me so that I culd get rid of even more noise and the results turned out to be quite good.<br /><br />Finally, I tried adding some shadows. This was trickier than I thought. OpenGL under OF has some issues, the first being the rather weird scaling factor. The light is several thousand world units away from the scene which means that the accuracy of the Shadow Mapping algorithm is not so good. Also, it appears that anything outside the frustum is classed as 'in-shadow' naturally enough. Using a variant of GL_CLAMP with a white texture border and a blend mode of multiply, managed to alleviate this problem; anything outside the shadow map gets blending with a white texture and therefore is not affected but there still appears to be one or two artefacts here and there.<br /><br />Nontheless, overall I am quite pleased with the result and there will certainly be more to come!</p></blockquote>
+
+</div>
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>15 May 2011</span> &raquo; <a href="/2011/05/15/jekyll-vs-wordpress.html">Jekyll vs Wordpress</a></li>
+    
+      <li><span>08 May 2011</span> &raquo; <a href="/2011/05/08/canned-kinect.html">Canned Kinect</a></li>
+    
+      <li><span>04 May 2011</span> &raquo; <a href="/2011/05/04/saito-js-playing-with-webgl.html">Saito.js - Playing with WebGL</a></li>
+    
+  </ul>
+</div>
+
+  </div>
+  
+  <div class="grid_10">
+    <div class="contact">
+      <p>
+        Benjamin Blundell &dash; Founder of <a href="http://www.section9.co.uk/">Section9</a> &dash; oni@section9.co.uk
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://github.com/OniDaito">github.com/OniDaito</a><br />
+        <a href="http://twitter.com/secti0n9/">twitter.com/secti0n9</a><br />
+        <a href="http://flickr.com/photos/mojombo/">flickr.com/photos/section9</a>
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/secti0n9">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+  <div class="clear">&nbsp;</div>
+</div>
+
+<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub"></a>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
+
+

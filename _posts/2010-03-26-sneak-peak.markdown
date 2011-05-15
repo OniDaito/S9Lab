@@ -1,0 +1,7 @@
+--- 
+wordpress_id: 49
+layout: post
+title: ">Sneak Peak!"
+wordpress_url: http://www.section9.co.uk/blog/?p=49
+---
+><object width="420" height="236"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=10472206&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=10472206&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="420" height="236"></embed></object><br /><br />Ok people, I wasn't going to do this just yet but I thought I'd release a small piece of footage I've been working on. I spent about 2-3 hours on two sittings to get this footage. The first time, tried with HDR but the blending of multiple layers gave a much too subtle effect. Hanging around with a laptop copying off all your images from your D100 to create more space for 600 RAW images is much too much effort wise! :P Still, nevermind. It all panned out ok in the end. I think the result is ok but it's nowhere near done. There is much to much information there and it needs proper cutting and stitching together but hopefully, it'll look mighty fine. I wasn't going to release anything but since I'm getting some followers these days I figured it was time to get regular updates out! :P

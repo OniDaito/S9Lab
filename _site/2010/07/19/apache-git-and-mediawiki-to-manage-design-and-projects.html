@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>>Apache, GIT and Mediawiki to manage design and projects</title>
+   <meta name="author" content="Benjamin Blundell" />
+   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+
+   <link rel="stylesheet" href="/css/960.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/s9.css" type="text/css" media="screen, projection" /> 
+
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="container_10">
+
+  <div class="grid_10">
+  <a href="/"><img id="banner" src="/images/lab.jpg" alt="Section9 Lab" /></a>
+  </div>
+
+ <div class="grid_8">&nbsp;</div>
+  <div class="grid_2" id="breadcrumbs">
+    <a href="/">Home</a>
+    <a href="http://www.section9.co.uk">Section9</a>
+  </div>
+  
+  
+
+
+  <div class="grid_10">  
+
+  <div id="titledate">
+<h2><a href="/2010/07/19/apache-git-and-mediawiki-to-manage-design-and-projects.html">>Apache, GIT and Mediawiki to manage design and projects</a></h2>
+  <div id="date">19 Jul 2010</div>
+</div>
+
+<div id="post">
+<blockquote><p><span class="bblack">I thought I'd put down my thoughts and experiences on keeping track of your personal projects and data. I've been through a lot of various methods. Everything is intertwined; backup, code repos, security, accessibility etc etc. My method certainly wont suit everyone but it may give you some thoughts. In a nutshell, I use Apache, GIT and Mediawiki on a small MiniITX machine with USB disk cloning to run all my systems.</span><br /><br /><span class="bblack">I've used subversion and mercurial before. Subversion was great because it support binary files; very useful when you have a large PSD to backup. However, when one of my hard-disks broke, I lost the most recent updates and couldn't get back the newer versions I had on my workstation. This was annoying. That, and subversions silly revision system meant a change was needed. Subversion doesn't really say what a repos or a directory really is. So if I updated one project, then another project the revision number for everything would go up twice! Not good.</span><br /><br /><span class="bblack">Mercurial was dead simple though. I converted a few of the SVN based projects over but found that quite tricky. Mercurial is what I use on a daily basis at work. Because it is written in Python it is quite straight forward and works well. However, it does suffer from serious flaws when branching (apparently) but also it is limited to filesizes under 10meg. I say limited - it complains about it but tries anyway. Creating a new repository remotely was also a pain. What if I'm working remotely and need to backup to my system at home? I wrote a quick python script to do this but it wasn't particularly good.</span><br /><br /><span class="bblack">Because of peer-pressure and the other problems, I decided to look at GIT. Github is a great site with a lot of excellent people on it. Git's commands are more esoteric but understandable after a while and support for binaries is good. Using <a href="http://hg-git.github.com/">Hg-Git</a> makes converting from Mercurial quite easy. Following <a href-"https://help.ubuntu.com/community/Git">the Ubuntu GIT Guide</a> was quite easy although I use <a href="https://git.wiki.kernel.org/index.php/Gitweb">GitWeb</a> and not GitView which is rather awful. This means I can access my repositories anywhere and indeed, create repositories remotely. Annoyingly, because I'm using gitosis, I need to keep a copy of the Gitosis repos on every machine that needs access to my home GIT Server and a custom script to make it work but it's a small price to pay for better security and efficiency. So far, I approve.</span><br /><br /><span class="bblack">Mediawiki was a suggestion by a friend for keeping notes and thoughts and so far, it has worked a treat. Sure you can pay Omni some money and get a mac osx organiser but what about Linux or Windows? What about mobile clients? With the plethora of plugins available (GeSHI and PDF Creation being two of my favorites) having your own wiki is a great idea.</span><br /><br /><span class="bblack">So now you can backup code, keep notes, and access anywhere. All this needs to run on something. I use a fan-less, MiniITX board with one large SATA drive to store all this, running Ubuntu. Why you ask? Well I wanted something low power and capable with an emphasis on quiet. Using one SATA drive means that disk cloning is very easy. Plug in a USB enclosure, run dd_rescue and you get an identical copy of your drive. It's already saved me once and I heartily recommend it.</span><br /><br /><span class="bblack">If you set up all the right port forwards and certificates you can access your box over a home connection with reasonable speed. The whole thing works quite well and has some degrees of protection. Full disk encryption, arpwatch and Snort provide a good defence against intrusion and holding your wiki off-site on your webhost means you'll always have access, even if your home machine goes down (which it will once or twice)</span><br /><br /><span class="bblack">Overall, this has met my needs for security, remote access to everything and my various requirements for source control and backup. I heartily recommend something similar. It's all free software and it all works.</span></p></blockquote>
+
+</div>
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>15 May 2011</span> &raquo; <a href="/2011/05/15/jekyll-vs-wordpress.html">Jekyll vs Wordpress</a></li>
+    
+      <li><span>08 May 2011</span> &raquo; <a href="/2011/05/08/canned-kinect.html">Canned Kinect</a></li>
+    
+      <li><span>04 May 2011</span> &raquo; <a href="/2011/05/04/saito-js-playing-with-webgl.html">Saito.js - Playing with WebGL</a></li>
+    
+  </ul>
+</div>
+
+  </div>
+  
+  <div class="grid_10">
+    <div class="contact">
+      <p>
+        Benjamin Blundell &dash; Founder of <a href="http://www.section9.co.uk/">Section9</a> &dash; oni@section9.co.uk
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://github.com/OniDaito">github.com/OniDaito</a><br />
+        <a href="http://twitter.com/secti0n9/">twitter.com/secti0n9</a><br />
+        <a href="http://flickr.com/photos/mojombo/">flickr.com/photos/section9</a>
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/secti0n9">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+  <div class="clear">&nbsp;</div>
+</div>
+
+<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub"></a>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
+
+
