@@ -4,13 +4,48 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-05-18T00:49:27+01:00</updated>
+ <updated>2011-05-24T12:39:11+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>My First Big Thing - 'Performance and Teamwork' for Memo Akten</title>
+   <link href="http://lab.section9.co.uk/2011/05/24/My-First-Big-Thing-Deutsche-Bank.html"/>
+   <updated>2011-05-24T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/05/24/My-First-Big-Thing-Deutsche-Bank</id>
+   <content type="html">&lt;p&gt;It's arrived! Finally, out of NDA we have the &lt;a href=&quot;http://www.msavisuals.com/deutsche_bank_hong_kong&quot;&gt;Hong Kong Deutsche Bank Installation&lt;/a&gt;. This was led by the rather talented &lt;a href=&quot;http://www.field.io&quot;&gt;Field.io&lt;/a&gt; who decided to pass around some of the work to local creative, programming types such as &lt;a href=&quot;http://www.msavisuals.com&quot;&gt;MSAVisuals&lt;/a&gt;. At the time, I'd left my job at &lt;a href=&quot;http://www.casa.ucl.ac.uk&quot;&gt;CASA, UCL&lt;/a&gt; to come and work for Memo because I loved his work and it was high time I got my ass in gear and tried to do the work I love to do: computer graphics art. It was a no brainer at the time but it still scared me a lot to make the jump.&lt;/p&gt;
+
+&lt;p&gt;Memo had already begun work on 'A Passion for the Planet' and asked me if I could work on the effects. Using MSAPhysics we came up with a particle system which I played with in order to add some dynamics to the scenes. So we had snow for the mountains, rain in the forest and, my personal favourite, sunspots for the Tea fields (giving the idea of the sun breaking through the cloud).&lt;/p&gt;
+
+&lt;object width=&quot;400&quot; height=&quot;300&quot;&gt; &lt;param name=&quot;flashvars&quot; value=&quot;offsite=true&amp;lang=en-us&amp;page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&amp;page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&amp;set_id=72157626756999726&amp;jump_to=&quot;&gt;&lt;/param&gt; &lt;param name=&quot;movie&quot; value=&quot;http://www.flickr.com/apps/slideshow/show.swf?v=71649&quot;&gt;&lt;/param&gt; &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;embed type=&quot;application/x-shockwave-flash&quot; src=&quot;http://www.flickr.com/apps/slideshow/show.swf?v=71649&quot; allowFullScreen=&quot;true&quot; flashvars=&quot;offsite=true&amp;lang=en-us&amp;page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&amp;page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&amp;set_id=72157626756999726&amp;jump_to=&quot; width=&quot;400&quot; height=&quot;300&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;A particle system requires a lot of thought when it comes to timing and precision. This went double because the system was to be synchronised across several machines in order to run on the large screen. A master clock was provided as part of the Field.kit base class we were asked to use. In addition, we were running with smaller images to begin with but we would need to scale everything up when the viewport was scaled. How big should a snowflake be on a small screen and a large screen? The same size? Smaller? Larger? Essentially, all the caluculations were made with respect to the variables coming through from the base class that Field had provided.&lt;/p&gt;
+
+&lt;p&gt;The majority of the work for me came in with the &quot;Performance and Teamwork&quot; piece which involved the reading of Motion capture data from an FBX file. I'd never worked with FBX Files before (though I often do now) and was suprised at how powerful they were. I was given a brief from the design team who had provided both still images and short film clips (rendered in 3D with something akin to maya or max) and told to get cracking!&lt;/p&gt;
+
+&lt;p&gt;An early mockup was quite fast in arriving (at least for me) but much of the time was spent on refinements and other such issues. Initially, the scene was rendered in 2D with dots but it was decided to use spheres eventually. Keeping the speed high was an issue at the outset. We played around with depth testing and decided that the painters algorithm was more suitable in this instance. Remembering to keep everything synchronised with the master clock was also something to constantly keep in mind.&lt;/p&gt;
+
+&lt;object width=&quot;400&quot; height=&quot;300&quot;&gt; &lt;param name=&quot;flashvars&quot; value=&quot;offsite=true&amp;lang=en-us&amp;page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&amp;page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&amp;set_id=72157626757080626&amp;jump_to=&quot;&gt;&lt;/param&gt; &lt;param name=&quot;movie&quot; value=&quot;http://www.flickr.com/apps/slideshow/show.swf?v=71649&quot;&gt;&lt;/param&gt; &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;embed type=&quot;application/x-shockwave-flash&quot; src=&quot;http://www.flickr.com/apps/slideshow/show.swf?v=71649&quot; allowFullScreen=&quot;true&quot; flashvars=&quot;offsite=true&amp;lang=en-us&amp;page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&amp;page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&amp;set_id=72157626757080626&amp;jump_to=&quot; width=&quot;400&quot; height=&quot;300&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;Memo is a true artist and came up with many suggestions and help along the way. Little things here and there were picked up and I quickly learnt that 90% of the time is spent on 10% of the code which makes up for 99% of the overall experience. The reflections changed to sprites (hence the painters algorithm) with a custom texture and the whole particle system was revamped in order to allow for more interesting movement.&lt;/p&gt;
+
+&lt;p&gt;The particle system itself is quite interesting. The FBX models create a set of 'magnets' or spring end-points if you will and these can be turned on or off depending on the circumstances. This simple physics system was enhanced by some perlin noise and a little magic tuning to create something that looked a little more alive.&lt;/p&gt;
+
+&lt;p&gt;The figures in the scene are quite dynamic; some move far and others not at all. We had to add constraints to keep the figures within the camera's viewing area. How was the camera's viewing area defined? With a particle system! Yes, the camera is attached to a set of springs which give it a more fluid motion around the figures.&lt;/p&gt;
+
+&lt;p&gt;Add a little fog for depth perception and some subtle shader tweaks here and there and the result was quite pleasing.&lt;/p&gt;
+
+&lt;p&gt;Of course, nothing ever goes completely to plan. Its the right level of improv that makes a performance they say. Performance and Teamwork caused a few issues when it was run across the linked machines. For a while, we couldn't figure it out. Eventually, thanks to help from Dean MacNamee, we figured out that logging to a console was causing issues as the stream was not correctly defined. Quite often, Memo and I will log things to stderr and stdout and that seemed to be causing memory issues with Fields setup. Not only that, we changed OS twice, swapping between Windows and OSX. Thankfully, &lt;a href=&quot;http://www.libcinder.org&quot;&gt;Cinder&lt;/a&gt; is great at making this almost a non-issue.&lt;/p&gt;
+
+&lt;p&gt;On a personal level, it was humbling. I'm so glad to see this live and it felt like proof that I can do these things I've dreamed about doing. Many thoughts I had were dispelled though; it was a lot of hard work and the bar was much higher than on some projects I've worked on. I wouldn't have managed this on my own at the time if I'd not been teamed up with Memo. Workig with someone who knows how to program really well is great for learning but you really need to let your ego go and not get upset when the person you are freelancing for points out a few schoolboy errors you make. This is common in programming teams but it feels worse when you are freelancing because you are out there, on your own, trying to impress and do good work. On this project, there were down times for me but I suspect that is the case for anything worth doing. The final result, I feel, shows the amount of effort that went into this was truly epic, from all the people involved.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Libraries must die</title>
