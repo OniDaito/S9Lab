@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-06-03T17:44:42+01:00</updated>
+ <updated>2011-06-03T17:47:51+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -25,7 +25,7 @@
 
 &lt;p&gt;The problem I had was my belief that Gyros measure absolute position. They don't. This may seem obvious to most but its the force applied to them in order to keep them steady that is measured, and they also drift. This means combining accelerometer data and gyro data together is needed and really important to get right. I have investigated Kalman filters and a few other methods to get everythong straight but its still a work in progress.&lt;/p&gt;
 
-&lt;p&gt;To keep everything in one place, I decided to build a custom case at [Manchester FabLab] (http://www.fablabmanchester.org/)which is a great little place indeed! They are much more strict that London Hackspace but their kit is just a little bit neater and newer. It depends what you want from a workshop really? Both are good though Fablab restricts you to just Friday's and saturdays which sucks a little. Nevertheless, using Google Sketchup with the SVG Export plugin and Inkscape, you can produce a PDF that can be sent to a Laser cutter. Throw in some 3mm acrylic and bam! One case that holds the Atomic and a LiPoly Battery.&lt;/p&gt;
+&lt;p&gt;To keep everything in one place, I decided to build a custom case at &lt;a href=&quot;http://www.fablabmanchester.org&quot;&gt;Manchester FabLab&lt;/a&gt;which is a great little place indeed! They are much more strict that London Hackspace but their kit is just a little bit neater and newer. It depends what you want from a workshop really? Both are good though Fablab restricts you to just Friday's and saturdays which sucks a little. Nevertheless, using Google Sketchup with the SVG Export plugin and Inkscape, you can produce a PDF that can be sent to a Laser cutter. Throw in some 3mm acrylic and bam! One case that holds the Atomic and a LiPoly Battery.&lt;/p&gt;
 </content>
  </entry>
  
