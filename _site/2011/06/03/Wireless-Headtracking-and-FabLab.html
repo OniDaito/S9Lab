@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>>How to record and print your tale</title>
+   <title>Wireless Headtracking and FabLab</title>
    <meta name="author" content="Benjamin Blundell" />
    <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
 
@@ -36,12 +36,20 @@ var WRInitTime=(new Date()).getTime();
   <div class="grid_10">  
 
   <div id="titledate">
-<h2><a href="/2010/06/30/how-to-record-and-print-your-tale.html">>How to record and print your tale</a></h2>
-  <div id="date">30 Jun 2010</div>
+<h2><a href="/2011/06/03/Wireless-Headtracking-and-FabLab.html">Wireless Headtracking and FabLab</a></h2>
+  <div id="date">03 Jun 2011</div>
 </div>
 
 <div id="post">
-<blockquote><p><object width="640" height="360"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=12959820&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=12959820&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="360"></embed></object><br /><br /><span class="bblack">A live setup of tales of things with stickers has been taking up a fair bit of my time these days. It's been a rollercoaster ride trying to get the various different systems together. So far Ive used three languages, several command line programs and muchous GStreamer related gubbins. Needs a little pickup on the QR Scanning but once thats done, we can get down to stress testing.</span></p></blockquote>
+<p><img src="http://farm3.static.flickr.com/2130/5794083824_6cc8abfb7d.jpg" title="XBee Gyro Unit in Custom Case" alt="XBee Gyro unit in Custom Case" /></p>
+
+<p>Two posts combined! I've been busy trying to figure out a good way of doing headtracking on the cheap. Vuzix have not been too helpful when it comes to their VR920 headset. I've managed to get some working results with the Windows drivers but there is an issue when it comes to OSX and Linux. It was decided we should build our own Gyro unit. Not knowing anything about such things, I went straight in.</p>
+
+<p>I ended up buying a set of different gyros and accelerometers including <a href="http://www.sparkfun.com/products/9431">Sparkfun 6DOF Razor</a> and the <a href="http://www.sparkfun.com/products/9184">Sparkfun Atomic 6DOF</a>. Both have been pretty easy to setup within Cinder on OSX but each has different challanges. I'll be putting it all into a Cinder Block over the next few days. The Atomic takes care of the XBee communication but requires that you write some code to decode it's frames. I had some issues with that as each value comes back as two bytes: the most significant bits and the least. There were some annoying padding bytes that gave me trouble under C++ but after that, getting some nice values out seemed fine. The razor requires that you implement the XBee standard somehow. I wrote some code in C++, based on the Java libraries from Processing. Getting reasonable values out of the Razor was not too hard.</p>
+
+<p>The problem I had was my belief that Gyros measure absolute position. They don't. This may seem obvious to most but its the force applied to them in order to keep them steady that is measured, and they also drift. This means combining accelerometer data and gyro data together is needed and really important to get right. I have investigated Kalman filters and a few other methods to get everythong straight but its still a work in progress.</p>
+
+<p>To keep everything in one place, I decided to build a custom case at [Manchester FabLab] (http://www.fablabmanchester.org/)which is a great little place indeed! They are much more strict that London Hackspace but their kit is just a little bit neater and newer. It depends what you want from a workshop really? Both are good though Fablab restricts you to just Friday's and saturdays which sucks a little. Nevertheless, using Google Sketchup with the SVG Export plugin and Inkscape, you can produce a PDF that can be sent to a Laser cutter. Throw in some 3mm acrylic and bam! One case that holds the Atomic and a LiPoly Battery.</p>
 
 </div>
 
@@ -49,11 +57,11 @@ var WRInitTime=(new Date()).getTime();
   <h3>Related Posts</h3>
   <ul class="posts">
     
-      <li><span>03 Jun 2011</span> &raquo; <a href="/2011/06/03/Wireless-Headtracking-and-FabLab.html">Wireless Headtracking and FabLab</a></li>
-    
       <li><span>24 May 2011</span> &raquo; <a href="/2011/05/24/My-First-Big-Thing-Deutsche-Bank.html">My First Big Thing - 'Performance and Teamwork' for Memo Akten</a></li>
     
       <li><span>18 May 2011</span> &raquo; <a href="/2011/05/18/Libraries-must-die.html">Libraries must die</a></li>
+    
+      <li><span>15 May 2011</span> &raquo; <a href="/2011/05/15/jekyll-vs-wordpress.html">Jekyll vs Wordpress</a></li>
     
   </ul>
 </div>

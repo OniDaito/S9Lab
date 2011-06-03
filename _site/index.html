@@ -38,47 +38,31 @@ var WRInitTime=(new Date()).getTime();
   
 <div id="titledate">
 
-<h2><a href="/2011/05/24/My-First-Big-Thing-Deutsche-Bank.html">My First Big Thing - 'Performance and Teamwork' for Memo Akten</a></h2>
-  <div id="date">24 May 2011</div>
+<h2><a href="/2011/06/03/Wireless-Headtracking-and-FabLab.html">Wireless Headtracking and FabLab</a></h2>
+  <div id="date">03 Jun 2011</div>
 
 </div>
 
 <div id="post">
-    <p>It's arrived! Finally, out of NDA we have the <a href="http://www.msavisuals.com/deutsche_bank_hong_kong">Hong Kong Deutsche Bank Installation</a>. This was led by the rather talented <a href="http://www.field.io">Field.io</a> who decided to pass around some of the work to local creative, programming types such as <a href="http://www.msavisuals.com">MSAVisuals</a>. At the time, I'd left my job at <a href="http://www.casa.ucl.ac.uk">CASA, UCL</a> to come and work for Memo because I loved his work and it was high time I got my ass in gear and tried to do the work I love to do: computer graphics art. It was a no brainer at the time but it still scared me a lot to make the jump.</p>
+    <p><img src="http://farm3.static.flickr.com/2130/5794083824_6cc8abfb7d.jpg" title="XBee Gyro Unit in Custom Case" alt="XBee Gyro unit in Custom Case" /></p>
 
-<p>Memo had already begun work on 'A Passion for the Planet' and asked me if I could work on the effects. Using MSAPhysics we came up with a particle system which I played with in order to add some dynamics to the scenes. So we had snow for the mountains, rain in the forest and, my personal favourite, sunspots for the Tea fields (giving the idea of the sun breaking through the cloud).</p>
+<p>Two posts combined! I've been busy trying to figure out a good way of doing headtracking on the cheap. Vuzix have not been too helpful when it comes to their VR920 headset. I've managed to get some working results with the Windows drivers but there is an issue when it comes to OSX and Linux. It was decided we should build our own Gyro unit. Not knowing anything about such things, I went straight in.</p>
 
-<object width="400" height="300"> <param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&set_id=72157626756999726&jump_to="></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=71649"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=71649" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&set_id=72157626756999726&jump_to=" width="400" height="300"></embed></object>
+<p>I ended up buying a set of different gyros and accelerometers including <a href="http://www.sparkfun.com/products/9431">Sparkfun 6DOF Razor</a> and the <a href="http://www.sparkfun.com/products/9184">Sparkfun Atomic 6DOF</a>. Both have been pretty easy to setup within Cinder on OSX but each has different challanges. I'll be putting it all into a Cinder Block over the next few days. The Atomic takes care of the XBee communication but requires that you write some code to decode it's frames. I had some issues with that as each value comes back as two bytes: the most significant bits and the least. There were some annoying padding bytes that gave me trouble under C++ but after that, getting some nice values out seemed fine. The razor requires that you implement the XBee standard somehow. I wrote some code in C++, based on the Java libraries from Processing. Getting reasonable values out of the Razor was not too hard.</p>
 
+<p>The problem I had was my belief that Gyros measure absolute position. They don't. This may seem obvious to most but its the force applied to them in order to keep them steady that is measured, and they also drift. This means combining accelerometer data and gyro data together is needed and really important to get right. I have investigated Kalman filters and a few other methods to get everythong straight but its still a work in progress.</p>
 
-<p>A particle system requires a lot of thought when it comes to timing and precision. This went double because the system was to be synchronised across several machines in order to run on the large screen. A master clock was provided as part of the Field.kit base class we were asked to use. In addition, we were running with smaller images to begin with but we would need to scale everything up when the viewport was scaled. How big should a snowflake be on a small screen and a large screen? The same size? Smaller? Larger? Essentially, all the caluculations were made with respect to the variables coming through from the base class that Field had provided.</p>
+<p>To keep everything in one place, I decided to build a custom case at [Manchester FabLab] (http://www.fablabmanchester.org/)which is a great little place indeed! They are much more strict that London Hackspace but their kit is just a little bit neater and newer. It depends what you want from a workshop really? Both are good though Fablab restricts you to just Friday's and saturdays which sucks a little. Nevertheless, using Google Sketchup with the SVG Export plugin and Inkscape, you can produce a PDF that can be sent to a Laser cutter. Throw in some 3mm acrylic and bam! One case that holds the Atomic and a LiPoly Battery.</p>
 
-<p>The majority of the work for me came in with the "Performance and Teamwork" piece which involved the reading of Motion capture data from an FBX file. I'd never worked with FBX Files before (though I often do now) and was suprised at how powerful they were. I was given a brief from the design team who had provided both still images and short film clips (rendered in 3D with something akin to maya or max) and told to get cracking!</p>
-
-<p>An early mockup was quite fast in arriving (at least for me) but much of the time was spent on refinements and other such issues. Initially, the scene was rendered in 2D with dots but it was decided to use spheres eventually. Keeping the speed high was an issue at the outset. We played around with depth testing and decided that the painters algorithm was more suitable in this instance. Remembering to keep everything synchronised with the master clock was also something to constantly keep in mind.</p>
-
-<object width="400" height="300"> <param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&set_id=72157626757080626&jump_to="></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=71649"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=71649" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&set_id=72157626757080626&jump_to=" width="400" height="300"></embed></object>
-
-
-<p>Memo is a true artist and came up with many suggestions and help along the way. Little things here and there were picked up and I quickly learnt that 90% of the time is spent on 10% of the code which makes up for 99% of the overall experience. The reflections changed to sprites (hence the painters algorithm) with a custom texture and the whole particle system was revamped in order to allow for more interesting movement.</p>
-
-<p>The particle system itself is quite interesting. The FBX models create a set of 'magnets' or spring end-points if you will and these can be turned on or off depending on the circumstances. This simple physics system was enhanced by some perlin noise and a little magic tuning to create something that looked a little more alive.</p>
-
-<p>The figures in the scene are quite dynamic; some move far and others not at all. We had to add constraints to keep the figures within the camera's viewing area. How was the camera's viewing area defined? With a particle system! Yes, the camera is attached to a set of springs which give it a more fluid motion around the figures.</p>
-
-<p>Add a little fog for depth perception and some subtle shader tweaks here and there and the result was quite pleasing.</p>
-
-<p>Of course, nothing ever goes completely to plan. Its the right level of improv that makes a performance they say. Performance and Teamwork caused a few issues when it was run across the linked machines. For a while, we couldn't figure it out. Eventually, thanks to help from Dean MacNamee, we figured out that logging to a console was causing issues as the stream was not correctly defined. Quite often, Memo and I will log things to stderr and stdout and that seemed to be causing memory issues with Fields setup. Not only that, we changed OS twice, swapping between Windows and OSX. Thankfully, <a href="http://www.libcinder.org">Cinder</a> is great at making this almost a non-issue.</p>
-
-<p>On a personal level, it was humbling. I'm so glad to see this live and it felt like proof that I can do these things I've dreamed about doing. Many thoughts I had were dispelled though; it was a lot of hard work and the bar was much higher than on some projects I've worked on. I wouldn't have managed this on my own at the time if I'd not been teamed up with Memo. Workig with someone who knows how to program really well is great for learning but you really need to let your ego go and not get upset when the person you are freelancing for points out a few schoolboy errors you make. This is common in programming teams but it feels worse when you are freelancing because you are out there, on your own, trying to impress and do good work. On this project, there were down times for me but I suspect that is the case for anything worth doing. The final result, I feel, shows the amount of effort that went into this was truly epic, from all the people involved.</p>
-
-  <a id="more" href="/2011/05/24/My-First-Big-Thing-Deutsche-Bank.html#disqus">Read More&raquo;</a>
+  <a id="more" href="/2011/06/03/Wireless-Headtracking-and-FabLab.html#disqus">Read More&raquo;</a>
 </div>
 
 <hr />
 
 <h2>archive</h2>
 <ul id="archive">
+
+<li><a href="/2011/06/03/Wireless-Headtracking-and-FabLab.html">Wireless Headtracking and FabLab</a> &dash; <abbr>03 Jun 2011</abbr></li>
 
 <li><a href="/2011/05/24/My-First-Big-Thing-Deutsche-Bank.html">My First Big Thing - 'Performance and Teamwork' for Memo Akten</a> &dash; <abbr>24 May 2011</abbr></li>
 
