@@ -4,13 +4,28 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-06-03T17:47:51+01:00</updated>
+ <updated>2011-06-08T14:12:44+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>iPhone Macro Lens Hack</title>
+   <link href="http://lab.section9.co.uk/2011/06/08/iPhone-Macro-Lens.html"/>
+   <updated>2011-06-08T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/06/08/iPhone-Macro-Lens</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3121/5811272101_e7a3b4ceec.jpg&quot; title=&quot;iPhone Macro Lens&quot; alt=&quot;iPhone Macro Lens&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is probably the most hacky hack I've ever really done because I had no idea I wanted to make this and all the bits were scrounged (well the case was 99p from eBay but nevermind). My old UCL outfit decided to throw out their photocopier and let me have at it for parts. I found this lens and kept it. One day I put it over my camera and bam! The iPhone Macro Lens was born. You can see the results above. Quite impressive I think. On the left is the normal photo. On the right is the macro shot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm6.static.flickr.com/5076/5811272167_3c9442a0b4.jpg&quot; title=&quot;iPhone Macro Lens&quot; alt=&quot;iPhone Macro Lens&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It doesnt look that neat though! I just used a gluegun and some tape to mount the lens over the hole in the case. Works alright. I suppose if I was being a total blog whore hipster I could have used Sugru or something. The only fault with it is that you do get a small amount of lens vignette which you need to edit out with either the zoom function or in post. Nevertheless, I'm quite pleased!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Wireless Headtracking and FabLab</title>
