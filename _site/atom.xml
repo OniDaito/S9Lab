@@ -4,13 +4,35 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-06-08T14:12:44+01:00</updated>
+ <updated>2011-06-15T10:21:44+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Only Installation at the Lowry</title>
+   <link href="http://lab.section9.co.uk/2011/06/15/only.html"/>
+   <updated>2011-06-15T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/06/15/only</id>
+   <content type="html">&lt;object width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://vimeo.com/moogaloop.swf?clip_id=25107597&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; /&gt;&lt;embed src=&quot;http://vimeo.com/moogaloop.swf?clip_id=25107597&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; type=&quot;application/x-shockwave-flash&quot; allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;After seeing the video for 'Only' by NIN, I decided I really wanted to make that work in real-time. The very first version used an infrared camera and OpenCV within OpenFrameworks and was quite a laugh really. I learnt a lot while building it. When the Kinect came out, I figured a rewrite was needed and since I wanted to learn more hardcore C++, I decided to go with Cinder.&lt;/p&gt;
+
+&lt;p&gt;On the Tech side of things,  I went through a lot of different ideas, with shadows, an early version of SSAO and even a 360 Panorama shot, taken with my trusty D100. In the end, I found that the best result was to use either a texture or a webcam feed sent into some GLSL refraction, coupled with a version of SSAO that uses Poisson Discs. Its the only implementation I've found that runs well enough.&lt;/p&gt;
+
+&lt;p&gt;Initially, I thought that using one mac, with the front and back screens stretched over two heads would work but sadly not. The framerate took a hit and doing fullscreen over two heads seemed difficult. In the end, I decided to send the raw data over a network link from the back screen, to the front. There was a small amount of latency but that actually added to the effect rather nicely.&lt;/p&gt;
+
+&lt;p&gt;Two Mac Pros were hired to run it (overkill really) but the FPS wasnt as great as I'd like. I'd thought about instancing and similar but couldnt make it work with Apple's goddamn crappy OpenGL drivers. This will be running again in 3 weeks time and its likely it'll be on a couple of Windows machines instead (thanks Cinder Windows peeps!).&lt;/p&gt;
+
+&lt;p&gt;The projector screen is quite special. It was made by one of the team, Andrew Robinson, who built a frame with 3 skins that stop the light from going straight through. The projectors were mounted quite high up so its possible to get very close to the screen. I'd incorporated Memo's Quadwarp algorithm into the program to keystone in software if needed but it turns out we didn't need to bother.&lt;/p&gt;
+
+&lt;p&gt;Plenty learnt as its my first piece really (at least, the first that I made on my own, software wise) but I had a lot of fun. Cheers Cinder guys and girls!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>iPhone Macro Lens Hack</title>
