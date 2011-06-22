@@ -38,34 +38,28 @@ var WRInitTime=(new Date()).getTime();
   
 <div id="titledate">
 
-<h2><a href="/2011/06/15/only.html">Only Installation at the Lowry</a></h2>
-  <div id="date">15 Jun 2011</div>
+<h2><a href="/2011/06/22/panopticon.html">Panopticon</a></h2>
+  <div id="date">22 Jun 2011</div>
 
 </div>
 
 <div id="post">
-    <object width="640" height="360"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=25107597&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=25107597&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="360"></embed></object>
+    <p>It occurred to me, over the last few days, weeks and months, that I am being observed by many cameras. Since I'm a bit of a poser, I figured I'd make a short video of the many wavelengths and dimensions I am captured in over the course of the working day at my desk.</p>
+
+<object width="640" height="390"><param name="movie" value="http://www.youtube.com/v/K5BI8A1d5xE?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/K5BI8A1d5xE?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="640" height="390" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
 
-<p>After seeing the video for 'Only' by NIN, I decided I really wanted to make that work in real-time. The very first version used an infrared camera and OpenCV within OpenFrameworks and was quite a laugh really. I learnt a lot while building it. When the Kinect came out, I figured a rewrite was needed and since I wanted to learn more hardcore C++, I decided to go with Cinder.</p>
+<p>Its just a bit of fun but interesting nevertheless. There are also a couple mussing because the complete infrared camera feed can also be captured with the newer kinect and primesense/asus drivers. Must look into that.</p>
 
-<p>On the Tech side of things,  I went through a lot of different ideas, with shadows, an early version of SSAO and even a 360 Panorama shot, taken with my trusty D100. In the end, I found that the best result was to use either a texture or a webcam feed sent into some GLSL refraction, coupled with a version of SSAO that uses Poisson Discs. Its the only implementation I've found that runs well enough.</p>
-
-<p>Initially, I thought that using one mac, with the front and back screens stretched over two heads would work but sadly not. The framerate took a hit and doing fullscreen over two heads seemed difficult. In the end, I decided to send the raw data over a network link from the back screen, to the front. There was a small amount of latency but that actually added to the effect rather nicely.</p>
-
-<p>Two Mac Pros were hired to run it (overkill really) but the FPS wasnt as great as I'd like. I'd thought about instancing and similar but couldnt make it work with Apple's goddamn crappy OpenGL drivers. This will be running again in 3 weeks time and its likely it'll be on a couple of Windows machines instead (thanks Cinder Windows peeps!).</p>
-
-<p>The projector screen is quite special. It was made by one of the team, Andrew Robinson, who built a frame with 3 skins that stop the light from going straight through. The projectors were mounted quite high up so its possible to get very close to the screen. I'd incorporated Memo's Quadwarp algorithm into the program to keystone in software if needed but it turns out we didn't need to bother.</p>
-
-<p>Plenty learnt as its my first piece really (at least, the first that I made on my own, software wise) but I had a lot of fun. Cheers Cinder guys and girls!</p>
-
-  <a id="more" href="/2011/06/15/only.html#disqus">Read More&raquo;</a>
+  <a id="more" href="/2011/06/22/panopticon.html#disqus">Read More&raquo;</a>
 </div>
 
 <hr />
 
 <h2>archive</h2>
 <ul id="archive">
+
+<li><a href="/2011/06/22/panopticon.html">Panopticon</a> &dash; <abbr>22 Jun 2011</abbr></li>
 
 <li><a href="/2011/06/15/only.html">Only Installation at the Lowry</a> &dash; <abbr>15 Jun 2011</abbr></li>
 

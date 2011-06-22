@@ -4,13 +4,27 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-06-15T10:21:44+01:00</updated>
+ <updated>2011-06-22T23:56:20+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Panopticon</title>
+   <link href="http://lab.section9.co.uk/2011/06/22/panopticon.html"/>
+   <updated>2011-06-22T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/06/22/panopticon</id>
+   <content type="html">&lt;p&gt;It occurred to me, over the last few days, weeks and months, that I am being observed by many cameras. Since I'm a bit of a poser, I figured I'd make a short video of the many wavelengths and dimensions I am captured in over the course of the working day at my desk.&lt;/p&gt;
+
+&lt;object width=&quot;640&quot; height=&quot;390&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/K5BI8A1d5xE?version=3&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/K5BI8A1d5xE?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;640&quot; height=&quot;390&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;Its just a bit of fun but interesting nevertheless. There are also a couple mussing because the complete infrared camera feed can also be captured with the newer kinect and primesense/asus drivers. Must look into that.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Only Installation at the Lowry</title>
