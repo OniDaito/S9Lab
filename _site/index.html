@@ -38,26 +38,37 @@ var WRInitTime=(new Date()).getTime();
   
 <div id="titledate">
 
-<h2><a href="/2011/06/22/panopticon.html">Panopticon</a></h2>
-  <div id="date">22 Jun 2011</div>
+<h2><a href="/2011/06/26/nginx.html">Nginx from Apache</a></h2>
+  <div id="date">26 Jun 2011</div>
 
 </div>
 
 <div id="post">
-    <p>It occurred to me, over the last few days, weeks and months, that I am being observed by many cameras. Since I'm a bit of a poser, I figured I'd make a short video of the many wavelengths and dimensions I am captured in over the course of the working day at my desk.</p>
+    <p>I'd heard about Nginx a couple of times duing my time at UCL. My co-worker had set it up as the front-end proxy to deal with all the static requests and have Apache do the heavy lifting. Now, when it comes to building things, its a good idea to stick with what you know and actually ship, so long as things aren't broken.</p>
 
-<object width="640" height="390"><param name="movie" value="http://www.youtube.com/v/K5BI8A1d5xE?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/K5BI8A1d5xE?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="640" height="390" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<p>My apache setup was broken!</p>
 
+<p>On occasion, it would just stop working, eating all the memory and being a pain in the arse. So instead, I thought I'd look into <a href="http://wiki.nginx.org/Main">Nginx</a> as a replacement. People I respect have said its good and I wanted to keep up to date.</p>
 
-<p>Its just a bit of fun but interesting nevertheless. There are also a couple mussing because the complete infrared camera feed can also be captured with the newer kinect and primesense/asus drivers. Must look into that.</p>
+<p>So, I run two django instances, an SSL setup infront of mediawiki and this static blog, so a good selection of things to setup there. Virtual hosts, some way of running Python, PostGreSQL and basic security. Quite a lot to throw in, in a single afternoon.</p>
 
-  <a id="more" href="/2011/06/22/panopticon.html#disqus">Read More&raquo;</a>
+<p>However, it is wasn't for a change to my DNS I'd have most of it done by now! Unbelievable! I'm quite impressed. With the Django setup's, I released I needed something called <em>fastcgi</em> . Essentially, fastcgi allows a websever to grab info from another running process quickly through a socket. Django supports this out of the box so long as you have <em>python-flup</em> installed. So I ran <em>easy_install</em> and followed the instructions that I found [on the django page] (https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/?from=olddocs). It took me a while to find this out and I'd gone down other routes such as <em>fastcgiwrap</em> and similar which I discounted in the end. It means you need to run the <em>manage.py</em> script with a few flags and have a socket that is accessible by your Nginx user. Also, you need to run the <em>manage.py</em> as a Nginx user which helps. The setup for a Django page with Nginx can be found <a href="http://wiki.nginx.org/DjangoFastCGI">here</a> but I needed to send a few extra variables before it would work fully. I found this out from <a href="http://stackoverflow.com/questions/2104723/django-nginx-url-problem">Stack Overflow</a>.</p>
+
+<p>I needed to do this twice. Fortunately the virtual hosts setup is trivial and the <a href="http://wiki.nginx.org/Configuration">Nginx Configuration Wiki</a> will let you know how to do it. No problems there then.</p>
+
+<p>SSL is quite easy two with just a couple of lines needed to do the full setup, since I had some certificates and keys from my apache setup anyway. I didn't get around to changing mediawiki because I wanted to change the DNS to make a more sensible URL for that site. It doesn't look like it'll be too hard though.</p>
+
+<p>So far, Im quite impressed with how easy it's been. I havent changed any files around and all is well. Top job Nginx!</p>
+
+  <a id="more" href="/2011/06/26/nginx.html#disqus">Read More&raquo;</a>
 </div>
 
 <hr />
 
 <h2>archive</h2>
 <ul id="archive">
+
+<li><a href="/2011/06/26/nginx.html">Nginx from Apache</a> &dash; <abbr>26 Jun 2011</abbr></li>
 
 <li><a href="/2011/06/22/panopticon.html">Panopticon</a> &dash; <abbr>22 Jun 2011</abbr></li>
 

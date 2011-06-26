@@ -4,13 +4,36 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-06-22T23:56:20+01:00</updated>
+ <updated>2011-06-26T18:03:10+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Nginx from Apache</title>
+   <link href="http://lab.section9.co.uk/2011/06/26/nginx.html"/>
+   <updated>2011-06-26T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/06/26/nginx</id>
+   <content type="html">&lt;p&gt;I'd heard about Nginx a couple of times duing my time at UCL. My co-worker had set it up as the front-end proxy to deal with all the static requests and have Apache do the heavy lifting. Now, when it comes to building things, its a good idea to stick with what you know and actually ship, so long as things aren't broken.&lt;/p&gt;
+
+&lt;p&gt;My apache setup was broken!&lt;/p&gt;
+
+&lt;p&gt;On occasion, it would just stop working, eating all the memory and being a pain in the arse. So instead, I thought I'd look into &lt;a href=&quot;http://wiki.nginx.org/Main&quot;&gt;Nginx&lt;/a&gt; as a replacement. People I respect have said its good and I wanted to keep up to date.&lt;/p&gt;
+
+&lt;p&gt;So, I run two django instances, an SSL setup infront of mediawiki and this static blog, so a good selection of things to setup there. Virtual hosts, some way of running Python, PostGreSQL and basic security. Quite a lot to throw in, in a single afternoon.&lt;/p&gt;
+
+&lt;p&gt;However, it is wasn't for a change to my DNS I'd have most of it done by now! Unbelievable! I'm quite impressed. With the Django setup's, I released I needed something called &lt;em&gt;fastcgi&lt;/em&gt; . Essentially, fastcgi allows a websever to grab info from another running process quickly through a socket. Django supports this out of the box so long as you have &lt;em&gt;python-flup&lt;/em&gt; installed. So I ran &lt;em&gt;easy_install&lt;/em&gt; and followed the instructions that I found [on the django page] (https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/?from=olddocs). It took me a while to find this out and I'd gone down other routes such as &lt;em&gt;fastcgiwrap&lt;/em&gt; and similar which I discounted in the end. It means you need to run the &lt;em&gt;manage.py&lt;/em&gt; script with a few flags and have a socket that is accessible by your Nginx user. Also, you need to run the &lt;em&gt;manage.py&lt;/em&gt; as a Nginx user which helps. The setup for a Django page with Nginx can be found &lt;a href=&quot;http://wiki.nginx.org/DjangoFastCGI&quot;&gt;here&lt;/a&gt; but I needed to send a few extra variables before it would work fully. I found this out from &lt;a href=&quot;http://stackoverflow.com/questions/2104723/django-nginx-url-problem&quot;&gt;Stack Overflow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I needed to do this twice. Fortunately the virtual hosts setup is trivial and the &lt;a href=&quot;http://wiki.nginx.org/Configuration&quot;&gt;Nginx Configuration Wiki&lt;/a&gt; will let you know how to do it. No problems there then.&lt;/p&gt;
+
+&lt;p&gt;SSL is quite easy two with just a couple of lines needed to do the full setup, since I had some certificates and keys from my apache setup anyway. I didn't get around to changing mediawiki because I wanted to change the DNS to make a more sensible URL for that site. It doesn't look like it'll be too hard though.&lt;/p&gt;
+
+&lt;p&gt;So far, Im quite impressed with how easy it's been. I havent changed any files around and all is well. Top job Nginx!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Panopticon</title>
