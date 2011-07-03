@@ -4,13 +4,48 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-06-26T18:08:06+01:00</updated>
+ <updated>2011-07-03T14:29:12+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Animation11 - Only</title>
+   <link href="http://lab.section9.co.uk/2011/07/03/Animation11.html"/>
+   <updated>2011-07-03T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/07/03/Animation11</id>
+   <content type="html">&lt;object width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://vimeo.com/moogaloop.swf?clip_id=25925349&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; /&gt;&lt;embed src=&quot;http://vimeo.com/moogaloop.swf?clip_id=25925349&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; type=&quot;application/x-shockwave-flash&quot; allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;&lt;a href=&quot;http://www.cs.manchester.ac.uk/animation11/&quot;&gt;Animation11&lt;/a&gt; is a competition for schools across the country to help foster programming and creative skills in children. Entrants are treated to a day where they have their animations presented on a big screen, with glittering prizes handed out, talks from leading industry peoples and a whole host of activities, one of which was mine.&lt;/p&gt;
+
+&lt;p&gt;The greatest thing for me in this was to see children enjoying the installation by remixing it themselves. We had a few kids cartwheeling behind the screen. Some of them stood behind each other to make wierd monster shapes. Others filmed their friends on their phones whilst they practiced their funky dance moves.&lt;/p&gt;
+
+&lt;p&gt;In short, we hit the target. It made me happy.&lt;/p&gt;
+
+&lt;p&gt;In contrast to DIGIT, Animation11 was another level up. Its a pleasure to work with intelligent, helpful staff who are really into what they do. The venue was better, with control over the lights and scaffolding to a certain degree. Manchester University provided a lot of the equipment which was great.&lt;/p&gt;
+
+&lt;p&gt;I learnt many lessons here and I think it might help people if I break it down. Firstly, Only isn't complete, and may never be. I wanted to have reflections on the people in the pins, as real metal reflects. I had two PS3 eyetoys, which I'd only tested for 5 minutes. When I plugged them in, they lasted for 10 minutes before Macam's drivers gave up. I had many of the staff at the event looking for Mac friendly webcam. When we finally got one, we set it up mid festival and it didnt work. Why? Because the room was too dark!&lt;/p&gt;
+
+&lt;p&gt;The projectors were specially ordered for this event because we needed short throws. There was a lot of back and forard between the client and I but I had to be sure they were the right ones. We went with &lt;a href=&quot;http://projectorpoint.co.uk/projectors/BenQ_MX613ST.html&quot;&gt;Two Benq Short-throw projectors&lt;/a&gt; which fit the screen and the dimensions of the room well. I must admit, I was quite impressed with these projectors but I think next time, I'll use one machine running Windows as oppose to OSX, with HDMI cables instead. The resolution on one side of the screen was not so good and could be improved.&lt;/p&gt;
+
+&lt;p&gt;The program was written in &lt;a href=&quot;http://www.libcinder.org&quot;&gt;libcinder&lt;/a&gt; which I'm a big fan of these days. The main code revolves around the OpenNI middleware which pulls people out of the depth map taken from the Kinect. Blender was used to create the pins and Screen space ambient occlusion was used to give a sense of depth to the pins. Boost TCP sockets were used to send the pin values from the rear Mac to the front map, with a smoothing equation to give a more natural movement to the pins. Refraction was done in shader space with GLSL. Im still gutted about not having the relfection in there though! &gt;&amp;lt; I had specially modified my code to include a zoom, controlled by TUIO over my iPhone so people could see their reflections when I zoomed in. Ah well, end artistic perfectionnist rant.&lt;/p&gt;
+
+&lt;p&gt;I cant get over the words from the man, &lt;a href=&quot;http://www.flight404.com/blog/?p=498&quot;&gt;Robert Hodgin over at flight 404&lt;/a&gt;. His summary is bang on and it makes me feel that I'm not alone in the things I've been going through of late. Only most definitely fits right into the frame he presents.&lt;/p&gt;
+
+&lt;p&gt;For instance, Only is a labour of love for me. I've taken baby steps with it for over a year now. The original version helped to get me a job with MSA Visuals and when I look at it, I have to laugh because it's nowhere near as polished as it is now. But the original version has so much in it that was exploratory and creative. For instance, I had a cheap black screen, a few python prototypes, some cheap infrared cameras and what not. It was a great way to learn and I never gave up on it. Small steps.&lt;/p&gt;
+
+&lt;object width=&quot;640&quot; height=&quot;400&quot;&gt;&lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://vimeo.com/moogaloop.swf?clip_id=9115304&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; /&gt;&lt;embed src=&quot;http://vimeo.com/moogaloop.swf?clip_id=9115304&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; type=&quot;application/x-shockwave-flash&quot; allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; width=&quot;640&quot; height=&quot;400&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;Sometimes, I used to get down because it wasn't really &lt;em&gt;my&lt;/em&gt; thing. I mean, the original idea came from Trent Reznor, the idea for making it double sided came from &lt;a href=&quot;http://jonty.co.uk/&quot;&gt;Jonty Wareing&lt;/a&gt; and the screen was built by Andrew Robinson from Manchester University. The thing is though, many people were involved in bringing together this project and I think that perhaps, the best projects really are collaborations. Im in there somewhere though, perhaps as the driver. But when I get down to it, there are so many people to thank. The staff at the uni, Toby Howard who directed the day, the guys who made Cinder, etc. I think that we never really do stuff on our own these days. Maybe thats a good thing afterall.&lt;/p&gt;
+
+&lt;p&gt;In the end, Robert is totally correct. I'm still a little mad here and there that it didn't quite get to where I wanted it to be. I have ideas like mounting the kinect inside the screen or using different lights to capture the reflections or porting to windows to get instancing support and faster framerates but in the end, it worked and the people who played with it loved it. So I guess I'm happy to move on now and invent more things. Suppose I better had really as I need to eat! :D&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Nginx from Apache</title>

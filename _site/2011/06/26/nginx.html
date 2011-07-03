@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Nginx from Apache</title>
+   <meta name="author" content="Benjamin Blundell" />
+   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+
+   <link rel="stylesheet" href="/css/960.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/s9.css" type="text/css" media="screen, projection" /> 
+
+</head>
+<body>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
+
+<div class="container_10">
+
+  <div class="grid_10">
+  <a href="/"><img id="banner" src="/images/lab.jpg" alt="Section9 Lab" /></a>
+  </div>
+
+ <div class="grid_8">&nbsp;</div>
+  <div class="grid_2" id="breadcrumbs">
+    <a href="/">Home</a>
+    <a href="http://www.section9.co.uk">Section9</a>
+  </div>
+  
+  
+
+
+  <div class="grid_10">  
+
+  <div id="titledate">
+<h2><a href="/2011/06/26/nginx.html">Nginx from Apache</a></h2>
+  <div id="date">26 Jun 2011</div>
+</div>
+
+<div id="post">
+<p>I'd heard about Nginx a couple of times duing my time at UCL. My co-worker had set it up as the front-end proxy to deal with all the static requests and have Apache do the heavy lifting. Now, when it comes to building things, its a good idea to stick with what you know and actually ship, so long as things aren't broken.</p>
+
+<p>My apache setup was broken!</p>
+
+<p>On occasion, it would just stop working, eating all the memory and being a pain in the arse. So instead, I thought I'd look into <a href="http://wiki.nginx.org/Main">Nginx</a> as a replacement. People I respect have said its good and I wanted to keep up to date.</p>
+
+<p>So, I run two django instances, an SSL setup infront of mediawiki and this static blog, so a good selection of things to setup there. Virtual hosts, some way of running Python, PostGreSQL and basic security. Quite a lot to throw in, in a single afternoon.</p>
+
+<p>However, it is wasn't for a change to my DNS I'd have most of it done by now! Unbelievable! I'm quite impressed. With the Django setup's, I released I needed something called <em>fastcgi</em> . Essentially, fastcgi allows a websever to grab info from another running process quickly through a socket. Django supports this out of the box so long as you have <em>python-flup</em> installed. So I ran <em>easy_install</em> and followed the instructions that I found [on the django page] (https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/?from=olddocs). It took me a while to find this out and I'd gone down other routes such as <em>fastcgiwrap</em> and similar which I discounted in the end. It means you need to run the <em>manage.py</em> script with a few flags and have a socket that is accessible by your Nginx user. Also, you need to run the <em>manage.py</em> as a Nginx user which helps. The setup for a Django page with Nginx can be found <a href="http://wiki.nginx.org/DjangoFastCGI">here</a> but I needed to send a few extra variables before it would work fully. I found this out from <a href="http://stackoverflow.com/questions/2104723/django-nginx-url-problem">Stack Overflow</a>.</p>
+
+<p>I needed to do this twice. Fortunately the virtual hosts setup is trivial and the <a href="http://wiki.nginx.org/Configuration">Nginx Configuration Wiki</a> will let you know how to do it. No problems there then.</p>
+
+<p>SSL is quite easy two with just a couple of lines needed to do the full setup, since I had some certificates and keys from my apache setup anyway. I didn't get around to changing mediawiki because I wanted to change the DNS to make a more sensible URL for that site. It doesn't look like it'll be too hard though.</p>
+
+<p>So far, Im quite impressed with how easy it's been. I havent changed any files around and all is well. Top job Nginx!</p>
+
+</div>
+
+  </div>
+  
+  <div class="grid_10">
+    <div class="contact">
+      <p>
+        Benjamin Blundell &dash; Founder of <a href="http://www.section9.co.uk/">Section9</a> &dash; oni@section9.co.uk
+      </p>
+    </div>
+    <div class="contact">
+      <p>
+        <a href="http://github.com/OniDaito">github.com/OniDaito</a><br />
+        <a href="http://twitter.com/secti0n9/">twitter.com/secti0n9</a><br />
+        <a href="http://flickr.com/photos/mojombo/">flickr.com/photos/section9</a>
+      </p>
+    </div>
+    <div class="rss">
+      <a href="http://feeds.feedburner.com/secti0n9">
+        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+      </a>
+    </div>
+  </div>
+  <div class="clear">&nbsp;</div>
+</div>
+
+<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://d3nwyuy0nl342s.cloudfront.net/img/4c7dc970b89fd04b81c8e221ba88ff99a06c6b61/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub"></a>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
+
+

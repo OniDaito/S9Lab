@@ -38,35 +38,49 @@ var WRInitTime=(new Date()).getTime();
   
 <div id="titledate">
 
-<h2><a href="/2011/06/26/nginx.html">Nginx from Apache</a></h2>
-  <div id="date">26 Jun 2011</div>
+<h2><a href="/2011/07/03/Animation11.html">Animation11 - Only</a></h2>
+  <div id="date">03 Jul 2011</div>
 
 </div>
 
 <div id="post">
-    <p>I'd heard about Nginx a couple of times duing my time at UCL. My co-worker had set it up as the front-end proxy to deal with all the static requests and have Apache do the heavy lifting. Now, when it comes to building things, its a good idea to stick with what you know and actually ship, so long as things aren't broken.</p>
+    <object width="640" height="360"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=25925349&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=25925349&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="360"></embed></object>
 
-<p>My apache setup was broken!</p>
 
-<p>On occasion, it would just stop working, eating all the memory and being a pain in the arse. So instead, I thought I'd look into <a href="http://wiki.nginx.org/Main">Nginx</a> as a replacement. People I respect have said its good and I wanted to keep up to date.</p>
+<p><a href="http://www.cs.manchester.ac.uk/animation11/">Animation11</a> is a competition for schools across the country to help foster programming and creative skills in children. Entrants are treated to a day where they have their animations presented on a big screen, with glittering prizes handed out, talks from leading industry peoples and a whole host of activities, one of which was mine.</p>
 
-<p>So, I run two django instances, an SSL setup infront of mediawiki and this static blog, so a good selection of things to setup there. Virtual hosts, some way of running Python, PostGreSQL and basic security. Quite a lot to throw in, in a single afternoon.</p>
+<p>The greatest thing for me in this was to see children enjoying the installation by remixing it themselves. We had a few kids cartwheeling behind the screen. Some of them stood behind each other to make wierd monster shapes. Others filmed their friends on their phones whilst they practiced their funky dance moves.</p>
 
-<p>However, it is wasn't for a change to my DNS I'd have most of it done by now! Unbelievable! I'm quite impressed. With the Django setup's, I released I needed something called <em>fastcgi</em> . Essentially, fastcgi allows a websever to grab info from another running process quickly through a socket. Django supports this out of the box so long as you have <em>python-flup</em> installed. So I ran <em>easy_install</em> and followed the instructions that I found [on the django page] (https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/?from=olddocs). It took me a while to find this out and I'd gone down other routes such as <em>fastcgiwrap</em> and similar which I discounted in the end. It means you need to run the <em>manage.py</em> script with a few flags and have a socket that is accessible by your Nginx user. Also, you need to run the <em>manage.py</em> as a Nginx user which helps. The setup for a Django page with Nginx can be found <a href="http://wiki.nginx.org/DjangoFastCGI">here</a> but I needed to send a few extra variables before it would work fully. I found this out from <a href="http://stackoverflow.com/questions/2104723/django-nginx-url-problem">Stack Overflow</a>.</p>
+<p>In short, we hit the target. It made me happy.</p>
 
-<p>I needed to do this twice. Fortunately the virtual hosts setup is trivial and the <a href="http://wiki.nginx.org/Configuration">Nginx Configuration Wiki</a> will let you know how to do it. No problems there then.</p>
+<p>In contrast to DIGIT, Animation11 was another level up. Its a pleasure to work with intelligent, helpful staff who are really into what they do. The venue was better, with control over the lights and scaffolding to a certain degree. Manchester University provided a lot of the equipment which was great.</p>
 
-<p>SSL is quite easy two with just a couple of lines needed to do the full setup, since I had some certificates and keys from my apache setup anyway. I didn't get around to changing mediawiki because I wanted to change the DNS to make a more sensible URL for that site. It doesn't look like it'll be too hard though.</p>
+<p>I learnt many lessons here and I think it might help people if I break it down. Firstly, Only isn't complete, and may never be. I wanted to have reflections on the people in the pins, as real metal reflects. I had two PS3 eyetoys, which I'd only tested for 5 minutes. When I plugged them in, they lasted for 10 minutes before Macam's drivers gave up. I had many of the staff at the event looking for Mac friendly webcam. When we finally got one, we set it up mid festival and it didnt work. Why? Because the room was too dark!</p>
 
-<p>So far, Im quite impressed with how easy it's been. I havent changed any files around and all is well. Top job Nginx!</p>
+<p>The projectors were specially ordered for this event because we needed short throws. There was a lot of back and forard between the client and I but I had to be sure they were the right ones. We went with <a href="http://projectorpoint.co.uk/projectors/BenQ_MX613ST.html">Two Benq Short-throw projectors</a> which fit the screen and the dimensions of the room well. I must admit, I was quite impressed with these projectors but I think next time, I'll use one machine running Windows as oppose to OSX, with HDMI cables instead. The resolution on one side of the screen was not so good and could be improved.</p>
 
-  <a id="more" href="/2011/06/26/nginx.html#disqus">Read More&raquo;</a>
+<p>The program was written in <a href="http://www.libcinder.org">libcinder</a> which I'm a big fan of these days. The main code revolves around the OpenNI middleware which pulls people out of the depth map taken from the Kinect. Blender was used to create the pins and Screen space ambient occlusion was used to give a sense of depth to the pins. Boost TCP sockets were used to send the pin values from the rear Mac to the front map, with a smoothing equation to give a more natural movement to the pins. Refraction was done in shader space with GLSL. Im still gutted about not having the relfection in there though! >&lt; I had specially modified my code to include a zoom, controlled by TUIO over my iPhone so people could see their reflections when I zoomed in. Ah well, end artistic perfectionnist rant.</p>
+
+<p>I cant get over the words from the man, <a href="http://www.flight404.com/blog/?p=498">Robert Hodgin over at flight 404</a>. His summary is bang on and it makes me feel that I'm not alone in the things I've been going through of late. Only most definitely fits right into the frame he presents.</p>
+
+<p>For instance, Only is a labour of love for me. I've taken baby steps with it for over a year now. The original version helped to get me a job with MSA Visuals and when I look at it, I have to laugh because it's nowhere near as polished as it is now. But the original version has so much in it that was exploratory and creative. For instance, I had a cheap black screen, a few python prototypes, some cheap infrared cameras and what not. It was a great way to learn and I never gave up on it. Small steps.</p>
+
+<object width="640" height="400"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=9115304&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=9115304&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="400"></embed></object>
+
+
+<p>Sometimes, I used to get down because it wasn't really <em>my</em> thing. I mean, the original idea came from Trent Reznor, the idea for making it double sided came from <a href="http://jonty.co.uk/">Jonty Wareing</a> and the screen was built by Andrew Robinson from Manchester University. The thing is though, many people were involved in bringing together this project and I think that perhaps, the best projects really are collaborations. Im in there somewhere though, perhaps as the driver. But when I get down to it, there are so many people to thank. The staff at the uni, Toby Howard who directed the day, the guys who made Cinder, etc. I think that we never really do stuff on our own these days. Maybe thats a good thing afterall.</p>
+
+<p>In the end, Robert is totally correct. I'm still a little mad here and there that it didn't quite get to where I wanted it to be. I have ideas like mounting the kinect inside the screen or using different lights to capture the reflections or porting to windows to get instancing support and faster framerates but in the end, it worked and the people who played with it loved it. So I guess I'm happy to move on now and invent more things. Suppose I better had really as I need to eat! :D</p>
+
+  <a id="more" href="/2011/07/03/Animation11.html#disqus">Read More&raquo;</a>
 </div>
 
 <hr />
 
 <h2>archive</h2>
 <ul id="archive">
+
+<li><a href="/2011/07/03/Animation11.html">Animation11 - Only</a> &dash; <abbr>03 Jul 2011</abbr></li>
 
 <li><a href="/2011/06/26/nginx.html">Nginx from Apache</a> &dash; <abbr>26 Jun 2011</abbr></li>
 
