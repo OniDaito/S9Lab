@@ -38,47 +38,35 @@ var WRInitTime=(new Date()).getTime();
   
 <div id="titledate">
 
-<h2><a href="/2011/07/03/Animation11.html">Animation11 - Only</a></h2>
-  <div id="date">03 Jul 2011</div>
+<h2><a href="/2011/07/15/Vanity-in-Plastic.html">Vanity in Plastic</a></h2>
+  <div id="date">15 Jul 2011</div>
 
 </div>
 
 <div id="post">
-    <object width="640" height="360"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=25925349&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=25925349&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="360"></embed></object>
+    <p><img src="http://farm7.static.flickr.com/6129/5940573147_8d8b8644e5_z.jpg" alt="Vanity in Plastic" /></p>
 
+<p>I'm really into design and graphic design is something I've toyed with on and off over the years. However, making something great requires a sort of feel and behaviour as well as a pleaseing aesthetic. I love the fact that, now, if you have an idea you can see it made, refine and make again and again. Drop it, start something else, do whatever. We have the freedom for that sort of thing now. It's great.</p>
 
-<p><a href="http://www.cs.manchester.ac.uk/animation11/">Animation11</a> is a competition for schools across the country to help foster programming and creative skills in children. Entrants are treated to a day where they have their animations presented on a big screen, with glittering prizes handed out, talks from leading industry peoples and a whole host of activities, one of which was mine.</p>
+<p><a href="http://london.hackspace.org.uk">Londonhackspace</a> has had a makerbot for the last year or so. When I first turned up to a shed in Islington, Russ was pouring over it's innards, swearing here and there. Since that time, it has worked on and off. To be fair, its been abused a bit but I never really printed reliably.</p>
 
-<p>The greatest thing for me in this was to see children enjoying the installation by remixing it themselves. We had a few kids cartwheeling behind the screen. Some of them stood behind each other to make wierd monster shapes. Others filmed their friends on their phones whilst they practiced their funky dance moves.</p>
+<p><a href="http://www.fablabmanchester.org">Fablab Manchester</a> has a much more professional setup with their Dimension beast of a printer. It takes an hour to warm the bugger up and it's as big as fridge-freezer, with a bed that is around 30cm square. It has the advantage of a dual nozzle setup, so it can print support material for these trickier spots. At a cost of 35p per cm3 for non-business customers, it's not such a pricey option. I've tended to use it for creating cases for electronics and what not. So far, I've been quite impressed. It prints cream coloured ABS plasticwhich seems fairly strong, down to about 1mm resolution.</p>
 
-<p>In short, we hit the target. It made me happy.</p>
+<p>To create this bust of me (which cost about 2 pounds) I used the rather nifty <a href="http://wiki.ultimaker.com/Kinect_2_STL">Kinect to STL</a>. This is a nicely packaged version of a processing app (I believe) and runs on OSX. It's fairly trivial to get a depth map out of a kinect or asus xtion now that things are moving along these days (certainly easier than structured light scanning!). This produces an STL with lots of faces. I figured that since I was printing this quite small, I'd reduce the count, so I fired up <a href="http://meshlab.sourceforge.net/">Meshlab</a> which is a fantastic program for working with any kind of 3D data. Reducing the detail helped speed things up when I imported the file into <a href="http://www.blender.org">Blender</a>. I'd noticed my right arm was sticking out a bit and that could potentially snap off or not print right so I scaled it down. Exported and away we go.</p>
 
-<p>In contrast to DIGIT, Animation11 was another level up. Its a pleasure to work with intelligent, helpful staff who are really into what they do. The venue was better, with control over the lights and scaffolding to a certain degree. Manchester University provided a lot of the equipment which was great.</p>
+<p><img src="http://farm7.static.flickr.com/6128/5941131100_1183b45daf_z.jpg" alt="Vanity in Plastic" /></p>
 
-<p>I learnt many lessons here and I think it might help people if I break it down. Firstly, Only isn't complete, and may never be. I wanted to have reflections on the people in the pins, as real metal reflects. I had two PS3 eyetoys, which I'd only tested for 5 minutes. When I plugged them in, they lasted for 10 minutes before Macam's drivers gave up. I had many of the staff at the event looking for Mac friendly webcam. When we finally got one, we set it up mid festival and it didnt work. Why? Because the room was too dark!</p>
+<p>The above photo is interesting in itself. It was taken with my Nikon D100 with a 50mm lens. To get so close I used a reversing ring and mounted the lens backwards! Works a treat so long as you have lots and lots of light!</p>
 
-<p>The projectors were specially ordered for this event because we needed short throws. There was a lot of back and forward between the client and I but I had to be sure they were the right ones. We went with <a href="http://projectorpoint.co.uk/projectors/BenQ_MX613ST.html">Two Benq Short-throw projectors</a> which fit the screen and the dimensions of the room well. I must admit, I was quite impressed with these projectors but I think next time, I'll use one machine running Windows as oppose to OSX, with HDMI cables instead. The resolution on one side of the screen was not so good and could be improved.</p>
-
-<p>The program was written in <a href="http://www.libcinder.org">libcinder</a> which I'm a big fan of these days. The main code revolves around the OpenNI middleware which pulls people out of the depth map taken from the Kinect. Blender was used to create the pins and Screen space ambient occlusion was used to give a sense of depth to the pins. Boost TCP sockets were used to send the pin values from the rear Mac to the front Mac, with a smoothing equation to give a more natural movement to the pins. Refraction was done in shader space with GLSL. Im still gutted about not having the reflection in there though! >&lt; I had specially modified my code to include a zoom, controlled by TUIO over my iPhone so people could see their reflections when I zoomed in. Ah well, i'll end artistic perfectionist rant!</p>
-
-<p>I cant get over the words from the man, <a href="http://www.flight404.com/blog/?p=498">Robert Hodgin over at flight 404</a>. His summary is bang on and it makes me feel that I'm not alone in the things I've been going through of late. Only most definitely fits right into the frame he presents.</p>
-
-<p>For instance, Only is a labour of love for me. I've taken baby steps with it for over a year now. The original version helped to get me a job with MSA Visuals and when I look at it, I have to laugh because it's nowhere near as polished as it is now. But the original version has so much in it that was exploratory and creative. For instance, I had a cheap black screen, a few python prototypes, some cheap infrared cameras and what not. It was a great way to learn and I never gave up on it. Small steps.</p>
-
-<object width="640" height="400"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=9115304&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=9115304&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="640" height="400"></embed></object>
-
-
-<p>Sometimes, I used to get down because it wasn't really <em>my</em> thing. I mean, the original idea came from Trent Reznor, the idea for making it double sided came from <a href="http://jonty.co.uk/">Jonty Wareing</a> and the screen was built by Andrew Robinson from Manchester University. The thing is though, many people were involved in bringing together this project and I think that perhaps, the best projects really are collaborations. Im in there somewhere though, perhaps as the driver. But when I get down to it, there are so many people to thank. The staff at the uni, Toby Howard who directed the day, the guys who made Cinder, etc. I think that we never really do stuff on our own these days. Maybe thats a good thing afterall.</p>
-
-<p>In the end, Robert is totally correct. I'm still a little mad here and there that it didn't quite get to where I wanted it to be. I have ideas like mounting the kinect inside the screen or using different lights to capture the reflections or porting to windows to get instancing support and faster framerates but in the end, it worked and the people who played with it loved it. So I guess I'm happy to move on now and invent more things. Suppose I better had really as I need to eat! :D</p>
-
-  <a id="more" href="/2011/07/03/Animation11.html#disqus">Read More&raquo;</a>
+  <a id="more" href="/2011/07/15/Vanity-in-Plastic.html#disqus">Read More&raquo;</a>
 </div>
 
 <hr />
 
 <h2>archive</h2>
 <ul id="archive">
+
+<li><a href="/2011/07/15/Vanity-in-Plastic.html">Vanity in Plastic</a> &dash; <abbr>15 Jul 2011</abbr></li>
 
 <li><a href="/2011/07/03/Animation11.html">Animation11 - Only</a> &dash; <abbr>03 Jul 2011</abbr></li>
 

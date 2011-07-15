@@ -4,13 +4,34 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-07-03T14:57:35+01:00</updated>
+ <updated>2011-07-15T22:31:17+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Vanity in Plastic</title>
+   <link href="http://lab.section9.co.uk/2011/07/15/Vanity-in-Plastic.html"/>
+   <updated>2011-07-15T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/07/15/Vanity-in-Plastic</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;http://farm7.static.flickr.com/6129/5940573147_8d8b8644e5_z.jpg&quot; alt=&quot;Vanity in Plastic&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I'm really into design and graphic design is something I've toyed with on and off over the years. However, making something great requires a sort of feel and behaviour as well as a pleaseing aesthetic. I love the fact that, now, if you have an idea you can see it made, refine and make again and again. Drop it, start something else, do whatever. We have the freedom for that sort of thing now. It's great.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://london.hackspace.org.uk&quot;&gt;Londonhackspace&lt;/a&gt; has had a makerbot for the last year or so. When I first turned up to a shed in Islington, Russ was pouring over it's innards, swearing here and there. Since that time, it has worked on and off. To be fair, its been abused a bit but I never really printed reliably.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.fablabmanchester.org&quot;&gt;Fablab Manchester&lt;/a&gt; has a much more professional setup with their Dimension beast of a printer. It takes an hour to warm the bugger up and it's as big as fridge-freezer, with a bed that is around 30cm square. It has the advantage of a dual nozzle setup, so it can print support material for these trickier spots. At a cost of 35p per cm3 for non-business customers, it's not such a pricey option. I've tended to use it for creating cases for electronics and what not. So far, I've been quite impressed. It prints cream coloured ABS plasticwhich seems fairly strong, down to about 1mm resolution.&lt;/p&gt;
+
+&lt;p&gt;To create this bust of me (which cost about 2 pounds) I used the rather nifty &lt;a href=&quot;http://wiki.ultimaker.com/Kinect_2_STL&quot;&gt;Kinect to STL&lt;/a&gt;. This is a nicely packaged version of a processing app (I believe) and runs on OSX. It's fairly trivial to get a depth map out of a kinect or asus xtion now that things are moving along these days (certainly easier than structured light scanning!). This produces an STL with lots of faces. I figured that since I was printing this quite small, I'd reduce the count, so I fired up &lt;a href=&quot;http://meshlab.sourceforge.net/&quot;&gt;Meshlab&lt;/a&gt; which is a fantastic program for working with any kind of 3D data. Reducing the detail helped speed things up when I imported the file into &lt;a href=&quot;http://www.blender.org&quot;&gt;Blender&lt;/a&gt;. I'd noticed my right arm was sticking out a bit and that could potentially snap off or not print right so I scaled it down. Exported and away we go.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm7.static.flickr.com/6128/5941131100_1183b45daf_z.jpg&quot; alt=&quot;Vanity in Plastic&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The above photo is interesting in itself. It was taken with my Nikon D100 with a 50mm lens. To get so close I used a reversing ring and mounted the lens backwards! Works a treat so long as you have lots and lots of light!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Animation11 - Only</title>
