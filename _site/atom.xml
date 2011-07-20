@@ -4,13 +4,34 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-07-15T22:31:17+01:00</updated>
+ <updated>2011-07-20T21:20:10+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>USB Eartunnel</title>
+   <link href="http://lab.section9.co.uk/2011/07/20/USB-Eartunnel.html"/>
+   <updated>2011-07-20T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/07/20/USB-Eartunnel</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;http://farm7.static.flickr.com/6140/5958313197_b9c65c8404_z.jpg&quot; alt=&quot;USB Eartunnel&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As well as printing out a few cases for electronics and a scan of my face, I figured I could prototype my little idea. I guess thats the real strength of the whole makerbot and printing culture. I'd tried an RFID earring before but it was pretty crap and didn't worm so well. I love the wires they use in Ghost in the Shell, like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img396.imageshack.us/img396/1391/major02yd8.jpg&quot; alt=&quot;Ghost in the Shell&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem is, in Ghost in the Shell, they tend to carry an attachment which looks like a collar that contains an extendible cable. Thats fine if you have an interface direct to the brain but for us mere dreamers, its probably not going to work.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm7.static.flickr.com/6141/5958871984_8b20103833_z.jpg&quot; alt=&quot;Eartunnel&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It does work though, which I'm quite pleased about. I designed this in sketchup then exported to STL. The walls are 1.5mm thick but I reckon we could get it down to around 1mm with the printer at fablab.&lt;/p&gt;
+
+&lt;p&gt;Perhaps an RFID ring is a better ideas? I'd really like to take the iCuffLink idea of Lady Ada and make that work with WIFI. Can you imagine it? A wifi pendant that glows in the presence of strong wifi! I'll get to it! :D&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Vanity in Plastic</title>
