@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-07-28T20:51:28+01:00</updated>
+ <updated>2011-07-28T20:54:02+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -20,11 +20,11 @@
    <content type="html">&lt;p&gt;I'd like to talk about skin, specifically in two different contexts. Firstly, skin detection followed by realistic skin rendering. I've had to work with both over the last couple of weeks and it's been an interesting challenge.&lt;/p&gt;
 
 &lt;object id=&quot;player&quot; classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; name=&quot;player&quot; width=&quot;640&quot; height=&quot;480&quot;&gt; 
-    &lt;param name=&quot;movie&quot; value=&quot;player.swf&quot;&gt; 
+    &lt;param name=&quot;movie&quot; value=&quot;http://facetube.section9.co.uk/player.swf&quot;&gt; 
     &lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot;&gt; 
     &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt; 
-    &lt;param name=&quot;flashvars&quot; value=&quot;file=SkinTone.flv&amp;amp;image=SkinTone.jpg&quot;&gt; 
-    &lt;embed type=&quot;application/x-shockwave-flash&quot; id=&quot;player2&quot; name=&quot;player2&quot; src=&quot;player.swf&quot; width=640&quot; height=&quot;480&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; flashvars=&quot;file=SkinTone.flv&amp;amp;image=SkinTone.jpg&quot;&gt; 
+    &lt;param name=&quot;flashvars&quot; value=&quot;file=http://facetube.section9.co.uk/SkinTone.flv&amp;amp;image=http://facetube.section9.co.uk/SkinTone.jpg&quot;&gt; 
+    &lt;embed type=&quot;application/x-shockwave-flash&quot; id=&quot;player2&quot; name=&quot;player2&quot; src=&quot;player.swf&quot; width=640&quot; height=&quot;480&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; flashvars=&quot;file=http://facetube.section9.co.uk/SkinTone.flv&amp;amp;image=http://facetube.section9.co.uk/SkinTone.jpg&quot;&gt; 
     &lt;/object&gt;
 
 

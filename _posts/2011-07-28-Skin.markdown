@@ -6,11 +6,11 @@ title: Skin
 I'd like to talk about skin, specifically in two different contexts. Firstly, skin detection followed by realistic skin rendering. I've had to work with both over the last couple of weeks and it's been an interesting challenge.
 
 <object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" name="player" width="640" height="480"> 
-	<param name="movie" value="player.swf"> 
+	<param name="movie" value="http://facetube.section9.co.uk/player.swf"> 
 	<param name="allowfullscreen" value="true"> 
 	<param name="allowscriptaccess" value="always"> 
-	<param name="flashvars" value="file=SkinTone.flv&amp;image=SkinTone.jpg"> 
-	<embed type="application/x-shockwave-flash" id="player2" name="player2" src="player.swf" width=640" height="480" allowscriptaccess="always" allowfullscreen="true" flashvars="file=SkinTone.flv&amp;image=SkinTone.jpg"> 
+	<param name="flashvars" value="file=http://facetube.section9.co.uk/SkinTone.flv&amp;image=http://facetube.section9.co.uk/SkinTone.jpg"> 
+	<embed type="application/x-shockwave-flash" id="player2" name="player2" src="player.swf" width=640" height="480" allowscriptaccess="always" allowfullscreen="true" flashvars="file=http://facetube.section9.co.uk/SkinTone.flv&amp;image=http://facetube.section9.co.uk/SkinTone.jpg"> 
 	</object>
 
 In this video, I'm playing with the Adaptive Skin Detector bundled with OpenCV2. OpenCV is great and is used in an awful lot of projects. I was approached by a friend to see if we could do something with skin detection and facebook. I looked into skin detection and found out that it's quite a hard and somewhat unsolved problem. All of the methods, seemingly, revolve around representing colour in different ways. HSV (Hue, saturation and Value) gives a useful representation that can capture the colours most frequently found in skin by simply specifying 3 binary values; if its less than this then its skin, else it isn't. 
