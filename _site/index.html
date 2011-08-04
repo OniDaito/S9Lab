@@ -38,48 +38,28 @@ var WRInitTime=(new Date()).getTime();
   
 <div id="titledate">
 
-<h2><a href="/2011/07/28/Skin.html">Skin</a></h2>
-  <div id="date">28 Jul 2011</div>
+<h2><a href="/2011/08/04/Box2D-and-Puppets.html">Box2D and Puppets</a></h2>
+  <div id="date">04 Aug 2011</div>
 
 </div>
 
 <div id="post">
-    <p>I'd like to talk about skin, specifically in two different contexts. Firstly, skin detection followed by realistic skin rendering. I've had to work with both over the last couple of weeks and it's been an interesting challenge.</p>
-
-<object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" name="player" width="640" height="480"> 
-    <param name="movie" value="http://facetube.section9.co.uk/player.swf"> 
-    <param name="allowfullscreen" value="true"> 
-    <param name="allowscriptaccess" value="always"> 
-    <param name="flashvars" value="file=http://facetube.section9.co.uk/SkinTone.flv&amp;image=http://facetube.section9.co.uk/SkinTone.jpg"> 
-    <embed type="application/x-shockwave-flash" id="player2" name="player2" src="http://facetube.section9.co.uk/player.swf" width=640" height="480" allowscriptaccess="always" allowfullscreen="true" flashvars="file=http://facetube.section9.co.uk/SkinTone.flv&amp;image=http://facetube.section9.co.uk/SkinTone.jpg"> 
-    </object>
+    <iframe src="http://player.vimeo.com/video/27285196?portrait=0" width="640" height="360" frameborder="0"></iframe>
 
 
-<p>In this video, I'm playing with the Adaptive Skin Detector bundled with OpenCV2. OpenCV is great and is used in an awful lot of projects. I was approached by a friend to see if we could do something with skin detection and facebook. I looked into skin detection and found out that it's quite a hard and somewhat unsolved problem. All of the methods, seemingly, revolve around representing colour in different ways. HSV (Hue, saturation and Value) gives a useful representation that can capture the colours most frequently found in skin by simply specifying 3 binary values; if its less than this then its skin, else it isn't.</p>
+<p>I've been looking at various physics libraries of late. I'd played a little with Bullet physics which was quite cool. I had trouble integrating it with the existing model I had for objects in my world. That said, it put me in a good position for working with <a href="http://www.box2d.org/">Box2D</a> which is a great little library. My friend <a href="http://imakethin.gs">Tom</a> used it in his famous iPod commerical spoof and I thought I'd give it a try for a small project I currently have going up North. The idea is to try and convert people into characters from a painting. The problem is that skeleton tracking with the kinect is not perfect and indeed, there are a lot of factor that can compound the issue.</p>
 
-<p>The problem with that, as you can see in the video, is that other things that are skin coloured (like my office wall) show up as false positives. Not very handy. Since the adaptive filter wasn't working too well, I decided to have a go myself using the HSV cutoff method using the Python bindings for OpenCV. These come with the source version of OpenCV and once built, can be symlinked into your normal python install. With these setup, I decided to try the technique again.</p>
+<p>I figured that perhaps the characters should be more like puppets after chatting with the clients. It seemed like a good idea. It turned out to be quite tricky as you have various problems arising going from 3D to 2D. Drawing order and z-buffering are the immediate issues but also collision detection becomes a problem. Obviously with the side-on views, you don't want arms to collide with the front of the body. Fortunately, Box2D has a variety of options to sort that out. More importantly, the documentation is very good, so overall, I highly recommend Box2D. No wonder the Angry Birds guys ripped them off!</p>
 
-<p><img src="http://farm7.static.flickr.com/6137/5985564558_c4c3edeb4e.jpg" alt="Skin Detect" /></p>
-
-<p>As you can see, the results are ok but odd lighting and other such things tend to confuse matters. Still, for about 15 lines of Python, it's not so bad.</p>
-
-<p>Skin has recently reared it's head again with another project I've been asked to work on. It involves rendering lots and lots of hands, or rather, the same hand with different parameters to increase the realism. The idea is to hit the uncanny valley to investigate brain workings. Its all for science which is great as theres nothing I like more than tweaking things, and believe me, theres a lot to tweak here.</p>
-
-<p><img src="http://farm7.static.flickr.com/6145/5985593084_f40f20553c_z.jpg" alt="Skin in Max" /></p>
-
-<p>So, we bought a model from <a href="http://www.turbosquid.com">Turbosquid</a> and decided to render it in 3DSMax as a baseline. It looks alright. I don't really know Max that well and Blender is where it's at for me, especially with the scripting side. Porting this model to Blender is a tricky task. An OBJ version was included so I set to. Adding armatures is reasonably easy to do, though very hard to get right. After reading up on subsurface scattering and using Nodes in Blender 2.5, I came up with this...</p>
-
-<p><img src="http://farm7.static.flickr.com/6143/5985031787_e89d7c497f_z.jpg" alt="Skin in Blender" /></p>
-
-<p>I think this just about hits the uncanny valley. It's close but not quite right. I suspect there are a lot more variables to tweak and textures to add in order to match max but considering this is my first bash with Blender proper, it's gone alright.</p>
-
-  <a id="more" href="/2011/07/28/Skin.html#disqus">Read More&raquo;</a>
+  <a id="more" href="/2011/08/04/Box2D-and-Puppets.html#disqus">Read More&raquo;</a>
 </div>
 
 <hr />
 
 <h2>archive</h2>
 <ul id="archive">
+
+<li><a href="/2011/08/04/Box2D-and-Puppets.html">Box2D and Puppets</a> &dash; <abbr>04 Aug 2011</abbr></li>
 
 <li><a href="/2011/07/28/Skin.html">Skin</a> &dash; <abbr>28 Jul 2011</abbr></li>
 
