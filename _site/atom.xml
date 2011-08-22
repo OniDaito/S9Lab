@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-08-22T13:19:54+01:00</updated>
+ <updated>2011-08-22T13:41:53+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -33,15 +33,17 @@
 
 &lt;p&gt;A second wave of bad luck hit when I needed to return to the North to work on a property I own up there. This was quite a burden, both in time and money. Over the next few months, the networking side of things began to dry up entirely and I became ever more isolated from the people in my field. I decided it was time to reconnect with people I'd not seen for a while. Miss Friendly introduced me to Mr Cats up in Manchester and a wonderful collaboration has since blossomed. It wasn't easy and required many motorcycling trips to and from my remote village but I made it happen. It felt good to be making in-roads back in the North.&lt;/p&gt;
 
-&lt;p&gt;The North will never be quite like the South. In London, you can't throw a brick without hitting a hipster who works for a local social media company or creative agency (throwing bricks at hipsters is encouraged!). In Manchester, this mass is building but it's not yet critical. Yes, there is a Hackspace but it's nothing like London Hackspace. Yes, you can work as a software engineer but it won't be for a trendy startup or a small, agile company. They do exist but there is a certain verve, a passion, an energy that you get swept up in when you are here in London.&lt;/p&gt;
+&lt;p&gt;The North will never be quite like the South. In London, you can't throw a brick without hitting a hipster who works for a local social media company or creative agency (&lt;em&gt;throwing bricks at hipsters is encouraged!&lt;/em&gt;). In Manchester, this mass is building but it's not yet critical. Yes, there is a Hackspace but it's nothing like London Hackspace. Yes, you can work as a software engineer but it won't be for a trendy startup or a small, agile company. They do exist but there is a certain verve, a passion, an energy that you get swept up in when you are here in London.&lt;/p&gt;
 
 &lt;p&gt;The internet can bridge the gaps in geography quite well. A client, Mr Britney, came to me and offered me a small job. He was working for The Bad Company who are quite well known and rather prestigious. Again, I needed the money and it seemed like a great job that was challenging but within my reach. However, the signs were there at the beginning that this would not work out.&lt;/p&gt;
 
 &lt;p&gt;I'd met Mr Britney in London whilst training with another company in London. I didn't dislike Mr Britney but something gave me the fear. The job involved a technology I wasn't familiar with. The Bad Company wanted a set of shaders to create shadows, depth of field and screen-space ambient occlusion effects. Two of these I had already written and they simply needed porting. The first caused issues however. I never managed to get the shadows to be pretty or soft enough or react in the right way. In the end I realised I couldn't deliver. I told Mr Britney this and handed over all the work I had done. I never asked for payment and even suggested a few other people who might be able to help.&lt;/p&gt;
 
-&lt;p&gt;He was not pleased.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;He was not pleased&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;This was so depressing. I'd worked really hard but due to the circumstances I was in, I couldn't deliver. Deep down I knew it was something I should have been able to finish but two things stood in the way: lack of communication and the fact that I just didn't get on with  Mr Britney. He was, in my opinion, not a technical man despite his impressive portfolio. He didn't inspire confidence. As Mitch Altman has said many many times: 'Only work with people you love'. Makes perfect sense to me now.&lt;/p&gt;
+&lt;p&gt;This was so depressing. I'd worked really hard but due to the circumstances I was in, I couldn't deliver. Deep down I knew it was something I should have been able to finish but two things stood in the way: lack of communication and the fact that I just didn't get on with  Mr Britney. He was, in my opinion, not a technical man despite his impressive portfolio. He didn't inspire confidence. As Mitch Altman has said many many times: 'Only work with people you love'. Makes perfect sense to me now. I'd gotten wound up in the details and had not spoken to the people who actually counted.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;always speak to the people who are going to use your stuff directly&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Knowing what to charge for your services is quite tricky. I decided to take my last salary, break that up into a price per hour and use that as a basis. The problem here is that it's quite difficult to know in advance how long a job will take. In the creative world, things don't really have timetables. Pricing yourself is a fine art and, as I have now realised, it's not really about the money. It's about appearances.&lt;/p&gt;
 
@@ -53,15 +55,15 @@
 
 &lt;p&gt;It's also important to remember you need to take time out. Keeping your creative juices flowing is important: it's your one true asset. There is no limit or imposed scarcity on creative and original ideas, by their very definition. You need to stay on top of developments and keep learning all the time. This usually means going for a walk, climbing a mountain or blasting down the beach road on a motorbike (thats my personal favorite!). For these into their Karma, you get out what you put in. If you are generating new ideas and creating new things, you are bound to do well. It doesn't have to be revolutionary, it just has to be you.&lt;/p&gt;
 
-&lt;p&gt;It's worth remembering this if you are the kind of person who gets jealous when other people succeed in your field and you are struggling. &lt;a href=&quot;http://www.merlinmann.com/&quot;&gt;Merlin Man&lt;/a&gt; spoke about this in his excellent show &lt;a href=&quot;http://5by5.tv/b2w&quot;&gt;Back to Work&lt;/a&gt;. If someone has more twitter followers than you do, or has more experience than you, or more money than you, often that has no real effect on your situation other than what you create out of your own anxieties. Ok sure, if you are competing for the same client, maybe this doesn't hold true but for the most case, it does. Seeing this for what it is helped me stay productive.&lt;/p&gt;
+&lt;p&gt;It's worth remembering this if you are the kind of person who gets jealous when other people succeed in your field and you are struggling. &lt;a href=&quot;http://www.merlinmann.com/&quot;&gt;Merlin Man&lt;/a&gt; spoke about this in his excellent show &lt;a href=&quot;http://5by5.tv/b2w&quot;&gt;Back to Work&lt;/a&gt;. If someone has more twitter followers than you do, or has more experience than you, or more money than you, often that has no real effect on your situation other than what you create out of your own anxieties. Ok sure, if you are competing for the same client, maybe this doesn't hold true but for the most case, it does. Seeing this for what it is helped me stay productive. If you find yourself in this situation, chances are you are not doing work that reflects your own nature.&lt;/p&gt;
 
-&lt;p&gt;Do I regret my decision? Absolutely not.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Do I regret my decision? Absolutely not.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In fact it's one of the first major decisions I don't regret. I ran into something unknown but I knew I just had to make something and this decision would put me in the place to do that. It caused a lot of pain, a lot of tears and in one odd case, a motorcycle crash, but when all's said and done, it was a very interesting 9 months.&lt;/p&gt;
 
-&lt;p&gt;It's not over yet though. It's only just beginning!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;It's not over yet though. It's only just beginning!&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;It was never about the freelance for me. It was just a way of getting into the graphics space. It's important to keep looking forward. Though I have not yet succeeded in joining a prestigious outfit like &lt;a href=&quot;http://berglondon.com&quot;&gt;Berg&lt;/a&gt; or &lt;a href=&quot;http://bloom.io&quot;&gt;Bloom&lt;/a&gt; I have not given up. I am lucky to have been offered a part-time technical post which provides enough money to survive in London and enough time to continue with the interesting stuff.&lt;/p&gt;
+&lt;p&gt;It was never about the freelance for me. It was just a way of getting into the graphics space. It's important to keep looking forward. Though I have not yet succeeded in joining a prestigious outfit like &lt;a href=&quot;http://berglondon.com&quot;&gt;Berg&lt;/a&gt; or &lt;a href=&quot;http://bloom.io&quot;&gt;Bloom&lt;/a&gt; I have not given up. I am lucky to have been offered a part-time technical post which provides enough money to survive in London and enough time to continue with the interesting stuff. I'd recommend this approach to people operating on their own like &lt;a href=&quot;http://www.digininja.org/&quot;&gt;Digininja&lt;/a&gt;, my friend Charles at &lt;a href=&quot;http://twitter.com/#!/ElectricLab&quot;&gt;Electric Lab&lt;/a&gt; and my pal &lt;a href=&quot;http://www.imakethin.gs&quot;&gt;Tom who makes things&lt;/a&gt;. Having another commitment is not such a bad thing so long as it's related. It keeps you balanced and gives you a release from the pressure which is no bad thing.&lt;/p&gt;
 
 &lt;p&gt;In a few key points, here is what I would suggest to students, people wanting to freelance or setup their own creative businesses or just get more out of their coding practice.&lt;/p&gt;
 
@@ -71,6 +73,7 @@
 &lt;li&gt;&lt;p&gt;Team up with people you love.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Remember your friends and family. They will support you when no-one else will&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Try and cultivate self-control: 'This is work time. This is play time'&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Think of a price, then triple it. Think of a time frame, then double it! ;)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Talk about what you do. Keep it interesting and relevant but get your name out there.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Meet new and interesting people! Don't call it networking. Call it 'simply being an interesting and sociable chap'&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Only work for people you like (Thanks &lt;a href=&quot;http://en.wikipedia.org/wiki/Mitch_Altman&quot;&gt;Mitch&lt;/a&gt; )&lt;/p&gt;&lt;/li&gt;
