@@ -61,6 +61,8 @@ In a few key points, here is what I would suggest to students, people wanting to
 
 - Try and cultivate self-control: 'This is work time. This is play time'
 
+- Think of a price, then triple it. Think of a time frame, then double it! ;)
+
 - Talk about what you do. Keep it interesting and relevant but get your name out there.
 
 - Meet new and interesting people! Don't call it networking. Call it 'simply being an interesting and sociable chap'
