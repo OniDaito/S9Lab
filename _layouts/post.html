@@ -6,14 +6,12 @@ layout: default
   <div class="post-meta col span-2">
     <ul class="nav">
       <li>{{ page.date | date_to_string }}</li>
-      <li>category</li>
-      <li>num comments</li>
          
     </ul>
   </div>
 
   <div class="post-content span-8 nudge-2">
-  	<h3>{{ first_post.title }}</h3>
+  	<h3>{{ post.title }}</h3>
    {{ content }}
   </div>
 </div>

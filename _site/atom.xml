@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-08-31T18:21:36+01:00</updated>
+ <updated>2011-08-31T18:24:59+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -277,7 +277,7 @@
    <link href="http://lab.section9.co.uk/2011/06/15/only.html"/>
    <updated>2011-06-15T00:00:00+01:00</updated>
    <id>http://lab.section9.co.uk/2011/06/15/only</id>
-   <content type="html">&lt;object width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://vimeo.com/moogaloop.swf?clip_id=25107597&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; /&gt;&lt;embed src=&quot;http://vimeo.com/moogaloop.swf?clip_id=25107597&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; type=&quot;application/x-shockwave-flash&quot; allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; width=&quot;640&quot; height=&quot;360&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+   <content type="html">&lt;object width=&quot;480&quot; height=&quot;320&quot;&gt;&lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://vimeo.com/moogaloop.swf?clip_id=25107597&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; /&gt;&lt;embed src=&quot;http://vimeo.com/moogaloop.swf?clip_id=25107597&amp;amp;server=vimeo.com&amp;amp;show_title=1&amp;amp;show_byline=1&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; type=&quot;application/x-shockwave-flash&quot; allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; width=&quot;480&quot; height=&quot;320&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
 
 
 &lt;p&gt;After seeing the video for 'Only' by NIN, I decided I really wanted to make that work in real-time. The very first version used an infrared camera and OpenCV within OpenFrameworks and was quite a laugh really. I learnt a lot while building it. When the Kinect came out, I figured a rewrite was needed and since I wanted to learn more hardcore C++, I decided to go with Cinder.&lt;/p&gt;
