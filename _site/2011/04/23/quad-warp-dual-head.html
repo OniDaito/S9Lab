@@ -21,7 +21,7 @@
     
   <div id="header" class="col last span-12">
     <h1>Section9 Labs</a></h1>
-    <h2>Benjamin Blundell's Experiments <span class="low">&amp;</span> ruminations</h2>
+    <h2>Benjamin Blundell's experiments <span class="low">&amp;</span> ruminations</h2>
   </div>
 
   <hr />
@@ -42,6 +42,7 @@
   </div>
 
   <div class="post-content span-8 nudge-2">
+  	<h3></h3>
    <blockquote><p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/-XEBSmLA0nLI/TbL-KdnM_FI/AAAAAAAAAy0/CCBZWSEhGxM/s1600/quad.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 213px;" src="http://2.bp.blogspot.com/-XEBSmLA0nLI/TbL-KdnM_FI/AAAAAAAAAy0/CCBZWSEhGxM/s320/quad.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5598816742476151890" /></a><br /><br />I'm wokring on many things at the moment and this is one of them. As 'Only' is going to be up at Digit this year at the Lowry im looking to get some ideas on how best to get two sides of the piece to work best. Previously, I've tried a TCP stream between two machines and that worked quite well. There were issues with the speed however and the receiving machine was definitely slower but the effect looked quite nice.<br /><br />The second idea is to use one, quite hefy machine and two heads. This is probably the nicest solution but doubles the amount of FBOs and space I need one one card. My little Macbook Pro has problems dealing with it for sure. Questions arise such as rendering the geometry twice or rendering both views at once onto a wide texture. In addition, what happens if we need to use projectors? If we have to keystone and warp each view seperately then we could have a problem. <br /><br />So, in the above picture we have the front view in red, on the left and the rear view, on the right in green. Both are 1024x768 textures, mapped to a 12 x 12 set of quads which are warped using Memo Aktens Projection warping shader. The effect works quite well so hopefully, thats the projectors covered!<br /><br />How best to improve framerates though? There are, at least, 4 1024x768 textures (rising to 6 with SSAO) and at least 4 different shaders working. So far 15fps is the best which is about half of minimum. More work to do it seems.</p></blockquote>
 
   </div>
