@@ -1,8 +1,7 @@
 ---
-layyout: post
+layout: post
 title: Denied
 ---
-
 
 [![Denied](http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_z.jpg)](http://saito.section9.co.uk)
 

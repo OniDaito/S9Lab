@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-08-31T18:24:59+01:00</updated>
+ <updated>2011-08-31T18:27:24+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -113,7 +113,7 @@
    <link href="http://lab.section9.co.uk/2011/08/04/Box2D-and-Puppets.html"/>
    <updated>2011-08-04T00:00:00+01:00</updated>
    <id>http://lab.section9.co.uk/2011/08/04/Box2D-and-Puppets</id>
-   <content type="html">&lt;iframe src=&quot;http://player.vimeo.com/video/27285196?portrait=0&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+   <content type="html">&lt;iframe src=&quot;http://player.vimeo.com/video/27285196?portrait=0&quot; width=&quot;420&quot; height=&quot;280&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
 
 
 &lt;p&gt;I've been looking at various physics libraries of late. I'd played a little with Bullet physics which was quite cool. I had trouble integrating it with the existing model I had for objects in my world. That said, it put me in a good position for working with &lt;a href=&quot;http://www.box2d.org/&quot;&gt;Box2D&lt;/a&gt; which is a great little library. My friend &lt;a href=&quot;http://imakethin.gs&quot;&gt;Tom&lt;/a&gt; used it in his famous iPod commerical spoof and I thought I'd give it a try for a small project I currently have going up North. The idea is to try and convert people into characters from a painting. The problem is that skeleton tracking with the kinect is not perfect and indeed, there are a lot of factor that can compound the issue.&lt;/p&gt;
@@ -129,12 +129,12 @@
    <id>http://lab.section9.co.uk/2011/07/28/Skin</id>
    <content type="html">&lt;p&gt;I'd like to talk about skin, specifically in two different contexts. Firstly, skin detection followed by realistic skin rendering. I've had to work with both over the last couple of weeks and it's been an interesting challenge.&lt;/p&gt;
 
-&lt;object id=&quot;player&quot; classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; name=&quot;player&quot; width=&quot;640&quot; height=&quot;480&quot;&gt; 
+&lt;object id=&quot;player&quot; classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; name=&quot;player&quot; width=&quot;420&quot; height=&quot;280&quot;&gt; 
     &lt;param name=&quot;movie&quot; value=&quot;http://facetube.section9.co.uk/player.swf&quot;&gt; 
     &lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot;&gt; 
     &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt; 
     &lt;param name=&quot;flashvars&quot; value=&quot;file=http://facetube.section9.co.uk/SkinTone.flv&amp;amp;image=http://facetube.section9.co.uk/SkinTone.jpg&quot;&gt; 
-    &lt;embed type=&quot;application/x-shockwave-flash&quot; id=&quot;player2&quot; name=&quot;player2&quot; src=&quot;http://facetube.section9.co.uk/player.swf&quot; width=640&quot; height=&quot;480&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; flashvars=&quot;file=http://facetube.section9.co.uk/SkinTone.flv&amp;amp;image=http://facetube.section9.co.uk/SkinTone.jpg&quot;&gt; 
+    &lt;embed type=&quot;application/x-shockwave-flash&quot; id=&quot;player2&quot; name=&quot;player2&quot; src=&quot;http://facetube.section9.co.uk/player.swf&quot; width=420&quot; height=&quot;280&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; flashvars=&quot;file=http://facetube.section9.co.uk/SkinTone.flv&amp;amp;image=http://facetube.section9.co.uk/SkinTone.jpg&quot;&gt; 
     &lt;/object&gt;
 
 
