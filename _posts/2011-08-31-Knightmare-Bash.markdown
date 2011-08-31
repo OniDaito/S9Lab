@@ -25,3 +25,5 @@ Steve hit on the idea of a spellcasting script of some kind so I thought I'd wri
 I think this simple example is quite similar to the [Thermoptic Camouflage](http://www.vimeo.com/26788575) play-thing I wrote. It's what you might call a *speed project*. It's a little bit fun, the outcome is known, and you have a pretty good idea of what you need to do but with scope for learning and finally, most importantly, it doesn't matter.
 
 The last bit is important. There is no real pressure save whatever you bring to it. 
+
+I also wrote *a shit load of Ruby on Rails* with video processing and everything but thats beside the point! :D

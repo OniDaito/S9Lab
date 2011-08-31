@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-08-31T18:53:09+01:00</updated>
+ <updated>2011-08-31T18:57:08+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -40,6 +40,8 @@ $1
 &lt;p&gt;I think this simple example is quite similar to the &lt;a href=&quot;http://www.vimeo.com/26788575&quot;&gt;Thermoptic Camouflage&lt;/a&gt; play-thing I wrote. It's what you might call a &lt;em&gt;speed project&lt;/em&gt;. It's a little bit fun, the outcome is known, and you have a pretty good idea of what you need to do but with scope for learning and finally, most importantly, it doesn't matter.&lt;/p&gt;
 
 &lt;p&gt;The last bit is important. There is no real pressure save whatever you bring to it.&lt;/p&gt;
+
+&lt;p&gt;I also wrote &lt;em&gt;a shit load of Ruby on Rails&lt;/em&gt; with video processing and everything but thats beside the point! :D&lt;/p&gt;
 </content>
  </entry>
  
