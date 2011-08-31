@@ -2,11 +2,18 @@
 layout: default
 ---
 
-<div id="titledate">
-<h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-  <div id="date">{{ page.date | date_to_string }}</div>
+<div class="post">
+  <div class="post-meta col span-2">
+    <ul class="nav">
+      <li>{{ page.date | date_to_string }}</li>
+      <li>category</li>
+      <li>num comments</li>
+         
+    </ul>
+  </div>
+
+  <div class="post-content span-8 nudge-2">
+   {{ content }}
+  </div>
 </div>
 
-<div id="post">
-{{ content }}
-</div>
