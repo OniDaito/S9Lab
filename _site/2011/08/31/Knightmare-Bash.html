@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Denied</title>
+	<title>Knightmare Bash</title>
 	<meta name="author" content="Benjamin Blundell" />
 	<link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
 	<link href="http://lab.section9.co.uk/css/grid-900.css" rel="stylesheet"></link>
@@ -34,28 +34,36 @@
   	<div class="post">
   <div class="post-meta col span-2">
     <ul class="nav">
-      <li>14 Aug 2011</li>
+      <li>31 Aug 2011</li>
          
     </ul>
   </div>
 
   <div class="post-content span-8 nudge-2">
-  	<h3>Denied</h3>
-   <p><a href="http://saito.section9.co.uk"><img src="http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_m.jpg" alt="Denied" /></a></p>
+  	<h3>Knightmare Bash</h3>
+   <p>So I came up with this today:</p>
 
-<p>I've been looking at WebGL and I've been quite excited. The chance to merge design, the web and my favorite graphics library is not something I'd pass up. It's not all roses though because WebGL doesn't have uniform support across browsers. That said, it seems to be gaining ground.</p>
+<pre><code>#!/bin/bash
+a=$(echo $1 | tr '[:lower:]' '[:upper:]')
+e=$(echo $a | sed 's/\(.\)/\1 /g')
+echo -n "SPELLCASTING: "
+for i in $e; do
+    echo -n $i" "
+    sleep 1
+done;
+echo ""
+$1
+</code></pre>
 
-<p><a href="http://saito.section9.co.uk">Denied</a> is an idea I'd had a while back, ever since I chatted to <a href="http://www.jonty.co.uk">Jonty Wareing</a> about Geolocating IP addresses. There is a nice library called <a href="http://www.maxmind.com/app/geolitecity">Geolitecity</a> that I looked into. Jonty gave me a bash script that I modified a little to convert my <em>hosts.deny</em> report into something a little more interesting. Turns out most of the evil people after my server are in Beijing. Who'd have thought it?</p>
+<p>This little piece of bash script is the geekiest and therfore <em>coolest</em> thing I've written for the past few weeks. But it's had me thinking a little about programming, life and the universe.</p>
 
-<p>WebGL is based on OpenGLES2 which deviates from what I've been taught in the past. There are now two flavours or styles of OpenGL; old skool and new skool. Using matrix transforms, drawing vertices for triangles and pushing/popping matrices is all old-hat now. It's all about vertex buffers and passing transforms and lights straight into the shader. With WebGL, there is the added change of loading resources asynchronously over the web. Javascript itself has some interesting abilities that are difficult to replicate in C++; closures, dynamic types and modifiying objects on the fly. These things are very interesting but how can they be used with OpenGL? OpenGL was classically, very strict in its manner; there was one way of doing things. With OpenGLES2 I feel it has become even more strict with offloading things to shaders. How can the interesting, dynamic nature of javascript be applied to this seasoned graphics library?</p>
+<p>It was born out of a semi-drunken chat with my good friend <a href="http://www.casa.ucl.ac.uk/people/person.asp?ID=260">Steve</a>. After cooking a <em>rather splendid</em> roast dinner, the conversation turned, as it inevitably does, to TV programmes we used to watch as kids. I don't know why that always happens after a certain age but it's something that has occurred between my friends and I many times. I suspect it's not just me either. Of course, we had to talk about <a href="http://www.knightmare.com/">Knightmare</a>.</p>
 
-<p>I'm still not sure yet. I decided to get stuck right in and created <a href="https://github.com/OniDaito/Saito.js">saito.js</a>. This little library does some of the heavy lifting such as loading textures, cubemaps, shaders (using jquery ajax calls) and creating basic shapes. So far I'm reasonably pleased thought there is a lot more I need to play with yet.</p>
+<p>Steve hit on the idea of a spellcasting script of some kind so I thought I'd write one. I was bored at work this morning and figured it would be a good warm-up. I'm no bash ninja sadly, though I've often thought about learning more and there indeed is the rub. It's important to take little steps and to do that, you <em>have to want to take them</em>.</p>
 
-<p>Denied is a good example of my style; it's a mashup of many technologies. Firstly, the system runs on <a href="http://wiki.nginx.org/">nginx</a> with uwsgi on top. This provides python support which reads the data produced by Jonty's script and returns a nice stack of JSON for Jquery to read. On the client side, we have saito.js, a bunch of shaders, jquery, <a href="http://sylvester.jcoglan.com/">sylvester</a> and some nice HTML5 formatting and support. Every 30 seconds a request is made to nginx for more data, recreating the curves.</p>
+<p>I think this simple example is quite similar to the <a href="http://www.vimeo.com/26788575">Thermoptic Camouflage</a> play-thing I wrote. It's what you might call a <em>speed project</em>. It's a little bit fun, the outcome is known, and you have a pretty good idea of what you need to do but with scope for learning and finally, most importantly, it doesn't matter.</p>
 
-<p>The lighting is per-pixel with materials and light settings. The background is a quad with an alpha blend applied to give the burst effect. I wanted to try volumetric lighting but I'll leave that for another time. to create the etched surface of the globe, the standard technique of bump mapping was applied, though the tanget creation was a bit tricky. The maps of the planet are from <a href="http://visibleearth.nasa.gov/">NASA</a> though I couldn't find a bump map with a high enough resolution. I disabled zooming in this instance because it affected the lighting too much and I wanted it to be consistent. The curves have a different shader that alters their alpha value with a sine function. Add some blending to that and you get a pleasing effect.</p>
-
-<p>Overall, I'm really happy with the look. It was pure experimentation and just messing around with colours and values and ideas with the shaders. This works in firefox 5, Chrome standard and Chrome Canary. Im not sure about other browsers yet. Each browser has different support. Firefox seems to run fast but doesn't antialias things correctly. Standard Chrome has antialiasing but tends to eat up CPU too much, whereas Canary seems to have all the positives and none of the negatives. Hopefully we'll see some standardisation soon.</p>
+<p>The last bit is important. There is no real pressure save whatever you bring to it.</p>
 
   </div>
 </div>

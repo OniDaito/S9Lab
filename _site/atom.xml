@@ -4,13 +4,44 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-08-31T18:32:02+01:00</updated>
+ <updated>2011-08-31T18:53:09+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Knightmare Bash</title>
+   <link href="http://lab.section9.co.uk/2011/08/31/Knightmare-Bash.html"/>
+   <updated>2011-08-31T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/08/31/Knightmare-Bash</id>
+   <content type="html">&lt;p&gt;So I came up with this today:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+a=$(echo $1 | tr '[:lower:]' '[:upper:]')
+e=$(echo $a | sed 's/\(.\)/\1 /g')
+echo -n &quot;SPELLCASTING: &quot;
+for i in $e; do
+    echo -n $i&quot; &quot;
+    sleep 1
+done;
+echo &quot;&quot;
+$1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This little piece of bash script is the geekiest and therfore &lt;em&gt;coolest&lt;/em&gt; thing I've written for the past few weeks. But it's had me thinking a little about programming, life and the universe.&lt;/p&gt;
+
+&lt;p&gt;It was born out of a semi-drunken chat with my good friend &lt;a href=&quot;http://www.casa.ucl.ac.uk/people/person.asp?ID=260&quot;&gt;Steve&lt;/a&gt;. After cooking a &lt;em&gt;rather splendid&lt;/em&gt; roast dinner, the conversation turned, as it inevitably does, to TV programmes we used to watch as kids. I don't know why that always happens after a certain age but it's something that has occurred between my friends and I many times. I suspect it's not just me either. Of course, we had to talk about &lt;a href=&quot;http://www.knightmare.com/&quot;&gt;Knightmare&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Steve hit on the idea of a spellcasting script of some kind so I thought I'd write one. I was bored at work this morning and figured it would be a good warm-up. I'm no bash ninja sadly, though I've often thought about learning more and there indeed is the rub. It's important to take little steps and to do that, you &lt;em&gt;have to want to take them&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;I think this simple example is quite similar to the &lt;a href=&quot;http://www.vimeo.com/26788575&quot;&gt;Thermoptic Camouflage&lt;/a&gt; play-thing I wrote. It's what you might call a &lt;em&gt;speed project&lt;/em&gt;. It's a little bit fun, the outcome is known, and you have a pretty good idea of what you need to do but with scope for learning and finally, most importantly, it doesn't matter.&lt;/p&gt;
+
+&lt;p&gt;The last bit is important. There is no real pressure save whatever you bring to it.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>A Digital Ronin - My year freelancing</title>
