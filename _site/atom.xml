@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-08-31T18:30:22+01:00</updated>
+ <updated>2011-08-31T18:32:02+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -90,7 +90,7 @@
    <link href="http://lab.section9.co.uk/2011/08/14/Denied.html"/>
    <updated>2011-08-14T00:00:00+01:00</updated>
    <id>http://lab.section9.co.uk/2011/08/14/Denied</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;http://saito.section9.co.uk&quot;&gt;&lt;img src=&quot;http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_z.jpg&quot; alt=&quot;Denied&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://saito.section9.co.uk&quot;&gt;&lt;img src=&quot;http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_m.jpg&quot; alt=&quot;Denied&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I've been looking at WebGL and I've been quite excited. The chance to merge design, the web and my favorite graphics library is not something I'd pass up. It's not all roses though because WebGL doesn't have uniform support across browsers. That said, it seems to be gaining ground.&lt;/p&gt;
 

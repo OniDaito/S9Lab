@@ -3,7 +3,7 @@ layout: post
 title: Denied
 ---
 
-[![Denied](http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_z.jpg)](http://saito.section9.co.uk)
+[![Denied](http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_m.jpg)](http://saito.section9.co.uk)
 
 I've been looking at WebGL and I've been quite excited. The chance to merge design, the web and my favorite graphics library is not something I'd pass up. It's not all roses though because WebGL doesn't have uniform support across browsers. That said, it seems to be gaining ground.
 
