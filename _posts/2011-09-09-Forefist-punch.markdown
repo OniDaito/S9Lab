@@ -3,7 +3,7 @@ layout: post
 title: Forefist Punch
 ---
 
-I've caught up with a friend of mine over at [FiniteAttentionSpan](http://finiteattentionspan.wordpress.com/) and the subject of Taekwondo came up. There are some quite evocative images and lessons learnt there, that can be applied to other situations in life. I trained for about 6 years and it's been a rocky ride. Now I'm older, I look at the lessons learnt, the tenets and even my black belt thesis with differnet eyes. 
+I've caught up with a friend of mine over at [FiniteAttentionSpan](http://finiteattentionspan.wordpress.com/) and the subject of Taekwondo came up. There are some quite evocative images and lessons learnt there, that can be applied to other situations in life. I trained for about 6 years and it's been a rocky ride. Now I'm older, I look at the lessons learnt, the tenets and even my black belt thesis with different eyes. 
 
 I've been thinking about the concept of [flow](http://en.wikipedia.org/wiki/Flow_(psychology) in programming and my general practice of computer science, graphics and art. When I trained in Taekwondo it took me at least 3 to 4 years before I had my first flow moment. I remember to this day, breaking two pieces of wood with a jumping reverse side kick. Its a cool move when done right and there was no *effort* or rather, no *forcing* of effort. 
 
