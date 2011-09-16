@@ -32,14 +32,14 @@
     </div>
   
   	<div class="post">
-  <div class="post-meta col span-2">
+  <div class="post-meta col span-1">
     <ul class="nav">
       <li>05 Jun 2010</li>
 	<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>         
     </ul>
   </div>
 
-  <div class="post-content span-8 nudge-2">
+  <div class="post-content span-9 nudge-2">
   	<h3>>GStreamer vs Quicktime vs OpenFrameworks</h3>
    <blockquote><p>I've been having fights with all three at the moment. Openframeworks is nice because it uses OpenGL and the C++ language which is great for computer graphics and as it's cross platform, it's great for OSX and Windows and Linux. Trouble is, there are some glaring problems when it comes to recording modified video. It seems that its really Apple's fault.<br /><br />For Mac OSX, OF uses Quicktime as really, it's the only option. Sadly, the Quicktime C bindings are no longer <span style="font-style:italic;">in fashion</span> with Apple. This is damn shame because finding documentation on it is a pain in the arse. Now it appears that grabbing frames is fine, and there has been some sterling work in recording video back to a MOV again.<br /><br />However, this is no good if you are playing with sound as well.<br /><br />Yup, basically what I'm talking about is some kind of VJ setup. Press a button, record sound and video, modify video, save to compressed mov. Now this is do-able with the new fancy-pants-core-video but thats not much use when you want it linked to an Arduino and all the rest. So I abandoned the mac and looked at <a href="http://www.gstreamer.net/">GStreamer</a>.<br /><br />GStreamer has some great documentation and is really easy to learn. I love the idea of their pads and bins and similar. It's great that they have a method for running the plugins on the command line. Looking at the OF code for their linux distro, I can see why they chose it.<br /><br />So yes, Quicktime for the lose. GStreamer for the win.</p></blockquote>
 

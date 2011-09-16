@@ -32,14 +32,14 @@
     </div>
   
   	<div class="post">
-  <div class="post-meta col span-2">
+  <div class="post-meta col span-1">
     <ul class="nav">
       <li>27 May 2010</li>
 	<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>         
     </ul>
   </div>
 
-  <div class="post-content span-8 nudge-2">
+  <div class="post-content span-9 nudge-2">
   	<h3>>First prototype for Animation10</h3>
    <blockquote><p><object width="400" height="225"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=12077661&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=12077661&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="225"></embed></object><br /><br />My co-worker and I are staring in the first cut of the portable Tales of Things for Animation10. The whole thing is a mashup between OSX Native apps and a suite of scripts running on a Linux Mint install. The idea is that kids can record their own stories and thoughts about the interesting computer science things they will see and scan during the day. And of course, everyone loves stickers.<br /><br />So far, it's been a breeze. The recording side on OSX is really easy once you figure out the <span style="font-weight:bold;">QuicktimeCaptureLayer<span style="font-style:italic;"></span></span> class (as oppose to just QuicktimeCapture). CherryPy and Python take a lot of the scripting headaches out of the equation and handle the receiving of MP4 files really well. <br /><br />I had issues with Dymo's Mac SDK; it uses Applescript which I've never really liked. I decided to go with - shock horror - the Linux SDL and I have to hand it to Dymo, this compile first time and works with CUPS like a dream! <span style="font-weight:bold;">lpr</span> for the win!<br /><br />Finally, OpenCV, libdecodeqr and a cheap logitech webcam finish things off nicely. All in all, it works rather well for a mashup that uses 3 languages (4 if you include bash!)</p></blockquote>
 

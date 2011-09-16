@@ -32,14 +32,14 @@
     </div>
   
   	<div class="post">
-  <div class="post-meta col span-2">
+  <div class="post-meta col span-1">
     <ul class="nav">
       <li>11 Jun 2010</li>
 	<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>         
     </ul>
   </div>
 
-  <div class="post-content span-8 nudge-2">
+  <div class="post-content span-9 nudge-2">
   	<h3>>GStreamer &amp; Openframeworks Issues</h3>
    <blockquote><p>I've been working pretty hard with GStreamer and Openframeworks in order to get audio synchronisation and two sinks; one for preview and one for recording files to disk. So far, it's been pretty tough. Vorbis was giving be lots of Seg faults and for the life of me I couldn't figure out why.<br /><br />Turns out that the <a href="http://www.openframeworks.cc/forum/viewtopic.php?f=9&t=4068">lovely folks on the Openframeworks forums</a> had the answer. libfmodex is causing problems with GStreamer audio and one needs to comment out all references to this and the library that is linked.<br /><br />Developing with Code::Blocks is a bit of pain but once you get it all set up it's not so bad. Looking for these deep bugs though is pretty hard and getting your head into the game is half the battle. I'm glad to report though that Gstreamer is a great little package I hadn't played with before and that if you are doing anything video related, you should definitely check this out.</p></blockquote>
 
