@@ -60,7 +60,8 @@
 
 <p>Nginx config files are quite easy to understand and it's quite easy to get a site up and running. In the case of Django, I went with the <a href="https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/">FastCGI</a> route which seemed the easiest at the time (uWSGI might be better). This means you need to run your Django in a seperate process. Using a Linux <em>screen</em> you can do something like this:</p>
 
-<pre><code>su www-data -c './manage.py runfcgi method=prefork daemonize=false socket=/tmp/section9.sock pidfile=django.pid maxrequests=100'
+<pre><code>su www-data -c './manage.py runfcgi method=prefork daemonize=false\ 
+socket=/tmp/section9.sock pidfile=django.pid maxrequests=100'
 </code></pre>
 
 <p>The <em>maxrequests</em> variable is very important. Without it, I noticed a lot of processes waiting for IO when I studied the site using <em>top</em>. So far, that little line has helped make things faster.</p>
@@ -106,7 +107,8 @@ location / {
 
 <p>But what about a simple Python Script? For Denied, I needed to query a text file, parse it, and present json on request. To do that, uWSGI came to mind. Use <em>pip</em> to install uwsi and then:</p>
 
-<pre><code>sudo su -c "uwsgi --pythonpath /srv/www/section9.co.uk/public_html/python --uid www-data --module wsgi_configuration_module -s /tmp/uwsgi.sock"
+<pre><code>sudo su -c "uwsgi --pythonpath /srv/www/section9.co.uk/public_html/python\
+ --uid www-data --module wsgi_configuration_module -s /tmp/uwsgi.sock"
 </code></pre>
 
 <p>This creates a socket for which we can use with Nginx to grab our data. <a href="http://kbeezie.com/view/circuits-nginx-uwsgi/">This Guide</a> is quite good for setting up Nginx to talk to a process.</p>
