@@ -19,19 +19,19 @@ You can then hit make. There are lots of modules and other things you can build.
 
 Nginx config files are quite easy to understand and it's quite easy to get a site up and running. In the case of Django, I went with the [FastCGI](https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/) route which seemed the easiest at the time (uWSGI might be better). This means you need to run your Django in a seperate process. Using a Linux *screen* you can do something like this:
 
- su www-data -c './manage.py runfcgi method=prefork daemonize=false socket=/tmp/section9.sock pidfile=django.pid maxrequests=100'
+	su www-data -c './manage.py runfcgi method=prefork daemonize=false socket=/tmp/section9.sock pidfile=django.pid maxrequests=100'
 
 The *maxrequests* variable is very important. Without it, I noticed a lot of processes waiting for IO when I studied the site using *top*. So far, that little line has helped make things faster.
 
 You can then setup Nginx with Django a little like this:
 
- server {
- 	listen 80;
- 	server_name www.anneblundell.com;
- 	rewrite ^/(.*) http://anneblundell.com/$1 permanent;
- }
+	server {
+ 		listen 80;
+ 		server_name www.anneblundell.com;
+ 		rewrite ^/(.*) http://anneblundell.com/$1 permanent;
+ 	}
 
- server {
+ 	server {
         server_name anneblundell.com;
 
         access_log  /srv/www/anneblundell.com/logs/nginx_access.log;
@@ -58,13 +58,12 @@ You can then setup Nginx with Django a little like this:
 		fastcgi_param  SERVER_PROTOCOL 	  $server_protocol; 
 		fastcgi_intercept_errors off;
 	}	
- }
 
 So Django runs ok for now. You can write down all the *fastcgi_params* in an include file to make things a little easier.
 
 But what about a simple Python Script? For Denied, I needed to query a text file, parse it, and present json on request. To do that, uWSGI came to mind. Use *pip* to install uwsi and then:
 
- sudo su -c "uwsgi --pythonpath /srv/www/section9.co.uk/public_html/python --uid www-data --module wsgi_configuration_module -s /tmp/uwsgi.sock"
+	sudo su -c "uwsgi --pythonpath /srv/www/section9.co.uk/public_html/python --uid www-data --module wsgi_configuration_module -s /tmp/uwsgi.sock"
 
 This creates a socket for which we can use with Nginx to grab our data. [This Guide](http://kbeezie.com/view/circuits-nginx-uwsgi/) is quite good for setting up Nginx to talk to a process.
 
