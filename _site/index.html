@@ -36,25 +36,89 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>09 Sep 2011</li>     
+          <li>16 Sep 2011</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2011/09/09/Forefist-punch.html">Forefist Punch</a></h3>
-    	 <p>I've caught up with a friend of mine over at <a href="http://finiteattentionspan.wordpress.com/">FiniteAttentionSpan</a> and the subject of Taekwondo came up. There are some quite evocative images and lessons learnt there, that can be applied to other situations in life. I trained for about 6 years and it's been a rocky ride. Now I'm older, I look at the lessons learnt, the tenets and even my black belt thesis with different eyes.</p>
+    		<h3><a href="/2011/09/16/Running-with-nginx.html">Running with Nginx</a></h3>
+    	 <p>So I've decided to play with <a href="http://wiki.nginx.org/">Nginx</a> on my server, leaving Apache behind. I must admit, I've had a lot of fun with it. It appears to be a good front end for funneling web requests to other services. At the moment, I have various things running on my server such as:</p>
 
-<p>I've been thinking about the concept of <a href="http://en.wikipedia.org/wiki/Flow_(psychology">flow</a> in programming and my general practice of computer science, graphics and art. When I trained in Taekwondo it took me at least 3 to 4 years before I had my first flow moment. I remember to this day, breaking two pieces of wood with a jumping reverse side kick. Its a cool move when done right and there was no <em>effort</em> or rather, no <em>forcing</em> of effort.</p>
+<ul>
+<li>Two sites running <a href="http://www.djangoproject.com/">Django</a> with <em>Psycopg</em> connected to a <a href="www.postgresql.org">Postgresql</a> database.</li>
+<li>A <a href="nodejs.org">Node.js</a> install that talks to a <a href="www.mongodb.org">MongoDB</a> database for a top secret project</li>
+<li>A <a href="http://www.mediawiki.org">Mediawiki</a> setup that runs my own journal and ideas. Currently talks to mysql running with <em>php5-fpm</em></li>
+<li>Several static pages as and when needed</li>
+<li>Python <em>uWSGI</em> serving for the <a href="http://saito.section9.co.uk">Denied</a> application</li>
+</ul>
 
-<p>But what did that take? There is the idea of 10,000 hours of exercise in a subject before you master it. But that's not the whole truth. Each hour needs feedback and explanation. You need to know what you did right and wrong, to get feedback from yourself and from someone who knows more than you do. Every lesson would involve the walking-stance forefist punch and the L-Stance front kick. Every time, we'd have to punch harder and faster and improve or be corrected. It certainly helped.</p>
 
-<p>Another friend of mine who programs a lot at <a href="http://www.casa.ucl.ac.uk">CASA</a> has spoken to me often about the movement away from <em>real programming</em> and towards the more mundane linking of various code snippets into a coherent whole. I think he's right. The bar has been raised whereby we can all produce a working product such as a web-service or iPhone app from other libraries, code from GitHub and similar. The real skill in programming isn't to do this, but only programmers can do this sort of thing well.</p>
+<p>So there is a fair bit going on that Nginx needs to take care of. Rather than use the stock Lucid install of Nginx I downloaded the source and built it with:</p>
 
-<p>Recently, I worked on a piece of code that was written in Java. The time constraints were tight and the code was not legible or well constructed. I came in and was immediately stressed out. I did my best to figure out things but it took me an age to get the program to a state where it could work. In the end, it did (and you'll see the results on Sky1 sometime) but the originator of the code confessed he wasn't a programmer. But there we have it. Unless you practice the forefist-punch of programming, you can't make the good stuff.</p>
+<p> sudo ./configure --prefix=/opt/nginx --user=www-data --group=www-data --with-http_ssl_module --with-ipv6</p>
 
-<p>Ok, this is probably well known in other disciplines but when you have been programming for a while and working for different clients and on different projects to tight deadlines, what exercise can one do that is similar to the forefist punch? Im not sure I know the answer. My previous little knightmare bash script might be seen as such a thing. Maybe its the python scraper I wrote to look for places to live in London? I suspect other programmers and creative types have their practices. The idea of the speedproject is one. Set a time limit and see how far you can get. Of course, the last thing you want to do is step back to something simple and non-job/non-client critical but I think your practice would improve.</p>
+<p>You can then hit make. There are lots of modules and other things you can build. At the moment, ssl and ipv6 are the most important to me right now.</p>
 
-<p>I suspect I'll need to break out the C book again :)</p>
+<p>Nginx config files are quite easy to understand and it's quite easy to get a site up and running. In the case of Django, I went with the <a href="https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/">FastCGI</a> route which seemed the easiest at the time (uWSGI might be better). This means you need to run your Django in a seperate process. Using a Linux <em>screen</em> you can do something like this:</p>
+
+<p> su www-data -c './manage.py runfcgi method=prefork daemonize=false socket=/tmp/section9.sock pidfile=django.pid maxrequests=100'</p>
+
+<p>The <em>maxrequests</em> variable is very important. Without it, I noticed a lot of processes waiting for IO when I studied the site using <em>top</em>. So far, that little line has helped make things faster.</p>
+
+<p>You can then setup Nginx with Django a little like this:</p>
+
+<p> server {</p>
+
+<pre><code>listen 80;
+server_name www.anneblundell.com;
+rewrite ^/(.*) http://anneblundell.com/$1 permanent;
+</code></pre>
+
+<p> }</p>
+
+<p> server {</p>
+
+<pre><code>    server_name anneblundell.com;
+
+    access_log  /srv/www/anneblundell.com/logs/nginx_access.log;
+    error_log /srv/www/anneblundell.com/logs/nginx_error.log;
+
+    location /media {
+    root /srv/www/anneblundell.com/public_html/AnneBlundell/;
+}
+
+location / {
+    root /srv/www/anneblundell.com/public_html/AnneBlundell;
+    fastcgi_pass unix:/tmp/anneblundell.sock;
+
+    fastcgi_param PATH_INFO $fastcgi_script_name;
+
+    fastcgi_param REQUEST_METHOD $request_method;
+    fastcgi_param CONTENT_TYPE $content_type;
+    fastcgi_param CONTENT_LENGTH $content_length;
+    fastcgi_param QUERY_STRING $query_string;
+    fastcgi_pass_header Authorization;
+    fastcgi_param  SERVER_ADDR        $server_addr;
+    fastcgi_param  SERVER_PORT        $server_port;
+    fastcgi_param  SERVER_NAME        $server_name;
+    fastcgi_param  SERVER_PROTOCOL    $server_protocol; 
+    fastcgi_intercept_errors off;
+}   
+</code></pre>
+
+<p> }</p>
+
+<p>So Django runs ok for now. You can write down all the <em>fastcgi_params</em> in an include file to make things a little easier.</p>
+
+<p>But what about a simple Python Script? For Denied, I needed to query a text file, parse it, and present json on request. To do that, uWSGI came to mind. Use <em>pip</em> to install uwsi and then:</p>
+
+<p> sudo su -c "uwsgi --pythonpath /srv/www/section9.co.uk/public_html/python --uid www-data --module wsgi_configuration_module -s /tmp/uwsgi.sock"</p>
+
+<p>This creates a socket for which we can use with Nginx to grab our data. <a href="http://kbeezie.com/view/circuits-nginx-uwsgi/">This Guide</a> is quite good for setting up Nginx to talk to a process.</p>
+
+<p>So Nginx takes care of a lot of things. One issue I have is dealing with Mediawiki. Annoyingly, there is quite a large slowdown in the move from Apache to Nginx and I've yet to find out the issue; likely it is my novice setup of php5-fpm. Quite annoying really.</p>
+
+<p>It's quite easy to setup static pages - simply copy the simple example config, soft link and you are done. I've yet to attempt a setup with <em>Ruby on Rails</em> yet as Im reading into <a href="https://github.com/blog/517-unicorn">Unicorn</a> and other such deployment strategies. I'll let you know how it goes.</p>
 
 	</div>
 </div>   
@@ -68,6 +132,8 @@
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2011/09/16/Running-with-nginx.html">Running with Nginx</a> &dash; <abbr>16 Sep 2011</abbr></li>
 		
 			<li><a href="/2011/09/09/Forefist-punch.html">Forefist Punch</a> &dash; <abbr>09 Sep 2011</abbr></li>
 		
