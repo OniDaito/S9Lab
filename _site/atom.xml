@@ -4,13 +4,35 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-09-25T22:26:19+01:00</updated>
+ <updated>2011-10-05T11:53:02+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Defating Firewalls</title>
+   <link href="http://lab.section9.co.uk/2011/10/05/Defeating-Firewalls.html"/>
+   <updated>2011-10-05T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/10/05/Defeating-Firewalls</id>
+   <content type="html">&lt;p&gt;In addition to my own business, I work part-time over at the &lt;a href=&quot;http://www.arts.ac.uk&quot;&gt;University of the Arts&lt;/a&gt; helping out students and making cool things. The problem with such large places are their draconian I.T rules. Of course the inquistive finds ways around these. I have a pressing need for SSH - it's something any tech professional can't do without. You just can't. Port 22 is the most sacred of all ports and having it blocked was a pain.&lt;/p&gt;
+
+&lt;p&gt;It was suggested that I use &lt;a href=&quot;https://www.torproject.org/&quot;&gt;tor&lt;/a&gt; which I've had installed for a while on my Mac. I found a handy little script using the amazing &lt;a href=&quot;http://netcat.sourceforge.net/&quot;&gt;netcat&lt;/a&gt; to move data over Vidalia:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh -o ProxyCommand=&quot;nc -X 4 -x localhost:9050 %h %p&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This worked fine but the problem with tor has always been it's speed. Mileage certainly varies but even SSH proved too unresponsive. I needed another option.&lt;/p&gt;
+
+&lt;p&gt;Typically, a second IP is needed to proxy traffic over a port such as 80. The problem is I didn't have a second machine available (my machine at home isn't setup yet for this kind of thing). However, after chatting with the &lt;em&gt;#london-hack-space&lt;/em&gt; crew, I was reminded of &lt;a href=&quot;http://www.rutschle.net/tech/sslh.shtml&quot;&gt;sslh&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;sslh provides a proxy service on your webserver to effectively split any traffic arriving on port 443. Now I run a few websites on port 443 so this solution seemed perfect. sslh is included in the debian and ubuntu repositories. The only configuration needed is to swap out the listen addresses in nginx or apache to localhost and place sslh infront, listening on your servers external ip.&lt;/p&gt;
+
+&lt;p&gt;The speed is certainly much greater. Now I can get to work fixing my nginx setup!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Node and Mongo</title>

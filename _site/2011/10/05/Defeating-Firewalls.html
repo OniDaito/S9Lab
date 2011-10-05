@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>>D100 is back! Time to shoot some graves</title>
+	<title>Defating Firewalls</title>
 	<meta name="author" content="Benjamin Blundell" />
 	<link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
 	<link href="http://lab.section9.co.uk/css/grid-900.css" rel="stylesheet"></link>
@@ -34,14 +34,27 @@
   	<div class="post">
   <div class="post-meta col span-2">
     <ul class="nav">
-      <li>18 Jul 2010</li>
+      <li>05 Oct 2011</li>
 	<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>         
     </ul>
   </div>
 
   <div class="post-content span-9 nudge-2">
-  	<h3>>D100 is back! Time to shoot some graves</h3>
-   <blockquote><p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_WNXP2eEZSdg/TEONJUDy0DI/AAAAAAAAAsY/LZHWa_VGRD4/s1600/DSC_2998.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 213px; height: 320px;" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TEONJUDy0DI/AAAAAAAAAsY/LZHWa_VGRD4/s320/DSC_2998.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5495391161465098290" /></a><br /><span class="bblack">Yes indeed! My D100 went away to be cleaned and came back....well worse apparently! One can notice problems if you look really hard. However I never realised how much I missed it. Im glad its back and so I made haste this evening to the nearby graveyard over at Hampstead.</span><br /><span class="bblack">The location is gorgeous and there are a few famous tombs there too! Im a bit out of practice and since it's monday tomorrow didn't stay too long but I managed to take what I thought was a good comeback set. I had so much fun and theres some funky video to come as well!</span><br /><span class="bblack"><a href="http://www.flickr.com/photos/section9/sets/72157624531350138/">Checkout my little Graveyard shoot on flickr</a></span></p></blockquote>
+  	<h3>Defating Firewalls</h3>
+   <p>In addition to my own business, I work part-time over at the <a href="http://www.arts.ac.uk">University of the Arts</a> helping out students and making cool things. The problem with such large places are their draconian I.T rules. Of course the inquistive finds ways around these. I have a pressing need for SSH - it's something any tech professional can't do without. You just can't. Port 22 is the most sacred of all ports and having it blocked was a pain.</p>
+
+<p>It was suggested that I use <a href="https://www.torproject.org/">tor</a> which I've had installed for a while on my Mac. I found a handy little script using the amazing <a href="http://netcat.sourceforge.net/">netcat</a> to move data over Vidalia:</p>
+
+<pre><code>ssh -o ProxyCommand="nc -X 4 -x localhost:9050 %h %p"
+</code></pre>
+
+<p>This worked fine but the problem with tor has always been it's speed. Mileage certainly varies but even SSH proved too unresponsive. I needed another option.</p>
+
+<p>Typically, a second IP is needed to proxy traffic over a port such as 80. The problem is I didn't have a second machine available (my machine at home isn't setup yet for this kind of thing). However, after chatting with the <em>#london-hack-space</em> crew, I was reminded of <a href="http://www.rutschle.net/tech/sslh.shtml">sslh</a>.</p>
+
+<p>sslh provides a proxy service on your webserver to effectively split any traffic arriving on port 443. Now I run a few websites on port 443 so this solution seemed perfect. sslh is included in the debian and ubuntu repositories. The only configuration needed is to swap out the listen addresses in nginx or apache to localhost and place sslh infront, listening on your servers external ip.</p>
+
+<p>The speed is certainly much greater. Now I can get to work fixing my nginx setup!</p>
 
   </div>
 </div>

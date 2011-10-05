@@ -36,59 +36,26 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>25 Sep 2011</li>     
+          <li>05 Oct 2011</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2011/09/25/Node-and-Mongo.html">Node and Mongo</a></h3>
-    	 <p>Recently, I've been working with a good client on a project that requires network communication between two sites and provision for a history feature. One of the collaborators is a fan of <a href="http://www.mongodb.org/">mongodb</a> and <a href="http://nodejs.org/">nodejs</a> - two rather nifty projects that I've been meaning to work with for a while. I had no idea but dived in anyway.</p>
+    		<h3><a href="/2011/10/05/Defeating-Firewalls.html">Defating Firewalls</a></h3>
+    	 <p>In addition to my own business, I work part-time over at the <a href="http://www.arts.ac.uk">University of the Arts</a> helping out students and making cool things. The problem with such large places are their draconian I.T rules. Of course the inquistive finds ways around these. I have a pressing need for SSH - it's something any tech professional can't do without. You just can't. Port 22 is the most sacred of all ports and having it blocked was a pain.</p>
 
-<p>Node appears to have a set of modules which you can install with <a href="http://npmjs.org/">npm</a>. These modules are placed within the directory in which you run npm which is presumably where your node script is. One useful modules is <a href="http://expressjs.com/">express</a> which sets up basic handling for a website. You can then write code such as:</p>
+<p>It was suggested that I use <a href="https://www.torproject.org/">tor</a> which I've had installed for a while on my Mac. I found a handy little script using the amazing <a href="http://netcat.sourceforge.net/">netcat</a> to move data over Vidalia:</p>
 
-<pre><code>var Express = require('express');
-var app = Express.createServer();
-
-app.get('/', function(req, res){
-    res.send('Hello World');
-});
-
-app.listen(3001);
+<pre><code>ssh -o ProxyCommand="nc -X 4 -x localhost:9050 %h %p"
 </code></pre>
 
-<p>Of course, post requests, paths and all the usual gubbins are supported.</p>
+<p>This worked fine but the problem with tor has always been it's speed. Mileage certainly varies but even SSH proved too unresponsive. I needed another option.</p>
 
-<p>Mongo has a set of drivers that work with node as well. I used the <a href="https://github.com/christkv/node-mongodb-native">Mongodb native driver</a> which seemed pretty good, <em>except</em> for one important thing - the syntax is not quite the same as the examples given on the mongodb website. It took me sometime to realise why my queries weren't working.</p>
+<p>Typically, a second IP is needed to proxy traffic over a port such as 80. The problem is I didn't have a second machine available (my machine at home isn't setup yet for this kind of thing). However, after chatting with the <em>#london-hack-space</em> crew, I was reminded of <a href="http://www.rutschle.net/tech/sslh.shtml">sslh</a>.</p>
 
-<pre><code>var Db = require('mongodb').Db;
-var Connection = require('mongodb').Connection;
-var Server = require('mongodb').Server;
+<p>sslh provides a proxy service on your webserver to effectively split any traffic arriving on port 443. Now I run a few websites on port 443 so this solution seemed perfect. sslh is included in the debian and ubuntu repositories. The only configuration needed is to swap out the listen addresses in nginx or apache to localhost and place sslh infront, listening on your servers external ip.</p>
 
-var client = new Db('testing', new Server("127.0.0.1", 27017, {})),
-    test = function (err, collection) {
-    var Figure = {id: 1, limbs : [ [1.0,5.0,10.0] , [-1,1,1]  ] };
-    collection.insert( Figure , function(err, docs) {
-
-        // Locate all the entries using find
-        collection.find().toArray(function(err, results) {
-            console.log(results);    
-            // Let's close the db
-            client.close();
-        });
-    });
-};
-
-client.open(function(err, p_client) {
-    client.collection('test_insert', test);
-});
-</code></pre>
-
-<p>You can install mongodb with <a href="https://github.com/mxcl/homebrew">homebrew</a> and run it locally on a mac with</p>
-
-<pre><code>sudo mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
-</code></pre>
-
-<p>Fairly straight forward. Sadly, for use in this project, it turned out that using boost::asio with tcp::iostreams are superior. I still haven't managed to work with streams in nodejs yet, though they do exist.</p>
+<p>The speed is certainly much greater. Now I can get to work fixing my nginx setup!</p>
 
 	</div>
 </div>   
@@ -102,6 +69,8 @@ client.open(function(err, p_client) {
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2011/10/05/Defeating-Firewalls.html">Defating Firewalls</a> &dash; <abbr>05 Oct 2011</abbr></li>
 		
 			<li><a href="/2011/09/25/Node-and-Mongo.html">Node and Mongo</a> &dash; <abbr>25 Sep 2011</abbr></li>
 		
