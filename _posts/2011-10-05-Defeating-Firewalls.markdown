@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Defating Firewalls
+title: Defeating Firewalls
 ---
 
 In addition to my own business, I work part-time over at the [University of the Arts](http://www.arts.ac.uk) helping out students and making cool things. The problem with such large places are their draconian I.T rules. Of course the inquistive finds ways around these. I have a pressing need for SSH - it's something any tech professional can't do without. You just can't. Port 22 is the most sacred of all ports and having it blocked was a pain.
