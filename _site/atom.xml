@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-10-05T11:56:07+01:00</updated>
+ <updated>2011-10-07T15:08:48+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -91,9 +91,9 @@ client.open(function(err, p_client) {
  
  <entry>
    <title>Running with Nginx</title>
-   <link href="http://lab.section9.co.uk/2011/09/16/Running-with-nginx+copy.html"/>
+   <link href="http://lab.section9.co.uk/2011/09/16/Running-with-nginx.html"/>
    <updated>2011-09-16T00:00:00+01:00</updated>
-   <id>http://lab.section9.co.uk/2011/09/16/Running-with-nginx copy</id>
+   <id>http://lab.section9.co.uk/2011/09/16/Running-with-nginx</id>
    <content type="html">&lt;p&gt;So I've decided to play with &lt;a href=&quot;http://wiki.nginx.org/&quot;&gt;Nginx&lt;/a&gt; on my server, leaving Apache behind. I must admit, I've had a lot of fun with it. It appears to be a good front end for funneling web requests to other services. At the moment, I have various things running on my server such as:&lt;/p&gt;
 
 &lt;ul&gt;
