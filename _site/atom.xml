@@ -4,13 +4,34 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-10-07T15:08:48+01:00</updated>
+ <updated>2011-10-14T13:01:51+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Late Night Coding</title>
+   <link href="http://lab.section9.co.uk/2011/10/14/Late-Night-Coding.html"/>
+   <updated>2011-10-14T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/10/14/Late-Night-Coding</id>
+   <content type="html">&lt;p&gt;I've been quite busy of late, again, not with the real job but my &lt;em&gt;real&lt;/em&gt; job. Recently, I was up in Manchester at the &lt;a href=&quot;http://www.amaze.com&quot;&gt;Amaze&lt;/a&gt; offices, working solidly for 3 days on a kinect based project for the &lt;a href=&quot;http://www.thelowry.com&quot;&gt;Lowry&lt;/a&gt;. It's still under wraps at the moment but progress has been made. The other partners felt the need to spend time getting the basics nailed. Working piecemeal on a project is only fine for so long. When things need to get done, the tough get going.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm7.static.flickr.com/6111/6231847697_0e73bf9cf2.jpg&quot; alt=&quot;Looking a little knackered I think&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For 3 days, there was nothing but drizzle and overcast skies. It's fair to say that Manchester's awful weather actually helps with the Kinect's camera. In bright sunlight, forget it! I never thought I'd be glad to see the greyeness of the north.&lt;/p&gt;
+
+&lt;p&gt;To be complete, we tested our setup in the evening also. It turned out that night-time results are better though only marginally.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm7.static.flickr.com/6167/6231840525_f420483561.jpg&quot; alt=&quot;Looking a little knackered I think&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Testing in Manchester at night does have unique problems. Standing around with a bright &lt;em&gt;apple&lt;/em&gt; logo attracts a certain kind of person. A bunch of scallies decided to pop over and have a chat. To be fair, we actually learnt a lot - they were playful and wanted to see how the code worked. Some of them had only about 3 teeth which was quite worrying. Neverthess, one of them asked what I'd written the code in. I told him Cinder and he said he had written some basic 'point and click' games at college. I got the impression that secretly, he wanted to be a geek. I hope I've helped him with that.&lt;/p&gt;
+
+&lt;p&gt;Since I've caught a cold as well, I'm quite knackered, but if you are in Manchester early next month, be sure to checkout Piccadilly Gardens.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Defeating Firewalls</title>
