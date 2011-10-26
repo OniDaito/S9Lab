@@ -11,7 +11,8 @@ This program is quite useful - it's a great way for doing remote admin. In addit
 
 Sometimes its not setup remotely. This will do that for you:
 
-    sudo sh -c "/bin/echo -n enabled > /Library/Preferences/com.apple.ScreenSharing.launchd"
+    sudo sh -c "/bin/echo -n enabled > 
+    /Library/Preferences/com.apple.ScreenSharing.launchd"
 
 So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:
 
@@ -41,7 +42,8 @@ Of course, XML is not so bash friendly (unless you know of cool XML parsing in b
 
 The beauty of OSX is that there are command line versions of various GUI programmers such as:
 
-    sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ \(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
+    sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ 
+    \(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
 
 This allows you to install things inside an mpkg. Very handy. Mounting DMG files is also easy with:
 
@@ -55,7 +57,8 @@ Just as you would on the *nix*
 
 The problem with using *sudo* a lot is that we need to keep typing passwords all the time. You can use the following *ENV* variable to launch a window in OSX to type this in:
 
-    env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
+    env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 
+    'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
 
 
 askpass is a bash program that looks like this:
