@@ -51,14 +51,18 @@
 
 <p>Sometimes its not setup remotely. This will do that for you:</p>
 
-<pre><code>sudo sh -c "/bin/echo -n enabled &gt; /Library/Preferences/com.apple.ScreenSharing.launchd"
+<pre><code>sudo sh -c "/bin/echo -n enabled &gt; 
+/Library/Preferences/com.apple.ScreenSharing.launchd"
 </code></pre>
 
 <p>So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:</p>
 
-<p>1) create the .ssh directory
-2) create authorized_hosts within the .ssh dir
-3) copy over the contents of your own id_rsa.pub</p>
+<ol>
+<li>create the .ssh directory</li>
+<li>create authorized_hosts within the .ssh dir</li>
+<li>copy over the contents of your own id_rsa.pub</li>
+</ol>
+
 
 <p>This took quite a while as you can imagine. But even before this, I had no idea of the IP addresses for the machines. There is no internal DNS or anthing so out comes out <em>nmap</em></p>
 
@@ -82,7 +86,8 @@ for element in root.iter():
 
 <p>The beauty of OSX is that there are command line versions of various GUI programmers such as:</p>
 
-<pre><code>sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ \(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
+<pre><code>sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ 
+\(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
 </code></pre>
 
 <p>This allows you to install things inside an mpkg. Very handy. Mounting DMG files is also easy with:</p>
@@ -99,7 +104,8 @@ for element in root.iter():
 
 <p>The problem with using <em>sudo</em> a lot is that we need to keep typing passwords all the time. You can use the following <em>ENV</em> variable to launch a window in OSX to type this in:</p>
 
-<pre><code>env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
+<pre><code>env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 
+'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
 </code></pre>
 
 <p>askpass is a bash program that looks like this:</p>

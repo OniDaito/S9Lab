@@ -16,9 +16,9 @@ Sometimes its not setup remotely. This will do that for you:
 
 So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:
 
-1) create the .ssh directory
-2) create authorized_hosts within the .ssh dir
-3) copy over the contents of your own id_rsa.pub
+1. create the .ssh directory
+2. create authorized_hosts within the .ssh dir
+3. copy over the contents of your own id_rsa.pub
 
 This took quite a while as you can imagine. But even before this, I had no idea of the IP addresses for the machines. There is no internal DNS or anthing so out comes out *nmap*
 

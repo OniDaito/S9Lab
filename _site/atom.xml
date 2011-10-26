@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-10-26T22:52:43+01:00</updated>
+ <updated>2011-10-26T22:59:59+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -26,14 +26,18 @@
 
 &lt;p&gt;Sometimes its not setup remotely. This will do that for you:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo sh -c &quot;/bin/echo -n enabled &amp;gt; /Library/Preferences/com.apple.ScreenSharing.launchd&quot;
+&lt;pre&gt;&lt;code&gt;sudo sh -c &quot;/bin/echo -n enabled &amp;gt; 
+/Library/Preferences/com.apple.ScreenSharing.launchd&quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:&lt;/p&gt;
 
-&lt;p&gt;1) create the .ssh directory
-2) create authorized_hosts within the .ssh dir
-3) copy over the contents of your own id_rsa.pub&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;create the .ssh directory&lt;/li&gt;
+&lt;li&gt;create authorized_hosts within the .ssh dir&lt;/li&gt;
+&lt;li&gt;copy over the contents of your own id_rsa.pub&lt;/li&gt;
+&lt;/ol&gt;
+
 
 &lt;p&gt;This took quite a while as you can imagine. But even before this, I had no idea of the IP addresses for the machines. There is no internal DNS or anthing so out comes out &lt;em&gt;nmap&lt;/em&gt;&lt;/p&gt;
 
@@ -57,7 +61,8 @@ for element in root.iter():
 
 &lt;p&gt;The beauty of OSX is that there are command line versions of various GUI programmers such as:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ \(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
+&lt;pre&gt;&lt;code&gt;sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ 
+\(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This allows you to install things inside an mpkg. Very handy. Mounting DMG files is also easy with:&lt;/p&gt;
@@ -74,7 +79,8 @@ for element in root.iter():
 
 &lt;p&gt;The problem with using &lt;em&gt;sudo&lt;/em&gt; a lot is that we need to keep typing passwords all the time. You can use the following &lt;em&gt;ENV&lt;/em&gt; variable to launch a window in OSX to type this in:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
+&lt;pre&gt;&lt;code&gt;env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 
+'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;askpass is a bash program that looks like this:&lt;/p&gt;
