@@ -1,0 +1,98 @@
+---
+layout: post
+title: OSX Admin for the lulz
+---
+
+At one of my jobs, I've been thrown into the deep end when it comes to sysadmin. I've always done this a little but largely on a Linux based platform. As I'm involved with an Arts University, most of the machines here are Apple based. It's a little bit different in certain cases and there are some fun things already installed. The first is the *screen sharing* app.
+
+    /System/Library/CoreServices/Screen Sharing.app
+
+This program is quite useful - it's a great way for doing remote admin. In addition, if another user is logged in *you get to see what they are doing* - It's genius and also a little scary.
+
+Sometimes its not setup remotely. This will do that for you:
+
+    sudo sh -c "/bin/echo -n enabled > /Library/Preferences/com.apple.ScreenSharing.launchd"
+
+So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:
+
+1) create the .ssh directory
+2) create authorized_hosts within the .ssh dir
+3) copy over the contents of your own id_rsa.pub
+
+This took quite a while as you can imagine. But even before this, I had no idea of the IP addresses for the machines. There is no internal DNS or anthing so out comes out *nmap*
+
+    nmap -oX results.xml -sn -n 10.130.144.0/24
+
+I love nmap and I need to learn how to use it better. This produces an XML list of the machines that are currently running. Sadly, I could not figure out how to return *just* the iMacs so there are some Windows XP machines and routers in there too.
+
+Of course, XML is not so bash friendly (unless you know of cool XML parsing in bash - hit me up if you do). This is where Python comes in:
+    
+    from lxml import etree
+    f = open(args.iplist,'r')
+    xml = f.read()
+    f.close()
+    root = etree.fromstring(xml)
+    for element in root.iter():
+        if element.tag.__str__() == 'address':
+
+
+
+*subprocess* is still a bit of a dark art to me. The *shell=True* bit is quite important as it opens a remote shell. Also the *-t* argument to ssh helps.
+
+The beauty of OSX is that there are command line versions of various GUI programmers such as:
+
+    sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ \(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
+
+This allows you to install things inside an mpkg. Very handy. Mounting DMG files is also easy with:
+
+    hdid
+
+Unmounting, you can use:
+
+    umount
+
+Just as you would on the *nix*
+
+The problem with using *sudo* a lot is that we need to keep typing passwords all the time. You can use the following *ENV* variable to launch a window in OSX to type this in:
+
+    env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
+
+
+askpass is a bash program that looks like this:
+
+    #! /bin/sh  
+    #
+    # An SSH_ASKPASS command for MacOS X 
+    #
+    # Author: Joseph Mocker, Sun Microsystems  
+
+    #
+    # To use this script:
+    #     setenv SSH_ASKPASS "macos-askpass"
+    #     setenv DISPLAY ":0"
+    #  
+    TITLE=${MACOS_ASKPASS_TITLE:-"SSH"}  
+    DIALOG="display dialog \"$@\" default answer \"\" with title \"$TITLE\""
+    DIALOG="$DIALOG with icon caution with hidden answer"  
+    result=`osascript -e 'tell application "Finder"' -e "activate"  -e "$DIALOG" -e 'end tell'`  
+    if [ "$result" = "" ]; then
+        exit 1
+    else
+        echo "$result" | sed -e 's/^text returned://' -e 's/, button returned:.*$//'
+        exit 0
+    fi  
+
+
+Notice the handy *osascript -e* command. Thats pretty handy as well.
+
+I believe there is a python library for doing simultaneous installs as well called [Fabric](http://docs.fabfile.org/en/1.3.1/index.html) that I reckon will make this go uber-smooth in the future!
+
+Finally, to remove password entru for sudo, use:
+
+    sudo visudo
+
+adding the following line:
+
+    <username>  ALL=NOPASSWD: ALL
+
+replacing <username> with the user you are using to do all the installs. So far, Im getting there. I will have many devices under my command! It was grossly inefficent but a good way to learn a great many things. Remember the process is what counts people!

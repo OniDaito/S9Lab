@@ -4,13 +4,121 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-10-19T20:53:03+01:00</updated>
+ <updated>2011-10-26T22:52:43+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>OSX Admin for the lulz</title>
+   <link href="http://lab.section9.co.uk/2011/10/26/OSX-Admin.html"/>
+   <updated>2011-10-26T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2011/10/26/OSX-Admin</id>
+   <content type="html">&lt;p&gt;At one of my jobs, I've been thrown into the deep end when it comes to sysadmin. I've always done this a little but largely on a Linux based platform. As I'm involved with an Arts University, most of the machines here are Apple based. It's a little bit different in certain cases and there are some fun things already installed. The first is the &lt;em&gt;screen sharing&lt;/em&gt; app.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/System/Library/CoreServices/Screen Sharing.app
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This program is quite useful - it's a great way for doing remote admin. In addition, if another user is logged in &lt;em&gt;you get to see what they are doing&lt;/em&gt; - It's genius and also a little scary.&lt;/p&gt;
+
+&lt;p&gt;Sometimes its not setup remotely. This will do that for you:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo sh -c &quot;/bin/echo -n enabled &amp;gt; /Library/Preferences/com.apple.ScreenSharing.launchd&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:&lt;/p&gt;
+
+&lt;p&gt;1) create the .ssh directory
+2) create authorized_hosts within the .ssh dir
+3) copy over the contents of your own id_rsa.pub&lt;/p&gt;
+
+&lt;p&gt;This took quite a while as you can imagine. But even before this, I had no idea of the IP addresses for the machines. There is no internal DNS or anthing so out comes out &lt;em&gt;nmap&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nmap -oX results.xml -sn -n 10.130.144.0/24
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I love nmap and I need to learn how to use it better. This produces an XML list of the machines that are currently running. Sadly, I could not figure out how to return &lt;em&gt;just&lt;/em&gt; the iMacs so there are some Windows XP machines and routers in there too.&lt;/p&gt;
+
+&lt;p&gt;Of course, XML is not so bash friendly (unless you know of cool XML parsing in bash - hit me up if you do). This is where Python comes in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from lxml import etree
+f = open(args.iplist,'r')
+xml = f.read()
+f.close()
+root = etree.fromstring(xml)
+for element in root.iter():
+    if element.tag.__str__() == 'address':
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;subprocess&lt;/em&gt; is still a bit of a dark art to me. The &lt;em&gt;shell=True&lt;/em&gt; bit is quite important as it opens a remote shell. Also the &lt;em&gt;-t&lt;/em&gt; argument to ssh helps.&lt;/p&gt;
+
+&lt;p&gt;The beauty of OSX is that there are command line versions of various GUI programmers such as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ \(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This allows you to install things inside an mpkg. Very handy. Mounting DMG files is also easy with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hdid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Unmounting, you can use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;umount
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Just as you would on the &lt;em&gt;nix&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem with using &lt;em&gt;sudo&lt;/em&gt; a lot is that we need to keep typing passwords all the time. You can use the following &lt;em&gt;ENV&lt;/em&gt; variable to launch a window in OSX to type this in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;askpass is a bash program that looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#! /bin/sh  
+#
+# An SSH_ASKPASS command for MacOS X 
+#
+# Author: Joseph Mocker, Sun Microsystems  
+
+#
+# To use this script:
+#     setenv SSH_ASKPASS &quot;macos-askpass&quot;
+#     setenv DISPLAY &quot;:0&quot;
+#  
+TITLE=${MACOS_ASKPASS_TITLE:-&quot;SSH&quot;}  
+DIALOG=&quot;display dialog \&quot;$@\&quot; default answer \&quot;\&quot; with title \&quot;$TITLE\&quot;&quot;
+DIALOG=&quot;$DIALOG with icon caution with hidden answer&quot;  
+result=`osascript -e 'tell application &quot;Finder&quot;' -e &quot;activate&quot;  -e &quot;$DIALOG&quot; -e 'end tell'`  
+if [ &quot;$result&quot; = &quot;&quot; ]; then
+    exit 1
+else
+    echo &quot;$result&quot; | sed -e 's/^text returned://' -e 's/, button returned:.*$//'
+    exit 0
+fi  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice the handy &lt;em&gt;osascript -e&lt;/em&gt; command. Thats pretty handy as well.&lt;/p&gt;
+
+&lt;p&gt;I believe there is a python library for doing simultaneous installs as well called &lt;a href=&quot;http://docs.fabfile.org/en/1.3.1/index.html&quot;&gt;Fabric&lt;/a&gt; that I reckon will make this go uber-smooth in the future!&lt;/p&gt;
+
+&lt;p&gt;Finally, to remove password entru for sudo, use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo visudo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;adding the following line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;username&amp;gt;  ALL=NOPASSWD: ALL
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;replacing &lt;username&gt; with the user you are using to do all the installs. So far, Im getting there. I will have many devices under my command! It was grossly inefficent but a good way to learn a great many things. Remember the process is what counts people!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Solar Minty Boost Mark2</title>
