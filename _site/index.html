@@ -36,118 +36,43 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>26 Oct 2011</li>     
+          <li>02 Nov 2011</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2011/10/26/OSX-Admin.html">OSX Admin for the lulz</a></h3>
-    	 <p>At one of my jobs, I've been thrown into the deep end when it comes to sysadmin. I've always done this a little but largely on a Linux based platform. As I'm involved with an Arts University, most of the machines here are Apple based. It's a little bit different in certain cases and there are some fun things already installed. The first is the <em>screen sharing</em> app.</p>
+    		<h3><a href="/2011/11/02/Mongo-Fun.html">MongoDB Fun with Cinder</a></h3>
+    	 <p>So I've been playing around with <a href="http://www.mongodb.org">MongoDB</a> for a little while now. Im certainly no expert but I get the feeling its pretty darn handy for smaller apps and webservers doing simple things or many, many small things. At the moment, I'm using it with an art installation, written in <a href="http://libcinder.org/">Cinder</a> that records the positions of various figures over time. The data is not very relational (in fact, it isn't at all) and so having a mongo setup seemed like the thing to do.</p>
 
-<pre><code>/System/Library/CoreServices/Screen Sharing.app
+<p>Running mongob on OSX is quite easy if you use <a href="https://github.com/mxcl/homebrew">Brew</a> (and you <em>really</em> should be). Install mongo and then call:</p>
+
+<pre><code>sudo mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
 </code></pre>
 
-<p>This program is quite useful - it's a great way for doing remote admin. In addition, if another user is logged in <em>you get to see what they are doing</em> - It's genius and also a little scary.</p>
+<p>You can also send the <em>--rest</em> option which allows you to get some interesting stats on what is going on, which is handy.</p>
 
-<p>Sometimes its not setup remotely. This will do that for you:</p>
+<p>At first, I used a <a href="http://nodejs.org/">Node.js</a> front-end and sent all my database queries over the network interface. Thats generally a pretty bad way of doing things. I started to look into the C++ driver and I began to hit some interesting problems.</p>
 
-<pre><code>sudo sh -c "/bin/echo -n enabled &gt; 
-/Library/Preferences/com.apple.ScreenSharing.launchd"
+<p>I downloaded the <a href="http://www.mongodb.org/pages/viewpage.action?pageId=133415">Mongo C++ Driver</a> and compiled up their example. The first thing is to generally follow the rules for the linux build.</p>
+
+<p> This runs quite well but trying to integrate this with <a href="http://libcinder.org/">Cinder</a> caused a lot of problems, largely because both of them do different things with boost which is no good. I had a real struggle on my hands. In the end, I couldn't quite figure out what to do so I used a classic solution; simply include the headers seperately and communicate between Mongo and Cinder using <em>std::string</em> only. Its not the best thing to do but it works.</p>
+
+<p>Essentially create a class that bridges the gap and only includes the standard libraries. I rebuilt mongo with the version of boost that comes with cinder which was <em>1.44</em> when I built my version. This can be done by downloading the particular version from the <a href="http://www.boost.org/">boost website</a> and installing it, then rebuilding mongo. Its not the best solution but it does work.</p>
+
+<p>As mongo is running, you can pull up your terminal and login to your database with</p>
+
+<pre><code>mongo &lt;databasename&gt;
 </code></pre>
 
-<p>So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:</p>
+<p>You can issue commands such as:</p>
 
-<ol>
-<li>create the .ssh directory</li>
-<li>create authorized_hosts within the .ssh dir</li>
-<li>copy over the contents of your own id_rsa.pub</li>
-</ol>
-
-
-<p>This took quite a while as you can imagine. But even before this, I had no idea of the IP addresses for the machines. There is no internal DNS or anthing so out comes out <em>nmap</em></p>
-
-<pre><code>nmap -oX results.xml -sn -n 10.130.144.0/24
+<pre><code>db.&lt;table&gt;.count()
 </code></pre>
 
-<p>I love nmap and I need to learn how to use it better. This produces an XML list of the machines that are currently running. Sadly, I could not figure out how to return <em>just</em> the iMacs so there are some Windows XP machines and routers in there too.</p>
+<p>and
+   db.<table>.drop()</p>
 
-<p>Of course, XML is not so bash friendly (unless you know of cool XML parsing in bash - hit me up if you do). This is where Python comes in:</p>
-
-<pre><code>from lxml import etree
-f = open(args.iplist,'r')
-xml = f.read()
-f.close()
-root = etree.fromstring(xml)
-for element in root.iter():
-    if element.tag.__str__() == 'address':
-</code></pre>
-
-<p><em>subprocess</em> is still a bit of a dark art to me. The <em>shell=True</em> bit is quite important as it opens a remote shell. Also the <em>-t</em> argument to ssh helps.</p>
-
-<p>The beauty of OSX is that there are command line versions of various GUI programmers such as:</p>
-
-<pre><code>sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ 
-\(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
-</code></pre>
-
-<p>This allows you to install things inside an mpkg. Very handy. Mounting DMG files is also easy with:</p>
-
-<pre><code>hdid
-</code></pre>
-
-<p>Unmounting, you can use:</p>
-
-<pre><code>umount
-</code></pre>
-
-<p>Just as you would on the <em>nix</em></p>
-
-<p>The problem with using <em>sudo</em> a lot is that we need to keep typing passwords all the time. You can use the following <em>ENV</em> variable to launch a window in OSX to type this in:</p>
-
-<pre><code>env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 
-'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
-</code></pre>
-
-<p>askpass is a bash program that looks like this:</p>
-
-<pre><code>#! /bin/sh  
-#
-# An SSH_ASKPASS command for MacOS X 
-#
-# Author: Joseph Mocker, Sun Microsystems  
-
-#
-# To use this script:
-#     setenv SSH_ASKPASS "macos-askpass"
-#     setenv DISPLAY ":0"
-#  
-TITLE=${MACOS_ASKPASS_TITLE:-"SSH"}  
-DIALOG="display dialog \"$@\" default answer \"\" with title \"$TITLE\""
-DIALOG="$DIALOG with icon caution with hidden answer"  
-result=`osascript -e 'tell application "Finder"' -e "activate"  -e "$DIALOG" -e 'end tell'`  
-if [ "$result" = "" ]; then
-    exit 1
-else
-    echo "$result" | sed -e 's/^text returned://' -e 's/, button returned:.*$//'
-    exit 0
-fi  
-</code></pre>
-
-<p>Notice the handy <em>osascript -e</em> command. Thats pretty handy as well.</p>
-
-<p>I believe there is a python library for doing simultaneous installs as well called <a href="http://docs.fabfile.org/en/1.3.1/index.html">Fabric</a> that I reckon will make this go uber-smooth in the future!</p>
-
-<p>Finally, to remove password entru for sudo, use:</p>
-
-<pre><code>sudo visudo
-</code></pre>
-
-<p>adding the following line:</p>
-
-<pre><code>&lt;username&gt;  ALL=NOPASSWD: ALL
-</code></pre>
-
-<p>replacing <username> with the user you are using to do all the installs. So far, Im getting there. I will have many devices under my command! It was grossly inefficent but a good way to learn a great many things. Remember the process is what counts people!</p>
+<p>and many other things besides. So far, the integration works quite well providing you have the right boost libs for both Cinder and Mongo. Performance wise, I've not had chance to find out, though we will in a week or so.</p>
 
 	</div>
 </div>   
@@ -161,6 +86,8 @@ fi
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2011/11/02/Mongo-Fun.html">MongoDB Fun with Cinder</a> &dash; <abbr>02 Nov 2011</abbr></li>
 		
 			<li><a href="/2011/10/26/OSX-Admin.html">OSX Admin for the lulz</a> &dash; <abbr>26 Oct 2011</abbr></li>
 		

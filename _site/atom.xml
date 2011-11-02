@@ -4,13 +4,52 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-10-26T22:59:59+01:00</updated>
+ <updated>2011-11-02T18:25:22+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>MongoDB Fun with Cinder</title>
+   <link href="http://lab.section9.co.uk/2011/11/02/Mongo-Fun.html"/>
+   <updated>2011-11-02T00:00:00+00:00</updated>
+   <id>http://lab.section9.co.uk/2011/11/02/Mongo-Fun</id>
+   <content type="html">&lt;p&gt;So I've been playing around with &lt;a href=&quot;http://www.mongodb.org&quot;&gt;MongoDB&lt;/a&gt; for a little while now. Im certainly no expert but I get the feeling its pretty darn handy for smaller apps and webservers doing simple things or many, many small things. At the moment, I'm using it with an art installation, written in &lt;a href=&quot;http://libcinder.org/&quot;&gt;Cinder&lt;/a&gt; that records the positions of various figures over time. The data is not very relational (in fact, it isn't at all) and so having a mongo setup seemed like the thing to do.&lt;/p&gt;
+
+&lt;p&gt;Running mongob on OSX is quite easy if you use &lt;a href=&quot;https://github.com/mxcl/homebrew&quot;&gt;Brew&lt;/a&gt; (and you &lt;em&gt;really&lt;/em&gt; should be). Install mongo and then call:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also send the &lt;em&gt;--rest&lt;/em&gt; option which allows you to get some interesting stats on what is going on, which is handy.&lt;/p&gt;
+
+&lt;p&gt;At first, I used a &lt;a href=&quot;http://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; front-end and sent all my database queries over the network interface. Thats generally a pretty bad way of doing things. I started to look into the C++ driver and I began to hit some interesting problems.&lt;/p&gt;
+
+&lt;p&gt;I downloaded the &lt;a href=&quot;http://www.mongodb.org/pages/viewpage.action?pageId=133415&quot;&gt;Mongo C++ Driver&lt;/a&gt; and compiled up their example. The first thing is to generally follow the rules for the linux build.&lt;/p&gt;
+
+&lt;p&gt; This runs quite well but trying to integrate this with &lt;a href=&quot;http://libcinder.org/&quot;&gt;Cinder&lt;/a&gt; caused a lot of problems, largely because both of them do different things with boost which is no good. I had a real struggle on my hands. In the end, I couldn't quite figure out what to do so I used a classic solution; simply include the headers seperately and communicate between Mongo and Cinder using &lt;em&gt;std::string&lt;/em&gt; only. Its not the best thing to do but it works.&lt;/p&gt;
+
+&lt;p&gt;Essentially create a class that bridges the gap and only includes the standard libraries. I rebuilt mongo with the version of boost that comes with cinder which was &lt;em&gt;1.44&lt;/em&gt; when I built my version. This can be done by downloading the particular version from the &lt;a href=&quot;http://www.boost.org/&quot;&gt;boost website&lt;/a&gt; and installing it, then rebuilding mongo. Its not the best solution but it does work.&lt;/p&gt;
+
+&lt;p&gt;As mongo is running, you can pull up your terminal and login to your database with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongo &amp;lt;databasename&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can issue commands such as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;db.&amp;lt;table&amp;gt;.count()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and
+   db.&lt;table&gt;.drop()&lt;/p&gt;
+
+&lt;p&gt;and many other things besides. So far, the integration works quite well providing you have the right boost libs for both Cinder and Mongo. Performance wise, I've not had chance to find out, though we will in a week or so.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>OSX Admin for the lulz</title>
