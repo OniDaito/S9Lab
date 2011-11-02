@@ -45,7 +45,8 @@
 
 <p>Running mongob on OSX is quite easy if you use <a href="https://github.com/mxcl/homebrew">Brew</a> (and you <em>really</em> should be). Install mongo and then call:</p>
 
-<pre><code>sudo mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
+<pre><code>sudo mongod run --config \
+/usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
 </code></pre>
 
 <p>You can also send the <em>--rest</em> option which allows you to get some interesting stats on what is going on, which is handy.</p>
@@ -68,8 +69,10 @@
 <pre><code>db.&lt;table&gt;.count()
 </code></pre>
 
-<p>and
-   db.<table>.drop()</p>
+<p>and</p>
+
+<pre><code>db.&lt;table&gt;.drop()
+</code></pre>
 
 <p>and many other things besides. So far, the integration works quite well providing you have the right boost libs for both Cinder and Mongo. Performance wise, I've not had chance to find out, though we will in a week or so.</p>
 

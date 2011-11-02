@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-11-02T18:25:22+00:00</updated>
+ <updated>2011-11-02T18:27:45+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -21,7 +21,8 @@
 
 &lt;p&gt;Running mongob on OSX is quite easy if you use &lt;a href=&quot;https://github.com/mxcl/homebrew&quot;&gt;Brew&lt;/a&gt; (and you &lt;em&gt;really&lt;/em&gt; should be). Install mongo and then call:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
+&lt;pre&gt;&lt;code&gt;sudo mongod run --config \
+/usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;You can also send the &lt;em&gt;--rest&lt;/em&gt; option which allows you to get some interesting stats on what is going on, which is handy.&lt;/p&gt;
@@ -44,8 +45,10 @@
 &lt;pre&gt;&lt;code&gt;db.&amp;lt;table&amp;gt;.count()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;and
-   db.&lt;table&gt;.drop()&lt;/p&gt;
+&lt;p&gt;and&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;db.&amp;lt;table&amp;gt;.drop()
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;and many other things besides. So far, the integration works quite well providing you have the right boost libs for both Cinder and Mongo. Performance wise, I've not had chance to find out, though we will in a week or so.&lt;/p&gt;
 </content>
