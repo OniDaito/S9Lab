@@ -36,46 +36,40 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>02 Nov 2011</li>     
+          <li>09 Nov 2011</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2011/11/02/Mongo-Fun.html">MongoDB Fun with Cinder</a></h3>
-    	 <p>So I've been playing around with <a href="http://www.mongodb.org">MongoDB</a> for a little while now. Im certainly no expert but I get the feeling its pretty darn handy for smaller apps and webservers doing simple things or many, many small things. At the moment, I'm using it with an art installation, written in <a href="http://libcinder.org/">Cinder</a> that records the positions of various figures over time. The data is not very relational (in fact, it isn't at all) and so having a mongo setup seemed like the thing to do.</p>
+    		<h3><a href="/2011/11/09/Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></h3>
+    	 <object width="480" height="320"><param name="movie" value="http://www.youtube.com/v/mhAcRlNq9JU?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/mhAcRlNq9JU?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="320" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
-<p>Running mongob on OSX is quite easy if you use <a href="https://github.com/mxcl/homebrew">Brew</a> (and you <em>really</em> should be). Install mongo and then call:</p>
 
-<pre><code>sudo mongod run --config \
-/usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
+<p>The above video was recorded by Opheila Finke; one of the students at CSM. She came to me with a request that blew me out of the water because I'd had a similar idea myself. She wanted all the machines in our lab to play a video at the same time. I've spent quite a bit of time on this but I'd never gotten to the stage where I could take over a screen remotely. It turns out this is indeed possible with one subtle command.</p>
+
+<p>Using the screensaver, written in Quartz Composer by a colleague of mine, Sion Fletcher, seemed like the best idea as we could probably activate it remotely. Since I had the list of IP addresses and full sudo on all the boxes, setting up the screensaver was a doddle. Most of the leg work had been done.</p>
+
+<pre><code>/System/Library/Frameworks/ScreenSaver.framework/Versions/
+A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine 
 </code></pre>
 
-<p>You can also send the <em>--rest</em> option which allows you to get some interesting stats on what is going on, which is handy.</p>
+<p>Running this starts the screen saver. So far so good. Of course, you'll get a lot of errors if you try and run this remotely over SSH, even with Sudo. These of you used to Linux (and lets face it, you are if you read this) will know all about XSessions and similar. Something like this didnt work:</p>
 
-<p>At first, I used a <a href="http://nodejs.org/">Node.js</a> front-end and sent all my database queries over the network interface. Thats generally a pretty bad way of doing things. I started to look into the C++ driver and I began to hit some interesting problems.</p>
-
-<p>I downloaded the <a href="http://www.mongodb.org/pages/viewpage.action?pageId=133415">Mongo C++ Driver</a> and compiled up their example. The first thing is to generally follow the rules for the linux build.</p>
-
-<p> This runs quite well but trying to integrate this with <a href="http://libcinder.org/">Cinder</a> caused a lot of problems, largely because both of them do different things with boost which is no good. I had a real struggle on my hands. In the end, I couldn't quite figure out what to do so I used a classic solution; simply include the headers seperately and communicate between Mongo and Cinder using <em>std::string</em> only. Its not the best thing to do but it works.</p>
-
-<p>Essentially create a class that bridges the gap and only includes the standard libraries. I rebuilt mongo with the version of boost that comes with cinder which was <em>1.44</em> when I built my version. This can be done by downloading the particular version from the <a href="http://www.boost.org/">boost website</a> and installing it, then rebuilding mongo. Its not the best solution but it does work.</p>
-
-<p>As mongo is running, you can pull up your terminal and login to your database with</p>
-
-<pre><code>mongo &lt;databasename&gt;
+<pre><code>sudo su student -c '/System/Library/Frameworks/ScreenSaver.framework/Versions/A
+/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 </code></pre>
 
-<p>You can issue commands such as:</p>
+<p>Now <em>student</em> is the logged in user and therefore, I figured we could attach to their XSession (or whatever the OSX equivalent is). This means there has to be a logged in user for attachment to work; I don't know of any way to connect when just the login screen is visible.</p>
 
-<pre><code>db.&lt;table&gt;.count()
+<p>The problem is, this didn't work! I was pulling my hair out until a good friend, MS7821 on the #london-hack-space IRC channel pointed out that I wasn't setting the environment over the <em>su</em> command. Now I'd seen this before when playing with the Python subprocess module - you could indeed set the ENV variable. Can you spot the difference in the working command?</p>
+
+<pre><code>sudo su - student -c '/System/Library/Frameworks/ScreenSaver.framework/Versions/
+A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 </code></pre>
 
-<p>and</p>
+<p>The <em>-</em> is quite important after the su. It sets up the environment properly and that's great - it means the process can attach to the screen itself.</p>
 
-<pre><code>db.&lt;table&gt;.drop()
-</code></pre>
-
-<p>and many other things besides. So far, the integration works quite well providing you have the right boost libs for both Cinder and Mongo. Performance wise, I've not had chance to find out, though we will in a week or so.</p>
+<p>If you scroll in to 2:45 on the video, you can see the effect we came up with. It's great when a student has the same or similar idea as you. You get to look like the worlds greatest hero when it goes well. Smiles, hugs and laughter was had! That day was a good day!</p>
 
 	</div>
 </div>   
@@ -89,6 +83,8 @@
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2011/11/09/Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a> &dash; <abbr>09 Nov 2011</abbr></li>
 		
 			<li><a href="/2011/11/02/Mongo-Fun.html">MongoDB Fun with Cinder</a> &dash; <abbr>02 Nov 2011</abbr></li>
 		

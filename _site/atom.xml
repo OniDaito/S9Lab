@@ -4,13 +4,49 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-11-02T18:27:45+00:00</updated>
+ <updated>2011-11-09T10:22:13+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Smiling-Film-Student-Geekery</title>
+   <link href="http://lab.section9.co.uk/2011/11/09/Smiling-Film-Student-Geekery.html"/>
+   <updated>2011-11-09T00:00:00+00:00</updated>
+   <id>http://lab.section9.co.uk/2011/11/09/Smiling-Film-Student-Geekery</id>
+   <content type="html">&lt;object width=&quot;480&quot; height=&quot;320&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/mhAcRlNq9JU?version=3&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/mhAcRlNq9JU?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;480&quot; height=&quot;320&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;The above video was recorded by Opheila Finke; one of the students at CSM. She came to me with a request that blew me out of the water because I'd had a similar idea myself. She wanted all the machines in our lab to play a video at the same time. I've spent quite a bit of time on this but I'd never gotten to the stage where I could take over a screen remotely. It turns out this is indeed possible with one subtle command.&lt;/p&gt;
+
+&lt;p&gt;Using the screensaver, written in Quartz Composer by a colleague of mine, Sion Fletcher, seemed like the best idea as we could probably activate it remotely. Since I had the list of IP addresses and full sudo on all the boxes, setting up the screensaver was a doddle. Most of the leg work had been done.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/System/Library/Frameworks/ScreenSaver.framework/Versions/
+A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Running this starts the screen saver. So far so good. Of course, you'll get a lot of errors if you try and run this remotely over SSH, even with Sudo. These of you used to Linux (and lets face it, you are if you read this) will know all about XSessions and similar. Something like this didnt work:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo su student -c '/System/Library/Frameworks/ScreenSaver.framework/Versions/A
+/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now &lt;em&gt;student&lt;/em&gt; is the logged in user and therefore, I figured we could attach to their XSession (or whatever the OSX equivalent is). This means there has to be a logged in user for attachment to work; I don't know of any way to connect when just the login screen is visible.&lt;/p&gt;
+
+&lt;p&gt;The problem is, this didn't work! I was pulling my hair out until a good friend, MS7821 on the #london-hack-space IRC channel pointed out that I wasn't setting the environment over the &lt;em&gt;su&lt;/em&gt; command. Now I'd seen this before when playing with the Python subprocess module - you could indeed set the ENV variable. Can you spot the difference in the working command?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo su - student -c '/System/Library/Frameworks/ScreenSaver.framework/Versions/
+A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;em&gt;-&lt;/em&gt; is quite important after the su. It sets up the environment properly and that's great - it means the process can attach to the screen itself.&lt;/p&gt;
+
+&lt;p&gt;If you scroll in to 2:45 on the video, you can see the effect we came up with. It's great when a student has the same or similar idea as you. You get to look like the worlds greatest hero when it goes well. Smiles, hugs and laughter was had! That day was a good day!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>MongoDB Fun with Cinder</title>

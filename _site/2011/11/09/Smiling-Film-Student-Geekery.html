@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Box2D and Puppets</title>
+	<title>Smiling-Film-Student-Geekery</title>
 	<meta name="author" content="Benjamin Blundell" />
 	<link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
 	<link href="http://lab.section9.co.uk/css/grid-900.css" rel="stylesheet"></link>
@@ -34,19 +34,41 @@
   	<div class="post">
   <div class="post-meta col span-2">
     <ul class="nav">
-      <li>04 Aug 2011</li>
+      <li>09 Nov 2011</li>
 	<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>         
     </ul>
   </div>
 
   <div class="post-content span-9 nudge-2">
-  	<h3>Box2D and Puppets</h3>
-   <iframe src="http://player.vimeo.com/video/27285196?portrait=0" width="420" height="280" frameborder="0"></iframe>
+  	<h3>Smiling-Film-Student-Geekery</h3>
+   <object width="480" height="320"><param name="movie" value="http://www.youtube.com/v/mhAcRlNq9JU?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/mhAcRlNq9JU?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="320" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
 
-<p>I've been looking at various physics libraries of late. I'd played a little with Bullet physics which was quite cool. I had trouble integrating it with the existing model I had for objects in my world. That said, it put me in a good position for working with <a href="http://www.box2d.org/">Box2D</a> which is a great little library. My friend <a href="http://imakethin.gs">Tom</a> used it in his famous iPod commerical spoof and I thought I'd give it a try for a small project I currently have going up North. The idea is to try and convert people into characters from a painting. The problem is that skeleton tracking with the kinect is not perfect and indeed, there are a lot of factor that can compound the issue.</p>
+<p>The above video was recorded by Opheila Finke; one of the students at CSM. She came to me with a request that blew me out of the water because I'd had a similar idea myself. She wanted all the machines in our lab to play a video at the same time. I've spent quite a bit of time on this but I'd never gotten to the stage where I could take over a screen remotely. It turns out this is indeed possible with one subtle command.</p>
 
-<p>I figured that perhaps the characters should be more like puppets after chatting with the clients. It seemed like a good idea. It turned out to be quite tricky as you have various problems arising going from 3D to 2D. Drawing order and z-buffering are the immediate issues but also collision detection becomes a problem. Obviously with the side-on views, you don't want arms to collide with the front of the body. Fortunately, Box2D has a variety of options to sort that out. More importantly, the documentation is very good, so overall, I highly recommend Box2D. No wonder the Angry Birds guys ripped them off!</p>
+<p>Using the screensaver, written in Quartz Composer by a colleague of mine, Sion Fletcher, seemed like the best idea as we could probably activate it remotely. Since I had the list of IP addresses and full sudo on all the boxes, setting up the screensaver was a doddle. Most of the leg work had been done.</p>
+
+<pre><code>/System/Library/Frameworks/ScreenSaver.framework/Versions/
+A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine 
+</code></pre>
+
+<p>Running this starts the screen saver. So far so good. Of course, you'll get a lot of errors if you try and run this remotely over SSH, even with Sudo. These of you used to Linux (and lets face it, you are if you read this) will know all about XSessions and similar. Something like this didnt work:</p>
+
+<pre><code>sudo su student -c '/System/Library/Frameworks/ScreenSaver.framework/Versions/A
+/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
+</code></pre>
+
+<p>Now <em>student</em> is the logged in user and therefore, I figured we could attach to their XSession (or whatever the OSX equivalent is). This means there has to be a logged in user for attachment to work; I don't know of any way to connect when just the login screen is visible.</p>
+
+<p>The problem is, this didn't work! I was pulling my hair out until a good friend, MS7821 on the #london-hack-space IRC channel pointed out that I wasn't setting the environment over the <em>su</em> command. Now I'd seen this before when playing with the Python subprocess module - you could indeed set the ENV variable. Can you spot the difference in the working command?</p>
+
+<pre><code>sudo su - student -c '/System/Library/Frameworks/ScreenSaver.framework/Versions/
+A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
+</code></pre>
+
+<p>The <em>-</em> is quite important after the su. It sets up the environment properly and that's great - it means the process can attach to the screen itself.</p>
+
+<p>If you scroll in to 2:45 on the video, you can see the effect we came up with. It's great when a student has the same or similar idea as you. You get to look like the worlds greatest hero when it goes well. Smiles, hugs and laughter was had! That day was a good day!</p>
 
   </div>
 </div>
