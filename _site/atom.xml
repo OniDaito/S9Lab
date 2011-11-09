@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-11-09T10:22:13+00:00</updated>
+ <updated>2011-11-09T10:28:19+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -43,6 +43,8 @@ A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The &lt;em&gt;-&lt;/em&gt; is quite important after the su. It sets up the environment properly and that's great - it means the process can attach to the screen itself.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm7.static.flickr.com/6100/6328718926_27f90ba92a.jpg&quot; alt=&quot;1.8 tonnes of iMac doing my evil bidding&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you scroll in to 2:45 on the video, you can see the effect we came up with. It's great when a student has the same or similar idea as you. You get to look like the worlds greatest hero when it goes well. Smiles, hugs and laughter was had! That day was a good day!&lt;/p&gt;
 </content>
