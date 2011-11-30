@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-11-30T15:40:26+00:00</updated>
+ <updated>2011-11-30T15:43:43+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -17,7 +17,7 @@
    <link href="http://lab.section9.co.uk/2011/11/30/Numismatic.html"/>
    <updated>2011-11-30T00:00:00+00:00</updated>
    <id>http://lab.section9.co.uk/2011/11/30/Numismatic</id>
-   <content type="html">&lt;p&gt;&lt;img src=&quot;http://t.co/zTEWwYBI&quot; alt=&quot;SIFT&quot; /&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;img src=&quot;images/sift2.jpg&quot; alt=&quot;SIFT&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I've been working on a small project for the excellent girlfriend involving the recognition of coins. I've been looking into some various different applications that attempt to do this using computer vision. Turns out its a hard program.&lt;/p&gt;
 
