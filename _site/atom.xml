@@ -4,13 +4,37 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-11-21T22:16:47+00:00</updated>
+ <updated>2011-11-30T15:40:26+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Numismatic Fun</title>
+   <link href="http://lab.section9.co.uk/2011/11/30/Numismatic.html"/>
+   <updated>2011-11-30T00:00:00+00:00</updated>
+   <id>http://lab.section9.co.uk/2011/11/30/Numismatic</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;http://t.co/zTEWwYBI&quot; alt=&quot;SIFT&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I've been working on a small project for the excellent girlfriend involving the recognition of coins. I've been looking into some various different applications that attempt to do this using computer vision. Turns out its a hard program.&lt;/p&gt;
+
+&lt;p&gt;I've also learnt a new word, clearly!&lt;/p&gt;
+
+&lt;p&gt;A small program called &lt;a href=&quot;http://itunes.apple.com/gb/app/scybot-coin-counter/id445453916?mt=8&quot;&gt;Scybot&lt;/a&gt; attempts to count US coins with the iPhone camera. Sadly, it doesnt work. It turns out it simply uses a &lt;a href=&quot;http://en.wikipedia.org/wiki/Hough_transform&quot;&gt;Hough Transform&lt;/a&gt; by the looks of things. I tried this and here are the results:&lt;/p&gt;
+
+&lt;object width=&quot;480&quot; height=&quot;360&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/CPrVdBdsglQ?version=3&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/CPrVdBdsglQ?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;480&quot; height=&quot;360&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;Sadly, it isn't great on coins that aren't round or at least, not easily. It seems that perhaps training a haar classifier might be the best option? &lt;a href=&quot;http://achuwilson.wordpress.com/2011/07/01/create-your-own-haar-classifier-for-detecting-objects-in-opencv/&quot;&gt;This blog post&lt;/a&gt; is a great introduction to the idea of training a classifier. It's an intensive task and the jury is still out on whether or not this will actually work. I'll be sure to post my results here when I get them.&lt;/p&gt;
+
+&lt;p&gt;Currently, my classifier is still running, as has been for the last 3 days!&lt;/p&gt;
+
+&lt;p&gt;At the moment, most of the research seems to be based around the recognition of old coins as oppose to new ones?&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Bag of Holding +10</title>
