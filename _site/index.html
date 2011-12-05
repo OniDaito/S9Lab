@@ -49,6 +49,8 @@
 
 <p>The idea was to take members of the public into the painting of <a href="http://www.thelowry.com/gifts-and-souvenirs/prints-and-limited-editions/piccadilly-gardens-1954">Piccadilly Gardens</a>. To do this, I worked with the <a href="http://www.asus.com/Multimedia/Motion_Sensor/Xtion_PRO/">ASUS Xtion</a> and the OpenNI toolkit to extract the skeletons of the passers-by.</p>
 
+<p>The Real location is the painting  and live people are converted to lifesize Lowry characters ( we set up the stage so that it matched the painting perspective). A combination of live people beamed from the real location and those in Salford, shown as small Lowry characters within the real painting (foreground and midground) made the installation complete.</p>
+
 <p>This is all quite straight-forward but of course, there are many problems. The first is the issue of calibration. Most calibrations with the kinect are personal and then stored for later use when the Kinect/Xbox actually recognises you. This is, of course, not practical in this situation, so we calibrated the system with Alastair and James and used that for all the participants.</p>
 
 <p>The second issue is the environment. The Kinect and Xtion are designed to work indoors, preferably with a solid wall behind the player. We had none of these so we spent a long time testing, the results of which you can see here.</p>
@@ -75,7 +77,7 @@
 
 <p>I'd rather hoped the Manchester weather would actually do its usual thing of being overcast and grey as the Xtion performs better in such conditions. Sadly, this didn't happen at all. Terrible! You can never, EVER rely on the weather, even in a place as predictable as Manchester.</p>
 
-<p>One interesting and tricky aspect was the idea of history. The client wanted people to appear on the painting, even if there were no actual participants at that time in the gardens. This meant saving certain characters to disk. For this, I decided to use <a href="http://www.mongodb.org/">MongoDB</a> with the C++ binding. The problem here is that although Cinder uses Boost, the version I had bundled was incompatibile with the version used by Mongo. Disaster! In the end, I needed to use both and simply do the usual hack of only passing simple types between the two classes. Essentially, the puppet strings are saved to the database a few times each second and recalled when there are no players on the scene.</p>
+<p>One interesting and tricky aspect was the idea of history. Alastair and Jimi wanted people to appear on the painting, even if there were no actual participants at that time in the gardens. This meant saving certain characters to disk. For this, I decided to use <a href="http://www.mongodb.org/">MongoDB</a> with the C++ binding. The problem here is that although Cinder uses Boost, the version I had bundled was incompatibile with the version used by Mongo. Disaster! In the end, I needed to use both and simply do the usual hack of only passing simple types between the two classes. Essentially, the puppet strings are saved to the database a few times each second and recalled when there are no players on the scene.</p>
 
 <p>Technically, I couldn't have done this without Github and Cinder. I've written my own classes to take care of the skeletons and players and swap them in and out as they appear and disappear. Ultimately, github is great for messing with your code, revamping and refactoring as needed. Cinder is a great tool and it's use of boost certainly helped.</p>
 
@@ -87,7 +89,7 @@
 
 <p><img src="http://farm7.staticflickr.com/6116/6231844353_8ee7631f7b.jpg" alt="Jimi" /></p>
 
-<p>Overall, one couldn't ask for better clients. A fun project that made people laugh, that paid on time and helped me learn new things. That, for me, is the perfect project.</p>
+<p>Overall, one couldn't ask for better collaborators. A fun project that made people laugh, that paid on time and helped me learn new things. That, for me, is the perfect project.</p>
 
 	</div>
 </div>   

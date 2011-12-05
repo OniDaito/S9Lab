@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-12-05T12:05:19+00:00</updated>
+ <updated>2011-12-05T12:50:04+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -23,6 +23,8 @@
 &lt;p&gt;While I was up in the North, working on some personal projects, I was put in touch with a couple of lovely chaps, Alastair Eilbeck and James Bailey; two artists working on some interesting projects. They came to me with an idea for promoting The University of Salford and The Lowry. I've been a fan of some of Lowry's paintings and this was an opportunity not to be missed.&lt;/p&gt;
 
 &lt;p&gt;The idea was to take members of the public into the painting of &lt;a href=&quot;http://www.thelowry.com/gifts-and-souvenirs/prints-and-limited-editions/piccadilly-gardens-1954&quot;&gt;Piccadilly Gardens&lt;/a&gt;. To do this, I worked with the &lt;a href=&quot;http://www.asus.com/Multimedia/Motion_Sensor/Xtion_PRO/&quot;&gt;ASUS Xtion&lt;/a&gt; and the OpenNI toolkit to extract the skeletons of the passers-by.&lt;/p&gt;
+
+&lt;p&gt;The Real location is the painting  and live people are converted to lifesize Lowry characters ( we set up the stage so that it matched the painting perspective). A combination of live people beamed from the real location and those in Salford, shown as small Lowry characters within the real painting (foreground and midground) made the installation complete.&lt;/p&gt;
 
 &lt;p&gt;This is all quite straight-forward but of course, there are many problems. The first is the issue of calibration. Most calibrations with the kinect are personal and then stored for later use when the Kinect/Xbox actually recognises you. This is, of course, not practical in this situation, so we calibrated the system with Alastair and James and used that for all the participants.&lt;/p&gt;
 
@@ -50,7 +52,7 @@
 
 &lt;p&gt;I'd rather hoped the Manchester weather would actually do its usual thing of being overcast and grey as the Xtion performs better in such conditions. Sadly, this didn't happen at all. Terrible! You can never, EVER rely on the weather, even in a place as predictable as Manchester.&lt;/p&gt;
 
-&lt;p&gt;One interesting and tricky aspect was the idea of history. The client wanted people to appear on the painting, even if there were no actual participants at that time in the gardens. This meant saving certain characters to disk. For this, I decided to use &lt;a href=&quot;http://www.mongodb.org/&quot;&gt;MongoDB&lt;/a&gt; with the C++ binding. The problem here is that although Cinder uses Boost, the version I had bundled was incompatibile with the version used by Mongo. Disaster! In the end, I needed to use both and simply do the usual hack of only passing simple types between the two classes. Essentially, the puppet strings are saved to the database a few times each second and recalled when there are no players on the scene.&lt;/p&gt;
+&lt;p&gt;One interesting and tricky aspect was the idea of history. Alastair and Jimi wanted people to appear on the painting, even if there were no actual participants at that time in the gardens. This meant saving certain characters to disk. For this, I decided to use &lt;a href=&quot;http://www.mongodb.org/&quot;&gt;MongoDB&lt;/a&gt; with the C++ binding. The problem here is that although Cinder uses Boost, the version I had bundled was incompatibile with the version used by Mongo. Disaster! In the end, I needed to use both and simply do the usual hack of only passing simple types between the two classes. Essentially, the puppet strings are saved to the database a few times each second and recalled when there are no players on the scene.&lt;/p&gt;
 
 &lt;p&gt;Technically, I couldn't have done this without Github and Cinder. I've written my own classes to take care of the skeletons and players and swap them in and out as they appear and disappear. Ultimately, github is great for messing with your code, revamping and refactoring as needed. Cinder is a great tool and it's use of boost certainly helped.&lt;/p&gt;
 
@@ -62,7 +64,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://farm7.staticflickr.com/6116/6231844353_8ee7631f7b.jpg&quot; alt=&quot;Jimi&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Overall, one couldn't ask for better clients. A fun project that made people laugh, that paid on time and helped me learn new things. That, for me, is the perfect project.&lt;/p&gt;
+&lt;p&gt;Overall, one couldn't ask for better collaborators. A fun project that made people laugh, that paid on time and helped me learn new things. That, for me, is the perfect project.&lt;/p&gt;
 </content>
  </entry>
  
