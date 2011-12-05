@@ -36,28 +36,58 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>30 Nov 2011</li>     
+          <li>05 Dec 2011</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2011/11/30/Numismatic.html">Numismatic Fun</a></h3>
-    	 <p><img src="images/sift2.jpg" alt="SIFT" /></p>
-
-<p>I've been working on a small project for the excellent girlfriend involving the recognition of coins. I've been looking into some various different applications that attempt to do this using computer vision. Turns out its a hard program.</p>
-
-<p>I've also learnt a new word, clearly!</p>
-
-<p>A small program called <a href="http://itunes.apple.com/gb/app/scybot-coin-counter/id445453916?mt=8">Scybot</a> attempts to count US coins with the iPhone camera. Sadly, it doesnt work. It turns out it simply uses a <a href="http://en.wikipedia.org/wiki/Hough_transform">Hough Transform</a> by the looks of things. I tried this and here are the results:</p>
-
-<object width="480" height="360"><param name="movie" value="http://www.youtube.com/v/CPrVdBdsglQ?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/CPrVdBdsglQ?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+    		<h3><a href="/2011/12/05/Lowry-to-Life.html">Lowry to Life</a></h3>
+    	 <object width="601" height="338"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=33123038&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=33123038&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="601" height="338"></embed></object>
 
 
-<p>Sadly, it isn't great on coins that aren't round or at least, not easily. It seems that perhaps training a haar classifier might be the best option? <a href="http://achuwilson.wordpress.com/2011/07/01/create-your-own-haar-classifier-for-detecting-objects-in-opencv/">This blog post</a> is a great introduction to the idea of training a classifier. It's an intensive task and the jury is still out on whether or not this will actually work. I'll be sure to post my results here when I get them.</p>
+<p>While I was up in the North, working on some personal projects, I was put in touch with a couple of lovely chaps, Alastair Eilbeck and James Bailey; two artists working on some interesting projects. They came to me with an idea for promoting The University of Salford and The Lowry. I've been a fan of some of Lowry's paintings and this was an opportunity not to be missed.</p>
 
-<p>Currently, my classifier is still running, as has been for the last 3 days!</p>
+<p>The idea was to take members of the public into the painting of <a href="http://www.thelowry.com/gifts-and-souvenirs/prints-and-limited-editions/piccadilly-gardens-1954">Piccadilly Gardens</a>. To do this, I worked with the <a href="http://www.asus.com/Multimedia/Motion_Sensor/Xtion_PRO/">ASUS Xtion</a> and the OpenNI toolkit to extract the skeletons of the passers-by.</p>
 
-<p>At the moment, most of the research seems to be based around the recognition of old coins as oppose to new ones?</p>
+<p>This is all quite straight-forward but of course, there are many problems. The first is the issue of calibration. Most calibrations with the kinect are personal and then stored for later use when the Kinect/Xbox actually recognises you. This is, of course, not practical in this situation, so we calibrated the system with Alastair and James and used that for all the participants.</p>
+
+<p>The second issue is the environment. The Kinect and Xtion are designed to work indoors, preferably with a solid wall behind the player. We had none of these so we spent a long time testing, the results of which you can see here.</p>
+
+<object width="480" height="360"><param name="movie" value="http://www.youtube.com/v/Npw1tbOMHqk?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Npw1tbOMHqk?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+
+
+<p>It seems that the Xtion performs slightly better than the Kinect but the problem of tracking is a big issue. Data is often missed or incorrect. This means an attractive and artistic solution is needed. We hit on the idea of recreating the characters as puppets. This is where the wonderful <a href="http://box2d.org/">Box2D Library</a> came in so handy. It's a fantastic library, so donate to them if you use it.</p>
+
+<p>Working with puppets gave a much nicer effect that felt in-keeping with the Lowry style.</p>
+
+<p>Of course, there is more. The University of Salford wanted the display to run over two sites. The participants in the gardens would appear inside a painting, hanging on the wall at the Lowry itself (it turned out to be at Salford University but nevermind). In order to to make this work, I wrote a simple TCP server/client setup with the <a href="http://www.boost.org/doc/libs/1_48_0/doc/html/boost_asio.html">boost::asio</a> libraries that seemed to work quite well. As this is already a part of Cinder this could be integrated seemlessly.</p>
+
+<p>Everyone on this project was a hero, none more so than the illustrator Maria Pearson. Without her input, this would not have worked. Maria needed to create 4 views for the same character which were then mapped using a rather large XML file to the puppets themselves.</p>
+
+<p><img src="http://lab.section9.co.uk/images/characters.jpg" alt="Lowry Cutout Characters" /></p>
+
+<p>Initially, this process was quite time consuming, so extra features were added to the program to enable faster character creation. At one point, I thought we may need to actually create a seperate editor program but that turned out not to be the case.</p>
+
+<p>It turned out to be a big event. It was covered in the <a href="http://menmedia.co.uk/manchestereveningnews/news/s/1464384_hi-tech-display-lets-you-join-lowrys-matchstick-men">Manchester Evening News</a> and <a href="http://www.youtube.com/watch?v=LhSUx_MlMAk&amp;feature=youtu.be&amp;t=3m23s">BBC North West Tonight</a> as well as the <a href="http://www.bbc.co.uk/news/uk-england-manchester-15643875">BBC News Website</a></p>
+
+<object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/LhSUx_MlMAk?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/LhSUx_MlMAk?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+
+
+<p>I'd rather hoped the Manchester weather would actually do its usual thing of being overcast and grey as the Xtion performs better in such conditions. Sadly, this didn't happen at all. Terrible! You can never, EVER rely on the weather, even in a place as predictable as Manchester.</p>
+
+<p>One interesting and tricky aspect was the idea of history. The client wanted people to appear on the painting, even if there were no actual participants at that time in the gardens. This meant saving certain characters to disk. For this, I decided to use <a href="http://www.mongodb.org/">MongoDB</a> with the C++ binding. The problem here is that although Cinder uses Boost, the version I had bundled was incompatibile with the version used by Mongo. Disaster! In the end, I needed to use both and simply do the usual hack of only passing simple types between the two classes. Essentially, the puppet strings are saved to the database a few times each second and recalled when there are no players on the scene.</p>
+
+<p>Technically, I couldn't have done this without Github and Cinder. I've written my own classes to take care of the skeletons and players and swap them in and out as they appear and disappear. Ultimately, github is great for messing with your code, revamping and refactoring as needed. Cinder is a great tool and it's use of boost certainly helped.</p>
+
+<p>Personally, I learnt quite a lot on this job. It has been going for sometime, and progress had been quite sporadic. We'd considered many different ways of illustrating the characters, setting up the network and indeed, getting the code to work on Jimi's computers. There was one long session that lasted about 3 days over in Manchester and the strain was beginning to show</p>
+
+<p><img src="http://farm7.staticflickr.com/6111/6231847697_0e73bf9cf2.jpg" alt="Working late at Amaze" /></p>
+
+<p>Although James with his boundless energy certainly helped!</p>
+
+<p><img src="http://farm7.staticflickr.com/6116/6231844353_8ee7631f7b.jpg" alt="Jimi" /></p>
+
+<p>Overall, one couldn't ask for better clients. A fun project that made people laugh, that paid on time and helped me learn new things. That, for me, is the perfect project.</p>
 
 	</div>
 </div>   
@@ -71,6 +101,8 @@
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2011/12/05/Lowry-to-Life.html">Lowry to Life</a> &dash; <abbr>05 Dec 2011</abbr></li>
 		
 			<li><a href="/2011/11/30/Numismatic.html">Numismatic Fun</a> &dash; <abbr>30 Nov 2011</abbr></li>
 		

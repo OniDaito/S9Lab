@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>>The Woes of Soft Shadows</title>
+	<title>Lowry to Life</title>
 	<meta name="author" content="Benjamin Blundell" />
 	<link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
 	<link href="http://lab.section9.co.uk/css/grid-900.css" rel="stylesheet"></link>
@@ -34,14 +34,59 @@
   	<div class="post">
   <div class="post-meta col span-2">
     <ul class="nav">
-      <li>13 Apr 2011</li>
+      <li>05 Dec 2011</li>
 	<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>         
     </ul>
   </div>
 
   <div class="post-content span-9 nudge-2">
-  	<h3>>The Woes of Soft Shadows</h3>
-   <blockquote><p>I've been playing with soft shadows for a client and it's been one hell of a rocky ride I must say. There isn't really a nice way of doing it that I'm happy with. I've gone through PCF, PCSS, VSM and SAVSM and none of them seem to work right. I must admit, we are on the verge of very hardcore OpenGL here. But the basics of shadowmapping are quite simple.<br /><br />So, Percentage Closer Filtering was the first I tried. It was a bit tricky until I realised its pretty much offset sampling and thats it. Bang. Take an average of a set amount of pixels. Job done. Problem is, this is quite slow when you are averaging over 64 texels. The effect isn't great and a bit wasteful as well. So, that means Percentage Closer Soft Shadows is an option. It sort of looks like this:<br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/-xG5__l4M08Y/TaV5PGF4HHI/AAAAAAAAAyk/-Jdch5Mp4xo/s1600/pcss.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 271px;" src="http://4.bp.blogspot.com/-xG5__l4M08Y/TaV5PGF4HHI/AAAAAAAAAyk/-Jdch5Mp4xo/s320/pcss.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5595011412317969522" /></a><br />Doesnt look that bad but its rather slow and the falloff isn't really big enough. The shadows need to fade away a lot quicker and when the filter gets past about 8x8 you can see lots of artefacts. Not good.<br /><br />So, PCSS and PCF have failed me. Thats really annoying. So, people say that VSM is better. Its certainly simpler in code though you do need to use a colour texture and not a depth buffer. Still, once you are happy with FBOs you can get to it. <br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://farm6.static.flickr.com/5067/5609017825_7937375e5b.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 500px; height: 459px;" src="http://farm6.static.flickr.com/5067/5609017825_7937375e5b.jpg" border="0" alt="" /></a><br />They are smooth but look at the falloff... the shadows are stronger the further away. Clearly that's wrong. I've no idea why VSM does this because Shadows dont work that way in the real world. Im convinced it looks wrong. Boo and hiss!<br /><br />Nevetheless, it was close and it seems to be quite fast in comparison to PCF and the effects are smoother.<br /><br />Summed Area Tables apparently allow us to smooth out and fade the shadows. This is pretty much what we need. Summed Area Tables is an old technique from the 80s that, like most older algorithms, has a new lease of life because of shader technology. So, with that in mind, I managed to write a shader and Ping Pong FBO from scratch and it actually worked! Marvellous. A summed table basically adds up the sums of the texels from the top left to the bottom right (or similar). This means that you can get the sum of any rectangle within the table in constant time. So a 128 x 128 lookup for the average is the same cost as a 2 x 2 with Summed Area Tables. Thats great because we can alter the filter size at any point with our VSM shadows. Brilliant!<br /><br />There is a problem however. Summed Area Tables end up with big big numbers. You are, in effect summing, say 512 x 512 numbers so the last number is going to be very large. You then need to subtract another large number from this which means a loss of precision which results in artefacts like this:<br /><br /> <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://farm6.static.flickr.com/5146/5614133967_c57d44dfdc.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 500px; height: 474px;" src="http://farm6.static.flickr.com/5146/5614133967_c57d44dfdc.jpg" border="0" alt="" /></a><br /><br />There is a certain amount of noise which is really sad because when that doesnt occur, we do get nice soft shadows on the cheap. Pretty cool!<br /><br />So, very close but no cigar yet!</p></blockquote>
+  	<h3>Lowry to Life</h3>
+   <object width="601" height="338"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=33123038&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=33123038&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="601" height="338"></embed></object>
+
+
+<p>While I was up in the North, working on some personal projects, I was put in touch with a couple of lovely chaps, Alastair Eilbeck and James Bailey; two artists working on some interesting projects. They came to me with an idea for promoting The University of Salford and The Lowry. I've been a fan of some of Lowry's paintings and this was an opportunity not to be missed.</p>
+
+<p>The idea was to take members of the public into the painting of <a href="http://www.thelowry.com/gifts-and-souvenirs/prints-and-limited-editions/piccadilly-gardens-1954">Piccadilly Gardens</a>. To do this, I worked with the <a href="http://www.asus.com/Multimedia/Motion_Sensor/Xtion_PRO/">ASUS Xtion</a> and the OpenNI toolkit to extract the skeletons of the passers-by.</p>
+
+<p>This is all quite straight-forward but of course, there are many problems. The first is the issue of calibration. Most calibrations with the kinect are personal and then stored for later use when the Kinect/Xbox actually recognises you. This is, of course, not practical in this situation, so we calibrated the system with Alastair and James and used that for all the participants.</p>
+
+<p>The second issue is the environment. The Kinect and Xtion are designed to work indoors, preferably with a solid wall behind the player. We had none of these so we spent a long time testing, the results of which you can see here.</p>
+
+<object width="480" height="360"><param name="movie" value="http://www.youtube.com/v/Npw1tbOMHqk?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Npw1tbOMHqk?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+
+
+<p>It seems that the Xtion performs slightly better than the Kinect but the problem of tracking is a big issue. Data is often missed or incorrect. This means an attractive and artistic solution is needed. We hit on the idea of recreating the characters as puppets. This is where the wonderful <a href="http://box2d.org/">Box2D Library</a> came in so handy. It's a fantastic library, so donate to them if you use it.</p>
+
+<p>Working with puppets gave a much nicer effect that felt in-keeping with the Lowry style.</p>
+
+<p>Of course, there is more. The University of Salford wanted the display to run over two sites. The participants in the gardens would appear inside a painting, hanging on the wall at the Lowry itself (it turned out to be at Salford University but nevermind). In order to to make this work, I wrote a simple TCP server/client setup with the <a href="http://www.boost.org/doc/libs/1_48_0/doc/html/boost_asio.html">boost::asio</a> libraries that seemed to work quite well. As this is already a part of Cinder this could be integrated seemlessly.</p>
+
+<p>Everyone on this project was a hero, none more so than the illustrator Maria Pearson. Without her input, this would not have worked. Maria needed to create 4 views for the same character which were then mapped using a rather large XML file to the puppets themselves.</p>
+
+<p><img src="http://lab.section9.co.uk/images/characters.jpg" alt="Lowry Cutout Characters" /></p>
+
+<p>Initially, this process was quite time consuming, so extra features were added to the program to enable faster character creation. At one point, I thought we may need to actually create a seperate editor program but that turned out not to be the case.</p>
+
+<p>It turned out to be a big event. It was covered in the <a href="http://menmedia.co.uk/manchestereveningnews/news/s/1464384_hi-tech-display-lets-you-join-lowrys-matchstick-men">Manchester Evening News</a> and <a href="http://www.youtube.com/watch?v=LhSUx_MlMAk&amp;feature=youtu.be&amp;t=3m23s">BBC North West Tonight</a> as well as the <a href="http://www.bbc.co.uk/news/uk-england-manchester-15643875">BBC News Website</a></p>
+
+<object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/LhSUx_MlMAk?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/LhSUx_MlMAk?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+
+
+<p>I'd rather hoped the Manchester weather would actually do its usual thing of being overcast and grey as the Xtion performs better in such conditions. Sadly, this didn't happen at all. Terrible! You can never, EVER rely on the weather, even in a place as predictable as Manchester.</p>
+
+<p>One interesting and tricky aspect was the idea of history. The client wanted people to appear on the painting, even if there were no actual participants at that time in the gardens. This meant saving certain characters to disk. For this, I decided to use <a href="http://www.mongodb.org/">MongoDB</a> with the C++ binding. The problem here is that although Cinder uses Boost, the version I had bundled was incompatibile with the version used by Mongo. Disaster! In the end, I needed to use both and simply do the usual hack of only passing simple types between the two classes. Essentially, the puppet strings are saved to the database a few times each second and recalled when there are no players on the scene.</p>
+
+<p>Technically, I couldn't have done this without Github and Cinder. I've written my own classes to take care of the skeletons and players and swap them in and out as they appear and disappear. Ultimately, github is great for messing with your code, revamping and refactoring as needed. Cinder is a great tool and it's use of boost certainly helped.</p>
+
+<p>Personally, I learnt quite a lot on this job. It has been going for sometime, and progress had been quite sporadic. We'd considered many different ways of illustrating the characters, setting up the network and indeed, getting the code to work on Jimi's computers. There was one long session that lasted about 3 days over in Manchester and the strain was beginning to show</p>
+
+<p><img src="http://farm7.staticflickr.com/6111/6231847697_0e73bf9cf2.jpg" alt="Working late at Amaze" /></p>
+
+<p>Although James with his boundless energy certainly helped!</p>
+
+<p><img src="http://farm7.staticflickr.com/6116/6231844353_8ee7631f7b.jpg" alt="Jimi" /></p>
+
+<p>Overall, one couldn't ask for better clients. A fun project that made people laugh, that paid on time and helped me learn new things. That, for me, is the perfect project.</p>
 
   </div>
 </div>
