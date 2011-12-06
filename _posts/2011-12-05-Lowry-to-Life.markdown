@@ -31,7 +31,7 @@ Initially, this process was quite time consuming, so extra features were added t
 
 It turned out to be a big event. It was covered in the [Manchester Evening News](http://menmedia.co.uk/manchestereveningnews/news/s/1464384_hi-tech-display-lets-you-join-lowrys-matchstick-men) and [BBC North West Tonight](http://www.youtube.com/watch?v=LhSUx_MlMAk&feature=youtu.be&t=3m23s) as well as the [BBC News Website](http://www.bbc.co.uk/news/uk-england-manchester-15643875)
 
-<object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/LhSUx_MlMAk?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/LhSUx_MlMAk?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<object width="640" height="360"><param name="movie" value="http://www.youtube.com/v/LhSUx_MlMAk?version=3&amp;hl=en_US&amp;t=3m23s"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/LhSUx_MlMAk?version=3&amp;hl=en_US&amp;t=3m23s" type="application/x-shockwave-flash" width="640" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
 I'd rather hoped the Manchester weather would actually do its usual thing of being overcast and grey as the Xtion performs better in such conditions. Sadly, this didn't happen at all. Terrible! You can never, EVER rely on the weather, even in a place as predictable as Manchester.
 
