@@ -4,13 +4,44 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2011-12-06T22:02:44+00:00</updated>
+ <updated>2011-12-21T10:18:50+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Super History Girl Necklace</title>
+   <link href="http://lab.section9.co.uk/2011/12/21/Super-History-Girl-Necklace.html"/>
+   <updated>2011-12-21T00:00:00+00:00</updated>
+   <id>http://lab.section9.co.uk/2011/12/21/Super-History-Girl-Necklace</id>
+   <content type="html">&lt;p&gt;The Curator is a wonderful lady, and for her birthday and our trip to Berlin, I came up with an idea for a necklace. I wanted to make something unique and wonderful that she would appreciate and that I'd have fun making. I often joke that she's &quot;A super girl who saves history&quot; and so the idea began to form.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7158/6539948549_275c40c2bb.jpg&quot; alt=&quot;Super History Girl&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I'm quite amazed that one can make such things quite easily nowadays. Here is how I went about it.&lt;/p&gt;
+
+&lt;p&gt;Firstly, I sketched up the idea in Ilustrator, using the path tool. Exporting these as an &lt;em&gt;SVG&lt;/em&gt; allows importing into &lt;a href=&quot;http://www.blender.org&quot;&gt;Blender&lt;/a&gt;. I suppose I could have used &lt;a href=&quot;http://inkscape.org/&quot;&gt;Inkscape&lt;/a&gt; had I been thinking along these lines.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://lab.section9.co.uk/images/blender.jpg&quot; alt=&quot;blender&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The SVG is converted into a set of 3 curves. You can add a modifier to these in order to &lt;em&gt;extrude&lt;/em&gt; the curves a certain distance. By doing this, we end up with a 3D model from the flat curves. Remember that you need to convert this path into a &lt;em&gt;mesh&lt;/em&gt; before you can export it as an &lt;em&gt;OBJ&lt;/em&gt; file. An OBJ is format preferred by &lt;a href=&quot;http://www.shapeways.com/&quot;&gt;Shapeways&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Shapeways are a company based over in Sweden and I've used them before. They recommend using &lt;a href=&quot;http://meshlab.sourceforge.net/&quot;&gt;Meshlab&lt;/a&gt; to tidy up your OBJ file and also &lt;a href=&quot;http://www.netfabb.com/&quot;&gt;NetFabb&lt;/a&gt; which helps with the scaling. In this instance, I just guessed with Blender and kept uploading a newer version till it seemed right. I went with a bronze looking metal. 3 weeks later, it arrived at the office looking better than I'd hoped.&lt;/p&gt;
+
+&lt;p&gt;Of course, all jewellery needs a box. I figured laser cutting a box would be perfect.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7161/6539947051_00b4584b3e.jpg&quot; alt=&quot;box&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to do this, I used &lt;a href=&quot;http://www.qcad.org/&quot;&gt;QCad&lt;/a&gt; and an amazing little python script called &lt;a href=&quot;http://www.thingiverse.com/thing:404&quot;&gt;Boxotron&lt;/a&gt; which creates a set of DXF files (which you can check in QCad or Inkscape). Using a laser cutter and 5mm acrylic, I came up with a box that sort of worked for me. I then took the name Katie, translated it into Japanese and exported the text as a BMP which allows for laser engraving. Placing the piece in the laser cutter was the final stage.&lt;/p&gt;
+
+&lt;p&gt;Actually, the final stage involved chatting with a jeweller at &lt;a href=&quot;http://csm.arts.ac.uk&quot;&gt;Central St Martins&lt;/a&gt; who told me that the findings and chains I would need should be bought from &lt;a href=&quot;http://www.cooksongold.com/&quot;&gt;Cooksongold&lt;/a&gt; who duly delievered the silver rope chain and other parts I needed to create the final piece.&lt;/p&gt;
+
+&lt;p&gt;Overall, I'm really happy with the result, and even happier that The Curator likes it.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Lowry to Life</title>
