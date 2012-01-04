@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>>Cinder Shadow Volumes</title>
+	<title>EL-Tape Mesh Top</title>
 	<meta name="author" content="Benjamin Blundell" />
 	<link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
 	<link href="http://lab.section9.co.uk/css/grid-900.css" rel="stylesheet"></link>
@@ -34,14 +34,28 @@
   	<div class="post">
   <div class="post-meta col span-2">
     <ul class="nav">
-      <li>21 Dec 2010</li>
+      <li>04 Jan 2012</li>
 	<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>         
     </ul>
   </div>
 
   <div class="post-content span-9 nudge-2">
-  	<h3>>Cinder Shadow Volumes</h3>
-   <blockquote><p><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_WNXP2eEZSdg/TRDT5e0crCI/AAAAAAAAAw8/iYnYGi-neIE/s1600/shadow1.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 251px;" src="http://4.bp.blogspot.com/_WNXP2eEZSdg/TRDT5e0crCI/AAAAAAAAAw8/iYnYGi-neIE/s320/shadow1.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5553171325026872354" /></a><br />I was asked to come up with some shadows in Openframeworks on a tight timescale.... I kinda failed on that one, having gone down the wrong route of shadow maps (I'd previously used VSM for my first NIN project). Looking it over, it seems that shadow volumes, or some hybrid approach with both is probably best. I've spent far too long on this but so far, I've managed to get a reasonable approximation of depth pass shadow volumes going.<br /><br />I first wanted to use <a href="http://http.developer.nvidia.com/GPUGems3/gpugems3_ch11.html">this approach from GPU Gems 3</a> whereby a geometry shader creates the shadow volume on the card and 'hopefully' speeds things up. This means you need to create a <a href="http://www.cgal.org/Manual/latest/doc_html/cgal_manual/HalfedgeDS/Chapter_main.html">Half-edge</a> structure that knows about twin edges so you can pass adjacency information to the geometry shader using GL_TRIANGLES_ADJACENY_EXT.<br /><br />Theres just one problem<br /><br />OSX only has shader language 1.2 (at least on snow leopard). This means I can't implement the algorithm in GPU Gems. Bugger!<br /><br />I'd gone down this road stupidly really, but I'd spent a lot of time with <a href="http://code.google.com/p/google-sparsehash/">Google Sparse Hash</a> in trying to get a fast lookup. I figure'd I'd stick with this half-edge structure (built from Cinder's Trimesh) and carry on using the default method of creating shadow volumes with the stencil buffer. This means no shaders sadly but nevermind. <br /><br />Again, another unforseen problem. Cinder on OSX doesn't create a stencil buffer by default! <br /><br />Yup, that kinda sucks really as they are quite handy though Im sure there were reasons for this. The changes are up on <a href="https://github.com/cinder/Cinder/issues#issue/21">the Github Cinder repository</a> if you use OSX. Not sure about Windows though but potentially, there is an issue there too.<br /><br />The main problem I've had is with creating the silhouette itself. This can be quite tricky and since I'm using Cinder's TriMesh, I need to make the code as unobtrusive as possible. <a href="http://prideout.net/blog/?p=54">This page</a> gives a great guide to doing this and the general approach is quite useful. One needs to find the edges facing away or towards the light, discount all the others then find edges with twin faces that arent counted. These form the edges which we then extrude away from the light. <br /><br />Overall I'm fairly pleased with the result, though it needs improvement. Depth fail + Caps and a slight softening of the edges in the GPU should work I think</p></blockquote>
+  	<h3>EL-Tape Mesh Top</h3>
+   <p><img src="http://farm8.staticflickr.com/7170/6630578629_63b3985040.jpg" alt="EL-Mesh Top" /></p>
+
+<p>EL-Tape and EL-Wire have been around for a few years. We've all seen <a href="http://www.google.co.uk/search?q=tron+guy&amp;um=1&amp;ie=UTF-8&amp;hl=en&amp;tbm=isch&amp;source=og&amp;sa=N&amp;tab=wi&amp;ei=AjkET63gLYra8APe-6DGAQ&amp;biw=1505&amp;bih=829&amp;sei=BzkET4PbKdD_8QOklcmhBA">Tron Guy</a> and all the rest. For me, EL-Wire is only suitable for rigid objects. It looks naff when it's just sewn on with no thought or style behind it. Lady Ada's <a href="http://www.ladyada.net/make/tronbag/">EL-Wire Bag</a> is probably the best example of how EL-Wire should be used, in my humble design opinion.</p>
+
+<p>EL-Tape has its own challenges though. It's flatter and wider as you'd expect and there have been a few good designs out there. The <a href="http://io9.com/5708876/how-to-make-your-tron-costume-glow-with-electroluminescent-wire">Quora</a> costumes aren't bad and I'm sure you know of other examples. I wanted something that was work-a-day, fun and looked good without being cliche, or <em>tron-esque</em> though hinting at it of course.</p>
+
+<p><img src="http://farm8.staticflickr.com/7015/6634147313_bb2a4cac3f.jpg" alt="Mighty Singer" /></p>
+
+<p>The Curator is an excellent seamstress, among her many other talents, and I've been learning how to improve my own sewing skills. She came up with the idea of using an elastic, fishnet sleeve to contain the tape. We don't actually sew on the tape at all. This has many advantages. By using a spiral, the top can flex quite easily with the arm.</p>
+
+<p>The wire for the invertor goes down the back. Im using the invertor and tape from <a href="http://www.adafruit.com/category/50">Adafruit Industries</a> who I highly recommend.</p>
+
+<p><img src="http://farm8.staticflickr.com/7165/6630571803_583f97ed37.jpg" alt="El-Tape Mesh Top" /></p>
+
+<p>The top came from Uniqlo who generally make good stuf (I'm told) and although the sewing was challenging, the material made the sewing not quite as hard as it could have been.</p>
 
   </div>
 </div>
