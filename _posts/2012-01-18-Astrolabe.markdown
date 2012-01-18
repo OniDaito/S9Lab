@@ -11,11 +11,11 @@ As part of a project I'm working on, I decided to build my own Astrolabes - one 
 
 Technically, this was quite a challenge. [LondonHackspace](http://london.hackspace.org.uk) has a laser cutter but the software for it is awful. In addition it is quite often worn out which is clearly no good. Nevertheless I persevered. 
 
-The format for this file was a Corel Draw CDR. Seriously, do people still use these? Anyway, I needed a program to convert that down. [Uniconvertor](http://sk1project.org/modules.php?name=Products&product=uniconvertor) seemed like the thing, but getting it to compile and build on OSX was not an easy job at all. In fact, I had a lot of issues with it. Neverthess, I converted the CDR into an illustrator file. No dice. CDR to SVG worked a lot better.
+The format for this file was a Corel Draw CDR. Seriously, do people still use these? Anyway, I needed a program to convert that down. [Uniconvertor](http://sk1project.org/modules.php?name=Products&product=uniconvertor) seemed like the thing, but getting it to compile and build on OSX was not an easy job at all. In fact, I had a lot of issues with it. Nevertheless, I converted the CDR into an illustrator file. No dice! CDR to SVG worked a lot better.
 
-Loading the SVG into illustrator allowed me to see the various problems and options available. Two front plates were included, one for the southern and one for the northern hemisphere. The first thing was to seperate out all of the various components as each would be etched and cut into a seperate sheet of coloured perspex at 3mm. 
+Loading the SVG into Illustrator allowed me to see the various problems and options available. Two front plates were included, one for the southern and one for the northern hemisphere. The first thing was to seperate out all of the various components as each would be etched and cut into a seperate sheet of coloured perspex at 3mm. 
 
-Further conversion from SVG was needed. Inkscape makes a good job of loading the SVG correctly. Exporting from Inkscape to a DXF is the next step. Finally, for the hackspace laser cutter, importing into QCAD was needed, because the laser cutter software does not support layers. The front plate, rete, pointers and bevel both have cutting and etching sections, so layering (or in our case, colouring) with QCAD was needed.
+Further conversion from SVG was needed. Inkscape makes a good job of loading the SVG correctly. Exporting from Inkscape to a DXF is the next step, making sure LWPOLYLINE and ROBOMASTER were NOT selected. Finally, for the hackspace laser cutter, importing into QCAD was needed, because the laser cutter software does not support layers. The front plate, rete, pointers and bevel both have cutting and etching sections, so layering (or in our case, colouring) with QCAD was needed.
 
 ![astrolabe](http://farm8.staticflickr.com/7158/6716964469_2057259913.jpg)
 
