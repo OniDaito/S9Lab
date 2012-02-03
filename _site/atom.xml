@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-02-03T12:02:11+00:00</updated>
+ <updated>2012-02-03T12:17:03+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -49,7 +49,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7014/6811365387_73f69d5541.jpg&quot; alt=&quot;XBee Case&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Google sketchup to 3D printing works quite well. Again, thanks to &lt;a href=&quot;&quot;&gt;FabLab Manchester&lt;/a&gt; for helping out with that.&lt;/p&gt;
+&lt;p&gt;Google sketchup to 3D printing works quite well. Again, thanks to &lt;a href=&quot;http://www.fablabmanchester.org/&quot;&gt;FabLab Manchester&lt;/a&gt; for helping out with that.&lt;/p&gt;
 
 &lt;p&gt;Converting a Gyro and an Accelerometer into orientation data is not a trivial task. At first, I thought just a gyro would be fine but thats not the case at all. A gyro measures the force acting on the gyro to keep it stable, not the orientation itself. An accelerometer measures the acceleration in a particular direction. In order to understand the movement, one must have a start point and then integrate over the values. This means that errors will build up. These can be corrected with the accelerometer data and that is fine, so long as you actually have accelerometer data for that axis. You certainly don't for Yaw.&lt;/p&gt;
 

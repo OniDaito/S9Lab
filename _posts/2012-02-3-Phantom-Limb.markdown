@@ -33,7 +33,7 @@ At the time, I was up north and away from London Hackspace. Thankfully, FabLab c
 
 ![XBee Case](http://farm8.staticflickr.com/7014/6811365387_73f69d5541.jpg)
 
-Google sketchup to 3D printing works quite well. Again, thanks to [FabLab Manchester]() for helping out with that.
+Google sketchup to 3D printing works quite well. Again, thanks to [FabLab Manchester](http://www.fablabmanchester.org/) for helping out with that.
 
 Converting a Gyro and an Accelerometer into orientation data is not a trivial task. At first, I thought just a gyro would be fine but thats not the case at all. A gyro measures the force acting on the gyro to keep it stable, not the orientation itself. An accelerometer measures the acceleration in a particular direction. In order to understand the movement, one must have a start point and then integrate over the values. This means that errors will build up. These can be corrected with the accelerometer data and that is fine, so long as you actually have accelerometer data for that axis. You certainly don't for Yaw.
 
