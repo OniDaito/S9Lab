@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-02-03T11:57:42+00:00</updated>
+ <updated>2012-02-03T12:00:14+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -17,7 +17,7 @@
    <link href="http://lab.section9.co.uk/2012/02/03/Phantom-Limb.html"/>
    <updated>2012-02-03T00:00:00+00:00</updated>
    <id>http://lab.section9.co.uk/2012/02/03/Phantom-Limb</id>
-   <content type="html">&lt;p&gt;Over the summer, I worked with &lt;a href=&quot;&quot;&gt;Advanced Interfaces Group&lt;/a&gt; at &lt;a href=&quot;&quot;&gt;The University of Manchester&lt;/a&gt; on a research project to investigate &lt;a href=&quot;http://en.wikipedia.org/wiki/Phantom_limb&quot;&gt;Phantom Limb Pain&lt;/a&gt;. Previously, Steve Pettifer and Toby Howard (the principle researchers) has tried VR and ping pong ball style tracking in order to recreate a virtual world and 'mirror' the missing limb. The idea is to create a more immersive version of the &lt;a href=&quot;http://en.wikipedia.org/wiki/Mirror_box&quot;&gt;Ramachandran Mirror Box&lt;/a&gt;. It's a way to try and unlearn what has been learnt.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Over the summer, I worked with &lt;a href=&quot;http://www.aig.cs.man.ac.uk&quot;&gt;Advanced Interfaces Group&lt;/a&gt; at &lt;a href=&quot;http:/www.manchester.ac.uk&quot;&gt;The University of Manchester&lt;/a&gt; on a research project to investigate &lt;a href=&quot;http://en.wikipedia.org/wiki/Phantom_limb&quot;&gt;Phantom Limb Pain&lt;/a&gt;. Previously, Steve Pettifer and Toby Howard (the principle researchers) has tried VR and ping pong ball style tracking in order to recreate a virtual world and 'mirror' the missing limb. The idea is to create a more immersive version of the &lt;a href=&quot;http://en.wikipedia.org/wiki/Mirror_box&quot;&gt;Ramachandran Mirror Box&lt;/a&gt;. It's a way to try and unlearn what has been learnt.&lt;/p&gt;
 
 &lt;object width=&quot;500&quot; height=&quot;281&quot;&gt;&lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot; /&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;&lt;param name=&quot;movie&quot; value=&quot;http://vimeo.com/moogaloop.swf?clip_id=36085689&amp;amp;server=vimeo.com&amp;amp;show_title=0&amp;amp;show_byline=0&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; /&gt;&lt;embed src=&quot;http://vimeo.com/moogaloop.swf?clip_id=36085689&amp;amp;server=vimeo.com&amp;amp;show_title=0&amp;amp;show_byline=0&amp;amp;show_portrait=0&amp;amp;color=00adef&amp;amp;fullscreen=1&amp;amp;autoplay=0&amp;amp;loop=0&quot; type=&quot;application/x-shockwave-flash&quot; allowfullscreen=&quot;true&quot; allowscriptaccess=&quot;always&quot; width=&quot;500&quot; height=&quot;281&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
 
