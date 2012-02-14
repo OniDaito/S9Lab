@@ -4,13 +4,53 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-02-03T12:17:03+00:00</updated>
+ <updated>2012-02-14T12:33:05+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>3D Scanning with 123D Catch</title>
+   <link href="http://lab.section9.co.uk/2012/02/14/3D-Scanning.html"/>
+   <updated>2012-02-14T00:00:00+00:00</updated>
+   <id>http://lab.section9.co.uk/2012/02/14/3D-Scanning</id>
+   <content type="html">&lt;p&gt;I've been interested in scanning things of late. There is a job I'm chasing that may potentially involve 3D scanning and as a project, it encompasses many things I like. So I decided to give &lt;a href=&quot;&quot;&gt;123D Catch&lt;/a&gt; a go, as it seems to be quite good from what people have posted online. Sadly, I've not had so much luck with it.&lt;/p&gt;
+
+&lt;p&gt;Apparently, one needs to rotate a camera around the object you want to scan, so I did just that, building a little rig out of a bicycle wheel, just like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7066/6869360089_e926cb6fd1.jpg&quot; alt=&quot;Bicycle Wheel Scanner&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mounted around the rim, I placed the Logitech C910 that I use for good work. The results look like this:&lt;/p&gt;
+
+&lt;object width=&quot;560&quot; height=&quot;315&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/-KmUcCcHuoE?version=3&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/-KmUcCcHuoE?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;560&quot; height=&quot;315&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;You can, of course, just spin the thing and record video. That looks quite cool actually!&lt;/p&gt;
+
+&lt;object width=&quot;560&quot; height=&quot;315&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/Lips-BBa138?version=3&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/Lips-BBa138?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;420&quot; height=&quot;315&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;The problem is, the results just arent that impressive. Only the hat actually came out right.&lt;/p&gt;
+
+&lt;object width=&quot;560&quot; height=&quot;315&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/RQHA57jadsY?version=3&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/RQHA57jadsY?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;560&quot; height=&quot;315&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;So I thought, maybe I'm being too clever. Lets just use some actual DSLR snaps as people seem to suggest. The best I managed was half a pig!&lt;/p&gt;
+
+&lt;object width=&quot;560&quot; height=&quot;315&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/ZVU8vY8BRc4?version=3&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/ZVU8vY8BRc4?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;560&quot; height=&quot;315&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+
+
+&lt;object width=&quot;420&quot; height=&quot;315&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/i2bnaICown4?version=3&amp;amp;hl=en_US&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/i2bnaICown4?version=3&amp;amp;hl=en_US&quot; type=&quot;application/x-shockwave-flash&quot; width=&quot;420&quot; height=&quot;315&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;So basically, a thumbs down for 123D catch. I suspect laser scanning or improved Kinect code is the way forward here.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Phantom Limb Pain with the Kinect</title>

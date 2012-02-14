@@ -36,71 +36,44 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>03 Feb 2012</li>     
+          <li>14 Feb 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/02/03/Phantom-Limb.html">Phantom Limb Pain with the Kinect</a></h3>
-    	 <p>Over the summer, I worked with <a href="http://aig.cs.man.ac.uk/home/home.php">Advanced Interfaces Group</a> at <a href="http://www.manchester.ac.uk">The University of Manchester</a> on a research project to investigate <a href="http://en.wikipedia.org/wiki/Phantom_limb">Phantom Limb Pain</a>. Previously, Steve Pettifer and Toby Howard (the principle researchers) has tried VR and ping pong ball style tracking in order to recreate a virtual world and 'mirror' the missing limb. The idea is to create a more immersive version of the <a href="http://en.wikipedia.org/wiki/Mirror_box">Ramachandran Mirror Box</a>. It's a way to try and unlearn what has been learnt.</p>
+    		<h3><a href="/2012/02/14/3D-Scanning.html">3D Scanning with 123D Catch</a></h3>
+    	 <p>I've been interested in scanning things of late. There is a job I'm chasing that may potentially involve 3D scanning and as a project, it encompasses many things I like. So I decided to give <a href="">123D Catch</a> a go, as it seems to be quite good from what people have posted online. Sadly, I've not had so much luck with it.</p>
 
-<object width="500" height="281"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=36085689&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=36085689&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="281"></embed></object>
+<p>Apparently, one needs to rotate a camera around the object you want to scan, so I did just that, building a little rig out of a bicycle wheel, just like this.</p>
+
+<p><img src="http://farm8.staticflickr.com/7066/6869360089_e926cb6fd1.jpg" alt="Bicycle Wheel Scanner" /></p>
+
+<p>Mounted around the rim, I placed the Logitech C910 that I use for good work. The results look like this:</p>
+
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/-KmUcCcHuoE?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/-KmUcCcHuoE?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
 
-<p>Since the Kinect and cheaper VR goggles have become available, it seemed the right time to rebuild this system with modern technology in order to test what things affect pain relief. Although the mirror box only costs about 2 pounds, we can't easily change parameters and exercises, so there is definitely something to look at.</p>
+<p>You can, of course, just spin the thing and record video. That looks quite cool actually!</p>
 
-<p>The technical aspects of the project were quite interesting. The first problem is how to get from the Kinect to a moving person? The OpenNI team were the first to do this with the OGRE model Sinbad:</p>
-
-<object width="480" height="360"><param name="movie" value="http://www.youtube.com/v/Zl6O-Rf52Co?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Zl6O-Rf52Co?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/Lips-BBa138?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Lips-BBa138?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="420" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
 
-<p>The technique is known as skinning. It works by attaching vertices to bones with weights. As the bones are transformed, the vertices follow the bones by a certain amount, relative to the weight. Imagine a lower arm bone moving up and down. The vertices in the lower arm will be attached with high weightings whereas the vertices in the leg will not.</p>
+<p>The problem is, the results just arent that impressive. Only the hat actually came out right.</p>
 
-<p>The problem here is there are no real APIs or similar for this. The closest modelling tool kit is the <a href="http://usa.autodesk.com/adsk/servlet/index?siteID=123112&amp;id=7478532">FBX SDK</a> which has support for skinning, textures, animation and indeed, anything you could possibly need for models. It's my goto library for this sort of thing.</p>
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/RQHA57jadsY?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/RQHA57jadsY?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
-<p>OpenNI provides tracking for the skeleton, as most of us know by now. In addition, it provides a matrix for each bone. Using this matrix with the FBX SDK, one can skin a model in the normal way. First challenge over!</p>
 
-<p>One thing the Kinect can't do is detect rotation. Imagine you are trying to rotate your wrist to look at your palm. That motion cannot be detected and its an open problem at the moment. As my video shows, a gyroscope can help to fix that.</p>
+<p>So I thought, maybe I'm being too clever. Lets just use some actual DSLR snaps as people seem to suggest. The best I managed was half a pig!</p>
 
-<p><img src="http://farm8.staticflickr.com/7033/6811254669_fcb48f2227.jpg" alt="Architecture" /></p>
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/ZVU8vY8BRc4?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ZVU8vY8BRc4?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
-<p>The next step is to create the visuals and immerse the user in the scene. Vuzix produce a set of reasonable headsets. The <a href="http://www.vuzix.com/consumer/products_vr920.html">Vuzix VR920</a> sits in my toolbox most of the time. They are superior to the Wrap models that Vuzix are pushing. The problem is they are now discontinued. This means the drivers for OSX don't actually work properly when it comes to the gyros and accelerometers. This meant that headtracking would be a problem.</p>
 
-<p>Thanks to <a href="http://adafruit.com/">Adafruit Industries</a> and <a href="http://www.sparkfun.com">Sparkfun</a> I decided it would be possible to create an agnostic head tracking solution using XBee wireless modules. Adafruit provided the USB dev boards for driving the XBees and Sparkfun provided the Gyro unit - The <a href="http://www.sparkfun.com/products/9184">Atomic IMU</a>. We tried a few other boards but this one seemed to work the best.</p>
 
-<p><img src="http://farm3.staticflickr.com/2130/5794083824_6cc8abfb7d.jpg" alt="Atomic" /></p>
 
-<p>At the time, I was up north and away from London Hackspace. Thankfully, FabLab came in with their laser cutter. I built the box and 3D Printed some cases for all the chargers and parts we needed. Rather than just have the XBee USB boards and the lipoly chargers being exposed, I figured some 3D printing might be in order.</p>
+<object width="420" height="315"><param name="movie" value="http://www.youtube.com/v/i2bnaICown4?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/i2bnaICown4?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="420" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
-<p><img src="http://farm8.staticflickr.com/7014/6811365387_73f69d5541.jpg" alt="XBee Case" /></p>
 
-<p>Google sketchup to 3D printing works quite well. Again, thanks to <a href="http://www.fablabmanchester.org/">FabLab Manchester</a> for helping out with that.</p>
-
-<p>Converting a Gyro and an Accelerometer into orientation data is not a trivial task. At first, I thought just a gyro would be fine but thats not the case at all. A gyro measures the force acting on the gyro to keep it stable, not the orientation itself. An accelerometer measures the acceleration in a particular direction. In order to understand the movement, one must have a start point and then integrate over the values. This means that errors will build up. These can be corrected with the accelerometer data and that is fine, so long as you actually have accelerometer data for that axis. You certainly don't for Yaw.</p>
-
-<p>This is known as yaw drift. You can't correct for it, because gravity acts along the Y axis, the up down axis. So if you are spinning around that axis the acceleration due to gravity doesn't change. In our version, we don't have a compass to correct for that. Its definitely something we can improve on.</p>
-
-<p>Most of the code is actually related to Unmanned Aerial Vechicles. Ultimately, I settled on the <a href="http://en.wikipedia.org/wiki/Discrete_cosine_transform">Discrete Cosine Matrix</a> with a set of <a href="http://en.wikipedia.org/wiki/Kalman_filter">Kalman filters</a>. Eventually, I'd like to implement <a href="http://code.google.com/p/imumargalgorithm30042010sohm/">this imu algorithm</a> as its likely to improve things drastically. That said, it's still not too bad, though the yaw needs to be reset a little too often. We also tested the <a href="http://voidbot.net/razor-6dof.html">Sparkfun Razor 6DOF</a> as well as there was quite a lot of good things said about it.</p>
-
-<p>Headtracking and limb tracking complete, the next step was the graphics. Shadows were seen as important in order to gain some context about where the user appears in the scene. I tried Screen Space Ambient Occlusion and basic shadow mapping, settling with the later.</p>
-
-<p><img src="http://farm7.staticflickr.com/6010/5964128715_26888db203.jpg" alt="Shadows" /></p>
-
-<p>One problem to these who know a little about OpenNI and Kinect tracking is the PSI Pose. This is where the calibration problem comes in. How can you ask a person with one arm to stand with both arms up in the air? Fortunately, we can save a calibration from a similar person and use these with the participant. The SDK has improved since then, so this should be less of a problem.</p>
-
-<p>At the same time, we needed to create some games. The participant needs to move their phantom limb in order to feel relief. I was joined on the project by a Manchester student, David Edwards who came up with a few games like Connect 4. At this point, I needed to consider documentation, APIs and similar - handing over my code to another person and asking them to run with it.</p>
-
-<p>This project covered all the bases for me. Working with talented people, making physical things, software engineering, computer graphics and most importantly, making a difference in someone's life. Our first participant said his pain was going down whilst he was using our program. Theres an awful lot left to explore. Im sure the AIG will come up with something great.</p>
-
-<p>The paper has been accepted at the GRAPP conference this year:</p>
-
-<p> S. Pettifer, T.L.J. Howard, B. Blundell, and D. Edwards.
- An immersive virtual environment for phantom limb pain rehabilitation.
- In Proceedings of the International Conference of Computer
- Graphics Theory and Applications (GRAPP),
- February 2012. Accepted for publication.</p>
-
-<p>At the time, I was motorcycling between Southport and Manchester quite regularly. For a few months, I was the leather clad biker programmer guy. It did feel pretty damn cool! :)</p>
+<p>So basically, a thumbs down for 123D catch. I suspect laser scanning or improved Kinect code is the way forward here.</p>
 
 	</div>
 </div>   
@@ -114,6 +87,8 @@
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/02/14/3D-Scanning.html">3D Scanning with 123D Catch</a> &dash; <abbr>14 Feb 2012</abbr></li>
 		
 			<li><a href="/2012/02/03/Phantom-Limb.html">Phantom Limb Pain with the Kinect</a> &dash; <abbr>03 Feb 2012</abbr></li>
 		
