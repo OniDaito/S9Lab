@@ -1,0 +1,68 @@
+---
+layout: post
+title: Spying and starting services with OSX
+---
+
+Unbelievable! It's been almost a month since my last blog post which is, quite frankly, terrible. What have I been doing?
+
+* Leaving CSM
+* Visiting many places
+* Working hard on OSX Services
+* Writing my own WebGL framework (and not getting far enough!)
+* many, many other small jobs
+
+Its been one of these months. Most of that revolves around getting my [iSpy](https://github.com/OniDaito/iSpy) project together and learning how OSX fails to make loading services easy. Basically, I have a small daemon process that reports the IP to whoever is listening on one port (broadcast) or a specific IP. For a while, I had a router on my desk, listening to which machines were on or off and comparing that with the Mac address list to see which machines I could run admin tasks on.
+
+Now, launching something as a daemon is not too hard with OSX. You need a *plist* file that goes into */Library/LaunchDaemons*. There are other places you can place this plist (and the [Apple Plist Page](https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man5/launchd.plist.5.html) has them all). [Launchctl](https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man1/launchctl.1.html#//apple_ref/doc/man/1/launchctl) is the command you need to interface with the *launchdaemon* process that runs osx. A plist looks like this:
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd >
+ <plist version="1.0">
+ <dict>
+ 	<key>Label</key>
+ 		<string>net.ispy.server</string>
+ 	<key>ProgramArguments</key>
+ 		<array>
+ 			<string>/Users/lsadmin/iSpy</string>
+ 			<string>--ip=10.130.145.15</string>
+ 		</array>
+ 	<key>RunAtLoad</key>
+ 		<true/>
+ 	<key>WorkingDirectory</key>
+ 		<string>/Users/lsadmin</string>
+ 	<key>UserName</key>
+ 		<string>student</string>
+ 	<key>LowPriorityIO</key>
+ 		<true/>
+ </dict>
+ </plist> 
+
+So, you have the various keys and tags that are fairly self explanatory. This works fine.....*EXCEPT* what do you do if you want to attach to a running session? Now we have a problem!
+
+So, a user logs in and you want to spawn a process that attaches to their windowed session in order to capture the mouse clicks or similar. The trick is to use the [loginhook](http://support.apple.com/kb/Ht2420) trick.
+
+Now this seemed not to work. The trick is to do this:
+
+    sudo defaults write \
+    /private/var/root/Library/Preferences/com.apple.loginwindow\
+    LoginHook /usr/bin/loginhook
+
+Set loginhook to chmod a+x and everytime a user logs in, loginhook will fire. Inside the loginhook you place a command like this:
+
+    launchctl submit -l 
+    net.ispy.student.server -- /Users/lsadmin/iSpy 
+    --ip 10.130.145.15 --nobroadcast --port 6668
+
+This launches my little daemon in the background. So basically, loginhook attaches to the windowed session and then fires off a service that sits in the background. The only issue with this, is a terminal window pops up saying that loginhook has executed. That sucks but fortunately, terminal is disabled on some accounts so this doesn't occur.
+
+So, for attaching to windowed sessions, we are cool. The problem I then faced was setting up Blender to render across a network with a set of slaves running as default. The issue here is to run a blender process in the background as a non priviledged user. Now, the first plist trick didnt work and neither did loginhook. The trick here is to create a bashscript like this:
+
+    #!/bin/bash
+    sudo su -- student -c "/Applications/Blender.app/Contents/MacOS/blender
+    -b /Users/student/Library/
+    Application\ Support/Blender/2.61/config/startup.blend -a"
+
+You then create a plist as before, that calls this bash script. This ends up running blender as a *student* process, waiting for commands from the render farm client.
+
+Snow Leopard, Lion, Leopard and Tiger all appear to have different processes for starting things up. I've looked at all the variations across the web and they certainly aren't easy to sort out. So far though, I've managed to get it sorted!
+

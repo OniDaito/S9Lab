@@ -36,44 +36,83 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>14 Feb 2012</li>     
+          <li>10 Mar 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/02/14/3D-Scanning.html">3D Scanning with 123D Catch</a></h3>
-    	 <p>I've been interested in scanning things of late. There is a job I'm chasing that may potentially involve 3D scanning and as a project, it encompasses many things I like. So I decided to give <a href="">123D Catch</a> a go, as it seems to be quite good from what people have posted online. Sadly, I've not had so much luck with it.</p>
+    		<h3><a href="/2012/03/10/Spying.html">Spying and starting services with OSX</a></h3>
+    	 <p>Unbelievable! It's been almost a month since my last blog post which is, quite frankly, terrible. What have I been doing?</p>
 
-<p>Apparently, one needs to rotate a camera around the object you want to scan, so I did just that, building a little rig out of a bicycle wheel, just like this.</p>
-
-<p><img src="http://farm8.staticflickr.com/7066/6869360089_e926cb6fd1.jpg" alt="Bicycle Wheel Scanner" /></p>
-
-<p>Mounted around the rim, I placed the Logitech C910 that I use for good work. The results look like this:</p>
-
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/-KmUcCcHuoE?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/-KmUcCcHuoE?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
-
-
-<p>You can, of course, just spin the thing and record video. That looks quite cool actually!</p>
-
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/Lips-BBa138?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Lips-BBa138?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="420" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<ul>
+<li>Leaving CSM</li>
+<li>Visiting many places</li>
+<li>Working hard on OSX Services</li>
+<li>Writing my own WebGL framework (and not getting far enough!)</li>
+<li>many, many other small jobs</li>
+</ul>
 
 
-<p>The problem is, the results just arent that impressive. Only the hat actually came out right.</p>
+<p>Its been one of these months. Most of that revolves around getting my <a href="https://github.com/OniDaito/iSpy">iSpy</a> project together and learning how OSX fails to make loading services easy. Basically, I have a small daemon process that reports the IP to whoever is listening on one port (broadcast) or a specific IP. For a while, I had a router on my desk, listening to which machines were on or off and comparing that with the Mac address list to see which machines I could run admin tasks on.</p>
 
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/RQHA57jadsY?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/RQHA57jadsY?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<p>Now, launching something as a daemon is not too hard with OSX. You need a <em>plist</em> file that goes into <em>/Library/LaunchDaemons</em>. There are other places you can place this plist (and the <a href="https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man5/launchd.plist.5.html">Apple Plist Page</a> has them all). <a href="https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man1/launchctl.1.html#//apple_ref/doc/man/1/launchctl">Launchctl</a> is the command you need to interface with the <em>launchdaemon</em> process that runs osx. A plist looks like this:</p>
 
+<p> &lt;?xml version="1.0" encoding="UTF-8"?>
+ &lt;!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd >
+ <plist version="1.0">
+ <dict></p>
 
-<p>So I thought, maybe I'm being too clever. Lets just use some actual DSLR snaps as people seem to suggest. The best I managed was half a pig!</p>
+<pre><code>&lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;net.ispy.server&lt;/string&gt;
+&lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/Users/lsadmin/iSpy&lt;/string&gt;
+        &lt;string&gt;--ip=10.130.145.15&lt;/string&gt;
+    &lt;/array&gt;
+&lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true/&gt;
+&lt;key&gt;WorkingDirectory&lt;/key&gt;
+    &lt;string&gt;/Users/lsadmin&lt;/string&gt;
+&lt;key&gt;UserName&lt;/key&gt;
+    &lt;string&gt;student&lt;/string&gt;
+&lt;key&gt;LowPriorityIO&lt;/key&gt;
+    &lt;true/&gt;
+</code></pre>
 
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/ZVU8vY8BRc4?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ZVU8vY8BRc4?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<p> </dict>
+ </plist></p>
 
+<p>So, you have the various keys and tags that are fairly self explanatory. This works fine.....<em>EXCEPT</em> what do you do if you want to attach to a running session? Now we have a problem!</p>
 
+<p>So, a user logs in and you want to spawn a process that attaches to their windowed session in order to capture the mouse clicks or similar. The trick is to use the <a href="http://support.apple.com/kb/Ht2420">loginhook</a> trick.</p>
 
+<p>Now this seemed not to work. The trick is to do this:</p>
 
-<object width="420" height="315"><param name="movie" value="http://www.youtube.com/v/i2bnaICown4?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/i2bnaICown4?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="420" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<pre><code>sudo defaults write \
+/private/var/root/Library/Preferences/com.apple.loginwindow\
+LoginHook /usr/bin/loginhook
+</code></pre>
 
+<p>Set loginhook to chmod a+x and everytime a user logs in, loginhook will fire. Inside the loginhook you place a command like this:</p>
 
-<p>So basically, a thumbs down for 123D catch. I suspect laser scanning or improved Kinect code is the way forward here.</p>
+<pre><code>launchctl submit -l 
+net.ispy.student.server -- /Users/lsadmin/iSpy 
+--ip 10.130.145.15 --nobroadcast --port 6668
+</code></pre>
+
+<p>This launches my little daemon in the background. So basically, loginhook attaches to the windowed session and then fires off a service that sits in the background. The only issue with this, is a terminal window pops up saying that loginhook has executed. That sucks but fortunately, terminal is disabled on some accounts so this doesn't occur.</p>
+
+<p>So, for attaching to windowed sessions, we are cool. The problem I then faced was setting up Blender to render across a network with a set of slaves running as default. The issue here is to run a blender process in the background as a non priviledged user. Now, the first plist trick didnt work and neither did loginhook. The trick here is to create a bashscript like this:</p>
+
+<pre><code>#!/bin/bash
+sudo su -- student -c "/Applications/Blender.app/Contents/MacOS/blender
+-b /Users/student/Library/
+Application\ Support/Blender/2.61/config/startup.blend -a"
+</code></pre>
+
+<p>You then create a plist as before, that calls this bash script. This ends up running blender as a <em>student</em> process, waiting for commands from the render farm client.</p>
+
+<p>Snow Leopard, Lion, Leopard and Tiger all appear to have different processes for starting things up. I've looked at all the variations across the web and they certainly aren't easy to sort out. So far though, I've managed to get it sorted!</p>
 
 	</div>
 </div>   
@@ -87,6 +126,8 @@
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/03/10/Spying.html">Spying and starting services with OSX</a> &dash; <abbr>10 Mar 2012</abbr></li>
 		
 			<li><a href="/2012/02/14/3D-Scanning.html">3D Scanning with 123D Catch</a> &dash; <abbr>14 Feb 2012</abbr></li>
 		

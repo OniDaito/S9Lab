@@ -4,13 +4,92 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-02-14T12:33:05+00:00</updated>
+ <updated>2012-03-09T12:55:05+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Spying and starting services with OSX</title>
+   <link href="http://lab.section9.co.uk/2012/03/10/Spying.html"/>
+   <updated>2012-03-10T00:00:00+00:00</updated>
+   <id>http://lab.section9.co.uk/2012/03/10/Spying</id>
+   <content type="html">&lt;p&gt;Unbelievable! It's been almost a month since my last blog post which is, quite frankly, terrible. What have I been doing?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Leaving CSM&lt;/li&gt;
+&lt;li&gt;Visiting many places&lt;/li&gt;
+&lt;li&gt;Working hard on OSX Services&lt;/li&gt;
+&lt;li&gt;Writing my own WebGL framework (and not getting far enough!)&lt;/li&gt;
+&lt;li&gt;many, many other small jobs&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Its been one of these months. Most of that revolves around getting my &lt;a href=&quot;https://github.com/OniDaito/iSpy&quot;&gt;iSpy&lt;/a&gt; project together and learning how OSX fails to make loading services easy. Basically, I have a small daemon process that reports the IP to whoever is listening on one port (broadcast) or a specific IP. For a while, I had a router on my desk, listening to which machines were on or off and comparing that with the Mac address list to see which machines I could run admin tasks on.&lt;/p&gt;
+
+&lt;p&gt;Now, launching something as a daemon is not too hard with OSX. You need a &lt;em&gt;plist&lt;/em&gt; file that goes into &lt;em&gt;/Library/LaunchDaemons&lt;/em&gt;. There are other places you can place this plist (and the &lt;a href=&quot;https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man5/launchd.plist.5.html&quot;&gt;Apple Plist Page&lt;/a&gt; has them all). &lt;a href=&quot;https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man1/launchctl.1.html#//apple_ref/doc/man/1/launchctl&quot;&gt;Launchctl&lt;/a&gt; is the command you need to interface with the &lt;em&gt;launchdaemon&lt;/em&gt; process that runs osx. A plist looks like this:&lt;/p&gt;
+
+&lt;p&gt; &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+ &amp;lt;!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd &gt;
+ &lt;plist version=&quot;1.0&quot;&gt;
+ &lt;dict&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
+    &amp;lt;string&amp;gt;net.ispy.server&amp;lt;/string&amp;gt;
+&amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt;
+    &amp;lt;array&amp;gt;
+        &amp;lt;string&amp;gt;/Users/lsadmin/iSpy&amp;lt;/string&amp;gt;
+        &amp;lt;string&amp;gt;--ip=10.130.145.15&amp;lt;/string&amp;gt;
+    &amp;lt;/array&amp;gt;
+&amp;lt;key&amp;gt;RunAtLoad&amp;lt;/key&amp;gt;
+    &amp;lt;true/&amp;gt;
+&amp;lt;key&amp;gt;WorkingDirectory&amp;lt;/key&amp;gt;
+    &amp;lt;string&amp;gt;/Users/lsadmin&amp;lt;/string&amp;gt;
+&amp;lt;key&amp;gt;UserName&amp;lt;/key&amp;gt;
+    &amp;lt;string&amp;gt;student&amp;lt;/string&amp;gt;
+&amp;lt;key&amp;gt;LowPriorityIO&amp;lt;/key&amp;gt;
+    &amp;lt;true/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt; &lt;/dict&gt;
+ &lt;/plist&gt;&lt;/p&gt;
+
+&lt;p&gt;So, you have the various keys and tags that are fairly self explanatory. This works fine.....&lt;em&gt;EXCEPT&lt;/em&gt; what do you do if you want to attach to a running session? Now we have a problem!&lt;/p&gt;
+
+&lt;p&gt;So, a user logs in and you want to spawn a process that attaches to their windowed session in order to capture the mouse clicks or similar. The trick is to use the &lt;a href=&quot;http://support.apple.com/kb/Ht2420&quot;&gt;loginhook&lt;/a&gt; trick.&lt;/p&gt;
+
+&lt;p&gt;Now this seemed not to work. The trick is to do this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo defaults write \
+/private/var/root/Library/Preferences/com.apple.loginwindow\
+LoginHook /usr/bin/loginhook
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Set loginhook to chmod a+x and everytime a user logs in, loginhook will fire. Inside the loginhook you place a command like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;launchctl submit -l 
+net.ispy.student.server -- /Users/lsadmin/iSpy 
+--ip 10.130.145.15 --nobroadcast --port 6668
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This launches my little daemon in the background. So basically, loginhook attaches to the windowed session and then fires off a service that sits in the background. The only issue with this, is a terminal window pops up saying that loginhook has executed. That sucks but fortunately, terminal is disabled on some accounts so this doesn't occur.&lt;/p&gt;
+
+&lt;p&gt;So, for attaching to windowed sessions, we are cool. The problem I then faced was setting up Blender to render across a network with a set of slaves running as default. The issue here is to run a blender process in the background as a non priviledged user. Now, the first plist trick didnt work and neither did loginhook. The trick here is to create a bashscript like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+sudo su -- student -c &quot;/Applications/Blender.app/Contents/MacOS/blender
+-b /Users/student/Library/
+Application\ Support/Blender/2.61/config/startup.blend -a&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You then create a plist as before, that calls this bash script. This ends up running blender as a &lt;em&gt;student&lt;/em&gt; process, waiting for commands from the render farm client.&lt;/p&gt;
+
+&lt;p&gt;Snow Leopard, Lion, Leopard and Tiger all appear to have different processes for starting things up. I've looked at all the variations across the web and they certainly aren't easy to sort out. So far though, I've managed to get it sorted!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>3D Scanning with 123D Catch</title>
