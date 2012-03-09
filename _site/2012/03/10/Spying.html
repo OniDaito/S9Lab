@@ -56,30 +56,28 @@
 
 <p>Now, launching something as a daemon is not too hard with OSX. You need a <em>plist</em> file that goes into <em>/Library/LaunchDaemons</em>. There are other places you can place this plist (and the <a href="https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man5/launchd.plist.5.html">Apple Plist Page</a> has them all). <a href="https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man1/launchctl.1.html#//apple_ref/doc/man/1/launchctl">Launchctl</a> is the command you need to interface with the <em>launchdaemon</em> process that runs osx. A plist looks like this:</p>
 
-<p> &lt;?xml version="1.0" encoding="UTF-8"?>
- &lt;!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd >
- <plist version="1.0">
- <dict></p>
-
-<pre><code>&lt;key&gt;Label&lt;/key&gt;
-    &lt;string&gt;net.ispy.server&lt;/string&gt;
-&lt;key&gt;ProgramArguments&lt;/key&gt;
-    &lt;array&gt;
-        &lt;string&gt;/Users/lsadmin/iSpy&lt;/string&gt;
-        &lt;string&gt;--ip=10.130.145.15&lt;/string&gt;
-    &lt;/array&gt;
-&lt;key&gt;RunAtLoad&lt;/key&gt;
-    &lt;true/&gt;
-&lt;key&gt;WorkingDirectory&lt;/key&gt;
-    &lt;string&gt;/Users/lsadmin&lt;/string&gt;
-&lt;key&gt;UserName&lt;/key&gt;
-    &lt;string&gt;student&lt;/string&gt;
-&lt;key&gt;LowPriorityIO&lt;/key&gt;
-    &lt;true/&gt;
+<pre><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd &gt;
+ &lt;plist version="1.0"&gt;
+ &lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+        &lt;string&gt;net.ispy.server&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;/Users/lsadmin/iSpy&lt;/string&gt;
+            &lt;string&gt;--ip=10.130.145.15&lt;/string&gt;
+        &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+        &lt;true/&gt;
+    &lt;key&gt;WorkingDirectory&lt;/key&gt;
+        &lt;string&gt;/Users/lsadmin&lt;/string&gt;
+    &lt;key&gt;UserName&lt;/key&gt;
+        &lt;string&gt;student&lt;/string&gt;
+    &lt;key&gt;LowPriorityIO&lt;/key&gt;
+        &lt;true/&gt;
+ &lt;/dict&gt;
+ &lt;/plist&gt; 
 </code></pre>
-
-<p> </dict>
- </plist></p>
 
 <p>So, you have the various keys and tags that are fairly self explanatory. This works fine.....<em>EXCEPT</em> what do you do if you want to attach to a running session? Now we have a problem!</p>
 

@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-03-09T12:55:05+00:00</updated>
+ <updated>2012-03-09T12:57:07+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -32,30 +32,28 @@
 
 &lt;p&gt;Now, launching something as a daemon is not too hard with OSX. You need a &lt;em&gt;plist&lt;/em&gt; file that goes into &lt;em&gt;/Library/LaunchDaemons&lt;/em&gt;. There are other places you can place this plist (and the &lt;a href=&quot;https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man5/launchd.plist.5.html&quot;&gt;Apple Plist Page&lt;/a&gt; has them all). &lt;a href=&quot;https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man1/launchctl.1.html#//apple_ref/doc/man/1/launchctl&quot;&gt;Launchctl&lt;/a&gt; is the command you need to interface with the &lt;em&gt;launchdaemon&lt;/em&gt; process that runs osx. A plist looks like this:&lt;/p&gt;
 
-&lt;p&gt; &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
- &amp;lt;!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd &gt;
- &lt;plist version=&quot;1.0&quot;&gt;
- &lt;dict&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
-    &amp;lt;string&amp;gt;net.ispy.server&amp;lt;/string&amp;gt;
-&amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt;
-    &amp;lt;array&amp;gt;
-        &amp;lt;string&amp;gt;/Users/lsadmin/iSpy&amp;lt;/string&amp;gt;
-        &amp;lt;string&amp;gt;--ip=10.130.145.15&amp;lt;/string&amp;gt;
-    &amp;lt;/array&amp;gt;
-&amp;lt;key&amp;gt;RunAtLoad&amp;lt;/key&amp;gt;
-    &amp;lt;true/&amp;gt;
-&amp;lt;key&amp;gt;WorkingDirectory&amp;lt;/key&amp;gt;
-    &amp;lt;string&amp;gt;/Users/lsadmin&amp;lt;/string&amp;gt;
-&amp;lt;key&amp;gt;UserName&amp;lt;/key&amp;gt;
-    &amp;lt;string&amp;gt;student&amp;lt;/string&amp;gt;
-&amp;lt;key&amp;gt;LowPriorityIO&amp;lt;/key&amp;gt;
-    &amp;lt;true/&amp;gt;
+&lt;pre&gt;&lt;code&gt; &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+ &amp;lt;!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd &amp;gt;
+ &amp;lt;plist version=&quot;1.0&quot;&amp;gt;
+ &amp;lt;dict&amp;gt;
+    &amp;lt;key&amp;gt;Label&amp;lt;/key&amp;gt;
+        &amp;lt;string&amp;gt;net.ispy.server&amp;lt;/string&amp;gt;
+    &amp;lt;key&amp;gt;ProgramArguments&amp;lt;/key&amp;gt;
+        &amp;lt;array&amp;gt;
+            &amp;lt;string&amp;gt;/Users/lsadmin/iSpy&amp;lt;/string&amp;gt;
+            &amp;lt;string&amp;gt;--ip=10.130.145.15&amp;lt;/string&amp;gt;
+        &amp;lt;/array&amp;gt;
+    &amp;lt;key&amp;gt;RunAtLoad&amp;lt;/key&amp;gt;
+        &amp;lt;true/&amp;gt;
+    &amp;lt;key&amp;gt;WorkingDirectory&amp;lt;/key&amp;gt;
+        &amp;lt;string&amp;gt;/Users/lsadmin&amp;lt;/string&amp;gt;
+    &amp;lt;key&amp;gt;UserName&amp;lt;/key&amp;gt;
+        &amp;lt;string&amp;gt;student&amp;lt;/string&amp;gt;
+    &amp;lt;key&amp;gt;LowPriorityIO&amp;lt;/key&amp;gt;
+        &amp;lt;true/&amp;gt;
+ &amp;lt;/dict&amp;gt;
+ &amp;lt;/plist&amp;gt; 
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt; &lt;/dict&gt;
- &lt;/plist&gt;&lt;/p&gt;
 
 &lt;p&gt;So, you have the various keys and tags that are fairly self explanatory. This works fine.....&lt;em&gt;EXCEPT&lt;/em&gt; what do you do if you want to attach to a running session? Now we have a problem!&lt;/p&gt;
 
