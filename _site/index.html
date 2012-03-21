@@ -36,81 +36,29 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>10 Mar 2012</li>     
+          <li>21 Mar 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/03/10/Spying.html">Spying and starting services with OSX</a></h3>
-    	 <p>Unbelievable! It's been almost a month since my last blog post which is, quite frankly, terrible. What have I been doing?</p>
+    		<h3><a href="/2012/03/21/Resonate.html">Resonate Festival</a></h3>
+    	 <p>As part of my final duties at CSM, I went to the <a href="http://resonate.io/2012/#home">Resonate Festival</a> in Belgrade, Serbia.</p>
 
-<ul>
-<li>Leaving CSM</li>
-<li>Visiting many places</li>
-<li>Working hard on OSX Services</li>
-<li>Writing my own WebGL framework (and not getting far enough!)</li>
-<li>many, many other small jobs</li>
-</ul>
+<p><img src="http://farm8.staticflickr.com/7046/7001136999_1ca162a76c.jpg" alt="Me Papped" /></p>
 
+<p>The festival itself had its fair share of rockstars - the lineup consisting of almost everyone who is anyone in my particular field. We'd decided to take some of the students along with us as they were perhaps more into it than I was. Ultimately, it was aimed at them. Most of the talks were rehashings of things I'd see before.</p>
 
-<p>Its been one of these months. Most of that revolves around getting my <a href="https://github.com/OniDaito/iSpy">iSpy</a> project together and learning how OSX fails to make loading services easy. Basically, I have a small daemon process that reports the IP to whoever is listening on one port (broadcast) or a specific IP. For a while, I had a router on my desk, listening to which machines were on or off and comparing that with the Mac address list to see which machines I could run admin tasks on.</p>
+<p>On the first day, most of the talks took place in a small room that had nowhere enough space, let alone chairs. The Guardian gave an interesting talk about streams and how we digest information these days and the written images guys gave an interesting talk, even if they were a bit scared. Overall, it was somewhat annoying sitting on the floor and not actually being able to see very much. I didn't really learn very much but I the tour of the city of Belgrade was a little more useful and fun!</p>
 
-<p>Now, launching something as a daemon is not too hard with OSX. You need a <em>plist</em> file that goes into <em>/Library/LaunchDaemons</em>. There are other places you can place this plist (and the <a href="https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man5/launchd.plist.5.html">Apple Plist Page</a> has them all). <a href="https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man1/launchctl.1.html#//apple_ref/doc/man/1/launchctl">Launchctl</a> is the command you need to interface with the <em>launchdaemon</em> process that runs osx. A plist looks like this:</p>
+<p>On the second day, we were determined to actually get a decent seat. Jurg Lehni gave a very interesting talk, as you can see from my face below:</p>
 
-<pre><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
- &lt;!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd &gt;
- &lt;plist version="1.0"&gt;
- &lt;dict&gt;
-    &lt;key&gt;Label&lt;/key&gt;
-        &lt;string&gt;net.ispy.server&lt;/string&gt;
-    &lt;key&gt;ProgramArguments&lt;/key&gt;
-        &lt;array&gt;
-            &lt;string&gt;/Users/lsadmin/iSpy&lt;/string&gt;
-            &lt;string&gt;--ip=10.130.145.15&lt;/string&gt;
-        &lt;/array&gt;
-    &lt;key&gt;RunAtLoad&lt;/key&gt;
-        &lt;true/&gt;
-    &lt;key&gt;WorkingDirectory&lt;/key&gt;
-        &lt;string&gt;/Users/lsadmin&lt;/string&gt;
-    &lt;key&gt;UserName&lt;/key&gt;
-        &lt;string&gt;student&lt;/string&gt;
-    &lt;key&gt;LowPriorityIO&lt;/key&gt;
-        &lt;true/&gt;
- &lt;/dict&gt;
- &lt;/plist&gt; 
-</code></pre>
+<p><img src="http://farm8.staticflickr.com/7060/6990443813_e7f0d3194c.jpg" alt="throne" /></p>
 
-<p>So, you have the various keys and tags that are fairly self explanatory. This works fine.....<em>EXCEPT</em> what do you do if you want to attach to a running session? Now we have a problem!</p>
+<p>I dont mess about when I've had a bad experience! Big seats certainly make talks a lot better. Jer Thorp gave an interesting talk and Field.io showed off a lot of their very pretty work which is always lovely to see. After about 5pm though, things just got a little boring and the city began to call instead. I decided not to stick around for DJ Spooky and worked on a project instead,</p>
 
-<p>So, a user logs in and you want to spawn a process that attaches to their windowed session in order to capture the mouse clicks or similar. The trick is to use the <a href="http://support.apple.com/kb/Ht2420">loginhook</a> trick.</p>
+<p>So overall, was it worth it? Well, Serbia certainly is a fun place to visit and Belgrade has a lot of energy. The weather was great and I took plenty of good photos but overall, I'd say such events are more rabble rousing speeches that mostly consist of "look at us, aren't we cool" - Its something I'm not a huge fan of and if anything, its galvanised me to make more stuff which is a result of sorts but not something I'd actually expected.</p>
 
-<p>Now this seemed not to work. The trick is to do this:</p>
-
-<pre><code>sudo defaults write \
-/private/var/root/Library/Preferences/com.apple.loginwindow\
-LoginHook /usr/bin/loginhook
-</code></pre>
-
-<p>Set loginhook to chmod a+x and everytime a user logs in, loginhook will fire. Inside the loginhook you place a command like this:</p>
-
-<pre><code>launchctl submit -l 
-net.ispy.student.server -- /Users/lsadmin/iSpy 
---ip 10.130.145.15 --nobroadcast --port 6668
-</code></pre>
-
-<p>This launches my little daemon in the background. So basically, loginhook attaches to the windowed session and then fires off a service that sits in the background. The only issue with this, is a terminal window pops up saying that loginhook has executed. That sucks but fortunately, terminal is disabled on some accounts so this doesn't occur.</p>
-
-<p>So, for attaching to windowed sessions, we are cool. The problem I then faced was setting up Blender to render across a network with a set of slaves running as default. The issue here is to run a blender process in the background as a non priviledged user. Now, the first plist trick didnt work and neither did loginhook. The trick here is to create a bashscript like this:</p>
-
-<pre><code>#!/bin/bash
-sudo su -- student -c "/Applications/Blender.app/Contents/MacOS/blender
--b /Users/student/Library/
-Application\ Support/Blender/2.61/config/startup.blend -a"
-</code></pre>
-
-<p>You then create a plist as before, that calls this bash script. This ends up running blender as a <em>student</em> process, waiting for commands from the render farm client.</p>
-
-<p>Snow Leopard, Lion, Leopard and Tiger all appear to have different processes for starting things up. I've looked at all the variations across the web and they certainly aren't easy to sort out. So far though, I've managed to get it sorted!</p>
+<p>I think, the next conference I go to, I'll need to be presenting. Otherwise, its just not really worth it.</p>
 
 	</div>
 </div>   
@@ -124,6 +72,8 @@ Application\ Support/Blender/2.61/config/startup.blend -a"
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/03/21/Resonate.html">Resonate Festival</a> &dash; <abbr>21 Mar 2012</abbr></li>
 		
 			<li><a href="/2012/03/10/Spying.html">Spying and starting services with OSX</a> &dash; <abbr>10 Mar 2012</abbr></li>
 		
