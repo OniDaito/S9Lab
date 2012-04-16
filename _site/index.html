@@ -36,33 +36,25 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>04 Apr 2012</li>     
+          <li>16 Apr 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/04/04/Minimus-and-Sega.html">Minimus and Sega</a></h3>
-    	 <p>My sister has been a big fan of retro gaming for some time and for her birthday I decided to make a USB convertor for the sega megadrive pad in order to play <a href="http://mamedev.org">MAME</a> the way it's meant to be played.</p>
+    		<h3><a href="/2012/04/16/Waistcoat.html">Custom Space Invader Waistcoat</a></h3>
+    	 <p>Its fair to say that Im quite disillusioned with clothing in general and shop bought merchandise for men tends to be bland and just not fun unless you have loads of money. I personally feel that this needs to be changed. The Curator is an excellent seamstress and has been teaching me some tailoring and here is the first result.</p>
 
-<p><img src="http://farm8.staticflickr.com/7179/7029645643_83b6a3ec75.jpg" alt="minimus" /></p>
+<p><img src="http://farm6.staticflickr.com/5462/6937114888_18a658df46.jpg" alt="Waistcoat" /></p>
 
-<p>Now there were a few ways I could go about this. I saw a <a href="http://dangerousprototypes.com/forum/viewtopic.php?f=56&amp;t=2971">blog post from dangerous prototypes</a> that talked about using a PIC. Now I thought this would be a great time to test out the <a href="http://dangerousprototypes.com/bus-pirate-manual/">Bus Pirate</a> (which is a great little toy) and learn how to program something a little different.</p>
+<p>The whole thing is custom made and fits like a glove. The pockets were quite a challenge and indeed, there were a few tantrums before bedtime; it was a hell of a learning curve but finally, the waistcoat has seen the light of day. Thankfully, my girlfriend is very patient and a good teacher. Sewing with lovely super 100s material is quite lovely. Working from a pattern, basting, welted pockets and other such challenges were met and overcome, but I certainly could never have done this on my own.</p>
 
-<p>Sadly, it turns out that this is not the case and you need a special adaptor to program PIC chips. What an utterly stupid thing to have done.</p>
+<p><img src="http://farm6.staticflickr.com/5235/6937115558_6b961ec157.jpg" alt="Buttons" /></p>
 
-<p><img src="http://farm7.staticflickr.com/6211/7029644525_1e4d78eee4.jpg" alt="minimus" /></p>
+<p>The buttons are quite nifty. Designed with QCad and then cut with a laser cutter, these little beauties bring the whole ensemble together. Originally I had thought of laser cutting a small hole through the orange perspex behind but it didn't quite work. In the end I bought some shanks from eBay and glued them on. It turns out the little flashes of orange really make it. Of course, the bottom button is the turret - slightly offset.</p>
 
-<p>So instead, I managed to find out about the <a href="http://www.minimususb.com/">minimus</a> thanks largely to <a href="http://imakethin.gs/">Tom Wyatt</a> and <a href="http://jamie.lentin.co.uk/embedded/arcade-joystick/">Jamie Lentin</a>. The minimus is based on everyone's favourite, AVR! Only this particular AVR chip has USB built in! You can pick up a minimus from <a href="http://www.modtraders.co.uk/">Mod Traders</a> and I highly suggest you do. The Minimus is powered by an Atmel AT90USB162. Its an 8-bit chip with 16K of memory. Its not quite as hefty as the Minimus 32 or the later arduino boards but at a fiver you'd be foolish not to buy at least 5. But here is the real clincher.</p>
+<p><img src="http://farm8.staticflickr.com/7264/6881416048_9804c98b1f.jpg" alt="buttons" /></p>
 
-<p><a href="http://www.fourwalledcubicle.com/LUFA.php">LUFA</a> is a full USB stack that can run on the minimus. Yes, it means your small device can run as a USB joystick, keyboard or other HID device complete with all the manufacturer lines and data that normal USB devices have. It's a wonderous thing to behold.</p>
-
-<p>I used Linux and Ubuntu to build and flash my minimus. The instructions are simple enough. I've been fighting AVR and Atmel's corner for a little while now, largelty because of <a href="http://en.wikipedia.org/wiki/GNU_Compiler_Collection#Architectures">AVR-GCC</a> which is brilliant! The best compiler (okokok maybe clang is good too) has support for AVR chips. No need for extra cash spent on a special programming box. Its all done over USB. Brilliant. So forget PIC, it's time is over. From now on, its AVR, FPGAs and maybe a little ARM.</p>
-
-<p><img src="http://farm8.staticflickr.com/7229/7029644081_640d6f8fe4.jpg" alt="minimus" /></p>
-
-<p>So, the actual Sega pad itself. Well the trick is to check out the latest version of LUFA and start with Jamie's joystick code, albeit somewhat adapted to having just 4 buttons. There is one major hack though for the SEGA pads. They multiplex the signals. So if you checkout <a href="http://pinouts.ru/Game/genesiscontroller_pinout.shtml">pinouts.ru</a> you can see that there is a select line. What you are not told is that it is up to you to turn this on and off and check which buttons are pressed. So the minimus needs to check as fast as it can, if the various buttons are high when the select line is on and when it isn't on. This took me quite a while to find. Also, the version of LUFA in Jamie's article doesn't work outside of Linux sadly, so for OSX compatibility (and windows for that matter) use the latest from Subversion.</p>
-
-<p>Finally, I ordered an adaptor from Farnell for the 9 pin Atari style port and laser cut a small perspex box to mount it all in. Some wire, a little soldering and some hot glue later and the final device works a treat! :D One happy sister and a pleased hacker! What can possibly be bad about that? So forget stupid PIC chips. It's AVR all the way baby!</p>
+<p>If I make these again, I'll need to take into account the beam-width most likely, as the smaller pixels are barely more than melted slivers of plastic. The next challenge will be a set made by shapeways or milled from aluminium most likely.</p>
 
 	</div>
 </div>   
@@ -76,6 +68,8 @@
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/04/16/Waistcoat.html">Custom Space Invader Waistcoat</a> &dash; <abbr>16 Apr 2012</abbr></li>
 		
 			<li><a href="/2012/04/04/Minimus-and-Sega.html">Minimus and Sega</a> &dash; <abbr>04 Apr 2012</abbr></li>
 		
