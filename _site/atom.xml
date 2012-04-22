@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-04-22T13:56:08+01:00</updated>
+ <updated>2012-04-22T14:00:24+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -19,16 +19,16 @@
    <id>http://lab.section9.co.uk/2012/04/22/BoomBox</id>
    <content type="html">This is of course, no oridinary boom box at all, but a rather spiffing steam/cyber punk esque box that blows up when its turned down to the red level! I'm quite pleased with it. It's not been easy to build as my girlfriend will no doubt attest! :S
 
-!(Boom Box)[http://farm8.staticflickr.com/7193/7076489781_7e40a2017b.jpg]
+![Boom Box](http://farm8.staticflickr.com/7193/7076489781_7e40a2017b.jpg)
 
-Why build such a thing you ask? Well, it's to do with (Animation 12)[http://animation12.cs.manchester.ac.uk/] which is being held this summer. The idea is to get kids at school into CS and animation and similar fields. There is a competition for the best animations and awards are presented at a large event, held at the University of Manchester. There will be a keynote which this year, is all about lag, ping times and the speed of light and how we try and get around these limitations on the internet.
+Why build such a thing you ask? Well, it's to do with [Animation 12](http://animation12.cs.manchester.ac.uk/) which is being held this summer. The idea is to get kids at school into CS and animation and similar fields. There is a competition for the best animations and awards are presented at a large event, held at the University of Manchester. There will be a keynote which this year, is all about lag, ping times and the speed of light and how we try and get around these limitations on the internet.
 
-My box is basically a prop... a fake mad scientist gadget that pretends to slow down causality! Yup, the big 'C'. Its essentially a fun and graphic way of showing the (Michotte)[http://en.wikipedia.org/wiki/Albert_Michotte] experiment. So the idea is, after a certain point the brain believes that something isn't causal but actually, for small amounts of time between subsequent events, the brain can be fooled. 
+My box is basically a prop... a fake mad scientist gadget that pretends to slow down causality! Yup, the big 'C'. Its essentially a fun and graphic way of showing the [Michotte](http://en.wikipedia.org/wiki/Albert_Michotte) experiment. So the idea is, after a certain point the brain believes that something isn't causal but actually, for small amounts of time between subsequent events, the brain can be fooled. 
 
 
-The technical details revolve around an arduino (yes, everyone's favorite IC) and a standard circuit for switching on and off large voltages. I'd like to thank Phil Eagleton for helping with the schematic. Basically, the arduino is linked to an NPN Transitor that flicks a relay. The relay turns on a 9volt current that is passed through a pyro bought from (JustFX)[http://www.justfx.co.uk] - a small company over in Tottenham. They have lots of lovely pyrotechnics and theatre equipment which is good to know. 
+The technical details revolve around an arduino (yes, everyone's favorite IC) and a standard circuit for switching on and off large voltages. I'd like to thank Phil Eagleton for helping with the schematic. Basically, the arduino is linked to an NPN Transitor that flicks a relay. The relay turns on a 9volt current that is passed through a pyro bought from [JustFX](http://www.justfx.co.uk) - a small company over in Tottenham. They have lots of lovely pyrotechnics and theatre equipment which is good to know. 
 
-!(Schematic)[http://farm8.staticflickr.com/7203/7101949535_6537774da4.jpg]
+![Schematic](http://farm8.staticflickr.com/7203/7101949535_6537774da4.jpg)
 
 Its a fairly straightforward circuit but the thing that threw me is the notion of a common ground. Its soooo obvious, its often just assumed but in all the diagrams I looked at for transistor circuits, it simply wasn't mentioned. I stumbled on it by accident, then had it confirmed by Phil. Marvellous!
 
