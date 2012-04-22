@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-04-22T14:09:06+01:00</updated>
+ <updated>2012-04-22T14:15:36+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -17,27 +17,31 @@
    <link href="http://lab.section9.co.uk/2012/04/22/BoomBox.html"/>
    <updated>2012-04-22T00:00:00+01:00</updated>
    <id>http://lab.section9.co.uk/2012/04/22/BoomBox</id>
-   <content type="html">This is of course, no oridinary boom box at all, but a rather spiffing steam/cyber punk esque box that blows up when its turned down to the red level! I'm quite pleased with it. It's not been easy to build as my girlfriend will no doubt attest! :S
+   <content type="html">&lt;p&gt;This is of course, no oridinary boom box at all, but a rather spiffing steam/cyber punk esque box that blows up when its turned down to the red level! I'm quite pleased with it. It's not been easy to build as my girlfriend will no doubt attest! :S&lt;/p&gt;
 
-![Boom Box](http://farm8.staticflickr.com/7193/7076489781_7e40a2017b.jpg)
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7193/7076489781_7e40a2017b.jpg&quot; alt=&quot;Boom Box&quot; /&gt;&lt;/p&gt;
 
-Why build such a thing you ask? Well, it's to do with [Animation 12](http://animation12.cs.manchester.ac.uk/) which is being held this summer. The idea is to get kids at school into CS and animation and similar fields. There is a competition for the best animations and awards are presented at a large event, held at the University of Manchester. There will be a keynote which this year, is all about lag, ping times and the speed of light and how we try and get around these limitations on the internet.
+&lt;p&gt;Why build such a thing you ask? Well, it's to do with &lt;a href=&quot;http://animation12.cs.manchester.ac.uk/&quot;&gt;Animation 12&lt;/a&gt; which is being held this summer. The idea is to get kids at school into CS and animation and similar fields. There is a competition for the best animations and awards are presented at a large event, held at the University of Manchester. There will be a keynote which this year, is all about lag, ping times and the speed of light and how we try and get around these limitations on the internet.&lt;/p&gt;
 
-My box is basically a prop... a fake mad scientist gadget that pretends to slow down causality! Yup, the big 'C'. Its essentially a fun and graphic way of showing the [Michotte](http://en.wikipedia.org/wiki/Albert_Michotte) experiment. So the idea is, after a certain point the brain believes that something isn't causal but actually, for small amounts of time between subsequent events, the brain can be fooled. 
+&lt;p&gt;My box is basically a prop... a fake mad scientist gadget that pretends to slow down causality! Yup, the big 'C'. Its essentially a fun and graphic way of showing the &lt;a href=&quot;http://en.wikipedia.org/wiki/Albert_Michotte&quot;&gt;Michotte&lt;/a&gt; experiment. So the idea is, after a certain point the brain believes that something isn't causal but actually, for small amounts of time between subsequent events, the brain can be fooled.&lt;/p&gt;
+
+&lt;p&gt;The technical details revolve around an arduino (yes, everyone's favorite IC) and a standard circuit for switching on and off large voltages. I'd like to thank Phil Eagleton for helping with the schematic. Basically, the arduino is linked to an NPN Transitor that flicks a relay. The relay turns on a 9volt current that is passed through a pyro bought from &lt;a href=&quot;http://www.justfx.co.uk&quot;&gt;JustFX&lt;/a&gt; - a small company over in Tottenham. They have lots of lovely pyrotechnics and theatre equipment which is good to know.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7203/7101949535_6537774da4.jpg&quot; alt=&quot;Schematic&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Its a fairly straightforward circuit but the thing that threw me is the notion of a common ground. Its soooo obvious, its often just assumed but in all the diagrams I looked at for transistor circuits, it simply wasn't mentioned. I stumbled on it by accident, then had it confirmed by Phil. Marvellous!&lt;/p&gt;
+
+&lt;p&gt;So what do it do? Well here you go!&lt;/p&gt;
+
+&lt;iframe width=&quot;500&quot; height=&quot;284&quot; src=&quot;http://www.youtube.com/embed/BwJDT96jdZI&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 
 
-The technical details revolve around an arduino (yes, everyone's favorite IC) and a standard circuit for switching on and off large voltages. I'd like to thank Phil Eagleton for helping with the schematic. Basically, the arduino is linked to an NPN Transitor that flicks a relay. The relay turns on a 9volt current that is passed through a pyro bought from [JustFX](http://www.justfx.co.uk) - a small company over in Tottenham. They have lots of lovely pyrotechnics and theatre equipment which is good to know. 
+&lt;p&gt;These Pyros are called &quot;Robotics&quot; and explode in a shower of sparks. They are quite vicious actually, as my swearing will attest! Clearly I have a dirty mouth!&lt;/p&gt;
 
-![Schematic](http://farm8.staticflickr.com/7203/7101949535_6537774da4.jpg)
+&lt;iframe width=&quot;500&quot; height=&quot;284&quot; src=&quot;http://www.youtube.com/embed/NDQyUSc368U&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 
-Its a fairly straightforward circuit but the thing that threw me is the notion of a common ground. Its soooo obvious, its often just assumed but in all the diagrams I looked at for transistor circuits, it simply wasn't mentioned. I stumbled on it by accident, then had it confirmed by Phil. Marvellous!
 
-So what do it do? Well here you go!
-
-These Pyros are called &quot;Robotics&quot; and explode in a shower of sparks. They are quite vicious actually, as my swearing will attest! Clearly I have a dirty mouth! 
-
-Simply put 9V through them and BOOM! You have a wonderful explosion. I can't wait to see the finished video!
-
+&lt;p&gt;Simply put 9V through them and BOOM! You have a wonderful explosion. I can't wait to see the finished video!&lt;/p&gt;
 </content>
  </entry>
  
