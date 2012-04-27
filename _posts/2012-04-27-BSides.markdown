@@ -1,0 +1,26 @@
+---
+layout: post
+title: BSides London
+---
+It's not often I post about security stuff but I do like to know how the otherside lives. In my mind, I've always wanted to be an 'uber l33t haxor' but I just about rate script kiddie level. I'm not one for sniffing out exploits but one thing I do like is the intelligent vandalism side. Think Banksy, but in a more internet, technological sense. I think that idea has potential. So I go to a few conferences here and there and [BSides London](http://www.securitybsides.org.uk) is one that has just been this week.
+
+![http://www.securitybsides.org.uk/images/BsidesAprilLogo.jpg](http://www.securitybsides.org.uk/images/BsidesAprilLogo.jpg)
+
+So apart from having the crapest logo ever (and the one above isn't the worst, the one on the t-shirts is terrible) what did BSides have to offer? 
+
+Well the whole event was free! Free entry free coffee (that wasn't half bad), free sandwiches and pastries and loads of nice fruit. Thats already a good start. Of course, it was sponsored heavily but then, the sponsors weren't overtly in your face. I only had one chap talk to me about Ubikeys so all in all, not too bad. 
+
+The talks were interesting. The first was a talk on elegant security which, although interesting and funny, was not that informative I felt. Its a great concept to have in mind but then, thats something we should all aim for in our work, whatever field. Moving on from that, another talk on Social Engineering was... so so. Nothing remembered really.
+
+I was really looking forward to anti-forensics but it was cancelled. Instead we had a chap called Paco talk about Randomness which is a fantastic topic. A good speaker and quite passionate about his topic. Random really isn't simple and is often, not that random. After the break, the talk on HTML5 was of particular interest. The idea of running a botnet in a series of browsers is quite an amazing concept and I love the idea that this could take place. Perhaps an opt-in botnet for solving interesting problems is a much better idea? Still I'll be reading up at [HTML5Security.org](http://www.html5security.org) for all the latest tips.
+
+A Salesmans guide to social engineering was quite a funny talk. The idea of gauging people so you can sell to them, the use of NLP and similar is quite fascinating though Im told that the evidence for such things is anecdotal at best. Still, some people are more persuasive and there are indeed techniques that are taught to such people. Be aware, read the small print and question a lot seem to be the watch words. Dont be afraid to go against the grain and say 'no' seems to be the best way to avoid being socially engineered. Program or be programmed!
+
+Finally, the talk on Satellite hacking was marvellous. Technically, a little heavy for some, but it opened my eyes to a new world that is spinning over our heads, doing what it does. Its not an easy hobby to get in to but it does seem interesting. Apparently, Chinese security guards and Brazilian pirate radio stations get everywhere!
+
+I'd have liked to have seen more of track3, the talks that are short and unscheduled. There appeared to be a few interesting ones but I didnt get the chance. Of course, there was a lockpicking stand (which I failed at :( ) and I managed to snaffle two t-shirts and a laser pointer. Not bad I thought! A few stickers later and all was well.
+
+BSides is so much more fun than Infosec which runs at the same time. I have two rules for meetings and conferences these days. Go if you are either presenting orthere are things you really want to learn. Dont just go on a whim. I've fallen afoul of this before. The HTML and Satellite talks made it worth it, along with catching up with [Digininja](http://www.digininja.org/) who I tend to only see at such things.
+
+So I've learnt a few things, been inspired to learn more and chatted to some friends and drank more coffee than I thought possible. That, for me, is the perfect conference. And all for free! Contrast that with the invite to SIGCHI and I can see why some people think conferences are dead and over-rated. Not all of them are like this and BSides certainly isn't one of them. If you get the chance to go, definitely do so.
+

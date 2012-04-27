@@ -1,0 +1,75 @@
+<p>So I&#8217;ve decided to play with <a href='http://wiki.nginx.org/'>Nginx</a> on my server, leaving Apache behind. I must admit, I&#8217;ve had a lot of fun with it. It appears to be a good front end for funneling web requests to other services. At the moment, I have various things running on my server such as:</p>
+
+<ul>
+<li>Two sites running <a href='http://www.djangoproject.com/'>Django</a> with <em>Psycopg</em> connected to a <a href='www.postgresql.org'>Postgresql</a> database.</li>
+
+<li>A <a href='nodejs.org'>Node.js</a> install that talks to a <a href='www.mongodb.org'>MongoDB</a> database for a top secret project</li>
+
+<li>A <a href='http://www.mediawiki.org'>Mediawiki</a> setup that runs my own journal and ideas. Currently talks to mysql running with <em>php5-fpm</em></li>
+
+<li>Several static pages as and when needed</li>
+
+<li>Python <em>uWSGI</em> serving for the <a href='http://saito.section9.co.uk'>Denied</a> application</li>
+</ul>
+
+<p>So there is a fair bit going on that Nginx needs to take care of. Rather than use the stock Lucid install of Nginx I downloaded the source and built it with:</p>
+
+<p>sudo ./configure &#8211;prefix=/opt/nginx &#8211;user=www-data &#8211;group=www-data &#8211;with-http_ssl_module &#8211;with-ipv6</p>
+
+<p>You can then hit make. There are lots of modules and other things you can build. At the moment, ssl and ipv6 are the most important to me right now.</p>
+
+<p>Nginx config files are quite easy to understand and it&#8217;s quite easy to get a site up and running. In the case of Django, I went with the <a href='https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/'>FastCGI</a> route which seemed the easiest at the time (uWSGI might be better). This means you need to run your Django in a seperate process. Using a Linux <em>screen</em> you can do something like this:</p>
+
+<pre><code>su www-data -c &#39;./manage.py runfcgi method=prefork daemonize=false\ 
+socket=/tmp/section9.sock pidfile=django.pid maxrequests=100&#39;</code></pre>
+
+<p>The <em>maxrequests</em> variable is very important. Without it, I noticed a lot of processes waiting for IO when I studied the site using <em>top</em>. So far, that little line has helped make things faster.</p>
+
+<p>You can then setup Nginx with Django a little like this:</p>
+
+<pre><code>server {
+	listen 80;
+	server_name www.anneblundell.com;
+	rewrite ^/(.*) http://anneblundell.com/$1 permanent;
+}
+
+server {
+    server_name anneblundell.com;
+
+    access_log  /srv/www/anneblundell.com/logs/nginx_access.log;
+	error_log /srv/www/anneblundell.com/logs/nginx_error.log;
+
+	location /media {
+	root /srv/www/anneblundell.com/public_html/AnneBlundell/;
+}
+
+location / {
+	root /srv/www/anneblundell.com/public_html/AnneBlundell;
+	fastcgi_pass unix:/tmp/anneblundell.sock;
+
+	fastcgi_param PATH_INFO $fastcgi_script_name;
+
+	fastcgi_param REQUEST_METHOD $request_method;
+    fastcgi_param CONTENT_TYPE $content_type;
+   	fastcgi_param CONTENT_LENGTH $content_length;
+	fastcgi_param QUERY_STRING $query_string;
+	fastcgi_pass_header Authorization;
+    fastcgi_param  SERVER_ADDR        $server_addr;
+	fastcgi_param  SERVER_PORT        $server_port;
+	fastcgi_param  SERVER_NAME        $server_name;
+	fastcgi_param  SERVER_PROTOCOL 	  $server_protocol; 
+	fastcgi_intercept_errors off;
+}	</code></pre>
+
+<p>So Django runs ok for now. You can write down all the <em>fastcgi_params</em> in an include file to make things a little easier.</p>
+
+<p>But what about a simple Python Script? For Denied, I needed to query a text file, parse it, and present json on request. To do that, uWSGI came to mind. Use <em>pip</em> to install uwsi and then:</p>
+
+<pre><code>sudo su -c &quot;uwsgi --pythonpath /srv/www/section9.co.uk/public_html/python\
+ --uid www-data --module wsgi_configuration_module -s /tmp/uwsgi.sock&quot;</code></pre>
+
+<p>This creates a socket for which we can use with Nginx to grab our data. <a href='http://kbeezie.com/view/circuits-nginx-uwsgi/'>This Guide</a> is quite good for setting up Nginx to talk to a process.</p>
+
+<p>So Nginx takes care of a lot of things. One issue I have is dealing with Mediawiki. Annoyingly, there is quite a large slowdown in the move from Apache to Nginx and I&#8217;ve yet to find out the issue; likely it is my novice setup of php5-fpm. Quite annoying really.</p>
+
+<p>It&#8217;s quite easy to setup static pages - simply copy the simple example config, soft link and you are done. I&#8217;ve yet to attempt a setup with <em>Ruby on Rails</em> yet as Im reading into <a href='https://github.com/blog/517-unicorn'>Unicorn</a> and other such deployment strategies. I&#8217;ll let you know how it goes.</p>

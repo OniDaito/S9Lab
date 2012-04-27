@@ -1,0 +1,29 @@
+<p>So I&#8217;ve been playing around with <a href='http://www.mongodb.org'>MongoDB</a> for a little while now. Im certainly no expert but I get the feeling its pretty darn handy for smaller apps and webservers doing simple things or many, many small things. At the moment, I&#8217;m using it with an art installation, written in <a href='http://libcinder.org/'>Cinder</a> that records the positions of various figures over time. The data is not very relational (in fact, it isn&#8217;t at all) and so having a mongo setup seemed like the thing to do.</p>
+
+<p>Running mongob on OSX is quite easy if you use <a href='https://github.com/mxcl/homebrew'>Brew</a> (and you <em>really</em> should be). Install mongo and then call:</p>
+
+<pre><code>sudo mongod run --config \
+/usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf</code></pre>
+
+<p>You can also send the <em>&#8211;rest</em> option which allows you to get some interesting stats on what is going on, which is handy.</p>
+
+<p>At first, I used a <a href='http://nodejs.org/'>Node.js</a> front-end and sent all my database queries over the network interface. Thats generally a pretty bad way of doing things. I started to look into the C++ driver and I began to hit some interesting problems.</p>
+
+<p>I downloaded the <a href='http://www.mongodb.org/pages/viewpage.action?pageId=133415'>Mongo C++ Driver</a> and compiled up their example. The first thing is to generally follow the rules for the linux build.</p>
+
+<p>This runs quite well but trying to integrate this with <a href='http://libcinder.org/'>Cinder</a> caused a lot of problems, largely because both of them do different things with boost which is no good. I had a real struggle on my hands. In the end, I couldn&#8217;t quite figure out what to do so I used a classic solution; simply include the headers seperately and communicate between Mongo and Cinder using <em>std::string</em> only. Its not the best thing to do but it works.</p>
+
+<p>Essentially create a class that bridges the gap and only includes the standard libraries. I rebuilt mongo with the version of boost that comes with cinder which was <em>1.44</em> when I built my version. This can be done by downloading the particular version from the <a href='http://www.boost.org/'>boost website</a> and installing it, then rebuilding mongo. Its not the best solution but it does work.</p>
+
+<p>As mongo is running, you can pull up your terminal and login to your database with</p>
+
+<pre><code>mongo &lt;databasename&gt;</code></pre>
+
+<p>You can issue commands such as:</p>
+
+<pre><code>db.&lt;table&gt;.count()</code></pre>
+
+<p>and db.<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;table&gt;.drop()</pre></p>
+
+<p>and many other things besides. So far, the integration works quite well providing you have the right boost libs for both Cinder and Mongo. Performance wise, I&#8217;ve not had chance to find out, though we will in a week or so.</p>
