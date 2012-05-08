@@ -36,33 +36,33 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>27 Apr 2012</li>     
+          <li>08 May 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/04/27/BSides.html">BSides London</a></h3>
-    	 <p>It's not often I post about security stuff but I do like to know how the otherside lives. In my mind, I've always wanted to be an 'uber l33t haxor' but I just about rate script kiddie level. I'm not one for sniffing out exploits but one thing I do like is the intelligent vandalism side. Think Banksy, but in a more internet, technological sense. I think that idea has potential. So I go to a few conferences here and there and <a href="http://www.securitybsides.org.uk">BSides London</a> is one that has just been this week.</p>
+    		<h3><a href="/2012/05/08/StereoVision.html">Stereo Vision</a></h3>
+    	 <p>So what have I been up to these last few months? I've not had a lot of chance to mess around in the graphics domain, largely because I've been working on a large project for The University of Leeds. I've been interested in computer vision for a while and this seemed like a good chance to get to grips with it. Im working on the reconstruction of meshes from multiple camera viewpoints. This leads me into the realms of stereo vision.</p>
 
-<p><img src="http://www.securitybsides.org.uk/images/BsidesAprilLogo.jpg" alt="http://www.securitybsides.org.uk/images/BsidesAprilLogo.jpg" /></p>
+<object width="480" height="360"><param name="movie" value="http://www.youtube.com/v/7Gx4IRoq1ow?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/7Gx4IRoq1ow?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
-<p>So apart from having the crapest logo ever (and the one above isn't the worst, the one on the t-shirts is terrible) what did BSides have to offer?</p>
 
-<p>Well the whole event was free! Free entry free coffee (that wasn't half bad), free sandwiches and pastries and loads of nice fruit. Thats already a good start. Of course, it was sponsored heavily but then, the sponsors weren't overtly in your face. I only had one chap talk to me about Ubikeys so all in all, not too bad.</p>
+<p>In the initial case, the idea is to place two cameras side-by-side. When a known point is located in both frames, one can begin to calibrate the cameras, use triangulation and work out the depth. Using OpenCV, many of these functions are defined for you. In the above video, we can see the disparity map beginning to take shape. The disparity map on the right, shows the distance from one point in the left image to the same point in the right image. This apparent distance is related to the depth.</p>
 
-<p>The talks were interesting. The first was a talk on elegant security which, although interesting and funny, was not that informative I felt. Its a great concept to have in mind but then, thats something we should all aim for in our work, whatever field. Moving on from that, another talk on Social Engineering was... so so. Nothing remembered really.</p>
+<p>One needs to work out two sets of parameters before we can begin to calculate the disparity. The first set of parameters are called the Intrinsic Parameters - these are related to the distortion effects that are encountered when using any lens. Barrel distortion and tangential distortion can make straight lines look curved. The second set of parameters are called Extrinsic parameters which are related the setup of the two cameras. Modelling and solving these equations for these cameras is known as <a href="http://en.wikipedia.org/wiki/Camera_resectioning">Camera Resectioning</a>. Thankfully, OpenCV includes a method for this.</p>
 
-<p>I was really looking forward to anti-forensics but it was cancelled. Instead we had a chap called Paco talk about Randomness which is a fantastic topic. A good speaker and quite passionate about his topic. Random really isn't simple and is often, not that random. After the break, the talk on HTML5 was of particular interest. The idea of running a botnet in a series of browsers is quite an amazing concept and I love the idea that this could take place. Perhaps an opt-in botnet for solving interesting problems is a much better idea? Still I'll be reading up at <a href="http://www.html5security.org">HTML5Security.org</a> for all the latest tips.</p>
+<p>The issue with not having straight lines might seem trivial but you can really see the effect when you look at photographs of skyscrapers or other tall buildings; they tend to curve as they reach for the sky. Of course, this has problems for determining the right correspondances between two images.</p>
 
-<p>A Salesmans guide to social engineering was quite a funny talk. The idea of gauging people so you can sell to them, the use of NLP and similar is quite fascinating though Im told that the evidence for such things is anecdotal at best. Still, some people are more persuasive and there are indeed techniques that are taught to such people. Be aware, read the small print and question a lot seem to be the watch words. Dont be afraid to go against the grain and say 'no' seems to be the best way to avoid being socially engineered. Program or be programmed!</p>
+<p>No doubt, you'll have seen the chessboards everywhere when it comes to computer vision. Chessboards provide a good way to calibrate a camera as the intersections between the black squares form a good set of regular points on a plane. I've settled with a 9x6 chessboard with a wide, white edge, mounted on perspex. I take around 60 to 80 shots per camera when attempting to find the intrinsic values. So far, this seems to work most of the time. Im using Logitech C910 cameras for this experiment and they do have a reasonable amount of barrel distortion.</p>
 
-<p>Finally, the talk on Satellite hacking was marvellous. Technically, a little heavy for some, but it opened my eyes to a new world that is spinning over our heads, doing what it does. Its not an easy hobby to get in to but it does seem interesting. Apparently, Chinese security guards and Brazilian pirate radio stations get everywhere!</p>
+<p>The next step is to work out the Extrinsic Values. These are related to the setup and are not independent of the the view, unlike the intrinsic parameters. Depending on how your cameras are setup, these parameters will change. Again, OpenCV has another function that makes a pretty good guess at what these paramters should be. Again, you need a chessboard to generate a set of known points that can be seen from each camera.</p>
 
-<p>I'd have liked to have seen more of track3, the talks that are short and unscheduled. There appeared to be a few interesting ones but I didnt get the chance. Of course, there was a lockpicking stand (which I failed at :( ) and I managed to snaffle two t-shirts and a laser pointer. Not bad I thought! A few stickers later and all was well.</p>
+<object width="480" height="360"><param name="movie" value="http://www.youtube.com/v/D6DVhtsVmDE?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/D6DVhtsVmDE?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="480" height="360" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
-<p>BSides is so much more fun than Infosec which runs at the same time. I have two rules for meetings and conferences these days. Go if you are either presenting orthere are things you really want to learn. Dont just go on a whim. I've fallen afoul of this before. The HTML and Satellite talks made it worth it, along with catching up with <a href="http://www.digininja.org/">Digininja</a> who I tend to only see at such things.</p>
 
-<p>So I've learnt a few things, been inspired to learn more and chatted to some friends and drank more coffee than I thought possible. That, for me, is the perfect conference. And all for free! Contrast that with the invite to SIGCHI and I can see why some people think conferences are dead and over-rated. Not all of them are like this and BSides certainly isn't one of them. If you get the chance to go, definitely do so.</p>
+<p>In the above video, I am generating a disparity map on the right hand side, then creating a simple mesh in the middle. Sadly, it's not quite perfect yet, but it's early days so far.</p>
+
+<p>I've found that OpenCV does provide a lot of useful functions but one needs to be aware that there are two versions out there, and many of the examples are not so useful. OpenCV2 is the main one to go for, and under Linux, building your own is a must. There are issues under unbuntu that revolve around the supporting libraries but these can be overcome with some clever symlinking. The <a href="http://www.laganiere.name/opencvCookbook/">OpenCV2 cookbook</a> is really not a bad place to start. The O'Reilly OpenCV book is fairly canon but be aware that the code examples cover OpenCV1 only and there are a few differences.</p>
 
 	</div>
 </div>   
@@ -76,6 +76,8 @@
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/05/08/StereoVision.html">Stereo Vision</a> &dash; <abbr>08 May 2012</abbr></li>
 		
 			<li><a href="/2012/04/27/BSides.html">BSides London</a> &dash; <abbr>27 Apr 2012</abbr></li>
 		
