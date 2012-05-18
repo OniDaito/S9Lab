@@ -4,13 +4,34 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-05-08T09:39:11+01:00</updated>
+ <updated>2012-05-18T15:35:07+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Coin Vision</title>
+   <link href="http://lab.section9.co.uk/2012/05/18/Coin-Vision.html"/>
+   <updated>2012-05-18T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2012/05/18/Coin-Vision</id>
+   <content type="html">&lt;p&gt;I've been pretty busy with OpenCV these days I have to say. Its been tricky to get to grips with but one thing that helps is having a good project to work on that has simple goals and can help a few people out. I've been looking at coins a lot - why, I can't possibly tell! But nevertheless, it's a thing I'm into.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;Coin1&quot; alt=&quot;http://farm6.staticflickr.com/5467/7221567676_f86234b2d1.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;OpenCV has a lovely Python binding which you can build to work on OSX if you are comfortable in working from source. Under OSX Lion you may need to move the cv.so library into your Python path (you can find out where this is by loading python interactive with the &lt;em&gt;-v&lt;/em&gt; switch and take a look at the paths) as the install script didn't do this for me. Once that is in the right place, play around with the examples in the source; they are quite good.&lt;/p&gt;
+
+&lt;p&gt;When it comes to coins, scanning them seems better than using a camera. Holding the lid open gives quite a contrast, with the background turning black as you might imagine. Trying to recognise coins is very tricky and an unsolved problem, but finding the outlines is somewhat easier.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;Coin2&quot; alt=&quot;http://farm8.staticflickr.com/7073/7221569168_20378f8ae0.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course, finding where the shadows are and removing these is a little harder! That said, I do like a challenge. I've done a little work previously on detecting colours on coins as a way of checking denomination but I suspect there are better ways. Using contours and what is known as &lt;em&gt;blob detection&lt;/em&gt; is great so far, especially if you just use one level of hierarchy. I'll post more source code and what not, once I learn more.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;coin3&quot; alt=&quot;http://farm8.staticflickr.com/7091/7221567328_a314c9d707.jpg&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Stereo Vision</title>
