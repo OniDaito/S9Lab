@@ -4,13 +4,36 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-05-18T15:42:25+01:00</updated>
+ <updated>2012-06-05T17:23:37+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>The Curator's Coin</title>
+   <link href="http://lab.section9.co.uk/2012/06/05/Curator-Coin.html"/>
+   <updated>2012-06-05T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2012/06/05/Curator-Coin</id>
+   <content type="html">&lt;p&gt;It's been a long time since I've posted here. I've had a lot of with various small and large projects these days, not to mention travelling around. One of the projects that has just come to fruition however is a coin celebrating the opening of the new &lt;a href=&quot;http://www.britishmuseum.org/explore/galleries/themes/room_68_money.aspx&quot;&gt;Citi Money Gallery at the British Musuem&lt;/a&gt;. It's a present for my girlfriend who worked very hard on the project and I figured, deserved her own special coin.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8011/7156020503_f5c872f0d5.jpg&quot; alt=&quot;coin&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Why do this you ask? Because its original and funny. I had a lot of trouble getting to this stage however. To begin with, I needed a model of Katie's head. I used the kinect along with &lt;a href=&quot;http://reconstructme.net/&quot;&gt;Recontruct Me&lt;/a&gt; under windows. The problem with these scans however is they tend to be full of holes and therefore, not much use when trying to recreate a complete surface.&lt;/p&gt;
+
+&lt;p&gt;To solve this problem, I used Blender to create a depth map, &lt;a href=&quot;http://cgcookie.com/blender/2010/06/30/normal_maps_blender_2_5/&quot;&gt;following this guide&lt;/a&gt;. Creating a displacement texture allows you to modify a surface accordingly. A coin is not such a hard thing to model reasonably well in the main. The problem becomes flattening the face just enough so it is still recognisible but not so deep. The text is easy to create using the standard Blender functionality.&lt;/p&gt;
+
+&lt;p&gt;The coin was then sent off to Shapeways who duly sent it back in both plastic and gold plated metal forms. The plastic forms did not come out so well at all but the metal was quite adequate. There are some lines along the surface of the coin but the finer detail has been picked out quite well. The overall effect is of a old coin, slightly damaged with age; it looks quite authentic.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8157/7341223416_8737975db1.jpg&quot; alt=&quot;Coin&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The box proved to be a much more difficult challenge. Originally, I had decided to create a perspex box with a centre piece large enough to hold the coin snugly. Sadly, my usual method of box creation resulted in a box that was much too small and bulky. In the end, thanks to the laser cutter I use being out of order, I decided to create a box made from the fabric of the gallery colours. Thanks to an insider friend, I managed to get hold of some fabric. A fellow hackspacer, Akki14, showed me how to create boxes from mountboard and the rest is, as we say, history.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7090/7341223558_556fbbe21f.jpg&quot; alt=&quot;Box&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Coin Vision</title>

@@ -36,25 +36,27 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>18 May 2012</li>     
+          <li>05 Jun 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/05/18/Coin-Vision.html">Coin Vision</a></h3>
-    	 <p>I've been pretty busy with OpenCV these days I have to say. Its been tricky to get to grips with but one thing that helps is having a good project to work on that has simple goals and can help a few people out. I've been looking at coins a lot - why, I can't possibly tell! But nevertheless, it's a thing I'm into.</p>
+    		<h3><a href="/2012/06/05/Curator-Coin.html">The Curator's Coin</a></h3>
+    	 <p>It's been a long time since I've posted here. I've had a lot of with various small and large projects these days, not to mention travelling around. One of the projects that has just come to fruition however is a coin celebrating the opening of the new <a href="http://www.britishmuseum.org/explore/galleries/themes/room_68_money.aspx">Citi Money Gallery at the British Musuem</a>. It's a present for my girlfriend who worked very hard on the project and I figured, deserved her own special coin.</p>
 
-<p><img src="http://farm6.staticflickr.com/5467/7221567676_f86234b2d1.jpg" alt="Coin1" /></p>
+<p><img src="http://farm9.staticflickr.com/8011/7156020503_f5c872f0d5.jpg" alt="coin" /></p>
 
-<p>OpenCV has a lovely Python binding which you can build to work on OSX if you are comfortable in working from source. Under OSX Lion you may need to move the cv.so library into your Python path (you can find out where this is by loading python interactive with the <em>-v</em> switch and take a look at the paths) as the install script didn't do this for me. Once that is in the right place, play around with the examples in the source; they are quite good.</p>
+<p>Why do this you ask? Because its original and funny. I had a lot of trouble getting to this stage however. To begin with, I needed a model of Katie's head. I used the kinect along with <a href="http://reconstructme.net/">Recontruct Me</a> under windows. The problem with these scans however is they tend to be full of holes and therefore, not much use when trying to recreate a complete surface.</p>
 
-<p>When it comes to coins, scanning them seems better than using a camera. Holding the lid open gives quite a contrast, with the background turning black as you might imagine. Trying to recognise coins is very tricky and an unsolved problem, but finding the outlines is somewhat easier.</p>
+<p>To solve this problem, I used Blender to create a depth map, <a href="http://cgcookie.com/blender/2010/06/30/normal_maps_blender_2_5/">following this guide</a>. Creating a displacement texture allows you to modify a surface accordingly. A coin is not such a hard thing to model reasonably well in the main. The problem becomes flattening the face just enough so it is still recognisible but not so deep. The text is easy to create using the standard Blender functionality.</p>
 
-<p><img src="http://farm8.staticflickr.com/7073/7221569168_20378f8ae0.jpg" alt="Coin2" /></p>
+<p>The coin was then sent off to Shapeways who duly sent it back in both plastic and gold plated metal forms. The plastic forms did not come out so well at all but the metal was quite adequate. There are some lines along the surface of the coin but the finer detail has been picked out quite well. The overall effect is of a old coin, slightly damaged with age; it looks quite authentic.</p>
 
-<p>Of course, finding where the shadows are and removing these is a little harder! That said, I do like a challenge. I've done a little work previously on detecting colours on coins as a way of checking denomination but I suspect there are better ways. Using contours and what is known as <em>blob detection</em> is great so far, especially if you just use one level of hierarchy. I'll post more source code and what not, once I learn more.</p>
+<p><img src="http://farm9.staticflickr.com/8157/7341223416_8737975db1.jpg" alt="Coin" /></p>
 
-<p><img src="http://farm8.staticflickr.com/7091/7221567328_a314c9d707.jpg" alt="coin3" /></p>
+<p>The box proved to be a much more difficult challenge. Originally, I had decided to create a perspex box with a centre piece large enough to hold the coin snugly. Sadly, my usual method of box creation resulted in a box that was much too small and bulky. In the end, thanks to the laser cutter I use being out of order, I decided to create a box made from the fabric of the gallery colours. Thanks to an insider friend, I managed to get hold of some fabric. A fellow hackspacer, Akki14, showed me how to create boxes from mountboard and the rest is, as we say, history.</p>
+
+<p><img src="http://farm8.staticflickr.com/7090/7341223558_556fbbe21f.jpg" alt="Box" /></p>
 
 	</div>
 </div>   
@@ -68,6 +70,8 @@
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/06/05/Curator-Coin.html">The Curator's Coin</a> &dash; <abbr>05 Jun 2012</abbr></li>
 		
 			<li><a href="/2012/05/18/Coin-Vision.html">Coin Vision</a> &dash; <abbr>18 May 2012</abbr></li>
 		

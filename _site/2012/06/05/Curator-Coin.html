@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Astrolabe</title>
+	<title>The Curator's Coin</title>
 	<meta name="author" content="Benjamin Blundell" />
 	<link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
 	<link href="http://lab.section9.co.uk/css/grid-900.css" rel="stylesheet"></link>
@@ -34,32 +34,28 @@
   	<div class="post">
   <div class="post-meta col span-2">
     <ul class="nav">
-      <li>18 Jan 2012</li>
+      <li>05 Jun 2012</li>
 	<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>         
     </ul>
   </div>
 
   <div class="post-content span-9 nudge-2">
-  	<h3>Astrolabe</h3>
-   <p>I've always been fascinated by space, the planets, their maps and photos. The Curator is one of only a handful of experts in the world studying medieval scientific instruments and the astrolabe definitely fits that category.</p>
+  	<h3>The Curator's Coin</h3>
+   <p>It's been a long time since I've posted here. I've had a lot of with various small and large projects these days, not to mention travelling around. One of the projects that has just come to fruition however is a coin celebrating the opening of the new <a href="http://www.britishmuseum.org/explore/galleries/themes/room_68_money.aspx">Citi Money Gallery at the British Musuem</a>. It's a present for my girlfriend who worked very hard on the project and I figured, deserved her own special coin.</p>
 
-<p><img src="http://farm8.staticflickr.com/7011/6716956337_ee19b570ff.jpg" alt="Astrolabe" /></p>
+<p><img src="http://farm9.staticflickr.com/8011/7156020503_f5c872f0d5.jpg" alt="coin" /></p>
 
-<p>As part of a project I'm working on, I decided to build my own Astrolabes - one from paper and another from perspex, in order to get a feel for their construction. The goal is to create a WebGL version for display. This version is taken from <a href="http://www.thingiverse.com/thing:3271">the one available at Thingiverse</a>.</p>
+<p>Why do this you ask? Because its original and funny. I had a lot of trouble getting to this stage however. To begin with, I needed a model of Katie's head. I used the kinect along with <a href="http://reconstructme.net/">Recontruct Me</a> under windows. The problem with these scans however is they tend to be full of holes and therefore, not much use when trying to recreate a complete surface.</p>
 
-<p>Technically, this was quite a challenge. <a href="http://london.hackspace.org.uk">LondonHackspace</a> has a laser cutter but the software for it is awful. In addition it is quite often worn out which is clearly no good. Nevertheless I persevered.</p>
+<p>To solve this problem, I used Blender to create a depth map, <a href="http://cgcookie.com/blender/2010/06/30/normal_maps_blender_2_5/">following this guide</a>. Creating a displacement texture allows you to modify a surface accordingly. A coin is not such a hard thing to model reasonably well in the main. The problem becomes flattening the face just enough so it is still recognisible but not so deep. The text is easy to create using the standard Blender functionality.</p>
 
-<p>The format for this file was a Corel Draw CDR. Seriously, do people still use these? Anyway, I needed a program to convert that down. <a href="http://sk1project.org/modules.php?name=Products&amp;product=uniconvertor">Uniconvertor</a> seemed like the thing, but getting it to compile and build on OSX was not an easy job at all. In fact, I had a lot of issues with it. Nevertheless, I converted the CDR into an illustrator file. No dice! CDR to SVG worked a lot better.</p>
+<p>The coin was then sent off to Shapeways who duly sent it back in both plastic and gold plated metal forms. The plastic forms did not come out so well at all but the metal was quite adequate. There are some lines along the surface of the coin but the finer detail has been picked out quite well. The overall effect is of a old coin, slightly damaged with age; it looks quite authentic.</p>
 
-<p>Loading the SVG into Illustrator allowed me to see the various problems and options available. Two front plates were included, one for the southern and one for the northern hemisphere. The first thing was to seperate out all of the various components as each would be etched and cut into a seperate sheet of coloured perspex at 3mm.</p>
+<p><img src="http://farm9.staticflickr.com/8157/7341223416_8737975db1.jpg" alt="Coin" /></p>
 
-<p>Further conversion from SVG was needed. Inkscape makes a good job of loading the SVG correctly. Exporting from Inkscape to a DXF is the next step, making sure LWPOLYLINE and ROBOMASTER were NOT selected. Finally, for the hackspace laser cutter, importing into QCAD was needed, because the laser cutter software does not support layers. The front plate, rete, pointers and bevel both have cutting and etching sections, so layering (or in our case, colouring) with QCAD was needed.</p>
+<p>The box proved to be a much more difficult challenge. Originally, I had decided to create a perspex box with a centre piece large enough to hold the coin snugly. Sadly, my usual method of box creation resulted in a box that was much too small and bulky. In the end, thanks to the laser cutter I use being out of order, I decided to create a box made from the fabric of the gallery colours. Thanks to an insider friend, I managed to get hold of some fabric. A fellow hackspacer, Akki14, showed me how to create boxes from mountboard and the rest is, as we say, history.</p>
 
-<p><img src="http://farm8.staticflickr.com/7158/6716964469_2057259913.jpg" alt="astrolabe" /></p>
-
-<p>So, after a about 5 programs later and a lot of swearing and bitching, the Astrolabe was ready. There are problems with it. The text has not come out at all and there are a few markings missing. Etching on the backplate is slightly out of alingnment and the rete is incomplete; the star map should appear on it as well. I may use acetate glued to the back of the rete. Also, the outer bevel should be fixed and not move with the rete but the tolerance is too tight and despite my efforts to file down the edges, it still wouldn't move.</p>
-
-<p>But this is fast prototyping in plastic! Its only the first step.</p>
+<p><img src="http://farm8.staticflickr.com/7090/7341223558_556fbbe21f.jpg" alt="Box" /></p>
 
   </div>
 </div>
