@@ -4,13 +4,113 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-06-05T17:23:37+01:00</updated>
+ <updated>2012-06-15T09:23:13+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Modern OpenGL</title>
+   <link href="http://lab.section9.co.uk/2012/06/05/Modern-Opengl.html"/>
+   <updated>2012-06-05T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2012/06/05/Modern-Opengl</id>
+   <content type="html">&lt;p&gt;I've spent the last couple of weeks working on some code for The University of Leeds. Rather than actual research, this time has been spent on learning and adapting my code to be more compliant with OpenGL. I've done away with OpenFrameworks. It's now a mixture of &lt;a href=&quot;http://pointclouds.org/&quot;&gt;PCL&lt;/a&gt;, &lt;a href=&quot;opencv.willowgarage.com&quot;&gt;OpenCV&lt;/a&gt;, &lt;a href=&quot;http://www.boost.org/&quot;&gt;Boost&lt;/a&gt;, &lt;a href=&quot;http://glm.g-truc.net/&quot;&gt;GLM&lt;/a&gt; and &lt;a href=&quot;http://qt.nokia.com/products/&quot;&gt;QT&lt;/a&gt;. I'm not so happy about the last one but it works at least. I've effectively, almost recreated Cinder under Linux (well, kind of).&lt;/p&gt;
+
+&lt;p&gt;OpenGL 4.2 is a little different from the OpenGL I learnt at Manchester - quite so. Gone are calls to &lt;em&gt;glBegin&lt;/em&gt; and similar. Everything is handled with buffers, shaders and Vertex Array Objects. In addition, geometry shaders become more important. All the calls to push and pop matrices are gone too. In addition, we need to control all our views manually; no more &lt;em&gt;gluLookAt&lt;/em&gt; or similar. But where to begin?&lt;/p&gt;
+
+&lt;p&gt;Firstly, we need a way to create a context. A context is essentially a setup or agreement with the underlying windowing system. For example, we kmight want a window with double buffering, alpha blending, full-screen anti-aliasing. There are a few ways of doing this. I've found that &lt;a href=&quot;http://freeglut.sourceforge.net/&quot;&gt;FreeGlut&lt;/a&gt;, &lt;a href=&quot;http://www.glfw.org/&quot;&gt;GLFW&lt;/a&gt; and &lt;a href=&quot;http://qt.nokia.com/products/&quot;&gt;QT&lt;/a&gt; are probably the best. The sad thing is, we are still relying on GLUT in libraries such as &lt;a href=&quot;http://www.openframeworks.cc/&quot;&gt;OpenFrameworks&lt;/a&gt;. &lt;a href=&quot;http://libcinder.org/&quot;&gt;Cinder&lt;/a&gt; uses native extensions which is another good option. Under Linux however, things are trickier as the wxWidgets is quite old. OSX certainly has the prettiest native extensions but we can create quite nice things with the above.&lt;/p&gt;
+
+&lt;p&gt;The problem with most of these libraries is the lack of a decent GUI. QT has been slammed for being old and bloaty. OpenFrameworks has some fairly good GUIs such as &lt;a href=&quot;https://github.com/rezaali/ofxUI&quot;&gt;ofxUI&lt;/a&gt;. Cinder has the &lt;a href=&quot;http://www.antisphere.com/Wiki/tools:anttweakbar&quot;&gt;AntTweakBar&lt;/a&gt;. Some of these have problems with OpenGL 3.3 and above though. There is a nice heavyweight, middleware library called &lt;a href=&quot;http://librocket.com/&quot;&gt;Rocket&lt;/a&gt; that looks interesting.&lt;/p&gt;
+
+&lt;p&gt;So what do we need to do to get a context and draw our triangles? Once we have the context, we need to load the extensions and map these to the libraries in the disk. If we dont do this, all our OpenGL fancy functions will map to NULL. So, we need a library that loads things for us. Fortunately we have &lt;a href=&quot;http://glew.sourceforge.net/&quot;&gt;GLEW&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;glewExperimental = TRUE;
+GLenum err=glewInit();
+if(err!=GLEW_OK) {
+    //Problem: glewInit failed
+    cout &amp;lt;&amp;lt; &quot;GLEWInit failed&quot; &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This bit of code is really handy and we can't do much without it. At this point we can start our update and drawing loops. Its worth remembering that OpenGL is not thread safe; it's a state machine and the state is tied into the execution thread so make sure all your OpenGL calls are on the same thread.&lt;/p&gt;
+
+&lt;p&gt;Now we have all our extensions, we need to create what is known as a &lt;a href=&quot;http://en.wikipedia.org/wiki/Vertex_Buffer_Object&quot;&gt;Vertex Buffer&lt;/a&gt; Object or VBO. This is a buffer that is created in main memory and then uploaded on to our graphics card. Our shaders are bound to the context and the buffer is sent through the shader and our triangles appear. A VBO looks a little like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vbo = new GLuint[s];
+glGenBuffers(s,vbo);
+glBindBuffer(GL_ARRAY_BUFFER, mVID);
+glBufferData(GL_ARRAY_BUFFER,
+    mVertices.size() * sizeof(GLfloat), 
+    &amp;amp;mVertices[0], GL_DYNAMIC_DRAW);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So we create a certain number of buffers. We then bind the buffer and then provide it with some data. In this case, mVertices is a std::vector&lt;float&gt; .&lt;/p&gt;
+
+&lt;p&gt;Now, we can add other things here, such as indices, texture co-ordinates, normals, colours and many other things. We can bundle these all together in a saved state called a &lt;a href=&quot;http://www.opengl.org/wiki/Vertex_Array_Object&quot;&gt;Vertex Array Object&lt;/a&gt;. This is a handy piece of syntax that essentially allows us to recall all the buffer settings.&lt;/p&gt;
+
+&lt;p&gt;No, we have a triangle specified but we also need a shader. In fact we need at least 2 and maybe 3. We need a &lt;a href=&quot;http://en.wikipedia.org/wiki/Shader#Pixel_shaders&quot;&gt;Fragment Shader&lt;/a&gt;, a &lt;a href=&quot;http://en.wikipedia.org/wiki/Shader#Vertex_shaders&quot;&gt;Vertex Shader&lt;/a&gt; and we can also add a &lt;a href=&quot;http://en.wikipedia.org/wiki/Shader#Geometry_shaders&quot;&gt;Geometry Shader&lt;/a&gt; as well should we wish. Creating a shader is an interesting topic and there are many cool effects we can do. As my graphics card supports OpenGL4.2, I can write a simple shader like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#version 420 compatibility
+out vec4 vertex_position;
+out vec2 texCoord;
+
+layout (location = 0) in vec3 attribVertPosition; // 1 is the indicies
+layout (location = 2) in vec2 attribVertTexCoord;
+
+uniform mat4 mMVPMatrix;
+
+void main() {            
+    vertex_position = mMVPMatrix *
+        vec4(attribVertPosition,1.0);
+    gl_Position = vertex_position;
+    texCoord = attribVertTexCoord;
+} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is the vertex shader and is probably the more complicated section in this simple example, because it has a &lt;em&gt;layout&lt;/em&gt; directive. This basically states that the first buffer to be bound contains positions. The second buffer to be bound isn't used and the third buffer to be bound contains the texture co-ordinates. These indexes reflect the order and position of the vertex buffer objects we bound before.&lt;/p&gt;
+
+&lt;p&gt;Our fragment shader comes next:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#version 420 compatibility
+in vec4 vertex_position;
+in vec2 texCoord;
+uniform sampler2DRect mBaseTex;
+
+void main() {
+    gl_FragColor = texture(mBaseTex,texCoord);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This simple example just outputs the texel colour for that fragment. Simple enough.&lt;/p&gt;
+
+&lt;p&gt;So, we have a triangle or similar on our screen. How now do we deal with transformations? Remember &lt;em&gt;glRotatef&lt;/em&gt; and &lt;em&gt;glTranslatef&lt;/em&gt; ? These functions are part of what is called &lt;em&gt;Immediate Mode Rendering&lt;/em&gt; . This technique is now old, inefficient and only supported for legacy apps. The reason is largely due to hardware. Its much better to perform graphics processing on the GPU. Take the iPhone and OpenGLES2 for instances. We simply don't have immediate mode rendering anymore.&lt;/p&gt;
+
+&lt;p&gt;We need a second library to work with our matrices and similar. I've used OpenCV in the past but it doesn't have the most intuitive interface sadly. Fortunately, there is an amazing library called &lt;a href=&quot;http://glm.g-truc.net/&quot;&gt;GLM&lt;/a&gt; which I HIGHLY recommend everyone use. It's a great piece of kit. It is a header only library (which I love) and has all the matrix functions you could wish for. For example, here is a simple camera, written in GLM&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mObj-&amp;gt;mHoriz += static_cast&amp;lt;float_t&amp;gt;(dx) * (sSense/static_cast&amp;lt;float_t&amp;gt;(dt));
+mObj-&amp;gt;mVert  += static_cast&amp;lt;float_t&amp;gt;(dy) * (sSense/static_cast&amp;lt;float_t&amp;gt;(dt));
+
+glm::quat q_rotate;
+glm::vec3 direction = glm::vec3(0,0,200.0);
+glm::vec3 up = glm::vec3(0,1,0);
+
+q_rotate = glm::rotate( q_rotate, mObj-&amp;gt;mHoriz, glm::vec3( 0, 1, 0 ) );
+q_rotate = glm::rotate( q_rotate, mObj-&amp;gt;mVert, glm::vec3( 1, 0, 0 ) );
+
+direction = q_rotate * direction;
+up = q_rotate * up;
+
+mObj-&amp;gt;mViewMatrix = glm::lookAt(direction, glm::vec3(0,0,0),up );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Quite simple eh? mViewMatrix can now be sent to our vertex shader. If you take a closer look at our shader you can see &lt;em&gt;mMVPMatrix&lt;/em&gt;. This matrix multiples all the vertices and we end up with our lovely scene.&lt;/p&gt;
+
+&lt;p&gt;This is quite a brief introduction really. I'm still re-learning all of this. I find it quite useful to get my head around the various shaders and buffers because this is exactly how WebGL works (as that is basically OpenGLES2). More to come!&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>The Curator's Coin</title>
