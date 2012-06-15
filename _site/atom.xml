@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-06-15T09:24:24+01:00</updated>
+ <updated>2012-06-15T09:25:52+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Modern OpenGL</title>
-   <link href="http://lab.section9.co.uk/2012/06/05/Modern-Opengl.html"/>
-   <updated>2012-06-05T00:00:00+01:00</updated>
-   <id>http://lab.section9.co.uk/2012/06/05/Modern-Opengl</id>
+   <link href="http://lab.section9.co.uk/2012/06/15/Modern-Opengl.html"/>
+   <updated>2012-06-15T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2012/06/15/Modern-Opengl</id>
    <content type="html">&lt;p&gt;I've spent the last couple of weeks working on some code for The University of Leeds. Rather than actual research, this time has been spent on learning and adapting my code to be more compliant with OpenGL. I've done away with OpenFrameworks. It's now a mixture of &lt;a href=&quot;http://pointclouds.org/&quot;&gt;PCL&lt;/a&gt;, &lt;a href=&quot;opencv.willowgarage.com&quot;&gt;OpenCV&lt;/a&gt;, &lt;a href=&quot;http://www.boost.org/&quot;&gt;Boost&lt;/a&gt;, &lt;a href=&quot;http://glm.g-truc.net/&quot;&gt;GLM&lt;/a&gt; and &lt;a href=&quot;http://qt.nokia.com/products/&quot;&gt;QT&lt;/a&gt;. I'm not so happy about the last one but it works at least. I've effectively, almost recreated Cinder under Linux (well, kind of).&lt;/p&gt;
 
 &lt;p&gt;OpenGL 4.2 is a little different from the OpenGL I learnt at Manchester - quite so. Gone are calls to &lt;em&gt;glBegin&lt;/em&gt; and similar. Everything is handled with buffers, shaders and Vertex Array Objects. In addition, geometry shaders become more important. All the calls to push and pop matrices are gone too. In addition, we need to control all our views manually; no more &lt;em&gt;gluLookAt&lt;/em&gt; or similar. But where to begin?&lt;/p&gt;
