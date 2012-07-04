@@ -4,13 +4,36 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-06-15T09:25:52+01:00</updated>
+ <updated>2012-07-04T13:06:09+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>User Interfaces in OpenGL</title>
+   <link href="http://lab.section9.co.uk/2012/07/02/User-Interfaces-in-OpenGL.html"/>
+   <updated>2012-07-02T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2012/07/02/User-Interfaces-in-OpenGL</id>
+   <content type="html">&lt;p&gt;User Interfaces are the bane of most programmer's lives. They really are. UI people don't often understand the true horror faced by a programmer when they are asked to write good UX code. This goes double for OpenGL types because we have a certain sense of design aesthetic (from what I can tell, talking to people) when it comes to such things. Most UI looks ugly. Its not cool to look at and it's certainly not cool to code. When it comes to OpenGL programs, very few UI libraries stand out. I've had a really tough time lately getting a program structure together that I actually want to use and show off.&lt;/p&gt;
+
+&lt;p&gt;What about &lt;a href=&quot;http://qt.nokia.com/products/&quot;&gt;QT&lt;/a&gt; you say? Well, for starters, QT is massive, relies on C style pointers and causes segfaults a lot of the time. When it comes to OpenGL programs, you need to call a timer function for your draw calls, and heaven help you if you create a widget and have a function called update. I moved to QT because I thought their sliders and such would be useful. Sadly, the code base became quite coupled (which is a bad thing) and teasing things apart proved tricky. I'd like to be using modern C++ and not some Nokia owned library of doom. I have horror stories of learning QT 10 years back. No thanks!&lt;/p&gt;
+
+&lt;p&gt;I thought about using &lt;a href=&quot;https://github.com/rezaali/ofxUI&quot;&gt;ofxUI&lt;/a&gt; which looks really nice. The problem I had with it was there were no file-dialogs and &lt;a href=&quot;http://www.openframeworks.cc&quot;&gt;OpenFrameworks&lt;/a&gt; wasn't built around multiple windows (which I'd rather not use anyway but I have little choice when running fullscreen applications on seperate monitors). I like OpenFrameworks more than I used to, but the CS Engineer in me prefers the beauty of Cinder. It's just more sexy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.glfw.org/screenshots/anttweakbar.png&quot; alt=&quot;glfw&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It turns out that &lt;a href=&quot;http://www.glfw.org/&quot;&gt;GLFW&lt;/a&gt; actually has support for multiple windows if you &lt;a href=&quot;https://github.com/elmindreda/glfw&quot;&gt;check out version3, multi-monitor branch from git&lt;/a&gt;. Multi window applications &lt;em&gt;are a bad idea&lt;/em&gt; I know but I have one application window, and one surrogate window that runs on a pico projector so there really is little choice. Annoying but there you go. Now GLFW doesn't actually have any GUI components of its own, so we need to add some.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.antisphere.com/Wiki/tools:anttweakbar&quot;&gt;AntTweakBar&lt;/a&gt; was adopted by Cinder and to be honest, I've found little better. I've looked around and asked on IRC and all the usual places and they all suck. They either look poor, are overkill or aren't supported anymore. AntTweakBar is easy to use and works reasonably well.&lt;/p&gt;
+
+&lt;p&gt;One problem, there is no file dialog. At this point I decided to give up looking for crossplatform solutions and settled with &lt;a href=&quot;http://www.gtkmm.org/en/&quot;&gt;gtkmm&lt;/a&gt; as I'm running under Ubuntu at the moment. Not sure what I'll do when I port my toolkit to OSX but I'll probably hook into Cocoa or something with GLFW running the show.&lt;/p&gt;
+
+&lt;p&gt;Such a simple problem, and yet one that doesn't go away. I've heard designers say &quot;We just want some nice sliders&quot; but they are always so hard to find. Crazy huh?&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Modern OpenGL</title>

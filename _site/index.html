@@ -36,104 +36,27 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>15 Jun 2012</li>     
+          <li>02 Jul 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/06/15/Modern-Opengl.html">Modern OpenGL</a></h3>
-    	 <p>I've spent the last couple of weeks working on some code for The University of Leeds. Rather than actual research, this time has been spent on learning and adapting my code to be more compliant with OpenGL. I've done away with OpenFrameworks. It's now a mixture of <a href="http://pointclouds.org/">PCL</a>, <a href="opencv.willowgarage.com">OpenCV</a>, <a href="http://www.boost.org/">Boost</a>, <a href="http://glm.g-truc.net/">GLM</a> and <a href="http://qt.nokia.com/products/">QT</a>. I'm not so happy about the last one but it works at least. I've effectively, almost recreated Cinder under Linux (well, kind of).</p>
+    		<h3><a href="/2012/07/02/User-Interfaces-in-OpenGL.html">User Interfaces in OpenGL</a></h3>
+    	 <p>User Interfaces are the bane of most programmer's lives. They really are. UI people don't often understand the true horror faced by a programmer when they are asked to write good UX code. This goes double for OpenGL types because we have a certain sense of design aesthetic (from what I can tell, talking to people) when it comes to such things. Most UI looks ugly. Its not cool to look at and it's certainly not cool to code. When it comes to OpenGL programs, very few UI libraries stand out. I've had a really tough time lately getting a program structure together that I actually want to use and show off.</p>
 
-<p>OpenGL 4.2 is a little different from the OpenGL I learnt at Manchester - quite so. Gone are calls to <em>glBegin</em> and similar. Everything is handled with buffers, shaders and Vertex Array Objects. In addition, geometry shaders become more important. All the calls to push and pop matrices are gone too. In addition, we need to control all our views manually; no more <em>gluLookAt</em> or similar. But where to begin?</p>
+<p>What about <a href="http://qt.nokia.com/products/">QT</a> you say? Well, for starters, QT is massive, relies on C style pointers and causes segfaults a lot of the time. When it comes to OpenGL programs, you need to call a timer function for your draw calls, and heaven help you if you create a widget and have a function called update. I moved to QT because I thought their sliders and such would be useful. Sadly, the code base became quite coupled (which is a bad thing) and teasing things apart proved tricky. I'd like to be using modern C++ and not some Nokia owned library of doom. I have horror stories of learning QT 10 years back. No thanks!</p>
 
-<p>Firstly, we need a way to create a context. A context is essentially a setup or agreement with the underlying windowing system. For example, we kmight want a window with double buffering, alpha blending, full-screen anti-aliasing. There are a few ways of doing this. I've found that <a href="http://freeglut.sourceforge.net/">FreeGlut</a>, <a href="http://www.glfw.org/">GLFW</a> and <a href="http://qt.nokia.com/products/">QT</a> are probably the best. The sad thing is, we are still relying on GLUT in libraries such as <a href="http://www.openframeworks.cc/">OpenFrameworks</a>. <a href="http://libcinder.org/">Cinder</a> uses native extensions which is another good option. Under Linux however, things are trickier as the wxWidgets is quite old. OSX certainly has the prettiest native extensions but we can create quite nice things with the above.</p>
+<p>I thought about using <a href="https://github.com/rezaali/ofxUI">ofxUI</a> which looks really nice. The problem I had with it was there were no file-dialogs and <a href="http://www.openframeworks.cc">OpenFrameworks</a> wasn't built around multiple windows (which I'd rather not use anyway but I have little choice when running fullscreen applications on seperate monitors). I like OpenFrameworks more than I used to, but the CS Engineer in me prefers the beauty of Cinder. It's just more sexy.</p>
 
-<p>The problem with most of these libraries is the lack of a decent GUI. QT has been slammed for being old and bloaty. OpenFrameworks has some fairly good GUIs such as <a href="https://github.com/rezaali/ofxUI">ofxUI</a>. Cinder has the <a href="http://www.antisphere.com/Wiki/tools:anttweakbar">AntTweakBar</a>. Some of these have problems with OpenGL 3.3 and above though. There is a nice heavyweight, middleware library called <a href="http://librocket.com/">Rocket</a> that looks interesting.</p>
+<p><img src="http://www.glfw.org/screenshots/anttweakbar.png" alt="glfw" /></p>
 
-<p>So what do we need to do to get a context and draw our triangles? Once we have the context, we need to load the extensions and map these to the libraries in the disk. If we dont do this, all our OpenGL fancy functions will map to NULL. So, we need a library that loads things for us. Fortunately we have <a href="http://glew.sourceforge.net/">GLEW</a>.</p>
+<p>It turns out that <a href="http://www.glfw.org/">GLFW</a> actually has support for multiple windows if you <a href="https://github.com/elmindreda/glfw">check out version3, multi-monitor branch from git</a>. Multi window applications <em>are a bad idea</em> I know but I have one application window, and one surrogate window that runs on a pico projector so there really is little choice. Annoying but there you go. Now GLFW doesn't actually have any GUI components of its own, so we need to add some.</p>
 
-<pre><code>glewExperimental = TRUE;
-GLenum err=glewInit();
-if(err!=GLEW_OK) {
-    //Problem: glewInit failed
-    cout &lt;&lt; "GLEWInit failed" &lt;&lt; endl;
-}
-</code></pre>
+<p><a href="http://www.antisphere.com/Wiki/tools:anttweakbar">AntTweakBar</a> was adopted by Cinder and to be honest, I've found little better. I've looked around and asked on IRC and all the usual places and they all suck. They either look poor, are overkill or aren't supported anymore. AntTweakBar is easy to use and works reasonably well.</p>
 
-<p>This bit of code is really handy and we can't do much without it. At this point we can start our update and drawing loops. Its worth remembering that OpenGL is not thread safe; it's a state machine and the state is tied into the execution thread so make sure all your OpenGL calls are on the same thread.</p>
+<p>One problem, there is no file dialog. At this point I decided to give up looking for crossplatform solutions and settled with <a href="http://www.gtkmm.org/en/">gtkmm</a> as I'm running under Ubuntu at the moment. Not sure what I'll do when I port my toolkit to OSX but I'll probably hook into Cocoa or something with GLFW running the show.</p>
 
-<p>Now we have all our extensions, we need to create what is known as a <a href="http://en.wikipedia.org/wiki/Vertex_Buffer_Object">Vertex Buffer</a> Object or VBO. This is a buffer that is created in main memory and then uploaded on to our graphics card. Our shaders are bound to the context and the buffer is sent through the shader and our triangles appear. A VBO looks a little like this:</p>
-
-<pre><code>vbo = new GLuint[s];
-glGenBuffers(s,vbo);
-glBindBuffer(GL_ARRAY_BUFFER, mVID);
-glBufferData(GL_ARRAY_BUFFER,
-    mVertices.size() * sizeof(GLfloat), 
-    &amp;mVertices[0], GL_DYNAMIC_DRAW);
-</code></pre>
-
-<p>So we create a certain number of buffers. We then bind the buffer and then provide it with some data. In this case, mVertices is a std::vector<float> .</p>
-
-<p>Now, we can add other things here, such as indices, texture co-ordinates, normals, colours and many other things. We can bundle these all together in a saved state called a <a href="http://www.opengl.org/wiki/Vertex_Array_Object">Vertex Array Object</a>. This is a handy piece of syntax that essentially allows us to recall all the buffer settings.</p>
-
-<p>No, we have a triangle specified but we also need a shader. In fact we need at least 2 and maybe 3. We need a <a href="http://en.wikipedia.org/wiki/Shader#Pixel_shaders">Fragment Shader</a>, a <a href="http://en.wikipedia.org/wiki/Shader#Vertex_shaders">Vertex Shader</a> and we can also add a <a href="http://en.wikipedia.org/wiki/Shader#Geometry_shaders">Geometry Shader</a> as well should we wish. Creating a shader is an interesting topic and there are many cool effects we can do. As my graphics card supports OpenGL4.2, I can write a simple shader like this:</p>
-
-<pre><code>#version 420 compatibility
-out vec4 vertex_position;
-out vec2 texCoord;
-
-layout (location = 0) in vec3 attribVertPosition; // 1 is the indicies
-layout (location = 2) in vec2 attribVertTexCoord;
-
-uniform mat4 mMVPMatrix;
-
-void main() {            
-    vertex_position = mMVPMatrix *
-        vec4(attribVertPosition,1.0);
-    gl_Position = vertex_position;
-    texCoord = attribVertTexCoord;
-} 
-</code></pre>
-
-<p>This is the vertex shader and is probably the more complicated section in this simple example, because it has a <em>layout</em> directive. This basically states that the first buffer to be bound contains positions. The second buffer to be bound isn't used and the third buffer to be bound contains the texture co-ordinates. These indexes reflect the order and position of the vertex buffer objects we bound before.</p>
-
-<p>Our fragment shader comes next:</p>
-
-<pre><code>#version 420 compatibility
-in vec4 vertex_position;
-in vec2 texCoord;
-uniform sampler2DRect mBaseTex;
-
-void main() {
-    gl_FragColor = texture(mBaseTex,texCoord);
-}
-</code></pre>
-
-<p>This simple example just outputs the texel colour for that fragment. Simple enough.</p>
-
-<p>So, we have a triangle or similar on our screen. How now do we deal with transformations? Remember <em>glRotatef</em> and <em>glTranslatef</em> ? These functions are part of what is called <em>Immediate Mode Rendering</em> . This technique is now old, inefficient and only supported for legacy apps. The reason is largely due to hardware. Its much better to perform graphics processing on the GPU. Take the iPhone and OpenGLES2 for instances. We simply don't have immediate mode rendering anymore.</p>
-
-<p>We need a second library to work with our matrices and similar. I've used OpenCV in the past but it doesn't have the most intuitive interface sadly. Fortunately, there is an amazing library called <a href="http://glm.g-truc.net/">GLM</a> which I HIGHLY recommend everyone use. It's a great piece of kit. It is a header only library (which I love) and has all the matrix functions you could wish for. For example, here is a simple camera, written in GLM</p>
-
-<pre><code>mObj-&gt;mHoriz += static_cast&lt;float_t&gt;(dx) * (sSense/static_cast&lt;float_t&gt;(dt));
-mObj-&gt;mVert  += static_cast&lt;float_t&gt;(dy) * (sSense/static_cast&lt;float_t&gt;(dt));
-
-glm::quat q_rotate;
-glm::vec3 direction = glm::vec3(0,0,200.0);
-glm::vec3 up = glm::vec3(0,1,0);
-
-q_rotate = glm::rotate( q_rotate, mObj-&gt;mHoriz, glm::vec3( 0, 1, 0 ) );
-q_rotate = glm::rotate( q_rotate, mObj-&gt;mVert, glm::vec3( 1, 0, 0 ) );
-
-direction = q_rotate * direction;
-up = q_rotate * up;
-
-mObj-&gt;mViewMatrix = glm::lookAt(direction, glm::vec3(0,0,0),up );
-</code></pre>
-
-<p>Quite simple eh? mViewMatrix can now be sent to our vertex shader. If you take a closer look at our shader you can see <em>mMVPMatrix</em>. This matrix multiples all the vertices and we end up with our lovely scene.</p>
-
-<p>This is quite a brief introduction really. I'm still re-learning all of this. I find it quite useful to get my head around the various shaders and buffers because this is exactly how WebGL works (as that is basically OpenGLES2). More to come!</p>
+<p>Such a simple problem, and yet one that doesn't go away. I've heard designers say "We just want some nice sliders" but they are always so hard to find. Crazy huh?</p>
 
 	</div>
 </div>   
@@ -147,6 +70,8 @@ mObj-&gt;mViewMatrix = glm::lookAt(direction, glm::vec3(0,0,0),up );
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/07/02/User-Interfaces-in-OpenGL.html">User Interfaces in OpenGL</a> &dash; <abbr>02 Jul 2012</abbr></li>
 		
 			<li><a href="/2012/06/15/Modern-Opengl.html">Modern OpenGL</a> &dash; <abbr>15 Jun 2012</abbr></li>
 		

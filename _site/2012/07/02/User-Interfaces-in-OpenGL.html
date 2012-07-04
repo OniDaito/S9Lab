@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>>Advice on using the Kinect</title>
+	<title>User Interfaces in OpenGL</title>
 	<meta name="author" content="Benjamin Blundell" />
 	<link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
 	<link href="http://lab.section9.co.uk/css/grid-900.css" rel="stylesheet"></link>
@@ -34,14 +34,28 @@
   	<div class="post">
   <div class="post-meta col span-2">
     <ul class="nav">
-      <li>16 Mar 2011</li>
+      <li>02 Jul 2012</li>
 	<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></li>         
     </ul>
   </div>
 
   <div class="post-content span-9 nudge-2">
-  	<h3>>Advice on using the Kinect</h3>
-   <blockquote><p>I've been around with this Kinect for a while now. Since Memo from <a href="http://www.msavisuals.com">msavisuals.com</a> put me on to it I've been hooked. Tom Wyatt from the London Hackspace has also been chatting with me about it and we've been working on different aspects of the device. Tom has a flair for the kiddy dramatic cool stunts; his<a href="http://www.flickr.com/photos/section9/5523709833/"> Kinect Tesla Coils</a> went down at storm at Makerfaire. Thing is, I realise I haven't written up much about how best to use the device and how it works from a software engineering point of view. One of my friends recently asked me about this so I thought I'd better do a writeup.<br /><br />So, the Kinect was hacked by Marcan, who's work is quite amazing. His library is know as <a href="https://github.com/OpenKinect/libfreenect">libfreenect and is available on git</a>. This is the starting point and there are libraries that allow you to get access to the device on all the 3 major platforms. The issue here is that libusb is involved which is affected by your choice of OS and thats where things could or could not go wrong.<br /><br />Under MacOS I was using the version that came with <a href="mxcl/homebrew - GitHub">homebrew</a>, my installer of choice. The default version is too recent apparently, you need one that lives deep in subversion. Apparently there is one however within homebrew if you specify the correct flag. <br /><br />Of course, the nasty issues of 64bit vs 32bit arise and that is an issue in itself. Be careful which path you choose. I went 32bit in the end though there are 64 bit versions of the OpenNI libs which you may wish to use.<br /><br />All that said, you should be able to get one of the examples running such as Openframeworks with the <a href="https://github.com/ofTheo/ofxKinect">ofxKinect</a> demo or Cinder with the<a href="http://forum.libcinder.org/topic/new-kinect-support"> Kinect Cinder Block</a>. Either way, you'll get something like the camera and the depth stream. For me, this was enough for the <a href="http://www.vimeo.com/17163402">NIN Only Demo</a> and it worked really well. <br /><br />Of course, you want to play with all the Skeleton Tracking and sexy computer vision stuff though? This is where things get odd. We move away from libfreenect and into the realm of OpenNI, NITE and the hacked SensorKinect module. Basically, this is quite confusing initially. OpenNI is a framework for interesting user interfaces. That is all really. Nothing more. Then, a company called Primesense did a load of cool computer vision stuff with their own depth camera and came up with the NITE libraries. These libraries allowed the skelton and hand tracking stuff to work. They let slip that their camera was very similar to the Kinect. Once they'd released the source, the sensor module was hacked to allow the kinect to take place of their camera. Job done.<br /><br />Openframeworks has a good writeup on using the OpenNI sensor kinect stuff with their projects, but the best bet is to get the basic demos installed. I did this the hard way with rebuilding everything but you can check out <a href="http://www.roxlu.com/blog/entry/121/ofxopenni-working-on-mac!-(pre-beta-release)/page/">Roxlus work on ofxOpenNI</a> and try that way. The <a href="http://www.openni.org/">main OpenNI page</a> has the NITE libraries and the OpenNI libraries you need on their beta page. Being hardcore, <a href="https://github.com/roxlu/ofxOpenNI/tree/experimental">I went with the instructions over on GIT</a>.<br /><br />There are plenty of resources out there on this but getting familiar with GIT, Make and GCC are quite essential!</p></blockquote>
+  	<h3>User Interfaces in OpenGL</h3>
+   <p>User Interfaces are the bane of most programmer's lives. They really are. UI people don't often understand the true horror faced by a programmer when they are asked to write good UX code. This goes double for OpenGL types because we have a certain sense of design aesthetic (from what I can tell, talking to people) when it comes to such things. Most UI looks ugly. Its not cool to look at and it's certainly not cool to code. When it comes to OpenGL programs, very few UI libraries stand out. I've had a really tough time lately getting a program structure together that I actually want to use and show off.</p>
+
+<p>What about <a href="http://qt.nokia.com/products/">QT</a> you say? Well, for starters, QT is massive, relies on C style pointers and causes segfaults a lot of the time. When it comes to OpenGL programs, you need to call a timer function for your draw calls, and heaven help you if you create a widget and have a function called update. I moved to QT because I thought their sliders and such would be useful. Sadly, the code base became quite coupled (which is a bad thing) and teasing things apart proved tricky. I'd like to be using modern C++ and not some Nokia owned library of doom. I have horror stories of learning QT 10 years back. No thanks!</p>
+
+<p>I thought about using <a href="https://github.com/rezaali/ofxUI">ofxUI</a> which looks really nice. The problem I had with it was there were no file-dialogs and <a href="http://www.openframeworks.cc">OpenFrameworks</a> wasn't built around multiple windows (which I'd rather not use anyway but I have little choice when running fullscreen applications on seperate monitors). I like OpenFrameworks more than I used to, but the CS Engineer in me prefers the beauty of Cinder. It's just more sexy.</p>
+
+<p><img src="http://www.glfw.org/screenshots/anttweakbar.png" alt="glfw" /></p>
+
+<p>It turns out that <a href="http://www.glfw.org/">GLFW</a> actually has support for multiple windows if you <a href="https://github.com/elmindreda/glfw">check out version3, multi-monitor branch from git</a>. Multi window applications <em>are a bad idea</em> I know but I have one application window, and one surrogate window that runs on a pico projector so there really is little choice. Annoying but there you go. Now GLFW doesn't actually have any GUI components of its own, so we need to add some.</p>
+
+<p><a href="http://www.antisphere.com/Wiki/tools:anttweakbar">AntTweakBar</a> was adopted by Cinder and to be honest, I've found little better. I've looked around and asked on IRC and all the usual places and they all suck. They either look poor, are overkill or aren't supported anymore. AntTweakBar is easy to use and works reasonably well.</p>
+
+<p>One problem, there is no file dialog. At this point I decided to give up looking for crossplatform solutions and settled with <a href="http://www.gtkmm.org/en/">gtkmm</a> as I'm running under Ubuntu at the moment. Not sure what I'll do when I port my toolkit to OSX but I'll probably hook into Cocoa or something with GLFW running the show.</p>
+
+<p>Such a simple problem, and yet one that doesn't go away. I've heard designers say "We just want some nice sliders" but they are always so hard to find. Crazy huh?</p>
 
   </div>
 </div>
