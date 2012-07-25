@@ -4,13 +4,30 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-07-04T13:06:09+01:00</updated>
+ <updated>2012-07-25T08:21:11+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Graphics Hackspace</title>
+   <link href="http://lab.section9.co.uk/2012/07/25/Graphics-Hackspace.html"/>
+   <updated>2012-07-25T00:00:00+01:00</updated>
+   <id>http://lab.section9.co.uk/2012/07/25/Graphics-Hackspace</id>
+   <content type="html">&lt;p&gt;There has been a fair bit of interest at the &lt;a href=&quot;&quot;&gt;London Hackspace&lt;/a&gt; regarding OpenGL and computer graphics in general. A while back, I ran a workshop on Python and it seemed quite succesful. Some people wondered about having a graphics workshop as well and I figured that might be no bad thing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7247/7602552370_661e97cec0.jpg&quot; alt=&quot;Graphics Hackspace&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Graphic Hackspace is basically, like the music hackspace. The plan is to have some talks and possibly a workshop afterwards. Im hoping the workshop will be on the basics of OpenGL and how to get something pretty up and running.&lt;/p&gt;
+
+&lt;p&gt;I originally thought of meetup.com as a place to advertise but their costs are pretty high for just a month or so. That said, perhaps buying both the domains for graphicshackspace.org and dot com is perhaps overally silly. Nevertheless, we do have a funky page over at &lt;a href=&quot;http://www.graphicshackspace.org&quot;&gt;graphicshackspace.org&lt;/a&gt; which runs rather nicely using &lt;a href=&quot;https://github.com/mojombo/jekyll/&quot;&gt;Jekyll&lt;/a&gt;, &lt;a href=&quot;http://twitter.github.com/bootstrap/&quot;&gt;Bootstrap&lt;/a&gt; and &lt;a href=&quot;http://processingjs.org/&quot;&gt;Processing.js&lt;/a&gt;; all wonderful little libraries.&lt;/p&gt;
+
+&lt;p&gt;Our first session will be at 7pm, August the 17th at the London Hackspace. Do come along. We have two great speakers already; I'm quite looking forward to what they have to say.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>User Interfaces in OpenGL</title>

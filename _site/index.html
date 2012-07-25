@@ -36,27 +36,21 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>02 Jul 2012</li>     
+          <li>25 Jul 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/07/02/User-Interfaces-in-OpenGL.html">User Interfaces in OpenGL</a></h3>
-    	 <p>User Interfaces are the bane of most programmer's lives. They really are. UI people don't often understand the true horror faced by a programmer when they are asked to write good UX code. This goes double for OpenGL types because we have a certain sense of design aesthetic (from what I can tell, talking to people) when it comes to such things. Most UI looks ugly. Its not cool to look at and it's certainly not cool to code. When it comes to OpenGL programs, very few UI libraries stand out. I've had a really tough time lately getting a program structure together that I actually want to use and show off.</p>
+    		<h3><a href="/2012/07/25/Graphics-Hackspace.html">Graphics Hackspace</a></h3>
+    	 <p>There has been a fair bit of interest at the <a href="">London Hackspace</a> regarding OpenGL and computer graphics in general. A while back, I ran a workshop on Python and it seemed quite succesful. Some people wondered about having a graphics workshop as well and I figured that might be no bad thing.</p>
 
-<p>What about <a href="http://qt.nokia.com/products/">QT</a> you say? Well, for starters, QT is massive, relies on C style pointers and causes segfaults a lot of the time. When it comes to OpenGL programs, you need to call a timer function for your draw calls, and heaven help you if you create a widget and have a function called update. I moved to QT because I thought their sliders and such would be useful. Sadly, the code base became quite coupled (which is a bad thing) and teasing things apart proved tricky. I'd like to be using modern C++ and not some Nokia owned library of doom. I have horror stories of learning QT 10 years back. No thanks!</p>
+<p><img src="http://farm8.staticflickr.com/7247/7602552370_661e97cec0.jpg" alt="Graphics Hackspace" /></p>
 
-<p>I thought about using <a href="https://github.com/rezaali/ofxUI">ofxUI</a> which looks really nice. The problem I had with it was there were no file-dialogs and <a href="http://www.openframeworks.cc">OpenFrameworks</a> wasn't built around multiple windows (which I'd rather not use anyway but I have little choice when running fullscreen applications on seperate monitors). I like OpenFrameworks more than I used to, but the CS Engineer in me prefers the beauty of Cinder. It's just more sexy.</p>
+<p>Graphic Hackspace is basically, like the music hackspace. The plan is to have some talks and possibly a workshop afterwards. Im hoping the workshop will be on the basics of OpenGL and how to get something pretty up and running.</p>
 
-<p><img src="http://www.glfw.org/screenshots/anttweakbar.png" alt="glfw" /></p>
+<p>I originally thought of meetup.com as a place to advertise but their costs are pretty high for just a month or so. That said, perhaps buying both the domains for graphicshackspace.org and dot com is perhaps overally silly. Nevertheless, we do have a funky page over at <a href="http://www.graphicshackspace.org">graphicshackspace.org</a> which runs rather nicely using <a href="https://github.com/mojombo/jekyll/">Jekyll</a>, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://processingjs.org/">Processing.js</a>; all wonderful little libraries.</p>
 
-<p>It turns out that <a href="http://www.glfw.org/">GLFW</a> actually has support for multiple windows if you <a href="https://github.com/elmindreda/glfw">check out version3, multi-monitor branch from git</a>. Multi window applications <em>are a bad idea</em> I know but I have one application window, and one surrogate window that runs on a pico projector so there really is little choice. Annoying but there you go. Now GLFW doesn't actually have any GUI components of its own, so we need to add some.</p>
-
-<p><a href="http://www.antisphere.com/Wiki/tools:anttweakbar">AntTweakBar</a> was adopted by Cinder and to be honest, I've found little better. I've looked around and asked on IRC and all the usual places and they all suck. They either look poor, are overkill or aren't supported anymore. AntTweakBar is easy to use and works reasonably well.</p>
-
-<p>One problem, there is no file dialog. At this point I decided to give up looking for crossplatform solutions and settled with <a href="http://www.gtkmm.org/en/">gtkmm</a> as I'm running under Ubuntu at the moment. Not sure what I'll do when I port my toolkit to OSX but I'll probably hook into Cocoa or something with GLFW running the show.</p>
-
-<p>Such a simple problem, and yet one that doesn't go away. I've heard designers say "We just want some nice sliders" but they are always so hard to find. Crazy huh?</p>
+<p>Our first session will be at 7pm, August the 17th at the London Hackspace. Do come along. We have two great speakers already; I'm quite looking forward to what they have to say.</p>
 
 	</div>
 </div>   
@@ -70,6 +64,8 @@
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/07/25/Graphics-Hackspace.html">Graphics Hackspace</a> &dash; <abbr>25 Jul 2012</abbr></li>
 		
 			<li><a href="/2012/07/02/User-Interfaces-in-OpenGL.html">User Interfaces in OpenGL</a> &dash; <abbr>02 Jul 2012</abbr></li>
 		
