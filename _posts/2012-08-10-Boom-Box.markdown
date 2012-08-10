@@ -3,15 +3,17 @@ layout: post
 title: Animation12 - The Boom Box!
 ---
 
-As some people might know, I like to take part in things like [Animation12](). Its a good thing to do for children and it helps make for an interesting day out. This year I wasn't attending but I was asked to create a gadget, a special prop, for the keynote speaker. Simply put, this device had to explode when turned down to one!
+As some people might know, I like to take part in things like [Animation12](http://animation12.cs.manchester.ac.uk/). Its a good thing to do for children and it helps make for an interesting day out. This year I wasn't attending but I was asked to create a gadget, a special prop, for the keynote speaker. Simply put, this device had to explode when turned down to one! Filming took place in Jabex Clegg; one of the student drinking dens on the Manchester University campus.
 
 <iframe src="http://player.vimeo.com/video/47105321" width="500" height="369" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/47105321">Boom Box Filming</a> from <a href="http://vimeo.com/user1678273">Benjamin Blundell</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
 
-The idea was to have a thing that represented the changing of causality. The idea is to show that humans have some give in their perception of cause and effect, shown in the [Michotte Experiments](). With the internet, we are limited to the speed of light, so how does this gap in our perception of causality effect things like games played online? Its the science of the internet and its a great thing to show to kids.
+The idea was to have a thing that represented the changing of causality. The idea is to show that humans have some give in their perception of cause and effect, shown in the [Michotte Experiments](http://en.wikipedia.org/wiki/Albert_Michotte). With the internet, we are limited to the speed of light, so how does this gap in our perception of causality effect things like games played online? Its the science of the internet and its a great thing to show to kids.
 
 ![Boombox](http://farm8.staticflickr.com/7193/7076489781_7e40a2017b.jpg)
 
 The design is fairly standard. The trick is to contain the explosion from the pyrotechnics. The base contains a small hole and inside that, there is a tincan that somewhat shapes the blast out and down, away from the user.  The lovely chaps over at [justfx](http://www.justfx.co.uk) were quite helpful in providing a set of *robotics* that work simply by passing a 9V charge through it.
+
+I use an arduino for the majority of the work, simply because it's faster and contains a decent PWM pin. Nowadays, I'd consider an ATTiny but I had a few Arduino boards lying around, so it seemed the best way. The dial is laser cut and the case comes from an old ammeter that I snaffled from the Hackspace bin.
 
 ![schematic](http://farm8.staticflickr.com/7203/7101949535_6537774da4.jpg)
 

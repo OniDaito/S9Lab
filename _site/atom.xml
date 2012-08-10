@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-08-10T11:12:46+01:00</updated>
+ <updated>2012-08-10T11:17:09+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -17,18 +17,20 @@
    <link href="http://lab.section9.co.uk/2012/08/10/Boom-Box.html"/>
    <updated>2012-08-10T00:00:00+01:00</updated>
    <id>http://lab.section9.co.uk/2012/08/10/Boom-Box</id>
-   <content type="html">&lt;p&gt;As some people might know, I like to take part in things like &lt;a href=&quot;&quot;&gt;Animation12&lt;/a&gt;. Its a good thing to do for children and it helps make for an interesting day out. This year I wasn't attending but I was asked to create a gadget, a special prop, for the keynote speaker. Simply put, this device had to explode when turned down to one!&lt;/p&gt;
+   <content type="html">&lt;p&gt;As some people might know, I like to take part in things like &lt;a href=&quot;http://animation12.cs.manchester.ac.uk/&quot;&gt;Animation12&lt;/a&gt;. Its a good thing to do for children and it helps make for an interesting day out. This year I wasn't attending but I was asked to create a gadget, a special prop, for the keynote speaker. Simply put, this device had to explode when turned down to one! Filming took place in Jabex Clegg; one of the student drinking dens on the Manchester University campus.&lt;/p&gt;
 
 &lt;iframe src=&quot;http://player.vimeo.com/video/47105321&quot; width=&quot;500&quot; height=&quot;369&quot; frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
 
 
 &lt;p&gt; &lt;p&gt;&lt;a href=&quot;http://vimeo.com/47105321&quot;&gt;Boom Box Filming&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/user1678273&quot;&gt;Benjamin Blundell&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
 
-&lt;p&gt;The idea was to have a thing that represented the changing of causality. The idea is to show that humans have some give in their perception of cause and effect, shown in the &lt;a href=&quot;&quot;&gt;Michotte Experiments&lt;/a&gt;. With the internet, we are limited to the speed of light, so how does this gap in our perception of causality effect things like games played online? Its the science of the internet and its a great thing to show to kids.&lt;/p&gt;
+&lt;p&gt;The idea was to have a thing that represented the changing of causality. The idea is to show that humans have some give in their perception of cause and effect, shown in the &lt;a href=&quot;http://en.wikipedia.org/wiki/Albert_Michotte&quot;&gt;Michotte Experiments&lt;/a&gt;. With the internet, we are limited to the speed of light, so how does this gap in our perception of causality effect things like games played online? Its the science of the internet and its a great thing to show to kids.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7193/7076489781_7e40a2017b.jpg&quot; alt=&quot;Boombox&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The design is fairly standard. The trick is to contain the explosion from the pyrotechnics. The base contains a small hole and inside that, there is a tincan that somewhat shapes the blast out and down, away from the user.  The lovely chaps over at &lt;a href=&quot;http://www.justfx.co.uk&quot;&gt;justfx&lt;/a&gt; were quite helpful in providing a set of &lt;em&gt;robotics&lt;/em&gt; that work simply by passing a 9V charge through it.&lt;/p&gt;
+
+&lt;p&gt;I use an arduino for the majority of the work, simply because it's faster and contains a decent PWM pin. Nowadays, I'd consider an ATTiny but I had a few Arduino boards lying around, so it seemed the best way. The dial is laser cut and the case comes from an old ammeter that I snaffled from the Hackspace bin.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7203/7101949535_6537774da4.jpg&quot; alt=&quot;schematic&quot; /&gt;&lt;/p&gt;
 
