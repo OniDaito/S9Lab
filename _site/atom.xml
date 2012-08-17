@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-08-17T14:01:09+01:00</updated>
+ <updated>2012-08-17T14:08:17+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -24,9 +24,9 @@
 
 &lt;p&gt; &lt;p&gt;&lt;a href=&quot;http://vimeo.com/47714478&quot;&gt;Leeds Scanner&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/user1678273&quot;&gt;Benjamin Blundell&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;&lt;/p&gt;
 
-&lt;p&gt;I had a lot of false starts and worries about this project, not having done a lot of computer vision before. Its a tricky subject I'd like to know more about and I think some back-to-school maths courses might be needed. Initially, the plan was to work with a stereo setup, as described in the &lt;a href=&quot;http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereorectify&quot;&gt;OpenCV literature&lt;/a&gt;. This is known as disparity mapping and it relies somewhat on being able to match one point in one image to the other. One can then work out the &lt;a href=&quot;&quot;&gt;Epipolar Geometry&lt;/a&gt;  and recompute the depth, creating a 2D map of disparity or depth.&lt;/p&gt;
+&lt;p&gt;I had a lot of false starts and worries about this project, not having done a lot of computer vision before. Its a tricky subject I'd like to know more about and I think some back-to-school maths courses might be needed. Initially, the plan was to work with a stereo setup, as described in the &lt;a href=&quot;http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereorectify&quot;&gt;OpenCV literature&lt;/a&gt;. This is known as disparity mapping and it relies somewhat on being able to match one point in one image to the other. One can then work out the &lt;a href=&quot;http://en.wikipedia.org/wiki/Epipolar_geometry&quot;&gt;Epipolar Geometry&lt;/a&gt;  and recompute the depth, creating a 2D map of disparity or depth.&lt;/p&gt;
 
-&lt;p&gt;The first step in any camera based solution is &lt;a href=&quot;&quot;&gt;Camera Resectioning&lt;/a&gt; or Camera Calibration. All cameras, especially cheap ones, have lens distortion that needs to be accounted for in each setting. These are known as the &lt;a href=&quot;&quot;&gt;Intrinsic Parameters&lt;/a&gt; and the equation looks something like this:&lt;/p&gt;
+&lt;p&gt;The first step in any camera based solution is &lt;a href=&quot;http://en.wikipedia.org/wiki/Camera_resectioning&quot;&gt;Camera Resectioning&lt;/a&gt; or Camera Calibration. All cameras, especially cheap ones, have lens distortion that needs to be accounted for in each setting. These are known as the &lt;a href=&quot;http://en.wikipedia.org/wiki/Intrinsic_parameters#Intrinsic_parameters&quot;&gt;Intrinsic Parameters&lt;/a&gt; and the equation looks something like this:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://docs.opencv.org/_images/math/dbe76ed3ef28b501c3933a74618c2c94889d38fa.png&quot; alt=&quot;Camera Intrinsics&quot; /&gt;&lt;/p&gt;
 
@@ -44,7 +44,7 @@
 &lt;iframe width=&quot;640&quot; height=&quot;360&quot; src=&quot;http://www.youtube.com/embed/25N-4zrk390?feature=player_detailpage#t=32s&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 
 
-&lt;p&gt;Basically, with just one frame of reference you can have a line on which this point exists in 3D space. We need at least two lines - a triangulation if you will - before we can safely say where in 3D space this point lies. There is a further problem. Due to errors and noise, these lines may not intersect, so no exact solution exists. We need to minimise these line equations. Apparently, there is a well known method (that I didn't know of at the time) called &lt;a href=&quot;http://en.wikipedia.org/wiki/Linear_programming&quot;&gt;Linear Programming&lt;/a&gt; . We have, in effect a system of &lt;a href=&quot;http://en.wikipedia.org/wiki/Systems_of_linear_equations&quot;&gt;Linear Equations&lt;/a&gt; that are &lt;a href=&quot;http://en.wikipedia.org/wiki/Overdetermined_system&quot;&gt;Overdetermined&lt;/a&gt;.  Since they are overdetermined we can use a solver such as &lt;a href=&quot;&quot;&gt;cvSolve&lt;/a&gt; or &lt;a href=&quot;&quot;&gt;LAPACK&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Basically, with just one frame of reference you can have a line on which this point exists in 3D space. We need at least two lines - a triangulation if you will - before we can safely say where in 3D space this point lies. There is a further problem. Due to errors and noise, these lines may not intersect, so no exact solution exists. We need to minimise these line equations. Apparently, there is a well known method (that I didn't know of at the time) called &lt;a href=&quot;http://en.wikipedia.org/wiki/Linear_programming&quot;&gt;Linear Programming&lt;/a&gt; . We have, in effect a system of &lt;a href=&quot;http://en.wikipedia.org/wiki/Systems_of_linear_equations&quot;&gt;Linear Equations&lt;/a&gt; that are &lt;a href=&quot;http://en.wikipedia.org/wiki/Overdetermined_system&quot;&gt;Overdetermined&lt;/a&gt;.  Since they are overdetermined we can use a solver such as &lt;a href=&quot;http://opencv.willowgarage.com/documentation/cpp/core_operations_on_arrays.html#solve&quot;&gt;cvSolve&lt;/a&gt; or &lt;a href=&quot;http://www.netlib.org/lapack/&quot;&gt;LAPACK&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;We need to organise our equation above into a set of linear equations in terms of, U,V and 1. We end up with something like this:&lt;/p&gt;
 
@@ -64,7 +64,7 @@
 
 &lt;p&gt;Initially, this setup wasn't too bad. The projector would shine a point which would be picked up by the cameras. This point is then sent to our solver and bam, we have a point in the X,Y,Z space. It does take rather a long time though and the main problem is the projector can only &lt;em&gt;see&lt;/em&gt; the top of the model. We need to use a laser pointer to see the sides of the model.&lt;/p&gt;
 
-&lt;p&gt;So how do we go from a point cloud to an actual mesh? This bit is slightly trickier. Fortunately, we have a set of libraries - &lt;a href=&quot;&quot;&gt;The Point Cloud Library&lt;/a&gt; in fact.&lt;/p&gt;
+&lt;p&gt;So how do we go from a point cloud to an actual mesh? This bit is slightly trickier. Fortunately, we have a set of libraries - &lt;a href=&quot;http://pointclouds.org/&quot;&gt;The Point Cloud Library&lt;/a&gt; in fact.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8024/7407179758_226e1e17f9.jpg&quot; alt=&quot;Point Cloud&quot; /&gt;&lt;/p&gt;
 
@@ -80,7 +80,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8017/7630835790_30dea1be0c.jpg&quot; alt=&quot;meshlab mesh&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The final step is to colour the mesh. Now here we have a problem. How do you choose the colour at a point? The trick is the try and match the normals. Since we know the extrinsic values of the cameras, we can work out the plane of the camera and the normal to the plane. We know the normal of the triangle so the closer the dot product is to 1, the more of that triangle can be seen from that camera. This is slightly naive but works ok. There are other considerations such as the distance between the triangle and the camera. This is something we can't work out easily unfortunately (though I'm sure there is a way). An enhancement to this algorithm is to try and reduce the patchwork look by comparing neighbouring triangles. This requires the generation of a &lt;a href=&quot;&quot;&gt;Wing Edge&lt;/a&gt; structure that is quite time consuming.&lt;/p&gt;
+&lt;p&gt;The final step is to colour the mesh. Now here we have a problem. How do you choose the colour at a point? The trick is the try and match the normals. Since we know the extrinsic values of the cameras, we can work out the plane of the camera and the normal to the plane. We know the normal of the triangle so the closer the dot product is to 1, the more of that triangle can be seen from that camera. This is slightly naive but works ok. There are other considerations such as the distance between the triangle and the camera. This is something we can't work out easily unfortunately (though I'm sure there is a way). An enhancement to this algorithm is to try and reduce the patchwork look by comparing neighbouring triangles. This requires the generation of a &lt;a href=&quot;http://en.wikipedia.org/wiki/Winged_edge&quot;&gt;Winged Edge&lt;/a&gt; structure that is quite time consuming.&lt;/p&gt;
 
 &lt;p&gt;My solution to this problem is to upload the camera normals and all 8 textures to the pixel shader. We then choose the texture by comparing the normals in shader space. Although we only need to do this once, by doing this in parallel we get a much faster result. I ignore the neighbouring triangle issue as the look isn't much better.&lt;/p&gt;
 
