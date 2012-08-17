@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Recreating internal body parts by shooting models of them with lasers
+title:  Recreating internal body parts
 ---
 
 For the last 5 months I've been working with The University of Leeds on a rather interesting project that deals with Keyhole surgery. We are trying to recreate a 3D view from a series of cameras that are fixed inside the patient. To test these ideas we need to build a mockup of the system and work with models of the organs we wish to scan. The result looks something like this.
