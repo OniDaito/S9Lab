@@ -3,7 +3,7 @@ layout: post
 title: A Touch Wall under the M1 Motorway
 ---
 
-It's not often you get the chance to put a massive touchscreen underneath the M1, but that is exactly what I di at this years [EMFCamp](http://www.emfcamp.org) - The first hacker camp in the UK. Many lessons were learnt in the making of this and there are many things I'd do differently in the end. The results weren't bad considering and I learnt a lot through it.
+It's not often you get the chance to put a massive touchscreen underneath the M1, but that is exactly what I did at this years [EMFCamp](http://www.emfcamp.org) - The first hacker camp in the UK. Many lessons were learnt in the making of this and there are many things I'd do differently in the end. The results weren't bad considering and I learnt a lot through it.
 
 ![Nose Control](http://farm9.staticflickr.com/8437/7928922666_3ee2eb9c23.jpg)
 
