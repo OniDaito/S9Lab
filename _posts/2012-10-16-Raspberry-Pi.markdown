@@ -24,14 +24,13 @@ The build uses a wooden frame mounted onto a spare, 15" flat panel. Im using a
 DVI to HDMI convertor, an HTC Desire charger (or something similar), a 4 Gig
 Compact Flash with the latest Raspbian and a laser cut plastic enclosure. Im
 also using a WiFi USB dongle. The setup is:
+ 
+[DWA-110 USB Dongle](http://elinux.org/RPi_VerifiedPeripherals#Working_USB_Wifi_Adapters)
+ 
+ Any of the power supplies like the iPod, iPhone, HTC Desire or similar. 1A at 5 Volts is good
 
-  - [DWA-110 USB
-    Dongle](http://elinux.org/RPi_VerifiedPeripherals#Working_USB_Wifi_Adapters)
-  - Any of the power supplies like the iPod, iPhone, HTC Desire or similar. 1A
-    at 5 Volts is good
-  - [Built to Spec Raspberry Pi Lasercut
-    case](http://www.thingiverse.com/thing:25100) - this is the best I've found
-    and gives a lovely result if you have access to a laser cutter
+[Built to Spec Raspberry Pi Lasercut case](http://www.thingiverse.com/thing:25100) - this is the best I've found
+and gives a lovely result if you have access to a laser cutter
 
 I had awful problems getting the thing to run for longer than about 10 minutes.
 In the end, after trying several cards, power supplies and the rest, I returned

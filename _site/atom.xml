@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-10-16T21:54:26+01:00</updated>
+ <updated>2012-10-16T21:58:33+01:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -39,16 +39,12 @@ DVI to HDMI convertor, an HTC Desire charger (or something similar), a 4 Gig
 Compact Flash with the latest Raspbian and a laser cut plastic enclosure. Im
 also using a WiFi USB dongle. The setup is:&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://elinux.org/RPi_VerifiedPeripherals#Working_USB_Wifi_Adapters&quot;&gt;DWA-110 USB
-Dongle&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Any of the power supplies like the iPod, iPhone, HTC Desire or similar. 1A
-at 5 Volts is good&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.thingiverse.com/thing:25100&quot;&gt;Built to Spec Raspberry Pi Lasercut
-case&lt;/a&gt; - this is the best I've found
-and gives a lovely result if you have access to a laser cutter&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://elinux.org/RPi_VerifiedPeripherals#Working_USB_Wifi_Adapters&quot;&gt;DWA-110 USB Dongle&lt;/a&gt;&lt;/p&gt;
 
+&lt;p&gt; Any of the power supplies like the iPod, iPhone, HTC Desire or similar. 1A at 5 Volts is good&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.thingiverse.com/thing:25100&quot;&gt;Built to Spec Raspberry Pi Lasercut case&lt;/a&gt; - this is the best I've found
+and gives a lovely result if you have access to a laser cutter&lt;/p&gt;
 
 &lt;p&gt;I had awful problems getting the thing to run for longer than about 10 minutes.
 In the end, after trying several cards, power supplies and the rest, I returned
