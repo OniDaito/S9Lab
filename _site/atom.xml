@@ -4,13 +4,48 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-10-16T21:58:33+01:00</updated>
+ <updated>2012-11-05T15:02:51+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Leaving Google</title>
+   <link href="http://lab.section9.co.uk/2012/11/05/Leaving-Google.html"/>
+   <updated>2012-11-05T00:00:00+00:00</updated>
+   <id>http://lab.section9.co.uk/2012/11/05/Leaving-Google</id>
+   <content type="html">&lt;p&gt;It seems like the wrong thing to do. Anyone who is familar with the Podcast &quot;Back-to-Work&quot; or anyone with a goal in mind knows that its a bad idea to re-invent the wheel. If there is a good product out there that takes away a lot of hassle for you then you should use that to get what you need to get done, done! The thing is, this has various levels and for me, I like to get my hands dirty. I've been using Google for calendar and mail quite a lot and decided, just recently to step away. There were a few factors (work avoidance being one perhaps - a super form of procrastination) but lessons were learnt and good times had.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://images.smh.com.au/2010/01/15/1041660/googlechina5-420x0.jpg&quot; alt=&quot;baibai&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I run a few domains o n my own VPS. The thing about this is I need to run websites and therefore, email. I've been doing this happily on Ubuntu with Dovecot and Postfix. There are good guides and I think its more or less, running ok. I decided to use gmail because, lets face it, email anywhere, good spam filtering, multiple accounts and conversation view (probably the most import feature).&lt;/p&gt;
+
+&lt;p&gt;The best replacement for mail I've found is &lt;a href=&quot;http://roundcube.net/&quot;&gt;RoundCube&lt;/a&gt;. It has all the features you'd want from Gmail with the exception of multiple accounts. You can install a series of plugins for this however. &lt;a href=&quot;http://myroundcube.com/&quot;&gt;MyRoundCube&lt;/a&gt; has a plugin manager that you can install by copying various PHP files. You can then download their massive set of plugins, one of which lets you add external accounts. Job done right?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://roundcube.net/images/homescreen.jpg&quot; alt=&quot;roundcube&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Well, not quite. I needed a database. I decided on PostgreSQL for most of the heavy lifting. This is where everything got hairy. I don't like PHP and since I'm using nginx and php-fastcgi to serve all this, I needed a good PHP setup. I settled on actually building my own from scratch and ignoring the default one that comes with ubuntu. It took a while to get all the options together - there are quite a few. In addition I needed some proper drivers for postgresql.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo pear install -f MDB2_Driver_pgsql-1.5.0b3
+sudo pear install -f  MDB2-2.5.0b3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Roundcube also needs to use IMAP. It will use IMAP over SSL however which is good news. I don't much like the idea of using something unsecured. It took a while to get all this sorted, I must admit. However it all works now, with a HTTPS connection. So far, so good. There are still issues - contacts being the chief among them. Also, there are issues with saving all the data I currently have on google. Thunderbird does a good job of copying all that, so likely that will end up as a backup on my second server. Retroactively adding email is not what I want to do. To be fair, this hasn't yet caused a major problem as a lot of the google stuff is out of date anyway. You never know though.&lt;/p&gt;
+
+&lt;p&gt;Mail done. Now we have tasks / reminders and calendar. The former is interesting because I like the idea of Geofencing. Since I'm an iPhone user, I figured I'd give that a go first before I roll my own. I use Mountain Lion on my personal machine so all is well there (but for how long). Calendars are a little more complicated.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.davical.org/&quot;&gt;DaviCal&lt;/a&gt; seemed to be the thing to choose and it turned out to be much easier than I had thought. Again, Postgresql performs the heavy lifting. I had little trouble following the various guides. It seemed fairly straight forward to install.  Again, PHP is needed (shudder),  but &lt;a href=&quot;http://wiki.davical.org/w/Ubuntu/Lucid&quot;&gt;this ubuntu guide&lt;/a&gt; proved helpful.&lt;/p&gt;
+
+&lt;p&gt;With Davical, I can share calendars between various devices. At the moment, Im just using my iPhone's builtin client. Mountain Lion appears not to really like conencting to the caldav server but I reckon I can fix that.&lt;/p&gt;
+
+&lt;p&gt;I still need a good solution for notes. I believe Roundcube can take care of that as well. Indeed, Davical may have answers for that. If the task manager doesnt work, maybe that's what I'll do.&lt;/p&gt;
+
+&lt;p&gt;I have no real problems with Google, but I know quite a few people do. I've not kept up with the politics of it all but I do believe that keeping control of your data is important. Google, for my money (or not as the case may be), have never done me wrong but I guess I am part of their product. So far, I get a little more spam but not an awful lot and its quite good fun to see the rejections and n00bs trying to hammer my server. Bless.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>The Obligatory RaspberryPi Post</title>
