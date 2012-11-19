@@ -36,39 +36,94 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>05 Nov 2012</li>     
+          <li>19 Nov 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/11/05/Leaving-Google.html">Leaving Google</a></h3>
-    	 <p>It seems like the wrong thing to do. Anyone who is familar with the Podcast "Back-to-Work" or anyone with a goal in mind knows that its a bad idea to re-invent the wheel. If there is a good product out there that takes away a lot of hassle for you then you should use that to get what you need to get done, done! The thing is, this has various levels and for me, I like to get my hands dirty. I've been using Google for calendar and mail quite a lot and decided, just recently to step away. There were a few factors (work avoidance being one perhaps - a super form of procrastination) but lessons were learnt and good times had.</p>
+    		<h3><a href="/2012/11/19/The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></h3>
+    	 <p>Recently, for the past 2 months, I've been involved with a company called
+<a href="http://www.nexusinteractivearts.com/">Nexus Interactive Arts</a> on a webgl
+project called <a href="http://www.thecarpandtheseagull.com">The Carp and the Seagull</a>.
+Its an interactive movie directed by Evan Boehm and its rather good.</p>
 
-<p><img src="http://images.smh.com.au/2010/01/15/1041660/googlechina5-420x0.jpg" alt="baibai" /></p>
+<p><img src="http://www.nexusinteractivearts.com/latest-news/wp-content/uploads/2012/11/CarpSeagull_key-image2.jpg" alt="carp" /></p>
 
-<p>I run a few domains o n my own VPS. The thing about this is I need to run websites and therefore, email. I've been doing this happily on Ubuntu with Dovecot and Postfix. There are good guides and I think its more or less, running ok. I decided to use gmail because, lets face it, email anywhere, good spam filtering, multiple accounts and conversation view (probably the most import feature).</p>
+<p>The story revolves around our chap, Masato. He is a fisherman who is doomed,
+basically. The story is told in 4 chapters inside a cube. As the cube is spun
+we see the real world and the netherworld, lighting strikes, fish jump and our
+fisherman fishes. The story is a classic tale of one man's life going wrong.</p>
 
-<p>The best replacement for mail I've found is <a href="http://roundcube.net/">RoundCube</a>. It has all the features you'd want from Gmail with the exception of multiple accounts. You can install a series of plugins for this however. <a href="http://myroundcube.com/">MyRoundCube</a> has a plugin manager that you can install by copying various PHP files. You can then download their massive set of plugins, one of which lets you add external accounts. Job done right?</p>
+<p>The technical challenges on this project were considerable. Initially, I was
+brought in on the assets. How do you deal with animation from a production
+studio in a webbrowser? Nexus has a whole fleet of professional animators
+working in 3dsmax, maya and all the rest. The animation in this movie is
+excellent, but the problem with animation is the filesize.</p>
 
-<p><img src="http://roundcube.net/images/homescreen.jpg" alt="roundcube" /></p>
+<p>Initially, we tried using skeletal animation; exporting the fbx file and
+attempting to parse it in python, converting to JSON. This proved very tricky
+and in the end, what we had were glitches.</p>
 
-<p>Well, not quite. I needed a database. I decided on PostgreSQL for most of the heavy lifting. This is where everything got hairy. I don't like PHP and since I'm using nginx and php-fastcgi to serve all this, I needed a good PHP setup. I settled on actually building my own from scratch and ignoring the default one that comes with ubuntu. It took a while to get all the options together - there are quite a few. In addition I needed some proper drivers for postgresql.</p>
+<p><img src="http://farm9.staticflickr.com/8066/8198670489_1541505bdf.jpg" alt="glitch" /></p>
 
-<pre><code>sudo pear install -f MDB2_Driver_pgsql-1.5.0b3
-sudo pear install -f  MDB2-2.5.0b3
-</code></pre>
+<p>Shame really, because skeletal animation uses less space and has the ability to
+be deformed on the fly. In the end we decided to settle with morph targets. The
+problem with morph targets however, is they are essentially a new set of vertex
+positions everyframe. Uncompressed JSON for one character using JSON in the
+three.js format would weigh in at around 8 megabytes! Quite the challenge.</p>
 
-<p>Roundcube also needs to use IMAP. It will use IMAP over SSL however which is good news. I don't much like the idea of using something unsecured. It took a while to get all this sorted, I must admit. However it all works now, with a HTTPS connection. So far, so good. There are still issues - contacts being the chief among them. Also, there are issues with saving all the data I currently have on google. Thunderbird does a good job of copying all that, so likely that will end up as a backup on my second server. Retroactively adding email is not what I want to do. To be fair, this hasn't yet caused a major problem as a lot of the google stuff is out of date anyway. You never know though.</p>
+<p>How do you get from 3DSMax to Three.js JSON format though? The answer, it
+seems, is not easily. We decided to go with the venerable MD2 format. There is
+<a href="http://thegreystudios.com/blog/?p=278">an exporter for max</a> that will spit out
+MD2 files. Writing a python convertor from MD2 to JSON worked a treat. Now we
+had a way to combine animations from different files, export the various
+animations and create the lovely assets.</p>
 
-<p>Mail done. Now we have tasks / reminders and calendar. The former is interesting because I like the idea of Geofencing. Since I'm an iPhone user, I figured I'd give that a go first before I roll my own. I use Mountain Lion on my personal machine so all is well there (but for how long). Calendars are a little more complicated.</p>
+<p><img src="http://www.nexusinteractivearts.com/latest-news/wp-content/uploads/2012/11/TheCarpandtheseagull_5.jpg" alt="seagull" /></p>
 
-<p><a href="http://www.davical.org/">DaviCal</a> seemed to be the thing to choose and it turned out to be much easier than I had thought. Again, Postgresql performs the heavy lifting. I had little trouble following the various guides. It seemed fairly straight forward to install.  Again, PHP is needed (shudder),  but <a href="http://wiki.davical.org/w/Ubuntu/Lucid">this ubuntu guide</a> proved helpful.</p>
+<p>My first solution was to use GZip compression on the fly. In addition, I
+modified the three.js format to encompass multiple models in one file; a sort
+of library if you will. This managed to get the filesize and number of requests
+down considerably at the cost of some processing time.</p>
 
-<p>With Davical, I can share calendars between various devices. At the moment, Im just using my iPhone's builtin client. Mountain Lion appears not to really like conencting to the caldav server but I reckon I can fix that.</p>
+<p>Another chap, the lovely <a href="http://www.roxlu.com/">Roxlu</a> came up with a simple
+binary format for our files. I wrote a quick JSON to binary python script and
+meshed it with Roxlu's loader. The compression rate was comparable, if not
+better than using gzip.</p>
 
-<p>I still need a good solution for notes. I believe Roundcube can take care of that as well. Indeed, Davical may have answers for that. If the task manager doesnt work, maybe that's what I'll do.</p>
+<p>With the assets out of the way, the rest was down to the arts team. I spent
+most of my time adding extra functionality, fixing bugs and working with the
+remaining javascript. Three.js is quite a good library. There are a few
+problems with it; documentation being one of them. I missed the fact that was a
+handy class for generating vertex normals - would have been handy but it was
+burried in an example.</p>
 
-<p>I have no real problems with Google, but I know quite a few people do. I've not kept up with the politics of it all but I do believe that keeping control of your data is important. Google, for my money (or not as the case may be), have never done me wrong but I guess I am part of their product. So far, I get a little more spam but not an awful lot and its quite good fun to see the rejections and n00bs trying to hammer my server. Bless.</p>
+<p>One problem we had, and in fact, all Mac Users will have, is to do with
+Anti-Aliasing. Given that the art in this project uses a lot of lines, the lack
+of antialiasing was going to be a killer. Only certain cards would do this.
+Annoyingly, there is no way to test for whether or not this has been enabled.
+In the end, the plan was simple; render a small 4 x 4 area of the screen with a
+line and then sample part of it. If you see any grey, you know you have
+antialiasing enabled. This seemed to work and was quite a nice fix.</p>
+
+<p>FXAA is supported in three.js through the FXComposer - a really nice class that
+allows many screen based effects to be stacked together. In the end, we decided
+not to use it as the effect didn't look too great. In addition, there is a
+fault with certain machines and setting the line width in WebGL - lines can
+only be drawn with a thickness of 1. This means you dont have anything to blend
+with.</p>
+
+<p>Three.js is a good library. Some of the good things are the uber-shader, the
+idea of shared geometry and the FXComposer. Initially I was skeptical with the
+material paradigm but actually, it works quite well. The maths library is not
+so intuitive sadly and the animation format is still in its early stages but
+overall, a nice library to work with.</p>
+
+<p>Working for a client like Nexus is quite tough but enjoyable. As the project
+progressed a learnt a little more about how a WebGL application might be
+structured and the weaknesses of javascript. There is quite a bit I'd do
+differently next time. I think finishing my CoffeeGL library might be a good
+start.</p>
 
 	</div>
 </div>   
@@ -82,6 +137,8 @@ sudo pear install -f  MDB2-2.5.0b3
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/11/19/The-Carp-and-the-Seagull.html">The Carp and the Seagull</a> &dash; <abbr>19 Nov 2012</abbr></li>
 		
 			<li><a href="/2012/11/05/Leaving-Google.html">Leaving Google</a> &dash; <abbr>05 Nov 2012</abbr></li>
 		
