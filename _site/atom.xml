@@ -4,7 +4,7 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-11-19T11:43:49+00:00</updated>
+ <updated>2012-11-19T11:45:17+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
@@ -53,8 +53,6 @@ seems, is not easily. We decided to go with the venerable MD2 format. There is
 MD2 files. Writing a python convertor from MD2 to JSON worked a treat. Now we
 had a way to combine animations from different files, export the various
 animations and create the lovely assets.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.nexusinteractivearts.com/latest-news/wp-content/uploads/2012/11/TheCarpandtheseagull_5.jpg&quot; alt=&quot;seagull&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;My first solution was to use GZip compression on the fly. In addition, I
 modified the three.js format to encompass multiple models in one file; a sort

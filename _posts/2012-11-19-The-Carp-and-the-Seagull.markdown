@@ -40,8 +40,6 @@ MD2 files. Writing a python convertor from MD2 to JSON worked a treat. Now we
 had a way to combine animations from different files, export the various
 animations and create the lovely assets.
 
-![seagull](http://www.nexusinteractivearts.com/latest-news/wp-content/uploads/2012/11/TheCarpandtheseagull_5.jpg)
-
 My first solution was to use GZip compression on the fly. In addition, I
 modified the three.js format to encompass multiple models in one file; a sort
 of library if you will. This managed to get the filesize and number of requests
