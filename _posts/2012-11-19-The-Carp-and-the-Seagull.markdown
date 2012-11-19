@@ -25,7 +25,7 @@ Initially, we tried using skeletal animation; exporting the fbx file and
 attempting to parse it in python, converting to JSON. This proved very tricky
 and in the end, what we had were glitches.
 
-![glitch](http://farm9.staticflickr.com/8203/8199825074_d377399ce6.jpg)
+![gitch](http://farm9.staticflickr.com/8066/8198670489_1541505bdf.jpg)
 
 Shame really, because skeletal animation uses less space and has the ability to
 be deformed on the fly. In the end we decided to settle with morph targets. The
@@ -39,6 +39,8 @@ seems, is not easily. We decided to go with the venerable MD2 format. There is
 MD2 files. Writing a python convertor from MD2 to JSON worked a treat. Now we
 had a way to combine animations from different files, export the various
 animations and create the lovely assets.
+
+![glitch](http://farm9.staticflickr.com/8203/8199825074_d377399ce6.jpg)
 
 My first solution was to use GZip compression on the fly. In addition, I
 modified the three.js format to encompass multiple models in one file; a sort
