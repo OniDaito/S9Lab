@@ -8,7 +8,7 @@ Recently, for the past 2 months, I've been involved with a company called
 project called [The Carp and the Seagull](http://www.thecarpandtheseagull.com).
 Its an interactive movie directed by Evan Boehm and its rather good.
 
-![carp](http://www.nexusinteractivearts.com/latest-news/wp-content/uploads/2012/11/CarpSeagull_key-image2.jpg)
+![carp](http://farm9.staticflickr.com/8483/8198734967_a160a30da6.jpg)
 
 The story revolves around our chap, Masato. He is a fisherman who is doomed,
 basically. The story is told in 4 chapters inside a cube. As the cube is spun
@@ -25,7 +25,7 @@ Initially, we tried using skeletal animation; exporting the fbx file and
 attempting to parse it in python, converting to JSON. This proved very tricky
 and in the end, what we had were glitches.
 
-![glitch](http://farm9.staticflickr.com/8066/8198670489_1541505bdf.jpg)
+![glitch](http://farm9.staticflickr.com/8203/8199825074_d377399ce6.jpg)
 
 Shame really, because skeletal animation uses less space and has the ability to
 be deformed on the fly. In the end we decided to settle with morph targets. The
