@@ -36,94 +36,46 @@
 <div class="post">
 	<div class="post-meta col span-2">
     	<ul class="nav">
-          <li>19 Nov 2012</li>     
+          <li>13 Dec 2012</li>     
         </ul>
   	</div>
 
     <div class="post-content span-8 nudge-2">
-    		<h3><a href="/2012/11/19/The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></h3>
-    	 <p>Recently, for the past 2 months, I've been involved with a company called
-<a href="http://www.nexusinteractivearts.com/">Nexus Interactive Arts</a> on a webgl
-project called <a href="http://www.thecarpandtheseagull.com">The Carp and the Seagull</a>.
-Its an interactive movie directed by Evan Boehm and its rather good.</p>
+    		<h3><a href="/2012/12/13/Painless-Science.html">Phantom Limb at the Science Museum</a></h3>
+    	 <p>Im quite excited to see this display. At the back of the Science Museum, in the
+Antenna area, there is a new exhibition called
+<a href="http://painlessexhibition.wordpress.com/">Painless</a> that deals with the
+new ways researchers are tackling pain.</p>
 
-<p><img src="http://farm9.staticflickr.com/8483/8198734967_a160a30da6.jpg" alt="carp" /></p>
+<p><img src="http://farm9.staticflickr.com/8206/8262141878_df665d61b7.jpg" alt="painless" /></p>
 
-<p>The story revolves around our chap, Masato. He is a fisherman who is doomed,
-basically. The story is told in 4 chapters inside a cube. As the cube is spun
-we see the real world and the netherworld, lighting strikes, fish jump and our
-fisherman fishes. The story is a classic tale of one man's life going wrong.</p>
+<p>The display features four different projects that cover the spectrum of odd
+pain-relief. My area focused on the phantom-limb syndrome. One delt with how
+pain is and isnt remembered. The third was concerned with spider venom and it's
+uses in not feeling any pain, whereas the final piece talks about volunteering to aid pain research.</p>
 
-<p>The technical challenges on this project were considerable. Initially, I was
-brought in on the assets. How do you deal with animation from a production
-studio in a webbrowser? Nexus has a whole fleet of professional animators
-working in 3dsmax, maya and all the rest. The animation in this movie is
-excellent, but the problem with animation is the filesize.</p>
+<p>The displays feature a short video and some of the objects that are invovled.
+In our case, there are 3 objects in the central case; a kinect, a replica hat
+and a pair of vuzix glasses. On the far left is a prosthetic arm and on the
+right, a feature object - in this case, a mirror box. This layout
+is repeated for each of the stations. Overall, I felt the layout was quite
+good.</p>
 
-<p>Initially, we tried using skeletal animation; exporting the fbx file and
-attempting to parse it in python, converting to JSON. This proved very tricky
-and in the end, what we had were glitches.</p>
+<p><img src="http://farm9.staticflickr.com/8059/8262141296_cac2f04048.jpg" alt="painless" /></p>
 
-<p><img src="http://farm9.staticflickr.com/8066/8198670489_1541505bdf.jpg" alt="gitch" /></p>
+<p>About half-way through the video, you can see me, with my ubiquitous hat on,
+programming in the background, furiously, on my mac! The day the science museum
+came to the department was quite good fun. It was certainly interesting to see
+a film crew from the otherside.</p>
 
-<p>Shame really, because skeletal animation uses less space and has the ability to
-be deformed on the fly. In the end we decided to settle with morph targets. The
-problem with morph targets however, is they are essentially a new set of vertex
-positions everyframe. Uncompressed JSON for one character using JSON in the
-three.js format would weigh in at around 8 megabytes! Quite the challenge.</p>
+<p>Im glad to see some of my work in a museum. I think this is one of the works
+I'm most proud of because it does seem to have some effect in making someone's
+life a little better, physically and measurably, which doesn't happen often in
+computer graphics.</p>
 
-<p>How do you get from 3DSMax to Three.js JSON format though? The answer, it
-seems, is not easily. We decided to go with the venerable MD2 format. There is
-<a href="http://thegreystudios.com/blog/?p=278">an exporter for max</a> that will spit out
-MD2 files. Writing a python convertor from MD2 to JSON worked a treat. Now we
-had a way to combine animations from different files, export the various
-animations and create the lovely assets.</p>
+<p><img src="http://farm9.staticflickr.com/8360/8261072119_9ca4817c0d.jpg" alt="painless" /></p>
 
-<p><img src="http://farm9.staticflickr.com/8203/8199825074_d377399ce6.jpg" alt="glitch" /></p>
-
-<p>My first solution was to use GZip compression on the fly. In addition, I
-modified the three.js format to encompass multiple models in one file; a sort
-of library if you will. This managed to get the filesize and number of requests
-down considerably at the cost of some processing time.</p>
-
-<p>Another chap, the lovely <a href="http://www.roxlu.com/">Roxlu</a> came up with a simple
-binary format for our files. I wrote a quick JSON to binary python script and
-meshed it with Roxlu's loader. The compression rate was comparable, if not
-better than using gzip.</p>
-
-<p>With the assets out of the way, the rest was down to the arts team. I spent
-most of my time adding extra functionality, fixing bugs and working with the
-remaining javascript. Three.js is quite a good library. There are a few
-problems with it; documentation being one of them. I missed the fact that was a
-handy class for generating vertex normals - would have been handy but it was
-burried in an example.</p>
-
-<p>One problem we had, and in fact, all Mac Users will have, is to do with
-Anti-Aliasing. Given that the art in this project uses a lot of lines, the lack
-of antialiasing was going to be a killer. Only certain cards would do this.
-Annoyingly, there is no way to test for whether or not this has been enabled.
-In the end, the plan was simple; render a small 4 x 4 area of the screen with a
-line and then sample part of it. If you see any grey, you know you have
-antialiasing enabled. This seemed to work and was quite a nice fix.</p>
-
-<p>FXAA is supported in three.js through the FXComposer - a really nice class that
-allows many screen based effects to be stacked together. In the end, we decided
-not to use it as the effect didn't look too great. In addition, there is a
-fault with certain machines and setting the line width in WebGL - lines can
-only be drawn with a thickness of 1. This means you dont have anything to blend
-with.</p>
-
-<p>Three.js is a good library. Some of the good things are the uber-shader, the
-idea of shared geometry and the FXComposer. Initially I was skeptical with the
-material paradigm but actually, it works quite well. The maths library is not
-so intuitive sadly and the animation format is still in its early stages but
-overall, a nice library to work with.</p>
-
-<p>Working for a client like Nexus is quite tough but enjoyable. As the project
-progressed a learnt a little more about how a WebGL application might be
-structured and the weaknesses of javascript. There is quite a bit I'd do
-differently next time. I think finishing my CoffeeGL library might be a good
-start.</p>
+<p>Next time, I'll bring a better camera than my iPhone! :D</p>
 
 	</div>
 </div>   
@@ -137,6 +89,8 @@ start.</p>
     <div class="section">
       <h4 class="ver small">Archive</h4>
   		<ul id="archive">
+		
+			<li><a href="/2012/12/13/Painless-Science.html">Phantom Limb at the Science Museum</a> &dash; <abbr>13 Dec 2012</abbr></li>
 		
 			<li><a href="/2012/11/19/The-Carp-and-the-Seagull.html">The Carp and the Seagull</a> &dash; <abbr>19 Nov 2012</abbr></li>
 		
