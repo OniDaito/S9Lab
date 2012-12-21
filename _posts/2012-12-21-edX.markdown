@@ -21,7 +21,7 @@ About this time, my girlfriend was getting into the meat of her course and noted
 
 About half-way through, they introduced Object Orientated programming. The tutor had changed and wasn't quite as good as the first. In addition, they only spent one and a half sessions on it. In python, or any other language, this wasn't enough time. I've taught programming at all levels and I would have taken a lot longer. Thats a black mark for Edx.
 
-Another black mark for programming was the discussion boards. There was an awful lot of people lording it up, saying how good they were, congratulating themselves. Despite being Edx, this is still the internet and these things happen but it's not a very good atmosphere for people genuinely trying to learn. In the electronics course, I never paid too much attention to the boards but I did find a lot of helpful answers; people had obviously spent a lot of time helping others. Another difference between the two courses.
+Another black mark for programming was the discussion boards. There was an awful lot of people lording it up, saying how good they were, congratulating themselves. Despite being Edx, this is still the internet and these things happen but it's not a very good atmosphere for people genuinely trying to learn. In the electronics course, I never paid too much attention to the boards but I did find a lot of helpful answers; people had obviously spent a lot of time helping others. Another difference between the two courses. *updated* I'm told that its a bit harsh to not mention the helpful people on the programming boards. They do indeed exist! :)
 
 ![edx](http://gallery.mailchimp.com/1822a33c054dc20e223ca40e2/images/edx_email_header.jpg)
 
