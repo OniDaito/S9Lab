@@ -4,13 +4,94 @@
  <title>Section9 Lab - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
- <updated>2012-12-21T13:22:45+00:00</updated>
+ <updated>2013-01-09T10:54:03+00:00</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
    <email>oni@section9.co.uk</email>
  </author>
 
+ 
+ <entry>
+   <title>Computing History Records and Preservation</title>
+   <link href="http://lab.section9.co.uk/2013/01/09/Computer-History.html"/>
+   <updated>2013-01-09T00:00:00+00:00</updated>
+   <id>http://lab.section9.co.uk/2013/01/09/Computer-History</id>
+   <content type="html">&lt;p&gt;Its the new year and christmas is over. Quite often, people go back to visit
+their parents and family at Christmas and this year was no exception. This
+prompted a bit of a trip down memory lane and on this trip, I discovered
+something amusing; an old VHS Tape of &quot;The Net&quot; - A BBC2 Program from the
+nineties.&lt;/p&gt;
+
+&lt;object width=&quot;420&quot; height=&quot;315&quot;&gt;&lt;param name=&quot;movie&quot;
+value=&quot;http://www.youtube.com/v/slkDBB6RSYQ?hl=en_US&amp;amp;version=3&amp;amp;rel=0&amp;amp;start=818&quot;&gt;&lt;/param&gt;&lt;param
+name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot;
+value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed
+src=&quot;http://www.youtube.com/v/slkDBB6RSYQ?hl=en_US&amp;amp;version=3&amp;amp;rel=0&amp;amp;start=818&quot;
+type=&quot;application/x-shockwave-flash&quot; width=&quot;420&quot; height=&quot;315&quot;
+allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/embed&gt;&lt;/object&gt;
+
+
+&lt;p&gt;Watching all the episodes I realised that many of the issues in computing we
+are still facing. One of these things is the recording of our digital heritage.
+I've become more aware of the goings on inside museums, thanks to the
+girlfriend mostly, but also in my own work. 20 years ago or more, I was writing
+code and now I can't find it. I know there is a CD somewhere but will it still
+work?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8212/8322543187_41fab267f3.jpg&quot; alt=&quot;Deluxe Paint&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Before Mr Hockney's iPad paintings were cool, both my mother and sister were
+working with digital mediums to create art. My mother is a professional
+painter and even as early as GEM and the IBM 8088, she was creating rather
+stunning works. Fortunately, my father, in his wisdom, preserved the floppy
+disks and we now have access to a few of these images. Probably we don't have
+them all.&lt;/p&gt;
+
+&lt;p&gt;The common misconception is we are all great at saving stuff. Surely, with all
+the disks, floppies, SSDs, etc, we never lose a single thing. Wrong. We create
+so much stuff we are losing even more. For example, no-one knows what the first
+tweet was. There is no record of this. What about the first SMS message (I
+believe we do have this actually, we probably got lucky).&lt;/p&gt;
+
+&lt;p&gt;The funny thing is, people were talkig about simulation and storage of data at
+least 20 years ago now. What have we done since? Honestly, I don't know. Its
+hard enough with personal data, let alone data that is relevent to an entire
+people.&lt;/p&gt;
+
+&lt;p&gt;But lets assume, for a minute, that we have all the data and simulations and
+machines. How do we display these things in a museum? Katie and I recently
+visited the &lt;a href=&quot;http://www.computerhistory.org/&quot;&gt;Computng History Museum&lt;/a&gt; in Palo
+Alto, California. As layout's go, it was rather good. They had exhibits like
+the original Utah Teapot!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8207/8260074539_80dff7c180.jpg&quot; alt=&quot;Utah Teapot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem at this museum, and in general, is the focus on objects and
+hardware. The section on computer graphics was poor in my estimation. Sure, its
+my specialism and that makes me more prone to criticism but even so, they did a
+bad job of charting progress in graphics. But software isn't an object; you
+cant put it in a glass case for all to see. So what do you do?&lt;/p&gt;
+
+&lt;p&gt;The Victoria and Albert Musuem (V&amp;amp;A) had an interesting take in their last
+exhibition, &lt;a href=&quot;http://www.vam.ac.uk/content/exhibitions/exhibition-british-design/&quot;&gt;The Best of British
+Design&lt;/a&gt;. One section was given over completely
+to computer games (and rightly so! The UK was heavily involved in the early
+scene). Their presentation, I thought, was particularly good. A company called
+&lt;a href=&quot;http://www.soda.co.uk/work/vanda-british-design&quot;&gt;Soda&lt;/a&gt; developed the screens
+and display for Lemmings. It was quite innovative and presented the design of
+the characters very well.&lt;/p&gt;
+
+&lt;p&gt;Some might say that preserving code and data is something that museums haven't
+warmed to yet. There is a resistance to putting collections online (which is
+also irrational). When I used to teach at Central St Martins, I used
+&lt;a href=&quot;http://archive.org/&quot;&gt;archive.org&lt;/a&gt; and the internet way-back machine to show
+students the design for the original Google. It always gets a good laugh.&lt;/p&gt;
+
+&lt;p&gt;So basically, this is a problem and it will be interesting to see where it goes
+from there.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>edX</title>
