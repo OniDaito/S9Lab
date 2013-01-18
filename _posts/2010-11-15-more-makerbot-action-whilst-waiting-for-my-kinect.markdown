@@ -1,7 +1,0 @@
---- 
-wordpress_id: 100
-layout: post
-title: ">More Makerbot action (whilst waiting for my Kinect)"
-wordpress_url: http://www.section9.co.uk/blog/?p=100
----
-><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_WNXP2eEZSdg/TOB6vdGFAeI/AAAAAAAAAwE/20UGUHXw72k/s1600/IMG_0005.JPG"><img style="float:left; margin:0 10px 10px 0;cursor:pointer; cursor:hand;width: 150px; height: 200px;" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TOB6vdGFAeI/AAAAAAAAAwE/20UGUHXw72k/s200/IMG_0005.JPG" border="0" alt=""id="BLOGGER_PHOTO_ID_5539562497348272610" /></a><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_WNXP2eEZSdg/TOB6crcYoqI/AAAAAAAAAv8/bTKMMGvlDJ0/s1600/IMG_0006.JPG"><img style="float:right; margin:0 0 10px 10px;cursor:pointer; cursor:hand;width: 200px; height: 150px;" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TOB6crcYoqI/AAAAAAAAAv8/bTKMMGvlDJ0/s200/IMG_0006.JPG" border="0" alt=""id="BLOGGER_PHOTO_ID_5539562174782415522" /></a><br /><br /><br /><br/><br /><br/><br/><br/><br/><br/><br />Yes, I've jumped on the Kinect bandwagon. Already I have big plans but there have been many things I've needed to sort out these last few weeks so not had much time to do any cool S9 style vids. Instead, I have been fixing some of life's small problems, one of which is the state of my headphones. The winder was useless which meant cables all over pockets, wound around keys and much else, so I decided to employ the makerbot and here is the result.

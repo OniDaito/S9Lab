@@ -1,7 +1,0 @@
---- 
-wordpress_id: 56
-layout: post
-title: ">Showreel 2009-2010 (1)"
-wordpress_url: http://www.section9.co.uk/blog/?p=56
----
-><object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/kT6wjgksbTU&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/kT6wjgksbTU&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object><br /><br />Finally got around to doing my awesome showreel. It's the first time I've done this but since I've been extremely busy of late, I thought I'd get around to putting all the workI've done in the last 6 months into a short video. Hope you like it!<br /><br />The song is "Two Feet on the Ground" by <a href="http://www.pronobozo.com">the excellent Pronobozo</a>. Just bought his latest album, Hackwave and you should too!

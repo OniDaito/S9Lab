@@ -1,7 +1,0 @@
---- 
-wordpress_id: 60
-layout: post
-title: ">We made WIRED.co.uk"
-wordpress_url: http://www.section9.co.uk/blog/?p=60
----
-><a href="http://www.wired.co.uk/news/archive/2010-05/12/oxfam-donations-get-rfid-memories-read-by-iphones"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 134px;" src="http://3.bp.blogspot.com/_WNXP2eEZSdg/S-sgwWPo5NI/AAAAAAAAApc/IrKTBr6kdYo/s320/oxfam.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5470502187348583634" /></a><br /><br /><a href="http://www.wired.co.uk/news/archive/2010-05/12/oxfam-donations-get-rfid-memories-read-by-iphones">Read the Article on WIRED.co.uk</a><br /><br />Yup! The little Oxfam project of which I have played my part has managed to get coverage in Wired.co.uk! It's one step closer to the dream of actually being published in WIRED. Essentially, I've spent a lot of time in the back of the Oxfam shop playing with RFID wands, Bluetooth readers, Amplifiers and all that sort of thing. <br /><br />Essentially, the project is about replaying the tales people have about the objects they donate to the store. Its a pretty neat idea. My role has been about the tech; from writing iPhone software to soldering up readers in the back-room!<br /><br />Emma, the Oxfam store manager has been really cool in putting up with me and my soldering iron. So far things are looking good and I hope to get some good coverage of the event up here.

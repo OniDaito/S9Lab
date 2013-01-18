@@ -1,68 +1,178 @@
 <!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+-->
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>{{ page.title }}</title>
+	<title>Section9 {{ page.title }}</title>
 	<meta name="author" content="Benjamin Blundell" />
-	<link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-	<link href="http://lab.section9.co.uk/css/grid-900.css" rel="stylesheet"></link>
-	<link href="http://lab.section9.co.uk/css/style.css" rel="stylesheet"></link>
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+	<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/css/s9.css" rel="stylesheet" media="screen">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!-- META DATA - Need to Check and Update -->
+  <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+  <!-- General metadata -->
+  <meta name="generator" content="" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="Author-Template" content="" />
+  <meta name="Author" content="Benjamin Blundell" />
+  <meta name="Publisher" content="Benjamin Blundell" />
+  <meta name="Publisher-Email" content="oni@section9.co.uk" />
+  <meta name="Coverage" content="UK" /> 
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.date.created" lang="en" content="" />
+  <meta name="DC.format" lang="en" content="text/html" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.coverage" lang="en" content="" />
+  <meta name="DC.identifier" content="" />    
+  
+  <!-- eGMS Metadata -->
+  <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+  
+  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
+  <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
+  <meta name="DC.description" lang="en" content="" />
+  <meta name="DC.subject" lang="en" content="" /> 
+
+  <script src="/js/jquery-1.8.3.min.js"></script>
+
+  <style type="text/css">
+    body {
+       background: url(../images/background_mesh.jpg) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+
+</head>
 
 <body>
 
-<div id="wrapper">
-  <div id="main-nav" class="col span-12">
-    <ul>
-      <li><a href="http://lab.section9.co.uk">Lab Posts</a></li>
-      <li><a href="http://www.section9.co.uk">Section9 Portfolio</a></li>
-      <li><a href="http://www.twitter.com/secti0n9">Benjamin Blundell on Twitter</a></li>
-    </ul>     
-  </div>    
-    
-  <div id="header" class="col last span-12">
-    <h1>Section9 Labs</a></h1>
-    <h2>Benjamin Blundell's experiments <span class="low">&amp;</span> ruminations</h2>
-  </div>
+<div id="wrap">
+  <div class="container-fluid clear-top" id="main">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
+          <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              
+              <li {% if page.idx == 'home' %} class="active" {% endif %}><a href="/index.html">Home</a></li>
+              <li {% if page.idx == 'projects' %} class="active" {% endif %}><a href="/projects.html">Selected Works</a></li>
+              <li {% if page.idx == 'about' %} class="active" {% endif %}><a href="/about.html">About</a></li>
+             
+            </ul>
+            <div class="social_container">
+            <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
+            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
+            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
+            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
+          </div>
+          </div><!--/.nav-collapse -->
+        </div><!-- /.navbar-inner -->
+      </div><!-- /.navbar -->
 
-  <hr />
 
-  <div id="content" class="col span-9">
-    <div class="col last span-6 nudge-2">
-      <h4 class="ver small">What <span class="low">i'm</span> thinking about today</h4> 
-    </div>
-  
-  	{{content}}  
 
-        
-    <ul class="navigation">
-	<li></ul>
-  </div>  
+    {% block content %}{% endblock %}
 
-  <div id="sidebar" class="col last span-3">
-    <div class="section">
-      <h4 class="ver small">Archive</h4>
-  		<ul id="archive">
-		{% for post in site.posts %}
-			<li><a href="{{ post.url }}">{{ post.title }}</a> &dash; <abbr>{{ post.date | date_to_string }}</abbr></li>
-		{% endfor %}
-		</ul>
-    </div>
- 
-  </div>
 
- 
-  <hr />
-
-  <div id="footnotes" class="col span-12">
-    <p>Copyright &copy; 2004&ndash;2009. All rights reserved.</p>
-    <p class="rss"><a href="http://lab.section9.co.uk/atom.xml" title="Syndicate this site using Atom"><acronym title="Really Simple Syndication">RSS</acronym> Feed</a>. This blog is proudly powered <span class="low">by</span> <a href="https://github.com/mojombo/jekyll">Jekyll</a> and uses <a href="http://www.rodrigogalindez.com/wordpress-themes/">Modern Clix</a>, a theme <span class="low">by</span> <a href="http://www.rodrigogalindez.com">Rodrigo Galindez</a>.</p>
   </div>
 </div>
+ 
+<!--<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a> -->
 
+ 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.masonry.min.js"></script>
+<script src="js/jquery.infinitescroll.min.js"></script>
 
-<a href="http://www.section9.co.uk"><img style="position: absolute; top: 100px; right: 180px; border: 0;" src="http://blog.section9.co.uk/images/s9black.png" alt="Section9"></a>
+<canvas id="animation"></canvas>
 
-<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+<script type="text/javascript">
+
+  var requrl = "localhost:8000"
+  var canvas = $('canvas#animation').get(0);
+  
+
+  if (canvas.getContext) {
+      
+    $.getScript('/js/processing-1.4.1.min.js', function() {
+      $.getScript('/js/asteroidsfont.js', function() {
+        var script = $.ajax({url:"/s9.pde", async: false}).responseText;
+        processingInstance = new Processing(canvas, script);
+        processingInstance.resize($(window).width() - 5, $(window).height());
+        
+      });     
+    });
+  }
+  else {
+    html5 = false;
+    // No fancy HTML for you!
+    alert("Your Browser does not support HTML5 - While this is fine, you wont get the extra fancy bits!");
+    
+  }
+
+</script>
+
+<script type="text/javascript">
+  // Setup the funky links
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
+          
+          var nodes = document.querySelectorAll( selector );
+
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
+
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
+
+  linkify( 'p a' );
+</script>
 
 <!-- Google Analytics -->
 <script type="text/javascript">
@@ -74,6 +184,8 @@ var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
 <!-- Google Analytics end -->
+
+
 
 </body>
 </html>

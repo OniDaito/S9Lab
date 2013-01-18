@@ -1,83 +1,24 @@
-/* Section9 CSS
-	Section9 ~ http://www.section9.co.uk
-                      __  .__              ________ 
-  ______ ____   _____/  |_|__| ____   ____/   __   \
- /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
- \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
-/____  >\___  >\___  >__| |__|\____/|___|  //____/.co.uk  
-     \/     \/     \/                    \/        
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
 
-*/
-
-/* Body and main elements
---------------------------------------------------------------------------------------------------*/
-
-html,body {
-  background-image: url('/images/background.gif');
-  font-family: "Bitstream Sans Serif", sans-serif;
-  color: black;
-  margin: 0px;
-  padding: 1em;
+html, body {
+  height: 100%;
 }
 
 
-h1 {
-  font-family: "nevisBold", sans-serif;
-  font-weight: normal;
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+
 }
-
-q {
-  font-family: "Bitstream Charter", serif;
-  color: blue;
-  margin-left: 2em;
-}
-
-
-
-em {
-  font-size: 140%;
-  font-style: italic;
-}
-
-strong {
-  font-weight: bold;
-}
-
-#banner {
-	border: 1px solid black;
-	margin-top: 10px;
-}
-
-#titledate {
-	margin-bottom:10px;
-	clear: both;
-	height: 50px;
-}
-
-object {
-    padding: 20px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.container_10 {
-    background-color:white;
-}
-
-.grid_10, .grid_9, .grid_1, .grid_8, .grid_2  {
-    background-color:white;
-}
-
-
-/* Typography
-----------------------------------------------------------------------------------------------------*/
 
 @font-face {
-	font-family: 'nevisBold';
-	src: url('http://www.section9.co.uk/media/css/nevis-webfont.eot');
-	src: local('☺'), url('http://www.section9.co.uk/media/css/nevis-webfont.woff') format('woff'), url('http://www.section9.co.uk/media/css/nevis-webfont.ttf') format('truetype'), url('http://www.section9.co.uk/media/css/nevis-webfont.svg#webfont') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'nevisBold';
+  src: url('css/nevis-webfont.eot');
+  src: local('☺'), url('nevis-webfont.woff') format('woff'), url('nevis-webfont.ttf') format('truetype'), url('nevis-webfont.svg#webfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .nevis-Bold {
@@ -87,75 +28,407 @@ object {
     font-family: 'nevisBold', sans-serif;
 }
 
-a{
-	font:  normal normal normal 12px/14px Courier, monospace;
-	color: #2B83AA;
-	text-decoration: none;
+@font-face {
+  font-family: SourceSans;
+  src: url("SourceSansPro-Regular.otf") format("opentype");
 }
 
-abbr {
-	font:  normal normal normal 12px/14px Courier, monospace;
+@font-face {
+  font-family: SourceSansBold;
+  src: url("SourceSansPro-Bold.otf") format("opentype");
 }
 
-a:hover {
-	color:#89cbc9;
+@font-face {
+  font-family: SourceSansBoldIt;
+  src: url("SourceSansPro-BoldIt.otf") format("opentype");
 }
 
-h2, h2 a{
-
-	font-family: "nevisBold", sans-serif;
-	font-weight: normal;
-	font-size: 1.1em;
-	text-transform: uppercase;
-	float: right;
-	margin-bottom: 0.5em;
-}
-
-h3 {
-	font-family: "nevisBold", sans-serif;
-	font-weight: normal;
-	font-size: 0.9em;
-	text-transform: uppercase;
-}
-
-#date {
-	font-family: "nevisBold", sans-serif;
-	font-size: 0.7em;
-	text-transform:uppercase;
-	float: right;
-	color: white;
-	background:black;
+@font-face {
+  font-family: SourceSansLight;
+  src: url("SourceSansPro-Light.otf") format("opentype");
 }
 
 
-.entryimage {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+.source-sans-reg {
+  font-weight: normal; 
+  font-style: normal; 
+  line-height:normal; 
+  font-family: 'SourceSans', sans-serif;
+}
+
+.brand img {
+  padding: 0px;
+  margin: 0px;
+}
+
+#wrap {
+  min-height: 100%;
+  width:100%;
+  z-index: 4;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom:30px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+  position: relative;
+  margin-top: -30px; /* negative value of footer height */
+  height: 30px;
+  clear:both;
+  padding-top:20px;
+  background: none repeat scroll 0% 0% rgb(10, 20, 20);
+} 
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+.navbar {
+  margin-top: 8px;
+  z-index: 5;
+}
+
+.navbar .navbar-inner {
+  border: 0;
+  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+     -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+          box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+/* Downsize the brand/project name a bit */
+.navbar .brand {
+  padding-top: 20px 10px 10px 10px; 
+}
+
+/* Navbar links: increase padding for taller navbar */
+.navbar .nav > li > a {
+  padding: 15px 20px;
+  font-family: 'SourceSansBoldIt';
+  font-size: 14pt;
+}
+
+/* Offset the responsive button for proper vertical alignment */
+.navbar .btn-navbar {
+  margin-top: 10px;
 }
 
 
-h1{
-	color: #2B83AA;
-	text-transform:uppercase;
-	font-family: 'nevisBold', sans-serif;
-	width: 90%;
-	margin-right: 1em;
-	padding: 0.5em;
+div.social_container {
+  float:right;
 }
 
-p {
-	font-family: "Bitstream-Charter", serif;
-	font-size: 0.9em;
-	padding: 0.5em;
+div.social_container a{
+  display: inline-block;
+  text-decoration: none;
 }
 
-#breadcrumbs{
-	text-align:right;
+div.social_container a:hover {
+  text-decoration: none;
 }
 
-.newentry {
-	display: hidden;
+div.social
+{
+  margin-top:10px;
+  width:28px;
+  height:28px;
+  margin-left: 3px;
+}
+
+#twitter { background:url(../images/social-media-medium-grey.png) -56px 0; }
+#twitter:hover { background:url(../images/social-media-medium-white.png) -56px 0; }
+
+#flickr { background:url(../images/social-media-medium-grey.png) -1px 0; }
+#flickr:hover  { background:url(../images/social-media-medium-white.png) -1px 0; }
+
+#linkedin { background:url(../images/social-media-medium-grey.png) -113px 0; }
+#linkedin:hover  { background:url(../images/social-media-medium-white.png) -113px 0; }
+
+#github { background:url(../images/social-media-medium-grey.png) -28px 0; }
+#github:hover  { background:url(../images/social-media-medium-white.png) -28px 0; }
+
+.lead {
+  margin: 0;
+  font-size: 10pt;
+  line-height: 10pt;
+  color:  rgb(200,200,200);
+  /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
 }
 
 
+/* MARKDOWN SECTIONS
+------------------------- */
+
+.s5 {
+  width: 540px;
+}
+
+.s4 {
+  width: 460px;
+}
+
+
+.s3 {
+  width: 380px;
+}
+
+.s2 {
+  width: 300px;
+}
+
+.s1 {
+  width: 220px;
+}
+
+/* CORNER STAMP 
+---------------------*/
+
+.corner-stamp {
+
+  width: 220px;
+  padding: 10px;
+  margin: 10px;
+  float: right;
+  background: none repeat scroll 0% 0% rgb(255, 255, 255);
+  color: black;
+}
+
+.corner-stamp h2 {
+  font-weight: bold;  
+  font-size: 22pt;
+  line-height: 18pt;
+  font-family: "SourceSansBoldIt";
+  color: rgb(10, 10, 10);
+}
+
+.corner-stamp h4 {
+  font-weight: normal;  
+  font-size: 16pt;
+  line-height: 16pt;
+  font-family: "SourceSansLight";
+  color: rgb(10, 10, 10);
+}
+
+
+
+ 
+/* MASONRY CSS
+-------------------------------------------------- */
+
+#tumblelog {
+  margin-top: 20px;
+}
+
+.box {
+    background: none repeat scroll 0% 0% rgb(90, 90, 90);
+    padding: 8px;
+    margin-bottom: 15px;
+   /* border-radius: 8px 8px 8px 8px; */
+     -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+     -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+          box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+
+.linkbox:hover {
+  -webkit-transition: background 0.5s linear;
+  -moz-transition: background 0.5s linear;
+  -ms-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  transition: background 0.5s linear;
+
+   cursor:pointer;
+   background: none repeat scroll 0% 0% rgb(100, 120, 160);
+}
+
+
+
+.box h3 {
+  font-family: "SourceSansBoldIt";
+  margin: 0;
+  font-size: 16pt;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+
+.box p {
+  font-family: "SourceSans";
+  font-size: 10pt;
+  color: rgb(220, 220, 220);
+  padding: 3px;
+}
+
+.box li {
+  font-family: "SourceSans";
+  font-size: 10pt;
+  line-height: 10pt;
+  color: #fff;
+  padding: 2px;
+}
+
+
+.box p strong {
+  font-family: "SourceSansBoldIt";
+}
+
+
+/* ROLL
+----------------------------- */
+
+a {
+    text-decoration: none;
+    color: hsl(206, 80%, 50%);
+}
+
+.roll {
+    display: inline-block;
+    overflow: hidden;
+
+    vertical-align: top;
+
+    -webkit-perspective: 400px;
+       -moz-perspective: 400px;
+
+    -webkit-perspective-origin: 50% 50%;
+       -moz-perspective-origin: 50% 50%;
+}
+
+.roll span {
+    display: block;
+    position: relative;
+    padding: 0 2px;
+
+    -webkit-transition: all 400ms ease;
+       -moz-transition: all 400ms ease;
+    
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+    
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+}
+
+.roll:hover span {
+    background: #111;
+
+    -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+       -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+}
+
+.roll span:after {
+    content: attr(data-title);
+
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 2px;
+
+    color: #fff;
+    background: hsl(206, 80%, 30%);
+
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+
+    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+       -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+}
+
+
+#animation {
+  position: absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  image-rendering: optimizequality !important;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 979px) {
+
+  .container.navbar-wrapper {
+    margin-bottom: 0;
+    width: auto;
+  }
+  .navbar-inner {
+    border-radius: 0;
+    margin-top: -8px 0;
+  }
+
+  .carousel .item {
+    height: 500px;
+  }
+  .carousel img {
+    width: auto;
+    height: 500px;
+  }
+
+  .featurette {
+    height: auto;
+    padding: 0;
+  }
+  .featurette-image.pull-left,
+  .featurette-image.pull-right {
+    display: block;
+    float: none;
+    max-width: 40%;
+    margin: 0 auto 20px;
+  }
+}
+
+
+@media (max-width: 767px) {
+
+  /*.navbar-inner {
+    margin: -20px;
+  }
+
+  .carousel {
+    margin-left: -20px;
+    margin-right: -20px;
+  }*/
+
+  .carousel .container {
+
+  }
+  .carousel .item {
+    height: 300px;
+  }
+  .carousel img {
+    height: 300px;
+  }
+  .carousel-caption {
+    width: 65%;
+    padding: 0 70px;
+    margin-top: 100px;
+  }
+  .carousel-caption h1 {
+    font-size: 30px;
+  }
+  .carousel-caption .lead,
+  .carousel-caption .btn {
+    font-size: 18px;
+  }
+
+  .marketing .span4 + .span4 {
+    margin-top: 40px;
+  }
+
+  .featurette-heading {
+    font-size: 30px;
+  }
+  .featurette .lead {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+}

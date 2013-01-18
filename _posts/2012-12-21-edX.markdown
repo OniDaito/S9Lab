@@ -2,17 +2,18 @@
 layout: post
 title: edX 
 ---
-
+##
 Last year, [edX](https://www.edx.org) was born and a few people I know took the MIT Electronics course, 6.002x. It was widely hailed as a bold and innovative move. Everyone seemed excited by it, including me. I signed up but quickly realised it was a lot of work and missed out. Fortunately, the second time around, I decided I'd give it a proper shot.
 
-![edx](https://www.edx.org/static/images/header-logo.png)
-
+##
 Electronics is something I dabble with and have used professionally and personally for the last 2-3 years. I knew it was time to learn the basics. This seemed ideal. I'd spoken with my girlfriend about going back to university and learning something new. With the expense of university and the time it takes out of your life, this seemed like a great idea.
 
 My girlfriend is a historian and has degrees in the arts, but also has quite a mathematical mind. She decided, soon after, to sign-up for the programming course with edX. The two of us have been simultaneously working on seperate courses and it gave us a chance to compare and contrast. 
 
+##
 ![edx](https://www.edx.org/static/content-mit-6002x/images/course_image.af4982623e2d.jpg)
 
+##
 I found the first 6 weeks of edX hard going. Electronics is quite maths heavy which I didnt appreciate. It took about 16 hours per week to get through the lectures, the exercises and the homework. Basically, that meant no weekend or at best, one day working solidly on edX and several evenings. 
 
 By the time the mid-term arrived, I was quite scared. I've realised my maths level is quite poor in some respects. Differentiation, integration, advanced algebra and trigonomic functions are all over the place. Understanding some of the leaps the course tutors made was tough. I've always feared my inability to do maths and so, I went in head first and tried to improve. I feel I have but more needs to be done.
@@ -21,16 +22,24 @@ About this time, my girlfriend was getting into the meat of her course and noted
 
 About half-way through, they introduced Object Orientated programming. The tutor had changed and wasn't quite as good as the first. In addition, they only spent one and a half sessions on it. In python, or any other language, this wasn't enough time. I've taught programming at all levels and I would have taken a lot longer. Thats a black mark for Edx.
 
+##
 Another black mark for programming was the discussion boards. There was an awful lot of people lording it up, saying how good they were, congratulating themselves. Despite being Edx, this is still the internet and these things happen but it's not a very good atmosphere for people genuinely trying to learn. In the electronics course, I never paid too much attention to the boards but I did find a lot of helpful answers; people had obviously spent a lot of time helping others. Another difference between the two courses. *updated* I'm told that its a bit harsh to not mention the helpful people on the programming boards. They do indeed exist! :)
 
+
+##
 ![edx](http://gallery.mailchimp.com/1822a33c054dc20e223ca40e2/images/edx_email_header.jpg)
 
+
+##
 After the mid-term, things got trickier. The maths ramped up, but I also ended up in the middle of the largest project I've done this year. I basically had no time spare at all and it was rather tough trying to keep a freelance business going as well as hitting my head against a brickwall made of maths. In addition, I went on a two week break towards the end. At the same time I stopped doing the exercises in-between the lectures. This is a sure way to fail. I took the final exam yesterday and almost didn't pass. All the hard-work would have been for nought as I only just scraped through with 60% overall.
 
 This is folly of course. The idea was to learn a little about electronics and I feel I've done just that. However, if I'd not passed I'd have felt awful. Is this a bad thing? Is this me being habituated by exams and need to get bits of paper? Possibly. I dont like that idea at all. In contrast Katie has begun to realise that the programming course is veering away from what she needs to learn and do professionally and that is a problem for her. I guess one needs to consider carefully why they are taking a course and what they intend to get out of it. It feels weird to be taking exams again. The anxiety and such comes right back. You think you've left it forever, especially when you've marked exam papers. I suppose that's only a good thing though. Reminds you of what students have to go through.
 
+##
 Overall, I found edX to be wonderful. It's well presented, well thought out and it's a proper course. This isn't something you can just relax and play around with. Its a serious University providing a serious course. I regret not having the time to get into the tutorials, the interactive components lab and the various discussions. You need to treat it just like a university course. Take notes, talk to people and practice, practice!
 
+##
 Recently, university heads have come out in support of online courses. This is definitely the future and we'll be seeing more of this for sure. I hadn't really looked at [Coursera](https://www.coursera.org/) before I took edX but I can see the appeal. Coursera, on the surface at least, seems less polished and prestigious, but that could be incorrect. There seems to be a wider choice of courses with Coursera.
 
+#
 Im glad I did it. Im glad it's over, but I'm glad I did it. Time to order that MIT hoody! :D

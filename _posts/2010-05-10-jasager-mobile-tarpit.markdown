@@ -1,7 +1,0 @@
---- 
-wordpress_id: 59
-layout: post
-title: ">Jasager Mobile Tarpit"
-wordpress_url: http://www.section9.co.uk/blog/?p=59
----
-><object width="400" height="225"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=11630656&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=11630656&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="225"></embed></object><br /><br />I thought I'd post my findings on the Jasager mobile tarpit. Word is, it kinda works but the bandwidth is a little limiting. The general deal is that Jasager is great but you really need some kind of connection to get any sort of man-in-the-middle action and thats a shame...unless you already have some shiny GPRS goodness! That does kinda work well. <br /><br />There are a few caveats though. Forwarding http requires a SOCKS proxy daemon process of some kind. Transocks is good and proxychains is better but what if you want to do DNS as well? Write a wrapper around the proxyresolv script and foward DNS traffic to it and you are in. Its awkward but it does work!

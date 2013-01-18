@@ -2,14 +2,19 @@
 layout: post
 title: New Lab
 ---
+#
 So I've left CSM and started section9.co.uk ltd and Im open for business with a new desk! :D
 
+###
 ![New Desk](http://farm8.staticflickr.com/7112/6891988900_5ea6170700.jpg)
 
+##
 Im working with the University of Leeds at the moment; the strange article to the left of the photo is the current project that I can't say too much about. Im looking at a lot of WebGL work outside of that and a few physcial projects that need to be built so its all go.
 
+###
 ![3D desk](http://farm8.staticflickr.com/7108/7038073543_a6f3010789.jpg)
 
+###
 Its good to be back in the swing of building cool things again though its pretty tough. I spent a while settling down to it. I hunted around London for a few different venues and settled on a shared desk with [Ping Dynasty](http://hq.pingdynasty.com/blog/) who live above [London Hackspace](http://london.hackspace.org.uk). This has proven to be quite useful. The space is close by enough so I can use the tools but I have a secure area of my own where experiments can be left and things made. It seems to work so far, though I still have far too much to get done! :D
 
 I'd looked at other shared desk spaces and a few artist studios. The problem with the latter is a limited company is not allowed to work out of such a space. In addition the security is quite poor and the locations were not ideal. I'd looked at a proper office over near the river at the Southbank which sounded great and wasn't too expensive but the problem here was the distance from where I live, the people I seem to be working with and potential clients. The east end of London is certainly where all the cool stuff goes down.

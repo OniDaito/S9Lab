@@ -2,9 +2,10 @@
 layout: post
 title: MongoDB Fun with Cinder
 ---
-
+##
 So I've been playing around with [MongoDB](http://www.mongodb.org) for a little while now. Im certainly no expert but I get the feeling its pretty darn handy for smaller apps and webservers doing simple things or many, many small things. At the moment, I'm using it with an art installation, written in [Cinder](http://libcinder.org/) that records the positions of various figures over time. The data is not very relational (in fact, it isn't at all) and so having a mongo setup seemed like the thing to do.
 
+###
 Running mongob on OSX is quite easy if you use [Brew](https://github.com/mxcl/homebrew) (and you *really* should be). Install mongo and then call:
 
     sudo mongod run --config \
@@ -12,14 +13,18 @@ Running mongob on OSX is quite easy if you use [Brew](https://github.com/mxcl/ho
 
 You can also send the *--rest* option which allows you to get some interesting stats on what is going on, which is handy.
 
+##
 At first, I used a [Node.js](http://nodejs.org/) front-end and sent all my database queries over the network interface. Thats generally a pretty bad way of doing things. I started to look into the C++ driver and I began to hit some interesting problems.
 
 I downloaded the [Mongo C++ Driver](http://www.mongodb.org/pages/viewpage.action?pageId=133415) and compiled up their example. The first thing is to generally follow the rules for the linux build.
 
- This runs quite well but trying to integrate this with [Cinder](http://libcinder.org/) caused a lot of problems, largely because both of them do different things with boost which is no good. I had a real struggle on my hands. In the end, I couldn't quite figure out what to do so I used a classic solution; simply include the headers seperately and communicate between Mongo and Cinder using *std::string* only. Its not the best thing to do but it works. 
+##
+This runs quite well but trying to integrate this with [Cinder](http://libcinder.org/) caused a lot of problems, largely because both of them do different things with boost which is no good. I had a real struggle on my hands. In the end, I couldn't quite figure out what to do so I used a classic solution; simply include the headers seperately and communicate between Mongo and Cinder using *std::string* only. Its not the best thing to do but it works. 
 
+##
 Essentially create a class that bridges the gap and only includes the standard libraries. I rebuilt mongo with the version of boost that comes with cinder which was *1.44* when I built my version. This can be done by downloading the particular version from the [boost website](http://www.boost.org/) and installing it, then rebuilding mongo. Its not the best solution but it does work. 
 
+###
 As mongo is running, you can pull up your terminal and login to your database with
 
     mongo <databasename>

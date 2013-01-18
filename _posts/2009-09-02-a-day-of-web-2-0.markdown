@@ -1,7 +1,0 @@
---- 
-wordpress_id: 5
-layout: post
-title: ">A day of Web 2.0"
-wordpress_url: http://www.section9.co.uk/blog/?p=5
----
->It seems that I've been messing with Web2.0 services for the entire day! Firstly, it appears that Flash doesn't like cross-site linking, so I had to fudge the Django back-end to get the Twitter Feeds and Blogger feeds on Flash's behalf. Bit of a horrible fix really.<br /><br />Now that the beta page is up and being tested, I've turned to LinkedIN, Flickr and Blogger. Flickr is such a gorgeous thing to use, it really is. Now that things are organised the joyous Leeds Festival Photos are there so be sure to check these out. <br /><br />LinkedIN seems like a rather good alternative to the annoyance of updating an ODT spreadsheet all the time. I'm glad about that for sure. Spent a little time getting that sorted. glad of that.<br /><br />Web2.0 is cool but I think we need a nicer way of combining and making a gestalt presence out of all the different services. At the very least, one way of combining the lot!

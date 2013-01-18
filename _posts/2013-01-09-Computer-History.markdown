@@ -3,20 +3,18 @@ layout: post
 title: Computing History Records and Preservation 
 ---
 
+##
 Its the new year and christmas is over. Quite often, people go back to visit
 their parents and family at Christmas and this year was no exception. This
 prompted a bit of a trip down memory lane and on this trip, I discovered
 something amusing; an old VHS Tape of "The Net" - A BBC2 Program from the
 nineties.
 
-<object width="420" height="315"><param name="movie"
-value="http://www.youtube.com/v/slkDBB6RSYQ?hl=en_US&amp;version=3&amp;rel=0&amp;start=818"></param><param
-name="allowFullScreen" value="true"></param><param name="allowscriptaccess"
-value="always"></param><embed
-src="http://www.youtube.com/v/slkDBB6RSYQ?hl=en_US&amp;version=3&amp;rel=0&amp;start=818"
-type="application/x-shockwave-flash" width="420" height="315"
-allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
+####
+<iframe width="460" height="360" src="http://www.youtube.com/embed/slkDBB6RSYQ?rel=0&amp;start=818" frameborder="0" allowfullscreen></iframe>
+
+#
 Watching all the episodes I realised that many of the issues in computing we
 are still facing. One of these things is the recording of our digital heritage.
 I've become more aware of the goings on inside museums, thanks to the
@@ -24,8 +22,10 @@ girlfriend mostly, but also in my own work. 20 years ago or more, I was writing
 code and now I can't find it. I know there is a CD somewhere but will it still
 work?
 
+##
 ![Deluxe Paint](http://farm9.staticflickr.com/8212/8322543187_41fab267f3.jpg)
 
+##
 Before Mr Hockney's iPad paintings were cool, both my mother and sister were
 working with digital mediums to create art. My mother is a professional
 painter and even as early as GEM and the IBM 8088, she was creating rather
@@ -44,14 +44,17 @@ least 20 years ago now. What have we done since? Honestly, I don't know. Its
 hard enough with personal data, let alone data that is relevent to an entire
 people.
 
+##
 But lets assume, for a minute, that we have all the data and simulations and
 machines. How do we display these things in a museum? Katie and I recently
 visited the [Computng History Museum](http://www.computerhistory.org/) in Palo
 Alto, California. As layout's go, it was rather good. They had exhibits like
 the original Utah Teapot!
 
+##
 ![Utah Teapot](http://farm9.staticflickr.com/8207/8260074539_80dff7c180.jpg)
 
+#
 The problem at this museum, and in general, is the focus on objects and
 hardware. The section on computer graphics was poor in my estimation. Sure, its
 my specialism and that makes me more prone to criticism but even so, they did a
@@ -67,6 +70,7 @@ scene). Their presentation, I thought, was particularly good. A company called
 and display for Lemmings. It was quite innovative and presented the design of
 the characters very well.
 
+#
 Some might say that preserving code and data is something that museums haven't
 warmed to yet. There is a resistance to putting collections online (which is
 also irrational). When I used to teach at Central St Martins, I used

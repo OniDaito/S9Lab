@@ -1,7 +1,0 @@
---- 
-wordpress_id: 86
-layout: post
-title: ">London Music Hackday approaches.."
-wordpress_url: http://www.section9.co.uk/blog/?p=86
----
-><span class="bblack">..and I've been asked to help out with the hardware hack section of the event. It promises to be a lot of fun and I can't wait to be there but I've been working mega hard on a large project which I hope to get finished tonight. An awful lot of cool things are in the pipelines but just not finished enough to be released. Check out the <a href="http://london.musichackday.org/2010/">London Music Hackday Page</a> in the meantime.</span>

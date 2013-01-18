@@ -1,7 +1,0 @@
---- 
-wordpress_id: 10
-layout: post
-title: ">iPhone Development for Camera-ness and AR"
-wordpress_url: http://www.section9.co.uk/blog/?p=10
----
->Getting the camera to do nice things with Augmented reality seems tricky. I can't seem to get a straight answer out of any of the people I've tried to speak with. I am intrigued by this little program called <a href="http://www.quickmark.cn/">QuickMark</a> which is really nifty. It seems to be able to use the camera to automatically hunt for QRCodes. Normally, you take a snapshot and then analyse that. This means you are only using the camera in the way Apple lets you. But, in the full version of QuickMark, you can actually just hold the camera up and it deals with it automatically. How crazy is that? Surely, if this is an official iPhone APP, the AR crowd have missed something?<br /><br />I've been trying to get a straight answer on all this Augmented Reality stuff for the iPhone. It turns out that to use the camera, you need access to the "Private APIs" that tend to be used with Jailbroken APPs only. However, this is only for distribution. A nice chap at the University of London told me that you only need the Private APIs to get at the camera and that this DOESNT require you to jailbreak your phone. Once thats done, the rest is simply cross compiled C++ code, from something like the ARToolkit.<br /><br />Sounds simple? Well, sadly it only works with FW2. We are now up to FW3.1 . What to do eh? Maybe the 3GS crowd will have better luck! :S

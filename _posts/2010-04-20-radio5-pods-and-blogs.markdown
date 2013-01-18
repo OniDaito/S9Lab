@@ -1,7 +1,0 @@
---- 
-wordpress_id: 54
-layout: post
-title: ">Radio5 Pods and Blogs"
-wordpress_url: http://www.section9.co.uk/blog/?p=54
----
->Fame at last? Well maybe just a little. Jemimah Knight was kind enough to let me come on her show, <a href="http://www.bbc.co.uk/blogs/podsandblogs/">Pods and Blogs, on BBC Radio5</a>. Had a lot of fun chatting to her about the project at work, Tales of Things. If you don't want to wait to hear it this evening, <a href="http://www.bbc.co.uk/blogs/podsandblogs/2010/04/tedx_ratholes_and_tales_of_thi.shtml">check out the Podcast</a> where you can download the MP3. I come in towards the end but there's some cool stuff about TED in there too!
