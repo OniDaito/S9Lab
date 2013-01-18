@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Section9 Knightmare Bash</title>
+  <meta name="author" content="Benjamin Blundell" />
+  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/css/s9.css" rel="stylesheet" media="screen">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <!-- META DATA - Need to Check and Update -->
+  <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+  <!-- General metadata -->
+  <meta name="generator" content="" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="Author-Template" content="" />
+  <meta name="Author" content="Benjamin Blundell" />
+  <meta name="Publisher" content="Benjamin Blundell" />
+  <meta name="Publisher-Email" content="oni@section9.co.uk" />
+  <meta name="Coverage" content="UK" /> 
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.date.created" lang="en" content="" />
+  <meta name="DC.format" lang="en" content="text/html" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.coverage" lang="en" content="" />
+  <meta name="DC.identifier" content="" />    
+  
+  <!-- eGMS Metadata -->
+  <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+  
+  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
+  <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
+  <meta name="DC.description" lang="en" content="" />
+  <meta name="DC.subject" lang="en" content="" /> 
+
+  <script src="/js/jquery-1.8.3.min.js"></script>
+
+  <style type="text/css">
+    body {
+      
+        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
+      
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+
+<body>
+<div id="wrap">
+  <div class="container-fluid clear-top" id="main">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
+        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/projects.html">Selected Works</a></li>
+            <li ><a href="/about.html">About</a></li>
+          </ul>
+          <div class="social_container">
+           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
+            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
+            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
+            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
+          </div>
+        </div>
+      </div>
+   </div>
+
+    <div id="content">
+      <div class="box">
+        <h3>Knightmare Bash</h3>
+        <span class="lead">2011-08-31 00:00:00</span>
+      </div>
+      
+<div class="s3 box"><p>So I came up with this today:</p>
+<pre><code>#!/bin/bash
+a=$(echo $1 | tr '[:lower:]' '[:upper:]')
+e=$(echo $a | sed 's/\(.\)/\1 /g')
+echo -n "SPELLCASTING: "
+for i in $e; do
+    echo -n $i" "
+    sleep 1
+done;
+echo ""
+$1
+</code></pre>
+<p>This little piece of bash script is the geekiest and therfore <em>coolest</em> thing I've written for the past few weeks. But it's had me thinking a little about programming, life and the universe. </p>
+<p>It was born out of a semi-drunken chat with my good friend <a href="http://www.casa.ucl.ac.uk/people/person.asp?ID=260">Steve</a>. After cooking a <em>rather splendid</em> roast dinner, the conversation turned, as it inevitably does, to TV programmes we used to watch as kids. I don't know why that always happens after a certain age but it's something that has occurred between my friends and I many times. I suspect it's not just me either. Of course, we had to talk about <a href="http://www.knightmare.com/">Knightmare</a>.</p>
+</div><div class="s2 box"><p>Steve hit on the idea of a spellcasting script of some kind so I thought I'd write one. I was bored at work this morning and figured it would be a good warm-up. I'm no bash ninja sadly, though I've often thought about learning more and there indeed is the rub. It's important to take little steps and to do that, you <em>have to want to take them</em>. </p>
+<p>I think this simple example is quite similar to the <a href="http://www.vimeo.com/26788575">Thermoptic Camouflage</a> play-thing I wrote. It's what you might call a <em>speed project</em>. It's a little bit fun, the outcome is known, and you have a pretty good idea of what you need to do but with scope for learning and finally, most importantly, it doesn't matter.</p>
+</div><div class="s1 box"><p>The last bit is important. There is no real pressure save whatever you bring to it. </p>
+<p>I also wrote <em>a shit load of Ruby on Rails</em> with video processing and everything but thats beside the point! :D</p>
+</div>
+      <div class="box">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.masonry.min.js"></script>
+  <script src="/js/jquery.infinitescroll.min.js"></script>
+
+
+   <script type="text/javascript">
+      $(window).load(function(){
+
+        $(function(){
+    
+          var $container = $('#content');
+          
+          $container.imagesLoaded(function(){
+            $container.masonry({
+              itemSelector: '.box',
+              columnWidth: 60,
+              isAnimated: true,
+              cornerStampSelector: '.corner-stamp'
+            });
+          });
+        });
+      });
+
+
+    // Setup the funky links
+
+    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+               document.body.style['MozPerspective'] !== undefined;
+
+    function linkify( selector ) {
+        if( supports3DTransforms ) {
+            
+            var nodes = document.querySelectorAll( selector );
+
+            for( var i = 0, len = nodes.length; i < len; i++ ) {
+                var node = nodes[i];
+
+                if( !node.className || !node.className.match( /roll/g ) ) {
+                    node.className += ' roll';
+                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+                }
+            };
+        }
+    }
+
+    linkify( 'p a' );
+
+    </script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

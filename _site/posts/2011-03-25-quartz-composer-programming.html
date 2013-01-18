@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Section9 Quartz Composer Programming</title>
+  <meta name="author" content="Benjamin Blundell" />
+  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/css/s9.css" rel="stylesheet" media="screen">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <!-- META DATA - Need to Check and Update -->
+  <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+  <!-- General metadata -->
+  <meta name="generator" content="" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="Author-Template" content="" />
+  <meta name="Author" content="Benjamin Blundell" />
+  <meta name="Publisher" content="Benjamin Blundell" />
+  <meta name="Publisher-Email" content="oni@section9.co.uk" />
+  <meta name="Coverage" content="UK" /> 
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.date.created" lang="en" content="" />
+  <meta name="DC.format" lang="en" content="text/html" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.coverage" lang="en" content="" />
+  <meta name="DC.identifier" content="" />    
+  
+  <!-- eGMS Metadata -->
+  <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+  
+  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
+  <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
+  <meta name="DC.description" lang="en" content="" />
+  <meta name="DC.subject" lang="en" content="" /> 
+
+  <script src="/js/jquery-1.8.3.min.js"></script>
+
+  <style type="text/css">
+    body {
+      
+        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
+      
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+
+<body>
+<div id="wrap">
+  <div class="container-fluid clear-top" id="main">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
+        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/projects.html">Selected Works</a></li>
+            <li ><a href="/about.html">About</a></li>
+          </ul>
+          <div class="social_container">
+           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
+            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
+            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
+            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
+          </div>
+        </div>
+      </div>
+   </div>
+
+    <div id="content">
+      <div class="box">
+        <h3>Quartz Composer Programming</h3>
+        <span class="lead">2011-03-25 00:00:00</span>
+      </div>
+      
+<div class="s2 box"><p><img alt="quartz" src="http://4.bp.blogspot.com/-FoRqxMeqWLY/TYys6hW_pXI/AAAAAAAAAyU/mv9YXumOqxo/s320/qc.png" /></p>
+</div><div class="s2 box"><p>I've been asked by a client to work on a set of patches for Quartz Composer. I was quite chuffed really because it meant playing with Shadows and other suchs cool things. What I didnt know was that there quite a lot of problems with programming in QC. There is the Apple official way which is quite well documented and then there is the <a href="http://kineme.net/release/QCPatchXcodeTemplate/10">SkankySDK</a> way which is sort of unofficial and a hack.</p>
+</div><div class="s2 box"><p>The thing is, I should have realised it was a hack. Looking at the Kineme webpage though, and the fact that you have to pay for things made me feel that this was usable by any old dev. Not so. The <a href="http://kineme.net/release/Kineme3D/12">Kineme3D</a> and other plugins allow a lot of extra functionality within QC such as model loading and all the rest. Now thats just what we need. If one could create a <span style="font-weight:bold;">Macro Patch</span>, one could then add things with Depth of Field and Fog or whatever to your sub patches.
+Apple doesn't let you program Macro patches.</p>
+</div><div class="s2 box"><p>Bummer! So that means we need to use the SkankySDK from the Kineme webpage after all. Sadly, there is no documentation and almost no comments in the headers! Unbelievable! Im still annoyed about that. Also, the examples included in the SDK are slightly misleading.
+So, there are 3 patch types in Quartzcomposer. One creates values, one passes values and the final one renders. These are called <em>Consumer patches</em> and it is one of these I wanted to right. Turns out you need to make sure that this class (inheriting from QCPatch) returns the correct execution method and that it has no outputs! Sounds obvious that an end-of-the-line patch should have no outputs but you need to make sure, otherwise QC wont let you use it.</p>
+</div><div class="s3 box"><p>Also, all output and input ports as they are known <em>must have their variable names start with either input or output</em>. This is mentioned anywhere on the SkankySDK (maybe this is mentioned on Apple's site) but thats a massive failure in my opinion.
+Consumer plugins allow you to write OpenGL basically. So all your standard Shader and FBO commands can be written inside a consumer. But there are a couple of things you need to do first. Any file that makes reference to OpenGL needs to include:</p>
+<pre><code>#import &lt;opengl/gl.h&gt;
+#import &lt;opengl/opengl.h&gt;
+#import &lt;opengl/cglmacro.h&gt;
+</code></pre>
+<p>Now, you might think that is obvious, but the the program will compile and appear to run even without these import lines. If you put them in, your patch will work. If you miss them out, you patch will execute its children but not work itself. How crazy?</p>
+</div><div class="s3 box"><p>In addition, any OpenGL function needs this line:</p>
+<pre><code>CGLContextObj cgl_ctx = [context CGLContextObj];
+</code></pre>
+<p>Why? I have no idea yet!
+So, is that it then? No, there is one last thing. You need to be careful with the execution of subpatches:</p>
+<pre><code>[executeSubpatches:time arguments:arguments];
+</code></pre>
+<p>This executes your subpatches for you which works fine but remember that you have no control on state. You should, as a best practice, push and pop all you need to and nothing else. So inside my FBO code  I don't include a clear statement because there is another patch that does that for me.</div></p>
+</div>
+      <div class="box">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.masonry.min.js"></script>
+  <script src="/js/jquery.infinitescroll.min.js"></script>
+
+
+   <script type="text/javascript">
+      $(window).load(function(){
+
+        $(function(){
+    
+          var $container = $('#content');
+          
+          $container.imagesLoaded(function(){
+            $container.masonry({
+              itemSelector: '.box',
+              columnWidth: 60,
+              isAnimated: true,
+              cornerStampSelector: '.corner-stamp'
+            });
+          });
+        });
+      });
+
+
+    // Setup the funky links
+
+    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+               document.body.style['MozPerspective'] !== undefined;
+
+    function linkify( selector ) {
+        if( supports3DTransforms ) {
+            
+            var nodes = document.querySelectorAll( selector );
+
+            for( var i = 0, len = nodes.length; i < len; i++ ) {
+                var node = nodes[i];
+
+                if( !node.className || !node.className.match( /roll/g ) ) {
+                    node.className += ' roll';
+                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+                }
+            };
+        }
+    }
+
+    linkify( 'p a' );
+
+    </script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

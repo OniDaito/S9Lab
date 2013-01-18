@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Section9 Solar Charging for the iPhone</title>
+  <meta name="author" content="Benjamin Blundell" />
+  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/css/s9.css" rel="stylesheet" media="screen">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <!-- META DATA - Need to Check and Update -->
+  <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+  <!-- General metadata -->
+  <meta name="generator" content="" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="Author-Template" content="" />
+  <meta name="Author" content="Benjamin Blundell" />
+  <meta name="Publisher" content="Benjamin Blundell" />
+  <meta name="Publisher-Email" content="oni@section9.co.uk" />
+  <meta name="Coverage" content="UK" /> 
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.date.created" lang="en" content="" />
+  <meta name="DC.format" lang="en" content="text/html" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.coverage" lang="en" content="" />
+  <meta name="DC.identifier" content="" />    
+  
+  <!-- eGMS Metadata -->
+  <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+  
+  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
+  <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
+  <meta name="DC.description" lang="en" content="" />
+  <meta name="DC.subject" lang="en" content="" /> 
+
+  <script src="/js/jquery-1.8.3.min.js"></script>
+
+  <style type="text/css">
+    body {
+      
+        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
+      
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+
+<body>
+<div id="wrap">
+  <div class="container-fluid clear-top" id="main">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
+        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/projects.html">Selected Works</a></li>
+            <li ><a href="/about.html">About</a></li>
+          </ul>
+          <div class="social_container">
+           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
+            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
+            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
+            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
+          </div>
+        </div>
+      </div>
+   </div>
+
+    <div id="content">
+      <div class="box">
+        <h3>Solar Charging for the iPhone</h3>
+        <span class="lead">2011-03-03 00:00:00</span>
+      </div>
+      
+<div class="s2 box"><p><img alt="iphone solar" src="http://2.bp.blogspot.com/-CS4KsIa-R-0/TXAOt0DANsI/AAAAAAAAAx0/Evi4Owg5zsU/s320/DSC_0020.JPG" /></p>
+</div><div class="s2 box"><p>When you are out and about, camping on on the bike and what not, its a pain when your iPhone dies. There was the Minty Boost which was a great invention by Adafruit Industries (as I recall) and then someone decided to mod this and add a solar panel to it. I thought I'd have a go at this, using parts I'd sourced myself from various places. <a href="http://www.instructables.com/id/How-to-make-a-solar-iPodiPhone-charger-aka-Might/">This Guide over on Instructables</a> covers the basics. This project was more about what not to do, and that can be quite useful.</p>
+</div><div class="s2 box"><p><img alt="iphone solar" src="http://4.bp.blogspot.com/-XhgVs4HCbEo/TXAPObjgVJI/AAAAAAAAAx8/zU1Q57pLg1M/s320/DSC_0022.JPG" /></p>
+</div><div class="s2 box"><p>As you can see, my Minty boost is extra steam punk! There is quite a large inductor on there which is quite overkill. The problem here is Lady Ada likes skinny-ass parts that don't seem to be standard or at least they aren't standard for Farnell. That is certainly an issue. There is a different set of packaging it seems, at least for the resistors and inductor. Magically it works. I found the USB connectors cheaper on eBay.</p>
+</div><div class="s2 box"><p><img alt="iphone solar" src="http://3.bp.blogspot.com/-IUoBv98s0fQ/TXAQwB7U1dI/AAAAAAAAAyE/zM1qVLLYpkQ/s320/DSC_0024.JPG" /></p>
+</div><div class="s2 box"><p>The Lithium Polymer battery was looted from my parent's misc drawer. You know, the one EVERYONE has in their kitchen. It appears to work but I'll certainly give it time before I'm totally sure. I had a stack of Lipolys that came out of a macbook battery. Linking these into the system actually burnt out my lipoly charger board! It was mad! Actual fire and burning! I don't know what was in these batteries because it attacked the previous owner as well! Madness!</p>
+</div><div class="s1 box"><p>The Solar panel came from eBay and I can't remember what I actually bought! It had two small contacts on the back. Soldering a USB cable to it worked fine. It is plugged into the otherside of the sparkfun charger. All in all, a successful conclusion so far. I need to craft a case to hold it all, but thats for another time! :)</p>
+</div>
+      <div class="box">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.masonry.min.js"></script>
+  <script src="/js/jquery.infinitescroll.min.js"></script>
+
+
+   <script type="text/javascript">
+      $(window).load(function(){
+
+        $(function(){
+    
+          var $container = $('#content');
+          
+          $container.imagesLoaded(function(){
+            $container.masonry({
+              itemSelector: '.box',
+              columnWidth: 60,
+              isAnimated: true,
+              cornerStampSelector: '.corner-stamp'
+            });
+          });
+        });
+      });
+
+
+    // Setup the funky links
+
+    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+               document.body.style['MozPerspective'] !== undefined;
+
+    function linkify( selector ) {
+        if( supports3DTransforms ) {
+            
+            var nodes = document.querySelectorAll( selector );
+
+            for( var i = 0, len = nodes.length; i < len; i++ ) {
+                var node = nodes[i];
+
+                if( !node.className || !node.className.match( /roll/g ) ) {
+                    node.className += ' roll';
+                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+                }
+            };
+        }
+    }
+
+    linkify( 'p a' );
+
+    </script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

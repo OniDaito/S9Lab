@@ -1,0 +1,134 @@
+---
+layout: default
+title: Section9 dot co dot uk ltd - Benjamin Blundell - Wouldn't it be nice if...
+idx: about
+---
+{% block content %}
+
+<div class="container-fluid">
+  <div id="posts">
+     <div class="corner-stamp">
+      <h2>&quot;Wouldn't it be nice if...&quot;</h2>
+      <h4>My name is Benjamin. I'm a freelance programmer, living in London, specialising in graphics, ubiquitous computing and all manner of nice things.</h4>
+    </div>
+    
+        <div class="box s3" >
+          <h3>&quot;My name is Benjamin. Pleased to meet you!&quot;</h3>
+          <p>I'm the person people ask <strong>&quot;Wouldn't it be nice if&quot;</strong>. I love to make the cool and fantastical possible, through technology, science and art.</p>
+        </div>
+
+         <div class="box s4" >
+          <h3>&quot;I've worked with some lovely people...!&quot;</h3>
+          <p>Including...
+            <ul>
+              <li>The University of Manchester</li>
+              <li>Memo Akten</li>
+              <li>The British Library</li>
+              <li>The University of Leeds</li>
+              <li>Nexus Interactive</li>
+              <li>The British Museum</li>
+            </ul>
+
+          </p>
+        </div>
+
+        <div class="box s2" >
+          <h3>&quot;I love tech!&quot;</h3>
+          <p>I love to work with interesting technologies, new and old. I'm a fairly dab hand with things like...
+            <ul>
+              <li>WebGL</li>
+              <li>C,C++, Objective-C and all manner of procedural programming.</li>
+              <li>Python</li>
+              <li>OpenGL</li>
+              <li>Android and iPhone Development</li>
+              <li>Electronics, RFID and physical computing</li>
+            </ul>
+
+          </p>
+        </div>
+
+        <div class="box s4" >
+          <h3>&quot;But I'm also into design.&quot;</h3>
+          <p>I like to make beautiful things; things people love to use, to play with and look at. I'm obsessed with digital art, digital photography and the interactions between the design world and the technical world. Both have a lot to learn from each other.
+
+          </p>
+        </div>
+
+
+        <div class="box s5" >
+          <h3>&quot;We should get together for a cuppa!&quot;</h3>
+          <p>I have a nice little desk over at: <br />
+            <strong>32-38 Scrutton Street</strong><br />
+            <strong>London, EC2A 4RQ</strong><br />
+          </p>
+          <p>Email is the best way to get in touch. <a href="mailto:ben@section9.co.uk">ben@section9.co.uk</a></p>
+          <p>You can drop me a line on <strong>07957 927659</strong> too!</p>
+        </div>
+
+        
+  </div>
+
+
+    <script type="text/javascript">
+      $(window).load(function(){
+
+        // Masonry corner stamp modifications
+        $.Mason.prototype.resize = function() {
+          this._getColumns();
+          this._reLayout();
+        };
+        
+        $.Mason.prototype._reLayout = function( callback ) {
+          var freeCols = this.cols;
+          if ( this.options.cornerStampSelector ) {
+            var $cornerStamp = this.element.find( this.options.cornerStampSelector ),
+                cornerStampX = $cornerStamp.offset().left - 
+                  ( this.element.offset().left + this.offset.x + parseInt($cornerStamp.css('marginLeft')) );
+            freeCols = Math.floor( cornerStampX / this.columnWidth );
+          }
+          // reset columns
+          var i = this.cols;
+          this.colYs = [];
+          while (i--) {
+            this.colYs.push( this.offset.y );
+          }
+
+          for ( i = freeCols; i < this.cols; i++ ) {
+            this.colYs[i] = this.offset.y + $cornerStamp.outerHeight(true);
+          }
+
+          // apply layout logic to all bricks
+          this.layout( this.$bricks, callback );
+        };
+
+
+        $(function(){
+    
+          var $container = $('#posts');
+          
+          $container.imagesLoaded(function(){
+            $container.masonry({
+              itemSelector: '.box',
+              columnWidth: 60,
+              isAnimated: true,
+              cornerStampSelector: '.corner-stamp'
+            });
+          });
+          
+        });
+      });
+
+
+    $(".box").hover(
+      function () {
+        $(this).addClass("hover");
+      },
+      function () {
+        $(this).removeClass("hover");
+      }
+    );
+
+    </script>
+</div>
+
+{% endblock %}

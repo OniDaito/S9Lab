@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Section9 Linux and Lion together at last (almost)</title>
+  <meta name="author" content="Benjamin Blundell" />
+  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/css/s9.css" rel="stylesheet" media="screen">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <!-- META DATA - Need to Check and Update -->
+  <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+  <!-- General metadata -->
+  <meta name="generator" content="" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="Author-Template" content="" />
+  <meta name="Author" content="Benjamin Blundell" />
+  <meta name="Publisher" content="Benjamin Blundell" />
+  <meta name="Publisher-Email" content="oni@section9.co.uk" />
+  <meta name="Coverage" content="UK" /> 
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.date.created" lang="en" content="" />
+  <meta name="DC.format" lang="en" content="text/html" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.coverage" lang="en" content="" />
+  <meta name="DC.identifier" content="" />    
+  
+  <!-- eGMS Metadata -->
+  <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+  
+  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
+  <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
+  <meta name="DC.description" lang="en" content="" />
+  <meta name="DC.subject" lang="en" content="" /> 
+
+  <script src="/js/jquery-1.8.3.min.js"></script>
+
+  <style type="text/css">
+    body {
+      
+        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
+      
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+
+<body>
+<div id="wrap">
+  <div class="container-fluid clear-top" id="main">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
+        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/projects.html">Selected Works</a></li>
+            <li ><a href="/about.html">About</a></li>
+          </ul>
+          <div class="social_container">
+           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
+            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
+            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
+            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
+          </div>
+        </div>
+      </div>
+   </div>
+
+    <div id="content">
+      <div class="box">
+        <h3>Linux and Lion together at last (almost)</h3>
+        <span class="lead">2011-12-28 00:00:00</span>
+      </div>
+      
+<div class="s2 box"><p>I must have spent an age getting this to work! Several forums and blog posts later I <em>think</em> I've managed to sort this. My laptop had been suffering from slow-downs with Lion installed and the wifi had begun to break. I figured it was high-time to re-install the lot. </p>
+<p>Backing everything up using an external drive, I set to with a snow-leopard DVD. No dice here folks. It turns out that OSX will only boot from a CD that either came with your machine or that has a higher version of the OS on the CD than on your hard-disk. </p>
+</div><div class="s2 box"><p>I attempted to be clever and figured I could setup Linux after Snow Leopard and created 1 partition with some freespace afterwards. Of course, installing <em>ubuntu natty</em> is a tricky beast, especially on a newer MacBook Pro. The Ubuntu forums are full of information on setting up the various versions of the Macbook. The later versions are not actually support officially. You can burn a DVD or a USB stick but to actually get Ubuntu installed you need both.</p>
+<p>Thats right! Burn Natty to a CD and to a USB stick. Plug both in and then either use <a href="http://refit.sourceforge.net/">ReFIT</a> or hold down 'c' on the keyboard and boot from the CD. You'll get into the installer and away you go.</p>
+</div><div class="s2 box"><p>The reason for Ubuntu is the PCL Cloud Libraries work better under Linux at the moment, with the Kinect Fusion stuff being only just around the corner. It's worth pointing out that an nVidia card is needed in your MacBook Pro for the best stuff to work, I.E anything using CUDA. Not all MacBooks use nvidia hardware and I still don't know if mine can run CUDA under Linux.</p>
+<p>Anyway, trying to install Lion over the top of Snow Leopard didn't work at all. Sadly, it seems Lion wants around 128meg extra after the Snow Leopard Partition. Fine, I figured. Lets just use <em>Disk Utility</em> to sort that out. No dice. "Mediakit reports no such partition" was the message here. Apparently, my partitioning of the disk using the Ubuntu installer had not gone well. </p>
+</div><div class="s2 box"><p>Lion uses the GUID system for it's paritions and I figured that was worth checking. <a href="http://www.ipartition.com">iPartition</a> allows you to do this with their boot CD but even this failed to fix the problem. In the end I just backed up again, downloaded a copty of Lion and burnt that to a DVD. I now have a bootable version of OSX Lion from which one can partition, install and get a system up and running. </p>
+<p>Having said all that, it would appear that ReFIT is nowhere to be seen now, despite having installed it. Im now greated with a password prompt straight off the bat, so no idea if Linux will even install at all. </p>
+<p>Not the best thing to be doing over Christmas I must admit! </p>
+</div>
+      <div class="box">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.masonry.min.js"></script>
+  <script src="/js/jquery.infinitescroll.min.js"></script>
+
+
+   <script type="text/javascript">
+      $(window).load(function(){
+
+        $(function(){
+    
+          var $container = $('#content');
+          
+          $container.imagesLoaded(function(){
+            $container.masonry({
+              itemSelector: '.box',
+              columnWidth: 60,
+              isAnimated: true,
+              cornerStampSelector: '.corner-stamp'
+            });
+          });
+        });
+      });
+
+
+    // Setup the funky links
+
+    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+               document.body.style['MozPerspective'] !== undefined;
+
+    function linkify( selector ) {
+        if( supports3DTransforms ) {
+            
+            var nodes = document.querySelectorAll( selector );
+
+            for( var i = 0, len = nodes.length; i < len; i++ ) {
+                var node = nodes[i];
+
+                if( !node.className || !node.className.match( /roll/g ) ) {
+                    node.className += ' roll';
+                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+                }
+            };
+        }
+    }
+
+    linkify( 'p a' );
+
+    </script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+</body>
+</html>
