@@ -910,6 +910,7 @@
             $container.masonry({
               itemSelector: '.box',
               columnWidth: 60,
+              isFitWidth: true,
               isAnimated: true,
               cornerStampSelector: '.corner-stamp'
             });
@@ -948,17 +949,19 @@
 
 <script type="text/javascript">
 
+  var requrl = "localhost:8000"
   var canvas = $('canvas#animation').get(0);
- if (canvas.getContext) {
+  
+
+  if (canvas.getContext) {
       
-    $.getScript(requrl + '/js/processing-1.4.1.min.js', function() {
-      $.getScript(requrl + '/js/asteroidsfont.js', function() {
-        var script = $.ajax({url:requrl + "/s9.pde", async: false}).responseText;
-        processingInstance = new Processing(canvas, script);
-        processingInstance.resize($(window).width() - 5, $(window).height());
+    $.getScript('/js/processing-1.4.1.min.js', function() {
+      var script = $.ajax({url:"/s9.pde", async: false}).responseText;
+      processingInstance = new Processing(canvas, script);
+      processingInstance.resize($(window).width() - 5, $(window).height());
         
-      });     
-    });
+    });     
+
   }
   else {
     html5 = false;
