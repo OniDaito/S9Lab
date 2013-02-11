@@ -8,8 +8,8 @@ Last December, Katie and I decided to go on a trip to California. A road-trip to
 
 Of course, being the geek that I am, I decided to setup a camera rig and record the entire trip as a time lapse video!
 
-#####
-<iframe src="http://player.vimeo.com/video/57359675" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
+####
+<iframe src="http://player.vimeo.com/video/57359675" width="460" height="270" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>  
 
 ###
 This video is cut down from about 40 minutes of actual footage. We setup the camera to take a shot every 2 seconds. In the end, we had over 60,000 photos (as this video plays back at 25 frames a second), totalling 33.3 hours of driving, or thereabouts! I took an external hard-disk with me in order to save the snaps, stitching them in batches using ffmpeg. I had to rotate them first, using image-magick, before compression into MP4. After that, it was simply a question of cutting together in After Effects.
