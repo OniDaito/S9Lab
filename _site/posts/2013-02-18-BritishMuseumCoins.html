@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Coin Detection at the British Museum</title>
+  <meta name="author" content="Benjamin Blundell" />
+  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/css/s9.css" rel="stylesheet" media="screen">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  <!-- META DATA - Need to Check and Update -->
+  <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+  <!-- General metadata -->
+  <meta name="generator" content="" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="Author-Template" content="" />
+  <meta name="Author" content="Benjamin Blundell" />
+  <meta name="Publisher" content="Benjamin Blundell" />
+  <meta name="Publisher-Email" content="oni@section9.co.uk" />
+  <meta name="Coverage" content="UK" /> 
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.date.created" lang="en" content="" />
+  <meta name="DC.format" lang="en" content="text/html" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.coverage" lang="en" content="" />
+  <meta name="DC.identifier" content="" />    
+  
+  <!-- eGMS Metadata -->
+  <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+  
+  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
+  <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
+  <meta name="DC.description" lang="en" content="" />
+  <meta name="DC.subject" lang="en" content="" /> 
+
+  <script src="/js/jquery-1.8.3.min.js"></script>
+
+  <style type="text/css">
+    body {
+      
+        background: url(/images/strap/britishcoin.jpg) no-repeat center center fixed; 
+      
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+
+<body>
+<div id="wrap">
+  <div class="container-fluid clear-top" id="main">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
+        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li ><a href="/index.html">Home</a></li>
+            <li ><a href="/projects.html">Selected Works</a></li>
+            <li ><a href="/about.html">About</a></li>
+          </ul>
+          <div class="social_container">
+           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
+            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
+            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
+            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
+          </div>
+        </div>
+      </div>
+   </div>
+
+    <div id="content">
+      <div class="box">
+        <h3>Coin Detection at the British Museum</h3>
+        <span class="lead">2013-02-18 00:00:00</span>
+      </div>
+      
+<div class="s2 box"><p>The Coins and Medals Department at the British Museum have a problem. They need to keep records of their collection. This involves scanning each and every coin, cropping the images, rotating them, stitching the two sides together and processing the filename. You can quickly imagine how labour intensive and tedious this job can be.</p>
+</div><div class="s3 box"><p><img alt="Greek Coin" src="http://farm9.staticflickr.com/8334/8357960664_2ec6f31cec.jpg" /></p>
+</div><div class="s2 box"><p>The challenge was to speed-up this process so it became at least bareable. Rather than use cameras, the BM tends to use a varying array of scanners. Some of these are high grade and the others not. The results vary. Sometimes scanners pickup dust and scratches. Othertimes, the edge of the coin is out of focus. Some coins, such as the silver Greek coin tend to reflect a little too much.</p>
+</div><div class="s1 box"><p>One solution is to scan a coin with the lid of scanner left up. On some scanners, this produces a sharp edge, with the remaining area black. This makes computer vision easy but the depth of the coin is lost. Losing data like this is not acceptable, so another solution needed to be found</p>
+</div><div class="s2 box"><p><img alt="Scanner with Cloche" src="http://farm9.staticflickr.com/8217/8269948452_689fe76d87.jpg" /></p>
+</div><div class="s2 box"><p>Katie and I tried a variety of different cloches with lights. Depending on the material and lights, different effects were achieved. In order to extract a coin from a background, one needs to have as distinct an edge as possible. The best result, we found, was a cloche made from frosted perspex. This cloche had two sides, allowing light to escape around the edges but with a lamp held above, provided a diffuse light source that minimised shadows and provided reasonable edges.</p>
+</div><div class="s2 box"><p><img alt="Missed Coin" src="http://farm9.staticflickr.com/8490/8267197054_2f13ff0bb9.jpg" /></p>
+</div><div class="s3 box"><p>The software proveded to be rather tricky. Firstly, how do you package a program for Windows XP that can be run straight from the desktop with no drivers? The answer? Package a python program using <a href="http://www.pyinstaller.org/">pyinstaller</a>. This packages up PyOpenCV rather nicely. I decided to go with pyGTK for the user-interface - simple and effective. </p>
+<p>The technique I settled on basically involved extracting edges and performing a series of morphological operations on a reduced size of image. From there, one can extract the largest contour and find the coin. The technique works fairly well though does require good lighting conditions. The longest operation is, in-fact, the final alpha blending of the extracted coin with its background. The edges are ever so slightly alpha blended to give a smoother, anti-aliased edge which works quite well, without losing data.</p>
+</div><div class="s2 box"><p><img alt="More Coins" src="http://farm9.staticflickr.com/8046/8356888267_4d242e54e1.jpg" /></p>
+</div>
+      <div class="box">
+  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.masonry.min.js"></script>
+  <script src="/js/jquery.infinitescroll.min.js"></script>
+
+
+   <script type="text/javascript">
+      $(window).load(function(){
+
+        $(function(){
+    
+          var $container = $('#content');
+          
+          $container.imagesLoaded(function(){
+            $container.masonry({
+              itemSelector: '.box',
+              columnWidth: 60,
+              isAnimated: true,
+              cornerStampSelector: '.corner-stamp'
+            });
+          });
+        });
+      });
+
+
+    // Setup the funky links
+
+    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+               document.body.style['MozPerspective'] !== undefined;
+
+    function linkify( selector ) {
+        if( supports3DTransforms ) {
+            
+            var nodes = document.querySelectorAll( selector );
+
+            for( var i = 0, len = nodes.length; i < len; i++ ) {
+                var node = nodes[i];
+
+                if( !node.className || !node.className.match( /roll/g ) ) {
+                    node.className += ' roll';
+                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+                }
+            };
+        }
+    }
+
+    linkify( 'p a' );
+
+    </script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2107281-3");
+pageTracker._trackPageview();
+</script>
+</body>
+</html>
