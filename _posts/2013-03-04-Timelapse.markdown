@@ -23,6 +23,9 @@ The box itself is a little trickier. There are no designs available so you need 
 ##
 ![chronos box](http://farm9.staticflickr.com/8510/8409958211_69916f16a7.jpg)
 
+##
+![Igus Rail](http://farm9.staticflickr.com/8211/8294180546_86cbf2d362.jpg)
+
 ###
 The same was true of the endstops. No designs were available and Chris' metalworker wouldn't release the designs. However, the company I bought the rail from (IGUS) do provide CAD drawings for you to work with. Thankfully, they have DXF format too, so QCad, yet again, proved its worth. I had bought the recommended, 12V unipolar stepper that Chris mentioned and managed to find the designs for that. With some M10 bolts, I managed to create both the moutning points. I needed to shave off part of the rail using a kiss cut from a circular saw. The bolt for the stepper needed their heads filing down and the rail itself needed to be tapped to accept 4 M10 Bolts. Oddly enough, we had a small manual that tells you how big the hole needs to be in order to be tapped to a certain thread. Marvellous! The metalwork needed on this project was not inconsiderable.
 
@@ -39,4 +42,4 @@ In the end, the most difficult part of this project turned out to be the stepper
 
 ##
 In order to mount a camera to the system, I decided to buy a Manfrotto magic arm, with an SLR mount at one end, and a magic clamp at the other. It is possible to use a proper bolt, mounted upside down on the carriage but I didnt have the time to do that. I figured a clamp was nicer anyway. The motor still has enough ower to move the thing, which is great. Im using a 12v supply from the mains here but the intention is to eventually use some kind of Lipoly battery.
- 
+
