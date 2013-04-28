@@ -47,7 +47,8 @@ Already, the grilled burger looks the part but is much smaller and squatter. The
 ##
 ![Sous Vide Burger](http://farm9.staticflickr.com/8534/8680706492_4bce71c724.jpg)
 
-The grilled burger doesn't look too bad as burgers go, but the sosu vide burger is still red in the middle. Tasting both, the grilled burger is fine but the juice leaves quickly, giving a slight toughness and hints of the fact that it would taste quite burnt if you cooked it any further. The sous vide burger, on the other hand, tastes smooth with very little toughness at all. It doesn't taste raw either, despite looking much more red in the photo. Definitely, an improvement in cooking technique!
+##
+The grilled burger doesn't look too bad as burgers go, but the sous vide burger is still red in the middle. Tasting both, the grilled burger is fine but the juice leaves quickly, giving a slight toughness and hints of the fact that it would taste quite burnt if you cooked it any further. The sous vide burger, on the other hand, tastes smooth with very little toughness at all. It doesn't taste raw either, despite looking much more red in the photo. Definitely, an improvement in cooking technique!
 
 ##
 As a second step, I tried cooking the burger at 54C for about one and a half hours. This came out even better with almost no toughness at all. Both burgers would not brown sufficiently whilst being blow torched; I ran the risk of undoing all the slow cooking if I had carried on. The next step in the process is to assess the liquid nitrogen technique.
