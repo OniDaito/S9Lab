@@ -6,96 +6,42 @@ idx: home
 
 {% block content %}
 
-<div class="container-fluid">
-  <div id="posts">
-     <div class="corner-stamp">
-      <h2>"Wouldn't it be nice if..."</h2>
-      <h4>My name is Benjamin. I'm a freelance programmer, living in London, specialising in graphics, ubiquitous computing and all manner of nice things.</h4>
-    </div>
-    {% for post in site.posts %}
-      {% if post.strapimage %}
-        <div class="box linkbox" onclick="window.location='{{post.url}}'"  >
-          <img src="images/strap/small/{{post.strapimage}}" alt="{{post.strapline}}">
-          <h3>{{ post.title }}</h3>
-          <p class="lead">{{post.strapline}}</p>
-        </div>
-     
-      {% else %}
-       
-        <div class="box linkbox" onclick="window.location='{{post.url}}'">
-          <h3>{{ post.title }}</h3>
-          {% if post.strapline %}
-            <p class="lead">{{post.strapline}}</p>
-          {% endif %}
-        </div>
-       
-      {% endif %}
-    {% endfor %}
-   
-  </div>
 
+  <div id="posts">
+   
+
+    <ul id="post_links">
+    {% for post in site.posts %}
+     
+      <li>
+        <a href="{{post.url}}">
+        <div class="post_list_item">
+          <div class="title">{{ post.title }}</div>
+          {% if post.strapline %}
+          <div class="lead">{{post.strapline}}</div>
+          {% endif %}
+        </div></a>
+      </li>
+      
+    {% endfor %}
+    </ul>  
 
     <script type="text/javascript">
       $(window).load(function(){
-
-        // Masonry corner stamp modifications
-        $.Mason.prototype.resize = function() {
-          this._getColumns();
-          this._reLayout();
-        };
-        
-        $.Mason.prototype._reLayout = function( callback ) {
-          var freeCols = this.cols;
-          if ( this.options.cornerStampSelector ) {
-            var $cornerStamp = this.element.find( this.options.cornerStampSelector ),
-                cornerStampX = $cornerStamp.offset().left - 
-                  ( this.element.offset().left + this.offset.x + parseInt($cornerStamp.css('marginLeft')) );
-            freeCols = Math.floor( cornerStampX / this.columnWidth );
+        $(".post_list_item").hover(
+          function () {
+            $(this).removeClass("hover-out");
+            $(this).addClass("hover");
+          },
+          function () {
+            $(this).removeClass("hover");
+            $(this).addClass("hover-out");
           }
-          // reset columns
-          var i = this.cols;
-          this.colYs = [];
-          while (i--) {
-            this.colYs.push( this.offset.y );
-          }
-
-          for ( i = freeCols; i < this.cols; i++ ) {
-            this.colYs[i] = this.offset.y + $cornerStamp.outerHeight(true);
-          }
-
-          // apply layout logic to all bricks
-          this.layout( this.$bricks, callback );
-        };
-
-
-        $(function(){
-    
-          var $container = $('#posts');
-          
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isFitWidth: true,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-          
-        });
+        );
       });
 
 
-    $(".box").hover(
-      function () {
-        $(this).addClass("hover");
-      },
-      function () {
-        $(this).removeClass("hover");
-      }
-    );
 
     </script>
-</div>
 
 {% endblock %}

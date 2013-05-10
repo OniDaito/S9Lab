@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,58 +68,31 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Mosaic</h3>
+    <span class="date">2012-01-13 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Mosaic</h3>
-        <span class="lead">2012-01-13 00:00:00</span>
-      </div>
       
-<div class="s2 box"><p>As is my way, I decided to embark on some intelligent vandalism, only this time, in the digital realm. We have several machines in our lab at Central St Martins and access to these is completely open. There are no student passwords and as such, students here have become lazy and left all their data on the desktop or trash. I decided to write a script to pull off all the data from these machines, find the images and mash them all together in a mosaic. </p>
-</div><div class="s3 box"><p><img alt="Final Attempt" src="http://farm8.staticflickr.com/7159/6679523043_d04379dcd7.jpg" /></p>
-</div><div class="s3 box"><p>At first, I had to grab the images, rename them, resize them and put them in the right sort of place. This is actually a tricky problem because files have spaces, many directory levels and all the rest.</p>
+<h2></h2>
+<p>As is my way, I decided to embark on some intelligent vandalism, only this time, in the digital realm. We have several machines in our lab at Central St Martins and access to these is completely open. There are no student passwords and as such, students here have become lazy and left all their data on the desktop or trash. I decided to write a script to pull off all the data from these machines, find the images and mash them all together in a mosaic. </p>
+<h3></h3>
+<p><img alt="Final Attempt" src="http://farm8.staticflickr.com/7159/6679523043_d04379dcd7.jpg" /></p>
+<h3></h3>
+<p>At first, I had to grab the images, rename them, resize them and put them in the right sort of place. This is actually a tricky problem because files have spaces, many directory levels and all the rest.</p>
 <pre><code>#!/bin/bash
 c=0
 find . -type f -name "*.jpg" -o -name "*.jpeg" 
@@ -135,74 +112,84 @@ do
 done
 </code></pre>
 <p>This worked more or less. There are probably improvements we can make to this but for now, I had around 300,000 images already! Quite a lot to pick from. </p>
-</div><div class="s2 box"><p>Originally, I wanted to use an <em>off-the-shelf</em> solution. I found <a href="http://web.me.com/knarf/MacOSaiX/Download.html">MacOSaiX</a>, <a href="http://www.mazaika.com/mac/">Mazaika</a> and <a href="http://osxdaily.com/2007/02/02/easily-create-photo-mosaics-with-mozodojo/">Mozodojo</a>. The image below is created with Mazaika.</p>
+<h2></h2>
+<p>Originally, I wanted to use an <em>off-the-shelf</em> solution. I found <a href="http://web.me.com/knarf/MacOSaiX/Download.html">MacOSaiX</a>, <a href="http://www.mazaika.com/mac/">Mazaika</a> and <a href="http://osxdaily.com/2007/02/02/easily-create-photo-mosaics-with-mozodojo/">Mozodojo</a>. The image below is created with Mazaika.</p>
 <p>The problem with all of these is they are limited to certain sizes, despite giving good results. I wanted this to be A0 at 300DPI when printed. The problem of course, is that the image sizes are huge. Most programs just can't cope with it. Mazaika is limited in how many you can use unless you buy it (and its too expensive for what it is) and the others can't cope. So, in the end, I decided to write my own.</p>
 <p>Using <em>OpenCV</em> I came up with two programs that you can <a href="https://github.com/OniDaito/PhotoMosaic">get from my github page</a>. The first goes through the set of images and creates a text file of average RGB values. The second performs the matching based on this database. OpenCV is used throughout to process the images. The result was a program that took a while to run, but wouldn't crash.</p>
-</div><div class="s3 box"><p><img alt="Mazaika first attempt" src="http://farm8.staticflickr.com/7018/6558676823_9357ac2381.jpg" /></p>
-</div><div class="s3 box"><p><img alt="first attempt" src="http://farm8.staticflickr.com/7146/6653456325_2dec97ee53.jpg" /></p>
-</div><div class="s3 box"><p>You can see that although it has worked, it's not brilliant. It matches well but I noticed that some areas were just too similar. I adjusted with a small amount of random jitter in the source colour.</p>
+<h3></h3>
+<p><img alt="Mazaika first attempt" src="http://farm8.staticflickr.com/7018/6558676823_9357ac2381.jpg" /></p>
+<h3></h3>
+<p><img alt="first attempt" src="http://farm8.staticflickr.com/7146/6653456325_2dec97ee53.jpg" /></p>
+<h3></h3>
+<p>You can see that although it has worked, it's not brilliant. It matches well but I noticed that some areas were just too similar. I adjusted with a small amount of random jitter in the source colour.</p>
 <p>After looking around the web, I finally found <a href="http://en.wikipedia.org/wiki/OpenMP">OpenMP</a> which is a lovely concept, baked right into GCC. It allows you to take control of many cores on your machine, and create threads easily.</p>
 <pre><code>#pragma omp parallel for
 </code></pre>
 <p>This one line basically sped up one of the steps by a factor of 7. Essentially, this task, without local neighbourhood refinement, is all parallel and so, OpenMP was a wonderful find and a free win. Great! </p>
-</div><div class="s2 box"><p>There is more to be done for sure - this sort of large scale processing could be useful for video, or maybe transformed into Scala or similar for parallel processing over many machines?</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
+<h2></h2>
+<p>There is more to be done for sure - this sort of large scale processing could be useful for video, or maybe transformed into Scala or similar for parallel processing over many machines?</p>
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

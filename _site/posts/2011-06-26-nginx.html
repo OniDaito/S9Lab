@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,120 +68,98 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Nginx from Apache</h3>
+    <span class="date">2011-06-26 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Nginx from Apache</h3>
-        <span class="lead">2011-06-26 00:00:00</span>
-      </div>
       
-<div class="s2 box"><p>I'd heard about Nginx a couple of times duing my time at UCL. My co-worker had set it up as the front-end proxy to deal with all the static requests and have Apache do the heavy lifting. Now, when it comes to building things, its a good idea to stick with what you know and actually ship, so long as things aren't broken.</p>
+<h2></h2>
+<p>I'd heard about Nginx a couple of times duing my time at UCL. My co-worker had set it up as the front-end proxy to deal with all the static requests and have Apache do the heavy lifting. Now, when it comes to building things, its a good idea to stick with what you know and actually ship, so long as things aren't broken.</p>
 <p>My apache setup was broken!</p>
 <p>On occasion, it would just stop working, eating all the memory and being a pain in the arse. So instead, I thought I'd look into <a href="http://wiki.nginx.org/Main">Nginx</a> as a replacement. People I respect have said its good and I wanted to keep up to date. </p>
-</div><div class="s3 box"><p>So, I run two django instances, an SSL setup infront of mediawiki and this static blog, so a good selection of things to setup there. Virtual hosts, some way of running Python, PostGreSQL and basic security. Quite a lot to throw in, in a single afternoon.</p>
+<h3></h3>
+<p>So, I run two django instances, an SSL setup infront of mediawiki and this static blog, so a good selection of things to setup there. Virtual hosts, some way of running Python, PostGreSQL and basic security. Quite a lot to throw in, in a single afternoon.</p>
 <p>However, it is wasn't for a change to my DNS I'd have most of it done by now! Unbelievable! I'm quite impressed. With the Django setup's, I released I needed something called <em>fastcgi</em> . Essentially, fastcgi allows a websever to grab info from another running process quickly through a socket. Django supports this out of the box so long as you have <em>python-flup</em> installed. So I ran <em>easy_install</em> and followed the instructions that I found [on the django page] (https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/?from=olddocs). It took me a while to find this out and I'd gone down other routes such as <em>fastcgiwrap</em> and similar which I discounted in the end. It means you need to run the <em>manage.py</em> script with a few flags and have a socket that is accessible by your Nginx user. Also, you need to run the <em>manage.py</em> as a Nginx user which helps. The setup for a Django page with Nginx can be found <a href="http://wiki.nginx.org/DjangoFastCGI">here</a> but I needed to send a few extra variables before it would work fully. I found this out from <a href="http://stackoverflow.com/questions/2104723/django-nginx-url-problem">Stack Overflow</a>.</p>
-</div><div class="s3 box"><p>I needed to do this twice. Fortunately the virtual hosts setup is trivial and the <a href="http://wiki.nginx.org/Configuration">Nginx Configuration Wiki</a> will let you know how to do it. No problems there then.</p>
+<h3></h3>
+<p>I needed to do this twice. Fortunately the virtual hosts setup is trivial and the <a href="http://wiki.nginx.org/Configuration">Nginx Configuration Wiki</a> will let you know how to do it. No problems there then.</p>
 <p>SSL is quite easy two with just a couple of lines needed to do the full setup, since I had some certificates and keys from my apache setup anyway. I didn't get around to changing mediawiki because I wanted to change the DNS to make a more sensible URL for that site. It doesn't look like it'll be too hard though.</p>
 <p>So far, Im quite impressed with how easy it's been. I havent changed any files around and all is well. Top job Nginx!</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

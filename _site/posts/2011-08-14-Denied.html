@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,120 +68,100 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Denied</h3>
+    <span class="date">2011-08-14 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Denied</h3>
-        <span class="lead">2011-08-14 00:00:00</span>
-      </div>
       
-<div class="s1 box"><p><a href="http://saito.section9.co.uk"><img alt="Denied" src="http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_m.jpg" /></a></p>
-</div><div class="s2 box"><p>I've been looking at WebGL and I've been quite excited. The chance to merge design, the web and my favorite graphics library is not something I'd pass up. It's not all roses though because WebGL doesn't have uniform support across browsers. That said, it seems to be gaining ground.</p>
-</div><div class="s2 box"><p><a href="http://saito.section9.co.uk">Denied</a> is an idea I'd had a while back, ever since I chatted to <a href="http://www.jonty.co.uk">Jonty Wareing</a> about Geolocating IP addresses. There is a nice library called <a href="http://www.maxmind.com/app/geolitecity">Geolitecity</a> that I looked into. Jonty gave me a bash script that I modified a little to convert my <em>hosts.deny</em> report into something a little more interesting. Turns out most of the evil people after my server are in Beijing. Who'd have thought it?</p>
+<h1></h1>
+<p><a href="http://saito.section9.co.uk"><img alt="Denied" src="http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_m.jpg" /></a></p>
+<h2></h2>
+<p>I've been looking at WebGL and I've been quite excited. The chance to merge design, the web and my favorite graphics library is not something I'd pass up. It's not all roses though because WebGL doesn't have uniform support across browsers. That said, it seems to be gaining ground.</p>
+<h2></h2>
+<p><a href="http://saito.section9.co.uk">Denied</a> is an idea I'd had a while back, ever since I chatted to <a href="http://www.jonty.co.uk">Jonty Wareing</a> about Geolocating IP addresses. There is a nice library called <a href="http://www.maxmind.com/app/geolitecity">Geolitecity</a> that I looked into. Jonty gave me a bash script that I modified a little to convert my <em>hosts.deny</em> report into something a little more interesting. Turns out most of the evil people after my server are in Beijing. Who'd have thought it?</p>
 <p>WebGL is based on OpenGLES2 which deviates from what I've been taught in the past. There are now two flavours or styles of OpenGL; old skool and new skool. Using matrix transforms, drawing vertices for triangles and pushing/popping matrices is all old-hat now. It's all about vertex buffers and passing transforms and lights straight into the shader. With WebGL, there is the added change of loading resources asynchronously over the web. Javascript itself has some interesting abilities that are difficult to replicate in C++; closures, dynamic types and modifiying objects on the fly. These things are very interesting but how can they be used with OpenGL? OpenGL was classically, very strict in its manner; there was one way of doing things. With OpenGLES2 I feel it has become even more strict with offloading things to shaders. How can the interesting, dynamic nature of javascript be applied to this seasoned graphics library?</p>
-</div><div class="s2 box"><p>I'm still not sure yet. I decided to get stuck right in and created <a href="https://github.com/OniDaito/Saito.js">saito.js</a>. This little library does some of the heavy lifting such as loading textures, cubemaps, shaders (using jquery ajax calls) and creating basic shapes. So far I'm reasonably pleased thought there is a lot more I need to play with yet. </p>
+<h2></h2>
+<p>I'm still not sure yet. I decided to get stuck right in and created <a href="https://github.com/OniDaito/Saito.js">saito.js</a>. This little library does some of the heavy lifting such as loading textures, cubemaps, shaders (using jquery ajax calls) and creating basic shapes. So far I'm reasonably pleased thought there is a lot more I need to play with yet. </p>
 <p>Denied is a good example of my style; it's a mashup of many technologies. Firstly, the system runs on <a href="http://wiki.nginx.org/">nginx</a> with uwsgi on top. This provides python support which reads the data produced by Jonty's script and returns a nice stack of JSON for Jquery to read. On the client side, we have saito.js, a bunch of shaders, jquery, <a href="http://sylvester.jcoglan.com/">sylvester</a> and some nice HTML5 formatting and support. Every 30 seconds a request is made to nginx for more data, recreating the curves.</p>
-</div><div class="s2 box"><p>The lighting is per-pixel with materials and light settings. The background is a quad with an alpha blend applied to give the burst effect. I wanted to try volumetric lighting but I'll leave that for another time. to create the etched surface of the globe, the standard technique of bump mapping was applied, though the tanget creation was a bit tricky. The maps of the planet are from <a href="http://visibleearth.nasa.gov/">NASA</a> though I couldn't find a bump map with a high enough resolution. I disabled zooming in this instance because it affected the lighting too much and I wanted it to be consistent. The curves have a different shader that alters their alpha value with a sine function. Add some blending to that and you get a pleasing effect.</p>
+<h2></h2>
+<p>The lighting is per-pixel with materials and light settings. The background is a quad with an alpha blend applied to give the burst effect. I wanted to try volumetric lighting but I'll leave that for another time. to create the etched surface of the globe, the standard technique of bump mapping was applied, though the tanget creation was a bit tricky. The maps of the planet are from <a href="http://visibleearth.nasa.gov/">NASA</a> though I couldn't find a bump map with a high enough resolution. I disabled zooming in this instance because it affected the lighting too much and I wanted it to be consistent. The curves have a different shader that alters their alpha value with a sine function. Add some blending to that and you get a pleasing effect.</p>
 <p>Overall, I'm really happy with the look. It was pure experimentation and just messing around with colours and values and ideas with the shaders. This works in firefox 5, Chrome standard and Chrome Canary. Im not sure about other browsers yet. Each browser has different support. Firefox seems to run fast but doesn't antialias things correctly. Standard Chrome has antialiasing but tends to eat up CPU too much, whereas Canary seems to have all the positives and none of the negatives. Hopefully we'll see some standardisation soon. </p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

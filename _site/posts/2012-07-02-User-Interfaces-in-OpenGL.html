@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,120 +68,100 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>User Interfaces in OpenGL</h3>
+    <span class="date">2012-07-02 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>User Interfaces in OpenGL</h3>
-        <span class="lead">2012-07-02 00:00:00</span>
-      </div>
       
-<div class="s3 box"><p>User Interfaces are the bane of most programmer's lives. They really are. UI people don't often understand the true horror faced by a programmer when they are asked to write good UX code. This goes double for OpenGL types because we have a certain sense of design aesthetic (from what I can tell, talking to people) when it comes to such things. Most UI looks ugly. Its not cool to look at and it's certainly not cool to code. When it comes to OpenGL programs, very few UI libraries stand out. I've had a really tough time lately getting a program structure together that I actually want to use and show off. </p>
-</div><div class="s3 box"><p>What about <a href="http://qt.nokia.com/products/">QT</a> you say? Well, for starters, QT is massive, relies on C style pointers and causes segfaults a lot of the time. When it comes to OpenGL programs, you need to call a timer function for your draw calls, and heaven help you if you create a widget and have a function called update. I moved to QT because I thought their sliders and such would be useful. Sadly, the code base became quite coupled (which is a bad thing) and teasing things apart proved tricky. I'd like to be using modern C++ and not some Nokia owned library of doom. I have horror stories of learning QT 10 years back. No thanks!</p>
-</div><div class="s2 box"><p>I thought about using <a href="https://github.com/rezaali/ofxUI">ofxUI</a> which looks really nice. The problem I had with it was there were no file-dialogs and <a href="http://www.openframeworks.cc">OpenFrameworks</a> wasn't built around multiple windows (which I'd rather not use anyway but I have little choice when running fullscreen applications on seperate monitors). I like OpenFrameworks more than I used to, but the CS Engineer in me prefers the beauty of Cinder. It's just more sexy.</p>
-</div><div class="s3 box"><p><img alt="glfw" src="http://www.glfw.org/screenshots/anttweakbar.png" /></p>
-</div><div class="s3 box"><p>It turns out that <a href="http://www.glfw.org/">GLFW</a> actually has support for multiple windows if you <a href="https://github.com/elmindreda/glfw">check out version3, multi-monitor branch from git</a>. Multi window applications <em>are a bad idea</em> I know but I have one application window, and one surrogate window that runs on a pico projector so there really is little choice. Annoying but there you go. Now GLFW doesn't actually have any GUI components of its own, so we need to add some.</p>
+<h3></h3>
+<p>User Interfaces are the bane of most programmer's lives. They really are. UI people don't often understand the true horror faced by a programmer when they are asked to write good UX code. This goes double for OpenGL types because we have a certain sense of design aesthetic (from what I can tell, talking to people) when it comes to such things. Most UI looks ugly. Its not cool to look at and it's certainly not cool to code. When it comes to OpenGL programs, very few UI libraries stand out. I've had a really tough time lately getting a program structure together that I actually want to use and show off. </p>
+<h3></h3>
+<p>What about <a href="http://qt.nokia.com/products/">QT</a> you say? Well, for starters, QT is massive, relies on C style pointers and causes segfaults a lot of the time. When it comes to OpenGL programs, you need to call a timer function for your draw calls, and heaven help you if you create a widget and have a function called update. I moved to QT because I thought their sliders and such would be useful. Sadly, the code base became quite coupled (which is a bad thing) and teasing things apart proved tricky. I'd like to be using modern C++ and not some Nokia owned library of doom. I have horror stories of learning QT 10 years back. No thanks!</p>
+<h2></h2>
+<p>I thought about using <a href="https://github.com/rezaali/ofxUI">ofxUI</a> which looks really nice. The problem I had with it was there were no file-dialogs and <a href="http://www.openframeworks.cc">OpenFrameworks</a> wasn't built around multiple windows (which I'd rather not use anyway but I have little choice when running fullscreen applications on seperate monitors). I like OpenFrameworks more than I used to, but the CS Engineer in me prefers the beauty of Cinder. It's just more sexy.</p>
+<h3></h3>
+<p><img alt="glfw" src="http://www.glfw.org/screenshots/anttweakbar.png" /></p>
+<h3></h3>
+<p>It turns out that <a href="http://www.glfw.org/">GLFW</a> actually has support for multiple windows if you <a href="https://github.com/elmindreda/glfw">check out version3, multi-monitor branch from git</a>. Multi window applications <em>are a bad idea</em> I know but I have one application window, and one surrogate window that runs on a pico projector so there really is little choice. Annoying but there you go. Now GLFW doesn't actually have any GUI components of its own, so we need to add some.</p>
 <p><a href="http://www.antisphere.com/Wiki/tools:anttweakbar">AntTweakBar</a> was adopted by Cinder and to be honest, I've found little better. I've looked around and asked on IRC and all the usual places and they all suck. They either look poor, are overkill or aren't supported anymore. AntTweakBar is easy to use and works reasonably well.</p>
 <p>One problem, there is no file dialog. At this point I decided to give up looking for crossplatform solutions and settled with <a href="http://www.gtkmm.org/en/">gtkmm</a> as I'm running under Ubuntu at the moment. Not sure what I'll do when I port my toolkit to OSX but I'll probably hook into Cocoa or something with GLFW running the show. </p>
 <p>Such a simple problem, and yet one that doesn't go away. I've heard designers say "We just want some nice sliders" but they are always so hard to find. Crazy huh? </p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

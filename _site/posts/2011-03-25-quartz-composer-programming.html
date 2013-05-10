@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,69 +68,45 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Quartz Composer Programming</h3>
+    <span class="date">2011-03-25 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Quartz Composer Programming</h3>
-        <span class="lead">2011-03-25 00:00:00</span>
-      </div>
       
-<div class="s2 box"><p><img alt="quartz" src="http://4.bp.blogspot.com/-FoRqxMeqWLY/TYys6hW_pXI/AAAAAAAAAyU/mv9YXumOqxo/s320/qc.png" /></p>
-</div><div class="s2 box"><p>I've been asked by a client to work on a set of patches for Quartz Composer. I was quite chuffed really because it meant playing with Shadows and other suchs cool things. What I didnt know was that there quite a lot of problems with programming in QC. There is the Apple official way which is quite well documented and then there is the <a href="http://kineme.net/release/QCPatchXcodeTemplate/10">SkankySDK</a> way which is sort of unofficial and a hack.</p>
-</div><div class="s2 box"><p>The thing is, I should have realised it was a hack. Looking at the Kineme webpage though, and the fact that you have to pay for things made me feel that this was usable by any old dev. Not so. The <a href="http://kineme.net/release/Kineme3D/12">Kineme3D</a> and other plugins allow a lot of extra functionality within QC such as model loading and all the rest. Now thats just what we need. If one could create a <span style="font-weight:bold;">Macro Patch</span>, one could then add things with Depth of Field and Fog or whatever to your sub patches.
+<h2></h2>
+<p><img alt="quartz" src="http://4.bp.blogspot.com/-FoRqxMeqWLY/TYys6hW_pXI/AAAAAAAAAyU/mv9YXumOqxo/s320/qc.png" /></p>
+<h2></h2>
+<p>I've been asked by a client to work on a set of patches for Quartz Composer. I was quite chuffed really because it meant playing with Shadows and other suchs cool things. What I didnt know was that there quite a lot of problems with programming in QC. There is the Apple official way which is quite well documented and then there is the <a href="http://kineme.net/release/QCPatchXcodeTemplate/10">SkankySDK</a> way which is sort of unofficial and a hack.</p>
+<h2></h2>
+<p>The thing is, I should have realised it was a hack. Looking at the Kineme webpage though, and the fact that you have to pay for things made me feel that this was usable by any old dev. Not so. The <a href="http://kineme.net/release/Kineme3D/12">Kineme3D</a> and other plugins allow a lot of extra functionality within QC such as model loading and all the rest. Now thats just what we need. If one could create a <span style="font-weight:bold;">Macro Patch</span>, one could then add things with Depth of Field and Fog or whatever to your sub patches.
 Apple doesn't let you program Macro patches.</p>
-</div><div class="s2 box"><p>Bummer! So that means we need to use the SkankySDK from the Kineme webpage after all. Sadly, there is no documentation and almost no comments in the headers! Unbelievable! Im still annoyed about that. Also, the examples included in the SDK are slightly misleading.
+<h2></h2>
+<p>Bummer! So that means we need to use the SkankySDK from the Kineme webpage after all. Sadly, there is no documentation and almost no comments in the headers! Unbelievable! Im still annoyed about that. Also, the examples included in the SDK are slightly misleading.
 So, there are 3 patch types in Quartzcomposer. One creates values, one passes values and the final one renders. These are called <em>Consumer patches</em> and it is one of these I wanted to right. Turns out you need to make sure that this class (inheriting from QCPatch) returns the correct execution method and that it has no outputs! Sounds obvious that an end-of-the-line patch should have no outputs but you need to make sure, otherwise QC wont let you use it.</p>
-</div><div class="s3 box"><p>Also, all output and input ports as they are known <em>must have their variable names start with either input or output</em>. This is mentioned anywhere on the SkankySDK (maybe this is mentioned on Apple's site) but thats a massive failure in my opinion.
+<h3></h3>
+<p>Also, all output and input ports as they are known <em>must have their variable names start with either input or output</em>. This is mentioned anywhere on the SkankySDK (maybe this is mentioned on Apple's site) but thats a massive failure in my opinion.
 Consumer plugins allow you to write OpenGL basically. So all your standard Shader and FBO commands can be written inside a consumer. But there are a couple of things you need to do first. Any file that makes reference to OpenGL needs to include:</p>
 <pre><code>#import &lt;opengl/gl.h&gt;
 #import &lt;opengl/opengl.h&gt;
 #import &lt;opengl/cglmacro.h&gt;
 </code></pre>
 <p>Now, you might think that is obvious, but the the program will compile and appear to run even without these import lines. If you put them in, your patch will work. If you miss them out, you patch will execute its children but not work itself. How crazy?</p>
-</div><div class="s3 box"><p>In addition, any OpenGL function needs this line:</p>
+<h3></h3>
+<p>In addition, any OpenGL function needs this line:</p>
 <pre><code>CGLContextObj cgl_ctx = [context CGLContextObj];
 </code></pre>
 <p>Why? I have no idea yet!
@@ -134,63 +114,68 @@ So, is that it then? No, there is one last thing. You need to be careful with th
 <pre><code>[executeSubpatches:time arguments:arguments];
 </code></pre>
 <p>This executes your subpatches for you which works fine but remember that you have no control on state. You should, as a best practice, push and pop all you need to and nothing else. So inside my FBO code  I don't include a clear statement because there is another patch that does that for me.</div></p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

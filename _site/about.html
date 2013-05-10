@@ -63,53 +63,21 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-       background: url(../images/background_mesh.jpg) no-repeat center center fixed; 
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+  <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
+<canvas id="processing_canvas" data-processing-sources="js/bounce.pde"></canvas>
+<canvas id="animation"></canvas>
 
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-      <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
-          <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-          <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              
-              <li ><a href="/index.html">Home</a></li>
-              <li ><a href="/projects.html">Selected Works</a></li>
-              <li  class="active" ><a href="/about.html">About</a></li>
-             
-            </ul>
-            <div class="social_container">
-            <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-          </div><!--/.nav-collapse -->
-        </div><!-- /.navbar-inner -->
-      </div><!-- /.navbar -->
-
-
-
-    
+<div  id="main">
+<div class="container">
+         
+  
 
 <div class="container-fluid">
   <div id="posts">
@@ -178,50 +146,7 @@
     <script type="text/javascript">
       $(window).load(function(){
 
-        // Masonry corner stamp modifications
-        $.Mason.prototype.resize = function() {
-          this._getColumns();
-          this._reLayout();
-        };
-        
-        $.Mason.prototype._reLayout = function( callback ) {
-          var freeCols = this.cols;
-          if ( this.options.cornerStampSelector ) {
-            var $cornerStamp = this.element.find( this.options.cornerStampSelector ),
-                cornerStampX = $cornerStamp.offset().left - 
-                  ( this.element.offset().left + this.offset.x + parseInt($cornerStamp.css('marginLeft')) );
-            freeCols = Math.floor( cornerStampX / this.columnWidth );
-          }
-          // reset columns
-          var i = this.cols;
-          this.colYs = [];
-          while (i--) {
-            this.colYs.push( this.offset.y );
-          }
 
-          for ( i = freeCols; i < this.cols; i++ ) {
-            this.colYs[i] = this.offset.y + $cornerStamp.outerHeight(true);
-          }
-
-          // apply layout logic to all bricks
-          this.layout( this.$bricks, callback );
-        };
-
-
-        $(function(){
-    
-          var $container = $('#posts');
-          
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-          
-        });
       });
 
 
@@ -239,20 +164,18 @@
 
 
 
-
-  </div>
 </div>
+</div>
+
  
-<!--<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a> -->
+ <!--<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a> -->
 
  
 <script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.masonry.min.js"></script>
-<script src="js/jquery.infinitescroll.min.js"></script>
 
-<canvas id="animation"></canvas>
 
-<script type="text/javascript">
+
+<!-- <script type="text/javascript">
 
   var requrl = "localhost:8000"
   var canvas = $('canvas#animation').get(0);
@@ -275,7 +198,7 @@
     
   }
 
-</script>
+</script> -->
 
 <script type="text/javascript">
   // Setup the funky links
@@ -312,8 +235,7 @@ pageTracker._trackPageview();
 </script>
 <!-- Google Analytics end -->
 
-
-
+ <script src="js/processing.min.js"></script>
 </body>
 </html>
 

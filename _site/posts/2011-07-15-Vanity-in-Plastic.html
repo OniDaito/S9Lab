@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,119 +68,99 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Vanity in Plastic</h3>
+    <span class="date">2011-07-15 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Vanity in Plastic</h3>
-        <span class="lead">2011-07-15 00:00:00</span>
-      </div>
       
-<div class="s2 box"><p><img alt="Vanity in Plastic" src="http://farm7.static.flickr.com/6129/5940573147_8d8b8644e5_z.jpg" /></p>
-</div><div class="s2 box"><p>I'm really into design and graphic design is something I've toyed with on and off over the years. However, making something great requires a sort of feel and behaviour as well as a pleaseing aesthetic. I love the fact that, now, if you have an idea you can see it made, refine and make again and again. Drop it, start something else, do whatever. We have the freedom for that sort of thing now. It's great.</p>
+<h2></h2>
+<p><img alt="Vanity in Plastic" src="http://farm7.static.flickr.com/6129/5940573147_8d8b8644e5_z.jpg" /></p>
+<h2></h2>
+<p>I'm really into design and graphic design is something I've toyed with on and off over the years. However, making something great requires a sort of feel and behaviour as well as a pleaseing aesthetic. I love the fact that, now, if you have an idea you can see it made, refine and make again and again. Drop it, start something else, do whatever. We have the freedom for that sort of thing now. It's great.</p>
 <p><a href="http://london.hackspace.org.uk">Londonhackspace</a> has had a makerbot for the last year or so. When I first turned up to a shed in Islington, Russ was pouring over it's innards, swearing here and there. Since that time, it has worked on and off. To be fair, its been abused a bit but I never really printed reliably.</p>
 <p><a href="http://www.fablabmanchester.org">Fablab Manchester</a> has a much more professional setup with their Dimension beast of a printer. It takes an hour to warm the bugger up and it's as big as fridge-freezer, with a bed that is around 30cm square. It has the advantage of a dual nozzle setup, so it can print support material for these trickier spots. At a cost of 35p per cm3 for non-business customers, it's not such a pricey option. I've tended to use it for creating cases for electronics and what not. So far, I've been quite impressed. It prints cream coloured ABS plasticwhich seems fairly strong, down to about 1mm resolution.</p>
-</div><div class="s3 box"><p>To create this bust of me (which cost about 2 pounds) I used the rather nifty <a href="http://wiki.ultimaker.com/Kinect_2_STL">Kinect to STL</a>. This is a nicely packaged version of a processing app (I believe) and runs on OSX. It's fairly trivial to get a depth map out of a kinect or asus xtion now that things are moving along these days (certainly easier than structured light scanning!). This produces an STL with lots of faces. I figured that since I was printing this quite small, I'd reduce the count, so I fired up <a href="http://meshlab.sourceforge.net/">Meshlab</a> which is a fantastic program for working with any kind of 3D data. Reducing the detail helped speed things up when I imported the file into <a href="http://www.blender.org">Blender</a>. I'd noticed my right arm was sticking out a bit and that could potentially snap off or not print right so I scaled it down. Exported and away we go.</p>
-</div><div class="s2 box"><p><img alt="Vanity in Plastic" src="http://farm7.static.flickr.com/6128/5941131100_1183b45daf_z.jpg" /></p>
-</div><div class="s1 box"><p>The above photo is interesting in itself. It was taken with my Nikon D100 with a 50mm lens. To get so close I used a reversing ring and mounted the lens backwards! Works a treat so long as you have lots and lots of light!</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
+<h3></h3>
+<p>To create this bust of me (which cost about 2 pounds) I used the rather nifty <a href="http://wiki.ultimaker.com/Kinect_2_STL">Kinect to STL</a>. This is a nicely packaged version of a processing app (I believe) and runs on OSX. It's fairly trivial to get a depth map out of a kinect or asus xtion now that things are moving along these days (certainly easier than structured light scanning!). This produces an STL with lots of faces. I figured that since I was printing this quite small, I'd reduce the count, so I fired up <a href="http://meshlab.sourceforge.net/">Meshlab</a> which is a fantastic program for working with any kind of 3D data. Reducing the detail helped speed things up when I imported the file into <a href="http://www.blender.org">Blender</a>. I'd noticed my right arm was sticking out a bit and that could potentially snap off or not print right so I scaled it down. Exported and away we go.</p>
+<h2></h2>
+<p><img alt="Vanity in Plastic" src="http://farm7.static.flickr.com/6128/5941131100_1183b45daf_z.jpg" /></p>
+<h1></h1>
+<p>The above photo is interesting in itself. It was taken with my Nikon D100 with a 50mm lens. To get so close I used a reversing ring and mounted the lens backwards! Works a treat so long as you have lots and lots of light!</p>
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

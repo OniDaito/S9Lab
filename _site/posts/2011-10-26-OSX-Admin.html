@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,56 +68,27 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>OSX Admin for the lulz</h3>
+    <span class="date">2011-10-26 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>OSX Admin for the lulz</h3>
-        <span class="lead">2011-10-26 00:00:00</span>
-      </div>
       
-<div class="s4 box"><p>At one of my jobs, I've been thrown into the deep end when it comes to sysadmin. I've always done this a little but largely on a Linux based platform. As I'm involved with an Arts University, most of the machines here are Apple based. It's a little bit different in certain cases and there are some fun things already installed. The first is the <em>screen sharing</em> app.</p>
+<h4></h4>
+<p>At one of my jobs, I've been thrown into the deep end when it comes to sysadmin. I've always done this a little but largely on a Linux based platform. As I'm involved with an Arts University, most of the machines here are Apple based. It's a little bit different in certain cases and there are some fun things already installed. The first is the <em>screen sharing</em> app.</p>
 <pre><code>/System/Library/CoreServices/Screen Sharing.app
 </code></pre>
 <p>This program is quite useful - it's a great way for doing remote admin. In addition, if another user is logged in <em>you get to see what they are doing</em> - It's genius and also a little scary.</p>
@@ -121,7 +96,8 @@
 <pre><code>sudo sh -c "/bin/echo -n enabled &gt; 
 /Library/Preferences/com.apple.ScreenSharing.launchd"
 </code></pre>
-</div><div class="s4 box"><p>So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:</p>
+<h4></h4>
+<p>So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:</p>
 <ol>
 <li>create the .ssh directory</li>
 <li>create authorized_hosts within the .ssh dir</li>
@@ -131,7 +107,8 @@
 <pre><code>nmap -oX results.xml -sn -n 10.130.144.0/24
 </code></pre>
 <p>I love nmap and I need to learn how to use it better. This produces an XML list of the machines that are currently running. Sadly, I could not figure out how to return <em>just</em> the iMacs so there are some Windows XP machines and routers in there too.</p>
-</div><div class="s4 box"><p>Of course, XML is not so bash friendly (unless you know of cool XML parsing in bash - hit me up if you do). This is where Python comes in:</p>
+<h4></h4>
+<p>Of course, XML is not so bash friendly (unless you know of cool XML parsing in bash - hit me up if you do). This is where Python comes in:</p>
 <pre><code>from lxml import etree
 f = open(args.iplist,'r')
 xml = f.read()
@@ -141,7 +118,8 @@ for element in root.iter():
     if element.tag.__str__() == 'address':
 </code></pre>
 <p><em>subprocess</em> is still a bit of a dark art to me. The <em>shell=True</em> bit is quite important as it opens a remote shell. Also the <em>-t</em> argument to ssh helps.</p>
-</div><div class="s4 box"><p>The beauty of OSX is that there are command line versions of various GUI programmers such as:</p>
+<h4></h4>
+<p>The beauty of OSX is that there are command line versions of various GUI programmers such as:</p>
 <pre><code>sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ 
 \(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
 </code></pre>
@@ -152,7 +130,8 @@ for element in root.iter():
 <pre><code>umount
 </code></pre>
 <p>Just as you would on the <em>nix</em></p>
-</div><div class="s4 box"><p>The problem with using <em>sudo</em> a lot is that we need to keep typing passwords all the time. You can use the following <em>ENV</em> variable to launch a window in OSX to type this in:</p>
+<h4></h4>
+<p>The problem with using <em>sudo</em> a lot is that we need to keep typing passwords all the time. You can use the following <em>ENV</em> variable to launch a window in OSX to type this in:</p>
 <pre><code>env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 
 'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
 </code></pre>
@@ -180,7 +159,8 @@ else
 fi
 </code></pre>
 <p>Notice the handy <em>osascript -e</em> command. Thats pretty handy as well.</p>
-</div><div class="s4 box"><p>I believe there is a python library for doing simultaneous installs as well called <a href="http://docs.fabfile.org/en/1.3.1/index.html">Fabric</a> that I reckon will make this go uber-smooth in the future!</p>
+<h4></h4>
+<p>I believe there is a python library for doing simultaneous installs as well called <a href="http://docs.fabfile.org/en/1.3.1/index.html">Fabric</a> that I reckon will make this go uber-smooth in the future!</p>
 <p>Finally, to remove password entru for sudo, use:</p>
 <pre><code>sudo visudo
 </code></pre>
@@ -188,63 +168,68 @@ fi
 <pre><code>&lt;username&gt;  ALL=NOPASSWD: ALL
 </code></pre>
 <p>replacing <username> with the user you are using to do all the installs. So far, Im getting there. I will have many devices under my command! It was grossly inefficent but a good way to learn a great many things. Remember the process is what counts people!</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

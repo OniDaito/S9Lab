@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,120 +68,98 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Defeating Firewalls</h3>
+    <span class="date">2011-10-05 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Defeating Firewalls</h3>
-        <span class="lead">2011-10-05 00:00:00</span>
-      </div>
       
-<div class="s2 box"><p>In addition to my own business, I work part-time over at the <a href="http://www.arts.ac.uk">University of the Arts</a> helping out students and making cool things. The problem with such large places are their draconian I.T rules. Of course the inquistive finds ways around these. I have a pressing need for SSH - it's something any tech professional can't do without. You just can't. Port 22 is the most sacred of all ports and having it blocked was a pain.</p>
-</div><div class="s2 box"><p>It was suggested that I use <a href="https://www.torproject.org/">tor</a> which I've had installed for a while on my Mac. I found a handy little script using the amazing <a href="http://netcat.sourceforge.net/">netcat</a> to move data over Vidalia:</p>
+<h2></h2>
+<p>In addition to my own business, I work part-time over at the <a href="http://www.arts.ac.uk">University of the Arts</a> helping out students and making cool things. The problem with such large places are their draconian I.T rules. Of course the inquistive finds ways around these. I have a pressing need for SSH - it's something any tech professional can't do without. You just can't. Port 22 is the most sacred of all ports and having it blocked was a pain.</p>
+<h2></h2>
+<p>It was suggested that I use <a href="https://www.torproject.org/">tor</a> which I've had installed for a while on my Mac. I found a handy little script using the amazing <a href="http://netcat.sourceforge.net/">netcat</a> to move data over Vidalia:</p>
 <pre><code>ssh -o ProxyCommand="nc -X 4 -x localhost:9050 %h %p"
 </code></pre>
 <p>This worked fine but the problem with tor has always been it's speed. Mileage certainly varies but even SSH proved too unresponsive. I needed another option.</p>
-</div><div class="s2 box"><p>Typically, a second IP is needed to proxy traffic over a port such as 80. The problem is I didn't have a second machine available (my machine at home isn't setup yet for this kind of thing). However, after chatting with the <em>#london-hack-space</em> crew, I was reminded of <a href="http://www.rutschle.net/tech/sslh.shtml">sslh</a>. </p>
+<h2></h2>
+<p>Typically, a second IP is needed to proxy traffic over a port such as 80. The problem is I didn't have a second machine available (my machine at home isn't setup yet for this kind of thing). However, after chatting with the <em>#london-hack-space</em> crew, I was reminded of <a href="http://www.rutschle.net/tech/sslh.shtml">sslh</a>. </p>
 <p>sslh provides a proxy service on your webserver to effectively split any traffic arriving on port 443. Now I run a few websites on port 443 so this solution seemed perfect. sslh is included in the debian and ubuntu repositories. The only configuration needed is to swap out the listen addresses in nginx or apache to localhost and place sslh infront, listening on your servers external ip.</p>
 <p>The speed is certainly much greater. Now I can get to work fixing my nginx setup!</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

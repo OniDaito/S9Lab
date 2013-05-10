@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,125 +68,109 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/strap/deutsche.jpg) no-repeat center center fixed; 
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Deutsche Bank Installation</h3>
+    <span class="date">2011-05-24 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Deutsche Bank Installation</h3>
-        <span class="lead">2011-05-24 00:00:00</span>
-      </div>
       
-<div class="s3 box"><p>It's arrived! Finally, out of NDA we have the <a href="http://www.msavisuals.com/deutsche_bank_hong_kong">Hong Kong Deutsche Bank Installation</a>. This was led by the rather talented <a href="http://www.field.io">Field.io</a> who decided to pass around some of the work to local creative, programming types such as <a href="http://www.msavisuals.com">MSAVisuals</a>. At the time, I'd left my job at <a href="http://www.casa.ucl.ac.uk">CASA, UCL</a> to come and work for Memo because I loved his work and it was high time I got my ass in gear and tried to do the work I love to do: computer graphics art. It was a no brainer at the time but it still scared me a lot to make the jump.</p>
-</div><div class="s2 box"><p>Memo had already begun work on 'A Passion for the Planet' and asked me if I could work on the effects. Using MSAPhysics we came up with a particle system which I played with in order to add some dynamics to the scenes. So we had snow for the mountains, rain in the forest and, my personal favourite, sunspots for the Tea fields (giving the idea of the sun breaking through the cloud).</p>
-</div><div class="s5 box"><p><object width="400" height="300"> <param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&set_id=72157626756999726&jump_to="></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=71649"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=71649" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&set_id=72157626756999726&jump_to=" width="400" height="300"></embed></object></p>
-</div><div class="s2 box"><p>A particle system requires a lot of thought when it comes to timing and precision. This went double because the system was to be synchronised across several machines in order to run on the large screen. A master clock was provided as part of the Field.kit base class we were asked to use. In addition, we were running with smaller images to begin with but we would need to scale everything up when the viewport was scaled. How big should a snowflake be on a small screen and a large screen? The same size? Smaller? Larger? Essentially, all the caluculations were made with respect to the variables coming through from the base class that Field had provided. </p>
+<h3></h3>
+<p>It's arrived! Finally, out of NDA we have the <a href="http://www.msavisuals.com/deutsche_bank_hong_kong">Hong Kong Deutsche Bank Installation</a>. This was led by the rather talented <a href="http://www.field.io">Field.io</a> who decided to pass around some of the work to local creative, programming types such as <a href="http://www.msavisuals.com">MSAVisuals</a>. At the time, I'd left my job at <a href="http://www.casa.ucl.ac.uk">CASA, UCL</a> to come and work for Memo because I loved his work and it was high time I got my ass in gear and tried to do the work I love to do: computer graphics art. It was a no brainer at the time but it still scared me a lot to make the jump.</p>
+<h2></h2>
+<p>Memo had already begun work on 'A Passion for the Planet' and asked me if I could work on the effects. Using MSAPhysics we came up with a particle system which I played with in order to add some dynamics to the scenes. So we had snow for the mountains, rain in the forest and, my personal favourite, sunspots for the Tea fields (giving the idea of the sun breaking through the cloud).</p>
+<h5></h5>
+<p><object width="400" height="300"> <param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&set_id=72157626756999726&jump_to="></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=71649"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=71649" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&set_id=72157626756999726&jump_to=" width="400" height="300"></embed></object></p>
+<h2></h2>
+<p>A particle system requires a lot of thought when it comes to timing and precision. This went double because the system was to be synchronised across several machines in order to run on the large screen. A master clock was provided as part of the Field.kit base class we were asked to use. In addition, we were running with smaller images to begin with but we would need to scale everything up when the viewport was scaled. How big should a snowflake be on a small screen and a large screen? The same size? Smaller? Larger? Essentially, all the caluculations were made with respect to the variables coming through from the base class that Field had provided. </p>
 <p>The majority of the work for me came in with the "Performance and Teamwork" piece which involved the reading of Motion capture data from an FBX file. I'd never worked with FBX Files before (though I often do now) and was suprised at how powerful they were. I was given a brief from the design team who had provided both still images and short film clips (rendered in 3D with something akin to maya or max) and told to get cracking!</p>
 <p>An early mockup was quite fast in arriving (at least for me) but much of the time was spent on refinements and other such issues. Initially, the scene was rendered in 2D with dots but it was decided to use spheres eventually. Keeping the speed high was an issue at the outset. We played around with depth testing and decided that the painters algorithm was more suitable in this instance. Remembering to keep everything synchronised with the master clock was also something to constantly keep in mind. </p>
-</div><div class="s5 box"><p><object width="400" height="300"> <param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&set_id=72157626757080626&jump_to="></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=71649"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=71649" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&set_id=72157626757080626&jump_to=" width="400" height="300"></embed></object></p>
+<h5></h5>
+<p><object width="400" height="300"> <param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&set_id=72157626757080626&jump_to="></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=71649"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=71649" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&set_id=72157626757080626&jump_to=" width="400" height="300"></embed></object></p>
 <p>Memo is a true artist and came up with many suggestions and help along the way. Little things here and there were picked up and I quickly learnt that 90% of the time is spent on 10% of the code which makes up for 99% of the overall experience. The reflections changed to sprites (hence the painters algorithm) with a custom texture and the whole particle system was revamped in order to allow for more interesting movement. </p>
 <p>The particle system itself is quite interesting. The FBX models create a set of 'magnets' or spring end-points if you will and these can be turned on or off depending on the circumstances. This simple physics system was enhanced by some perlin noise and a little magic tuning to create something that looked a little more alive.</p>
-</div><div class="s2 box"><p>The figures in the scene are quite dynamic; some move far and others not at all. We had to add constraints to keep the figures within the camera's viewing area. How was the camera's viewing area defined? With a particle system! Yes, the camera is attached to a set of springs which give it a more fluid motion around the figures. </p>
-</div><div class="s1 box"><p>Add a little fog for depth perception and some subtle shader tweaks here and there and the result was quite pleasing. </p>
-</div><div class="s2 box"><p>Of course, nothing ever goes completely to plan. Its the right level of improv that makes a performance they say. Performance and Teamwork caused a few issues when it was run across the linked machines. For a while, we couldn't figure it out. Eventually, thanks to help from Dean MacNamee, we figured out that logging to a console was causing issues as the stream was not correctly defined. Quite often, Memo and I will log things to stderr and stdout and that seemed to be causing memory issues with Fields setup. Not only that, we changed OS twice, swapping between Windows and OSX. Thankfully, <a href="http://www.libcinder.org">Cinder</a> is great at making this almost a non-issue.</p>
-</div><div class="s2 box"><p>On a personal level, it was humbling. I'm so glad to see this live and it felt like proof that I can do these things I've dreamed about doing. Many thoughts I had were dispelled though; it was a lot of hard work and the bar was much higher than on some projects I've worked on. I wouldn't have managed this on my own at the time if I'd not been teamed up with Memo. Workig with someone who knows how to program really well is great for learning but you really need to let your ego go and not get upset when the person you are freelancing for points out a few schoolboy errors you make. This is common in programming teams but it feels worse when you are freelancing because you are out there, on your own, trying to impress and do good work. On this project, there were down times for me but I suspect that is the case for anything worth doing. The final result, I feel, shows the amount of effort that went into this was truly epic, from all the people involved.</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
+<h2></h2>
+<p>The figures in the scene are quite dynamic; some move far and others not at all. We had to add constraints to keep the figures within the camera's viewing area. How was the camera's viewing area defined? With a particle system! Yes, the camera is attached to a set of springs which give it a more fluid motion around the figures. </p>
+<h1></h1>
+<p>Add a little fog for depth perception and some subtle shader tweaks here and there and the result was quite pleasing. </p>
+<h2></h2>
+<p>Of course, nothing ever goes completely to plan. Its the right level of improv that makes a performance they say. Performance and Teamwork caused a few issues when it was run across the linked machines. For a while, we couldn't figure it out. Eventually, thanks to help from Dean MacNamee, we figured out that logging to a console was causing issues as the stream was not correctly defined. Quite often, Memo and I will log things to stderr and stdout and that seemed to be causing memory issues with Fields setup. Not only that, we changed OS twice, swapping between Windows and OSX. Thankfully, <a href="http://www.libcinder.org">Cinder</a> is great at making this almost a non-issue.</p>
+<h2></h2>
+<p>On a personal level, it was humbling. I'm so glad to see this live and it felt like proof that I can do these things I've dreamed about doing. Many thoughts I had were dispelled though; it was a lot of hard work and the bar was much higher than on some projects I've worked on. I wouldn't have managed this on my own at the time if I'd not been teamed up with Memo. Workig with someone who knows how to program really well is great for learning but you really need to let your ego go and not get upset when the person you are freelancing for points out a few schoolboy errors you make. This is common in programming teams but it feels worse when you are freelancing because you are out there, on your own, trying to impress and do good work. On this project, there were down times for me but I suspect that is the case for anything worth doing. The final result, I feel, shows the amount of effort that went into this was truly epic, from all the people involved.</p>
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

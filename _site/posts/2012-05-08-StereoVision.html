@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,122 +68,104 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Stereo Vision</h3>
+    <span class="date">2012-05-08 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Stereo Vision</h3>
-        <span class="lead">2012-05-08 00:00:00</span>
-      </div>
       
-<div class="s2 box"><p>So what have I been up to these last few months? I've not had a lot of chance to mess around in the graphics domain, largely because I've been working on a large project for The University of Leeds. I've been interested in computer vision for a while and this seemed like a good chance to get to grips with it. Im working on the reconstruction of meshes from multiple camera viewpoints. This leads me into the realms of stereo vision.</p>
-</div><div class="s4 box"><p><iframe width="460" height="360" src="http://www.youtube.com/embed/7Gx4IRoq1ow" frameborder="0" allowfullscreen></iframe></p>
-</div><div class="s3 box"><p>In the initial case, the idea is to place two cameras side-by-side. When a known point is located in both frames, one can begin to calibrate the cameras, use triangulation and work out the depth. Using OpenCV, many of these functions are defined for you. In the above video, we can see the disparity map beginning to take shape. The disparity map on the right, shows the distance from one point in the left image to the same point in the right image. This apparent distance is related to the depth.</p>
+<h2></h2>
+<p>So what have I been up to these last few months? I've not had a lot of chance to mess around in the graphics domain, largely because I've been working on a large project for The University of Leeds. I've been interested in computer vision for a while and this seemed like a good chance to get to grips with it. Im working on the reconstruction of meshes from multiple camera viewpoints. This leads me into the realms of stereo vision.</p>
+<h4></h4>
+<p><iframe width="460" height="360" src="http://www.youtube.com/embed/7Gx4IRoq1ow" frameborder="0" allowfullscreen></iframe></p>
+<h3></h3>
+<p>In the initial case, the idea is to place two cameras side-by-side. When a known point is located in both frames, one can begin to calibrate the cameras, use triangulation and work out the depth. Using OpenCV, many of these functions are defined for you. In the above video, we can see the disparity map beginning to take shape. The disparity map on the right, shows the distance from one point in the left image to the same point in the right image. This apparent distance is related to the depth.</p>
 <p>One needs to work out two sets of parameters before we can begin to calculate the disparity. The first set of parameters are called the Intrinsic Parameters - these are related to the distortion effects that are encountered when using any lens. Barrel distortion and tangential distortion can make straight lines look curved. The second set of parameters are called Extrinsic parameters which are related the setup of the two cameras. Modelling and solving these equations for these cameras is known as <a href="http://en.wikipedia.org/wiki/Camera_resectioning">Camera Resectioning</a>. Thankfully, OpenCV includes a method for this. </p>
-</div><div class="s2 box"><p>The issue with not having straight lines might seem trivial but you can really see the effect when you look at photographs of skyscrapers or other tall buildings; they tend to curve as they reach for the sky. Of course, this has problems for determining the right correspondances between two images.</p>
+<h2></h2>
+<p>The issue with not having straight lines might seem trivial but you can really see the effect when you look at photographs of skyscrapers or other tall buildings; they tend to curve as they reach for the sky. Of course, this has problems for determining the right correspondances between two images.</p>
 <p>No doubt, you'll have seen the chessboards everywhere when it comes to computer vision. Chessboards provide a good way to calibrate a camera as the intersections between the black squares form a good set of regular points on a plane. I've settled with a 9x6 chessboard with a wide, white edge, mounted on perspex. I take around 60 to 80 shots per camera when attempting to find the intrinsic values. So far, this seems to work most of the time. Im using Logitech C910 cameras for this experiment and they do have a reasonable amount of barrel distortion.</p>
-</div><div class="s3 box"><p>The next step is to work out the Extrinsic Values. These are related to the setup and are not independent of the the view, unlike the intrinsic parameters. Depending on how your cameras are setup, these parameters will change. Again, OpenCV has another function that makes a pretty good guess at what these paramters should be. Again, you need a chessboard to generate a set of known points that can be seen from each camera. </p>
-</div><div class="s4 box"><p><iframe width="460" height="360" src="http://www.youtube.com/embed/D6DVhtsVmDE" frameborder="0" allowfullscreen></iframe></p>
-</div><div class="s3 box"><p>In the above video, I am generating a disparity map on the right hand side, then creating a simple mesh in the middle. Sadly, it's not quite perfect yet, but it's early days so far. </p>
+<h3></h3>
+<p>The next step is to work out the Extrinsic Values. These are related to the setup and are not independent of the the view, unlike the intrinsic parameters. Depending on how your cameras are setup, these parameters will change. Again, OpenCV has another function that makes a pretty good guess at what these paramters should be. Again, you need a chessboard to generate a set of known points that can be seen from each camera. </p>
+<h4></h4>
+<p><iframe width="460" height="360" src="http://www.youtube.com/embed/D6DVhtsVmDE" frameborder="0" allowfullscreen></iframe></p>
+<h3></h3>
+<p>In the above video, I am generating a disparity map on the right hand side, then creating a simple mesh in the middle. Sadly, it's not quite perfect yet, but it's early days so far. </p>
 <p>I've found that OpenCV does provide a lot of useful functions but one needs to be aware that there are two versions out there, and many of the examples are not so useful. OpenCV2 is the main one to go for, and under Linux, building your own is a must. There are issues under unbuntu that revolve around the supporting libraries but these can be overcome with some clever symlinking. The <a href="http://www.laganiere.name/opencvCookbook/">OpenCV2 cookbook</a> is really not a bad place to start. The O'Reilly OpenCV book is fairly canon but be aware that the code examples cover OpenCV1 only and there are a few differences.</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

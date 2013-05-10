@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,119 +68,100 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Structured Light</h3>
+    <span class="date">2010-10-06 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Structured Light</h3>
-        <span class="lead">2010-10-06 00:00:00</span>
-      </div>
       
-<div class="s2 box"><p><img alt="structured light" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TKxNmYrR5LI/AAAAAAAAAu4/uxCMLcIED8U/s1600/sl1.jpg" /></p>
-</div><div class="s2 box"><p>A test of a simple structured light setup. The idea was to use a PS3 Eyetoy and the excellent code written by Kyle MacDonald - <a href="http://sites.google.com/site/structuredlight/" rel="nofollow">sites.google.com/site/structuredlight/</a> and Memo Akten - <a href="http://www.memo.tv/" rel="nofollow">www.memo.tv</a>. There are <a href="http://www.flickr.com/photos/section9/">more photos on my Flickr page</a> and indeed, I'll be making some movies soon!</p>
-</div><div class="s2 box"><p><img alt="structured light" src="http://4.bp.blogspot.com/_WNXP2eEZSdg/TKxNxAh9rhI/AAAAAAAAAvA/VIfk_jpbqfk/s1600/sl4.jpg" /></p>
-</div><div class="s2 box"><p>I strapped together Memo's code under Windows as I finally managed to get hold of the PS3 Eyetoy driver that allows you to do 60fps. There is a special OpenFrameworks 'addon' that is part of Community Core Vision that allows you to run OF programs with 60fps. They don't tell you this ANYWHERE so I'm telling you all now! </p>
-</div><div class="s2 box"><p><a href="http://nuigroup.com/forums/viewthread/2921/">There is a thread on the NUIGroup forums</a> that describe using the PS3 Eyetoy with CCV (thats a multitouch table program in Openframeworks btw) and this does work at 60fps but in order to get the structured light scanner to work, I needed the source code to drop into the capture program. Within the CCV Windows Source code, there are some classes that deal with driving the PS3Eyetoy specifically. Dropping these into the Windows version of the decoder worked really well.</p>
-</div><div class="s2 box"><p>I need to take some photos of the setup. Essentially the projector goes below the eyetoy which sits infront of the projector in order to zoom in. Sadly, the throw, or size of the resulting projection really wasn't good enough for this experiment but I shall persevere.</p>
+<h2></h2>
+<p><img alt="structured light" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TKxNmYrR5LI/AAAAAAAAAu4/uxCMLcIED8U/s1600/sl1.jpg" /></p>
+<h2></h2>
+<p>A test of a simple structured light setup. The idea was to use a PS3 Eyetoy and the excellent code written by Kyle MacDonald - <a href="http://sites.google.com/site/structuredlight/" rel="nofollow">sites.google.com/site/structuredlight/</a> and Memo Akten - <a href="http://www.memo.tv/" rel="nofollow">www.memo.tv</a>. There are <a href="http://www.flickr.com/photos/section9/">more photos on my Flickr page</a> and indeed, I'll be making some movies soon!</p>
+<h2></h2>
+<p><img alt="structured light" src="http://4.bp.blogspot.com/_WNXP2eEZSdg/TKxNxAh9rhI/AAAAAAAAAvA/VIfk_jpbqfk/s1600/sl4.jpg" /></p>
+<h2></h2>
+<p>I strapped together Memo's code under Windows as I finally managed to get hold of the PS3 Eyetoy driver that allows you to do 60fps. There is a special OpenFrameworks 'addon' that is part of Community Core Vision that allows you to run OF programs with 60fps. They don't tell you this ANYWHERE so I'm telling you all now! </p>
+<h2></h2>
+<p><a href="http://nuigroup.com/forums/viewthread/2921/">There is a thread on the NUIGroup forums</a> that describe using the PS3 Eyetoy with CCV (thats a multitouch table program in Openframeworks btw) and this does work at 60fps but in order to get the structured light scanner to work, I needed the source code to drop into the capture program. Within the CCV Windows Source code, there are some classes that deal with driving the PS3Eyetoy specifically. Dropping these into the Windows version of the decoder worked really well.</p>
+<h2></h2>
+<p>I need to take some photos of the setup. Essentially the projector goes below the eyetoy which sits infront of the projector in order to zoom in. Sadly, the throw, or size of the resulting projection really wasn't good enough for this experiment but I shall persevere.</p>
 <p>Thanks to Jonty at the <a href="http://london.hackspace.org.uk/">London Hackspace</a> for use of his PS3 Eyetoy and the Projector!</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

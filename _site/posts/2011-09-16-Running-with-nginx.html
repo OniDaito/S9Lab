@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,64 +68,37 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Running with Nginx</h3>
+    <span class="date">2011-09-16 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Running with Nginx</h3>
-        <span class="lead">2011-09-16 00:00:00</span>
-      </div>
       
-<div class="s2 box"><p>So I've decided to play with <a href="http://wiki.nginx.org/">Nginx</a> on my server, leaving Apache behind. I must admit, I've had a lot of fun with it. It appears to be a good front end for funneling web requests to other services. At the moment, I have various things running on my server such as:</p>
-</div><div class="s3 box"><ul>
+<h2></h2>
+<p>So I've decided to play with <a href="http://wiki.nginx.org/">Nginx</a> on my server, leaving Apache behind. I must admit, I've had a lot of fun with it. It appears to be a good front end for funneling web requests to other services. At the moment, I have various things running on my server such as:</p>
+<h3></h3>
+<ul>
 <li>Two sites running <a href="http://www.djangoproject.com/">Django</a> with <em>Psycopg</em> connected to a <a href="www.postgresql.org">Postgresql</a> database.</li>
 <li>A <a href="nodejs.org">Node.js</a> install that talks to a <a href="www.mongodb.org">MongoDB</a> database for a top secret project</li>
 <li>A <a href="http://www.mediawiki.org">Mediawiki</a> setup that runs my own journal and ideas. Currently talks to mysql running with <em>php5-fpm</em></li>
 <li>Several static pages as and when needed</li>
 <li>Python <em>uWSGI</em> serving for the <a href="http://saito.section9.co.uk">Denied</a> application</li>
 </ul>
-</div><div class="s4 box"><p>So there is a fair bit going on that Nginx needs to take care of. Rather than use the stock Lucid install of Nginx I downloaded the source and built it with:</p>
+<h4></h4>
+<p>So there is a fair bit going on that Nginx needs to take care of. Rather than use the stock Lucid install of Nginx I downloaded the source and built it with:</p>
 <p>sudo ./configure --prefix=/opt/nginx --user=www-data --group=www-data --with-http_ssl_module --with-ipv6</p>
 <p>You can then hit make. There are lots of modules and other things you can build. At the moment, ssl and ipv6 are the most important to me right now.</p>
 <p>Nginx config files are quite easy to understand and it's quite easy to get a site up and running. In the case of Django, I went with the <a href="https://docs.djangoproject.com/en/dev/howto/deployment/fastcgi/">FastCGI</a> route which seemed the easiest at the time (uWSGI might be better). This means you need to run your Django in a seperate process. Using a Linux <em>screen</em> you can do something like this:</p>
@@ -129,7 +106,8 @@
 socket=/tmp/section9.sock pidfile=django.pid maxrequests=100'
 </code></pre>
 <p>The <em>maxrequests</em> variable is very important. Without it, I noticed a lot of processes waiting for IO when I studied the site using <em>top</em>. So far, that little line has helped make things faster.</p>
-</div><div class="s4 box"><p>You can then setup Nginx with Django a little like this:</p>
+<h4></h4>
+<p>You can then setup Nginx with Django a little like this:</p>
 <pre><code>server {
     listen 80;
     server_name www.anneblundell.com;
@@ -165,70 +143,77 @@ location / {
 }
 </code></pre>
 <p>So Django runs ok for now. You can write down all the <em>fastcgi_params</em> in an include file to make things a little easier.</p>
-</div><div class="s4 box"><p>But what about a simple Python Script? For Denied, I needed to query a text file, parse it, and present json on request. To do that, uWSGI came to mind. Use <em>pip</em> to install uwsi and then:</p>
+<h4></h4>
+<p>But what about a simple Python Script? For Denied, I needed to query a text file, parse it, and present json on request. To do that, uWSGI came to mind. Use <em>pip</em> to install uwsi and then:</p>
 <pre><code>sudo su -c "uwsgi --pythonpath /srv/www/section9.co.uk/public_html/python\
  --uid www-data --module wsgi_configuration_module -s /tmp/uwsgi.sock"
 </code></pre>
 <p>This creates a socket for which we can use with Nginx to grab our data. <a href="http://kbeezie.com/view/circuits-nginx-uwsgi/">This Guide</a> is quite good for setting up Nginx to talk to a process.</p>
-</div><div class="s2 box"><p>So Nginx takes care of a lot of things. One issue I have is dealing with Mediawiki. Annoyingly, there is quite a large slowdown in the move from Apache to Nginx and I've yet to find out the issue; likely it is my novice setup of php5-fpm. Quite annoying really. </p>
+<h2></h2>
+<p>So Nginx takes care of a lot of things. One issue I have is dealing with Mediawiki. Annoyingly, there is quite a large slowdown in the move from Apache to Nginx and I've yet to find out the issue; likely it is my novice setup of php5-fpm. Quite annoying really. </p>
 <p>It's quite easy to setup static pages - simply copy the simple example config, soft link and you are done. I've yet to attempt a setup with <em>Ruby on Rails</em> yet as Im reading into <a href="https://github.com/blog/517-unicorn">Unicorn</a> and other such deployment strategies. I'll let you know how it goes.</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

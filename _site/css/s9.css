@@ -9,8 +9,17 @@ html, body {
 
 body {
   padding-bottom: 40px;
-  color: #5a5a5a;
+  color: #3a3a3a;
 
+}
+
+#processing_canvas {
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  position:fixed;
 }
 
 @font-face {
@@ -48,6 +57,67 @@ body {
   src: url("SourceSansPro-Light.otf") format("opentype");
 }
 
+@font-face {
+  font-family: AftaSerifThin-Regular;
+  src: url("AftaSerifThin-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: AftaSerifThin-Italic;
+  src: url("AftaSerifThin-Italic.otf") format("opentype");
+}
+
+
+p:before {
+  content: "";
+  min-width: 20em;
+  width: 20em;
+  display: block;
+  overflow: hidden;
+  /* For Demonstration */
+  /*border: 1px solid green;*/
+}
+
+
+#content iframe {
+  float: left;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  clear: right;
+}
+
+p:first-letter { 
+   font-size: 1.2em;
+   line-height: 0;  /* The line-height must be adjusted to compensate for the increased font size, otherwise the leading for the overall line is disrupted. I find that any values below 0.4 work. */
+}
+
+
+h3 {
+  font-family: 'Allan', Helvetica, Arial, sans-serif;
+  font-size: 64px;
+  line-height: 75px;
+  text-shadow: 0px 1px 0px rgba(255,255,255,.5); /* 50% white from bottom */
+}
+ 
+p {
+    font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+    font-size: 1.3em;
+    line-height: 1.4em;
+}
+
+
+.picture {
+  background-color: #F9F9F9;
+  border: 1px solid #CCCCCC; padding: 5px;
+  font: 11px/1.4em Arial, sans-serif;
+}
+
+.picture img { border: 1px solid #CCCCCC; margin-bottom: 3px; }
+
+.right { margin: 0.5em 0pt 1.0em 1.8em; float:right;  }
+.left { margin: 0.5em 1.8em 1.0em 0; float:left;  }
 
 .source-sans-reg {
   font-weight: normal; 
@@ -56,225 +126,109 @@ body {
   font-family: 'SourceSans', sans-serif;
 }
 
+
+pre {
+  float:none;
+  display: block;
+  clear: both;
+}
+
 .brand img {
   padding: 0px;
   margin: 0px;
 }
 
-#wrap {
+#main {
   min-height: 100%;
   width:100%;
   z-index: 4;
   top: 0px;
   left: 0px;
-  position: absolute;
-}
-
-#main {
-  overflow:auto;
-  padding-bottom:30px; /* this needs to be bigger than footer height*/
-}
-
-.footer {
   position: relative;
-  margin-top: -30px; /* negative value of footer height */
-  height: 30px;
-  clear:both;
-  padding-top:20px;
-  background: none repeat scroll 0% 0% rgb(10, 20, 20);
-} 
-
-
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
-
-.navbar {
-  margin-top: 8px;
-  z-index: 5;
-}
-
-.navbar .navbar-inner {
-  border: 0;
-  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-     -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-          box-shadow: 0 2px 10px rgba(0,0,0,.25);
-}
-
-/* Downsize the brand/project name a bit */
-.navbar .brand {
-  padding-top: 20px 10px 10px 10px; 
-}
-
-/* Navbar links: increase padding for taller navbar */
-.navbar .nav > li > a {
-  padding: 15px 20px;
-  font-family: 'SourceSansBoldIt';
-  font-size: 14pt;
-}
-
-/* Offset the responsive button for proper vertical alignment */
-.navbar .btn-navbar {
-  margin-top: 10px;
 }
 
 
-div.social_container {
-  float:right;
+
+/* Main Page Links and Lists
+----------------------------- */
+#post_links {
+  list-style-type: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-div.social_container a{
+#post_links li {
+  display: inline;
+  margin-left: 12px;
+  margin-top: 18px;
+}
+
+.post_list_item {
   display: inline-block;
+  padding: 12px;
+  border: 1px solid #CCCCCC; padding: 5px;
+  margin: 4px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  
+}
+
+.hover{
+   background-color: #CCCCCC;
+     -webkit-transition: background-color 500ms linear;
+     -moz-transition: background-color 500ms linear;
+     -o-transition: background-color 500ms linear;
+     -ms-transition: background-color 500ms linear;
+     transition: background-color 500ms linear;
+}
+
+.hover-out{
+   background-color: none;
+     -webkit-transition: background-color 500ms linear;
+     -moz-transition: background-color 500ms linear;
+     -o-transition: background-color 500ms linear;
+     -ms-transition: background-color 500ms linear;
+     transition: background-color 500ms linear;
+}
+
+.post_list_item {
   text-decoration: none;
+  color: #333333;
 }
 
-div.social_container a:hover {
+.post_list_item {
   text-decoration: none;
+  color: #333333;
 }
 
-div.social
-{
-  margin-top:10px;
-  width:28px;
-  height:28px;
-  margin-left: 3px;
+.post_list_item .title {
+  display: :inline-block;
+  text-decoration: none;
+  font-family: 'Allan', Helvetica, Arial, sans-serif;
+  font-size: 24px;
 }
-
-#twitter { background:url(../images/social-media-medium-grey.png) -56px 0; }
-#twitter:hover { background:url(../images/social-media-medium-white.png) -56px 0; }
-
-#flickr { background:url(../images/social-media-medium-grey.png) -1px 0; }
-#flickr:hover  { background:url(../images/social-media-medium-white.png) -1px 0; }
-
-#linkedin { background:url(../images/social-media-medium-grey.png) -113px 0; }
-#linkedin:hover  { background:url(../images/social-media-medium-white.png) -113px 0; }
-
-#github { background:url(../images/social-media-medium-grey.png) -28px 0; }
-#github:hover  { background:url(../images/social-media-medium-white.png) -28px 0; }
 
 .lead {
-  margin: 0;
-  font-size: 10pt;
-  line-height: 10pt;
-  color:  rgb(200,200,200);
+  display: :inline-block;
+  font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+  margin: 0px;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  color:  rgb(33,33,33);
   /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
 }
 
 
-/* MARKDOWN SECTIONS
-------------------------- */
-
-.s5 {
-  width: 540px;
-}
-
-.s4 {
-  width: 460px;
-}
-
-
-.s3 {
-  width: 380px;
-}
-
-.s2 {
-  width: 300px;
-}
-
-.s1 {
-  width: 220px;
-}
-
-/* CORNER STAMP 
----------------------*/
-
-.corner-stamp {
-
-  width: 220px;
-  padding: 10px;
-  margin: 10px;
-  float: right;
-  background: none repeat scroll 0% 0% rgb(255, 255, 255);
-  color: black;
-}
-
-.corner-stamp h2 {
-  font-weight: bold;  
-  font-size: 22pt;
-  line-height: 18pt;
-  font-family: "SourceSansBoldIt";
-  color: rgb(10, 10, 10);
-}
-
-.corner-stamp h4 {
-  font-weight: normal;  
-  font-size: 16pt;
-  line-height: 16pt;
-  font-family: "SourceSansLight";
-  color: rgb(10, 10, 10);
-}
-
-
-
- 
-/* MASONRY CSS
--------------------------------------------------- */
-
-#tumblelog {
-  margin-top: 20px;
-}
-
-.box {
-    background: none repeat scroll 0% 0% rgba(90, 90, 90, 80);
-    padding: 8px;
-    margin: 3px;
-    margin-bottom: 12px;
-   /* border-radius: 8px 8px 8px 8px; */
-     -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-     -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-          box-shadow: 0 2px 10px rgba(0,0,0,.25);
-}
-
-
-.linkbox:hover {
-  -webkit-transition: background 0.5s linear;
-  -moz-transition: background 0.5s linear;
-  -ms-transition: background 0.5s linear;
-  -o-transition: background 0.5s linear;
-  transition: background 0.5s linear;
-
-   cursor:pointer;
-   background: none repeat scroll 0% 0% rgb(100, 120, 160);
-}
-
-
-
-.box h3 {
-  font-family: "SourceSansBoldIt";
-  margin: 0;
-  font-size: 16pt;
-  line-height: 1.25;
-  color: #fff;
-  text-shadow: 0 1px 1px rgba(0,0,0,.4);
-}
-
-.box p {
-  font-family: "SourceSans";
-  font-size: 10pt;
-  color: rgb(220, 220, 220);
-  padding: 3px;
-}
-
-.box li {
-  font-family: "SourceSans";
-  font-size: 10pt;
-  line-height: 10pt;
-  color: #fff;
-  padding: 2px;
-}
-
-
-.box p strong {
-  font-family: "SourceSansBoldIt";
+.date {
+  display: :inline;
+  font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
+  font-size: 24px;
+  line-height: 16px;
+  color:  rgb(33,33,33);
+  /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
 }
 
 

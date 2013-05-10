@@ -16,6 +16,10 @@
   <meta name="author" content="Benjamin Blundell" />
   <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
   <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -64,127 +68,111 @@
 
   <script src="/js/jquery-1.8.3.min.js"></script>
 
-  <style type="text/css">
-    body {
-      
-        background: url(/images/background_mesh.jpg) no-repeat center center fixed;
-      
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-  </style>
+<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+
+
+<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-<div id="wrap">
-  <div class="container-fluid clear-top" id="main">
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="#"><img src="/images/s9white_small.png" alt="section9"></a>
-        <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li ><a href="/index.html">Home</a></li>
-            <li ><a href="/projects.html">Selected Works</a></li>
-            <li ><a href="/about.html">About</a></li>
-          </ul>
-          <div class="social_container">
-           <a href="http://www.flickr.com/photos/section9/"><div class="social" id="flickr">&nbsp;</div></a>
-            <a href="http://www.twitter.com/secti0n9/"><div class="social" id="twitter">&nbsp;</div></a>
-            <a href="http://uk.linkedin.com/in/section9/"><div class="social" id="linkedin">&nbsp;</div></a>
-            <a href="https://github.com/OniDaito/"><div class="social" id="github">&nbsp;</div></a>
-          </div>
-        </div>
-      </div>
-   </div>
+<div class="container">
+    
+    <h3>Leaving Google</h3>
+    <span class="date">2012-11-05 00:00:00</span>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  
+    <div style="clear:both"></div>
 
     <div id="content">
-      <div class="box">
-        <h3>Leaving Google</h3>
-        <span class="lead">2012-11-05 00:00:00</span>
-      </div>
       
-<div class="s2 box"><p>It seems like the wrong thing to do. Anyone who is familar with the Podcast "Back-to-Work" or anyone with a goal in mind knows that its a bad idea to re-invent the wheel. If there is a good product out there that takes away a lot of hassle for you then you should use that to get what you need to get done, done! The thing is, this has various levels and for me, I like to get my hands dirty. I've been using Google for calendar and mail quite a lot and decided, just recently to step away. There were a few factors (work avoidance being one perhaps - a super form of procrastination) but lessons were learnt and good times had.</p>
-</div><div class="s2 box"><p><img alt="baibai" src="http://images.smh.com.au/2010/01/15/1041660/googlechina5-420x0.jpg" /></p>
-</div><div class="s2 box"><p>I run a few domains o n my own VPS. The thing about this is I need to run websites and therefore, email. I've been doing this happily on Ubuntu with Dovecot and Postfix. There are good guides and I think its more or less, running ok. I decided to use gmail because, lets face it, email anywhere, good spam filtering, multiple accounts and conversation view (probably the most import feature).</p>
+<h2></h2>
+<p>It seems like the wrong thing to do. Anyone who is familar with the Podcast "Back-to-Work" or anyone with a goal in mind knows that its a bad idea to re-invent the wheel. If there is a good product out there that takes away a lot of hassle for you then you should use that to get what you need to get done, done! The thing is, this has various levels and for me, I like to get my hands dirty. I've been using Google for calendar and mail quite a lot and decided, just recently to step away. There were a few factors (work avoidance being one perhaps - a super form of procrastination) but lessons were learnt and good times had.</p>
+<h2></h2>
+<p><img alt="baibai" src="http://images.smh.com.au/2010/01/15/1041660/googlechina5-420x0.jpg" /></p>
+<h2></h2>
+<p>I run a few domains o n my own VPS. The thing about this is I need to run websites and therefore, email. I've been doing this happily on Ubuntu with Dovecot and Postfix. There are good guides and I think its more or less, running ok. I decided to use gmail because, lets face it, email anywhere, good spam filtering, multiple accounts and conversation view (probably the most import feature).</p>
 <p>The best replacement for mail I've found is <a href="http://roundcube.net/">RoundCube</a>. It has all the features you'd want from Gmail with the exception of multiple accounts. You can install a series of plugins for this however. <a href="http://myroundcube.com/">MyRoundCube</a> has a plugin manager that you can install by copying various PHP files. You can then download their massive set of plugins, one of which lets you add external accounts. Job done right?</p>
-</div><div class="s3 box"><p><img alt="roundcube" src="http://roundcube.net/images/homescreen.jpg" /></p>
-</div><div class="s2 box"><p>Well, not quite. I needed a database. I decided on PostgreSQL for most of the heavy lifting. This is where everything got hairy. I don't like PHP and since I'm using nginx and php-fastcgi to serve all this, I needed a good PHP setup. I settled on actually building my own from scratch and ignoring the default one that comes with ubuntu. It took a while to get all the options together - there are quite a few. In addition I needed some proper drivers for postgresql.</p>
+<h3></h3>
+<p><img alt="roundcube" src="http://roundcube.net/images/homescreen.jpg" /></p>
+<h2></h2>
+<p>Well, not quite. I needed a database. I decided on PostgreSQL for most of the heavy lifting. This is where everything got hairy. I don't like PHP and since I'm using nginx and php-fastcgi to serve all this, I needed a good PHP setup. I settled on actually building my own from scratch and ignoring the default one that comes with ubuntu. It took a while to get all the options together - there are quite a few. In addition I needed some proper drivers for postgresql.</p>
 <pre><code>sudo pear install -f MDB2_Driver_pgsql-1.5.0b3
 sudo pear install -f  MDB2-2.5.0b3
 </code></pre>
-</div><div class="s2 box"><p>Roundcube also needs to use IMAP. It will use IMAP over SSL however which is good news. I don't much like the idea of using something unsecured. It took a while to get all this sorted, I must admit. However it all works now, with a HTTPS connection. So far, so good. There are still issues - contacts being the chief among them. Also, there are issues with saving all the data I currently have on google. Thunderbird does a good job of copying all that, so likely that will end up as a backup on my second server. Retroactively adding email is not what I want to do. To be fair, this hasn't yet caused a major problem as a lot of the google stuff is out of date anyway. You never know though.</p>
-</div><div class="s2 box"><p>Mail done. Now we have tasks / reminders and calendar. The former is interesting because I like the idea of Geofencing. Since I'm an iPhone user, I figured I'd give that a go first before I roll my own. I use Mountain Lion on my personal machine so all is well there (but for how long). Calendars are a little more complicated.</p>
+<h2></h2>
+<p>Roundcube also needs to use IMAP. It will use IMAP over SSL however which is good news. I don't much like the idea of using something unsecured. It took a while to get all this sorted, I must admit. However it all works now, with a HTTPS connection. So far, so good. There are still issues - contacts being the chief among them. Also, there are issues with saving all the data I currently have on google. Thunderbird does a good job of copying all that, so likely that will end up as a backup on my second server. Retroactively adding email is not what I want to do. To be fair, this hasn't yet caused a major problem as a lot of the google stuff is out of date anyway. You never know though.</p>
+<h2></h2>
+<p>Mail done. Now we have tasks / reminders and calendar. The former is interesting because I like the idea of Geofencing. Since I'm an iPhone user, I figured I'd give that a go first before I roll my own. I use Mountain Lion on my personal machine so all is well there (but for how long). Calendars are a little more complicated.</p>
 <p><a href="http://www.davical.org/">DaviCal</a> seemed to be the thing to choose and it turned out to be much easier than I had thought. Again, Postgresql performs the heavy lifting. I had little trouble following the various guides. It seemed fairly straight forward to install.  Again, PHP is needed (shudder),  but <a href="http://wiki.davical.org/w/Ubuntu/Lucid">this ubuntu guide</a> proved helpful.</p>
 <p>With Davical, I can share calendars between various devices. At the moment, Im just using my iPhone's builtin client. Mountain Lion appears not to really like conencting to the caldav server but I reckon I can fix that.</p>
-</div><div class="s2 box"><p>I still need a good solution for notes. I believe Roundcube can take care of that as well. Indeed, Davical may have answers for that. If the task manager doesnt work, maybe that's what I'll do.</p>
-</div><div class="s2 box"><p>I have no real problems with Google, but I know quite a few people do. I've not kept up with the politics of it all but I do believe that keeping control of your data is important. Google, for my money (or not as the case may be), have never done me wrong but I guess I am part of their product. So far, I get a little more spam but not an awful lot and its quite good fun to see the rejections and n00bs trying to hammer my server. Bless.</p>
-</div>
-      <div class="box">
-  <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-    </div>
-  </div>
-</div>
-
- 
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/jquery.infinitescroll.min.js"></script>
-
-
-   <script type="text/javascript">
-      $(window).load(function(){
-
-        $(function(){
+<h2></h2>
+<p>I still need a good solution for notes. I believe Roundcube can take care of that as well. Indeed, Davical may have answers for that. If the task manager doesnt work, maybe that's what I'll do.</p>
+<h2></h2>
+<p>I have no real problems with Google, but I know quite a few people do. I've not kept up with the politics of it all but I do believe that keeping control of your data is important. Google, for my money (or not as the case may be), have never done me wrong but I guess I am part of their product. So far, I get a little more spam but not an awful lot and its quite good fun to see the rejections and n00bs trying to hammer my server. Bless.</p>
     
-          var $container = $('#content');
+   </div>
+
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.infinitescroll.min.js"></script>
+
+ <script type="text/javascript">
+
+  // Setup the funky links
+
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
           
-          $container.imagesLoaded(function(){
-            $container.masonry({
-              itemSelector: '.box',
-              columnWidth: 60,
-              isAnimated: true,
-              cornerStampSelector: '.corner-stamp'
-            });
-          });
-        });
-      });
+          var nodes = document.querySelectorAll( selector );
 
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
 
-    // Setup the funky links
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
 
-    var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-               document.body.style['MozPerspective'] !== undefined;
+  linkify( 'p a' );
 
-    function linkify( selector ) {
-        if( supports3DTransforms ) {
-            
-            var nodes = document.querySelectorAll( selector );
+  // Provide all alternative floats for our images
+  // Also alter the dom to wrap images with captions
 
-            for( var i = 0, len = nodes.length; i < len; i++ ) {
-                var node = nodes[i];
+  $("#content img").wrap('<div class="picture" />');
+  $("#content iframe").wrap('<div class="picture" />');
 
-                if( !node.className || !node.className.match( /roll/g ) ) {
-                    node.className += ' roll';
-                    node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-                }
-            };
-        }
+  var left = true;
+  $(".picture").each(function() {
+    $(this).addClass("img-rounded");
+
+    if (left){
+     $(this).addClass("right");
+      left = false;
     }
+    else {
+      $(this).addClass("left");
+      left = true;
+    }
+  });
 
-    linkify( 'p a' );
+  $(".picture img").each(function() {
+    var display_alt = $(this).attr("alt");
 
-    </script>
+    if (display_alt !== "") {
+      $(this).after('</br>' + display_alt);
+    } 
+  });  
+
+</script>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
