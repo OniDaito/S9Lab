@@ -3,7 +3,7 @@ layout: post
 title: Hackspace Burger Part 2
 ---
 
-Its time to move onto the cheese and buns! Now I'm not a hue fan of cheeseburgers and I hate cheese slices with a passion, rivalled only by my hatred for jelly. I can't stand the stuff, especially because its basically made out of hooves!
+Its time to move onto the cheese and buns! Now I'm not a huge fan of cheeseburgers and I hate cheese slices with a passion, rivalled only by my hatred for jelly. I can't stand the stuff, especially because its basically made out of hooves!
 
 ![Buns! Before the baking!](http://farm8.staticflickr.com/7454/8725901954_d6e729bdf1.jpg)
 
@@ -11,10 +11,11 @@ Its time to move onto the cheese and buns! Now I'm not a hue fan of cheeseburger
 
 
 
-The buns in a burger are key. You need a nice, soft bun but also one that can take a sauce. The worst thing is soggy bread. No-one likes that. In our initial tests we tried soda bread which worked reasonably well when you consider taste, but turned out to be too chewy. Classic burger bread is more like a soft, milk roll.
+The buns in a burger are key. You need a nice, soft bun but also one that can take a sauce. The worst thing is soggy bread. No-one likes that. In our initial tests we tried sough dough bread which worked reasonably well when you consider taste, but turned out to be too chewy. Classic burger bread is more like a soft, milk roll.
 
 
-In the end, Katie came up with the perfect burger. A mustard flavoured, light bap made with Creme Fraiche. We glazed them and added some sesame seeds (of course) and a little 'H' on the top. All that done, into the oven they went!
+In the end, Katie came up with the perfect burger. A mustard flavoured, light bap made with Creme Fraiche. We glazed them and added some sesame seeds (of course) and a little 'H' on the top. All that done, into the oven they went! You can find the recipe [Over here at the Guardian](http://www.guardian.co.uk/lifeandstyle/2013/apr/26/dan-lepard-mustard-buns-burgers-recipes)
+
 ![Blue Cheese and Gelatine](http://farm8.staticflickr.com/7406/8725899632_d41d52419e.jpg)
 
 Although they look quite brown, thats actually just the glaze. They are really soft but look like they could take a lot of sauce. The mustard flavouring is qutie mild but its there. Its a gorgeous bun!
