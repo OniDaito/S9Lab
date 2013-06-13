@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Astrolabe</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,112 +60,68 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Astrolabe</h3>
-    <span class="date">2012-01-18 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+
   
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
 <p>I've always been fascinated by space, the planets, their maps and photos. The Curator is one of only a handful of experts in the world studying medieval scientific instruments and the astrolabe definitely fits that category.</p>
-<h2></h2>
 <p><img alt="Astrolabe" src="http://farm8.staticflickr.com/7011/6716956337_ee19b570ff.jpg" /></p>
-<h3></h3>
 <p>As part of a project I'm working on, I decided to build my own Astrolabes - one from paper and another from perspex, in order to get a feel for their construction. The goal is to create a WebGL version for display. This version is taken from <a href="http://www.thingiverse.com/thing:3271">the one available at Thingiverse</a>.</p>
 <p>Technically, this was quite a challenge. <a href="http://london.hackspace.org.uk">LondonHackspace</a> has a laser cutter but the software for it is awful. In addition it is quite often worn out which is clearly no good. Nevertheless I persevered. </p>
 <p>The format for this file was a Corel Draw CDR. Seriously, do people still use these? Anyway, I needed a program to convert that down. <a href="http://sk1project.org/modules.php?name=Products&amp;product=uniconvertor">Uniconvertor</a> seemed like the thing, but getting it to compile and build on OSX was not an easy job at all. In fact, I had a lot of issues with it. Nevertheless, I converted the CDR into an illustrator file. No dice! CDR to SVG worked a lot better.</p>
 <p>Loading the SVG into Illustrator allowed me to see the various problems and options available. Two front plates were included, one for the southern and one for the northern hemisphere. The first thing was to seperate out all of the various components as each would be etched and cut into a seperate sheet of coloured perspex at 3mm. </p>
-<h2></h2>
 <p>Further conversion from SVG was needed. Inkscape makes a good job of loading the SVG correctly. Exporting from Inkscape to a DXF is the next step, making sure LWPOLYLINE and ROBOMASTER were NOT selected. Finally, for the hackspace laser cutter, importing into QCAD was needed, because the laser cutter software does not support layers. The front plate, rete, pointers and bevel both have cutting and etching sections, so layering (or in our case, colouring) with QCAD was needed.</p>
-<h2></h2>
 <p><img alt="astrolabe" src="http://farm8.staticflickr.com/7158/6716964469_2057259913.jpg" /></p>
-<h3></h3>
 <p>So, after a about 5 programs later and a lot of swearing and bitching, the Astrolabe was ready. There are problems with it. The text has not come out at all and there are a few markings missing. Etching on the backplate is slightly out of alingnment and the rete is incomplete; the star map should appear on it as well. I may use acetate glued to the back of the rete. Also, the outer bevel should be fixed and not move with the rete but the tolerance is too tight and despite my efforts to file down the edges, it still wouldn't move.</p>
 <p>But this is fast prototyping in plastic! Its only the first step.</p>
-    
-   </div>
 
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+ 
 
- <script type="text/javascript">
 
-  // Setup the funky links
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<script src="/js/bootstrap.js"></script>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
-
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
-
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
-
-  linkify( 'p a' );
-
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -174,5 +130,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

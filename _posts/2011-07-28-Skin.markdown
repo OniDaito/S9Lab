@@ -2,31 +2,31 @@
 layout: post
 title: Skin
 ---
-##
+
 I'd like to talk about skin, specifically in two different contexts. Firstly, skin detection followed by realistic skin rendering. I've had to work with both over the last couple of weeks and it's been an interesting challenge.
 
-##
+
 In this video, I'm playing with the Adaptive Skin Detector bundled with OpenCV2. OpenCV is great and is used in an awful lot of projects. I was approached by a friend to see if we could do something with skin detection and facebook. I looked into skin detection and found out that it's quite a hard and somewhat unsolved problem. All of the methods, seemingly, revolve around representing colour in different ways. HSV (Hue, saturation and Value) gives a useful representation that can capture the colours most frequently found in skin by simply specifying 3 binary values; if its less than this then its skin, else it isn't. 
 
-###
+
 The problem with that, as you can see in the video, is that other things that are skin coloured (like my office wall) show up as false positives. Not very handy. Since the adaptive filter wasn't working too well, I decided to have a go myself using the HSV cutoff method using the Python bindings for OpenCV. These come with the source version of OpenCV and once built, can be symlinked into your normal python install. With these setup, I decided to try the technique again.
 
-##
+
 ![Skin Detect](http://farm7.static.flickr.com/6137/5985564558_c4c3edeb4e.jpg) 
 
-##
+
 As you can see, the results are ok but odd lighting and other such things tend to confuse matters. Still, for about 15 lines of Python, it's not so bad.
 
 Skin has recently reared it's head again with another project I've been asked to work on. It involves rendering lots and lots of hands, or rather, the same hand with different parameters to increase the realism. The idea is to hit the uncanny valley to investigate brain workings. Its all for science which is great as theres nothing I like more than tweaking things, and believe me, theres a lot to tweak here.
 
-###
+
 ![Skin in Max](http://farm7.static.flickr.com/6145/5985593084_f40f20553c_z.jpg)
 
-#
+
 So, we bought a model from [Turbosquid](http://www.turbosquid.com) and decided to render it in 3DSMax as a baseline. It looks alright. I don't really know Max that well and Blender is where it's at for me, especially with the scripting side. Porting this model to Blender is a tricky task. An OBJ version was included so I set to. Adding armatures is reasonably easy to do, though very hard to get right. After reading up on subsurface scattering and using Nodes in Blender 2.5, I came up with this...
 
-###
+
 ![Skin in Blender](http://farm7.static.flickr.com/6143/5985031787_e89d7c497f_z.jpg)
 
-#
+
 I think this just about hits the uncanny valley. It's close but not quite right. I suspect there are a lot more variables to tweak and textures to add in order to match max but considering this is my first bash with Blender proper, it's gone alright.

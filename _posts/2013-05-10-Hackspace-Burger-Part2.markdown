@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hackspace Burger Part 2
+introtext: Its time to move onto the cheese and buns! Now I'm not a huge fan of cheeseburgers and I hate cheese slices with a passion, rivalled only by my hatred for jelly. I can't stand the stuff, especially because its basically made out of hooves!
 ---
 
 Its time to move onto the cheese and buns! Now I'm not a huge fan of cheeseburgers and I hate cheese slices with a passion, rivalled only by my hatred for jelly. I can't stand the stuff, especially because its basically made out of hooves!

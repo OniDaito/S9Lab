@@ -6,42 +6,131 @@ idx: home
 
 {% block content %}
 
-
-  <div id="posts">
-   
-
-    <ul id="post_links">
-    {% for post in site.posts %}
+  <div class="row-fluid">
+    <div class ="span12" id="frontthumbs">
      
-      <li>
-        <a href="{{post.url}}">
-        <div class="post_list_item">
-          <div class="title">{{ post.title }}</div>
-          {% if post.strapline %}
-          <div class="lead">{{post.strapline}}</div>
+      {% set foo = 0 %}
+      {% for post in site.posts %}
+        {% if post.category %}
+          {% if post.category == 'work' %}
+            <a class="frontthumblink" href="{{post.url}}" alt="{{ post.title }}">
+              <img class ="frontthumb" src = "/images/strap/small/{{ post.strapimage }}" alt="{{ post.title }}" />
+            </a>
+           {% set foo = foo + 1 %}
           {% endif %}
-        </div></a>
-      </li>
-      
+          {%- if foo >= 12 %}{% break %}{% endif %}
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row-fluid">
+    <div class="span4">
+      <span class="lilhead">Latest Work</span>
+    </div>
+
+    {% set foo = 0 %}
+    {% for post in site.posts %}
+      {% if post.category %}
+        {% if post.category == 'work' %}
+          
+          <div class="span4">
+            <p class="highlight">{{post.title}}</p>
+            <p class="toppad"> {{post.introtext}} </p>
+            <p class="seemore"><a href="{{post.url}}">See more &raquo;</a></p>
+          </div>
+
+         {% set foo = foo + 1 %}
+        {% endif %}
+        {%- if foo >= 2 %}{% break %}{% endif %}
+      {% endif %}
     {% endfor %}
-    </ul>  
+  
 
-    <script type="text/javascript">
-      $(window).load(function(){
-        $(".post_list_item").hover(
-          function () {
-            $(this).removeClass("hover-out");
-            $(this).addClass("hover");
-          },
-          function () {
-            $(this).removeClass("hover");
-            $(this).addClass("hover-out");
-          }
-        );
-      });
+  </div>
+
+  <hr />
+
+  <div class="row-fluid">
+
+    <div class="span4">
+      <span class="lilhead">the studio</span>
+     
+      
+    </div>
+
+    <div class="span4">
+      <p class="toppad">
+      
+      </p>
+    </div>
 
 
+    <div class="span4">
+      <p class="toppad">
+      
+      </p>
+    </div>
 
-    </script>
+  </div>
+
+  
+
+  <hr />
+
+   <div class="row-fluid">
+
+    <div class="span4">
+      <span class="lilhead">Blog</span>
+     
+      
+    </div>
+
+    {% set foo = 0 %}
+      {% for post in site.posts %}
+        {% if not post.category %}
+            <div class="span4">
+              <p class="highlight">{{post.date.strftime('%d-%m-%Y') }} {{post.title}}</p>
+              <p class="toppad">{{post.introtext}} </p>
+              <p><a href="{{post.url}}">See more &raquo;</a></p>
+            </div>
+         {% set foo = foo + 1 %}
+        {% endif %}
+        {%- if foo >= 2 %}{% break %}{% endif %}
+      {% endfor %}
+
+  </div>
+
+  <hr />
+
+   <div class="row-fluid">
+
+    <div class="span4">
+      <span class="lilhead">Experiments</span>      
+    </div>
+
+    <div class="span4">
+   
+      <p class="toppad">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a href="#">View details &raquo;</a></p>
+    </div>
+
+
+    <div class="span4">
+     
+      <p class="toppad">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a href="#">View details &raquo;</a></p>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+     
+    });
+  </script>
 
 {% endblock %}

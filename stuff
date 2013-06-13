@@ -1,0 +1,95 @@
+<canvas id="processing_canvas" data-processing-sources="js/bounce.pde"></canvas>
+<canvas id="animation"></canvas>
+
+ <!--<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a> -->
+
+
+<!-- <script type="text/javascript">
+
+  var requrl = "localhost:8000"
+  var canvas = $('canvas#animation').get(0);
+  
+
+  if (canvas.getContext) {
+      
+    $.getScript('/js/processing-1.4.1.min.js', function() {
+      var script = $.ajax({url:"/s9.pde", async: false}).responseText;
+      processingInstance = new Processing(canvas, script);
+      processingInstance.resize($(window).width() - 5, $(window).height());
+        
+    });     
+
+  }
+  else {
+    html5 = false;
+    // No fancy HTML for you!
+    alert("Your Browser does not support HTML5 - While this is fine, you wont get the extra fancy bits!");
+    
+  }
+
+</script> -->
+
+  {% block content %}{% endblock %}
+
+<script type="text/javascript">
+  // Setup the funky links
+  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
+             document.body.style['MozPerspective'] !== undefined;
+
+  function linkify( selector ) {
+      if( supports3DTransforms ) {
+          
+          var nodes = document.querySelectorAll( selector );
+
+          for( var i = 0, len = nodes.length; i < len; i++ ) {
+              var node = nodes[i];
+
+              if( !node.className || !node.className.match( /roll/g ) ) {
+                  node.className += ' roll';
+                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
+              }
+          };
+      }
+  }
+
+  linkify( 'p a' );
+</script>
+
+ <script src="js/processing.min.js"></script>
+
+ <div id="posts">
+   
+
+    <ul id="post_links">
+    {% for post in site.posts %}
+     
+      <li>
+        <a href="{{post.url}}">
+        <div class="post_list_item">
+          <div class="title">{{ post.title }}</div>
+          {% if post.strapline %}
+          <div class="lead">{{post.strapline}}</div>
+          {% endif %}
+        </div></a>
+      </li>
+      
+    {% endfor %}
+    </ul>  
+
+    <script type="text/javascript">
+      $(window).load(function(){
+        $(".post_list_item").hover(
+          function () {
+            $(this).removeClass("hover-out");
+            $(this).addClass("hover");
+          },
+          function () {
+            $(this).removeClass("hover");
+            $(this).addClass("hover-out");
+          }
+        );
+      });
+
+
+
+    </script>

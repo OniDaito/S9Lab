@@ -3,25 +3,25 @@ layout: post
 title: Animation10
 ---
 
-###
+
 ![animation10](http://4.bp.blogspot.com/_WNXP2eEZSdg/TEWL6f6n1-I/AAAAAAAAAsg/VvmyPNpMsL4/s1600/10.jpg)
 
-##
+
 They are here! The photos have been uploaded and are available to view on the <a href="http://www.cs.manchester.ac.uk/Animation10/">Animation10</a> website. This was my first interactive exhibit and it went down a storm. Plenty of lessons learnt though but for now, have a peek at these great shots from the day.
 
-###
+
 ![animation10](http://1.bp.blogspot.com/_WNXP2eEZSdg/TEWMKBXh9jI/AAAAAAAAAso/y5tZFEZCLkU/s1600/13.jpg)
 
-##
+
 Kids looking slightly confused but intrigued as to what is going on and what all these weird and wonderful things are. Most were totally drawn in by all the strange bits Manchester had managed to rustle up which was great news indeed.
 
 Getting the stickers was really the highlight of the whole thing and being able to attach your own personal videos gave it a real buzz.
 
-###
+
 ![animation10](http://2.bp.blogspot.com/_WNXP2eEZSdg/TEWMdb7xPhI/AAAAAAAAAsw/buQPE-IvJPQ/s1600/17.jpg)
 
-###
+
 ![animation10](http://2.bp.blogspot.com/_WNXP2eEZSdg/TEWMusQMEOI/AAAAAAAAAs4/tFH-PUlefpo/s1600/22a.jpg)
 
-##
+
 Overall, there were plenty of things I'd do differently. The scanners should really be fixed and some kind of conveyor belt would have been a lot cooler. More video effects and a slightly more robust turning knob would have been an improvement but all in all, a huge success. Thanks go out to Toby Howard, Manchester Computer Science, Andy Hudson-Smith, CASA and Chris Speed. Also, Dr John Latham for his invaluable help on the day and Mr Web for setting up the web backend.

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Defeating Firewalls</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,107 +60,66 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Defeating Firewalls</h3>
-    <span class="date">2011-10-05 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+
   
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
 <p>In addition to my own business, I work part-time over at the <a href="http://www.arts.ac.uk">University of the Arts</a> helping out students and making cool things. The problem with such large places are their draconian I.T rules. Of course the inquistive finds ways around these. I have a pressing need for SSH - it's something any tech professional can't do without. You just can't. Port 22 is the most sacred of all ports and having it blocked was a pain.</p>
-<h2></h2>
 <p>It was suggested that I use <a href="https://www.torproject.org/">tor</a> which I've had installed for a while on my Mac. I found a handy little script using the amazing <a href="http://netcat.sourceforge.net/">netcat</a> to move data over Vidalia:</p>
 <pre><code>ssh -o ProxyCommand="nc -X 4 -x localhost:9050 %h %p"
 </code></pre>
 <p>This worked fine but the problem with tor has always been it's speed. Mileage certainly varies but even SSH proved too unresponsive. I needed another option.</p>
-<h2></h2>
-<p>Typically, a second IP is needed to proxy traffic over a port such as 80. The problem is I didn't have a second machine available (my machine at home isn't setup yet for this kind of thing). However, after chatting with the <em>#london-hack-space</em> crew, I was reminded of <a href="http://www.rutschle.net/tech/sslh.shtml">sslh</a>. </p>
+<p>Typically, a second IP is needed to proxy traffic over a port such as 80. The problem is I didn't have a second machine available (my machine at home isn't setup yet for this kind of thing). However, after chatting with the <em>london-hack-space</em> crew, I was reminded of <a href="http://www.rutschle.net/tech/sslh.shtml">sslh</a>. </p>
 <p>sslh provides a proxy service on your webserver to effectively split any traffic arriving on port 443. Now I run a few websites on port 443 so this solution seemed perfect. sslh is included in the debian and ubuntu repositories. The only configuration needed is to swap out the listen addresses in nginx or apache to localhost and place sslh infront, listening on your servers external ip.</p>
 <p>The speed is certainly much greater. Now I can get to work fixing my nginx setup!</p>
-    
-   </div>
 
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+ 
 
- <script type="text/javascript">
 
-  // Setup the funky links
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<script src="/js/bootstrap.js"></script>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
-
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
-
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
-
-  linkify( 'p a' );
-
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -169,5 +128,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Modern OpenGL</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,38 +60,47 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Modern OpenGL</h3>
-    <span class="date">2012-06-15 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+
   
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
 <p>I've spent the last couple of weeks working on some code for The University of Leeds. Rather than actual research, this time has been spent on learning and adapting my code to be more compliant with OpenGL. I've done away with OpenFrameworks. It's now a mixture of <a href="http://pointclouds.org/">PCL</a>, <a href="opencv.willowgarage.com">OpenCV</a>, <a href="http://www.boost.org/">Boost</a>, <a href="http://glm.g-truc.net/">GLM</a> and <a href="http://qt.nokia.com/products/">QT</a>. I'm not so happy about the last one but it works at least. I've effectively, almost recreated Cinder under Linux (well, kind of).</p>
 <p>OpenGL 4.2 is a little different from the OpenGL I learnt at Manchester - quite so. Gone are calls to <em>glBegin</em> and similar. Everything is handled with buffers, shaders and Vertex Array Objects. In addition, geometry shaders become more important. All the calls to push and pop matrices are gone too. In addition, we need to control all our views manually; no more <em>gluLookAt</em> or similar. But where to begin?</p>
 <p>Firstly, we need a way to create a context. A context is essentially a setup or agreement with the underlying windowing system. For example, we kmight want a window with double buffering, alpha blending, full-screen anti-aliasing. There are a few ways of doing this. I've found that <a href="http://freeglut.sourceforge.net/">FreeGlut</a>, <a href="http://www.glfw.org/">GLFW</a> and <a href="http://qt.nokia.com/products/">QT</a> are probably the best. The sad thing is, we are still relying on GLUT in libraries such as <a href="http://www.openframeworks.cc/">OpenFrameworks</a>. <a href="http://libcinder.org/">Cinder</a> uses native extensions which is another good option. Under Linux however, things are trickier as the wxWidgets is quite old. OSX certainly has the prettiest native extensions but we can create quite nice things with the above. </p>
-<h4></h4>
 <p>The problem with most of these libraries is the lack of a decent GUI. QT has been slammed for being old and bloaty. OpenFrameworks has some fairly good GUIs such as <a href="https://github.com/rezaali/ofxUI">ofxUI</a>. Cinder has the <a href="http://www.antisphere.com/Wiki/tools:anttweakbar">AntTweakBar</a>. Some of these have problems with OpenGL 3.3 and above though. There is a nice heavyweight, middleware library called <a href="http://librocket.com/">Rocket</a> that looks interesting.</p>
 <p>So what do we need to do to get a context and draw our triangles? Once we have the context, we need to load the extensions and map these to the libraries in the disk. If we dont do this, all our OpenGL fancy functions will map to NULL. So, we need a library that loads things for us. Fortunately we have <a href="http://glew.sourceforge.net/">GLEW</a>.</p>
 <pre><code>glewExperimental = TRUE;
@@ -102,7 +111,6 @@ if(err!=GLEW_OK) {
 }
 </code></pre>
 <p>This bit of code is really handy and we can't do much without it. At this point we can start our update and drawing loops. Its worth remembering that OpenGL is not thread safe; it's a state machine and the state is tied into the execution thread so make sure all your OpenGL calls are on the same thread.</p>
-<h4></h4>
 <p>Now we have all our extensions, we need to create what is known as a <a href="http://en.wikipedia.org/wiki/Vertex_Buffer_Object">Vertex Buffer</a> Object or VBO. This is a buffer that is created in main memory and then uploaded on to our graphics card. Our shaders are bound to the context and the buffer is sent through the shader and our triangles appear. A VBO looks a little like this:</p>
 <pre><code>vbo = new GLuint[s];
 glGenBuffers(s,vbo);
@@ -112,10 +120,9 @@ glBufferData(GL_ARRAY_BUFFER,
     &amp;mVertices[0], GL_DYNAMIC_DRAW);
 </code></pre>
 <p>So we create a certain number of buffers. We then bind the buffer and then provide it with some data. In this case, mVertices is a std::vector<float> .</p>
-<h4></h4>
 <p>Now, we can add other things here, such as indices, texture co-ordinates, normals, colours and many other things. We can bundle these all together in a saved state called a <a href="http://www.opengl.org/wiki/Vertex_Array_Object">Vertex Array Object</a>. This is a handy piece of syntax that essentially allows us to recall all the buffer settings. </p>
-<p>No, we have a triangle specified but we also need a shader. In fact we need at least 2 and maybe 3. We need a <a href="http://en.wikipedia.org/wiki/Shader#Pixel_shaders">Fragment Shader</a>, a <a href="http://en.wikipedia.org/wiki/Shader#Vertex_shaders">Vertex Shader</a> and we can also add a <a href="http://en.wikipedia.org/wiki/Shader#Geometry_shaders">Geometry Shader</a> as well should we wish. Creating a shader is an interesting topic and there are many cool effects we can do. As my graphics card supports OpenGL4.2, I can write a simple shader like this:</p>
-<pre><code>#version 420 compatibility
+<p>No, we have a triangle specified but we also need a shader. In fact we need at least 2 and maybe 3. We need a <a href="http://en.wikipedia.org/wiki/ShaderPixel_shaders">Fragment Shader</a>, a <a href="http://en.wikipedia.org/wiki/ShaderVertex_shaders">Vertex Shader</a> and we can also add a <a href="http://en.wikipedia.org/wiki/ShaderGeometry_shaders">Geometry Shader</a> as well should we wish. Creating a shader is an interesting topic and there are many cool effects we can do. As my graphics card supports OpenGL4.2, I can write a simple shader like this:</p>
+<pre><code>version 420 compatibility
 out vec4 vertex_position;
 out vec2 texCoord;
 
@@ -132,9 +139,8 @@ void main() {
 }
 </code></pre>
 <p>This is the vertex shader and is probably the more complicated section in this simple example, because it has a <em>layout</em> directive. This basically states that the first buffer to be bound contains positions. The second buffer to be bound isn't used and the third buffer to be bound contains the texture co-ordinates. These indexes reflect the order and position of the vertex buffer objects we bound before.</p>
-<h4></h4>
 <p>Our fragment shader comes next:</p>
-<pre><code>#version 420 compatibility
+<pre><code>version 420 compatibility
 in vec4 vertex_position;
 in vec2 texCoord;
 uniform sampler2DRect mBaseTex;
@@ -144,7 +150,6 @@ void main() {
 }
 </code></pre>
 <p>This simple example just outputs the texel colour for that fragment. Simple enough.</p>
-<h4></h4>
 <p>So, we have a triangle or similar on our screen. How now do we deal with transformations? Remember <em>glRotatef</em> and <em>glTranslatef</em> ? These functions are part of what is called <em>Immediate Mode Rendering</em> . This technique is now old, inefficient and only supported for legacy apps. The reason is largely due to hardware. Its much better to perform graphics processing on the GPU. Take the iPhone and OpenGLES2 for instances. We simply don't have immediate mode rendering anymore. </p>
 <p>We need a second library to work with our matrices and similar. I've used OpenCV in the past but it doesn't have the most intuitive interface sadly. Fortunately, there is an amazing library called <a href="http://glm.g-truc.net/">GLM</a> which I HIGHLY recommend everyone use. It's a great piece of kit. It is a header only library (which I love) and has all the matrix functions you could wish for. For example, here is a simple camera, written in GLM</p>
 <pre><code>mObj-&gt;mHoriz += static_cast&lt;float_t&gt;(dx) * (sSense/static_cast&lt;float_t&gt;(dt));
@@ -163,71 +168,21 @@ up = q_rotate * up;
 mObj-&gt;mViewMatrix = glm::lookAt(direction, glm::vec3(0,0,0),up );
 </code></pre>
 <p>Quite simple eh? mViewMatrix can now be sent to our vertex shader. If you take a closer look at our shader you can see <em>mMVPMatrix</em>. This matrix multiples all the vertices and we end up with our lovely scene.</p>
-<h2></h2>
 <p>This is quite a brief introduction really. I'm still re-learning all of this. I find it quite useful to get my head around the various shaders and buffers because this is exactly how WebGL works (as that is basically OpenGLES2). More to come!</p>
-    
-   </div>
 
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+ 
 
- <script type="text/javascript">
 
-  // Setup the funky links
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<script src="/js/bootstrap.js"></script>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
-
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
-
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
-
-  linkify( 'p a' );
-
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -236,5 +191,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

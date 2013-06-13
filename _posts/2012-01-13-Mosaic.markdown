@@ -3,16 +3,16 @@ layout: post
 title: Mosaic
 ---
 
-##
+
 As is my way, I decided to embark on some intelligent vandalism, only this time, in the digital realm. We have several machines in our lab at Central St Martins and access to these is completely open. There are no student passwords and as such, students here have become lazy and left all their data on the desktop or trash. I decided to write a script to pull off all the data from these machines, find the images and mash them all together in a mosaic. 
 
-###
+
 ![Final Attempt](http://farm8.staticflickr.com/7159/6679523043_d04379dcd7.jpg)
 
-###
+
 At first, I had to grab the images, rename them, resize them and put them in the right sort of place. This is actually a tricky problem because files have spaces, many directory levels and all the rest.
 
-    #!/bin/bash
+    !/bin/bash
     c=0
     find . -type f -name "*.jpg" -o -name "*.jpeg" 
     -o -name "*.JPG" -o -name "*.png" -o -name "*.PNG"
@@ -23,7 +23,7 @@ At first, I had to grab the images, rename them, resize them and put them in the
     do
       fn="$(basename "$FILE")"
       echo "$FILE"
-      en=${fn##*.}
+      en=${fn*.}
       dn="$(dirname "$FILE")"
       cp -- "$FILE" $1/$c.$en
       convert "$1/$c.$en" -resize 64x64 "$1/$c.jpg"
@@ -32,28 +32,28 @@ At first, I had to grab the images, rename them, resize them and put them in the
 
 This worked more or less. There are probably improvements we can make to this but for now, I had around 300,000 images already! Quite a lot to pick from. 
 
-##
+
 Originally, I wanted to use an *off-the-shelf* solution. I found [MacOSaiX](http://web.me.com/knarf/MacOSaiX/Download.html), [Mazaika](http://www.mazaika.com/mac/) and [Mozodojo](http://osxdaily.com/2007/02/02/easily-create-photo-mosaics-with-mozodojo/). The image below is created with Mazaika.
 
 The problem with all of these is they are limited to certain sizes, despite giving good results. I wanted this to be A0 at 300DPI when printed. The problem of course, is that the image sizes are huge. Most programs just can't cope with it. Mazaika is limited in how many you can use unless you buy it (and its too expensive for what it is) and the others can't cope. So, in the end, I decided to write my own.
 
 Using *OpenCV* I came up with two programs that you can [get from my github page](https://github.com/OniDaito/PhotoMosaic). The first goes through the set of images and creates a text file of average RGB values. The second performs the matching based on this database. OpenCV is used throughout to process the images. The result was a program that took a while to run, but wouldn't crash.
 
-###
+
 ![Mazaika first attempt](http://farm8.staticflickr.com/7018/6558676823_9357ac2381.jpg)
 
-###
+
 ![first attempt](http://farm8.staticflickr.com/7146/6653456325_2dec97ee53.jpg)
 
-###
+
 You can see that although it has worked, it's not brilliant. It matches well but I noticed that some areas were just too similar. I adjusted with a small amount of random jitter in the source colour.
 
 After looking around the web, I finally found [OpenMP](http://en.wikipedia.org/wiki/OpenMP) which is a lovely concept, baked right into GCC. It allows you to take control of many cores on your machine, and create threads easily.
 
-    #pragma omp parallel for
+    pragma omp parallel for
 
 This one line basically sped up one of the steps by a factor of 7. Essentially, this task, without local neighbourhood refinement, is all parallel and so, OpenMP was a wonderful find and a free win. Great! 
 
-##
+
 There is more to be done for sure - this sort of large scale processing could be useful for video, or maybe transformed into Scala or similar for parallel processing over many machines?
 

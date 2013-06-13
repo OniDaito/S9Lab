@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Mosaic</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,40 +60,48 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Mosaic</h3>
-    <span class="date">2012-01-13 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+
   
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
 <p>As is my way, I decided to embark on some intelligent vandalism, only this time, in the digital realm. We have several machines in our lab at Central St Martins and access to these is completely open. There are no student passwords and as such, students here have become lazy and left all their data on the desktop or trash. I decided to write a script to pull off all the data from these machines, find the images and mash them all together in a mosaic. </p>
-<h3></h3>
 <p><img alt="Final Attempt" src="http://farm8.staticflickr.com/7159/6679523043_d04379dcd7.jpg" /></p>
-<h3></h3>
 <p>At first, I had to grab the images, rename them, resize them and put them in the right sort of place. This is actually a tricky problem because files have spaces, many directory levels and all the rest.</p>
-<pre><code>#!/bin/bash
+<pre><code>!/bin/bash
 c=0
 find . -type f -name "*.jpg" -o -name "*.jpeg" 
 -o -name "*.JPG" -o -name "*.png" -o -name "*.PNG"
@@ -104,7 +112,7 @@ find . -type f -name "*.jpg" -o -name "*.jpeg"
 do
   fn="$(basename "$FILE")"
   echo "$FILE"
-  en=${fn##*.}
+  en=${fn*.}
   dn="$(dirname "$FILE")"
   cp -- "$FILE" $1/$c.$en
   convert "$1/$c.$en" -resize 64x64 "$1/$c.jpg"
@@ -112,85 +120,31 @@ do
 done
 </code></pre>
 <p>This worked more or less. There are probably improvements we can make to this but for now, I had around 300,000 images already! Quite a lot to pick from. </p>
-<h2></h2>
 <p>Originally, I wanted to use an <em>off-the-shelf</em> solution. I found <a href="http://web.me.com/knarf/MacOSaiX/Download.html">MacOSaiX</a>, <a href="http://www.mazaika.com/mac/">Mazaika</a> and <a href="http://osxdaily.com/2007/02/02/easily-create-photo-mosaics-with-mozodojo/">Mozodojo</a>. The image below is created with Mazaika.</p>
 <p>The problem with all of these is they are limited to certain sizes, despite giving good results. I wanted this to be A0 at 300DPI when printed. The problem of course, is that the image sizes are huge. Most programs just can't cope with it. Mazaika is limited in how many you can use unless you buy it (and its too expensive for what it is) and the others can't cope. So, in the end, I decided to write my own.</p>
 <p>Using <em>OpenCV</em> I came up with two programs that you can <a href="https://github.com/OniDaito/PhotoMosaic">get from my github page</a>. The first goes through the set of images and creates a text file of average RGB values. The second performs the matching based on this database. OpenCV is used throughout to process the images. The result was a program that took a while to run, but wouldn't crash.</p>
-<h3></h3>
 <p><img alt="Mazaika first attempt" src="http://farm8.staticflickr.com/7018/6558676823_9357ac2381.jpg" /></p>
-<h3></h3>
 <p><img alt="first attempt" src="http://farm8.staticflickr.com/7146/6653456325_2dec97ee53.jpg" /></p>
-<h3></h3>
 <p>You can see that although it has worked, it's not brilliant. It matches well but I noticed that some areas were just too similar. I adjusted with a small amount of random jitter in the source colour.</p>
 <p>After looking around the web, I finally found <a href="http://en.wikipedia.org/wiki/OpenMP">OpenMP</a> which is a lovely concept, baked right into GCC. It allows you to take control of many cores on your machine, and create threads easily.</p>
-<pre><code>#pragma omp parallel for
+<pre><code>pragma omp parallel for
 </code></pre>
 <p>This one line basically sped up one of the steps by a factor of 7. Essentially, this task, without local neighbourhood refinement, is all parallel and so, OpenMP was a wonderful find and a free win. Great! </p>
-<h2></h2>
 <p>There is more to be done for sure - this sort of large scale processing could be useful for video, or maybe transformed into Scala or similar for parallel processing over many machines?</p>
-    
-   </div>
 
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+ 
 
- <script type="text/javascript">
 
-  // Setup the funky links
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<script src="/js/bootstrap.js"></script>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
-
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
-
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
-
-  linkify( 'p a' );
-
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -199,5 +153,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

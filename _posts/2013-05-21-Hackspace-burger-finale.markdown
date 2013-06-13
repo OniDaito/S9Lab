@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hackspace Burger Finale
+introtext: The final burger consisted of home-made mustard buns, courtesy of Katie, an east-end sous vide LN2 burger, iceberg lettuce, Bacon Jam and a home made blue cheese slice. Overall the reaction was very positive. I didn't actually get chance to try one sadly but everyone said they were kick-ass!
 ---
 
 So the day arrived, and hackspace burger was born!

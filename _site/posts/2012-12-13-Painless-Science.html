@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Phantom Limb at the Science Museum</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,41 +60,49 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Phantom Limb at the Science Museum</h3>
-    <span class="date">2012-12-13 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+
   
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
 <p>Im quite excited to see this display. At the back of the Science Museum, in the
 Antenna area, there is a new exhibition called
 <a href="http://painlessexhibition.wordpress.com/">Painless</a> that deals with the
 new ways researchers are tackling pain.</p>
-<h2></h2>
 <p><img alt="painless" src="http://farm9.staticflickr.com/8206/8262141878_df665d61b7.jpg" /></p>
-<h2></h2>
 <p>The display features four different projects that cover the spectrum of odd
 pain-relief. My area focused on the phantom-limb syndrome. One delt with how
 pain is and isnt remembered. The third was concerned with spider venom and it's
@@ -105,88 +113,34 @@ and a pair of vuzix glasses. On the far left is a prosthetic arm and on the
 right, a feature object - in this case, a mirror box. This layout
 is repeated for each of the stations. Overall, I felt the layout was quite
 good.</p>
-<h4></h4>
-<p><iframe width="460" height="320" src="http://www.youtube.com/embed/1r-JCQ-4CcU"
-frameborder="0" allowfullscreen></iframe></p>
-<h2></h2>
+<iframe width="460" height="320" src="http://www.youtube.com/embed/1r-JCQ-4CcU"
+frameborder="0" allowfullscreen></iframe>
+
 <p>About half-way through the video, you can see me, with my ubiquitous hat on,
 programming in the background, furiously, on my mac! The day the science museum
 came to the department was quite good fun. It was certainly interesting to see
 a film crew from the otherside.</p>
-<h3></h3>
 <p><img alt="painless" src="http://farm9.staticflickr.com/8059/8262141296_cac2f04048.jpg" /></p>
-<h1></h1>
 <p>Im glad to see some of my work in a museum. I think this is one of the works
 I'm most proud of because it does seem to have some effect in making someone's
 life a little better, physically and measurably, which doesn't happen often in
 computer graphics.</p>
-<h3></h3>
 <p><img alt="painless" src="http://farm9.staticflickr.com/8360/8261072119_9ca4817c0d.jpg" /></p>
-<h2></h2>
 <p>Next time, I'll bring a better camera than my iPhone! :D </p>
-    
-   </div>
 
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+ 
 
- <script type="text/javascript">
 
-  // Setup the funky links
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<script src="/js/bootstrap.js"></script>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
-
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
-
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
-
-  linkify( 'p a' );
-
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -195,5 +149,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

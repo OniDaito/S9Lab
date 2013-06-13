@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>OpenGL Bottlenecks</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,108 +60,64 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>OpenGL Bottlenecks</h3>
-    <span class="date">2011-04-25 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-  
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h4></h4>
-<p><img alt="Profiler for OpenGL" src="http://developer.apple.com/library/mac/documentation/graphicsimaging/conceptual/OpenGL-MacProgGuide/art/opengl_profiler_window.jpg" /></p>
-<h2></h2>
-<p>I must admit, there is a certain amount of bottlenecks and profiling you need to do in order to get a responsive framerate. Im currently involved in my first installation and trying to get the framerate up to something respectable is proving quite difficult. At first, I thought it was all to do with the large textures I was mashing around as I use a lot of FBOs and similar. Turns out, thanks to a little profiling, that its actually all to do with the sheer number of triangles I'm flinging around.</p>
-<h2></h2>
-<p>How did I find this out? Well, its always good to remember Valgrind, Instruments, GDB and all the old programs you used to use at Uni or College or wherever. Nowadays, these have grown into easy to use programs within an IDE. Instruments, for example, is really really good and I love using it. But what about OpenGL?</p>
-<h2></h2>
-<p>Classically, OpenGL seems to be a bit of a black box when it comes to any form of debugging. However, there are two really handy programs available on the Mac (and indeed, on most PCs I'd say).</p>
-<h2></h2>
-<p><a href="http://developer.apple.com/library/mac/#documentation/graphicsimaging/conceptual/OpenGL-MacProgGuide/opengl_performance/opengl_performance.html">Apple has some good information on the OpenGL Profiler</a>. This is pretty nifty and tells you a lot about...well, everytyhing really! It has all the details on your FBOs, the calls that take the most time. It really is excellent.</p>
-<h1></h1>
-<p>In addition, there is also the <a href="http://support.gremedy.com/default.asp?forum.1.41.3">gDebugger</a> which has a few similar features but critically, tells you the amount of vertices and triangles you are shifting. Apparently, my latest piece has at least 1800000 triangles! Eeeep!</p>
-    
-   </div>
-
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+<hr />
 
- <script type="text/javascript">
+<div class="container-fluid" id="content">
 
-  // Setup the funky links
+  
+<p><img alt="Profiler for OpenGL" src="http://developer.apple.com/library/mac/documentation/graphicsimaging/conceptual/OpenGL-MacProgGuide/art/opengl_profiler_window.jpg" /></p>
+<p>I must admit, there is a certain amount of bottlenecks and profiling you need to do in order to get a responsive framerate. Im currently involved in my first installation and trying to get the framerate up to something respectable is proving quite difficult. At first, I thought it was all to do with the large textures I was mashing around as I use a lot of FBOs and similar. Turns out, thanks to a little profiling, that its actually all to do with the sheer number of triangles I'm flinging around.</p>
+<p>How did I find this out? Well, its always good to remember Valgrind, Instruments, GDB and all the old programs you used to use at Uni or College or wherever. Nowadays, these have grown into easy to use programs within an IDE. Instruments, for example, is really really good and I love using it. But what about OpenGL?</p>
+<p>Classically, OpenGL seems to be a bit of a black box when it comes to any form of debugging. However, there are two really handy programs available on the Mac (and indeed, on most PCs I'd say).</p>
+<p><a href="http://developer.apple.com/library/mac/documentation/graphicsimaging/conceptual/OpenGL-MacProgGuide/opengl_performance/opengl_performance.html">Apple has some good information on the OpenGL Profiler</a>. This is pretty nifty and tells you a lot about...well, everytyhing really! It has all the details on your FBOs, the calls that take the most time. It really is excellent.</p>
+<p>In addition, there is also the <a href="http://support.gremedy.com/default.asp?forum.1.41.3">gDebugger</a> which has a few similar features but critically, tells you the amount of vertices and triangles you are shifting. Apparently, my latest piece has at least 1800000 triangles! Eeeep!</p>
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
+</div>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
+ 
 
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
 
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
 
-  linkify( 'p a' );
+<script src="/js/bootstrap.js"></script>
 
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -170,5 +126,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

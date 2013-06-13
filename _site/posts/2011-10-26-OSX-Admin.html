@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>OSX Admin for the lulz</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,34 +60,44 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>OSX Admin for the lulz</h3>
-    <span class="date">2011-10-26 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+
   
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h4></h4>
 <p>At one of my jobs, I've been thrown into the deep end when it comes to sysadmin. I've always done this a little but largely on a Linux based platform. As I'm involved with an Arts University, most of the machines here are Apple based. It's a little bit different in certain cases and there are some fun things already installed. The first is the <em>screen sharing</em> app.</p>
 <pre><code>/System/Library/CoreServices/Screen Sharing.app
 </code></pre>
@@ -96,7 +106,6 @@
 <pre><code>sudo sh -c "/bin/echo -n enabled &gt; 
 /Library/Preferences/com.apple.ScreenSharing.launchd"
 </code></pre>
-<h4></h4>
 <p>So being a Linux guy mostly, I aim for the command line. I have almost 100 Apple iMacs at my command so of course, I got to it. Firstly, SSH keys for password-less login were needed. That means:</p>
 <ol>
 <li>create the .ssh directory</li>
@@ -107,7 +116,6 @@
 <pre><code>nmap -oX results.xml -sn -n 10.130.144.0/24
 </code></pre>
 <p>I love nmap and I need to learn how to use it better. This produces an XML list of the machines that are currently running. Sadly, I could not figure out how to return <em>just</em> the iMacs so there are some Windows XP machines and routers in there too.</p>
-<h4></h4>
 <p>Of course, XML is not so bash friendly (unless you know of cool XML parsing in bash - hit me up if you do). This is where Python comes in:</p>
 <pre><code>from lxml import etree
 f = open(args.iplist,'r')
@@ -118,7 +126,6 @@ for element in root.iter():
     if element.tag.__str__() == 'address':
 </code></pre>
 <p><em>subprocess</em> is still a bit of a dark art to me. The <em>shell=True</em> bit is quite important as it opens a remote shell. Also the <em>-t</em> argument to ssh helps.</p>
-<h4></h4>
 <p>The beauty of OSX is that there are command line versions of various GUI programmers such as:</p>
 <pre><code>sudo installer -pkg /Volumes/Google\ SketchUp\ 8.0\ 
 \(English\)/Google\ SketchUp\ 8.0\ Installer.mpkg -target
@@ -130,23 +137,21 @@ for element in root.iter():
 <pre><code>umount
 </code></pre>
 <p>Just as you would on the <em>nix</em></p>
-<h4></h4>
 <p>The problem with using <em>sudo</em> a lot is that we need to keep typing passwords all the time. You can use the following <em>ENV</em> variable to launch a window in OSX to type this in:</p>
 <pre><code>env = {'SSH_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass', 
 'DISPLAY':'0', 'SUDO_ASKPASS':'/Users/oni/Projects/Scripts/ssh-askpass'}
 </code></pre>
 <p>askpass is a bash program that looks like this:</p>
-<pre><code>#! /bin/sh  
-#
-# An SSH_ASKPASS command for MacOS X 
-#
-# Author: Joseph Mocker, Sun Microsystems
+<pre><code>! /bin/sh
 
-#
-# To use this script:
-#     setenv SSH_ASKPASS "macos-askpass"
-#     setenv DISPLAY ":0"
-#  
+ An SSH_ASKPASS command for MacOS X
+
+ Author: Joseph Mocker, Sun Microsystems
+
+ To use this script:
+     setenv SSH_ASKPASS "macos-askpass"
+     setenv DISPLAY ":0"
+
 TITLE=${MACOS_ASKPASS_TITLE:-"SSH"}  
 DIALOG="display dialog \"$@\" default answer \"\" with title \"$TITLE\""
 DIALOG="$DIALOG with icon caution with hidden answer"  
@@ -159,7 +164,6 @@ else
 fi
 </code></pre>
 <p>Notice the handy <em>osascript -e</em> command. Thats pretty handy as well.</p>
-<h4></h4>
 <p>I believe there is a python library for doing simultaneous installs as well called <a href="http://docs.fabfile.org/en/1.3.1/index.html">Fabric</a> that I reckon will make this go uber-smooth in the future!</p>
 <p>Finally, to remove password entru for sudo, use:</p>
 <pre><code>sudo visudo
@@ -168,69 +172,20 @@ fi
 <pre><code>&lt;username&gt;  ALL=NOPASSWD: ALL
 </code></pre>
 <p>replacing <username> with the user you are using to do all the installs. So far, Im getting there. I will have many devices under my command! It was grossly inefficent but a good way to learn a great many things. Remember the process is what counts people!</p>
-    
-   </div>
 
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+ 
 
- <script type="text/javascript">
 
-  // Setup the funky links
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<script src="/js/bootstrap.js"></script>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
-
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
-
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
-
-  linkify( 'p a' );
-
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -239,5 +194,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

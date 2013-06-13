@@ -2,22 +2,22 @@
 layout: post
 title: Cookbot
 ---
-##
+
 ![cookbot](http://1.bp.blogspot.com/_WNXP2eEZSdg/TTx2cA6WeLI/AAAAAAAAAxI/K71wynEncz0/s320/DSC_5434.jpg)
 
 
 No, don't misread that (although a colleague of mine is working on something more 18 rated). This small bot is the beginning of (hopefully) even tastier meats. Its a hacked slow cooker that can hold a temperature reliably for a long period of time. Its called Sous Vide cooking and I got quite interested in it after seeing <a href="http://www.cookingforgeeks.com/blog/posts/video-of-my-talk-from-next-hope/">The Cooking for Geeks Talk at the Next Hope</a> Conference. It seemed quite interesting.
 
-##
+
 This is probably the most hacking thing I've actually done. All the parts except for the Arduino are second-hand or scavenged. The slow cooker came from eBay,the case was given to me from another hackspace member and the major relay I took from a board that was being thrown out. Thats the main key of the circuit - a large relay capable of switching a mains voltage.
 
-##
+
 To flip that relay we need to send almost 5 volts to it from the arduino. Now these pins are rated at 5 volts and the relay was actually rated at 12V. We got quite lucky we could switch it at all. However we added a transistor and a couple of resistors with a flyback diode and job was a goodun. 
 
 To measure temperature, I used <a href="http://www.earthshineelectronics.com/18-ds18b20-digital-temperature-probe.html">this probe from Earthshine electronics</a>. It works quite well and with a pull up resistor, it works quite well out of the box. There are some Arduino libraries for this which makes it a doddle.
 
-##
+
 ![cookbot](http://1.bp.blogspot.com/_WNXP2eEZSdg/TTx4HjBwmfI/AAAAAAAAAxQ/lAO_AW_lTRU/s320/mychart.png)
 
-#
+
 It looks good and holds reasonably well but will it be good enough for Sous Vide? We shall have to see. I'll do the egg test tomorrow and we shall see :P

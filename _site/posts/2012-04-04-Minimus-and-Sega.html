@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Minimus and Sega</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,114 +60,69 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Minimus and Sega</h3>
-    <span class="date">2012-04-04 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-  
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
-<p>My sister has been a big fan of retro gaming for some time and for her birthday I decided to make a USB convertor for the sega megadrive pad in order to play <a href="http://mamedev.org">MAME</a> the way it's meant to be played.</p>
-<h3></h3>
-<p><img alt="minimus" src="http://farm8.staticflickr.com/7179/7029645643_83b6a3ec75.jpg" /></p>
-<h2></h2>
-<p>Now there were a few ways I could go about this. I saw a <a href="http://dangerousprototypes.com/forum/viewtopic.php?f=56&amp;t=2971">blog post from dangerous prototypes</a> that talked about using a PIC. Now I thought this would be a great time to test out the <a href="http://dangerousprototypes.com/bus-pirate-manual/">Bus Pirate</a> (which is a great little toy) and learn how to program something a little different.</p>
-<p>Sadly, it turns out that this is not the case and you need a special adaptor to program PIC chips. What an utterly stupid thing to have done.</p>
-<h3></h3>
-<p><img alt="minimus" src="http://farm7.staticflickr.com/6211/7029644525_1e4d78eee4.jpg" /></p>
-<h2></h2>
-<p>So instead, I managed to find out about the <a href="http://www.minimususb.com/">minimus</a> thanks largely to <a href="http://imakethin.gs/">Tom Wyatt</a> and <a href="http://jamie.lentin.co.uk/embedded/arcade-joystick/">Jamie Lentin</a>. The minimus is based on everyone's favourite, AVR! Only this particular AVR chip has USB built in! You can pick up a minimus from <a href="http://www.modtraders.co.uk/">Mod Traders</a> and I highly suggest you do. The Minimus is powered by an Atmel AT90USB162. Its an 8-bit chip with 16K of memory. Its not quite as hefty as the Minimus 32 or the later arduino boards but at a fiver you'd be foolish not to buy at least 5. But here is the real clincher.</p>
-<p><a href="http://www.fourwalledcubicle.com/LUFA.php">LUFA</a> is a full USB stack that can run on the minimus. Yes, it means your small device can run as a USB joystick, keyboard or other HID device complete with all the manufacturer lines and data that normal USB devices have. It's a wonderous thing to behold.</p>
-<p>I used Linux and Ubuntu to build and flash my minimus. The instructions are simple enough. I've been fighting AVR and Atmel's corner for a little while now, largelty because of <a href="http://en.wikipedia.org/wiki/GNU_Compiler_Collection#Architectures">AVR-GCC</a> which is brilliant! The best compiler (okokok maybe clang is good too) has support for AVR chips. No need for extra cash spent on a special programming box. Its all done over USB. Brilliant. So forget PIC, it's time is over. From now on, its AVR, FPGAs and maybe a little ARM.</p>
-<h3></h3>
-<p><img alt="minimus" src="http://farm8.staticflickr.com/7229/7029644081_640d6f8fe4.jpg" /></p>
-<h2></h2>
-<p>So, the actual Sega pad itself. Well the trick is to check out the latest version of LUFA and start with Jamie's joystick code, albeit somewhat adapted to having just 4 buttons. There is one major hack though for the SEGA pads. They multiplex the signals. So if you checkout <a href="http://pinouts.ru/Game/genesiscontroller_pinout.shtml">pinouts.ru</a> you can see that there is a select line. What you are not told is that it is up to you to turn this on and off and check which buttons are pressed. So the minimus needs to check as fast as it can, if the various buttons are high when the select line is on and when it isn't on. This took me quite a while to find. Also, the version of LUFA in Jamie's article doesn't work outside of Linux sadly, so for OSX compatibility (and windows for that matter) use the latest from Subversion.</p>
-<p>Finally, I ordered an adaptor from Farnell for the 9 pin Atari style port and laser cut a small perspex box to mount it all in. Some wire, a little soldering and some hot glue later and the final device works a treat! :D One happy sister and a pleased hacker! What can possibly be bad about that? So forget stupid PIC chips. It's AVR all the way baby!</p>
-    
-   </div>
-
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+<hr />
 
- <script type="text/javascript">
+<div class="container-fluid" id="content">
 
-  // Setup the funky links
+  
+<p>My sister has been a big fan of retro gaming for some time and for her birthday I decided to make a USB convertor for the sega megadrive pad in order to play <a href="http://mamedev.org">MAME</a> the way it's meant to be played.</p>
+<p><img alt="minimus" src="http://farm8.staticflickr.com/7179/7029645643_83b6a3ec75.jpg" /></p>
+<p>Now there were a few ways I could go about this. I saw a <a href="http://dangerousprototypes.com/forum/viewtopic.php?f=56&amp;t=2971">blog post from dangerous prototypes</a> that talked about using a PIC. Now I thought this would be a great time to test out the <a href="http://dangerousprototypes.com/bus-pirate-manual/">Bus Pirate</a> (which is a great little toy) and learn how to program something a little different.</p>
+<p>Sadly, it turns out that this is not the case and you need a special adaptor to program PIC chips. What an utterly stupid thing to have done.</p>
+<p><img alt="minimus" src="http://farm7.staticflickr.com/6211/7029644525_1e4d78eee4.jpg" /></p>
+<p>So instead, I managed to find out about the <a href="http://www.minimususb.com/">minimus</a> thanks largely to <a href="http://imakethin.gs/">Tom Wyatt</a> and <a href="http://jamie.lentin.co.uk/embedded/arcade-joystick/">Jamie Lentin</a>. The minimus is based on everyone's favourite, AVR! Only this particular AVR chip has USB built in! You can pick up a minimus from <a href="http://www.modtraders.co.uk/">Mod Traders</a> and I highly suggest you do. The Minimus is powered by an Atmel AT90USB162. Its an 8-bit chip with 16K of memory. Its not quite as hefty as the Minimus 32 or the later arduino boards but at a fiver you'd be foolish not to buy at least 5. But here is the real clincher.</p>
+<p><a href="http://www.fourwalledcubicle.com/LUFA.php">LUFA</a> is a full USB stack that can run on the minimus. Yes, it means your small device can run as a USB joystick, keyboard or other HID device complete with all the manufacturer lines and data that normal USB devices have. It's a wonderous thing to behold.</p>
+<p>I used Linux and Ubuntu to build and flash my minimus. The instructions are simple enough. I've been fighting AVR and Atmel's corner for a little while now, largelty because of <a href="http://en.wikipedia.org/wiki/GNU_Compiler_CollectionArchitectures">AVR-GCC</a> which is brilliant! The best compiler (okokok maybe clang is good too) has support for AVR chips. No need for extra cash spent on a special programming box. Its all done over USB. Brilliant. So forget PIC, it's time is over. From now on, its AVR, FPGAs and maybe a little ARM.</p>
+<p><img alt="minimus" src="http://farm8.staticflickr.com/7229/7029644081_640d6f8fe4.jpg" /></p>
+<p>So, the actual Sega pad itself. Well the trick is to check out the latest version of LUFA and start with Jamie's joystick code, albeit somewhat adapted to having just 4 buttons. There is one major hack though for the SEGA pads. They multiplex the signals. So if you checkout <a href="http://pinouts.ru/Game/genesiscontroller_pinout.shtml">pinouts.ru</a> you can see that there is a select line. What you are not told is that it is up to you to turn this on and off and check which buttons are pressed. So the minimus needs to check as fast as it can, if the various buttons are high when the select line is on and when it isn't on. This took me quite a while to find. Also, the version of LUFA in Jamie's article doesn't work outside of Linux sadly, so for OSX compatibility (and windows for that matter) use the latest from Subversion.</p>
+<p>Finally, I ordered an adaptor from Farnell for the 9 pin Atari style port and laser cut a small perspex box to mount it all in. Some wire, a little soldering and some hot glue later and the final device works a treat! :D One happy sister and a pleased hacker! What can possibly be bad about that? So forget stupid PIC chips. It's AVR all the way baby!</p>
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
+</div>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
+ 
 
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
 
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
 
-  linkify( 'p a' );
+<script src="/js/bootstrap.js"></script>
 
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -176,5 +131,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

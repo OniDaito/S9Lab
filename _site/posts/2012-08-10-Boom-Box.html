@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Animation12 - The Boom Box!</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,112 +60,68 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Animation12 - The Boom Box!</h3>
-    <span class="date">2012-08-10 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-  
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h3></h3>
-<p>As some people might know, I like to take part in things like <a href="http://animation12.cs.manchester.ac.uk/">Animation12</a>. Its a good thing to do for children and it helps make for an interesting day out. This year I wasn't attending but I was asked to create a gadget, a special prop, for the keynote speaker. Simply put, this device had to explode when turned down to one! Filming took place in Jabex Clegg; one of the student drinking dens on the Manchester University campus.</p>
-<h4></h4>
-<p><iframe src="http://player.vimeo.com/video/47105321" width="460" height="320" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> </p>
-<h2></h2>
-<p>The idea was to have a thing that represented the changing of causality. The idea is to show that humans have some give in their perception of cause and effect, shown in the <a href="http://en.wikipedia.org/wiki/Albert_Michotte">Michotte Experiments</a>. With the internet, we are limited to the speed of light, so how does this gap in our perception of causality effect things like games played online? Its the science of the internet and its a great thing to show to kids.</p>
-<h2></h2>
-<p><img alt="Boombox" src="http://farm8.staticflickr.com/7193/7076489781_7e40a2017b.jpg" /></p>
-<h3></h3>
-<p>The design is fairly standard. The trick is to contain the explosion from the pyrotechnics. The base contains a small hole and inside that, there is a tincan that somewhat shapes the blast out and down, away from the user.  The lovely chaps over at <a href="http://www.justfx.co.uk">justfx</a> were quite helpful in providing a set of <em>robotics</em> that work simply by passing a 9V charge through it.</p>
-<p>I use an arduino for the majority of the work, simply because it's faster and contains a decent PWM pin. Nowadays, I'd consider an ATTiny but I had a few Arduino boards lying around, so it seemed the best way. The dial is laser cut and the case comes from an old ammeter that I snaffled from the Hackspace bin.</p>
-<h3></h3>
-<p><img alt="schematic" src="http://farm8.staticflickr.com/7203/7101949535_6537774da4.jpg" /></p>
-<h3></h3>
-<p>This is the basic schematic. I had so many problems with MOSFETS, Transistors and the like; switiching a large current with a smaller one is one of the basics of electronics. It took the help of Philip Eagleton to point out the bleeding obvious - <em>common ground</em>. I feel so embarassed but its something that is taken for granted so you never see it in the textbooks. I went through loads of them in order to get it right. Still, I'll never make that mistake again and in the process, I did learn a few things.</p>
-<p>The first, official, Section9 LTD project. It begins!</p>
-    
-   </div>
-
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+<hr />
 
- <script type="text/javascript">
+<div class="container-fluid" id="content">
 
-  // Setup the funky links
+  
+<p>As some people might know, I like to take part in things like <a href="http://animation12.cs.manchester.ac.uk/">Animation12</a>. Its a good thing to do for children and it helps make for an interesting day out. This year I wasn't attending but I was asked to create a gadget, a special prop, for the keynote speaker. Simply put, this device had to explode when turned down to one! Filming took place in Jabex Clegg; one of the student drinking dens on the Manchester University campus.</p>
+<iframe src="http://player.vimeo.com/video/47105321" width="460" height="320" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<p>The idea was to have a thing that represented the changing of causality. The idea is to show that humans have some give in their perception of cause and effect, shown in the <a href="http://en.wikipedia.org/wiki/Albert_Michotte">Michotte Experiments</a>. With the internet, we are limited to the speed of light, so how does this gap in our perception of causality effect things like games played online? Its the science of the internet and its a great thing to show to kids.</p>
+<p><img alt="Boombox" src="http://farm8.staticflickr.com/7193/7076489781_7e40a2017b.jpg" /></p>
+<p>The design is fairly standard. The trick is to contain the explosion from the pyrotechnics. The base contains a small hole and inside that, there is a tincan that somewhat shapes the blast out and down, away from the user.  The lovely chaps over at <a href="http://www.justfx.co.uk">justfx</a> were quite helpful in providing a set of <em>robotics</em> that work simply by passing a 9V charge through it.</p>
+<p>I use an arduino for the majority of the work, simply because it's faster and contains a decent PWM pin. Nowadays, I'd consider an ATTiny but I had a few Arduino boards lying around, so it seemed the best way. The dial is laser cut and the case comes from an old ammeter that I snaffled from the Hackspace bin.</p>
+<p><img alt="schematic" src="http://farm8.staticflickr.com/7203/7101949535_6537774da4.jpg" /></p>
+<p>This is the basic schematic. I had so many problems with MOSFETS, Transistors and the like; switiching a large current with a smaller one is one of the basics of electronics. It took the help of Philip Eagleton to point out the bleeding obvious - <em>common ground</em>. I feel so embarassed but its something that is taken for granted so you never see it in the textbooks. I went through loads of them in order to get it right. Still, I'll never make that mistake again and in the process, I did learn a few things.</p>
+<p>The first, official, Section9 LTD project. It begins!</p>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
+</div>
 
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
+ 
 
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
 
-  linkify( 'p a' );
 
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
+<script src="/js/bootstrap.js"></script>
 
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -174,5 +130,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Museum of Rural Life Smart Audio Guide</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,131 +60,78 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Museum of Rural Life Smart Audio Guide</h3>
-    <span class="date">2013-04-08 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-  
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
-<p>Have you ever been in a museum and wondered about what you might be missing? Things you might not have seen but want to see? Well, this is a step towards that. A system that tries to figure out other objects you might be interested in.</p>
-<h3></h3>
-<p><img alt="Rural Life" src="http://farm9.staticflickr.com/8530/8598489218_4fbd4774c8.jpg" /></p>
-<h2></h2>
-<p>I was approached by Edinburgh College of Art to come up with a way of providing recommendations for museum visitors. The brief was quite wide but the timescale was extremely small. We only had around two and a half months to install, test and deploy an application. No mean feat, especially since we had quite a few ideas on what to do.</p>
-<h3></h3>
-<p>The victim chosen was the <a href="http://www.nms.ac.uk/our_museums/museum_of_rural_life.aspx">Museum of Rural Life</a> over near Glasgow. The Museum is quite unique in that it has a working farm a large building housing exhibits and a restored farmhouse. After speaking with the museum, we learned they were interested in an audio-guide. This got us thinking - <em>could an audio guide collect the data we need in an unobtrusive manner?</em> The answer to this question is actually, yes it can.</p>
-<h2></h2>
-<p>Vistors generally lie. Its true! Questionnaires are not the best sources of information because people have a tendancy to either not be interested or they want to please. To get a proper sense of what people may or may not like, we need to be as un-obtrusive as possible and actually <em>add value</em> to the experience, in order to keep visitors happy and the experiment fair.</p>
-<p>The approach we took was to create an audioguide that would play when a visitor was interested in a particular object and wanted to learn more. We decided that NFC/RFID and a hand-held device would work well in this setting. We settled on using a <a href="http://www.techradar.com/reviews/phones/mobile-phones/samsung-galaxy-mini-2-review-1099938/review">Galaxy Mini 2</a> as our chosen device, as it was cheap, had a good screen and NFC support built in.</p>
-<h3></h3>
-<p><img alt="Tap me" src="http://farm9.staticflickr.com/8522/8598487760_ea283bba84.jpg" /></p>
-<h2></h2>
-<p>The RFID tags themselves were 13.56Mhz tags, mounted behind stickers on a 3D printed icon of the museum; a hybrid sculpture of various objects the museum displays, designed to stand out. Visitors would hold the phone near the sticker and the audio would start playing, along with written information on the object. </p>
-<h4></h4>
-<p><iframe width="460" height="315" src="http://www.youtube.com/embed/dHiEQRCDwgc" frameborder="0" allowfullscreen></iframe></p>
-<h2></h2>
-<p>At the end of the visit, the user would hand the phone back. At this point, anonymised data is sent back to an awaiting server (AES encrypted to a Node.js / PostGreSQL setup running behind nginx for these interested). From here, we can analyse the data to make predictions. At present, the dataset is quite small but some interesting patterns have already been seen. The items scanned, the ratings these items are given, the start and end times and whether this person is a repeat visitor are all sent for analysis.</p>
-<h2></h2>
-<p>So far, we have attempting clustering items together using distance metrics to see whether similar objects are <em>liked</em> in the same way or scanned at similar times. One approach that seems plausable is to use a Markov chain to predict where a user might want to go next, given what they have just scanned and what kind of vistor they are (repeat and with/without children).</p>
-<h4></h4>
-<p><img alt="Markov Bot" src="http://farm9.staticflickr.com/8095/8588850549_1d452d1c6a_z.jpg" /></p>
-<h3></h3>
-<p>In addition to collecting data on scans and likes, we attempted to actually track the vistor's position inside the museum. This proved quite difficult. I spent a lot of time with <a href="http://techcrunch.com/2013/03/24/apple-acquires-indoor-gps-startup-wifislam-for-20m/">WifiSLAM</a> which didnt work! I have an idea why Apple decided to buy them but I had a terrible time getting accurate results. Sadly, all the data I spent collecting isn't available as the site is now down. </p>
-<p>The Museum of Rural Life has exceptionally bad Wifi coverage - none in fact. The building itself is well shielded from any kind of radio - 3G included. We had a terrible time of collecting data at all since no internet connection was provided. I hacked together a set of routers including 4 <a href="http://dx.com/p/mini-portable-150m-802-11n-wi-fi-wireless-router-green-115931">TP-LINK TL-WR702</a> units, running OpenWRT. I had hoped these would be small enough to be un-obtrusive but provide enough signal strength to act as beacons for WifiSLAM. Though I had reasonable accuracy in my flat at home, no such luck at the museum. I am told that <a href="http://www.indoo.rs">Indoo.rs</a> is a viable alternative but I'm not so sure. Indoor positioning is actually collected by museums already, as you can see from the <a href="http://blog.britishmuseum.org/category/collection/money-gallery/">British Museum's Money Gallery</a> . I see no reason why, in the future, this cannot be collected automatically. The resolution at present isn't great but nevertheless, it should be useful for a whole variety of reasons. <a href="http://windytan.blogspot.co.uk/2013/02/a-science-campus-marauders-map.html">Oona Räisänen's work</a> looks brilliant and I'll be paying close attention to that in the future.</p>
-<h3></h3>
-<p><img alt="Prep" src="http://farm9.staticflickr.com/8385/8598489730_6f0877244a.jpg" /></p>
-<h2></h2>
-<p>Android isn't so bad for this purpose. Locking down the phone proved difficult however. I had to associate the devices with one and only one wifi network and install our applciation as a <em>home</em> application, thus replacing the twLaucher that comes with the phone. Even so, it was possible for a user to enter the process manager and uninstall the application! The one way I found around this was to <em>root</em> the phone. Sadly, this proved unreliable and I only managed it with one phone in the end. I figured the visitors to the museum wouldn't exactly be hacker types, and with no wifi available, there wasn't much use in breaking them anyway.</p>
-<p>One thing Android is terrible at, is Graphics. Maybe this is better on the later versions (we were forced to use Gingerbread due to the phone) but it is unintuitive, bloated and poorly designed in my opinion. When it comes to graphics, style and design, Apple wins hands down. Say what you like about walled gardens. While it may not be ideal, Apple got it right and Android has pretty much copied them. The sheer amount of versions, deprecated methods and devices makes Android a real pain. In this project, I needed SVG support and animation for the interactive maps. I had to implement it with third party libraries, my own hit-testing and a slew of programs to create the correct SVG files. Too much time was wasted here I feel. </p>
-<h2></h2>
-<p><img alt="Fergusson Brown" src="http://farm9.staticflickr.com/8390/8597388203_a7e5930d4c.jpg" /></p>
-<h2></h2>
-<p>Feedback from our visitors was great! Everyone really enjoyed the audioguide and found it gnerally easy to use. Given the amount of time and money spent, I feel we did really well, despite the setbacks given above. There is definitely a lot more scope for experimentation and I feel there will be some interesting applications that will come from this. Museums of the World! You too, can have an audioguide that doesn't cost the earth!</p>
-    
-   </div>
-
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+<hr />
 
- <script type="text/javascript">
+<div class="container-fluid" id="content">
 
-  // Setup the funky links
+  
+<p>Have you ever been in a museum and wondered about what you might be missing? Things you might not have seen but want to see? Well, this is a step towards that. A system that tries to figure out other objects you might be interested in.</p>
+<p><img alt="Rural Life" src="http://farm9.staticflickr.com/8530/8598489218_4fbd4774c8.jpg" /></p>
+<p>I was approached by Edinburgh College of Art to come up with a way of providing recommendations for museum visitors. The brief was quite wide but the timescale was extremely small. We only had around two and a half months to install, test and deploy an application. No mean feat, especially since we had quite a few ideas on what to do.</p>
+<p>The victim chosen was the <a href="http://www.nms.ac.uk/our_museums/museum_of_rural_life.aspx">Museum of Rural Life</a> over near Glasgow. The Museum is quite unique in that it has a working farm a large building housing exhibits and a restored farmhouse. After speaking with the museum, we learned they were interested in an audio-guide. This got us thinking - <em>could an audio guide collect the data we need in an unobtrusive manner?</em> The answer to this question is actually, yes it can.</p>
+<p>Vistors generally lie. Its true! Questionnaires are not the best sources of information because people have a tendancy to either not be interested or they want to please. To get a proper sense of what people may or may not like, we need to be as un-obtrusive as possible and actually <em>add value</em> to the experience, in order to keep visitors happy and the experiment fair.</p>
+<p>The approach we took was to create an audioguide that would play when a visitor was interested in a particular object and wanted to learn more. We decided that NFC/RFID and a hand-held device would work well in this setting. We settled on using a <a href="http://www.techradar.com/reviews/phones/mobile-phones/samsung-galaxy-mini-2-review-1099938/review">Galaxy Mini 2</a> as our chosen device, as it was cheap, had a good screen and NFC support built in.</p>
+<p><img alt="Tap me" src="http://farm9.staticflickr.com/8522/8598487760_ea283bba84.jpg" /></p>
+<p>The RFID tags themselves were 13.56Mhz tags, mounted behind stickers on a 3D printed icon of the museum; a hybrid sculpture of various objects the museum displays, designed to stand out. Visitors would hold the phone near the sticker and the audio would start playing, along with written information on the object. </p>
+<iframe width="460" height="315" src="http://www.youtube.com/embed/dHiEQRCDwgc" frameborder="0" allowfullscreen></iframe>
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<p>At the end of the visit, the user would hand the phone back. At this point, anonymised data is sent back to an awaiting server (AES encrypted to a Node.js / PostGreSQL setup running behind nginx for these interested). From here, we can analyse the data to make predictions. At present, the dataset is quite small but some interesting patterns have already been seen. The items scanned, the ratings these items are given, the start and end times and whether this person is a repeat visitor are all sent for analysis.</p>
+<p>So far, we have attempting clustering items together using distance metrics to see whether similar objects are <em>liked</em> in the same way or scanned at similar times. One approach that seems plausable is to use a Markov chain to predict where a user might want to go next, given what they have just scanned and what kind of vistor they are (repeat and with/without children).</p>
+<p><img alt="Markov Bot" src="http://farm9.staticflickr.com/8095/8588850549_1d452d1c6a_z.jpg" /></p>
+<p>In addition to collecting data on scans and likes, we attempted to actually track the vistor's position inside the museum. This proved quite difficult. I spent a lot of time with <a href="http://techcrunch.com/2013/03/24/apple-acquires-indoor-gps-startup-wifislam-for-20m/">WifiSLAM</a> which didnt work! I have an idea why Apple decided to buy them but I had a terrible time getting accurate results. Sadly, all the data I spent collecting isn't available as the site is now down. </p>
+<p>The Museum of Rural Life has exceptionally bad Wifi coverage - none in fact. The building itself is well shielded from any kind of radio - 3G included. We had a terrible time of collecting data at all since no internet connection was provided. I hacked together a set of routers including 4 <a href="http://dx.com/p/mini-portable-150m-802-11n-wi-fi-wireless-router-green-115931">TP-LINK TL-WR702</a> units, running OpenWRT. I had hoped these would be small enough to be un-obtrusive but provide enough signal strength to act as beacons for WifiSLAM. Though I had reasonable accuracy in my flat at home, no such luck at the museum. I am told that <a href="http://www.indoo.rs">Indoo.rs</a> is a viable alternative but I'm not so sure. Indoor positioning is actually collected by museums already, as you can see from the <a href="http://blog.britishmuseum.org/category/collection/money-gallery/">British Museum's Money Gallery</a> . I see no reason why, in the future, this cannot be collected automatically. The resolution at present isn't great but nevertheless, it should be useful for a whole variety of reasons. <a href="http://windytan.blogspot.co.uk/2013/02/a-science-campus-marauders-map.html">Oona Räisänen's work</a> looks brilliant and I'll be paying close attention to that in the future.</p>
+<p><img alt="Prep" src="http://farm9.staticflickr.com/8385/8598489730_6f0877244a.jpg" /></p>
+<p>Android isn't so bad for this purpose. Locking down the phone proved difficult however. I had to associate the devices with one and only one wifi network and install our applciation as a <em>home</em> application, thus replacing the twLaucher that comes with the phone. Even so, it was possible for a user to enter the process manager and uninstall the application! The one way I found around this was to <em>root</em> the phone. Sadly, this proved unreliable and I only managed it with one phone in the end. I figured the visitors to the museum wouldn't exactly be hacker types, and with no wifi available, there wasn't much use in breaking them anyway.</p>
+<p>One thing Android is terrible at, is Graphics. Maybe this is better on the later versions (we were forced to use Gingerbread due to the phone) but it is unintuitive, bloated and poorly designed in my opinion. When it comes to graphics, style and design, Apple wins hands down. Say what you like about walled gardens. While it may not be ideal, Apple got it right and Android has pretty much copied them. The sheer amount of versions, deprecated methods and devices makes Android a real pain. In this project, I needed SVG support and animation for the interactive maps. I had to implement it with third party libraries, my own hit-testing and a slew of programs to create the correct SVG files. Too much time was wasted here I feel. </p>
+<p><img alt="Fergusson Brown" src="http://farm9.staticflickr.com/8390/8597388203_a7e5930d4c.jpg" /></p>
+<p>Feedback from our visitors was great! Everyone really enjoyed the audioguide and found it gnerally easy to use. Given the amount of time and money spent, I feel we did really well, despite the setbacks given above. There is definitely a lot more scope for experimentation and I feel there will be some interesting applications that will come from this. Museums of the World! You too, can have an audioguide that doesn't cost the earth!</p>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
+</div>
 
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
+ 
 
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
 
-  linkify( 'p a' );
 
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
+<script src="/js/bootstrap.js"></script>
 
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -193,5 +140,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

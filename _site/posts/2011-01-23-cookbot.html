@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Cookbot</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,108 +60,65 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Cookbot</h3>
-    <span class="date">2011-01-23 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-  
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
-<p><img alt="cookbot" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TTx2cA6WeLI/AAAAAAAAAxI/K71wynEncz0/s320/DSC_5434.jpg" /></p>
-<p>No, don't misread that (although a colleague of mine is working on something more 18 rated). This small bot is the beginning of (hopefully) even tastier meats. Its a hacked slow cooker that can hold a temperature reliably for a long period of time. Its called Sous Vide cooking and I got quite interested in it after seeing <a href="http://www.cookingforgeeks.com/blog/posts/video-of-my-talk-from-next-hope/">The Cooking for Geeks Talk at the Next Hope</a> Conference. It seemed quite interesting.</p>
-<h2></h2>
-<p>This is probably the most hacking thing I've actually done. All the parts except for the Arduino are second-hand or scavenged. The slow cooker came from eBay,the case was given to me from another hackspace member and the major relay I took from a board that was being thrown out. Thats the main key of the circuit - a large relay capable of switching a mains voltage.</p>
-<h2></h2>
-<p>To flip that relay we need to send almost 5 volts to it from the arduino. Now these pins are rated at 5 volts and the relay was actually rated at 12V. We got quite lucky we could switch it at all. However we added a transistor and a couple of resistors with a flyback diode and job was a goodun. </p>
-<p>To measure temperature, I used <a href="http://www.earthshineelectronics.com/18-ds18b20-digital-temperature-probe.html">this probe from Earthshine electronics</a>. It works quite well and with a pull up resistor, it works quite well out of the box. There are some Arduino libraries for this which makes it a doddle.</p>
-<h2></h2>
-<p><img alt="cookbot" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TTx4HjBwmfI/AAAAAAAAAxQ/lAO_AW_lTRU/s320/mychart.png" /></p>
-<h1></h1>
-<p>It looks good and holds reasonably well but will it be good enough for Sous Vide? We shall have to see. I'll do the egg test tomorrow and we shall see :P</p>
-    
-   </div>
-
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+<hr />
 
- <script type="text/javascript">
+<div class="container-fluid" id="content">
 
-  // Setup the funky links
+  
+<p><img alt="cookbot" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TTx2cA6WeLI/AAAAAAAAAxI/K71wynEncz0/s320/DSC_5434.jpg" /></p>
+<p>No, don't misread that (although a colleague of mine is working on something more 18 rated). This small bot is the beginning of (hopefully) even tastier meats. Its a hacked slow cooker that can hold a temperature reliably for a long period of time. Its called Sous Vide cooking and I got quite interested in it after seeing <a href="http://www.cookingforgeeks.com/blog/posts/video-of-my-talk-from-next-hope/">The Cooking for Geeks Talk at the Next Hope</a> Conference. It seemed quite interesting.</p>
+<p>This is probably the most hacking thing I've actually done. All the parts except for the Arduino are second-hand or scavenged. The slow cooker came from eBay,the case was given to me from another hackspace member and the major relay I took from a board that was being thrown out. Thats the main key of the circuit - a large relay capable of switching a mains voltage.</p>
+<p>To flip that relay we need to send almost 5 volts to it from the arduino. Now these pins are rated at 5 volts and the relay was actually rated at 12V. We got quite lucky we could switch it at all. However we added a transistor and a couple of resistors with a flyback diode and job was a goodun. </p>
+<p>To measure temperature, I used <a href="http://www.earthshineelectronics.com/18-ds18b20-digital-temperature-probe.html">this probe from Earthshine electronics</a>. It works quite well and with a pull up resistor, it works quite well out of the box. There are some Arduino libraries for this which makes it a doddle.</p>
+<p><img alt="cookbot" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TTx4HjBwmfI/AAAAAAAAAxQ/lAO_AW_lTRU/s320/mychart.png" /></p>
+<p>It looks good and holds reasonably well but will it be good enough for Sous Vide? We shall have to see. I'll do the egg test tomorrow and we shall see :P</p>
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
+</div>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
+ 
 
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
 
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
 
-  linkify( 'p a' );
+<script src="/js/bootstrap.js"></script>
 
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -170,5 +127,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

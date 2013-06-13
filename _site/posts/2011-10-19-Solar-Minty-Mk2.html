@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Solar Minty Boost Mark2</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,111 +60,66 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Solar Minty Boost Mark2</h3>
-    <span class="date">2011-10-19 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-  
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
-<p>I've had this project on the go for a while. I'm a believer in greener energy, especially when it's also convenient. The original solar minty boost was a lash-up between a <a href="http://www.ladyada.net/make/mintyboost/">Minty Boost</a> a <a href="http://www.sparkfun.com/products/726">Sparkfun Lipoly Charger</a> and a solar panel I bought from eBay on a whim. The problem was it wouldn't charge the lipoly battery fully, because <em>and I could be wrong here</em> the average voltage was not enough to actually charge the lipoly. The solar panel doesn't always kick out enough volts to charge the battery, especially in the UK.</p>
-<h3></h3>
-<p><img alt="Solar Mk 2" src="http://farm7.static.flickr.com/6019/6258917818_862b88d4df.jpg" /></p>
-<h2></h2>
-<p>The wonderful Lady Ada has released a new <a href="http://www.adafruit.com/products/390">Solar LiPoly Charger</a> which I figured would suit my needs perfectly. It has a whopping great capacitor on it which figures. Lashing this together with the existing parts resulted in the Mark2</p>
-<h3></h3>
-<p><img alt="solar mk 2" src="http://farm7.static.flickr.com/6156/6258392593_25b5d744cc.jpg" /></p>
-<h2></h2>
-<p>The issue I had was in the housing. I thought about project boxes but couldn't find any. I thought about using the laser cutter to make one but again, it was too bulky and too complicated. I was getting stressed until a chap called Chris at <a href="http://london.hackspace.org.uk">London Hackspace</a> came up with the idea to use an Altoids tin. <em>Classic</em> - It works really well with a few holes cut into it and it looks the part. I added some <a href="http://sugru.com/">sugru</a> around the usb socket and nuts to hold things in place, and also, for the <em>geek cred!</em></p>
-<h3></h3>
-<p><img alt="solar mk2" src="http://farm7.static.flickr.com/6106/6258919500_acc1ec7bae.jpg" /></p>
-<h1></h1>
-<p>This project has cost too much and taken too much time but I've learnt one important lesson - Dont get too blinkered. I stuck it out but if it hadn't been for the suggestion from a friend, I'd have never finished and gotten upset. Sometimes, it's important to take a step back and relax.</p>
-<p>Time for a field trial!</p>
-    
-   </div>
-
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+<hr />
 
- <script type="text/javascript">
+<div class="container-fluid" id="content">
 
-  // Setup the funky links
+  
+<p>I've had this project on the go for a while. I'm a believer in greener energy, especially when it's also convenient. The original solar minty boost was a lash-up between a <a href="http://www.ladyada.net/make/mintyboost/">Minty Boost</a> a <a href="http://www.sparkfun.com/products/726">Sparkfun Lipoly Charger</a> and a solar panel I bought from eBay on a whim. The problem was it wouldn't charge the lipoly battery fully, because <em>and I could be wrong here</em> the average voltage was not enough to actually charge the lipoly. The solar panel doesn't always kick out enough volts to charge the battery, especially in the UK.</p>
+<p><img alt="Solar Mk 2" src="http://farm7.static.flickr.com/6019/6258917818_862b88d4df.jpg" /></p>
+<p>The wonderful Lady Ada has released a new <a href="http://www.adafruit.com/products/390">Solar LiPoly Charger</a> which I figured would suit my needs perfectly. It has a whopping great capacitor on it which figures. Lashing this together with the existing parts resulted in the Mark2</p>
+<p><img alt="solar mk 2" src="http://farm7.static.flickr.com/6156/6258392593_25b5d744cc.jpg" /></p>
+<p>The issue I had was in the housing. I thought about project boxes but couldn't find any. I thought about using the laser cutter to make one but again, it was too bulky and too complicated. I was getting stressed until a chap called Chris at <a href="http://london.hackspace.org.uk">London Hackspace</a> came up with the idea to use an Altoids tin. <em>Classic</em> - It works really well with a few holes cut into it and it looks the part. I added some <a href="http://sugru.com/">sugru</a> around the usb socket and nuts to hold things in place, and also, for the <em>geek cred!</em></p>
+<p><img alt="solar mk2" src="http://farm7.static.flickr.com/6106/6258919500_acc1ec7bae.jpg" /></p>
+<p>This project has cost too much and taken too much time but I've learnt one important lesson - Dont get too blinkered. I stuck it out but if it hadn't been for the suggestion from a friend, I'd have never finished and gotten upset. Sometimes, it's important to take a step back and relax.</p>
+<p>Time for a field trial!</p>
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
+</div>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
+ 
 
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
 
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
 
-  linkify( 'p a' );
+<script src="/js/bootstrap.js"></script>
 
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -173,5 +128,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

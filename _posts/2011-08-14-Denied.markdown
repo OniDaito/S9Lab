@@ -2,23 +2,23 @@
 layout: post
 title: Denied
 ---
-#
+
 [![Denied](http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_m.jpg)](http://saito.section9.co.uk)
 
-##
+
 I've been looking at WebGL and I've been quite excited. The chance to merge design, the web and my favorite graphics library is not something I'd pass up. It's not all roses though because WebGL doesn't have uniform support across browsers. That said, it seems to be gaining ground.
 
-##
+
 [Denied](http://saito.section9.co.uk) is an idea I'd had a while back, ever since I chatted to [Jonty Wareing](http://www.jonty.co.uk) about Geolocating IP addresses. There is a nice library called [Geolitecity](http://www.maxmind.com/app/geolitecity) that I looked into. Jonty gave me a bash script that I modified a little to convert my *hosts.deny* report into something a little more interesting. Turns out most of the evil people after my server are in Beijing. Who'd have thought it?
 
 WebGL is based on OpenGLES2 which deviates from what I've been taught in the past. There are now two flavours or styles of OpenGL; old skool and new skool. Using matrix transforms, drawing vertices for triangles and pushing/popping matrices is all old-hat now. It's all about vertex buffers and passing transforms and lights straight into the shader. With WebGL, there is the added change of loading resources asynchronously over the web. Javascript itself has some interesting abilities that are difficult to replicate in C++; closures, dynamic types and modifiying objects on the fly. These things are very interesting but how can they be used with OpenGL? OpenGL was classically, very strict in its manner; there was one way of doing things. With OpenGLES2 I feel it has become even more strict with offloading things to shaders. How can the interesting, dynamic nature of javascript be applied to this seasoned graphics library?
 
-##
+
 I'm still not sure yet. I decided to get stuck right in and created [saito.js](https://github.com/OniDaito/Saito.js). This little library does some of the heavy lifting such as loading textures, cubemaps, shaders (using jquery ajax calls) and creating basic shapes. So far I'm reasonably pleased thought there is a lot more I need to play with yet. 
 
 Denied is a good example of my style; it's a mashup of many technologies. Firstly, the system runs on [nginx](http://wiki.nginx.org/) with uwsgi on top. This provides python support which reads the data produced by Jonty's script and returns a nice stack of JSON for Jquery to read. On the client side, we have saito.js, a bunch of shaders, jquery, [sylvester](http://sylvester.jcoglan.com/) and some nice HTML5 formatting and support. Every 30 seconds a request is made to nginx for more data, recreating the curves.
 
-##
+
 The lighting is per-pixel with materials and light settings. The background is a quad with an alpha blend applied to give the burst effect. I wanted to try volumetric lighting but I'll leave that for another time. to create the etched surface of the globe, the standard technique of bump mapping was applied, though the tanget creation was a bit tricky. The maps of the planet are from [NASA](http://visibleearth.nasa.gov/) though I couldn't find a bump map with a high enough resolution. I disabled zooming in this instance because it affected the lighting too much and I wanted it to be consistent. The curves have a different shader that alters their alpha value with a sine function. Add some blending to that and you get a pleasing effect.
 
 Overall, I'm really happy with the look. It was pure experimentation and just messing around with colours and values and ideas with the shaders. This works in firefox 5, Chrome standard and Chrome Canary. Im not sure about other browsers yet. Each browser has different support. Firefox seems to run fast but doesn't antialias things correctly. Standard Chrome has antialiasing but tends to eat up CPU too much, whereas Canary seems to have all the positives and none of the negatives. Hopefully we'll see some standardisation soon. 

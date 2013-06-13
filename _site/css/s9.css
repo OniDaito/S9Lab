@@ -1,386 +1,120 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
+/*!
+ * S9 CSS
+ */
 
-html, body {
-  height: 100%;
+ /* Top Bar Styles - overrides */
+
+
+.navbar {
+  right: 0;
+  left: 0;
+  top:0;
+  z-index: 1030;
+  margin-bottom: 0;
 }
 
-
-body {
-  padding-bottom: 40px;
-  color: #3a3a3a;
-
-}
-
-#processing_canvas {
-  width: 100%;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  position:fixed;
-}
-
-@font-face {
-  font-family: 'nevisBold';
-  src: url('css/nevis-webfont.eot');
-  src: local('☺'), url('nevis-webfont.woff') format('woff'), url('nevis-webfont.ttf') format('truetype'), url('nevis-webfont.svg#webfont') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.nevis-Bold {
-    font-weight: normal; 
-    font-style: normal; 
-    line-height:normal; 
-    font-family: 'nevisBold', sans-serif;
-}
-
-@font-face {
-  font-family: SourceSans;
-  src: url("SourceSansPro-Regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: SourceSansBold;
-  src: url("SourceSansPro-Bold.otf") format("opentype");
-}
-
-@font-face {
-  font-family: SourceSansBoldIt;
-  src: url("SourceSansPro-BoldIt.otf") format("opentype");
-}
-
-@font-face {
-  font-family: SourceSansLight;
-  src: url("SourceSansPro-Light.otf") format("opentype");
-}
-
-@font-face {
-  font-family: AftaSerifThin-Regular;
-  src: url("AftaSerifThin-Regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: AftaSerifThin-Italic;
-  src: url("AftaSerifThin-Italic.otf") format("opentype");
-}
-
-
-p:before {
-  content: "";
-  min-width: 20em;
-  width: 20em;
-  display: block;
-  overflow: hidden;
-  /* For Demonstration */
-  /*border: 1px solid green;*/
-}
-
-
-#content iframe {
-  float: left;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  margin-right: 5px;
-  clear: right;
-}
-
-p:first-letter { 
-   font-size: 1.2em;
-   line-height: 0;  /* The line-height must be adjusted to compensate for the increased font size, otherwise the leading for the overall line is disrupted. I find that any values below 0.4 work. */
-}
-
-
-h3 {
-  font-family: 'Allan', Helvetica, Arial, sans-serif;
-  font-size: 64px;
-  line-height: 75px;
-  text-shadow: 0px 1px 0px rgba(255,255,255,.5); /* 50% white from bottom */
-}
- 
-p {
-    font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
-    font-size: 1.3em;
-    line-height: 1.4em;
-}
-
-
-.picture {
-  background-color: #F9F9F9;
-  border: 1px solid #CCCCCC; padding: 5px;
-  font: 11px/1.4em Arial, sans-serif;
-}
-
-.picture img { border: 1px solid #CCCCCC; margin-bottom: 3px; }
-
-.right { margin: 0.5em 0pt 1.0em 1.8em; float:right;  }
-.left { margin: 0.5em 1.8em 1.0em 0; float:left;  }
-
-.source-sans-reg {
-  font-weight: normal; 
-  font-style: normal; 
-  line-height:normal; 
-  font-family: 'SourceSans', sans-serif;
-}
-
-
-pre {
-  float:none;
-  display: block;
-  clear: both;
-}
-
-.brand img {
-  padding: 0px;
-  margin: 0px;
-}
-
-#main {
- /* min-height: 100%;*/
-  z-index: 4;
-  position: relative;
-}
-
-
-
-/* Main Page Links and Lists
------------------------------ */
-#post_links {
-  list-style-type: none;
-  display: inline;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#post_links li {
-  display: inline;
-  margin-left: 12px;
-  margin-top: 18px;
-}
-
-.post_list_item {
-  display: inline-block;
-  padding: 12px;
-  border: 1px solid #CCCCCC; padding: 5px;
-  margin: 4px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+.navbar .brand {
+  padding: 10px 10px 10px ;
+  margin-left: -20px;
+  
+  bottom: 0px;
+  color: black;
+  text-shadow: none;
   
 }
 
-.hover{
-   background-color: #CCCCCC;
-     -webkit-transition: background-color 500ms linear;
-     -moz-transition: background-color 500ms linear;
-     -o-transition: background-color 500ms linear;
-     -ms-transition: background-color 500ms linear;
-     transition: background-color 500ms linear;
+#companyname {
+  margin-top: 65px;
+  font-size: 18px;
+  font-family: 'Anaheim', sans-serif;
+  /*text-transform: uppercase;*/
 }
 
-.hover-out{
-   background-color: none;
-     -webkit-transition: background-color 500ms linear;
-     -moz-transition: background-color 500ms linear;
-     -o-transition: background-color 500ms linear;
-     -ms-transition: background-color 500ms linear;
-     transition: background-color 500ms linear;
+
+.navbar-inner {
+  background: white;
+  background-image: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  border-left: none;
+  border-right: none;
+  border-top: none;
 }
 
-.post_list_item {
-  text-decoration: none;
-  color: #333333;
+
+
+.navbar .nav {
+  float: right;
 }
 
-.post_list_item {
-  text-decoration: none;
-  color: #333333;
+.navbar .nav > li {
+  float: right;
+  font-family: 'Anaheim', sans-serif;
+  font-size: 18px;
 }
 
-.post_list_item .title {
-  display: :inline-block;
-  text-decoration: none;
-  font-family: 'Allan', Helvetica, Arial, sans-serif;
-  font-size: 24px;
+.navbar .nav > li > a{
+  text-shadow: none;
+  color: black;
 }
 
-.lead {
-  display: :inline-block;
-  font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
-  margin: 0px;
+.navbar .nav > .active > a{
+  color: #555555;
+  text-decoration: underline;
+  background-color: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.navbar .nav > .active > a:hover{
+  color: #555555;
+  text-decoration: underline;
+  background-color: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+
+/* Paragraphs and intro texts */
+
+p {
+  font-family: 'Abel', sans-serif;
   font-size: 14px;
-  line-height: 16px;
-  text-align: right;
-  color:  rgb(33,33,33);
-  /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
 }
 
-
-.date {
-  display: :inline;
-  font-family: 'Goudy Bookletter 1911', Georgia, Times, serif;
-  font-size: 24px;
-  line-height: 16px;
-  color:  rgb(33,33,33);
-  /*text-shadow: 0 1px 1px rgba(0,0,0,.4);*/
+p.highlight {
+  font-family: 'Anaheim', sans-serif;
+  font-size: 16px;
 }
 
-
-/* ROLL
------------------------------ */
-
-a {
-    text-decoration: none;
-    color: hsl(206, 80%, 50%);
+.toppad {
+  margin-top: 21px;
 }
 
-.roll {
-    display: inline-block;
-    overflow: hidden;
-
-    vertical-align: top;
-
-    -webkit-perspective: 400px;
-       -moz-perspective: 400px;
-
-    -webkit-perspective-origin: 50% 50%;
-       -moz-perspective-origin: 50% 50%;
+.lilhead {
+  font-family: 'Anaheim', sans-serif;
+  font-size: 20px;
+  background-color: #e5e5e5;
 }
 
-.roll span {
-    display: block;
-    position: relative;
-    padding: 0 2px;
+/* Front Thumbnail Images */
 
-    -webkit-transition: all 400ms ease;
-       -moz-transition: all 400ms ease;
-    
-    -webkit-transform-origin: 50% 0%;
-       -moz-transform-origin: 50% 0%;
-    
-    -webkit-transform-style: preserve-3d;
-       -moz-transform-style: preserve-3d;
+.frontthumb {
+  display: inline-block;
+  width: 15.4%;
+  padding: 4px;
+  min-width: 112px;
 }
 
-.roll:hover span {
-    background: #111;
-
-    -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
-       -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
-}
-
-.roll span:after {
-    content: attr(data-title);
-
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0 2px;
-
-    color: #fff;
-    background: hsl(206, 80%, 30%);
-
-    -webkit-transform-origin: 50% 0%;
-       -moz-transform-origin: 50% 0%;
-
-    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-       -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
-}
-
-
-#animation {
-  position: absolute;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  z-index: 1;
-  image-rendering: optimizequality !important;
-}
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (max-width: 979px) {
-
-  .container.navbar-wrapper {
-    margin-bottom: 0;
-    width: auto;
-  }
-  .navbar-inner {
-    border-radius: 0;
-    margin-top: -8px 0;
-  }
-
-  .carousel .item {
-    height: 500px;
-  }
-  .carousel img {
-    width: auto;
-    height: 500px;
-  }
-
-  .featurette {
-    height: auto;
-    padding: 0;
-  }
-  .featurette-image.pull-left,
-  .featurette-image.pull-right {
-    display: block;
-    float: none;
-    max-width: 40%;
-    margin: 0 auto 20px;
-  }
-}
-
-
-@media (max-width: 767px) {
-
-  /*.navbar-inner {
-    margin: -20px;
-  }
-
-  .carousel {
-    margin-left: -20px;
-    margin-right: -20px;
-  }*/
-
-  .carousel .container {
-
-  }
-  .carousel .item {
-    height: 300px;
-  }
-  .carousel img {
-    height: 300px;
-  }
-  .carousel-caption {
-    width: 65%;
-    padding: 0 70px;
-    margin-top: 100px;
-  }
-  .carousel-caption h1 {
-    font-size: 30px;
-  }
-  .carousel-caption .lead,
-  .carousel-caption .btn {
-    font-size: 18px;
-  }
-
-  .marketing .span4 + .span4 {
-    margin-top: 40px;
-  }
-
-  .featurette-heading {
-    font-size: 30px;
-  }
-  .featurette .lead {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-
+#frontthumbs > a:hover {
+  text-decoration: none;
 }

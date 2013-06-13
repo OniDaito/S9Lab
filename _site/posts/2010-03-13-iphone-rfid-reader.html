@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>iPhone RFID Reader</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,36 +60,46 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>iPhone RFID Reader</h3>
-    <span class="date">2010-03-13 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+
   
-    <div style="clear:both"></div>
+<iframe src="http://player.vimeo.com/video/10133832" width="460" height="280" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
-    <div id="content">
-      
-<h4></h4>
-<p><iframe src="http://player.vimeo.com/video/10133832" width="460" height="280" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></p>
-<h3></h3>
 <p>The idea behind this project is to see what the iPhone's serial is capable of and to try and have a little fun with RFID along the way. This reader works with the low frequency (125Khz) tags but I have a half working version for MiFARE Hi-Frequency as well.</p>
 <p>For this project you will need:
 <ol>
@@ -108,9 +118,7 @@
 <li>A box to put it all in.</li>
 </ol></p>
 <p>I should point out that I don't work for Sparkfun.</p>
-<h3></h3>
 <p><img alt="rfid" src="http://4.bp.blogspot.com/_WNXP2eEZSdg/S5uZOisQ0MI/AAAAAAAAAoA/NwIthN0PcYY/s320/IMG_0194.JPG" /></p>
-<h3></h3>
 <p>The first stage is the wiring of the ID-12. You should attach it to the breakout board then attach a series of IC Sockets to the board so you can easily add and remove your wires later on. Wiring up the ID-12 is quite easy. This particular unit does need to be set to ASCII  output however. To do this you need to solder:
 <ul><br />
 <li>A Red wire from 5V (11) to /RST (2)</li>
@@ -122,18 +130,12 @@ This sets up the ID-12 into ASCII mode. From here we need simply need to solder 
 <li>GND to GND (Pin 1)</li>
 <li>RX-I to D0 (Pin 9)</li>
 </ul></p>
-<h3></h3>
 <p><img alt="rfid" src="http://2.bp.blogspot.com/_WNXP2eEZSdg/S5uZOEhsNeI/AAAAAAAAAn4/VBBipUYHjw4/s320/IMG_0193.JPG" /></p>
-<h3></h3>
 <p>If this is confusing, there is an excellent write-up <a href="http://www.instructables.com/id/Weather-proof-Bluetooth-capable-RFID-reader/">Here</a></p>
 <p>The next step is to wire up the Logic Level Convertor. This is needed because the iPhone works at TTL3.3V whereas the ID12 runs at TTL5V. We need  to step up and down. This little board is quite easy to use. The Schematic and Instructions can be found <a href="http://www.sparkfun.com/datasheets/BreakoutBoards/Level-Converter-v10.pdf">in this PDF</a>. The key is to Solder the ID12's 5V, GRND and signal lines to the first channel on the High Voltage Side of the Board. </p>
-<h3></h3>
 <p><img alt="rfid" src="http://2.bp.blogspot.com/_WNXP2eEZSdg/S5uZN4lZ3nI/AAAAAAAAAnw/XEEzpWJfgcA/s1600-h/IMG_0192.JPG" /></p>
-<h2></h2>
 <p>At this point, you can wire in the switch and the battery box into the High Voltage side of the circuit. Wire the positive of the battery into the switch and out of the switch into the logic board and the ID12. Wire the battery's ground wire into the GND of the logic level board and the ID12.</p>
-<h3></h3>
 <p><img alt="rfid" src="http://4.bp.blogspot.com/_WNXP2eEZSdg/S5uZOyAjYZI/AAAAAAAAAoI/iDgYkTy65Yo/s1600-h/IMG_0195.JPG" /></p>
-<h2></h2>
 <p>The next step is to work on the iPhone's connection. You should make yourself familiar with the connector. If you use a breakout board, this is quite easy. However, if you are using  an iPhone cable, things are a little trickier. Firstly, you should look at <a href="http://pinouts.ru/PortableDevices/ipod_pinout.shtml">Pinout.ru's iPod Guide</a> that lists the ports we need. We are aiming to use the iPhone's built in serial connection. The pins we need are:</p>
 <ul>
 <li>Pin 1 for GND</li>
@@ -142,19 +144,15 @@ This sets up the ID-12 into ASCII mode. From here we need simply need to solder 
 </ul>
 
 <p>We could use pin 12 for TX as well but the ID-12 doesn't need data sent to it and I have had significant problems in sending data FROM the iPhone. If anyone knows why this is so, do let me know. Regardless, the iPhone only needs to receive and this is well because these two pins are very close together.</p>
-<h3></h3>
 <p><img alt="rfid" src="http://2.bp.blogspot.com/_WNXP2eEZSdg/S5uhRnr66CI/AAAAAAAAAoY/_WuR7bLHYj8/s1600-h/IMG_0199.JPG" /></p>
-<h2></h2>
 <p>First, either solder your wires into the breakout board or open up the iPhone cable. To open a genuine iPhone cable, you need to run a thin blade around the inside of the plastic case.  A small amount of force should release the clips on either side and then pulling on the metal plug with a pair of pliers should do the job. Be careful at this stage though as its  VERY HANDY TO KEEP THE PLUG INTACT. </p>
 <p>Taking apart the plug should reveal 4 cables. A genuine iPhone cable will have a sheath and small gold connectors. Cheaper cables will be glued in place and this can wreak the project. You dont want glue inside the unused sockets and the less force you need to remove the cables, the better.</p>
 <p>Removing the small plugs requires a lot of force and yet, you MUST be as delicate as possible. The connectors are attached to the wires with a very small amount of solder. If the connectors snap they cannot be used and if the solder snaps, you will need to solder them again and if you use too much, the plugs will not fit back into their sockets. Also, you are limited on how many times you can place the plugs as the sockets will wear out. I personally went through 5 cables with this method; two of them were genuine. The geunine ones wear much less.</p>
-<h3></h3>
 <p><img alt="rfid" src="http://3.bp.blogspot.com/_WNXP2eEZSdg/S5uhR6vCU3I/AAAAAAAAAog/X_yiQNPtu_o/s1600-h/IMG_0200.JPG" /></p>
 <p>Place the black wire into the ground. You can decide which colour goes into which socket. I chose green for Pin12, white for Pin13 and Red for Pin18. Remember which is which!</p>
 <p>The next step is to wire the cable into the LOW level side of the Logic level board. Again, you need only solder the Live, RX and GND but you may do the TX as well. The iPhone should be receiving from the TX-O pin on the board whereas the ID-12 is sending to the TX-I on the board. It can be useful to practice this on a breadboard first to make sure you get it right.</p>
 <p>Once this is all soldered together, you can place it all in a box and begin testing. I used a custom built FTDI USB TTL adaptor and read the the values being sent with my laptop.</p>
 <p>The next step is to design the software. Jailbroken software is really another topic all together but there are some interesting choices. In the main, I followed the advice given on <a href="http://hcgilje.wordpress.com/2010/02/15/iphone-serial-communication/">This Page</a> which talks about <a href="http://www.openframeworks.cc/">OpenFrameworks</a> and iPhone Serial. As I'm a big fan of OpenFrameworks, I chose this approach. However, I didn't use the serial class mentioned in this blog.</p>
-<h3></h3>
 <p>I had previously written some standard C++ to open serial ports for the ID-12 specifically and use it. As this worked, I decided simply to transplant it into a simple OF example. Compiling OpenFrameworks for the iPhone requires signing in order to run on a jailbroken device. There is a small program called <a href="http://www.saurik.com/id/8">LDID</a> by Saurik who is the definitive source for all iPhone development.</p>
 <p>To generate a working program you need to:
 <ol>
@@ -169,73 +167,22 @@ In short, build with Xcode and use a fake signature as written on Saurik's site.
 <p>Serial Communication on the iPhone has been covered very well on <a href="http://devdot.wikispaces.com/Iphone+Serial+Port+Tutorial">DevDots</a> page. The basic C/C++ code there
 works quite well for testing if you comment out the sending code.</p>
 <p>So now you have the ability to read RFID Tags. But you need some tags to read. For me, I quite like the idea of home automation and similar. There was an odd trend of implanting glass RFID tags into the flesh near your thumb but why bother with that when you can simply make an RFID earring? That way, you can remove it if need be or swap out the actual tag.</p>
-<h3></h3>
 <p><img alt="rfid" src="http://3.bp.blogspot.com/_WNXP2eEZSdg/S5uZV3xK4jI/AAAAAAAAAoQ/Z5Be4iI0x4s/s1600-h/IMG_0196.JPG" /></p>
-<h3></h3>
 <p><img alt="rfid" src="http://4.bp.blogspot.com/_WNXP2eEZSdg/S5uZNwVPgyI/AAAAAAAAAno/GvzTy-02ZS8/s1600-h/earing-in.jpg" /></p>
-    
-   </div>
 
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+ 
 
- <script type="text/javascript">
 
-  // Setup the funky links
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<script src="/js/bootstrap.js"></script>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
-
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
-
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
-
-  linkify( 'p a' );
-
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -244,5 +191,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+

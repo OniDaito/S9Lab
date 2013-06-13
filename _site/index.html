@@ -15,6 +15,10 @@
 	<meta name="author" content="Benjamin Blundell" />
   <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
@@ -56,1033 +60,414 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-  <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<canvas id="processing_canvas" data-processing-sources="js/bounce.pde"></canvas>
-<canvas id="animation"></canvas>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-<div id="main">
-<div class="container">
-         
-  
-
-
-  <div id="posts">
-   
-
-    <ul id="post_links">
-    
-     
-      <li>
-        <a href="/posts/2013-05-21-Hackspace-burger-finale.html">
-        <div class="post_list_item">
-          <div class="title">Hackspace Burger Finale</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2013-05-10-Hackspace-Burger-Part2.html">
-        <div class="post_list_item">
-          <div class="title">Hackspace Burger Part 2</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2013-04-28-Hackspace-Burger-Part1.html">
-        <div class="post_list_item">
-          <div class="title">Hackspace Burger Part 1</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2013-04-08-Museum-of-Rural-Life.html">
-        <div class="post_list_item">
-          <div class="title">Museum of Rural Life Smart Audio Guide</div>
-          
-          <div class="lead">An automated recommendation system for museums</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2013-03-04-Timelapse.html">
-        <div class="post_list_item">
-          <div class="title">Linear Rail Time Lapse</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2013-02-18-BritishMuseumCoins.html">
-        <div class="post_list_item">
-          <div class="title">Coin Detection at the British Museum</div>
-          
-          <div class="lead">Using OpenCV to extract, clean and stitch coins</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2013-02-11-California-Time-Lapse.html">
-        <div class="post_list_item">
-          <div class="title">California Time-lapse</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2013-01-09-Computer-History.html">
-        <div class="post_list_item">
-          <div class="title">Computing History Records and Preservation</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-12-21-edX.html">
-        <div class="post_list_item">
-          <div class="title">edX</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-12-13-Painless-Science.html">
-        <div class="post_list_item">
-          <div class="title">Phantom Limb at the Science Museum</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">
-        <div class="post_list_item">
-          <div class="title">The Carp and the Seagull</div>
-          
-          <div class="lead">An interactive movie, in WebGL, with Nexus Interactive</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-11-05-Leaving-Google.html">
-        <div class="post_list_item">
-          <div class="title">Leaving Google</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-10-16-Raspberry-Pi.html">
-        <div class="post_list_item">
-          <div class="title">The Obligatory RaspberryPi Post</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-09-04-Touch-Wall.html">
-        <div class="post_list_item">
-          <div class="title">A Touch Wall under the M1 Motorway</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-08-17-Organ-Reconstruction.html">
-        <div class="post_list_item">
-          <div class="title">3D Organ Reconstruction</div>
-          
-          <div class="lead">Working with the University of Leeds on 3D reconstruction with computer vision.</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-08-10-Boom-Box.html">
-        <div class="post_list_item">
-          <div class="title">Animation12 - The Boom Box!</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-08-01-Touch-Wall.html">
-        <div class="post_list_item">
-          <div class="title">Building a Vertical Touch Wall</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-07-25-Graphics-Hackspace.html">
-        <div class="post_list_item">
-          <div class="title">Graphics Hackspace</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-07-02-User-Interfaces-in-OpenGL.html">
-        <div class="post_list_item">
-          <div class="title">User Interfaces in OpenGL</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-06-15-Modern-Opengl.html">
-        <div class="post_list_item">
-          <div class="title">Modern OpenGL</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-06-05-Curator-Coin.html">
-        <div class="post_list_item">
-          <div class="title">The Curator's Coin</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-05-18-Coin-Vision.html">
-        <div class="post_list_item">
-          <div class="title">Coin Vision</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-05-08-StereoVision.html">
-        <div class="post_list_item">
-          <div class="title">Stereo Vision</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-04-27-BSides.html">
-        <div class="post_list_item">
-          <div class="title">BSides London</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-04-22-BoomBox.html">
-        <div class="post_list_item">
-          <div class="title">Boom Box</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-04-16-Waistcoat.html">
-        <div class="post_list_item">
-          <div class="title">Custom Space Invader Waistcoat</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-04-04-Minimus-and-Sega.html">
-        <div class="post_list_item">
-          <div class="title">Minimus and Sega</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-04-02-New-Lab.html">
-        <div class="post_list_item">
-          <div class="title">New Lab</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-03-21-Resonate.html">
-        <div class="post_list_item">
-          <div class="title">Resonate Festival</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-03-10-Spying.html">
-        <div class="post_list_item">
-          <div class="title">Spying and starting services with OSX</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-02-3-Phantom-Limb.html">
-        <div class="post_list_item">
-          <div class="title">Phantom Limb Pain</div>
-          
-          <div class="lead">Investigating Phantom Limb Pain with the Kinect and VR</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-01-18-Astrolabe.html">
-        <div class="post_list_item">
-          <div class="title">Astrolabe</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-01-13-Mosaic.html">
-        <div class="post_list_item">
-          <div class="title">Mosaic</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2012-01-04-EL-Tape.html">
-        <div class="post_list_item">
-          <div class="title">EL-Tape Mesh Top</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-12-28-Lion-and-Linux-Together.html">
-        <div class="post_list_item">
-          <div class="title">Linux and Lion together at last (almost)</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-12-21-Super-History-Girl-Necklace.html">
-        <div class="post_list_item">
-          <div class="title">Super History Girl Necklace</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-12-05-Lowry-to-Life.html">
-        <div class="post_list_item">
-          <div class="title">Lowry to Life</div>
-          
-          <div class="lead">An outdoor installation, celebrating LS Lowry</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-11-30-Numismatic.html">
-        <div class="post_list_item">
-          <div class="title">Numismatic Fun</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-11-21-Bag-of-Holding-plus-10.html">
-        <div class="post_list_item">
-          <div class="title">Bag of Holding +10</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">
-        <div class="post_list_item">
-          <div class="title">Smiling-Film-Student-Geekery</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-11-02-Mongo-Fun.html">
-        <div class="post_list_item">
-          <div class="title">MongoDB Fun with Cinder</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-10-26-OSX-Admin.html">
-        <div class="post_list_item">
-          <div class="title">OSX Admin for the lulz</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-10-19-Solar-Minty-Mk2.html">
-        <div class="post_list_item">
-          <div class="title">Solar Minty Boost Mark2</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-10-14-Late-Night-Coding.html">
-        <div class="post_list_item">
-          <div class="title">Late Night Coding</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-10-05-Defeating-Firewalls.html">
-        <div class="post_list_item">
-          <div class="title">Defeating Firewalls</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-09-25-Node-and-Mongo.html">
-        <div class="post_list_item">
-          <div class="title">Node and Mongo</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-09-16-Running-with-nginx.html">
-        <div class="post_list_item">
-          <div class="title">Running with Nginx</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-09-09-Forefist-punch.html">
-        <div class="post_list_item">
-          <div class="title">Forefist Punch</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-08-31-Knightmare-Bash.html">
-        <div class="post_list_item">
-          <div class="title">Knightmare Bash</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-08-21-Freelance.html">
-        <div class="post_list_item">
-          <div class="title">A Digital Ronin - My year freelancing</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-08-14-Denied.html">
-        <div class="post_list_item">
-          <div class="title">Denied</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-08-04-Box2D-and-Puppets.html">
-        <div class="post_list_item">
-          <div class="title">Box2D and Puppets</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-07-28-Skin.html">
-        <div class="post_list_item">
-          <div class="title">Skin</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-07-20-USB-Eartunnel.html">
-        <div class="post_list_item">
-          <div class="title">USB Eartunnel</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-07-15-Vanity-in-Plastic.html">
-        <div class="post_list_item">
-          <div class="title">Vanity in Plastic</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-07-03-Animation11.html">
-        <div class="post_list_item">
-          <div class="title">Animation11 - Only</div>
-          
-          <div class="lead">An art installation for Digital festivals</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-06-26-nginx.html">
-        <div class="post_list_item">
-          <div class="title">Nginx from Apache</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-06-22-panopticon.html">
-        <div class="post_list_item">
-          <div class="title">Panopticon</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-06-15-only.html">
-        <div class="post_list_item">
-          <div class="title">Only Installation at the Lowry</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-06-08-iPhone-Macro-Lens.html">
-        <div class="post_list_item">
-          <div class="title">iPhone Macro Lens Hack</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-06-03-Wireless-Headtracking-and-FabLab.html">
-        <div class="post_list_item">
-          <div class="title">Wireless Headtracking and FabLab</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">
-        <div class="post_list_item">
-          <div class="title">Deutsche Bank Installation</div>
-          
-          <div class="lead">A massive installation for Deutsche Bank, written in Cinder</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-05-08-canned-kinect.html">
-        <div class="post_list_item">
-          <div class="title">Canned Kinect</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-04-25-opengl-bottlenecks.html">
-        <div class="post_list_item">
-          <div class="title">OpenGL Bottlenecks</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-04-23-quad-warp-dual-head.html">
-        <div class="post_list_item">
-          <div class="title">Quad Warp, Dual Head</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">
-        <div class="post_list_item">
-          <div class="title">The Woes of Soft Shadows</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-03-25-quartz-composer-programming.html">
-        <div class="post_list_item">
-          <div class="title">Quartz Composer Programming</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-03-18-screen-space-ambient-occlusion-again.html">
-        <div class="post_list_item">
-          <div class="title">Screen Space Ambient Occlusion, again</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-03-15-depth-of-field-in-cinder.html">
-        <div class="post_list_item">
-          <div class="title">Depth of Field in Cinder</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-03-03-solar-charging-for-the-iphone.html">
-        <div class="post_list_item">
-          <div class="title">Solar Charging for the iPhone</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-02-25-kinect-skeleton-for-skinning.html">
-        <div class="post_list_item">
-          <div class="title">Kinect Skeleton for Skinning</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-02-20-motorcycle-computer.html">
-        <div class="post_list_item">
-          <div class="title">Motorcycle Computer</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-02-04-cinder-skinning.html">
-        <div class="post_list_item">
-          <div class="title">Cinder Skinning</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-01-26-projection-mapping.html">
-        <div class="post_list_item">
-          <div class="title">Projection Mapping</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2011-01-23-cookbot.html">
-        <div class="post_list_item">
-          <div class="title">Cookbot</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-12-21-cinder-shadow-volumes.html">
-        <div class="post_list_item">
-          <div class="title">Cinder Shadow Volumes</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-11-02-weighted-companion-cube.html">
-        <div class="post_list_item">
-          <div class="title">Weighted Companion Cube</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-10-15-british-library-tweet-o-meter.html">
-        <div class="post_list_item">
-          <div class="title">British Library Tweet-o-meter</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-10-06-structured-light.html">
-        <div class="post_list_item">
-          <div class="title">Structured Light</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-09-19-how-leaky-is-your-country.html">
-        <div class="post_list_item">
-          <div class="title">How Leaky is your Country?</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-09-12-touchtable-dj-decks.html">
-        <div class="post_list_item">
-          <div class="title">TouchTable DJ Decks</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-07-20-animation10.html">
-        <div class="post_list_item">
-          <div class="title">Animation10</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-07-19-apache-git-and-mediawiki-to-manage-design-and-projects.html">
-        <div class="post_list_item">
-          <div class="title">Apache, GIT and Mediawiki to manage design and projects</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-07-12-first-ever-installation-success.html">
-        <div class="post_list_item">
-          <div class="title">First Ever Installation Success</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-07-02-virtualisation-with-cord-and-virtualbox.html">
-        <div class="post_list_item">
-          <div class="title">Virtualisation with CoRD and Virtualbox</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-06-17-eagle-and-arduino-for-teh-win.html">
-        <div class="post_list_item">
-          <div class="title">EAGLE and Arduino</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-06-08-spycam-timelapse-part1.html">
-        <div class="post_list_item">
-          <div class="title">Spycam Timelapse</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-03-13-iphone-rfid-reader.html">
-        <div class="post_list_item">
-          <div class="title">iPhone RFID Reader</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-02-28-nin-only-tribute.html">
-        <div class="post_list_item">
-          <div class="title">NIN Only Tribute</div>
-          
-        </div></a>
-      </li>
-      
-    
-     
-      <li>
-        <a href="/posts/2010-02-01-decode09-recode-entry.html">
-        <div class="post_list_item">
-          <div class="title">Decode09 - Recode Entry</div>
-          
-        </div></a>
-      </li>
-      
-    
-    </ul>  
-
-    <script type="text/javascript">
-      $(window).load(function(){
-        $(".post_list_item").hover(
-          function () {
-            $(this).removeClass("hover-out");
-            $(this).addClass("hover");
-          },
-          function () {
-            $(this).removeClass("hover");
-            $(this).addClass("hover-out");
-          }
-        );
-      });
-
-
-
-    </script>
-
-
-
-</div>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li ><a href="about.html">About</a></li>
+          <li ><a href="contact.html">Contact</a></li>
+          <li ><a href="blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
 </div>
 
- 
- <!--<a href="http://github.com/OniDaito"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a> -->
+<hr />
 
- 
-<script src="js/bootstrap.min.js"></script>
+<div class="container-fluid" id="content">
 
-
-
-<!-- <script type="text/javascript">
-
-  var requrl = "localhost:8000"
-  var canvas = $('canvas#animation').get(0);
   
 
-  if (canvas.getContext) {
+  <div class="row-fluid">
+    <div class ="span12" id="frontthumbs">
+     
       
-    $.getScript('/js/processing-1.4.1.min.js', function() {
-      var script = $.ajax({url:"/s9.pde", async: false}).responseText;
-      processingInstance = new Processing(canvas, script);
-      processingInstance.resize($(window).width() - 5, $(window).height());
+      
         
-    });     
-
-  }
-  else {
-    html5 = false;
-    // No fancy HTML for you!
-    alert("Your Browser does not support HTML5 - While this is fine, you wont get the extra fancy bits!");
-    
-  }
-
-</script> -->
-
-<script type="text/javascript">
-  // Setup the funky links
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
-
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
+      
+        
+      
+        
+      
+        
           
-          var nodes = document.querySelectorAll( selector );
+            <a class="frontthumblink" href="/posts/2013-04-08-Museum-of-Rural-Life.html" alt="Museum of Rural Life Smart Audio Guide">
+              <img class ="frontthumb" src = "/images/strap/small/rurallife.jpg" alt="Museum of Rural Life Smart Audio Guide" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2013-02-18-BritishMuseumCoins.html" alt="Coin Detection at the British Museum">
+              <img class ="frontthumb" src = "/images/strap/small/britishcoin.jpg" alt="Coin Detection at the British Museum" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2012-11-19-The-Carp-and-the-Seagull.html" alt="The Carp and the Seagull">
+              <img class ="frontthumb" src = "/images/strap/small/seagull.jpg" alt="The Carp and the Seagull" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2012-09-04-Touch-Wall.html" alt="A Touch Wall under the M1 Motorway">
+              <img class ="frontthumb" src = "/images/strap/small/touchwall.jpg" alt="A Touch Wall under the M1 Motorway" />
+            </a>
+           
+          
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2012-08-17-Organ-Reconstruction.html" alt="3D Organ Reconstruction">
+              <img class ="frontthumb" src = "/images/strap/small/leeds.jpg" alt="3D Organ Reconstruction" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2012-02-3-Phantom-Limb.html" alt="Phantom Limb Pain">
+              <img class ="frontthumb" src = "/images/strap/small/phantom.jpg" alt="Phantom Limb Pain" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2011-12-05-Lowry-to-Life.html" alt="Lowry to Life">
+              <img class ="frontthumb" src = "/images/strap/small/lowry.jpg" alt="Lowry to Life" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html" alt="Smiling-Film-Student-Geekery">
+              <img class ="frontthumb" src = "/images/strap/small/botnetart.jpg" alt="Smiling-Film-Student-Geekery" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2011-07-03-Animation11.html" alt="Animation11 - Only">
+              <img class ="frontthumb" src = "/images/strap/small/animation11.jpg" alt="Animation11 - Only" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2011-06-15-only.html" alt="Only Installation at the Lowry">
+              <img class ="frontthumb" src = "/images/strap/small/digitfest.jpg" alt="Only Installation at the Lowry" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html" alt="Deutsche Bank Installation">
+              <img class ="frontthumb" src = "/images/strap/small/deutsche.jpg" alt="Deutsche Bank Installation" />
+            </a>
+           
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <a class="frontthumblink" href="/posts/2011-04-13-the-woes-of-soft-shadows.html" alt="The Woes of Soft Shadows">
+              <img class ="frontthumb" src = "/images/strap/small/quartzshadows.jpg" alt="The Woes of Soft Shadows" />
+            </a>
+           
+          
 
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
+    </div>
+  </div>
 
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
+  <hr />
 
-  linkify( 'p a' );
-</script>
+  <div class="row-fluid">
+    <div class="span4">
+      <span class="lilhead">Latest Work</span>
+    </div>
+
+    
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          
+          <div class="span4">
+            <p class="highlight">Museum of Rural Life Smart Audio Guide</p>
+            <p class="toppad"> Have you ever been in a museum and wondered about what you might be missing? Things you might not have seen but want to see? Well, this is a step towards that. A system that tries to figure out other objects you might be interested in. </p>
+            <p class="seemore"><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">See more &raquo;</a></p>
+          </div>
+
+         
+        
+      
+    
+      
+    
+      
+        
+          
+          <div class="span4">
+            <p class="highlight">Coin Detection at the British Museum</p>
+            <p class="toppad"> The Coins and Medals Department at the British Museum have a problem. They need to keep records of their collection. This involves scanning each and every coin, cropping the images, rotating them, stitching the two sides together and processing the filename. You can quickly imagine how labour intensive and tedious this job can be. </p>
+            <p class="seemore"><a href="/posts/2013-02-18-BritishMuseumCoins.html">See more &raquo;</a></p>
+          </div>
+
+         
+        
+  
+
+  </div>
+
+  <hr />
+
+  <div class="row-fluid">
+
+    <div class="span4">
+      <span class="lilhead">the studio</span>
+     
+      
+    </div>
+
+    <div class="span4">
+      <p class="toppad">
+      
+      </p>
+    </div>
+
+
+    <div class="span4">
+      <p class="toppad">
+      
+      </p>
+    </div>
+
+  </div>
+
+  
+
+  <hr />
+
+   <div class="row-fluid">
+
+    <div class="span4">
+      <span class="lilhead">Blog</span>
+     
+      
+    </div>
+
+    
+      
+        
+            <div class="span4">
+              <p class="highlight">21-05-2013 Hackspace Burger Finale</p>
+              <p class="toppad">The final burger consisted of home-made mustard buns, courtesy of Katie, an east-end sous vide LN2 burger, iceberg lettuce, Bacon Jam and a home made blue cheese slice. Overall the reaction was very positive. I didn't actually get chance to try one sadly but everyone said they were kick-ass! </p>
+              <p><a href="/posts/2013-05-21-Hackspace-burger-finale.html">See more &raquo;</a></p>
+            </div>
+         
+        
+      
+        
+            <div class="span4">
+              <p class="highlight">10-05-2013 Hackspace Burger Part 2</p>
+              <p class="toppad">Its time to move onto the cheese and buns! Now I'm not a huge fan of cheeseburgers and I hate cheese slices with a passion, rivalled only by my hatred for jelly. I can't stand the stuff, especially because its basically made out of hooves! </p>
+              <p><a href="/posts/2013-05-10-Hackspace-Burger-Part2.html">See more &raquo;</a></p>
+            </div>
+         
+        
+
+  </div>
+
+  <hr />
+
+   <div class="row-fluid">
+
+    <div class="span4">
+      <span class="lilhead">Experiments</span>      
+    </div>
+
+    <div class="span4">
+   
+      <p class="toppad">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a href="#">View details &raquo;</a></p>
+    </div>
+
+
+    <div class="span4">
+     
+      <p class="toppad">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+      <p><a href="#">View details &raquo;</a></p>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+     
+    });
+  </script>
+
+
+
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
+</div>
+
+ 
+
+
+
+<script src="/js/bootstrap.js"></script>
 
 <!-- Google Analytics -->
 <script type="text/javascript">
@@ -1095,7 +480,6 @@ pageTracker._trackPageview();
 </script>
 <!-- Google Analytics end -->
 
- <script src="js/processing.min.js"></script>
 </body>
 </html>
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
                       __  .__              ________ 
@@ -14,12 +13,13 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Spying and starting services with OSX</title>
   <meta name="author" content="Benjamin Blundell" />
-  <link href="http://feeds.feedburner.com/secti0n9" rel="alternate" title="Section9 Lab - Benjamin Blundell" type="application/atom+xml" />
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-  
   <link href="/css/s9.css" rel="stylesheet" media="screen">
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -28,12 +28,12 @@
   <![endif]-->
 
   <!-- Fav and touch icons -->
-   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
   <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  
+
   <!-- META DATA - Need to Check and Update -->
   <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
 
@@ -60,34 +60,44 @@
   <!-- eGMS Metadata -->
   <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
   
-  <meta name="Keywords" content="creative technologist,kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
   <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
   <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
-
-<link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-
-
-<link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
-
 </head>
 
 <body>
-<div class="container">
-    
-    <h3>Spying and starting services with OSX</h3>
-    <span class="date">2012-03-10 00:00:00</span>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="secti0n9">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+
   
-    <div style="clear:both"></div>
-
-    <div id="content">
-      
-<h2></h2>
 <p>Unbelievable! It's been almost a month since my last blog post which is, quite frankly, terrible. What have I been doing?</p>
 <ul>
 <li>Leaving CSM</li>
@@ -96,10 +106,8 @@
 <li>Writing my own WebGL framework (and not getting far enough!)</li>
 <li>many, many other small jobs</li>
 </ul>
-<h3></h3>
 <p>Its been one of these months. Most of that revolves around getting my <a href="https://github.com/OniDaito/iSpy">iSpy</a> project together and learning how OSX fails to make loading services easy. Basically, I have a small daemon process that reports the IP to whoever is listening on one port (broadcast) or a specific IP. For a while, I had a router on my desk, listening to which machines were on or off and comparing that with the Mac address list to see which machines I could run admin tasks on.</p>
-<h3></h3>
-<p>Now, launching something as a daemon is not too hard with OSX. You need a <em>plist</em> file that goes into <em>/Library/LaunchDaemons</em>. There are other places you can place this plist (and the <a href="https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man5/launchd.plist.5.html">Apple Plist Page</a> has them all). <a href="https://developer.apple.com/library/mac/#documentation/darwin/reference/manpages/man1/launchctl.1.html#//apple_ref/doc/man/1/launchctl">Launchctl</a> is the command you need to interface with the <em>launchdaemon</em> process that runs osx. A plist looks like this:</p>
+<p>Now, launching something as a daemon is not too hard with OSX. You need a <em>plist</em> file that goes into <em>/Library/LaunchDaemons</em>. There are other places you can place this plist (and the <a href="https://developer.apple.com/library/mac/documentation/darwin/reference/manpages/man5/launchd.plist.5.html">Apple Plist Page</a> has them all). <a href="https://developer.apple.com/library/mac/documentation/darwin/reference/manpages/man1/launchctl.1.html//apple_ref/doc/man/1/launchctl">Launchctl</a> is the command you need to interface with the <em>launchdaemon</em> process that runs osx. A plist looks like this:</p>
 <pre><code> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
  &lt;!DOCTYPE plist PUBLIC -//Apple Computer//DTD PLIST 1.0//EN http://www.apple.com/DTDs/PropertyList-1.0.dtd &gt;
  &lt;plist version="1.0"&gt;
@@ -123,7 +131,6 @@
  &lt;/plist&gt;
 </code></pre>
 <p>So, you have the various keys and tags that are fairly self explanatory. This works fine.....<em>EXCEPT</em> what do you do if you want to attach to a running session? Now we have a problem!</p>
-<h3></h3>
 <p>So, a user logs in and you want to spawn a process that attaches to their windowed session in order to capture the mouse clicks or similar. The trick is to use the <a href="http://support.apple.com/kb/Ht2420">loginhook</a> trick.</p>
 <p>Now this seemed not to work. The trick is to do this:</p>
 <pre><code>sudo defaults write \
@@ -136,79 +143,28 @@ net.ispy.student.server -- /Users/lsadmin/iSpy
 --ip 10.130.145.15 --nobroadcast --port 6668
 </code></pre>
 <p>This launches my little daemon in the background. So basically, loginhook attaches to the windowed session and then fires off a service that sits in the background. The only issue with this, is a terminal window pops up saying that loginhook has executed. That sucks but fortunately, terminal is disabled on some accounts so this doesn't occur.</p>
-<h3></h3>
 <p>So, for attaching to windowed sessions, we are cool. The problem I then faced was setting up Blender to render across a network with a set of slaves running as default. The issue here is to run a blender process in the background as a non priviledged user. Now, the first plist trick didnt work and neither did loginhook. The trick here is to create a bashscript like this:</p>
-<pre><code>#!/bin/bash
+<pre><code>!/bin/bash
 sudo su -- student -c "/Applications/Blender.app/Contents/MacOS/blender
 -b /Users/student/Library/
 Application\ Support/Blender/2.61/config/startup.blend -a"
 </code></pre>
 <p>You then create a plist as before, that calls this bash script. This ends up running blender as a <em>student</em> process, waiting for commands from the render farm client.</p>
-<h2></h2>
 <p>Snow Leopard, Lion, Leopard and Tiger all appear to have different processes for starting things up. I've looked at all the variations across the web and they certainly aren't easy to sort out. So far though, I've managed to get it sorted!</p>
-    
-   </div>
 
+  <hr />
+  <footer>
+    <p>© section9 dot co dot uk ltd 2013</p>
+  </footer>
 </div>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.infinitescroll.min.js"></script>
+ 
 
- <script type="text/javascript">
 
-  // Setup the funky links
 
-  var supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined || 
-             document.body.style['MozPerspective'] !== undefined;
+<script src="/js/bootstrap.js"></script>
 
-  function linkify( selector ) {
-      if( supports3DTransforms ) {
-          
-          var nodes = document.querySelectorAll( selector );
-
-          for( var i = 0, len = nodes.length; i < len; i++ ) {
-              var node = nodes[i];
-
-              if( !node.className || !node.className.match( /roll/g ) ) {
-                  node.className += ' roll';
-                  node.innerHTML = '<span data-title="'+ node.text +'">' + node.innerHTML + '</span>';
-              }
-          };
-      }
-  }
-
-  linkify( 'p a' );
-
-  // Provide all alternative floats for our images
-  // Also alter the dom to wrap images with captions
-
-  $("#content img").wrap('<div class="picture" />');
-  $("#content iframe").wrap('<div class="picture" />');
-
-  var left = true;
-  $(".picture").each(function() {
-    $(this).addClass("img-rounded");
-
-    if (left){
-     $(this).addClass("right");
-      left = false;
-    }
-    else {
-      $(this).addClass("left");
-      left = true;
-    }
-  });
-
-  $(".picture img").each(function() {
-    var display_alt = $(this).attr("alt");
-
-    if (display_alt !== "") {
-      $(this).after('</br>' + display_alt);
-    } 
-  });  
-
-</script>
-
+<!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -217,5 +173,8 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 var pageTracker = _gat._getTracker("UA-2107281-3");
 pageTracker._trackPageview();
 </script>
+<!-- Google Analytics end -->
+
 </body>
 </html>
+
