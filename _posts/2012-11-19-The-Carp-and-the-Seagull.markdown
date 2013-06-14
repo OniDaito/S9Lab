@@ -4,6 +4,7 @@ title: The Carp and the Seagull
 category: work
 strapline: An interactive movie, in WebGL, with Nexus Interactive
 strapimage: seagull.jpg
+introtext: A WebGL Interactive movie. The story revolves around our chap, Masato. He is a fisherman who is doomed, basically. The story is told in 4 chapters inside a cube. As the cube is spun we see the real world and the netherworld, lighting strikes, fish jump and our fisherman fishes. The story is a classic tale of one man's life going wrong. 
 ---
 
 Recently, for the past 2 months, I've been involved with a company called

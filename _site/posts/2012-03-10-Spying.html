@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>Unbelievable! It's been almost a month since my last blog post which is, quite frankly, terrible. What have I been doing?</p>
 <ul>
 <li>Leaving CSM</li>
@@ -151,18 +151,51 @@ Application\ Support/Blender/2.61/config/startup.blend -a"
 </code></pre>
 <p>You then create a plist as before, that calls this bash script. This ends up running blender as a <em>student</em> process, waiting for commands from the render farm client.</p>
 <p>Snow Leopard, Lion, Leopard and Tiger all appear to have different processes for starting things up. I've looked at all the variations across the web and they certainly aren't easy to sort out. So far though, I've managed to get it sorted!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

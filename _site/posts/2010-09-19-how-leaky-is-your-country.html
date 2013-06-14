@@ -96,24 +96,57 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p><img alt="leaky" src="http://3.bp.blogspot.com/_WNXP2eEZSdg/TJYfJfElNCI/AAAAAAAAAuY/WNiKkaDsyNQ/s1600/wikileaksleaky.png" /></p>
 <p>Or rather, how much hammering can your server actually take? That is probably closer to the mark! I made the mistake of putting wikileaks in the URL. After wikileaks got hold of it, my server was absolutely hammered and as I hadn't managed to get it setup properly, it died rather quickly. It still seems up now though <em>touch wood</em>, after the initial rush has worn off.</p>
 <p>Essentially, I've given up on flash. WebGL and Javascript are the way forward for us now without a doubt. Trying to get mapping into processing.js with the canvas calls was an interesting challenge. No doubt there will be much better ways to do this once people really get down to it. I was convinced into trying out Ruby on Rails for the setup and that has worked reasonably well but I do need to play around with the Apache/Passenger settings a little bit more I think as these are not so optimised. Also, under Firefox the effects of the dripping countries are a little slow (they are unoptimised at present). </p>
 <p>Still, that was totally unexpected and threw me in at the deep end! Most hits I've ever had I think. I need to have a play with the Apache logs later on next week to see how things pan out. <a href="http://www.section9.co.uk/wikileaks">How Leaky is your country?</a></p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

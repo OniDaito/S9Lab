@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>I've been playing with soft shadows for a client and it's been one hell of a rocky ride I must say. There isn't really a nice way of doing it that I'm happy with. I've gone through PCF, PCSS, VSM and SAVSM and none of them seem to work right. I must admit, we are on the verge of very hardcore OpenGL here. But the basics of shadowmapping are quite simple.</p>
 <p>So, Percentage Closer Filtering was the first I tried. It was a bit tricky until I realised its pretty much offset sampling and thats it. Bang. Take an average of a set amount of pixels. Job done. Problem is, this is quite slow when you are averaging over 64 texels. The effect isn't great and a bit wasteful as well. So, that means Percentage Closer Soft Shadows is an option. Doesnt look that bad but its rather slow and the falloff isn't really big enough. The shadows need to fade away a lot quicker and when the filter gets past about 8x8 you can see lots of artefacts. Not good.</p>
 <p><img alt="Soft Shadows" src="http://4.bp.blogspot.com/-xG5__l4M08Y/TaV5PGF4HHI/AAAAAAAAAyk/-Jdch5Mp4xo/s320/pcss.jpg" /></p>
@@ -109,18 +109,51 @@
 <p>There is a problem however. Summed Area Tables end up with big big numbers. You are, in effect summing, say 512 x 512 numbers so the last number is going to be very large. You then need to subtract another large number from this which means a loss of precision which results in artefacts like this:</p>
 <p><img alt="Soft Shadows" src="http://farm6.static.flickr.com/5146/5614133967_c57d44dfdc.jpg" /></p>
 <p>There is a certain amount of noise which is really sad because when that doesnt occur, we do get nice soft shadows on the cheap. Pretty cool! So, very close but no cigar yet!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

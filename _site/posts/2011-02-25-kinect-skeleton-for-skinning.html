@@ -96,25 +96,58 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <iframe src="http://player.vimeo.com/video/http://vimeo.com/21351996" width="460" height="280" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 <p>So I've been looking at the Kinect quite a bit in relation to skinning. The Primesense team have done a really good job when it comes to full on skeleton tracking and its quite easy to get the positions of the various limbs, but when you are performing skinning, you need a rotation matrix. As we are dealing with 3D we need 3 axes defined. This is impossible with the kinect as it can't measure 'twist'.</p>
 <p>Like most hackers, I didnt buy the Kinect with an XBox and had no interest in the games at all. I was told by a friend that actually, Microsoft fakes this in the games. The way the palm faces is dependent on where the arm is and is then set in the code. So if you raise your arm above your waist, the palm is set to a certain orientation that has no basis on where your hand actually is.</p>
 <p>The challenge is to work out if we can actually get this data somehow (from a glove or something) wirelessly and unobtrusively. I reckon Wiimotes are going to be the thing!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

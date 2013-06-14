@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>This is of course, no oridinary boom box at all, but a rather spiffing steam/cyber punk esque box that blows up when its turned down to the red level! I'm quite pleased with it. It's not been easy to build as my girlfriend will no doubt attest! :S</p>
 <p><img alt="Boom Box" src="http://farm8.staticflickr.com/7193/7076489781_7e40a2017b.jpg" /></p>
 <p>Why build such a thing you ask? Well, it's to do with <a href="http://animation12.cs.manchester.ac.uk/">Animation 12</a> which is being held this summer. The idea is to get kids at school into CS and animation and similar fields. There is a competition for the best animations and awards are presented at a large event, held at the University of Manchester. There will be a keynote which this year, is all about lag, ping times and the speed of light and how we try and get around these limitations on the internet.</p>
@@ -111,18 +111,51 @@
 <iframe width="460" height="280" src="http://www.youtube.com/embed/NDQyUSc368U" frameborder="0" allowfullscreen></iframe>
 
 <p>Simply put 9V through them and BOOM! You have a wonderful explosion. I can't wait to see the finished video!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>I thought I'd put down my thoughts and experiences on keeping track of your personal projects and data. I've been through a lot of various methods. Everything is intertwined; backup, code repos, security, accessibility etc etc. My method certainly wont suit everyone but it may give you some thoughts. In a nutshell, I use Apache, GIT and Mediawiki on a small MiniITX machine with USB disk cloning to run all my systems.</p>
 <p>I've used subversion and mercurial before. Subversion was great because it support binary files; very useful when you have a large PSD to backup. However, when one of my hard-disks broke, I lost the most recent updates and couldn't get back the newer versions I had on my workstation. This was annoying. That, and subversions silly revision system meant a change was needed. Subversion doesn't really say what a repos or a directory really is. So if I updated one project, then another project the revision number for everything would go up twice! Not good.</p>
 <p>Mercurial was dead simple though. I converted a few of the SVN based projects over but found that quite tricky. Mercurial is what I use on a daily basis at work. Because it is written in Python it is quite straight forward and works well. However, it does suffer from serious flaws when branching (apparently) but also it is limited to filesizes under 10meg. I say limited - it complains about it but tries anyway. Creating a new repository remotely was also a pain. What if I'm working remotely and need to backup to my system at home? I wrote a quick python script to do this but it wasn't particularly good.</p>
@@ -106,18 +106,51 @@
 <p>So now you can backup code, keep notes, and access anywhere. All this needs to run on something. I use a fan-less, MiniITX board with one large SATA drive to store all this, running Ubuntu. Why you ask? Well I wanted something low power and capable with an emphasis on quiet. Using one SATA drive means that disk cloning is very easy. Plug in a USB enclosure, run dd_rescue and you get an identical copy of your drive. It's already saved me once and I heartily recommend it.</p>
 <p>If you set up all the right port forwards and certificates you can access your box over a home connection with reasonable speed. The whole thing works quite well and has some degrees of protection. Full disk encryption, arpwatch and Snort provide a good defence against intrusion and holding your wiki off-site on your webhost means you'll always have access, even if your home machine goes down (which it will once or twice)</p>
 <p>Overall, this has met my needs for security, remote access to everything and my various requirements for source control and backup. I heartily recommend something similar. It's all free software and it all works.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

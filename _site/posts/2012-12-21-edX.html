@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>Last year, <a href="https://www.edx.org">edX</a> was born and a few people I know took the MIT Electronics course, 6.002x. It was widely hailed as a bold and innovative move. Everyone seemed excited by it, including me. I signed up but quickly realised it was a lot of work and missed out. Fortunately, the second time around, I decided I'd give it a proper shot.</p>
 <p>Electronics is something I dabble with and have used professionally and personally for the last 2-3 years. I knew it was time to learn the basics. This seemed ideal. I'd spoken with my girlfriend about going back to university and learning something new. With the expense of university and the time it takes out of your life, this seemed like a great idea.</p>
 <p>My girlfriend is a historian and has degrees in the arts, but also has quite a mathematical mind. She decided, soon after, to sign-up for the programming course with edX. The two of us have been simultaneously working on seperate courses and it gave us a chance to compare and contrast. </p>
@@ -113,18 +113,51 @@
 <p>Overall, I found edX to be wonderful. It's well presented, well thought out and it's a proper course. This isn't something you can just relax and play around with. Its a serious University providing a serious course. I regret not having the time to get into the tutorials, the interactive components lab and the various discussions. You need to treat it just like a university course. Take notes, talk to people and practice, practice!</p>
 <p>Recently, university heads have come out in support of online courses. This is definitely the future and we'll be seeing more of this for sure. I hadn't really looked at <a href="https://www.coursera.org/">Coursera</a> before I took edX but I can see the appeal. Coursera, on the surface at least, seems less polished and prestigious, but that could be incorrect. There seems to be a wider choice of courses with Coursera.</p>
 <p>Im glad I did it. Im glad it's over, but I'm glad I did it. Time to order that MIT hoody! :D</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

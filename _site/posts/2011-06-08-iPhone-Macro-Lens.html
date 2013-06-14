@@ -96,24 +96,57 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p><img alt="iPhone Macro Lens" src="http://farm4.static.flickr.com/3121/5811272101_e7a3b4ceec.jpg" title="iPhone Macro Lens" /></p>
 <p>This is probably the most hacky hack I've ever really done because I had no idea I wanted to make this and all the bits were scrounged (well the case was 99p from eBay but nevermind). My old UCL outfit decided to throw out their photocopier and let me have at it for parts. I found this lens and kept it. One day I put it over my camera and bam! The iPhone Macro Lens was born. You can see the results above. Quite impressive I think. On the left is the normal photo. On the right is the macro shot.</p>
 <p><img alt="iPhone Macro Lens" src="http://farm6.static.flickr.com/5076/5811272167_3c9442a0b4.jpg" title="iPhone Macro Lens" /></p>
 <p>It doesnt look that neat though! I just used a gluegun and some tape to mount the lens over the hole in the case. Works alright. I suppose if I was being a total blog whore hipster I could have used Sugru or something. The only fault with it is that you do get a small amount of lens vignette which you need to edit out with either the zoom function or in post. Nevertheless, I'm quite pleased!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>I'm a bit of a photography nerd, it has to be said. when I was introduced to <a href="http://www.openmoco.org/">OpenMoco</a> I knew I was in for some fun times! When I saw the <a href="http://sourceforge.net/p/projectchronos/home/Project%20Chronos%20Home/">Chronos</a> by Chris Field, I immediately jumped at the chance to build it. I've enjoyed doing time-lapse stuff for a while and I figured parallax was the next thing to try.</p>
 <iframe width="460" height="315" src="http://www.youtube.com/embed/sluvAehKTwg" frameborder="0" allowfullscreen></iframe>
 
@@ -112,18 +112,51 @@
 <p>In the end, the most difficult part of this project turned out to be the stepper driver. The <a href="http://www.pololu.com/catalog/product/1201">Pololu stepper in question</a> simply didnt work for me. I ordered 3 from two different suppliers and all of them failed to turn the rod in both directions. I was beside myself with despair and rage, until I borrowed one from a friend and ordered a knock-off version from eBay. Both worked straight away, first time! It is indeed possible to have a bad batch and so, with the problem solved, I finally managed to get the thing built.</p>
 <p><img alt="magic arm" src="http://farm9.staticflickr.com/8087/8528137302_4690bb7d75.jpg" /></p>
 <p>In order to mount a camera to the system, I decided to buy a Manfrotto magic arm, with an SLR mount at one end, and a magic clamp at the other. It is possible to use a proper bolt, mounted upside down on the carriage but I didnt have the time to do that. I figured a clamp was nicer anyway. The motor still has enough ower to move the thing, which is great. Im using a 12v supply from the mains here but the intention is to eventually use some kind of Lipoly battery.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

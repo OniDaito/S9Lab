@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>It's not often I post about security stuff but I do like to know how the otherside lives. In my mind, I've always wanted to be an 'uber l33t haxor' but I just about rate script kiddie level. I'm not one for sniffing out exploits but one thing I do like is the intelligent vandalism side. Think Banksy, but in a more internet, technological sense. I think that idea has potential. So I go to a few conferences here and there and <a href="http://www.securitybsides.org.uk">BSides London</a> is one that has just been this week.</p>
 <p>Well the whole event was free! Free entry free coffee (that wasn't half bad), free sandwiches and pastries and loads of nice fruit. Thats already a good start. Of course, it was sponsored heavily but then, the sponsors weren't overtly in your face. I only had one chap talk to me about Ubikeys so all in all, not too bad. </p>
 <p>The talks were interesting. The first was a talk on elegant security which, although interesting and funny, was not that informative I felt. Its a great concept to have in mind but then, thats something we should all aim for in our work, whatever field. Moving on from that, another talk on Social Engineering was... so so. Nothing remembered really.</p>
@@ -107,18 +107,51 @@
 <p>I'd have liked to have seen more of track3, the talks that are short and unscheduled. There appeared to be a few interesting ones but I didnt get the chance. Of course, there was a lockpicking stand (which I failed at :( ) and I managed to snaffle two t-shirts and a laser pointer. Not bad I thought! A few stickers later and all was well.</p>
 <p>BSides is so much more fun than Infosec which runs at the same time. I have two rules for meetings and conferences these days. Go if you are either presenting orthere are things you really want to learn. Dont just go on a whim. I've fallen afoul of this before. The HTML and Satellite talks made it worth it, along with catching up with <a href="http://www.digininja.org/">Digininja</a> who I tend to only see at such things.</p>
 <p>So I've learnt a few things, been inspired to learn more and chatted to some friends and drank more coffee than I thought possible. That, for me, is the perfect conference. And all for free! Contrast that with the invite to SIGCHI and I can see why some people think conferences are dead and over-rated. Not all of them are like this and BSides certainly isn't one of them. If you get the chance to go, definitely do so.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

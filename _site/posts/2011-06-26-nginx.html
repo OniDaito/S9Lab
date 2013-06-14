@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>I'd heard about Nginx a couple of times duing my time at UCL. My co-worker had set it up as the front-end proxy to deal with all the static requests and have Apache do the heavy lifting. Now, when it comes to building things, its a good idea to stick with what you know and actually ship, so long as things aren't broken.</p>
 <p>My apache setup was broken!</p>
 <p>On occasion, it would just stop working, eating all the memory and being a pain in the arse. So instead, I thought I'd look into <a href="http://wiki.nginx.org/Main">Nginx</a> as a replacement. People I respect have said its good and I wanted to keep up to date. </p>
@@ -106,18 +106,51 @@
 <p>I needed to do this twice. Fortunately the virtual hosts setup is trivial and the <a href="http://wiki.nginx.org/Configuration">Nginx Configuration Wiki</a> will let you know how to do it. No problems there then.</p>
 <p>SSL is quite easy two with just a couple of lines needed to do the full setup, since I had some certificates and keys from my apache setup anyway. I didn't get around to changing mediawiki because I wanted to change the DNS to make a more sensible URL for that site. It doesn't look like it'll be too hard though.</p>
 <p>So far, Im quite impressed with how easy it's been. I havent changed any files around and all is well. Top job Nginx!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

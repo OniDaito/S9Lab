@@ -1,6 +1,7 @@
 ---
 layout: post
 title: California Time-lapse 
+introtext: Last December, Katie and I decided to go on a trip to California. A road-trip to be precise! The plan was to go all the way from LA to San Francisco, around Napa valley, through Yosemite and down to Joshua Tree. All in all, around 1930 miles in about 2 weeks, taking in such sights as Big Sur, The Golden Gate Bridge and Route 66. 
 ---
 
 Last December, Katie and I decided to go on a trip to California. A road-trip to be precise! The plan was to go all the way from LA to San Francisco, around Napa valley, through Yosemite and down to Joshua Tree. All in all, around 1930 miles in about 2 weeks, taking in such sights as Big Sur, The Golden Gate Bridge and Route 66. 

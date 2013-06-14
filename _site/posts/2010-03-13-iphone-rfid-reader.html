@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <iframe src="http://player.vimeo.com/video/10133832" width="460" height="280" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 <p>The idea behind this project is to see what the iPhone's serial is capable of and to try and have a little fun with RFID along the way. This reader works with the low frequency (125Khz) tags but I have a half working version for MiFARE Hi-Frequency as well.</p>
@@ -169,18 +169,51 @@ works quite well for testing if you comment out the sending code.</p>
 <p>So now you have the ability to read RFID Tags. But you need some tags to read. For me, I quite like the idea of home automation and similar. There was an odd trend of implanting glass RFID tags into the flesh near your thumb but why bother with that when you can simply make an RFID earring? That way, you can remove it if need be or swap out the actual tag.</p>
 <p><img alt="rfid" src="http://3.bp.blogspot.com/_WNXP2eEZSdg/S5uZV3xK4jI/AAAAAAAAAoQ/Z5Be4iI0x4s/s1600-h/IMG_0196.JPG" /></p>
 <p><img alt="rfid" src="http://4.bp.blogspot.com/_WNXP2eEZSdg/S5uZNwVPgyI/AAAAAAAAAno/GvzTy-02ZS8/s1600-h/earing-in.jpg" /></p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

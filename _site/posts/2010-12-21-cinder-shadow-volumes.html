@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p><img alt="shadows" src="http://4.bp.blogspot.com/_WNXP2eEZSdg/TRDT5e0crCI/AAAAAAAAAw8/iYnYGi-neIE/s1600/shadow1.jpg" /></p>
 <p>I was asked to come up with some shadows in Openframeworks on a tight timescale.... I kinda failed on that one, having gone down the wrong route of shadow maps (I'd previously used VSM for my first NIN project). Looking it over, it seems that shadow volumes, or some hybrid approach with both is probably best. I've spent far too long on this but so far, I've managed to get a reasonable approximation of depth pass shadow volumes going.</p>
 <p>I first wanted to use <a href="http://http.developer.nvidia.com/GPUGems3/gpugems3_ch11.html">this approach from GPU Gems 3</a> whereby a geometry shader creates the shadow volume on the card and 'hopefully' speeds things up. This means you need to create a <a href="http://www.cgal.org/Manual/latest/doc_html/cgal_manual/HalfedgeDS/Chapter_main.html">Half-edge</a> structure that knows about twin edges so you can pass adjacency information to the geometry shader using GL_TRIANGLES_ADJACENY_EXT.</p>
@@ -108,18 +108,51 @@
 <p>Yup, that kinda sucks really as they are quite handy though Im sure there were reasons for this. The changes are up on <a href="https://github.com/cinder/Cinder/issuesissue/21">the Github Cinder repository</a> if you use OSX. Not sure about Windows though but potentially, there is an issue there too.</p>
 <p>The main problem I've had is with creating the silhouette itself. This can be quite tricky and since I'm using Cinder's TriMesh, I need to make the code as unobtrusive as possible. <a href="http://prideout.net/blog/?p=54">This page</a> gives a great guide to doing this and the general approach is quite useful. One needs to find the edges facing away or towards the light, discount all the others then find edges with twin faces that arent counted. These form the edges which we then extrude away from the light. </p>
 <p>Overall I'm fairly pleased with the result, though it needs improvement. Depth fail + Caps and a slight softening of the edges in the GPU should work I think</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

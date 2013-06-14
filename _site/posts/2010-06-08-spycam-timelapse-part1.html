@@ -96,23 +96,56 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <iframe width="460" height="360" src="http://www.youtube.com/embed/8BbnDAV95y4" frameborder="0" allowfullscreen></iframe>
 
 <p>So here is the first result of my new little Spycam. I bought <a href="http://cgi.ebay.co.uk/Spy-Key-Chain-Camera-DVR-Covert-Video-Audio-Recorder-/110468930888?cmd=ViewItem&pt=LH_DefaultDomain_0&hash=item19b8761d48">one of these little cameras from eBay</a> and decided that what I really wanted was a longer life-time. So with the use of an optocoupler, an ATTiny13, a buspirate, EAGLE and some etching treatment, here is the resulting video. Its around 3 and a half hours at the moment with two lipoly batteries. I'll post some instructions on how to make your own at some point. So far, it works ok but I'm hoping to get a full 8 hours if possible.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>Last December, Katie and I decided to go on a trip to California. A road-trip to be precise! The plan was to go all the way from LA to San Francisco, around Napa valley, through Yosemite and down to Joshua Tree. All in all, around 1930 miles in about 2 weeks, taking in such sights as Big Sur, The Golden Gate Bridge and Route 66. </p>
 <p>Of course, being the geek that I am, I decided to setup a camera rig and record the entire trip as a time lapse video!</p>
 <iframe src="http://player.vimeo.com/video/57359675" width="460" height="270" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -106,18 +106,51 @@
 <p><img alt="Suction Mount for Nikon" src="http://thumbs3.ebaystatic.com/m/mV-sEngEeLb_jxw3FnkE4rA/140.jpg" /></p>
 <p>The setup looks something like the picture. The idea is to mount the DSLR (in this case, a Nikon D90) upside down on the dashboard. The suction cup attatches to the windscreen and the camera is sandwiched between the cup and the dashboard. This does occasionally slip and in the early footage, you could see the camera gradually make its way down the screen. That said, it was fairly sturdy and only ever fell off once. The suction cup came from <a href="http://www.ebay.co.uk/itm/Sturdy-Car-Window-Suction-Cup-Cradle-Mount-For-Nikon-D5000-D3100-SLR-Camera-/320917382804?nma=true&amp;si=rXtlrlJaLi6LKgFxY0dH2bg2tN0%253D&amp;orig_cvip=true&amp;rt=nc&amp;_trksid=p2047675.l2557">Ebay</a> and was fairly cheap.</p>
 <p>You need an intervalometer of some kind. The D90, and indeed - many cameras, use a wierd GPS connector to take the photos, so double check what intervalometer you need. I bought one from Amazon and it worked great.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

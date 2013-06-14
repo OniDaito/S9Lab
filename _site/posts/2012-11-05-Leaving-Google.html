@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>It seems like the wrong thing to do. Anyone who is familar with the Podcast "Back-to-Work" or anyone with a goal in mind knows that its a bad idea to re-invent the wheel. If there is a good product out there that takes away a lot of hassle for you then you should use that to get what you need to get done, done! The thing is, this has various levels and for me, I like to get my hands dirty. I've been using Google for calendar and mail quite a lot and decided, just recently to step away. There were a few factors (work avoidance being one perhaps - a super form of procrastination) but lessons were learnt and good times had.</p>
 <p><img alt="baibai" src="http://images.smh.com.au/2010/01/15/1041660/googlechina5-420x0.jpg" /></p>
 <p>I run a few domains o n my own VPS. The thing about this is I need to run websites and therefore, email. I've been doing this happily on Ubuntu with Dovecot and Postfix. There are good guides and I think its more or less, running ok. I decided to use gmail because, lets face it, email anywhere, good spam filtering, multiple accounts and conversation view (probably the most import feature).</p>
@@ -113,18 +113,51 @@ sudo pear install -f  MDB2-2.5.0b3
 <p>With Davical, I can share calendars between various devices. At the moment, Im just using my iPhone's builtin client. Mountain Lion appears not to really like conencting to the caldav server but I reckon I can fix that.</p>
 <p>I still need a good solution for notes. I believe Roundcube can take care of that as well. Indeed, Davical may have answers for that. If the task manager doesnt work, maybe that's what I'll do.</p>
 <p>I have no real problems with Google, but I know quite a few people do. I've not kept up with the politics of it all but I do believe that keeping control of your data is important. Google, for my money (or not as the case may be), have never done me wrong but I guess I am part of their product. So far, I get a little more spam but not an awful lot and its quite good fun to see the rejections and n00bs trying to hammer my server. Bless.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <iframe width="460" height="280" src="http://www.youtube.com/embed/mhAcRlNq9JU" frameborder="0" allowfullscreen></iframe>
 
 <p>The above video was recorded by Opheila Finke; one of the students at CSM. She came to me with a request that blew me out of the water because I'd had a similar idea myself. She wanted all the machines in our lab to play a video at the same time. I've spent quite a bit of time on this but I'd never gotten to the stage where I could take over a screen remotely. It turns out this is indeed possible with one subtle command.</p>
@@ -117,18 +117,51 @@ A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 <p>The <em>-</em> is quite important after the su. It sets up the environment properly and that's great - it means the process can attach to the screen itself.</p>
 <p><img alt="1.8 tonnes of iMac doing my evil bidding" src="http://farm7.static.flickr.com/6100/6328718926_27f90ba92a.jpg" /></p>
 <p>If you scroll in to 2:45 on the video, you can see the effect we came up with. It's great when a student has the same or similar idea as you. You get to look like the worlds greatest hero when it goes well. Smiles, hugs and laughter was had! That day was a good day!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

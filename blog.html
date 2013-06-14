@@ -3,3 +3,24 @@ layout: default
 title: Section9 dot co dot uk ltd - Benjamin Blundell - Wouldn't it be nice if...
 idx: blog
 ---
+
+{% block content %}
+{% for post in site.posts %}
+ <div class="row-fluid">
+
+    <div class="span4">
+      <span class="lilhead">{{post.date.strftime('%d-%m-%Y') }} {{post.title}}</span>
+    </div>
+
+    
+    <div class="span8">
+        <p class="toppad">{{post.introtext}} </p>
+        <p><a href="{{post.url}}">Read the full article &raquo;</a></p>
+    </div>
+
+  </div>
+
+  <hr />
+  {% endfor %}
+
+{% endblock %}

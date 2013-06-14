@@ -96,23 +96,56 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p><img alt="companion cube" src="http://2.bp.blogspot.com/_WNXP2eEZSdg/TM_YBNY4mwI/AAAAAAAAAvs/O7ezHaK12es/s1600/cc1.jpg" /></p>
 <p>Another work in progress as I play with the Makerbot at the <a href="http://london.hackspace.org.uk">London Hackspace</a>. It needs some internals I think and a lot of playing with but so far so good. I've attempted different configurations on the printer but with limited success. The process is not refined but I'l get it right eventually. The top and bottoms of the cube are suspended and therefore only partially work. To get it right would require some sort of pyramid shape of two halves of the cube. I attempted this but sadly, there were issues with Blender converting to something replicator-g can understand.</p>
 <p>Im thinking a boarduino and some kind of IRC interface. When you hug the cube, it glows or something.Glados ain't gettng her stinking PCBs on this one! :D</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>I've always been fascinated by space, the planets, their maps and photos. The Curator is one of only a handful of experts in the world studying medieval scientific instruments and the astrolabe definitely fits that category.</p>
 <p><img alt="Astrolabe" src="http://farm8.staticflickr.com/7011/6716956337_ee19b570ff.jpg" /></p>
 <p>As part of a project I'm working on, I decided to build my own Astrolabes - one from paper and another from perspex, in order to get a feel for their construction. The goal is to create a WebGL version for display. This version is taken from <a href="http://www.thingiverse.com/thing:3271">the one available at Thingiverse</a>.</p>
@@ -108,18 +108,51 @@
 <p><img alt="astrolabe" src="http://farm8.staticflickr.com/7158/6716964469_2057259913.jpg" /></p>
 <p>So, after a about 5 programs later and a lot of swearing and bitching, the Astrolabe was ready. There are problems with it. The text has not come out at all and there are a few markings missing. Etching on the backplate is slightly out of alingnment and the rete is incomplete; the star map should appear on it as well. I may use acetate glued to the back of the rete. Also, the outer bevel should be fixed and not move with the rete but the tolerance is too tight and despite my efforts to file down the edges, it still wouldn't move.</p>
 <p>But this is fast prototyping in plastic! Its only the first step.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

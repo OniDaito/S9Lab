@@ -96,25 +96,58 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>There has been a fair bit of interest at the <a href="">London Hackspace</a> regarding OpenGL and computer graphics in general. A while back, I ran a workshop on Python and it seemed quite succesful. Some people wondered about having a graphics workshop as well and I figured that might be no bad thing.</p>
 <p><img alt="Graphics Hackspace" src="http://farm8.staticflickr.com/7247/7602552370_661e97cec0.jpg" /></p>
 <p>Graphic Hackspace is basically, like the music hackspace. The plan is to have some talks and possibly a workshop afterwards. Im hoping the workshop will be on the basics of OpenGL and how to get something pretty up and running.</p>
 <p>I originally thought of meetup.com as a place to advertise but their costs are pretty high for just a month or so. That said, perhaps buying both the domains for graphicshackspace.org and dot com is perhaps overally silly. Nevertheless, we do have a funky page over at <a href="http://www.graphicshackspace.org">graphicshackspace.org</a> which runs rather nicely using <a href="https://github.com/mojombo/jekyll/">Jekyll</a>, <a href="http://twitter.github.com/bootstrap/">Bootstrap</a> and <a href="http://processingjs.org/">Processing.js</a>; all wonderful little libraries.</p>
 <p>Our first session will be at 7pm, August the 17th at the London Hackspace. Do come along. We have two great speakers already; I'm quite looking forward to what they have to say.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: edX 
+introtext: Last year, edX was born and a few people I know took the MIT Electronics course, 6.002x. It was widely hailed as a bold and innovative move. Everyone seemed excited by it, including me. I signed up but quickly realised it was a lot of work and missed out. Fortunately, the second time around, I decided I'd give it a proper shot.
 ---
 
 Last year, [edX](https://www.edx.org) was born and a few people I know took the MIT Electronics course, 6.002x. It was widely hailed as a bold and innovative move. Everyone seemed excited by it, including me. I signed up but quickly realised it was a lot of work and missed out. Fortunately, the second time around, I decided I'd give it a proper shot.

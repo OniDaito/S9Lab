@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>I've been pretty busy with OpenCV these days I have to say. Its been tricky to get to grips with but one thing that helps is having a good project to work on that has simple goals and can help a few people out. I've been looking at coins a lot - why, I can't possibly tell! But nevertheless, it's a thing I'm into.</p>
 <p><img alt="Coin1" src="http://farm6.staticflickr.com/5467/7221567676_f86234b2d1.jpg" /></p>
 <p>OpenCV has a lovely Python binding which you can build to work on OSX if you are comfortable in working from source. Under OSX Lion you may need to move the cv.so library into your Python path (you can find out where this is by loading python interactive with the <em>-v</em> switch and take a look at the paths) as the install script didn't do this for me. Once that is in the right place, play around with the examples in the source; they are quite good.</p>
@@ -105,18 +105,51 @@
 <p><img alt="Coin2" src="http://farm8.staticflickr.com/7073/7221569168_20378f8ae0.jpg" /></p>
 <p>Of course, finding where the shadows are and removing these is a little harder! That said, I do like a challenge. I've done a little work previously on detecting colours on coins as a way of checking denomination but I suspect there are better ways. Using contours and what is known as <em>blob detection</em> is great so far, especially if you just use one level of hierarchy. I'll post more source code and what not, once I learn more.</p>
 <p><img alt="coin3" src="http://farm8.staticflickr.com/7091/7221567328_a314c9d707.jpg" /></p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

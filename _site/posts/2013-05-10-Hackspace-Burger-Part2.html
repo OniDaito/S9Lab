@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>Its time to move onto the cheese and buns! Now I'm not a huge fan of cheeseburgers and I hate cheese slices with a passion, rivalled only by my hatred for jelly. I can't stand the stuff, especially because its basically made out of hooves!</p>
 <p><img alt="Buns! Before the baking!" src="http://farm8.staticflickr.com/7454/8725901954_d6e729bdf1.jpg" /></p>
 <p><img alt="Buns after baking" src="http://farm8.staticflickr.com/7288/8724783375_09acd265b2.jpg" /></p>
@@ -113,18 +113,51 @@
 <p>You take your blue cheese and a can of evaporated milk. Don't used condensed milk as its far too sweet. You want about a quarter of a can to 220g of cheese I'd say (perhaps a little less depending). Melt this together, and then use a blender. </p>
 <p>Now, the next step is to take your gelatine (I bought mine from the eBay) and warm it up in some warm water. Stir and add to the mix. I used 2.5 teaspoons which seems about right. Whisk this with a blender again and then pour onto a try with either cling film or a silicone baking sheet.</p>
 <p>The result is a fairly good looking slab of cheese. When we poured it out, we let it cool completely. We tried lifting the corners off the sheet but it sadly didn't seem solid enough. Katie came up with a cunning plan however. We covered the top in cling film and wound the entire lot around a rolling pin. We then placed this in the fridge overnight. This morning, we checked again and indeed, the cheese is acting like a slice.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

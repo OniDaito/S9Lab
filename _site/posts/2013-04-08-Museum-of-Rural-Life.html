@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>Have you ever been in a museum and wondered about what you might be missing? Things you might not have seen but want to see? Well, this is a step towards that. A system that tries to figure out other objects you might be interested in.</p>
 <p><img alt="Rural Life" src="http://farm9.staticflickr.com/8530/8598489218_4fbd4774c8.jpg" /></p>
 <p>I was approached by Edinburgh College of Art to come up with a way of providing recommendations for museum visitors. The brief was quite wide but the timescale was extremely small. We only had around two and a half months to install, test and deploy an application. No mean feat, especially since we had quite a few ideas on what to do.</p>
@@ -118,18 +118,51 @@
 <p>One thing Android is terrible at, is Graphics. Maybe this is better on the later versions (we were forced to use Gingerbread due to the phone) but it is unintuitive, bloated and poorly designed in my opinion. When it comes to graphics, style and design, Apple wins hands down. Say what you like about walled gardens. While it may not be ideal, Apple got it right and Android has pretty much copied them. The sheer amount of versions, deprecated methods and devices makes Android a real pain. In this project, I needed SVG support and animation for the interactive maps. I had to implement it with third party libraries, my own hit-testing and a slew of programs to create the correct SVG files. Too much time was wasted here I feel. </p>
 <p><img alt="Fergusson Brown" src="http://farm9.staticflickr.com/8390/8597388203_a7e5930d4c.jpg" /></p>
 <p>Feedback from our visitors was great! Everyone really enjoyed the audioguide and found it gnerally easy to use. Given the amount of time and money spent, I feel we did really well, despite the setbacks given above. There is definitely a lot more scope for experimentation and I feel there will be some interesting applications that will come from this. Museums of the World! You too, can have an audioguide that doesn't cost the earth!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p><img alt="cookbot" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TTx2cA6WeLI/AAAAAAAAAxI/K71wynEncz0/s320/DSC_5434.jpg" /></p>
 <p>No, don't misread that (although a colleague of mine is working on something more 18 rated). This small bot is the beginning of (hopefully) even tastier meats. Its a hacked slow cooker that can hold a temperature reliably for a long period of time. Its called Sous Vide cooking and I got quite interested in it after seeing <a href="http://www.cookingforgeeks.com/blog/posts/video-of-my-talk-from-next-hope/">The Cooking for Geeks Talk at the Next Hope</a> Conference. It seemed quite interesting.</p>
 <p>This is probably the most hacking thing I've actually done. All the parts except for the Arduino are second-hand or scavenged. The slow cooker came from eBay,the case was given to me from another hackspace member and the major relay I took from a board that was being thrown out. Thats the main key of the circuit - a large relay capable of switching a mains voltage.</p>
@@ -105,18 +105,51 @@
 <p>To measure temperature, I used <a href="http://www.earthshineelectronics.com/18-ds18b20-digital-temperature-probe.html">this probe from Earthshine electronics</a>. It works quite well and with a pull up resistor, it works quite well out of the box. There are some Arduino libraries for this which makes it a doddle.</p>
 <p><img alt="cookbot" src="http://1.bp.blogspot.com/_WNXP2eEZSdg/TTx4HjBwmfI/AAAAAAAAAxQ/lAO_AW_lTRU/s320/mychart.png" /></p>
 <p>It looks good and holds reasonably well but will it be good enough for Sous Vide? We shall have to see. I'll do the egg test tomorrow and we shall see :P</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

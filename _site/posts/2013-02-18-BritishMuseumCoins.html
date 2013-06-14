@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>The Coins and Medals Department at the British Museum have a problem. They need to keep records of their collection. This involves scanning each and every coin, cropping the images, rotating them, stitching the two sides together and processing the filename. You can quickly imagine how labour intensive and tedious this job can be.</p>
 <p><img alt="Greek Coin" src="http://farm9.staticflickr.com/8334/8357960664_2ec6f31cec.jpg" /></p>
 <p>The challenge was to speed-up this process so it became at least bareable. Rather than use cameras, the BM tends to use a varying array of scanners. Some of these are high grade and the others not. The results vary. Sometimes scanners pickup dust and scratches. Othertimes, the edge of the coin is out of focus. Some coins, such as the silver Greek coin tend to reflect a little too much.</p>
@@ -108,18 +108,51 @@
 <p>The software proveded to be rather tricky. Firstly, how do you package a program for Windows XP that can be run straight from the desktop with no drivers? The answer? Package a python program using <a href="http://www.pyinstaller.org/">pyinstaller</a>. This packages up PyOpenCV rather nicely. I decided to go with pyGTK for the user-interface - simple and effective. </p>
 <p>The technique I settled on basically involved extracting edges and performing a series of morphological operations on a reduced size of image. From there, one can extract the largest contour and find the coin. The technique works fairly well though does require good lighting conditions. The longest operation is, in-fact, the final alpha blending of the extracted coin with its background. The edges are ever so slightly alpha blended to give a smoother, anti-aliased edge which works quite well, without losing data.</p>
 <p><img alt="More Coins" src="http://farm9.staticflickr.com/8046/8356888267_4d242e54e1.jpg" /></p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

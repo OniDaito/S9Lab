@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>So the day arrived, and hackspace burger was born!</p>
 <p><img alt="HackspaceBurger" src="https://pbs.twimg.com/media/BKEgkubCQAEJ6BX.jpg:medium" /></p>
 <p>The final burger consisted of home-made mustard buns, courtesy of Katie, an east-end sous vide LN2 burger, iceberg lettuce, Bacon Jam and a home made blue cheese slice. Overall the reaction was very positive. I didn't actually get chance to try one sadly but everyone said they were kick-ass!</p>
@@ -113,18 +113,51 @@
 <p>I had a lot of fun doing this, and I'm totally sold on Sous-vide (or boil in the bag!) as the proper method for cooking meat. I think most other methods just dont get to the heart of things (hah!). Science works! But theres plenty of room for flair and artistic cooking skill in there. Liquid Nitrogen is such as great thing to play with. Its a big crowd pleaser and not that expensive, though the storage of it is.</p>
 <p>I think this could probably scale. In the future I'd have the whole thing a little more slick with a proper production line going. Did I beat the evil lucky chip and all these hipster burger popup joints? Too early to tell yet, but In my heart, this worked out great!</p>
 <p>So things were learnt, but the people who got to try the burgers (there were only 8 in the end) were very happy. A little thankyou from me, to some of the people who helped build the new hackspace! </p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

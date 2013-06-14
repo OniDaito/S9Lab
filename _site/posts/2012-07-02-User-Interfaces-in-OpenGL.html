@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>User Interfaces are the bane of most programmer's lives. They really are. UI people don't often understand the true horror faced by a programmer when they are asked to write good UX code. This goes double for OpenGL types because we have a certain sense of design aesthetic (from what I can tell, talking to people) when it comes to such things. Most UI looks ugly. Its not cool to look at and it's certainly not cool to code. When it comes to OpenGL programs, very few UI libraries stand out. I've had a really tough time lately getting a program structure together that I actually want to use and show off. </p>
 <p>What about <a href="http://qt.nokia.com/products/">QT</a> you say? Well, for starters, QT is massive, relies on C style pointers and causes segfaults a lot of the time. When it comes to OpenGL programs, you need to call a timer function for your draw calls, and heaven help you if you create a widget and have a function called update. I moved to QT because I thought their sliders and such would be useful. Sadly, the code base became quite coupled (which is a bad thing) and teasing things apart proved tricky. I'd like to be using modern C++ and not some Nokia owned library of doom. I have horror stories of learning QT 10 years back. No thanks!</p>
 <p>I thought about using <a href="https://github.com/rezaali/ofxUI">ofxUI</a> which looks really nice. The problem I had with it was there were no file-dialogs and <a href="http://www.openframeworks.cc">OpenFrameworks</a> wasn't built around multiple windows (which I'd rather not use anyway but I have little choice when running fullscreen applications on seperate monitors). I like OpenFrameworks more than I used to, but the CS Engineer in me prefers the beauty of Cinder. It's just more sexy.</p>
@@ -106,18 +106,51 @@
 <p><a href="http://www.antisphere.com/Wiki/tools:anttweakbar">AntTweakBar</a> was adopted by Cinder and to be honest, I've found little better. I've looked around and asked on IRC and all the usual places and they all suck. They either look poor, are overkill or aren't supported anymore. AntTweakBar is easy to use and works reasonably well.</p>
 <p>One problem, there is no file dialog. At this point I decided to give up looking for crossplatform solutions and settled with <a href="http://www.gtkmm.org/en/">gtkmm</a> as I'm running under Ubuntu at the moment. Not sure what I'll do when I port my toolkit to OSX but I'll probably hook into Cocoa or something with GLFW running the show. </p>
 <p>Such a simple problem, and yet one that doesn't go away. I've heard designers say "We just want some nice sliders" but they are always so hard to find. Crazy huh? </p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

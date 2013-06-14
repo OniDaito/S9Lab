@@ -96,26 +96,59 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p><img alt="Profiler for OpenGL" src="http://developer.apple.com/library/mac/documentation/graphicsimaging/conceptual/OpenGL-MacProgGuide/art/opengl_profiler_window.jpg" /></p>
 <p>I must admit, there is a certain amount of bottlenecks and profiling you need to do in order to get a responsive framerate. Im currently involved in my first installation and trying to get the framerate up to something respectable is proving quite difficult. At first, I thought it was all to do with the large textures I was mashing around as I use a lot of FBOs and similar. Turns out, thanks to a little profiling, that its actually all to do with the sheer number of triangles I'm flinging around.</p>
 <p>How did I find this out? Well, its always good to remember Valgrind, Instruments, GDB and all the old programs you used to use at Uni or College or wherever. Nowadays, these have grown into easy to use programs within an IDE. Instruments, for example, is really really good and I love using it. But what about OpenGL?</p>
 <p>Classically, OpenGL seems to be a bit of a black box when it comes to any form of debugging. However, there are two really handy programs available on the Mac (and indeed, on most PCs I'd say).</p>
 <p><a href="http://developer.apple.com/library/mac/documentation/graphicsimaging/conceptual/OpenGL-MacProgGuide/opengl_performance/opengl_performance.html">Apple has some good information on the OpenGL Profiler</a>. This is pretty nifty and tells you a lot about...well, everytyhing really! It has all the details on your FBOs, the calls that take the most time. It really is excellent.</p>
 <p>In addition, there is also the <a href="http://support.gremedy.com/default.asp?forum.1.41.3">gDebugger</a> which has a few similar features but critically, tells you the amount of vertices and triangles you are shifting. Apparently, my latest piece has at least 1800000 triangles! Eeeep!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

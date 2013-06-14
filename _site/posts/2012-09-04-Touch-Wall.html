@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>It's not often you get the chance to put a massive touchscreen underneath the M1, but that is exactly what I did at this years <a href="http://www.emfcamp.org">EMFCamp</a> - The first hacker camp in the UK. Many lessons were learnt in the making of this and there are many things I'd do differently in the end. The results weren't bad considering and I learnt a lot through it.</p>
 <p><img alt="Nose Control" src="http://farm9.staticflickr.com/8437/7928922666_3ee2eb9c23.jpg" /></p>
 <p>Deep underneath the M1, we had a bar and the idea was to get some sort of shiny information point going, possibly on a touch screen of sorts.  The idea I had in my head was some sort of information point that would allow people to check all the nerdy stats of the camp and similar.</p>
@@ -122,18 +122,51 @@
 <p><img alt="Bar under the M1" src="http://farm9.staticflickr.com/8042/7909230240_b79cfbd8b4.jpg" /></p>
 <p>A lot of the problem revolves around software. I really don't like the fact that we are still using TUIO. It would be good if we could just plug a touch screen into Android and just use the built-in touch and gesture software. There is a lot of duplication and reinventing the wheel here which I really didn't like. So overall, I think I needed to have this sorted and properly ready to go at least a month in advance, with my own software, running under Linux. Ultimately, I'd consider this project a failure in terms of realising a project but a success in learning new things and prompting interesting questions at the camp.</p>
 <p>The frame is now, either in Chris's possession as a series of small bits of steel or forever under the M1 as a testament to the awesomeness of EMF.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

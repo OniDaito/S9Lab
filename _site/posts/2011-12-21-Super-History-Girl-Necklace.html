@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>The Curator is a wonderful lady, and for her birthday and our trip to Berlin, I came up with an idea for a necklace. I wanted to make something unique and wonderful that she would appreciate and that I'd have fun making. I often joke that she's "A super girl who saves history" and so the idea began to form. </p>
 <p><img alt="Super History Girl" src="http://farm8.staticflickr.com/7158/6539948549_275c40c2bb.jpg" /></p>
 <p>I'm quite amazed that one can make such things quite easily nowadays. Here is how I went about it.</p>
@@ -110,18 +110,51 @@
 <p>In order to do this, I used <a href="http://www.qcad.org/">QCad</a> and an amazing little python script called <a href="http://www.thingiverse.com/thing:404">Boxotron</a> which creates a set of DXF files (which you can check in QCad or Inkscape). Using a laser cutter and 5mm acrylic, I came up with a box that sort of worked for me. I then took the name Katie, translated it into Japanese and exported the text as a BMP which allows for laser engraving. Placing the piece in the laser cutter was the final stage.</p>
 <p>Actually, the final stage involved chatting with a jeweller at <a href="http://csm.arts.ac.uk">Central St Martins</a> who told me that the findings and chains I would need should be bought from <a href="http://www.cooksongold.com/">Cooksongold</a> who duly delievered the silver rope chain and other parts I needed to create the final piece. </p>
 <p>Overall, I'm really happy with the result, and even happier that The Curator likes it.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

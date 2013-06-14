@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Linear Rail Time Lapse 
+title: Linear Rail Time Lapse
+introtext: I'm a bit of a photography nerd, it has to be said. when I was introduced toOpenMoco I knew I was in for some fun times! When I saw the Chronos by Chris Field, I immediately jumped at the chance to build it. I've enjoyed doing time-lapse stuff for a while and I figured parallax was the next thing to try.
 ---
 
 I'm a bit of a photography nerd, it has to be said. when I was introduced to [OpenMoco](http://www.openmoco.org/) I knew I was in for some fun times! When I saw the [Chronos](http://sourceforge.net/p/projectchronos/home/Project%20Chronos%20Home/) by Chris Field, I immediately jumped at the chance to build it. I've enjoyed doing time-lapse stuff for a while and I figured parallax was the next thing to try.

@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>So I've left CSM and started section9.co.uk ltd and Im open for business with a new desk! :D</p>
 <p><img alt="New Desk" src="http://farm8.staticflickr.com/7112/6891988900_5ea6170700.jpg" /></p>
 <p>Im working with the University of Leeds at the moment; the strange article to the left of the photo is the current project that I can't say too much about. Im looking at a lot of WebGL work outside of that and a few physcial projects that need to be built so its all go.</p>
@@ -106,18 +106,51 @@
 <p>I'd looked at other shared desk spaces and a few artist studios. The problem with the latter is a limited company is not allowed to work out of such a space. In addition the security is quite poor and the locations were not ideal. I'd looked at a proper office over near the river at the Southbank which sounded great and wasn't too expensive but the problem here was the distance from where I live, the people I seem to be working with and potential clients. The east end of London is certainly where all the cool stuff goes down.</p>
 <p>Its scary but its a new beginning in a way and I'm quite excited! </p>
 <p>Unit 30, Cremer Business Centre, Cremer St, London E2 8HD if you fancy popping by for a cuppa! :D</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

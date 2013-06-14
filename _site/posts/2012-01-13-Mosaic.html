@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>As is my way, I decided to embark on some intelligent vandalism, only this time, in the digital realm. We have several machines in our lab at Central St Martins and access to these is completely open. There are no student passwords and as such, students here have become lazy and left all their data on the desktop or trash. I decided to write a script to pull off all the data from these machines, find the images and mash them all together in a mosaic. </p>
 <p><img alt="Final Attempt" src="http://farm8.staticflickr.com/7159/6679523043_d04379dcd7.jpg" /></p>
 <p>At first, I had to grab the images, rename them, resize them and put them in the right sort of place. This is actually a tricky problem because files have spaces, many directory levels and all the rest.</p>
@@ -131,18 +131,51 @@ done
 </code></pre>
 <p>This one line basically sped up one of the steps by a factor of 7. Essentially, this task, without local neighbourhood refinement, is all parallel and so, OpenMP was a wonderful find and a free win. Great! </p>
 <p>There is more to be done for sure - this sort of large scale processing could be useful for video, or maybe transformed into Scala or similar for parallel processing over many machines?</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

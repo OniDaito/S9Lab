@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Phantom Limb at the Science Museum
+introtext: Im quite excited to see this display. At the back of the Science Museum, in the Antenna area, there is a new exhibition called Painless that deals with the new ways researchers are tackling pain.
 ---
 
 Im quite excited to see this display. At the back of the Science Museum, in the

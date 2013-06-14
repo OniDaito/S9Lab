@@ -96,6 +96,13 @@ p.highlight {
   font-size: 16px;
 }
 
+
+li {
+  font-family: 'Anaheim', sans-serif;
+  font-size: 14px;
+}
+
+
 .toppad {
   margin-top: 21px;
 }
@@ -117,4 +124,12 @@ p.highlight {
 
 #frontthumbs > a:hover {
   text-decoration: none;
+}
+
+/* Blog and post pages */
+
+.blogvideo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 460px;
 }

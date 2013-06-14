@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>At one of my jobs, I've been thrown into the deep end when it comes to sysadmin. I've always done this a little but largely on a Linux based platform. As I'm involved with an Arts University, most of the machines here are Apple based. It's a little bit different in certain cases and there are some fun things already installed. The first is the <em>screen sharing</em> app.</p>
 <pre><code>/System/Library/CoreServices/Screen Sharing.app
 </code></pre>
@@ -172,18 +172,51 @@ fi
 <pre><code>&lt;username&gt;  ALL=NOPASSWD: ALL
 </code></pre>
 <p>replacing <username> with the user you are using to do all the installs. So far, Im getting there. I will have many devices under my command! It was grossly inefficent but a good way to learn a great many things. Remember the process is what counts people!</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

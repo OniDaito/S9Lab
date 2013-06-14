@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hackspace Burger Part 1
+introtext: Lets get something clear - I'm a big food lover! No, not big as in belly but a lover of really good food - quality food. That doesn't mean expensive or rare but embodying a more Zen and the Art of Motorcycle maintenance notion of quality. A few months back, I was introduced to a *hipster popup burger joint* whose name shall remain nameless. A lot of my friends seemed to like it. They had burgers with fois grais, and even a whole, softshelled crab. I thought this sounded interesting but when the food arrived, it was greasy, difficult to eat and had absolutely no nuance. I'd say style over substance but it turned out to just be hipsters trying to hard. *This would not stand!*
 ---
 
 Lets get something clear - I'm a big food lover! No, not big as in belly but a lover of really good food - quality food. That doesn't mean expensive or rare but embodying a more [Zen and the Art of Motorcycle maintenance](http://en.wikipedia.org/wiki/Zen_and_the_Art_of_Motorcycle_Maintenance:_An_Inquiry_into_Values) notion of quality. A few months back, I was introduced to a *hipster popup burger joint* whose name shall remain nameless. A lot of my friends seemed to like it. They had burgers with fois grais, and even a whole, softshelled crab. I thought this sounded interesting but when the food arrived, it was greasy, difficult to eat and had absolutely no nuance. I'd say style over substance but it turned out to just be hipsters trying to hard. *This would not stand!*

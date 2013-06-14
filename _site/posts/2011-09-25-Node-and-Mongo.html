@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p>Recently, I've been working with a good client on a project that requires network communication between two sites and provision for a history feature.One of the collaborators is a fan of <a href="http://www.mongodb.org/">mongodb</a> and <a href="http://nodejs.org/">nodejs</a> - two rather nifty projects that I've been meaning to work with for a while. I had no idea but dived in anyway.</p>
 <p>Node appears to have a set of modules which you can install with <a href="http://npmjs.org/">npm</a>. These modules are placed within the directory in which you run npm which is presumably where your node script is. One useful modules is <a href="http://expressjs.com/">express</a> which sets up basic handling for a website. You can then write code such as:</p>
 <pre><code>var Express = require('express');
@@ -137,18 +137,51 @@ client.open(function(err, p_client) {
 <pre><code>sudo mongod run --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf
 </code></pre>
 <p>Fairly straight forward. Sadly, for use in this project, it turned out that using boost::asio with tcp::iostreams are superior. I still haven't managed to work with streams in nodejs yet, though they do exist.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

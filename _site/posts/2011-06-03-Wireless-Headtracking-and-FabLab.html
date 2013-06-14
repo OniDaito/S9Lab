@@ -96,25 +96,58 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p><img alt="XBee Gyro unit in Custom Case" src="http://farm3.static.flickr.com/2130/5794083824_6cc8abfb7d.jpg" title="XBee Gyro Unit in Custom Case" /></p>
 <p>Two posts combined! I've been busy trying to figure out a good way of doing headtracking on the cheap. Vuzix have not been too helpful when it comes to their VR920 headset. I've managed to get some working results with the Windows drivers but there is an issue when it comes to OSX and Linux. It was decided we should build our own Gyro unit. Not knowing anything about such things, I went straight in.</p>
 <p>I ended up buying a set of different gyros and accelerometers including <a href="http://www.sparkfun.com/products/9431">Sparkfun 6DOF Razor</a> and the <a href="http://www.sparkfun.com/products/9184">Sparkfun Atomic 6DOF</a>. Both have been pretty easy to setup within Cinder on OSX but each has different challanges. I'll be putting it all into a Cinder Block over the next few days. The Atomic takes care of the XBee communication but requires that you write some code to decode it's frames. I had some issues with that as each value comes back as two bytes: the most significant bits and the least. There were some annoying padding bytes that gave me trouble under C++ but after that, getting some nice values out seemed fine. The razor requires that you implement the XBee standard somehow. I wrote some code in C++, based on the Java libraries from Processing. Getting reasonable values out of the Razor was not too hard.</p>
 <p>The problem I had was my belief that Gyros measure absolute position. They don't. This may seem obvious to most but its the force applied to them in order to keep them steady that is measured, and they also drift. This means combining accelerometer data and gyro data together is needed and really important to get right. I have investigated Kalman filters and a few other methods to get everythong straight but its still a work in progress.</p>
 <p>To keep everything in one place, I decided to build a custom case at <a href="http://www.fablabmanchester.org">Manchester FabLab</a>which is a great little place indeed! They are much more strict that London Hackspace but their kit is just a little bit neater and newer. It depends what you want from a workshop really? Both are good though Fablab restricts you to just Friday's and saturdays which sucks a little. Nevertheless, using Google Sketchup with the SVG Export plugin and Inkscape, you can produce a PDF that can be sent to a Laser cutter. Throw in some 3mm acrylic and bam! One case that holds the Atomic and a LiPoly Battery.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

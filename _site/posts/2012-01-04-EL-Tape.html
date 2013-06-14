@@ -96,8 +96,8 @@
 <hr />
 
 <div class="container-fluid" id="content">
-
-  
+  <div id="blogblocks">
+    
 <p><img alt="EL-Mesh Top" src="http://farm8.staticflickr.com/7170/6630578629_63b3985040.jpg" /></p>
 <p>EL-Tape and EL-Wire have been around for a few years. We've all seen <a href="http://www.google.co.uk/search?q=tron+guy&amp;um=1&amp;ie=UTF-8&amp;hl=en&amp;tbm=isch&amp;source=og&amp;sa=N&amp;tab=wi&amp;ei=AjkET63gLYra8APe-6DGAQ&amp;biw=1505&amp;bih=829&amp;sei=BzkET4PbKdD_8QOklcmhBA">Tron Guy</a> and all the rest. For me, EL-Wire is only suitable for rigid objects. It looks naff when it's just sewn on with no thought or style behind it. Lady Ada's <a href="http://www.ladyada.net/make/tronbag/">EL-Wire Bag</a> is probably the best example of how EL-Wire should be used, in my humble design opinion. </p>
 <p>EL-Tape has its own challenges though. It's flatter and wider as you'd expect and there have been a few good designs out there. The <a href="http://io9.com/5708876/how-to-make-your-tron-costume-glow-with-electroluminescent-wire">Quora</a> costumes aren't bad and I'm sure you know of other examples. I wanted something that was work-a-day, fun and looked good without being cliche, or <em>tron-esque</em> though hinting at it of course.</p>
@@ -106,18 +106,51 @@
 <p>The wire for the invertor goes down the back. Im using the invertor and tape from <a href="http://www.adafruit.com/category/50">Adafruit Industries</a> who I highly recommend. </p>
 <p><img alt="El-Tape Mesh Top" src="http://farm8.staticflickr.com/7165/6630571803_583f97ed37.jpg" /></p>
 <p>The top came from Uniqlo who generally make good stuff (I'm told) and although the sewing was challenging, the material made the sewing not quite as hard as it could have been.</p>
-
+  </div>
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013</p>
+    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
   </footer>
 </div>
-
- 
 
 
 
 <script src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+    });
+      
+  });
+
+</script>
+
+
 
 <!-- Google Analytics -->
 <script type="text/javascript">

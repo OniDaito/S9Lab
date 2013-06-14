@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Computing History Records and Preservation 
+introtext:
 ---
 
 Its the new year and christmas is over. Quite often, people go back to visit
