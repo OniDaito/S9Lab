@@ -1,0 +1,19 @@
+---
+layout: post
+title:  Introducing CoffeeGL
+introtext: 
+---
+
+WebGL is something I've been working in a lot over the last few months; indeed its the reason why I've not been blogging very much! I've recently worked on two large projects with a third currently underway and I'm somewhat concerned about the APIs we have to work with. I decided to write my own, in [CoffeeScript](http://coffeescript.org/) which I call [CoffeeGL](https://github.com/OniDaito/CoffeeGL). Its in progress but already I have a [few examples]() and I'm really happy with how its going.
+
+When working on the [Carp and Seagull](http://www.section9.co.uk/posts/2012-11-19-The-Carp-and-the-Seagull.html) I got to grips with [Three.js](http://www.threejs.com); widely regarded as the defacto, goto guy for WebGL. It has many features and is fairly easy to use, but only if you follow the stock way of doing things. It gives you a lot but in a way, it almost gives you too much. There is almost no documentation either. Some of the things in Three are quite nice, such as the [uber-shader](http://gametheorylabs.com/groups/judgementengine/wiki/4c55c/) paradigm and the various addons for models and resources. However, I'm not too fond of the maths, the actual render loop and a few other things that niggled. Also, it's written in pure javascript, which I think is a missed opportunity.
+
+Secondly, there is [GLOW](http://i-am-glow.com/). GLOW seems closer to the metal which I think is a good thing. Again, it suffers from lack of consistent documentation and the idea that a shader is tightly bound to it's geometry. Its an interesting way of tightly coupling shader and information but its also somewhat misleading, especially if you use a shader more than once, or if you have dynamic geometry. Again, its written in pure javascript. One really nice thing about GLOW is its caching system; it doesn't make any redundant GL calls which is really nice.
+
+Why is pure javascript a mistake? Because its all so easy to make mistakes that will cost you with javascript. Maybe if you are a robot, you can make it work for you, but there are some things I don't want to have to write again and again. There are more subtle things such as === should be the default instead of == , for x in y shouldn't really return an index... it's these subtle things that really need to be addressed in Javascript and maybe one day, they will be. 
+
+Given javascript's history, I think its very impressive. No really! It's easy to hate on JS and many people do. But the fact remains, it was written in a very short time by a very talented individual who had pressure from idiots on all sides. Im glad we have it, but we don't have to suffer it's inadequecies anymore. 
+
+I decided to go with Coffeescript and a node.js setup. Everything is written in modules that compile up into a single js file which you can use with your own CoffeeScript files. The API is inspired by [Cinder](https://www.libcinder.org); the king of WebGL Libraries. The scene-graph is quite simple and works how you would expect, or you can ignore it completely and just write basic GL calls with a few bits of geometry and shaders.
+
+Is it ready yet? Not really I'd say. More documentation is needed and Im looking at [Docco](http://jashkenas.github.io/docco/) to fill the void. But for these who want to help or offer constructive criticism, its up over at [github](https://github.com/OniDaito/CoffeeGL) for all to see.
