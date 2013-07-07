@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Introducing CoffeeGL
-introtext: 
+introtext: WebGL is something I've been working in a lot over the last few months; indeed its the reason why I've not been blogging very much! I've recently worked on two large projects with a third currently underway and I'm somewhat concerned about the APIs we have to work with. I decided to write my own.
 ---
 
 WebGL is something I've been working in a lot over the last few months; indeed its the reason why I've not been blogging very much! I've recently worked on two large projects with a third currently underway and I'm somewhat concerned about the APIs we have to work with. I decided to write my own, in [CoffeeScript](http://coffeescript.org/) which I call [CoffeeGL](https://github.com/OniDaito/CoffeeGL). Its in progress but already I have a [few examples]() and I'm really happy with how its going.
