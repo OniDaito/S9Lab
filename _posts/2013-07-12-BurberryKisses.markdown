@@ -3,7 +3,7 @@ layout: post
 title: Burberry Kisses, with Google and Grow Interactive
 category: work
 strapline: WebGL based map scenes
-strapimage: bk0.jpg
+strapimage: burberry.jpg
 introtext: Recently, I was approached to work on the new Burberry Kisses campaign with many other people, in order to help Google and Grow Interactive get their interactve maps in order.This involved working in WebGL, javascript and a little bit of Unity.
 ---
 
