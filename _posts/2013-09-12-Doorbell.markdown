@@ -1,0 +1,38 @@
+---
+layout: post
+title: The EMF TilDA Badge Doorbell
+strapline: Doing some overdue DIY with the EMF Camp badge, radio and AVR
+introtext: This doorbell is one of these projects that has been hanging around for ages, waiting to be finalised. It's the old cliche right? The girlfriend mentions a DIY style problem and you decide to step in. Over a year later, the job is actually done.
+---
+
+This doorbell is one of these projects that has been hanging around for ages, waiting to be finalised. It's the old cliche right? The girlfriend mentions a DIY style problem and you decide to step in. Over a year later, the job is actually done.
+
+We had a problem with several wireless doorbells; they interfered with many others around the area, including some electronic car alarms. At one point our doorbell decided to play sounds that were not even programmed into it in the first place, at least as far as we could tell. In the end, we decided we should just make our own.
+
+I started out using the radio breakout boards from [Sparkfun](https://www.sparkfun.com/products/10533). The noise on these boards was terrible however and I decided that another approach was needed. I spet a bit of time trying to filter the signals but it seemed like more effort than it was worth.
+
+My friend, Charles over at [Electric Laboratory](http://www.electriclaboratory.com/) came up with the idea that I should use the [EMF Tilda Badge](http://wiki-archive.emfcamp.org/2012/articles/b/a/d/Badge.html) instead, as they use the [nRF24L01](http://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRF24L01) chip. As the plus version of this chip has just been released, the non-plus versions were quite cheap, and Charles had a load he wasn't using. I figured this would be a good use for the badge that had laid dormant in the months since EMF.
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/JYVXKp-iOjE" frameborder="0" allowfullscreen></iframe>
+
+After working with two EMF badges, I'd managed to get the interface working. There is a pretty good radio library for the Arduino called the [Mirf](http://playground.arduino.cc/InterfacingWithHardware/Nrf24L01) library, which you can find at the arduino playground. This pretty much takes care of the arduino end of things on the badge, however the Tilda is not without it's problems. Make sure that you hit reset just after you hit 'upload' in the arduino software, otherwise it wont write the program to the chip.
+
+With communication working between two badges, the next step is to make some kind of switch to go outside the flat. This needs to run for a long time, drawing very little power. I needed some kind of embedded device. I like to use AVR chips generally as they are quite simple to program with a buspirate under Linux or OSX. I looked around and found out that the ATTiny85 would do the job with a few tweaks. I found the old casing for our previous doorbell and decided the thing to do would be to mount the new chip inside it so people would know intuitively that it was a doorbell.
+
+
+![Doorbell Button](http://farm8.staticflickr.com/7452/9731190896_9603b0e085.jpg)
+
+Programming the ATTiny85 was a bit of a challenge. Thankfully there are two really good sites [here](http://gizmosnack.blogspot.co.uk/2013/04/tutorial-nrf24l01-and-avr.html) and [also here](http://www.insidegadgets.com/2012/08/22/using-the-nrf24l01-wireless-module/). Both have really good tutorials on how to use the nRF24l01 with various chips. I ended up using the code from the second page, modified to send just one packet as fast as possible. The problem I had initially was very odd. One press of the button for a second would work, but then one would have to hold the button down for another 3 seconds for the doorbell to work a second time. The next attempt would only require a second, and so on, the pattern repeated. In the end, I stripped out as many delay functions as I could and the button now seems to work if you hold it down for about half a second. A quick tap wont cut it but a good press seems fine.
+
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/wz259k78GLk" frameborder="0" allowfullscreen></iframe>
+
+The excitement when the device finally sparked into life might have seemed excessive to onlookers but it felt so good to finally have something working that required only small amounts of power and could talk to something over distance with some intelligence. The final problem remained however. It needed to make a noise. I have almost no idea about audio electronics. My first thought was to use some powered speakers with the raspberrypi we had lying around but the girlfriend was not so impressed with the extra complications this was presenting. Another solution was needed.
+
+Turns out the arduino can play square wave tones through a speaker just fine. The only problem is that the current through the digital pins is only around 30mA. Not really very much at all. I figured we needed an amplifier, but again, I've never used an op-amp in my life and can just about figure out an amplifier circuit. However, these folks over at the [Arduino Playground](http://playground.arduino.cc/) mentioned that square wave amplification can be performed with a transitor or two and nothing else. 
+
+![Transistor Amplifier](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Electronic_Amplifier_Push-pull.svg/365px-Electronic_Amplifier_Push-pull.svg.png)
+
+Essentially, using one NPN and one PNP transistor, one can amplify the square wave. Wiring into the Tilda's 5V thru-hole at the bottom of the board allows for a larger current draw. Wiring this onto some strip board, mounting the board over the digital pins, finally putting the whole thing into a laser cut case completed the build. At present (as of this morning) the doorbell appears to work. On occasion, depending on where the button is mounted, the signal appears not to reach the badge. I've moved things around a bit and it seems to work great. One benefit is the whole system can run off USB without need for a mains transformer. Added bonus!
+
+
