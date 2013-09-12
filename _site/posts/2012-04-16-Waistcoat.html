@@ -67,6 +67,8 @@
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -78,12 +80,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
+       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
           <li><a href="/blog.html">Blog</a></li>
@@ -105,16 +107,16 @@
 <p>The buttons are quite nifty. Designed with QCad and then cut with a laser cutter, these little beauties bring the whole ensemble together. Originally I had thought of laser cutting a small hole through the orange perspex behind but it didn't quite work. In the end I bought some shanks from eBay and glued them on. It turns out the little flashes of orange really make it. Of course, the bottom button is the turret - slightly offset.</p>
 <p><img alt="buttons" src="http://farm8.staticflickr.com/7264/6881416048_9804c98b1f.jpg" /></p>
 <p>If I make these again, I'll need to take into account the beam-width most likely, as the smaller pixels are barely more than melted slivers of plastic. The next challenge will be a set made by shapeways or milled from aluminium most likely.</p>
+
   </div>
+
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
+    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
   </footer>
 </div>
 
 
-
-<script src="/js/bootstrap.js"></script>
 
 <script type="text/javascript">
   $(window).load(function(){
@@ -143,24 +145,19 @@
 
     $("#blogblocks .blogvideo").each(function(i,e){
       $(e).after('<hr />');
+
     });
-      
+
+    // Process all images in the post to add light boxes
+    var images = $("#blogblocks img");
+    for(var i = 0; i < images.length; i++) {
+      $(images[i]).wrap("<a href='" + $(images[i]).attr("src") + "'></a>");
+    }
+
   });
 
 </script>
 
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2107281-3");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
 
 </body>
 </html>

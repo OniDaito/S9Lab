@@ -133,3 +133,15 @@ li {
   margin-right: auto;
   width: 460px;
 }
+
+footer > ul {
+
+}
+
+footer > ul > li {
+  display: inline-block;
+  *display: inline;
+  padding-right: 5px;
+  padding-left: 5px;
+  *zoom: 1;
+}

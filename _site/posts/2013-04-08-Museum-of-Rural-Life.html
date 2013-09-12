@@ -67,6 +67,8 @@
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -78,12 +80,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
+       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
           <li><a href="/blog.html">Blog</a></li>
@@ -118,16 +120,16 @@
 <p>One thing Android is terrible at, is Graphics. Maybe this is better on the later versions (we were forced to use Gingerbread due to the phone) but it is unintuitive, bloated and poorly designed in my opinion. When it comes to graphics, style and design, Apple wins hands down. Say what you like about walled gardens. While it may not be ideal, Apple got it right and Android has pretty much copied them. The sheer amount of versions, deprecated methods and devices makes Android a real pain. In this project, I needed SVG support and animation for the interactive maps. I had to implement it with third party libraries, my own hit-testing and a slew of programs to create the correct SVG files. Too much time was wasted here I feel. </p>
 <p><img alt="Fergusson Brown" src="http://farm9.staticflickr.com/8390/8597388203_a7e5930d4c.jpg" /></p>
 <p>Feedback from our visitors was great! Everyone really enjoyed the audioguide and found it gnerally easy to use. Given the amount of time and money spent, I feel we did really well, despite the setbacks given above. There is definitely a lot more scope for experimentation and I feel there will be some interesting applications that will come from this. Museums of the World! You too, can have an audioguide that doesn't cost the earth!</p>
+
   </div>
+
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
+    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
   </footer>
 </div>
 
 
-
-<script src="/js/bootstrap.js"></script>
 
 <script type="text/javascript">
   $(window).load(function(){
@@ -156,24 +158,19 @@
 
     $("#blogblocks .blogvideo").each(function(i,e){
       $(e).after('<hr />');
+
     });
-      
+
+    // Process all images in the post to add light boxes
+    var images = $("#blogblocks img");
+    for(var i = 0; i < images.length; i++) {
+      $(images[i]).wrap("<a href='" + $(images[i]).attr("src") + "'></a>");
+    }
+
   });
 
 </script>
 
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2107281-3");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
 
 </body>
 </html>

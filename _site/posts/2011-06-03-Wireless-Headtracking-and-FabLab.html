@@ -67,6 +67,8 @@
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -78,12 +80,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
+       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
           <li><a href="/blog.html">Blog</a></li>
@@ -103,16 +105,16 @@
 <p>I ended up buying a set of different gyros and accelerometers including <a href="http://www.sparkfun.com/products/9431">Sparkfun 6DOF Razor</a> and the <a href="http://www.sparkfun.com/products/9184">Sparkfun Atomic 6DOF</a>. Both have been pretty easy to setup within Cinder on OSX but each has different challanges. I'll be putting it all into a Cinder Block over the next few days. The Atomic takes care of the XBee communication but requires that you write some code to decode it's frames. I had some issues with that as each value comes back as two bytes: the most significant bits and the least. There were some annoying padding bytes that gave me trouble under C++ but after that, getting some nice values out seemed fine. The razor requires that you implement the XBee standard somehow. I wrote some code in C++, based on the Java libraries from Processing. Getting reasonable values out of the Razor was not too hard.</p>
 <p>The problem I had was my belief that Gyros measure absolute position. They don't. This may seem obvious to most but its the force applied to them in order to keep them steady that is measured, and they also drift. This means combining accelerometer data and gyro data together is needed and really important to get right. I have investigated Kalman filters and a few other methods to get everythong straight but its still a work in progress.</p>
 <p>To keep everything in one place, I decided to build a custom case at <a href="http://www.fablabmanchester.org">Manchester FabLab</a>which is a great little place indeed! They are much more strict that London Hackspace but their kit is just a little bit neater and newer. It depends what you want from a workshop really? Both are good though Fablab restricts you to just Friday's and saturdays which sucks a little. Nevertheless, using Google Sketchup with the SVG Export plugin and Inkscape, you can produce a PDF that can be sent to a Laser cutter. Throw in some 3mm acrylic and bam! One case that holds the Atomic and a LiPoly Battery.</p>
+
   </div>
+
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
+    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
   </footer>
 </div>
 
 
-
-<script src="/js/bootstrap.js"></script>
 
 <script type="text/javascript">
   $(window).load(function(){
@@ -141,24 +143,19 @@
 
     $("#blogblocks .blogvideo").each(function(i,e){
       $(e).after('<hr />');
+
     });
-      
+
+    // Process all images in the post to add light boxes
+    var images = $("#blogblocks img");
+    for(var i = 0; i < images.length; i++) {
+      $(images[i]).wrap("<a href='" + $(images[i]).attr("src") + "'></a>");
+    }
+
   });
 
 </script>
 
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2107281-3");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
 
 </body>
 </html>

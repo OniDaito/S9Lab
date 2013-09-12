@@ -67,6 +67,8 @@
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -78,12 +80,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
+       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
           <li><a href="/blog.html">Blog</a></li>
@@ -101,16 +103,16 @@
 <p><img alt="companion cube" src="http://2.bp.blogspot.com/_WNXP2eEZSdg/TM_YBNY4mwI/AAAAAAAAAvs/O7ezHaK12es/s1600/cc1.jpg" /></p>
 <p>Another work in progress as I play with the Makerbot at the <a href="http://london.hackspace.org.uk">London Hackspace</a>. It needs some internals I think and a lot of playing with but so far so good. I've attempted different configurations on the printer but with limited success. The process is not refined but I'l get it right eventually. The top and bottoms of the cube are suspended and therefore only partially work. To get it right would require some sort of pyramid shape of two halves of the cube. I attempted this but sadly, there were issues with Blender converting to something replicator-g can understand.</p>
 <p>Im thinking a boarduino and some kind of IRC interface. When you hug the cube, it glows or something.Glados ain't gettng her stinking PCBs on this one! :D</p>
+
   </div>
+
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
+    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
   </footer>
 </div>
 
 
-
-<script src="/js/bootstrap.js"></script>
 
 <script type="text/javascript">
   $(window).load(function(){
@@ -139,24 +141,19 @@
 
     $("#blogblocks .blogvideo").each(function(i,e){
       $(e).after('<hr />');
+
     });
-      
+
+    // Process all images in the post to add light boxes
+    var images = $("#blogblocks img");
+    for(var i = 0; i < images.length; i++) {
+      $(images[i]).wrap("<a href='" + $(images[i]).attr("src") + "'></a>");
+    }
+
   });
 
 </script>
 
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2107281-3");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
 
 </body>
 </html>

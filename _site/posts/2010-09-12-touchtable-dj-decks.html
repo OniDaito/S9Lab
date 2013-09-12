@@ -67,6 +67,8 @@
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -78,12 +80,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
+       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
           <li><a href="/blog.html">Blog</a></li>
@@ -105,16 +107,16 @@
 <p>With this table already built, we decided to build a DJ deck. Now this would probably be too much for just 24 hours but there were some useful programs out there that help.</p>
 <p>The first is <a href="http://www.google.com/url?sa=t&source=web&cd=1&ved=0CB8QFjAA&url=http%3A%2F%2Fwww.mixxx.org%2F&ei=s86MTJq9JobQngf7pbyFCw&usg=AFQjCNHNr1Ax9CegWkr19Nqgww57oGgThA&sig2=7x6vUtImkslxUZMB7RY3jg">Mixxx</a>, the DJ program. This has midi bindings for many controllers. I figured the best bet was to write something in <a href="http://www.google.com/url?sa=t&source=web&cd=3&ved=0CCEQFjAC&url=http%3A%2F%2Fopenframeworks.cc%2F&ei=xM6MTL6mIoufnAfz8NmUCw&usg=AFQjCNGf3s4rMuk8wdEs37e8jI3Sz5YHmA&sig2=ykZd8VqQGAyzERp5D9jtkw">Openframeworks</a> that received TUIO messages from CCV, altered the controls and then sent MIDI signals to Mixxx. Linking two programs with Midi is possible under Linux using the virtual midi module and <a href="http://lintian.debian.org/full/piem@debian.org.html">AConnectGUI</a>.</p>
 <p>The track is by the amazing <a href="http://www.pronobozo.com/remixes/NIN%20-%20Only%20(Pronobozo%20Remix)">Pronobozo. Grab it here!</a></p>
+
   </div>
+
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
+    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
   </footer>
 </div>
 
 
-
-<script src="/js/bootstrap.js"></script>
 
 <script type="text/javascript">
   $(window).load(function(){
@@ -143,24 +145,19 @@
 
     $("#blogblocks .blogvideo").each(function(i,e){
       $(e).after('<hr />');
+
     });
-      
+
+    // Process all images in the post to add light boxes
+    var images = $("#blogblocks img");
+    for(var i = 0; i < images.length; i++) {
+      $(images[i]).wrap("<a href='" + $(images[i]).attr("src") + "'></a>");
+    }
+
   });
 
 </script>
 
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2107281-3");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
 
 </body>
 </html>

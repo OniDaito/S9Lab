@@ -38,7 +38,7 @@ idx: home
         {% if post.category == 'work' %}
           
           <div class="span4">
-            <p class="highlight">{{post.title}}</p>
+            <p class="highlight"><a href="{{post.url}}" alt="{{ post.title }}">{{post.title}}</a></p>
             <p class="toppad"> {{post.introtext}} </p>
             <p class="seemore"><a href="{{post.url}}">See more &raquo;</a></p>
           </div>
@@ -93,7 +93,7 @@ idx: home
       {% for post in site.posts %}
         {% if not post.category %}
             <div class="span4">
-              <p class="highlight">{{post.date.strftime('%d-%m-%Y') }} {{post.title}}</p>
+              <p class="highlight"><a href="{{post.url}}" alt="{{ post.title }}">{{post.date.strftime('%d-%m-%Y') }} {{post.title}}</a></p>
               <p class="toppad">{{post.introtext}} </p>
               <p><a href="{{post.url}}">See more &raquo;</a></p>
             </div>

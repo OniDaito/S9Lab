@@ -67,6 +67,8 @@
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -78,12 +80,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
+       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
           <li><a href="/blog.html">Blog</a></li>
@@ -106,16 +108,16 @@
 <p>Denied is a good example of my style; it's a mashup of many technologies. Firstly, the system runs on <a href="http://wiki.nginx.org/">nginx</a> with uwsgi on top. This provides python support which reads the data produced by Jonty's script and returns a nice stack of JSON for Jquery to read. On the client side, we have saito.js, a bunch of shaders, jquery, <a href="http://sylvester.jcoglan.com/">sylvester</a> and some nice HTML5 formatting and support. Every 30 seconds a request is made to nginx for more data, recreating the curves.</p>
 <p>The lighting is per-pixel with materials and light settings. The background is a quad with an alpha blend applied to give the burst effect. I wanted to try volumetric lighting but I'll leave that for another time. to create the etched surface of the globe, the standard technique of bump mapping was applied, though the tanget creation was a bit tricky. The maps of the planet are from <a href="http://visibleearth.nasa.gov/">NASA</a> though I couldn't find a bump map with a high enough resolution. I disabled zooming in this instance because it affected the lighting too much and I wanted it to be consistent. The curves have a different shader that alters their alpha value with a sine function. Add some blending to that and you get a pleasing effect.</p>
 <p>Overall, I'm really happy with the look. It was pure experimentation and just messing around with colours and values and ideas with the shaders. This works in firefox 5, Chrome standard and Chrome Canary. Im not sure about other browsers yet. Each browser has different support. Firefox seems to run fast but doesn't antialias things correctly. Standard Chrome has antialiasing but tends to eat up CPU too much, whereas Canary seems to have all the positives and none of the negatives. Hopefully we'll see some standardisation soon. </p>
+
   </div>
+
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
+    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
   </footer>
 </div>
 
 
-
-<script src="/js/bootstrap.js"></script>
 
 <script type="text/javascript">
   $(window).load(function(){
@@ -144,24 +146,19 @@
 
     $("#blogblocks .blogvideo").each(function(i,e){
       $(e).after('<hr />');
+
     });
-      
+
+    // Process all images in the post to add light boxes
+    var images = $("#blogblocks img");
+    for(var i = 0; i < images.length; i++) {
+      $(images[i]).wrap("<a href='" + $(images[i]).attr("src") + "'></a>");
+    }
+
   });
 
 </script>
 
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2107281-3");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
 
 </body>
 </html>

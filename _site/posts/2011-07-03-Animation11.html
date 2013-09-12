@@ -67,6 +67,8 @@
   <meta name="DC.subject" lang="en" content="" /> 
 
   <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -78,12 +80,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" />
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
+       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
 
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/contact.html">Contact</a></li>
           <li><a href="/blog.html">Blog</a></li>
@@ -113,16 +115,16 @@
 <p>For instance, Only is a labour of love for me. I've taken baby steps with it for over a year now. The original version helped to get me a job with MSA Visuals and when I look at it, I have to laugh because it's nowhere near as polished as it is now. But the original version has so much in it that was exploratory and creative. For instance, I had a cheap black screen, a few python prototypes, some cheap infrared cameras and what not. It was a great way to learn and I never gave up on it. Small steps.</p>
 <p>Sometimes, I used to get down because it wasn't really <em>my</em> thing. I mean, the original idea came from Trent Reznor, the idea for making it double sided came from <a href="http://jonty.co.uk/">Jonty Wareing</a> and the screen was built by Andrew Robinson from Manchester University. The thing is though, many people were involved in bringing together this project and I think that perhaps, the best projects really are collaborations. Im in there somewhere though, perhaps as the driver. But when I get down to it, there are so many people to thank. The staff at the uni, Toby Howard who directed the day, the guys who made Cinder, etc. I think that we never really do stuff on our own these days. Maybe thats a good thing afterall.</p>
 <p>In the end, Robert is totally correct. I'm still a little mad here and there that it didn't quite get to where I wanted it to be. I have ideas like mounting the kinect inside the screen or using different lights to capture the reflections or porting to windows to get instancing support and faster framerates but in the end, it worked and the people who played with it loved it. So I guess I'm happy to move on now and invent more things. Suppose I better had really as I need to eat! :D</p>
+
   </div>
+
   <hr />
   <footer>
-    <p>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</p>
+    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
   </footer>
 </div>
 
 
-
-<script src="/js/bootstrap.js"></script>
 
 <script type="text/javascript">
   $(window).load(function(){
@@ -151,24 +153,19 @@
 
     $("#blogblocks .blogvideo").each(function(i,e){
       $(e).after('<hr />');
+
     });
-      
+
+    // Process all images in the post to add light boxes
+    var images = $("#blogblocks img");
+    for(var i = 0; i < images.length; i++) {
+      $(images[i]).wrap("<a href='" + $(images[i]).attr("src") + "'></a>");
+    }
+
   });
 
 </script>
 
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-2107281-3");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
 
 </body>
 </html>
