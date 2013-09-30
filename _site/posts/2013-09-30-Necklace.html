@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>LED Pendant</title>
+  <meta name="author" content="Benjamin Blundell" />
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Abel|Jockey+One|Anaheim|PT+Sans+Narrow:400,700|Sintony:400,700|Fjalla+One|Play:400,700|Strait|Oswald:400,700' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/css/s9.css" rel="stylesheet" media="screen">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  <!-- META DATA - Need to Check and Update -->
+  <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+  <!-- General metadata -->
+  <meta name="generator" content="" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="Author-Template" content="" />
+  <meta name="Author" content="Benjamin Blundell" />
+  <meta name="Publisher" content="Benjamin Blundell" />
+  <meta name="Publisher-Email" content="oni@section9.co.uk" />
+  <meta name="Coverage" content="UK" /> 
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.date.created" lang="en" content="" />
+  <meta name="DC.format" lang="en" content="text/html" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.coverage" lang="en" content="" />
+  <meta name="DC.identifier" content="" />    
+  
+  <!-- eGMS Metadata -->
+  <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+  
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Creative Technologist Benjamin Blundell. I play with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
+  <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
+  <meta name="DC.description" lang="en" content="" />
+  <meta name="DC.subject" lang="en" content="" /> 
+
+  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+  <div id="blogblocks">
+    
+<p>Whilst working on the <a href="http://www.section9.co.uk/posts/2013-09-12-Doorbell.html">Doorbell</a> I had another <a href="https://en.wikipedia.org/wiki/Atmel_AVR">AVR</a> project on the go; a pendant for a necklace as an anniversery present. I had the idea after seeing a post on <a href="http://hackaday.com/2012/10/12/led-matrix-pendants/">hackaday</a> (where else?) that described a simple project to turn an LED matrix into a fun, little necklace. I decided I'd give it a go.</p>
+<p><img alt="KT" src="http://farm4.staticflickr.com/3694/10016329995_8c2f7c7ab2.jpg" /></p>
+<p>The design calls for an ATtiny2313 as this has the rather nice feature of the right number of legs being in the right places to solder directly onto the LED matrix! No bad thing at all. The parts are all quite straight forward, with one exception; the matrix itself.</p>
+<p>The tricky thing here is that American parts aren't always the same as British ones and finding a matching part can be tricky. Over in the east end of London, we have a large RS Components (up in Leeds, its Farnell for preference) so one can order and then go to the desk for a pickup. I looked around and found <a href="http://uk.rs-online.com/web/p/led-displays/2473179/?origin=PSF_438237|cav">this green LED matrix</a> but when I got it wired up, bad things happened.</p>
+<iframe width="420" height="315" src="//www.youtube.com/embed/vbDU488Olc0" frameborder="0" allowfullscreen></iframe>
+
+<p><img alt="Battery Holder" src="http://farm8.staticflickr.com/7313/10016314195_f43653c268.jpg" /></p>
+<p>The issue is this unit has a common cathode. What one needs to do is set all the pins to a Hi-Z state except the column you want to light up. That column goes to +5v. The corresponding row needs to go to 0v but not the hi impedence state. That way, current flows through the dot in question. This meant re-writing the AVR driver. 
+Most of the code can be found <a href="https://sites.google.com/site/tinymatrix/">here on google</a> for the basic setup. I used my venerable <a href="http://dangerousprototypes.com/docs/Bus_Pirate">bus pirate</a> with a zero-insertion-force or ZIF socket. Programming the device is quite straightforward with the AVRDude tool-chain setup. Really, the hardest part was re-writing the driver section and making sure that the speed was up to scratch. I had a lot of issues with the button and trying to change the animations. Still, after persevering, I finally achieved what I wanted.</p>
+<p>Designing the case was tricky. I had two other projects on and the anniversery was nearing, so I ordered the necklace parts and finings from <a href="http://www.cooksongold.com/">Cooksons Gold</a> and set to work on the design. I didn't have time to turn around the part at Shapeways or similar so I decided to go with a simple design in PLA, mostly because the 3D printed chique might work (I thought, in my head :S ). Fortunately, the <a href="http://www.london.hackspace.org.uk">London Hackspace</a> now has a working 3D printer (I know, shock horror right?!). The <a href="http://www.lulzbot.com/">Lulzbot</a> we have is now working quite well so off I went with Blender.</p>
+<p><img alt="3D Printed Enclosure" src="http://farm4.staticflickr.com/3831/10016375296_93cd6f201a.jpg" /></p>
+<p><img alt="3D Printed Enclosure" src="http://farm8.staticflickr.com/7399/10016301694_ba5b1a99c2.jpg" /></p>
+<p><a href="http://www.blender.org">Blender</a> is still my goto tool for 3D these days as it has all the features one could possibly want and it's only getting better and better. So with all that in mind, I mapped out the dimensions of the soldered pieces and the battery size and came up with a simple, yet slightly organic looking design to encase all the bits. Mounting the battery was the trickiest part. In the end, I laser cut a square of thin perspex with two notches to hold the clip in place. I used a compression fit (read, jamming it in really hard so it wouldnt move) and then soldered the AVR pins to the clip with some wire.</p>
+<p><img alt="Blender Designing" src="http://farm8.staticflickr.com/7300/10016656153_882292b8be.jpg" /></p>
+<p>Overall, I was really happy with the result. I laser cut a box from reflective perspex, put in some padding and voila! I suspect there will be only a few occasions where the girlfriend can actually wear this but I think she liked it :)</p>
+<p><img alt="Final Result" src="http://farm6.staticflickr.com/5338/10016356626_f4353eeac6.jpg" /></p>
+
+  </div>
+
+  <hr />
+  <footer>
+    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+  </footer>
+</div>
+
+
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process 'objects' first
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+
+    });
+
+    // Process all images in the post to add light boxes
+    var images = $("#blogblocks img");
+    for(var i = 0; i < images.length; i++) {
+      $(images[i]).wrap("<a href='" + $(images[i]).attr("src") + "'></a>");
+    }
+
+  });
+
+</script>
+
+
+</body>
+</html>
+
