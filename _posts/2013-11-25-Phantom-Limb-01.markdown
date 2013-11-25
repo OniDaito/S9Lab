@@ -2,7 +2,7 @@
 layout: post
 title: Phantom Limb Dev Diary Part 1
 strapline: The first installment of the Phantom Limb Project
-introtext:
+introtext: So the time has begun to start on Phantom Limb Part 3. For these who have not seen the previous versions of this project, the idea is to immerse a person, who suffers from phantom limb pain, inside a Virtual Reality simulation in order to learn more about the condition and hopefully, provide some comfort for the person in question. 
 ---
 
 So the time has begun to start on Phantom Limb Part 3. For these who have not seen the previous versions of this project, the idea is to immerse a person, who suffers from phantom limb pain, inside a Virtual Reality simulation in order to learn more about the condition and hopefully, provide some comfort for the person in question. 
@@ -15,7 +15,7 @@ Now, thanks to better depth cameras and the rise of the Oculus Rift, it becomes 
 
 We are fortunate to have a couple of Oculus Rifts to work with over the course of this project, which is great! They replace the rather nasty Vuzix headset we were using previously. I’ve not yet tackled the API for this yet but from little I’ve seen it looks fairly robust.
 
-![Oculus Rift](http://phantomlimbmanchester.tumblr.com/image/64298973040)
+![Oculus Rift](http://24.media.tumblr.com/dfcbd8076abd2c8d3ef52283d20b1453/tumblr_mutiauWpQy1si5olwo1_1280.jpg)
 
 In previous versions, we used OpenNI and NITE to perform the tracking of the skeleton, mapped to an FBX model. FBX, an autodesk model format, is pretty cool. Despite it being proprietary, it works quite well, though MD5 from ID, being open, may be a better solution. That has yet to be decided.
 
