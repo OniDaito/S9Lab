@@ -20,6 +20,7 @@ We are fortunate to have a couple of Oculus Rifts to work with over the course o
 In previous versions, we used OpenNI and NITE to perform the tracking of the skeleton, mapped to an FBX model. FBX, an autodesk model format, is pretty cool. Despite it being proprietary, it works quite well, though MD5 from ID, being open, may be a better solution. That has yet to be decided.
 
 So Im working largely with:
+
 - C++ with Clang and CMake
 - Sublime Text 2
 - Linux
