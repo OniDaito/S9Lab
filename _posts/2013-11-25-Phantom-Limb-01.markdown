@@ -19,6 +19,7 @@ We are fortunate to have a couple of Oculus Rifts to work with over the course o
 
 In previous versions, we used OpenNI and NITE to perform the tracking of the skeleton, mapped to an FBX model. FBX, an autodesk model format, is pretty cool. Despite it being proprietary, it works quite well, though MD5 from ID, being open, may be a better solution. That has yet to be decided.
 
+So Im working largely with:
 - C++ with Clang and CMake
 - Sublime Text 2
 - Linux
@@ -26,6 +27,7 @@ In previous versions, we used OpenNI and NITE to perform the tracking of the ske
 - Oculus Rift Libraries
 - Seburo C++ Library (in-house lib)
 - MD5 Models
+
 
 So its been a while since I’ve looked at C++ and a few things have changed. No longer is GCC King of the hill! It seems that there are a couple of options for the discerning coder these days; icc and clang. Now I’ve not tried icc but I’ve noticed Clang gaining a lot of traction these days. It certainly does kick out nicer error messages and I can see why Apple decided to use it. I’ve been playing with LLVM over in Javascript land and I can see the appeal.
 
