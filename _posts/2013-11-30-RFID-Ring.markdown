@@ -2,10 +2,10 @@
 layout: post
 title: RFID Ring
 strapline: Wearable tech done right!
-introtext: I have a chip on my shoulder about wearable technology. Most of it is crap, basically. Its a shame because I'm really keen on personal uses of technology and getting closer to it. I think there are some gimmicks out there and things that people are playing with, but they just seem to be not really wearable or not really tech. Enter the RFID Ring.
+introtext: I have a chip on my shoulder about wearable technology. There is a lot of hype out there and the good stuff is rare. Its a shame because I'm really keen on personal uses of technology and getting closer to it. I think there are some gimmicks out there and things that people are playing with, but they just seem to be not really wearable or not really tech. Enter the RFID Ring.
 ---
 
-I have a chip on my shoulder about wearable technology. Most of it is crap, basically. Its a shame because I'm really keen on personal uses of technology and getting closer to it. I think there are some gimmicks out there and things that people are playing with, but they just seem to be not really wearable or not really tech. Enter the RFID Ring.
+I have a chip on my shoulder about wearable technology. There is a lot of hype out there and the good stuff is rare. Its a shame because I'm really keen on personal uses of technology and getting closer to it. I think there are some gimmicks out there and things that people are playing with, but they just seem to be not really wearable or not really tech. Enter the RFID Ring.
 
 ![rfid ring](http://farm3.staticflickr.com/2871/11131493934_ce1d661df8.jpg)
 
