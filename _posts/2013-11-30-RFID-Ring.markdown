@@ -1,0 +1,41 @@
+---
+layout: post
+title: RFID Ring
+strapline: I have a chip on my shoulder about wearable technology. Most of it is crap, basically. Its a shame because I'm really keen on personal uses of technology and getting closer to it. I think there are some gimmicks out there and things that people are playing with, but they just seem to be not really wearable or not really tech. Enter the RFID Ring.
+---
+
+I have a chip on my shoulder about wearable technology. Most of it is crap, basically. Its a shame because I'm really keen on personal uses of technology and getting closer to it. I think there are some gimmicks out there and things that people are playing with, but they just seem to be not really wearable or not really tech. Enter the RFID Ring.
+
+![rfid ring](http://farm3.staticflickr.com/2871/11131493934_ce1d661df8.jpg)
+
+There is a kickstarter campaign out at the moment that will have this all sewn up, but I couldn't wait to try my own. One thing people forget about RFID is that it needs to be more than a gimmick. It has to work. As an Apple person (mostly), NFC and RFID is not on the cards. It has to work with something else ideally. The infrastructure is the main thing. If you are not using RFID all the time, on readers or phones around you, then there isn't any point. In London, however, there are quite a few uses of RFID around.
+
+My intention was to take an existing use of RFID and bend it to my will in putting it into a ring. I have a particular card I wanted to try this on. I shan't say which one, but lets say its popular in London. It is in the 13Mhz range, so a MiFaire high frequency, passive RFID chip. This is important. It means this same card can open [The London Hackspace door](http://london.hackspace.org.uk) which is another bonus.
+
+The first thing to do, is remove the chip and aerial from the card. This is done using two stages: acetone and [plastic weld](http://en.wikipedia.org/wiki/Plastic_welding#Solvent_welding). The latter can be found at places that stock ABS, Perspex and such, and is used to almost melt plastic together. Leaving the card in Acetone will make it appear rippled. The layers of the card will being to soften and you can pull them apart with tweezers and a good scalpel. Plastic weld will melt the card even further, reducing it to small bits. You can then pull out the aerial quite easy. The same goes for the chip. 
+
+![melted cover](http://farm8.staticflickr.com/7322/11131768673_1e1725e0bd.jpg)
+
+The chip itself is the most important bit. The aerial is actually not that important. Variants of the card sometimes have different aerials that are not made of copper wire. In fact, copper wire in the older versions of these cards is now quite rare I'd wager. The chip itself, has two tabs on either side. Be careful of breaking these. I certainly snapped one off and was lucky to solder it back on.
+
+![plastic weld melty melty](http://farm3.staticflickr.com/2831/11131774923_02e0a80a6e.jpg)
+
+The insight here is one can simply attach another kind of aerial. It is possible to wind your own but at this frequency and at size I needed, thats probaly not going to happen. Its a tough task. In the end, I found a set of RFID keyrings at the London Hackspace. I prized open the lids and dropped the remaining keyring into a small pot of plastic weld. This gets rid of all the glue and plastic with some encouragement. You can then solder the new aerial onto the chip.
+
+![rfid aerial soldered on](http://farm4.staticflickr.com/3685/11131670604_de2a33b6b3.jpg)
+
+Testing is the next major thing. At all stages I had my touch-a-tag reader at the ready, almost like some kind of life support machine; testing to see if I had broken the chip. I use Linux with PCSCD and a small Python Script with Pyserial to send the commands to the reader. I've never had any luck with RFIdiot or similar. I always forget the commands and such. One day, I'll write them down, but all that was needed was a postive response. I mounted the final unit inside a small box so it wouldn't get damaged when I, ahem, *took it for a ride*.
+
+![mounted inna box](http://farm3.staticflickr.com/2851/11131607015_e37a1c3368.jpg)
+
+The final part was to create the ring. I did this rather quickly in blender and went for a sort of upside down signet ring affair. Since then, I've thought of a much better design consisting of two parts, if I can get the aerial to work in a saddle shape, but thats for version two. Off to [Shapeways](http://www.shapeways.com) I went and soon after, the ring arrived.
+
+![ring and chip](http://farm4.staticflickr.com/3829/11131612225_47e00d59a7.jpg)
+
+The final ring is quite nice, fits well and works a treat. Its not perfect sadly as the cap didn't come out too well and the final glue finish holding it in place is not perfect but in the end, it works and does what I want. I've certainly got a few more ideas for version 2 already!
+
+![ring underside](http://farm6.staticflickr.com/5526/11131486695_a17ec17277.jpg)
+
+Ultimately, I think this is where good wearable technology is. Its attractive, can survive the rigors of being worn (especially by me), and it provides a useful function, especially here in London. For these interested, do a quick search on Youtube and you may see what I mean.
+
+
