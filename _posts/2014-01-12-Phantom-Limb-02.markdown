@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phantom Limb Dev Diary Part 2
-strapline: 
+strapline: So Ive been working on the Seburo backend and I’ve hit that old chestnut again - textures and images. Classically, I’ve had issues with this because its something that just needs to be done, and I get frustrated with how tedious it can be. Not to be negative this time, I’ve decided to get it right. This image is under OSX and I’m using Quartz to pull in the images into C++ as its installed by default on OSX. The same cannot be said for Linux however.
 ---
 
 So Ive been working on the Seburo backend and I’ve hit that old chestnut again - textures and images. Classically, I’ve had issues with this because its something that just needs to be done, and I get frustrated with how tedious it can be. Not to be negative this time, I’ve decided to get it right. This image is under OSX and I’m using Quartz to pull in the images into C++ as its installed by default on OSX. The same cannot be said for Linux however.
