@@ -157,6 +157,7 @@ client.open(function(err, p_client) {
 
     $("#blogblocks p > code").each(function (i,e) {
       $(e).parent().replaceWith(e);
+      $(e).wrap("<div class='blogvideo'><div>")
     });
 
 

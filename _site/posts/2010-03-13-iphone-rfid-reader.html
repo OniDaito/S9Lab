@@ -189,6 +189,7 @@ works quite well for testing if you comment out the sending code.</p>
 
     $("#blogblocks p > code").each(function (i,e) {
       $(e).parent().replaceWith(e);
+      $(e).wrap("<div class='blogvideo'><div>")
     });
 
 

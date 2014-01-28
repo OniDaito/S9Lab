@@ -171,6 +171,7 @@ Application\ Support/Blender/2.61/config/startup.blend -a"
 
     $("#blogblocks p > code").each(function (i,e) {
       $(e).parent().replaceWith(e);
+      $(e).wrap("<div class='blogvideo'><div>")
     });
 
 

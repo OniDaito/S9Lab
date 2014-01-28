@@ -189,6 +189,7 @@ mObj-&gt;mViewMatrix = glm::lookAt(direction, glm::vec3(0,0,0),up );
 
     $("#blogblocks p > code").each(function (i,e) {
       $(e).parent().replaceWith(e);
+      $(e).wrap("<div class='blogvideo'><div>")
     });
 
 

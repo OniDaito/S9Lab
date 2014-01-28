@@ -147,6 +147,7 @@ with this board - well, as great as can be expected. </p>
 
     $("#blogblocks p > code").each(function (i,e) {
       $(e).parent().replaceWith(e);
+      $(e).wrap("<div class='blogvideo'><div>")
     });
 
 

@@ -139,6 +139,7 @@ So, is that it then? No, there is one last thing. You need to be careful with th
 
     $("#blogblocks p > code").each(function (i,e) {
       $(e).parent().replaceWith(e);
+      $(e).wrap("<div class='blogvideo'><div>")
     });
 
 

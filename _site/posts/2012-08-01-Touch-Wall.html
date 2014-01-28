@@ -154,6 +154,7 @@ seems too much but hopefully the tighter filter will improve things.</p>
 
     $("#blogblocks p > code").each(function (i,e) {
       $(e).parent().replaceWith(e);
+      $(e).wrap("<div class='blogvideo'><div>")
     });
 
 
