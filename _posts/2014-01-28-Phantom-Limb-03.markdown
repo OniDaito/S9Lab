@@ -30,16 +30,22 @@ Our hell-knight model is looking a lot more cheerful now! If cheerful is the rig
 
 Trouble is, the FPS is a little slower than I’d like, though I’ve no doubt it’s faster than doing it all on the CPU; we’d have to upload fresh data to the GPU in the form of vertex arrays and that is not pleasant. Still, there is room for some changes. I had a lot of issues with this program because there were a few things I was unaware of:
 
-```glVertexAttribIPointer
-layout (location = 6) in vec4 aVertWeightPosBias[6];```
+  
+```
+  glVertexAttribIPointer
+  layout (location = 6) in vec4 aVertWeightPosBias[6];
+```
 
 So, the former sets a pointer into a block of data (or a bound buffer really) and matches that up to the location parameter in the vertex shader. However, everything in GLSL is aligned on a 4 float basis, or rather, 4 x 32 bit values. So a vec4 or a vec3 takes up one block. A float[4] array takes up one block, etc etc.
 
 Since all my previous blocks were 4 x 32 in size, I never noticed my mistake till I got to skinning. If you have an attribute that is larger than a block - like, say, a matrix - then you need to make it cross several blocks. This means calling…
 
-```glEnableVertexAttribArray```
+```
+  glEnableVertexAttribArray
+```
 
 …for each block that you need (4 in the case of the matrix). Once you have done that…
+
 ```
   layout (location = 0) in mat4 aMatrix
   layout (location = 4) in vec aVec

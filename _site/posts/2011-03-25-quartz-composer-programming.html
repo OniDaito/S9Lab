@@ -135,7 +135,14 @@ So, is that it then? No, there is one last thing. You need to be careful with th
 <script type="text/javascript">
   $(window).load(function(){
 
-    // Process 'objects' first
+    // Process p code blocks
+
+    $("#blogblocks p > code").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+
+
+    // Process 'objects' next
 
     $("#blogblocks p > object").each(function (i,e) {
       $(e).parent().replaceWith(e);

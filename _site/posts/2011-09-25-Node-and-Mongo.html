@@ -103,9 +103,9 @@
 <p>Recently, I've been working with a good client on a project that requires network communication between two sites and provision for a history feature.One of the collaborators is a fan of <a href="http://www.mongodb.org/">mongodb</a> and <a href="http://nodejs.org/">nodejs</a> - two rather nifty projects that I've been meaning to work with for a while. I had no idea but dived in anyway.</p>
 <p>Node appears to have a set of modules which you can install with <a href="http://npmjs.org/">npm</a>. These modules are placed within the directory in which you run npm which is presumably where your node script is. One useful modules is <a href="http://expressjs.com/">express</a> which sets up basic handling for a website. You can then write code such as:</p>
 <pre><code>var Express = require('express');
-var app = Express.createServer();
-
-app.get('/', function(req, res){
+</code></pre>
+<p>var app = Express.createServer();</p>
+<pre><code>app.get('/', function(req, res){
     res.send('Hello World');
 });
 
@@ -153,7 +153,14 @@ client.open(function(err, p_client) {
 <script type="text/javascript">
   $(window).load(function(){
 
-    // Process 'objects' first
+    // Process p code blocks
+
+    $("#blogblocks p > code").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+
+
+    // Process 'objects' next
 
     $("#blogblocks p > object").each(function (i,e) {
       $(e).parent().replaceWith(e);

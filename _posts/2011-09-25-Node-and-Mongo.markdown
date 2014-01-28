@@ -9,7 +9,7 @@ Recently, I've been working with a good client on a project that requires networ
 Node appears to have a set of modules which you can install with [npm](http://npmjs.org/). These modules are placed within the directory in which you run npm which is presumably where your node script is. One useful modules is [express](http://expressjs.com/) which sets up basic handling for a website. You can then write code such as:
 
 	var Express = require('express');
-	var app = Express.createServer();
+  var app = Express.createServer();
 
 	app.get('/', function(req, res){
     	res.send('Hello World');

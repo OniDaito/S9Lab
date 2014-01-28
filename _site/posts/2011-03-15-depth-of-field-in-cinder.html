@@ -116,7 +116,14 @@
 <script type="text/javascript">
   $(window).load(function(){
 
-    // Process 'objects' first
+    // Process p code blocks
+
+    $("#blogblocks p > code").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+
+
+    // Process 'objects' next
 
     $("#blogblocks p > object").each(function (i,e) {
       $(e).parent().replaceWith(e);
