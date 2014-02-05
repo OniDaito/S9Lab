@@ -2,7 +2,7 @@
 layout: post
 title: Phantom Limb Dev Diary Part 3
 strapline: The final installment of the Phantom Limb Project Dev-Diary
-introtext: Skeletal Animation is annoyingly hard! To be fair though, its the real crux of this whole gig. Getting the skinning working right, the bones all moving properly and the whole thing being easy to use is 90% of this project. So I’ve been spending a fair bit of time with the MD5 model format.
+introtext: Skeletal Animation is annoyingly hard! To be fair though, its the real crux of this whole gig. Getting the skinning working right, the bones all moving properly and the whole thing being easy to use is 90% of this project. So i’ve been spending a fair bit of time with the MD5 model format.
 ---
 
 Skeletal Animation is annoyingly hard! To be fair though, its the real crux of this whole gig. Getting the skinning working right, the bones all moving properly and the whole thing being easy to use is 90% of this project. So I’ve been spending a fair bit of time with the MD5 model format.
@@ -39,7 +39,7 @@ After a lengthy process of export, retry, export, try again, Sintel is ready for
 
 ![Sintel in Game](http://farm8.staticflickr.com/7424/12318737434_ae0b14b9b4.jpg)
 
-In the end, however, it was deemed that less characatured model should be used, and preferably a male one as the majority of patients at the clinic will be male. Originally, I thought Sintel was quite androgonous but playing the game for a few minutes changes that. In addition, the gloves probably would have created some cognitive dissonance.
+In the end, however, it was deemed that less caricatured model should be used, and preferably a male one as the majority of patients at the clinic will be male. Originally, I thought Sintel was quite androgynous but playing the game for a few minutes changes that. In addition, the gloves probably would have created some cognitive dissonance.
 
 ![Tracksuit Guy](http://farm4.staticflickr.com/3783/12318738024_11f4cb01e2.jpg)
 
