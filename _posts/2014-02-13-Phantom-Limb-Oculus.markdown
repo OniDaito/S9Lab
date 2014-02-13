@@ -3,7 +3,7 @@ layout: post
 title: Oculus Rift, meet Phantom Limb Therapy
 category: work
 strapline: Merging the Oculus Rift, the Kinect and custom graphics to treat Phantom Limb sufferers
-strapimage: oculus_phantom.jpg
+strapimage: oculus_plp.jpg
 introtext: Working with the University of Manchester, I built a 3D engine that combines the oculus rift, the asus xtion and the MD5 Model format attempting to treat sufferers of Phantom Limb Pain This is version 3 of the project and is the best yet, thanks largely to the Oculus Rift.
 ---
 
