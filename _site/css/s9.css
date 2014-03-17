@@ -2,6 +2,23 @@
  * S9 CSS
  */
 
+
+ /* Fonts */
+
+ @font-face {
+  font-family: 'Abel';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Abel'), local('Abel-Regular'), url("/fonts/abel.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Anaheim';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Anaheim'), local('Anaheim-Regular'), url("/fonts/anaheim.woff") format('woff');
+}
+
  /* Top Bar Styles - overrides */
 
 
