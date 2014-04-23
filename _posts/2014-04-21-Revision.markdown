@@ -9,31 +9,31 @@ I've been quite busy, working on a few professional and personal projects, But I
 
 [Revision](http://2014.revision-party.net/) is one of a few demo-scenes held on the continent, in Saarbrucken, Germany, over a period of 4 days. Getting there is quite easy from London at least; Deutche Bahn and Eurostar make it quite easy to book train tickets there. Over the long weekend, competitions are run, seminars are held and DJ sets are played. The festival is held in the large [E-Werk](http://www.ewerk-sb.de/) building, which is located, rather inconspicuously, on a business and shopping park. 
 
-![C64 Hard at work](https://farm8.staticflickr.com/7106/13972591555_3c302d6462_o.jpg)
+![C64 Hard at work](https://farm8.staticflickr.com/7106/13972591555_a9395daa28.jpg)
 
 As soon as I'm inside, the atmosphere changes dramatically to one of loud beats, chiptunes, and bassy rhythms. Its dark, with blikenlights, monitors punctuating the blackness. At the far end of this massive hall, is a huge screen displaying announcements and any competitions in progress. Beneath it is a stage, and spread out before it, the rows and rows of desks, with sceners working on all manner of things from Commodore 64 Demos, to painting graphic art with Wacom Tablets!
 
 For someone who grew up in the 80s and 90s, seeing Amigas, Commodore 64s and other machines of the time, it feels like a joyous nostalgia trip down retro lane. There are Atari logos everywhere, even some classic pinball machines. Everyone inside is either chatting, drinking beer or furiously typing on their machines. If you've ever been to a LAN party, you get the idea.
 
-![Crypt Live coding](https://farm8.staticflickr.com/7121/13969402251_c59a83cc2e_o.jpg)
+![Crypt Live coding](https://farm8.staticflickr.com/7121/13969402251_d23396f77b.jpg)
 
 The DemoScene has it's origins in the cracking scene of the 80s and 90s. If you've ever pirated a game for the Amiga you'll have seen some intro text about the group who cracked the game and a series of "shout-outs" to other sceners and crackers. After a time, these intros became more and more complex, both artistically and technically until the intro became the thing, not the actual cracking of the game.
 
 I'm mostly interested in the scene because the level of graphical and programming skill is incredibly high. Places like [Pouet](http://www.pouet.net/) and [DemoZoo](http://demozoo.org/) keep records of all the parties and demos around the world, and some are just mind blowing! Demos like [You Should](https://www.youtube.com/watch?v=U9Q4YE6b9dI), [Fairlight's Ceasefire](https://www.youtube.com/watch?v=U9Q4YE6b9dI) and [Serenity](https://www.youtube.com/watch?v=ua5iwYLxNPc&list=FLyoCwKwPiCJGOB2Ya2yiBkA&index=11) take the hardware to the next level. Not even AAA games come close, at least when the effects are coupled with filesize. Some demos are limited to 64, 8 or even just 4K! Incredible!
 
-![Revision in all its Glory](https://farm8.staticflickr.com/7400/13992597493_015a3429ec_o.jpg)
+![Revision in all its Glory](https://farm8.staticflickr.com/7400/13992597493_14d7464a4b.jpg)
 
 At Revision 2014, I was working on a project of my own (hopefully being released soon) and watching all the competitions for inspiration. Revision has several competitions such as the Amiga Intro, the 8K Intro, Oldsk00l art and PC Demos, among others. All demos are typically set to music and often employ musicians and artists as well as programmers. Some demos are overly technical but the best I regard as art, both from a programming and aesthetic perspective.
 
 I'd met up with Crypt from [London Hackspace](http://london.hackspace.org.uk) - he decided, bravely to take part in the live demo coding challenge. 25 minutes, head-to-head with another programmer, with the prize going to which demo the audience likes the most. Not an easy thing at all. Through-out the event, competitions are shown on the big screen, with talks by sceners and DJ sets in between. Some of the DJ sets were a little too chiptune, even for my tastes, but the majority were quite excellent! Having DJs performing a live set and having their feed direct to the live demo coders really added some depth to the live competition.
 
-![My Lovely Bed and Desk](https://farm8.staticflickr.com/7085/13992747083_af56635e80_o.jpg)
+![My Lovely Bed and Desk](https://farm8.staticflickr.com/7085/13992747083_5236aac68a.jpg)
 
 I spent 2 days and 3 nights writing code and sleeping under a desk in a sleeping bag, all in the name of professional development. Some of the demos I saw were mind-blowing. Other things became apparent about the scene; it's somewhat defensive in its nature. Whilst there were around 600-700 people there, it's quite a niche area with lots of small groups who know each other and are constantly passing 'greets' to other sceners through their demos, including a few demos advertising other demo parties! Reading around the internet I get the feeling the scene is actively resisting any kind of corporate take-over (despite DICE and King sponsoring the show ) or mass appeal. It keeps itself to itself.
 
 I quite enjoyed the mix of demos; from oldschool Commodore 64 Style graphics, to scenes drawn with deluxe paint, to massively powerful PCs running mind-blowing 3D graphics. My favourites included [Rift by The Black Lotus](https://www.youtube.com/watch?v=9SqvRx6PUSk&list=FLyoCwKwPiCJGOB2Ya2yiBkA) and [Mercury's The Timeless](https://www.youtube.com/watch?v=lwFVlNytq0Q&list=FLyoCwKwPiCJGOB2Ya2yiBkA)
 
-![Amigaaaah!](https://farm8.staticflickr.com/7241/13969606731_7b4f82c9bf_o.jpg)
+![Amigaaaah!](https://farm8.staticflickr.com/7241/13969606731_011985594d.jpg)
 
 The whole festival hearkens back to times where I'd stay up late at night programming, drawing or gaming on one of the many machines I've owned in the past. It's fun to look back and there is a genuine style to the art created in these days. The scene seems to ape these styles and it does it very well - pushing the machines to their limits, creating new visuals and music, but I wonder if this obsession with the past throws up barriers or is entirely healthy?
 
