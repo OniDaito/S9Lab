@@ -18,9 +18,11 @@ I was approached by [The Whipple Museum](http://www.hps.cam.ac.uk/whipple/) at t
 
 Seb had already made quite a lot of head-way in working out how the device was supposed to operate. Digging around the museum stores, he had managed to find a model of the Equatorie, created in the 1950's by a chap called [Price](http://astrolabesandstuff.blogspot.co.uk/), who wrote about the Equatorie at great length. This giant model is quite difficult to use and indeed, would not have been possible to build in the 13th century. Seb set about re-creating [his own version in MDF](), getting a better understanding of the operation in the process, including correcting some inaccuracies in Price's original model.
 
-![Equatorie Detail](https://farm3.staticflickr.com/2915/14110831308_76595e725d.jpg)
 
 With the instructions in place, I set to, with some [CoffeeGL](http://www.coffeegl.com). I'd decided, early on, that this was the perfect opportunity to try and get my own WebGL libraries into shape. I'd toyed with the idea before but hadn't really had a compelling reason, aside from learning. I've used other popular WebGL libraries and simply hadn't seen any point as they never scratched the learning itch I've had.
+
+
+![Equatorie Detail](https://farm3.staticflickr.com/2915/14110831308_76595e725d.jpg)
 
 The Equatorie is made of a few small parts, each with interesting challenges that are not immediately obvious. The main sections are the base, the label, the epicycle and the two strings. The base has a movable plate mounted in the center and there are several markings on all the major elements. This presents the first problem; scale. In the original object, scale is a major issue. It's quite hard to maneuver a large piece of brass accurately and depending on how small and taut your string is, you'll have trouble taking accurate readings. Scale is still an issue with the virtual model. You'll need a texture that looks good up close and far away, with potentially quite large gaps of 'not very much' in between the areas of interest.
 
@@ -34,11 +36,13 @@ Modelling the larger, static components was an interesting challenge. I stuck de
 
 Graphically, the build is fairly simple, using a basic [Phong](https://en.wikipedia.org/wiki/Phong_shading) lighting solution, coupled with a bump map and an [Anisotropic](https://en.wikipedia.org/wiki/Anisotropy) shader function, to give the lovely brass and polished wood effects. My only regret is not having enough time to photograph the Whipple Museum itself to create a reflection map for the metal sections. Maybe next time. I had used a small amount of [SSAO](https://en.wikipedia.org/wiki/Screen_Space_Ambient_Occlusion) for some extra depth but it turned out to be too costly for the effect to be worthwhile.
 
-![Equatorie in Action](https://farm6.staticflickr.com/5591/14297481225_a060eee5fb.jpg)
 
 One final challenge remained - an installation inside the museum itself. The museum wanted to mount a version next to both Price's and Seb's models. I decided that the best option was to run the site on the Google Nexus 10. Chrome supports WebGL (yay!) and that made it the ideal solution. It did present a few challenges however; the user interaction being the chief concern! Using a mouse and keyboard is quite different to how touch screens work and you certainly aren't given any handy gestures like *pinch* or *two-finger-swipe* so one needs to program these in too.
 
 As a computer scientist (or indeed, any scientist) not being able to test or verify is very disconcerting. I am told, by historians, that the notion of a *ground-truth* is very bad history, which I understand but really dislike. So I set about comparing the equatorie to [NASA's Horizons Ephimerides](http://ssd.jpl.nasa.gov/?horizons). Using telnet, one can log into the Horizons system and find the positions of all the celestial objects (and satellites!) with a few key presses. Its marvelous! Turns out the Equatorie is really quite accurate. 
+
+![Equatorie in Action](https://farm6.staticflickr.com/5591/14297481225_a060eee5fb.jpg)
+
 
 There are a couple of important and related points to make about this project. Firstly, I did it my way, as the song goes. I'd made the decision to write my own library, setup my own tools (with the help of [node.js](http://nodejs.org/), [browserify](http://browserify.org/) and [Canon.js](http://www.cannonjs.org/)) and work how I wanted to work. Part of the reason I do what I do is I get to work how I believe I should work. Agency over one's work is really important, especially these days. It's a piece of work I can stand against and say, yes, this is good. I am happy to show this to anyone and let it stand on it's own merits.
 
