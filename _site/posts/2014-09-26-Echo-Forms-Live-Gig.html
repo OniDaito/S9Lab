@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Echoforms at Lexus NX Launch</title>
+  <meta name="author" content="Benjamin Blundell" />
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/css/s9.css" rel="stylesheet" media="screen">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+  <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  <!-- META DATA - Need to Check and Update -->
+  <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+  <!-- General metadata -->
+  <meta name="generator" content="" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="Author-Template" content="" />
+  <meta name="Author" content="Benjamin Blundell" />
+  <meta name="Publisher" content="Benjamin Blundell" />
+  <meta name="Publisher-Email" content="oni@section9.co.uk" />
+  <meta name="Coverage" content="UK" /> 
+
+  <!-- Dublin Core Metadata -->
+  <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.date.created" lang="en" content="" />
+  <meta name="DC.format" lang="en" content="text/html" />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+  <meta name="DC.coverage" lang="en" content="" />
+  <meta name="DC.identifier" content="" />    
+  
+  <!-- eGMS Metadata -->
+  <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+  
+  <meta name="Keywords" content="creative technologist,webgl, coffeescript, git, kinect,opengl,cinder,openframeworks,cpp,c++,programming,graphics,art,design,code" />
+  <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk ltd, the home of Benjamin Blundell. I create with WebGL, Nodejs, Javascript, C++, OpenFrameworks and Cinder amongst many other things." />
+  <meta name="DC.title" lang="en" content="section9 dot co dot uk ltd - Home of Creative Technologist Benjamin Blundell" />
+  <meta name="DC.description" lang="en" content="" />
+  <meta name="DC.subject" lang="en" content="" /> 
+
+  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<div class="container-fluid" id="content">
+  <div id="blogblocks">
+    
+<p>I've spoken about <a href="http://www.section9.co.uk/posts/2014-07-28-Kaleidoscope.html">Echo Forms</a> in a previous post, but this time, <a href="http://www.hellicarandlewis.com/">Hellicar and Lewis</a> and I were asked by Lexus to take it to their launch event in Paris. This involved building a different form of interaction from the mouse and pointer style and a machine with a little more grunt. </p>
+<p>The existing webpage uses the mouse to drag and distort a kaliedoscope. For the live setup we decided to use a logitech camera within the browser in order to generate some kind of user feedback. The plan involved using the <a href="https://en.wikipedia.org/wiki/Lucas%E2%80%93Kanade_method">Lucas Kanade Optical Flow algorithm</a> used in the <a href="https://github.com/inspirit/jsfeat">JSFeat</a> library.</p>
+<p><img alt="Lexus NX Gig" src="https://farm4.staticflickr.com/3885/15163697500_c281683ba4.jpg" /></p>
+<p>JSFeat is quite impressive! It amazes me still that we can do such things inside a browser context, even if they will always be slower than their native counterparts (although thats perhaps not entirely true). The algorithm performs reasonably well so we went with that.</p>
+<p>Accessing the camera using <a href="http://www.webrtc.org/">WebRTC</a> is fairly straight forward. It would be nice to get a little bit more control over the camera in the same way you can with UVC devices under Linux and similar but nevertheless, getting the frames into WebGL is fairly straight foward if a little slow at higher resolutions.</p>
+<p>Live setups are a different kettle of fish though. The last thing you want to be doing is changing code on site, though I was totally prepared to do this. Pete and I turned up really early in order to test and tweak, only to find the whole setup was behind schedule and we were bottom of the bill. A damn shame. <em>Hurry up and wait</em> was the order of the day.</p>
+<iframe src="//player.vimeo.com/video/107183168" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<p>Eventually, the setup went ahead with only two hitches. The first invovled the actual interaction and the way the installation was setup. Using a plinth in a low light position means that people are not as visible as they might be, causing issues with the tracking. In addition, they are made to perform on a stage which puts people right off. Nevertheless, we kept up our end of the bargain ;)</p>
+<p>The second issue revovled around the team wanting a live feed from the mac in order to feed it to the VJ. This request came really late and I decided to try and honor it. This is often a mistake but I was fairly confident. Sadly, I couldn't make OSX output to three displays. We had two thunderbolt to HDMI leads for both of the TVs and one HDMI to the mixing desk. OSX was not happy so we settled with just one TV. </p>
+<p><img alt="Lexus NX Gig" src="https://farm3.staticflickr.com/2947/15350395935_ab79ae5214.jpg" /></p>
+<p>The world of such private events and shows is one I'm really not used to. There were lots of <em>beautiful people</em> there, big-wigs and celebrities. Not something I admit to knowing a lot about but nevermind. It's an interesting world to look in on, once in a while. </p>
+<p><img alt="Me doing last minute fixes" src="https://farm3.staticflickr.com/2948/15163691320_1a5a6e238a.jpg" /></p>
+<p>Live gigs do present their own set of problems. Best advice is to bring things like gaffer-tape, cable ties, your laptop and a spork! :D</p>
+
+  </div>
+
+  <hr />
+  <footer>
+    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - Unit 10 Durham Yard, Teesdale Street, London E2 6QF</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+  </footer>
+</div>
+
+
+
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process p code blocks
+
+    $("#blogblocks p > code").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+      $(e).wrap("<div class='blogvideo'><div>")
+    });
+
+
+    // Process 'objects' next
+
+    $("#blogblocks p > object").each(function (i,e) {
+      $(e).parent().replaceWith(e);
+    });
+    
+
+    $('#blogblocks p').wrap("<div class='span3 blogblock'></div>");
+
+    var divs = $("#blogblocks .blogblock");
+    for(var i = 0; i < divs.length; i+=4) {
+      divs.slice(i, i+4).wrapAll("<div class='row-fluid'></div>");
+    }
+
+    $('#blogblocks .row-fluid').each (function (i,e) {
+     $(e).after('<hr />');
+    });
+
+    $("#blogblocks iframe").wrap("<div class='blogvideo'><div>")
+    $("#blogblocks object").wrap("<div class='blogvideo'><div>")
+
+
+    $("#blogblocks .blogvideo").each(function(i,e){
+      $(e).after('<hr />');
+
+    });
+
+    // Process all images in the post to add light boxes
+    var images = $("#blogblocks img");
+    for(var i = 0; i < images.length; i++) {
+      $(images[i]).wrap("<a href='" + $(images[i]).attr("src") + "'></a>");
+    }
+
+  });
+
+</script>
+
+
+</body>
+</html>
+
