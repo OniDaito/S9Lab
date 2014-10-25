@@ -31,7 +31,7 @@ The setup is a basic Laser Light Plane or LLP, with a PS3 eyetoy and a projector
 
 The lasers were initially 650nm but these proved to be too faint. I bought another set of 850nm lasers. The cost came to about £100 which was quite considerable when you add on the box steel and the glass.  The results seemed ok once I ramped up the contrast and lowered the brightness.  Natural light pretty much kills the screen unfortunately, whereas office lighting seems fine.
 
-<object width="460" height="315"><param name="movie" value="http://www.youtube.com/v/eNyIf2tHdMk?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/eNyIf2tHdMk?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="420" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<object width="460" height="315"><param name="movie" value="https://www.youtube.com/v/eNyIf2tHdMk?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="https://www.youtube.com/v/eNyIf2tHdMk?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="420" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
 
 In the end, I mounted the lasers inside the frame and used hot glue and Sugru to hold the lasers in place whilst doing the alignment. This is *definitely not the way to do laser alignment*. I had so much trouble getting this to work and in the end, it worked but only for a short time. By the time we got to Milton Keynes, the alignment was off again I think.

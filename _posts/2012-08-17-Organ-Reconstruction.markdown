@@ -10,7 +10,7 @@ strapimage: leeds.jpg
 For the last 5 months I've been working with The University of Leeds on a rather interesting project that deals with Keyhole surgery. We are trying to recreate a 3D view from a series of cameras that are fixed inside the patient. To test these ideas we need to build a mockup of the system and work with models of the organs we wish to scan. The result looks something like this.
 
 
-<iframe src="http://player.vimeo.com/video/47714478" width="460" height="320" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/47714478" width="460" height="320" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 
 I had a lot of false starts and worries about this project, not having done a lot of computer vision before. Its a tricky subject I'd like to know more about and I think some back-to-school maths courses might be needed. Initially, the plan was to work with a stereo setup, as described in the [OpenCV literature](http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.htmlstereorectify). This is known as disparity mapping and it relies somewhat on being able to match one point in one image to the other. One can then work out the [Epipolar Geometry](http://en.wikipedia.org/wiki/Epipolar_geometry)  and recompute the depth, creating a 2D map of disparity or depth.
@@ -34,7 +34,7 @@ Basically, we have a translation, a rotation and a set of intrinsic parameters t
 
 
 
-<iframe width="460" height="280" src="http://www.youtube.com/embed/25N-4zrk390?feature=player_detailpaget=32s" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="280" src="https://www.youtube.com/embed/25N-4zrk390?feature=player_detailpaget=32s" frameborder="0" allowfullscreen></iframe>
 
 
 Basically, with just one frame of reference you can have a line on which this point exists in 3D space. We need at least two lines - a triangulation if you will - before we can safely say where in 3D space this point lies. There is a further problem. Due to errors and noise, these lines may not intersect, so no exact solution exists. We need to minimise these line equations. Apparently, there is a well known method (that I didn't know of at the time) called [Linear Programming](http://en.wikipedia.org/wiki/Linear_programming) . We have, in effect a system of [Linear Equations](http://en.wikipedia.org/wiki/Systems_of_linear_equations) that are [Overdetermined](http://en.wikipedia.org/wiki/Overdetermined_system).  Since they are overdetermined we can use a solver such as [cvSolve](http://opencv.willowgarage.com/documentation/cpp/core_operations_on_arrays.htmlsolve) or [LAPACK](http://www.netlib.org/lapack/).

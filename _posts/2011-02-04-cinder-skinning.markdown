@@ -5,7 +5,7 @@ title: Cinder Skinning
 ---
 
 
-<iframe width="460" height="320" src="http://www.youtube.com/embed/K994B9EeNC0" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="320" src="https://www.youtube.com/embed/K994B9EeNC0" frameborder="0" allowfullscreen></iframe>
 
 
 I've been having quite a hard time getting this working, but its finally done! Skinning inside Cinder has been the goal for the last week or so. Its been damn tricky as the FBX format is a beast to work with. However, in the end, I have emerged victorious.

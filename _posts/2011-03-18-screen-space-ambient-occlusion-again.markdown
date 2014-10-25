@@ -3,7 +3,7 @@ layout: post
 title: Screen Space Ambient Occlusion, again
 ---
 
-<iframe width="460" height="320" src="http://www.youtube.com/embed/4u8lCQ_x-cU" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="320" src="https://www.youtube.com/embed/4u8lCQ_x-cU" frameborder="0" allowfullscreen></iframe>
 
 
 

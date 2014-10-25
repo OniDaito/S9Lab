@@ -44,7 +44,7 @@ In the end, however, it was deemed that less caricatured model should be used, a
 ![Tracksuit Guy](http://farm4.staticflickr.com/3783/12318738024_11f4cb01e2.jpg)
 
 
-<iframe width="420" height="315" src="//www.youtube.com/embed/sI57F-j-7jM" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/sI57F-j-7jM" frameborder="0" allowfullscreen></iframe>
 
 So OpenNI2 actually makes things easier (when you remember that GLM takes its quaternion arguments in alphabetical order for some reason :S !) I’m basically just working with the arms here because I’m lazy and I have a wheelie chair. But the same skeleton used in the MD5 is working great with the OpenNI NiTE2 drivers. So now we just need to map the two together and viola!
 
@@ -58,7 +58,7 @@ QT isn’t bad but it’s very heavyweight. Under Linux (and Portable Python too
 
 Shoe-horning this into Seburo was a bit tricky however. I’ve spent the last couple of days re-factoring a load of code, but now it’s much tighter and works a treat. When Phantom Limb starts up, our Windows are loaded and they are all in the right place!
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/xC9cHl3v8bg" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xC9cHl3v8bg" frameborder="0" allowfullscreen></iframe>
 
 
 Wavefront OBJ is a venerable format. It’s been around for a while and a lot of programs support it. I figured this would be the format to use for working with the Geometry of the room we end up placing our participant in.

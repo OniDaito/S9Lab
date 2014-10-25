@@ -7,7 +7,7 @@ strapimage: lowry.jpg
 ---
 
 
-<iframe src="http://player.vimeo.com/video/33123038" width="460" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/33123038" width="460" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 
 While I was up in the North, working on some personal projects, I was put in touch with a couple of lovely chaps, Alastair Eilbeck and James Bailey; two artists working on some interesting projects. They came to me with an idea for promoting The University of Salford and The Lowry. I've been a fan of some of Lowry's paintings and this was an opportunity not to be missed.
@@ -21,7 +21,7 @@ This is all quite straight-forward but of course, there are many problems. The f
 The second issue is the environment. The Kinect and Xtion are designed to work indoors, preferably with a solid wall behind the player. We had none of these so we spent a long time testing, the results of which you can see here.
 
 
-<iframe width="460" height="280" src="http://www.youtube.com/embed/Npw1tbOMHqk" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="280" src="https://www.youtube.com/embed/Npw1tbOMHqk" frameborder="0" allowfullscreen></iframe>
 
 
 It seems that the Xtion performs slightly better than the Kinect but the problem of tracking is a big issue. Data is often missed or incorrect. This means an attractive and artistic solution is needed. We hit on the idea of recreating the characters as puppets. This is where the wonderful [Box2D Library](http://box2d.org/) came in so handy. It's a fantastic library, so donate to them if you use it.
@@ -46,7 +46,7 @@ Initially, this process was quite time consuming, so extra features were added t
 It turned out to be a big event. It was covered in the [Manchester Evening News](http://menmedia.co.uk/manchestereveningnews/news/s/1464384_hi-tech-display-lets-you-join-lowrys-matchstick-men) and [BBC North West Tonight](http://www.youtube.com/watch?v=LhSUx_MlMAk&feature=youtu.be&t=3m23s) as well as the [BBC News Website](http://www.bbc.co.uk/news/uk-england-manchester-15643875)
 
 
-<iframe width="460" height="280" src="http://www.youtube.com/embed/LhSUx_MlMAk&amp;start=203" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="280" src="https://www.youtube.com/embed/LhSUx_MlMAk&amp;start=203" frameborder="0" allowfullscreen></iframe>
 
 
 

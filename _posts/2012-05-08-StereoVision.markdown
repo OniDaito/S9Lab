@@ -7,7 +7,7 @@ title: Stereo Vision
 So what have I been up to these last few months? I've not had a lot of chance to mess around in the graphics domain, largely because I've been working on a large project for The University of Leeds. I've been interested in computer vision for a while and this seemed like a good chance to get to grips with it. Im working on the reconstruction of meshes from multiple camera viewpoints. This leads me into the realms of stereo vision.
 
 
-<iframe width="460" height="360" src="http://www.youtube.com/embed/7Gx4IRoq1ow" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="360" src="https://www.youtube.com/embed/7Gx4IRoq1ow" frameborder="0" allowfullscreen></iframe>
 
 
 In the initial case, the idea is to place two cameras side-by-side. When a known point is located in both frames, one can begin to calibrate the cameras, use triangulation and work out the depth. Using OpenCV, many of these functions are defined for you. In the above video, we can see the disparity map beginning to take shape. The disparity map on the right, shows the distance from one point in the left image to the same point in the right image. This apparent distance is related to the depth.
@@ -23,7 +23,7 @@ No doubt, you'll have seen the chessboards everywhere when it comes to computer 
 The next step is to work out the Extrinsic Values. These are related to the setup and are not independent of the the view, unlike the intrinsic parameters. Depending on how your cameras are setup, these parameters will change. Again, OpenCV has another function that makes a pretty good guess at what these paramters should be. Again, you need a chessboard to generate a set of known points that can be seen from each camera. 
 
 
-<iframe width="460" height="360" src="http://www.youtube.com/embed/D6DVhtsVmDE" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="360" src="https://www.youtube.com/embed/D6DVhtsVmDE" frameborder="0" allowfullscreen></iframe>
 
 
 In the above video, I am generating a disparity map on the right hand side, then creating a simple mesh in the middle. Sadly, it's not quite perfect yet, but it's early days so far. 

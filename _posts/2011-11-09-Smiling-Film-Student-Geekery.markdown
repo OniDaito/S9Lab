@@ -7,7 +7,7 @@ strapimage: botnetart.jpg
 ---
 
 
-<iframe width="460" height="280" src="http://www.youtube.com/embed/mhAcRlNq9JU" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="280" src="https://www.youtube.com/embed/mhAcRlNq9JU" frameborder="0" allowfullscreen></iframe>
 
 
 The above video was recorded by Opheila Finke; one of the students at CSM. She came to me with a request that blew me out of the water because I'd had a similar idea myself. She wanted all the machines in our lab to play a video at the same time. I've spent quite a bit of time on this but I'd never gotten to the stage where I could take over a screen remotely. It turns out this is indeed possible with one subtle command.

@@ -20,7 +20,7 @@ One thing that helped immensely was I could use whatever I wanted to get the job
 
 The project is really split into two halves. The first part involves the creation of the video. There is quite a good video of that process on [Youtube](https://www.youtube.com/watch?v=IpyAsbep3NM), that I've included here too. Taking video and projecting it, then re-recording it, seems like quite an interesting idea and it makes for a slightly rougher, yet interesting image. 
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/IpyAsbep3NM" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IpyAsbep3NM" frameborder="0" allowfullscreen></iframe>
 
 The second half was basically to do with me messing around with the Kaleidoscope. The basic premise is you need to mirror the texture co-ordinates over a triangle mesh. Each shared edge must have the same U,V co-ordinates. From that, you get your kaleidoscope. The interaction is worked out by projecting a ray from the camera view and seeing where it hits. You can get the code for this in the [Realtime-rendering book](http://www.amazon.co.uk/Real-Time-Rendering-Third-Edition-Akenine-Moller/dp/1568814240%3FSubscriptionId%3DAKIAILSHYYTFIVPWUY6Q%26tag%3Dduc08-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1568814240), which has a different take on the maths than I had.
 

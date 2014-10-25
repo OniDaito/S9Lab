@@ -16,13 +16,13 @@ The result? [Burberry Kisses](http://kisses.burberry.com). So far, the press has
 This involved working with WebGL and javascript. The assets were designed by the art team over at Grow, inside Unity. The upshot of this was a consistent look and feel for all the assets, as we had an export script from Unity into WebGL. The campaign is cross platform, with mobile and desktop being supported. Using Unity gave the artists and asset creators access to a useful tool for content creation; these assets could be exported wherever we wanted, including straight into WebGL, thanks to a handy plugin.
  
 
-<iframe src="http://player.vimeo.com/video/68856268" width="500" height="333" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/68856268" width="500" height="333" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 The idea is you can send a kiss to anyone else in the world from your phone or desktop. The final concept is quite nice. 
 
 I was asked to look at the different map scenes. The daylight scene has a series of trails, with little envelopes flying from one place to the other. The map itself is close to being equi-rectangular but is slightly off, due to the artistic nature of the coastline. Nevermind though - it seems close enough for the trails at least. Each trail is a cubic bezier triangle strip, sent through a shader with another drawn on top additively. I tried using gaussian blur and glow shaders but they tended to look a lot more like lasers as opposed to anything vapor like. A small particle system, written to run on the CPU, is added as well. The final tweaks come from the legend, Inigo Quilez and his [deformation functions](http://www.iquilezles.org/www/articles/distfunctions/distfunctions.htm) adding a cheap bend to the envelopes as they fly. The little spots on the map are a single quad with an animated field effect, written into the shader.
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/LRiZMVEIhas" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LRiZMVEIhas" frameborder="0" allowfullscreen></iframe>
 
 Night mode was actually trickier in some ways. With day mode, the path ahead is quite straightforward as one can apply more classical graphics effects such as bezier paths, additive blending and similar. Indeed, the data is also quite straightforward; each curve is specified individually. With night mode, the development path was more experimental and the data more abstract.
 

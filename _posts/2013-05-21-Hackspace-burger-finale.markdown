@@ -10,7 +10,7 @@ So the day arrived, and hackspace burger was born!
 
 The final burger consisted of home-made mustard buns, courtesy of Katie, an east-end sous vide LN2 burger, iceberg lettuce, Bacon Jam and a home made blue cheese slice. Overall the reaction was very positive. I didn't actually get chance to try one sadly but everyone said they were kick-ass!
 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/ts_pFcX34c0" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ts_pFcX34c0" frameborder="0" allowfullscreen></iframe>
 
 Making the burger was the tricky part, on the day. The custom sous-vide cooker was pressed into service. I took some freezer bags and placed the burger inside, sucked out the air with a biro and placed the burger into the bath for about 1 hour 30 minutes. After this time, the burgers went straight into a liquid nitrogen bath until they effectively had very bad freezer burn. I was actually, quite worried that I'd ruined the beautiful effect that sous-vide gives.
 

@@ -9,7 +9,7 @@ introtext: Working with the University of Manchester, I built a 3D engine that c
 
 Working with the University of Manchester, I built a 3D engine that combines the oculus rift, the asus xtion and the MD5 Model format attempting to treat sufferers of [Phantom Limb Pain](http://en.wikipedia.org/wiki/Phantom_limb). This is version 3 of the project and is the best yet, thanks largely to the Oculus Rift.
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/RSL_a4EVBTQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RSL_a4EVBTQ" frameborder="0" allowfullscreen></iframe>
 
 The general idea is simple. The mirror box has been shown to affect patients in a positive way. The patient places their remaining limb (their left arm, say) into the mirror box. They can then see a reflection of their arm where their missing right arm should be. By performing a set of exercises, studies have shown this can have a beneficial effect. 
 
@@ -23,7 +23,7 @@ The problem was the VR wasn't good enough and the kit difficult to use. It requi
 
 Version 2 used the Vuzix headset some tracking software I built using XBee Radios. Vuzix were not very forthcoming in supporting Linux or OSX so custom head-tracking hardware was needed. It was around the time the Kinect came about, which allowed us to track the user much more easily. The project was deemed interesting enough to feature at the UK Science Museum:
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/1r-JCQ-4CcU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1r-JCQ-4CcU" frameborder="0" allowfullscreen></iframe>
 
 When the Oculus was announced, we were very excited because it means we can create something we can actually give to clinics and non-computer health care professionals to actually take to people and use. Thus began Phantom Limb Mark3
 
@@ -31,7 +31,7 @@ When the Oculus was announced, we were very excited because it means we can crea
 
 This is me, playing the game on delivery day. The game itself is quite simple. Balls are fired at you and you have to bat them away with whichever arm you have. It's quite good fun!
 
-<iframe width="480" height="360" src="//www.youtube.com/embed/APkMj9h8D-k" frameborder="0" allowfullscreen></iframe>
+<iframe width="480" height="360" src="https://www.youtube.com/embed/APkMj9h8D-k" frameborder="0" allowfullscreen></iframe>
 
 Technically, the code is quite simple. I wrote my own 3D library / framework in the style of LibCinder (implicit shared objects with C++), with my own MD5 and OBJ parsers. I used Blender to modify some stock models from Turbosquid and Blendswap. MD5 supports bone animation (which is what we need for this to work, as oppose to morph targets or similar) and is a simple and elegant format. Previously, I'd used FBX which is good as it provides for everything but can be overkill and the libraries are quite chunky. GLFW provides the window manger, with GTK+ giving a very simple gui. 
 

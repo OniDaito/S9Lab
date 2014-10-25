@@ -23,7 +23,7 @@ right, a feature object - in this case, a mirror box. This layout
 is repeated for each of the stations. Overall, I felt the layout was quite
 good.
 
-<iframe width="460" height="320" src="http://www.youtube.com/embed/1r-JCQ-4CcU"
+<iframe width="460" height="320" src="https://www.youtube.com/embed/1r-JCQ-4CcU"
 frameborder="0" allowfullscreen></iframe>
 
 About half-way through the video, you can see me, with my ubiquitous hat on,

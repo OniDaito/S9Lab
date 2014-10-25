@@ -25,13 +25,13 @@ The technical details revolve around an arduino (yes, everyone's favorite IC) an
 Its a fairly straightforward circuit but the thing that threw me is the notion of a common ground. Its soooo obvious, its often just assumed but in all the diagrams I looked at for transistor circuits, it simply wasn't mentioned. I stumbled on it by accident, then had it confirmed by Phil. Marvellous!
 
 
-<iframe width="460" height="280" src="http://www.youtube.com/embed/BwJDT96jdZI" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="280" src="https://www.youtube.com/embed/BwJDT96jdZI" frameborder="0" allowfullscreen></iframe>
 
 
 These Pyros are called "Robotics" and explode in a shower of sparks. They are quite vicious actually, as my swearing will attest! Clearly I have a dirty mouth! 
 
 
-<iframe width="460" height="280" src="http://www.youtube.com/embed/NDQyUSc368U" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="280" src="https://www.youtube.com/embed/NDQyUSc368U" frameborder="0" allowfullscreen></iframe>
 
 
 Simply put 9V through them and BOOM! You have a wonderful explosion. I can't wait to see the finished video!

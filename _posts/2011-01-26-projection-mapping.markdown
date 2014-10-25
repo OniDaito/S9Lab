@@ -3,7 +3,7 @@ layout: post
 title: Projection Mapping
 ---
 
-<iframe title="YouTube video player" class="youtube-player" type="text/html" width="460" height="320" src="http://www.youtube.com/embed/uES0HfGAqCc" frameborder="0" allowFullScreen></iframe>
+<iframe title="YouTube video player" class="youtube-player" type="text/html" width="460" height="320" src="https://www.youtube.com/embed/uES0HfGAqCc" frameborder="0" allowFullScreen></iframe>
 
 
 I've been wanting to play a lot with VDMX and Projection mapping. Memo over at MSA Visuals has <a href="http://memo.tv/projection_mapping_quad_warping_with_quartz_composer_vdmx">a rather good setup</a> which I decided to steal.

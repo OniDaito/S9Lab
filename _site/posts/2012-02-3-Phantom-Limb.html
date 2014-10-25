@@ -100,11 +100,11 @@
   <div id="blogblocks">
     
 <p>Over the summer, I worked with <a href="http://aig.cs.man.ac.uk/home/home.php">Advanced Interfaces Group</a> at <a href="http://www.manchester.ac.uk">The University of Manchester</a> on a research project to investigate <a href="http://en.wikipedia.org/wiki/Phantom_limb">Phantom Limb Pain</a>. Previously, Steve Pettifer and Toby Howard (the principle researchers) has tried VR and ping pong ball style tracking in order to recreate a virtual world and 'mirror' the missing limb. The idea is to create a more immersive version of the <a href="http://en.wikipedia.org/wiki/Mirror_box">Ramachandran Mirror Box</a>. It's a way to try and unlearn what has been learnt.</p>
-<iframe src="http://player.vimeo.com/video/36085689" width="460" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/36085689" width="460" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 <p>Since the Kinect and cheaper VR goggles have become available, it seemed the right time to rebuild this system with modern technology in order to test what things affect pain relief. Although the mirror box only costs about 2 pounds, we can't easily change parameters and exercises, so there is definitely something to look at.</p>
 <p>The technical aspects of the project were quite interesting. The first problem is how to get from the Kinect to a moving person? The OpenNI team were the first to do this with the OGRE model Sinbad:</p>
-<iframe width="460" height="360" src="http://www.youtube.com/embed/Zl6O-Rf52Co" frameborder="0" allowfullscreen></iframe>
+<iframe width="460" height="360" src="https://www.youtube.com/embed/Zl6O-Rf52Co" frameborder="0" allowfullscreen></iframe>
 
 <p>The technique is known as skinning. It works by attaching vertices to bones with weights. As the bones are transformed, the vertices follow the bones by a certain amount, relative to the weight. Imagine a lower arm bone moving up and down. The vertices in the lower arm will be attached with high weightings whereas the vertices in the leg will not. </p>
 <p>The problem here is there are no real APIs or similar for this. The closest modelling tool kit is the <a href="http://usa.autodesk.com/adsk/servlet/index?siteID=123112&amp;id=7478532">FBX SDK</a> which has support for skinning, textures, animation and indeed, anything you could possibly need for models. It's my goto library for this sort of thing.</p>
