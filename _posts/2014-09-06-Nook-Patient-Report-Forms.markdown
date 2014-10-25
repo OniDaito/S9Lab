@@ -14,7 +14,7 @@ About a year ago, Curry's in the UK decided to sell off their supply of Nooks fo
 
 Nooks run Android 2.3.3 which is fine for our purposes. I based the form on the current version of the St John PRF but with a few changes here and there. I daresay it can still be improved in terms of UX certainly, but there is time for that. Android development is slow and annoying. UX programming is also terrible so one had to dig deep to finish the project in time.
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/wOCfqCNi3HA?list=UUM-XTspgfHt2_BBRV5a3j_w" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wOCfqCNi3HA?list=UUM-XTspgfHt2_BBRV5a3j_w" frameborder="0" allowfullscreen></iframe>
 
 We first trailed the application around our local St John Ambulance unit, receiving some very useful feedback. It's not often you get to write issues such as "Will it work when covered in blood or vomit?" into your github repository! A valid concern however. One interesting issue which defeats some tablets is the ability to use nitrile gloves with a touch screen. Fortunately, the Nook gets around this issue.
 
