@@ -26,7 +26,7 @@ With the instructions in place, I set to, with some [CoffeeGL](http://www.coffee
 
 The Equatorie is made of a few small parts, each with interesting challenges that are not immediately obvious. The main sections are the base, the label, the epicycle and the two strings. The base has a movable plate mounted in the center and there are several markings on all the major elements. This presents the first problem; scale. In the original object, scale is a major issue. It's quite hard to maneuver a large piece of brass accurately and depending on how small and taut your string is, you'll have trouble taking accurate readings. Scale is still an issue with the virtual model. You'll need a texture that looks good up close and far away, with potentially quite large gaps of 'not very much' in between the areas of interest.
 
-<iframe width="480" height="360" src="//www.youtube.com/embed/DObdY0FYISE" frameborder="0" allowfullscreen></iframe>
+<iframe width="480" height="360" src="https://www.youtube.com/embed/DObdY0FYISE" frameborder="0" allowfullscreen></iframe>
 
 The next challenge are the two strings. Critical to the operation of the Equatorie are the two strings that allow for measurement. They are attached to two pins that are placed in the various holes on the center plate, the epicycle and elsewhere. Originally, I had modeled these in [ammo.js](https://github.com/kripken/ammo.js/), an llvm port of [bullet physics](http://bulletphysics.org/wordpress/). I didn't have a lot of luck with this method though as ammo.js tended to explode and crash. Thankfully, the wonderful Schteppe and his [Canon.js](http://www.cannonjs.org/) saved the day. Modeling the strings turned out to be straight forward and one can get the idea across quite easily.
 
