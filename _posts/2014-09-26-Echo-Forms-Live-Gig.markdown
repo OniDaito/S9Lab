@@ -20,7 +20,7 @@ Accessing the camera using [WebRTC](http://www.webrtc.org/) is fairly straight f
 Live setups are a different kettle of fish though. The last thing you want to be doing is changing code on site, though I was totally prepared to do this. Pete and I turned up really early in order to test and tweak, only to find the whole setup was behind schedule and we were bottom of the bill. A damn shame. *Hurry up and wait* was the order of the day.
 
 
-<iframe src="//player.vimeo.com/video/107183168" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+<iframe src="https://player.vimeo.com/video/107183168" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
 
 
 Eventually, the setup went ahead with only two hitches. The first involved the actual interaction and the way the installation was setup. Using a plinth in a low light position means that people are not as visible as they might be, causing issues with the tracking. In addition, they are made to perform on a stage which puts people right off. Nevertheless, we kept up our end of the bargain ;)
