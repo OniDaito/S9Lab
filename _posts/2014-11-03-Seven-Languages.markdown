@@ -2,6 +2,7 @@
 layout: post
 title: Seven Languages in Seven Weeks
 strapline: More like Seven Languages in Seven Months! :D I started out on this course with the best of intentions but after about 3 weeks, things began to slow down. Nevertheless, I've been determined to finish it, or at least put as much effort in as I could.
+introtext: More like Seven Languages in Seven Months! :D I started out on this course with the best of intentions but after about 3 weeks, things began to slow down. Nevertheless, I've been determined to finish it, or at least put as much effort in as I could.
 ---
 
 More like Seven Languages in Seven Months! :D I started out on this course with the best of intentions but after about 3 weeks, things began to slow down. Nevertheless, I've been determined to finish it, or at least put as much effort in as I could. Pleased to say I've reached the end. In a nutshell, I'd recommend this course to any budding programmer or seasoned veteran. It's not without it's faults but it's a great intro.
