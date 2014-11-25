@@ -1,3 +1,9 @@
+---
+layout: post
+title: Oyster Card RFID Ring Mk3
+strapline: I've been playing around with RFID Rings for a while now. Using a ring to control access to the hackspace door, as an Oyster card (yeah, I said it - I'm sure TFL don't really care) and generally as a way to interact with things is quite fun and cool. I've made some progress from the last version and significantly improved on it.
+---
+
 I've been playing around with RFID Rings for a while now. Using a ring to control access to the hackspace door, as an Oyster card (yeah, I said it - I'm sure TFL don't really care) and generally as a way to interact with things is quite fun and cool. I've made some progress from the last version and significantly improved on it.
 
 ![Rfid ring mk3](https://farm8.staticflickr.com/7569/15689260700_9b146723b5.jpg)
