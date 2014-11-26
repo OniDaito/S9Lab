@@ -27,4 +27,4 @@ The first stage is quite disappointing. Even with sanding the mould picked up ev
 
 The final result looks quite good. It wears well and looks like any other ring. The RFID aerial does work on a particular transport service, so long as the right side of the ring is presented to the reader. To this end, I've put a little mark on it so I know which side to use. 
 
-I'm quite glad I came back to this project. It's been quite good fun and the end result is something quite wearable. So good it just blends in to normal life but makes it slightly more awesome.
+I'm quite glad I came back to this project. It's been quite good fun and the end result is something quite wearable. So good it just blends in to normal life but makes it slightly more awesome. Many thanks to the awesome [fearandsequins](https://twitter.com/fearandsequins) for teaching me some proper techniques.
