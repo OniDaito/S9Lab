@@ -4,7 +4,7 @@ title: Bullseye's playground for Target & Psyop
 category: work
 strapline: Working with Psyop in NY for Target's mobile winter branding
 strapimage: bullseye.jpg
-introtext: I was asked to help out with Target's latest marketing campaign; a set of mobile games running through WebGL, called [Bullseye's Playground](http://www.bullseyesplayground.com/desktop)
+introtext: I was asked to help out with Target's latest marketing campaign; a set of mobile games running through WebGL, called Bullseye's Playground
 ---
 
 Starting at the end of September, I was asked to help out with Target's latest marketing campaign; a set of mobile games running through WebGL, called [Bullseye's Playground](http://www.bullseyesplayground.com/desktop). A formidable challenge, given the variation of devices and such. With Apple's recent entry into WebGL, this only makes things more tricky. But thankfully, the company working on the Project, [Psyop](http://www.psyop.tv) have some really talented people working for them.
