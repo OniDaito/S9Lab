@@ -1,0 +1,34 @@
+---
+layout: post
+title: Bullseye's playground for Target & Psyop
+category: work
+strapline: Working with Psyop in NY for Target's mobile winter branding
+strapimage: bullseye.jpg
+introtext: I was asked to help out with Target's latest marketing campaign; a set of mobile games running through WebGL, called [Bullseye's Playground](http://www.bullseyesplayground.com/desktop)
+---
+
+Starting at the end of September, I was asked to help out with Target's latest marketing campaign; a set of mobile games running through WebGL, called [Bullseye's Playground](http://www.bullseyesplayground.com/desktop). A formidable challenge, given the variation of devices and such. With Apple's recent entry into WebGL, this only makes things more tricky. But thankfully, the company working on the Project, [Psyop](http://www.psyop.tv) have some really talented people working for them.
+
+I was asked to work on two parts of the final piece; the game called Stuntzone and the Worldmap. The Stuntzone game is quite simple. You choose a car and a track and at certain points around the track, you are asked to perform some gestures in order to complete the track. If you manage to complete a track, you are presented with a short cut-scene.
+
+![Cul8r](https://farm8.staticflickr.com/7524/15979186906_11c0d4d6ef.jpg)
+
+The tracks are represented by [NURB Curves](http://en.wikipedia.org/wiki/Non-uniform_rational_B-spline). I wrote a small class that would read in data and smoothly pan along the curve. To get the curves in the first place, I wrote a short python script that can export curves from an FBX File - that most lovely of 3D file formats. 
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/WhmlBz1ro0M" frameborder="0" allowfullscreen></iframe>
+
+Stuntzone is split into two simple sections; a garage scene where you choose the cars and track, and the actual race itself. The effects are quite simple. There is a cubemap performing refection on the cars (ironically, these cars are made of plastic these days so probably don't reflect quite as much). There are a few particle systems for the snow and boost trails (inspired by Back to the Future :D ). 
+
+![BlizzardBoost](https://farm8.staticflickr.com/7478/15979186836_dc37fdc41f.jpg)
+
+The worldmap scene involves an awful lot of curves and tweening. I went through quite a few variations of curves using a few sigmoid functions and similar. It turned out to be quite interesting as there are many functions out there to generate curves. You can see quite a few over at [Easings.net](http://easings.net). In addition, we had to have various hit targets to pickup the various taps and clicks the user might make.
+
+The technology for the 3D sections revolved around Three.js (again... annoyingly), with various supporting libraries. To bring everything together, we used [Bower](http://bower.io), [Gulp](http://gulpjs.com) and a series of other, smaller libraries to take care of things like sound. I wrote some code to deal with gestures such as swipe, tap and double tap. I adapted some code I'd used for the [Equatorie](https://www.section9.co.uk/posts/2014-05-28-Equatorie.html) which I'd tested before. 
+
+![WorldMap](https://farm8.staticflickr.com/7563/15819211157_1c7de9fc32.jpg)
+
+One of the interesting things about the project was the use of the [Traceur](https://github.com/google/traceur-compiler) compiler from Google, in order to provide [ES6](http://people.mozilla.org/%7Ejorendorff/es6-draft.html) language constructs. I really like this, because it provides some very nice features. It's not quite as much of a departure from Javascript as CoffeeScript is, but it's definitely a step in the right direction. 
+
+Testing on mobile devices is still tricky. This was made worse by recent upgrades to android that killed my remote debugging client under Chrome. Nevertheless, we managed to get through it in the end. Some Apple devices proved a little tricky. We certainly had to limit the number of triangles on screen at any one time, and really pull back on some of the assets. Quite a lot of the assets are held in local storage, only to be pulled into the browser at the last minute when they are needed. Stuntzone has quite a lot of assets and a large memory footprint.
+
+The team over at Psyop were great to work with - despite the time differences we managed to get everything together. Im sure the lead developer deserved an awful long holiday off after the Herculean task he pulled off!
