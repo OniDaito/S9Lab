@@ -18,7 +18,7 @@ Tom was keen to look at the bulbs and bridges to see if they could be made to ch
 
 My part revolved around writing the actual game of Tetris, keeping the architecture of the lighting setup in mind. The game is built around a logical 'tick'; on every tick the state of the game changes to the next state. This means we can alter the frame-rate dynamically to whatever we need on the night. I decided to set myself a challenge and see how long it would take to write Tetris in Python from scratch. Turns out it's just under 3 hours. I took a wrong turn but still, I'm quite pleased with that. My version of Tetris is apparently closer to the original version in terms of it's rules. You can't 'wall kick' and the gravity is naive. If you haven't read up on Tetris, you really should check out the [Wikipedia Tetris Article](https://en.wikipedia.org/wiki/Tetris) because it's really quite interesting!
 
-<iframe src="//player.vimeo.com/video/115388045" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/115388045" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Tom looks after a Windows network professionally, and so it seemed right and proper that he talk to the Shell Building's network team to see if we could get a VLAN for linking each bridge on each floor. However, they treated us rather poorly I'm afraid to say. In the end, it fell to me to create a temporary network using a set of [TP-Link WR702n routers](http://wiki.openwrt.org/toh/tp-link/tl-wr703n), one for each floor. I had 4 from a previous gig and decided to obtain another 10 by begging, borrowing and buying (thanks a lot [Brendan](https://twitter.com/bmsleight) and [Artag](https://wiki.london.hackspace.org.uk/view/User:Artag)!). These little guys are great as you can flash them with [OpenWRT](https://openwrt.org/) and run some quite interesting software on them. By default, OpenWRT comes along with [WDS Bridging](https://en.wikipedia.org/wiki/Wireless_distribution_system). This seemed to me to be the best option. I know, there are network friends reading this balking at the idea, but trust me, we were lucky to get this, let alone anything else!
 
@@ -34,7 +34,7 @@ Our test on Sunday actually went quite well in one unexpected area. Despite the 
 
 Some of the lights refused to work properly on both our test run and the live filming. Though Tom had managed to hack the lights to change at a fast rate, the signals were not quite robust enough between the bridges and the bulbs. In the end, we had to turn off 4 columns of lights, two on both sides of the board. The lights refused to change at their fastest speed, so they fell back to mesh networking which slowed the frame-rate down to 1 Fps. Still, just about playable in the end.
 
-<iframe width="400" height="500" frameborder="0" src="http://www.bbc.co.uk/programmes/p02ftv0l/player"></iframe>
+<iframe width="400" height="500" frameborder="0" src="https://www.bbc.co.uk/programmes/p02ftv0l/player"></iframe>
 
 
 ![Tetris on the Shell Building](https://farm9.staticflickr.com/8619/15389515384_6b91e10a95.jpg)
@@ -47,7 +47,7 @@ People tend to focus on the technical side when doing these write-ups but it occ
 
 We had a large army of volunteers who turned up on the filming day to help us put up the blinds. It would have been nice for them to have seen the final result but sadly, due to the way TV is, everything is secondary to what the finished product looks like. Some of the volunteers felt justifiably mistreated but others had an appalling attitude. Some of the Shell personnel were generally unhelpful, as were some of the production team. The real skill in these situations is being able to keep your cool and work around such problems as best as you can. This is something I've had to learn along the way and it isn't easy. We couldn't have done it without the help of all the RI Staff & members of the public who volunteered to help roll up mylar and tape up lots of paper sheets.
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/RATfAWpVis8?list=UUM-XTspgfHt2_BBRV5a3j_w" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RATfAWpVis8?list=UUM-XTspgfHt2_BBRV5a3j_w" frameborder="0" allowfullscreen></iframe>
 
 Some of the people on our team were superstars and able to manage the problems we faced with amazing generosity and skill! I'd made sure we had brought a set of radios for the main teams to talk to each other without having to rely on mobiles (which makes a huge difference). A lovely chap by the name of [Cepmender](https://wiki.london.hackspace.org.uk/view/User:Cepmender) loaned them to me. I was fortunate enough to be teamed with two lovely electricians who just go on with their jobs and managed to get my network up in very short time. Finally the lovely [FearAndSequins](http://www.twitter.com/fearandsequins/) proved that scotch eggs and a clear management style can solve many problems. Indeed it was down to her and the two amazing cameramen that we managed to grab the best footage. Between them, they may have just saved Christmas.
 
