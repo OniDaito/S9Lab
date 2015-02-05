@@ -1,0 +1,37 @@
+---
+layout: default
+title: Section9 dot co dot uk ltd - Benjamin Blundell - Wouldn't it be nice if...
+idx: work
+---
+
+
+{% block content %}
+  {% for post in site.posts %}
+    {% if post.category %}
+      {% if post.category == 'work' %}
+       <div class="row-fluid">
+
+          <div class="span4">
+            <span class="lilhead"><a href="{{post.url}}">{{post.date.strftime('%d-%m-%Y') }} {{post.title}}</a></span>
+          </div>
+          
+          <div class="span5">
+              <p class="toppad">{{post.introtext}} </p>
+              <p><a href="{{post.url}}">Read the full article &raquo;</a></p>
+          </div>
+
+          <div class="span2">
+
+            <a class="frontthumblink" href="{{post.url}}" alt="{{ post.title }}">
+              <img class ="toppad" src = "/images/strap/small/{{ post.strapimage }}" alt="{{ post.title }}" />
+            </a>
+          </div>
+
+        </div>
+
+        <hr />
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+{% endblock %}

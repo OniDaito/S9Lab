@@ -113,12 +113,16 @@ p.highlight {
   font-size: 16px;
 }
 
-
 li {
   font-family: 'Anaheim', sans-serif;
   font-size: 14px;
 }
 
+
+.tight_hr {
+  padding: 5px;
+  margin: 2px;
+}
 
 .toppad {
   margin-top: 21px;

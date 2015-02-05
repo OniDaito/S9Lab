@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>Resonate Festival</title>
+  <title>Personal Cloud</title>
   <meta name="author" content="Benjamin Blundell" />
   <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,24 +96,22 @@
 </div>
 
 <div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Resonate Festival - 2012-03-21 00:00:00</p></div><div class ="clear"></div>
+<div class="span12"><p class="highlight toppad">Personal Cloud - 2015-02-05 00:00:00</p></div><div class ="clear"></div>
 </div>
 <hr class="tight_hr"/>
 <div class="container-fluid" id="content">
 
   <div id="blogblocks">
     
-<p>As part of my final duties at CSM, I went to the <a href="http://resonate.io/2012/home">Resonate Festival</a> in Belgrade, Serbia.</p>
-<p><img alt="Me Papped" src="http://farm8.staticflickr.com/7046/7001136999_1ca162a76c.jpg" /></p>
-<p>The festival itself had its fair share of rockstars - the lineup consisting of almost everyone who is anyone in my particular field. We'd decided to take some of the students along with us as they were perhaps more into it than I was. Ultimately, it was aimed at them. Most of the talks were rehashings of things I'd see before.</p>
-<p>On the first day, most of the talks took place in a small room that had nowhere enough space, let alone chairs. The Guardian gave an interesting talk about streams and how we digest information these days and the written images guys gave an interesting talk, even if they were a bit scared. Overall, it was somewhat annoying sitting on the floor and not actually being able to see very much. I didn't really learn very much but I the tour of the city of Belgrade was a little more useful and fun!</p>
-<p>On the second day, we were determined to actually get a decent seat. Jurg Lehni gave a very interesting talk, as you can see from my face below:</p>
-<p><img alt="throne" src="http://farm8.staticflickr.com/7060/6990443813_e7f0d3194c.jpg" /></p>
-<p>I dont mess about when I've had a bad experience! Big seats certainly make talks a lot better. Jer Thorp gave an interesting talk and Field.io showed off a lot of their very pretty work which is always lovely to see. After about 5pm though, things just got a little boring and the city began to call instead. I decided not to stick around for DJ Spooky and worked on a project instead,</p>
-<p>So overall, was it worth it? Well, Serbia certainly is a fun place to visit and Belgrade has a lot of energy. The weather was great and I took plenty of good photos but overall, I'd say such events are more rabble rousing speeches that mostly consist of "look at us, aren't we cool" - Its something I'm not a huge fan of and if anything, its galvanised me to make more stuff which is a result of sorts but not something I'd actually expected. </p>
-<p>I think, the next conference I go to, I'll need to be presenting. Otherwise, its just not really worth it. But there are plenty of opportunities for <a href="http://www.flickr.com/photos/section9/sets/72157629265890474/">Great Photos</a></p>
-<p><img alt="girl and cube" src="http://farm8.staticflickr.com/7086/6855171714_ac4db8464c.jpg" /></p>
-<p>Also, how can one be glum when you get to visit the <a href="http://www.tesla-museum.org/">Nikola Tesla Museum</a> :D</p>
+<p>The first blog post of the new year. It's been a hectic time here at section9. We've moved office for one thing and are still in the process of sorting everything out. Exciting times are ahead though.</p>
+<p>I wanted to write a small bit about the cloud. I've never really trusted it, and with all the leaks we've been seeing I think it best to keep certain things off the net altogether. Also, I take great joy in setting up my own solutions.</p>
+<p>Starting at the bottom end, I rely on two, 3TB drives. Both of these are formatted with <a href="https://en.wikipedia.org/wiki/Btrfs">btrfs</a> which I quite like the sound of. At present, one is slaved inside my large desktop machine. The other operates as the live disk, attached to a rather nifty <a href="http://cubieboard.org/tag/cubietruck/">cubietruck</a>. This small ARM based board is capable of running Linux and operating a SATA disk. Because of its lower power draw and the fact I can run software on it easily, I use it as my primary server machine. Both of these drives are encryped and use <a href="https://code.google.com/p/cryptsetup/">luks</a> to access them. So far good. Getting btrfs support for Cubietruck was a little tricky but possible.</p>
+<p>Linking laptops and all the other machines I have across the internet really needs a VPN and that means <a href="https://openvpn.net/index.php/open-source.html">openvpn</a> realistically. It runs on iPhone, Android, Mac and all the rest pretty easily. Setting up exit points for the outside world and internal static ips allows me to get to my files, securely wherever I am. It's not the fastest but it doesnt need to be really. I have a VPS sitting here in the UK that deals with all that traffic and setup.</p>
+<p>Organising the various different files is another matter. Code is largely taken care of with git and rsync. I've decided that one machine and iTunes takes care of music. The library is synced with the master server where other machines can get to the music collection if they so please. I have to say though, my favourite solution is the one I have for ebooks and pdfs.</p>
+<p><a href="https://www.zotero.org">Zotero</a> is a fantastic product. People think it's just for citation but it really isnt. Since the cubietruck is a fully fledged machine, I can run <a href="http://nginx.org">nginx</a> with some added webdav support and have all my PDFs synced via Zotero wherever I am. Since they are organised, it's easy to find what book I want. Installing <a href="https://play.google.com/store/apps/details?id=com.gimranov.zandy.app">zandy</a> on my Android tablet and you are all set to have a personal library at your fingertips!</p>
+<p>Backup is usually done with rsync scripts of various kinds. This seems to work for now, though a little more automation on that score might improve things I suspect. I use a USB harddisk to backup my main laptop, with Apple's time machine as an extra measure, since I carry the lappy with me everywhere.</p>
+<p>The setup still isn't perfect. The ideal would include an offsite backup somewhere else, which is next move. Speeding up OpenVPN might also help things though it's not been too bad since the switch to UDP. I hear certain countries are begining to block vpn traffic, but there are some tactics to get around this that I shall be investigating. I'd like to use gitlab at some point too, but there isn't support for ARM just yet and it's a rather heavy program to run.</p>
+<p>What is your setup? Which backup programs do you prefer? Always enjoy hearing the solutions people have come up with!</p>
 
   </div>
 
