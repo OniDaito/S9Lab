@@ -2,6 +2,7 @@
 layout: post
 title: Transsiberian Part 1 - Planning
 strapline: For the last few years, my partner Katie and I have been planning a trip on the Trans-Siberian railway; yes we've seen the film Transsiberian and no, we don't plan on meeting Ben Kingsley on the way ;) It's a part of the world I've never seen and it'll soon be happening; within the next few weeks.
+introtext: For the last few years, my partner Katie and I have been planning a trip on the Trans-Siberian railway; yes we've seen the film Transsiberian and no, we don't plan on meeting Ben Kingsley on the way ;) It's a part of the world I've never seen and it'll soon be happening; within the next few weeks.
 ---
 
 For the last few years, my partner Katie and I have been planning a trip on the Trans-Siberian railway; yes we've seen the film [Transsiberian](http://www.imdb.com/title/tt0800241/) and no, we don't plan on meeting Ben Kingsley on the way ;) It's a part of the world I've never seen and it'll soon be happening; within the next few weeks.
