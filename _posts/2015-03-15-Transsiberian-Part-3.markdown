@@ -17,7 +17,7 @@ The Hermitage has many superlatives that I won't repeat here but goddamn, this p
 
 ![Katerina](https://farm8.staticflickr.com/7592/16798299036_bd02c42892.jpg)
 
-We spent about 4 hours (possibly more) looking at paintings by Leonardo, sculptures from around the world, and amazing 200 year old reindeer style horse hats from Siberia. The collection holds many Rembrandts, Picassos and a whole host of old masters. You can spend days in that place and learn a lot. Its a wonderful museum and worthy of all it's accollades.
+We spent about 4 hours (possibly more) looking at paintings by Leonardo, sculptures from around the world, and amazing 2000 year old reindeer style horse hats from Siberia. The collection holds many Rembrandts, Picassos and a whole host of old masters. You can spend days in that place and learn a lot. Its a wonderful museum and worthy of all it's accollades.
 
 One can get quite a good view of St Petersburg from the cupola at St Isaacs Cathedral (they call it the collanade). Tickets are about £3 and you can get a 360 degree view of the St Petersburg skyline. The city is quite large; larger than I expected. You can see out to the docks with it's myriad of cranes, and over the otherside, to the Church on Spilled Blood.
 
@@ -33,7 +33,7 @@ The games are quite unique - there are loads of nixie tubes (yay!) and many movi
 
 ![Traffic Signs Game](https://farm9.staticflickr.com/8632/16824173565_27349b993f.jpg)
 
-On the centre island, across the Neva river is a rather good contemporary art museum called Erata. The museum houses the largest collection of modern art in Russia. It's quite an assault on the senses but there are some lovely pieces there that are really inspiring. One thing we did notice is that all the canvas paintings from the Ukraine have been replaced by prints. Now that could be the gallery's choice or the artists choice but either-way, it's the first sign of anything reflecting current events.
+On the centre island, across the Neva river is a rather good contemporary art museum called Erarta. The museum houses the largest collection of modern art in Russia. It's quite an assault on the senses but there are some lovely pieces there that are really inspiring. One thing we did notice is that all the canvas paintings from the Ukraine have been replaced by prints. Now that could be the gallery's choice or the artists choice but either-way, it's the first sign of anything reflecting current events.
 
 ![worm](https://farm8.staticflickr.com/7651/16824173245_5e940a68b4.jpg)
 
