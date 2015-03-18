@@ -32,7 +32,7 @@ My favourite museum in Moscow has to be the Cosmonaut Museum. It is situated und
 
 Very close to the cosmonaut museum is a rather strange park, reminiscent of the Worlds Fair. It's called VNDKh, and was commissioned by Stalin. Imagine a sort of run down Epcot (I know, Epcot kind of is rundown), with most of the rides replaced by Soci 2012 Olympic tat, broken radar dishes and electrical pylons. In the centre of the park is a statue of Lenin (of course!) standing infront of the Soviet Pavilion. Surrounding this are the pavilions for the members of the USSR (as was). Just like that former institution, this park has had it's day and was probably an embarrassment for a while.
 
-![Lenin being Lenin]()
+![Lenin being Lenin](https://farm9.staticflickr.com/8727/16232059214_188c874970.jpg)
 
 At the end of the park is a monument to the Vostok Rocket; an actual Vostok test flight rocket, mounted on a gantry above ground. As a little suprise, next door to it, is the Buryan. The Buryan seems to have fallen upon hard times. Apparently, it used to be a restaurant in Gorky Park before it was moved here. It's now a anchored to the ground where children play and climb up the undercarriage. Somewhat different to Endeavor we saw in California.
 
