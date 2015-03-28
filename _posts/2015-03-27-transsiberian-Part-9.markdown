@@ -11,6 +11,8 @@ My first impressions of Ulan-ude is that it is more grim than Irkutsk! As we wal
 
 The weather doesn't help either. It's grey and overcast. Given the fact that we are in the mountains for the first time, this is probably not surprising. What little snow there is, is confined to compacted brown ice, scatted with grit-balls and slush. The melt has happened on this side of the lake. Unless Ulan-Bataar is really cold, we'll be cursing our arctic gear as we carry it through China.
 
+![Giant Lenin Head](https://farm9.staticflickr.com/8719/16949498761_0e284d8fb8.jpg)
+
 Perhaps the fact that the *tank count* has just gone up from one to *many* explains why Ulan-ude is a bit rough. For a long time this town was off limits to visitors as it was a military town. As we enter on the train we see about 5 tanks go past on flat-beds, followed by a walled off compound containing many, many tanks. I guess with such proximity to the border with Mongolia it makes sense, plus the train allows for easy mobilisation.
 
 We are met by a lovely Buryat lady called Olga who speaks French and Russian. Katie pretty much takes over the conversation from here. Despite outside appearances, the flat is quite lovely inside. It's quite clear that she isn't Russian in the way I would think of Russians. She doesn't look European at all, the furnishings are more from Asia and her attitude is less serious and much more like a grandma.
@@ -21,7 +23,6 @@ Ulan-ude has two separate areas. Up the hill is very Soviet, including the main 
 
 We decide to celebrate our last stop in Russia by ordering Russian champagne at a Mongolian restaurant. Mongolian food is mostly made up of meat, specifically mutton but others too, and dumplings known as Buuz. I've been pretty happy with the food in Russia so far. Russian champage I actually prefer to French; it doesn't make your breath smell horrible or give you a nasty headache. It's also about £5 a bottle if that. 
 
-![Giant Lenin Head](https://farm9.staticflickr.com/8719/16949498761_0e284d8fb8.jpg)
 
 After a broken night's sleep, we are greeted at 6am with a lovely cooked breakfast. Olga tells me I must eat up to be strong, and then orders me to leave the table and get all the bags ready for Katie! A grandma if ever there was one indeed! We say our goodbyes and head to the station on via taxi. As we enter our cabin we meet a young British girl who we met at the hostel in Irkutsk a night before. Soon after, a man introduces himself as a Mongolian returning to Ulan Baatar and we have a little chat. Our English girl is quite eager to chat despite being woken up. I suspect not being able to natter to anyone in your native language for two weeks or so can drive you a little crazy.
 
@@ -41,7 +42,7 @@ Officials come to check our passports. Despite having serious Russian accents, t
 
 Only one carriage on the Russian train crosses the border. We are attached to a Mongolian carriage, whereupon we are checked for passports again. Now we are back on the carriage with passports in hand, we can get back off if we please. In fact we have to if we need to use the toilet. Before we leave we are boarded again for what I can only describe as the *real deal*. Russian police board the train and ask us for passports. We are then asked, in turn to stand-up as our photos are checked against our faces. Both our companion and Katie get through fine but I am subject to a lot of scrutiny. So much so that a second policewoman is summoned. The funny-not-funny bit about this is *Katie is playing Papers please at this point and I can hear the music!* Real world and virtual collide in a scary-funny way. Back in the day I had long hair, and my eyes look so dark in the photo as to be brown. Also my hair is whiter in places. Typical mid twenties to early thirties transition. But still a little scary.
 
-![Our Carriage, on it's own](https://farm9.staticflickr.com/8726/16768011039_95d1e2e54a.jpg)
+![Our Carriage, on it's own](https://farm9.staticflickr.com/8695/16762973900_b4998deb6b.jpg)
 
 Our cabin is subject to a search, which is slightly worrying because I've nabbed two railway nails from the track as souvenirs. Rusted and discarded, yet still pretty nasty in the wrong hands, but our rather mean looking police lady seems not to notice or care. After this interrogation we need sit around at the station some more. All in all, we end up spending over three hours in a town that could be described as the "arse end of nowhere." Still, it certainly feels like an adventure.
 
