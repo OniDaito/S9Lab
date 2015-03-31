@@ -1,0 +1,36 @@
+---
+layout: post
+title: Transsiberian Part 11 - Ulan Bataar
+strapline: It's clear from the museum and guidebooks that we've read that Mongolian life is nomadic at heart, and still is in some places.
+introtext: Our train pulls into Ulan-Bataar at 6am! This means we end up getting out of bed at 4:30am after having quite a broken night's sleep thanks to the cars being re-attached to various trains as we cross Mongolia.
+---
+
+Our train pulls into Ulan-Bataar at 6am! This means we end up getting out of bed at 4:30am after having quite a broken night's sleep thanks to the cars being re-attached to various trains as we cross Mongolia. By the time we get into the station, our small train is now part of a massive one, heading towards the capital. It's cold and it's dark and immediately, people are on to us, asking about taxis and hostels and the like. Their English is quite good at least; something we later find is true of many Mongolians. We decided to swap hostels to the nearer of the two branches, and immediately go back to sleep.
+
+Waking up sometime later, we wander out for breakfast. My first impression of Ulan-Bataar is that it's a bit, well, *grotty*. Bits are falling off other bits, pavements are un-even, tarmac is all cracked and thanks to the Soviet era, all the buildings are concrete and look nasty. However, as we progress along peace avenue, you can see newer buildings being built. Given that Mongolia has only had about 25 years of freedom as a sovereign nation, it's no wonder the place is the way it is. The coffee I have with my breakfast is the best yet (better than Russia); it's even labeled as a *flat white*. It isn't but hey, worked on us!
+
+We wander towards the Mongolian History Museum where we get a sense of how Mongolia started off being quite the aggressive, big empire and then being controlled first by China and then by the USSR. Back in the day, before the USSR, Ulan Bataar was little more than a temple and some Gers (yurts basically), surrounded by a wooden fence. In parts of the town you'll still see plenty of Gers and as you head out along one of the roads, they become more and more common. In this museum, I come face to face with a lifesize model of a horse-archer! Tick off one cliche from the bingo list!
+
+![Katie walks into a temple](https://farm9.staticflickr.com/8703/16367432524_abf4406c4d.jpg)
+
+It's clear from the museum and guidebooks that we've read that Mongolian life is nomadic at heart, and still is in some places. The landscape and environment is one of extremes and moving around is key to staying alive. This means that there are few permanent buildings and settlements in Mongolia, given it's size. Most people live in Ulan-Bataar if they live in an urban area. Modern life, with it's consumption and exploitation of the land is really at odds with Mongolian life it seems. 
+
+The large Sukhbataar square in the centre of town was the location for the revolutionary rallies in the early nineties. The government building has two horse archer statues and a massive one of Chiingis Khan (of course!). The square itself is surrounded by a mix of buildings, some new, some old. Nearby is one of the few temples still remaining. Since many were destroyed in the Soviet period, this is a rare thing. The temple is an interesting mix of Buddhism and Shamanism, with symbols of devils torturing men, skulls and other macabre goings-on. Some of the works inside are beautiful. 
+
+![Sukhbataar Square](https://farm9.staticflickr.com/8753/16802357590_3dfe4ff19c.jpg)
+
+One of the things we've tried to do is check out fast food places in each country we visit, to get a sense of the place somewhat. We stop off at Khan Buuz. This place sells Buuz (funnily enough) which is basically a mystery meat dumpling. They are quite tasty if you don't question the meat too much. At least everything comes on nice plates with proper cutlery. Next door is a fair-trade wool shop selling wonderful things like slippers and hats. Further down the road we find the State Department Store where I buy another two sets of slippers (they are awesome and pointy) and the best hat I can find (it's my new favourite hat!).
+
+We intended to go out of Ulan-Bataar in order to visit the monastery on the hill and to do some astrophotography. Sadly, the weather and daylight savings time (which got us worried about trains and such) has gone against us. Also, at this point in the trip we are pretty knackered so we order a taxi and ask the driver to take us around to the Winter Palace and the Gaandan Khiid. The former is closed when we get there, which sucks as there was a traffic jam to get through. We've had a hit rate of just over 60% I'd say, for getting into places on this trip. 
+
+![Temple in the centre](https://farm8.staticflickr.com/7594/16802354440_fcf3028c4c.jpg)
+
+The Gaandan Khiid is open however. We drive through the first gate and end up in what I'd describe as a "temple in a car park". The largest is either being renovated or built and looks like it could be quite pretty. The oldest (I think) seems to be in a state of disrepair, but even worse, the front door has been replaced by some tacky glass and plastic affair from the seventies. Inside one or two of the temples adjoining though, there is some wonderful art. Monks are sitting here and there and plenty of Ulan-Bataar's population are out here with their families. This temple complex was spared destruction, mostly so the Soviets could claim that they hadn't destroyed everything, by showing foreign dignitaries around it.
+
+![Gaandan Khiid](https://farm9.staticflickr.com/8703/16803609239_a860b4c68d.jpg)
+
+Rather than having Mongolian food again (for the third time), and because we are knackered, we opt for a Mediterranean place that serves us a nice bowl of pasta with Chiingis Khan brand beer. At first, it seems like one of these ex-pat places, with an Australian talking loudly in the corner about banking or some such, but as the night progresses more and more wealthy looking Mongolians come in. The food is pretty tasty and gives me a little taste of home. We retreat back to our hostel and have a few drinks of Chiingis Khan Vodka (this guy is like Lenin - he gets everywhere) on our veranda overlooking the... well, I can't really say scenic... maybe unique main road and railway station areas. 
+
+![Ulan Bataar Hotel View](https://farm8.staticflickr.com/7621/16802351020_7f0201e6ef.jpg)
+
+Despite it's run-down appearance and rough edges, Ulan-Bataar and Mongolia in general, seems loved. The people are friendly, speak good English and seems to love their town and country. It's a place on the move and having to come to terms with the modern world and it's powerful neighbours.The city is almost completely Asian; there are very few tourists here at this time and we don't see many foreigners at all, Russian or otherwise. Twenty-four hours is no-where near enough to see everything, despite the fact we pack as much in as we can. I'm happy to have bought presents for people and seen some of the city. I get the impression there's a lot more of Mongolia out there, best seen from a 4x4 or horseback. I think I'd like to come back one day. It's an interesting place.
