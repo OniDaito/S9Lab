@@ -10,6 +10,7 @@ places to stay links
 
 gear to take
 
+
 washing
 
 stops vs train experience
@@ -25,3 +26,7 @@ Navigation
 Hotels and hostels
 
 proud to be british
+
+train classes, dining cars, toilets
+
+wet wipes :P
