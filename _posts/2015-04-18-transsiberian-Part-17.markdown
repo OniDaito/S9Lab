@@ -38,8 +38,6 @@ Speaking of technology, I think either the [X220 Thinkpad](http://www.cnet.com/p
 Language isn't too much of an issue, given that English is my native tongue. Be prepared to point, mime or gesticulate what it is you want. Learning a little Cyrillic does help. Most people were really friendly and there are many menus with translations and pictures. Many of the places we went were somewhat modified for tourists. The only time we had a real problem was with dealing with the one drunk Russian on a train, but then drunk people are the same the world over so theres no big issue there. I, personally, am not comfortable with not knowing the major language I'm surrounded by, for various reasons. Unfortunately, I only know a smattering of Japanese and Chinese is one of the hardest to learn.
 
 
-Some of the best places we stayed are listed below. Many of the people running these places were great and went the extra mile for us, so thank-you to them!
-
  - [Baby Lemonade](https://www.booking.com/hotel/ru/baby-lemonade-hostel.html), St Petersburg
  - [Kitay Gorod Hotel](https://www.booking.com/hotel/ru/kitay-gorod.html), Moscow
  - [Irkutsk Baikaler](http://baikaler.com), Irkutsk
@@ -50,6 +48,8 @@ Some of the best places we stayed are listed below. Many of the people running t
  - [Secret Garden](http://www.yangshuosecretgarden.com/#!), Yangshuo
  - [Longji One Hotel](http://www.tripadvisor.co.uk/Hotel_Review-g1159371-d1524689-Reviews-Long_Ji_One_Hotel-Longsheng_County_Guangxi_Zhuang.html), Ping'an
  - [Salisbury Hotel](http://www.salisburyhotelhongkong.com), Hong Kong
+
+Some of the best places we stayed are listed above. Many of the people running these places were great and went the extra mile for us, so thank-you to them!
 
 Having returned to the UK, I feel quite proud to be British. There are things I've seen and felt on the trip that hint at the lack of freedoms in these countries as compared to ours. It puts things in perspective and in many ways, has made me question certain things the UK is up to, whilst being grateful for the things we do well. So much to think about and reflect upon. I'd highly recommend this trip to anyone! It's been a blast!
 
