@@ -8,7 +8,7 @@
      \/     \/     \/                    \/        
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>OpenGL Bottlenecks</title>
@@ -69,48 +69,46 @@
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/skrollr.min.js"></script>
 
+
 </head>
 
 <body>
 
 <div id= "skrollr-body">
-  <div class="container">
 
-    <!-- nice background WebGL Stuff goes here -->
-    <div class="jumbotron">
-      <div id="scenery">
-      
-        <span id="rocket">
-          <span id="rocketGroup">
-            <img src="/images/strap/deutsche.jpg" />
-          </span>
-        </span>
+
+  <!-- nice background WebGL Stuff goes here -->
+  <div class="jumbotron">
+    <div id="page-title">
+      <h2> OpenGL Bottlenecks - 2011-04-25 00:00:00 </h2>
+    </div>
+    <div id="scenery">
+      <img src="/images/strap/deutsche.jpg" />
+    </div>
+  </div>
+
+
+  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
-    <!-- main navbar -->
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </nav>
-  </div>
 
 
   <!--
@@ -134,13 +132,18 @@
       </div>
     </div> -->
 
-  <div class="container" id="title">
-  <div class="col-md-8"><p class="highlight toppad">OpenGL Bottlenecks - 2011-04-25 00:00:00</p></div><div class ="clear"></div>
-  </div>
-  <hr class="tight_hr"/>
-  <div class="container" id="content">
+  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
 
-    <div id="col-md-6">
+    <!--<div class="container" id="title">
+      <div class="col-md-8"><p class="highlight toppad">OpenGL Bottlenecks - 2011-04-25 00:00:00</p></div><div class ="clear"></div>
+    </div> -->
+
+
+    <hr class="tight_hr"/>
+    <div class="container">
+
+      <div class="col-md-9">
+    
       
 <p><img alt="Profiler for OpenGL" src="http://developer.apple.com/library/mac/documentation/graphicsimaging/conceptual/OpenGL-MacProgGuide/art/opengl_profiler_window.jpg" /></p>
 <p>I must admit, there is a certain amount of bottlenecks and profiling you need to do in order to get a responsive framerate. Im currently involved in my first installation and trying to get the framerate up to something respectable is proving quite difficult. At first, I thought it was all to do with the large textures I was mashing around as I use a lot of FBOs and similar. Turns out, thanks to a little profiling, that its actually all to do with the sheer number of triangles I'm flinging around.</p>
@@ -148,17 +151,22 @@
 <p>Classically, OpenGL seems to be a bit of a black box when it comes to any form of debugging. However, there are two really handy programs available on the Mac (and indeed, on most PCs I'd say).</p>
 <p><a href="http://developer.apple.com/library/mac/documentation/graphicsimaging/conceptual/OpenGL-MacProgGuide/opengl_performance/opengl_performance.html">Apple has some good information on the OpenGL Profiler</a>. This is pretty nifty and tells you a lot about...well, everytyhing really! It has all the details on your FBOs, the calls that take the most time. It really is excellent.</p>
 <p>In addition, there is also the <a href="http://support.gremedy.com/default.asp?forum.1.41.3">gDebugger</a> which has a few similar features but critically, tells you the amount of vertices and triangles you are shifting. Apparently, my latest piece has at least 1800000 triangles! Eeeep!</p>
-    </div>
+        
+      </div>
 
-    <div id="col-md-2">
-      
-    </div>
+      <div class="col-md-3">
+        <h4>Related Posts</h4>
+        <ul class="list-unstyled">
+        
+        </ul>
+      </div>
 
-  <p class="clear"></p>
-    <hr />
-    <footer>
-      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-    </footer>
+    <p class="clear"></p>
+      <hr />
+      <footer>
+        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+      </footer>
+    </div>
   </div>
 
 
@@ -168,7 +176,7 @@
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $("#content img");
+    var images = $(".content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
         $(images[i]).addClass("left");
@@ -179,6 +187,10 @@
   });
 </script>
 
+
+<script type="text/javascript">
+  var s = skrollr.init();
+</script>
 
 <!--
 <script type="text/javascript">

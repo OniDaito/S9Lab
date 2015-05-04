@@ -8,7 +8,7 @@
      \/     \/     \/                    \/        
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Seven Languages in Seven Weeks</title>
@@ -69,48 +69,46 @@
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/skrollr.min.js"></script>
 
+
 </head>
 
 <body>
 
 <div id= "skrollr-body">
-  <div class="container">
 
-    <!-- nice background WebGL Stuff goes here -->
-    <div class="jumbotron">
-      <div id="scenery">
-      
-        <span id="rocket">
-          <span id="rocketGroup">
-            <img src="/images/strap/deutsche.jpg" />
-          </span>
-        </span>
+
+  <!-- nice background WebGL Stuff goes here -->
+  <div class="jumbotron">
+    <div id="page-title">
+      <h2> Seven Languages in Seven Weeks - 2014-11-03 00:00:00 </h2>
+    </div>
+    <div id="scenery">
+      <img src="/images/strap/deutsche.jpg" />
+    </div>
+  </div>
+
+
+  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
-    <!-- main navbar -->
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </nav>
-  </div>
 
 
   <!--
@@ -134,13 +132,18 @@
       </div>
     </div> -->
 
-  <div class="container" id="title">
-  <div class="col-md-8"><p class="highlight toppad">Seven Languages in Seven Weeks - 2014-11-03 00:00:00</p></div><div class ="clear"></div>
-  </div>
-  <hr class="tight_hr"/>
-  <div class="container" id="content">
+  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
 
-    <div id="col-md-6">
+    <!--<div class="container" id="title">
+      <div class="col-md-8"><p class="highlight toppad">Seven Languages in Seven Weeks - 2014-11-03 00:00:00</p></div><div class ="clear"></div>
+    </div> -->
+
+
+    <hr class="tight_hr"/>
+    <div class="container">
+
+      <div class="col-md-9">
+    
       
 <p>More like Seven Languages in Seven Months! :D I started out on this course with the best of intentions but after about 3 weeks, things began to slow down. Nevertheless, I've been determined to finish it, or at least put as much effort in as I could. Pleased to say I've reached the end. In a nutshell, I'd recommend this course to any budding programmer or seasoned veteran. It's not without it's faults but it's a great intro.</p>
 <p>I've been thinking that the C/C++ style of programming is great for many things, but not all. I think, given the way things are going, languages like Ruby and Python are solving real problems now, but there is a great area of, what I consider at least, hard-core computer science problems that are best suited to more functional languages. It's a real gap in my knowledge because I find such things really hard. However, that means it's an area I need to dive right into.</p>
@@ -155,17 +158,22 @@
 <p><a href="https://www.haskell.org/haskellwiki/Haskell">Haskell</a>! Ah yes, the hipster language of choice ;) That said, I can remember very smart students at Leeds University being really into Haskell and I just wasn't. I find this language really hard, in the same way I struggle with Prolog. However, it feels like I can get a little more traction with this language, unlike Prolog. I'd like to find a good project for this - perhaps generative opengl or live coding? I think Haskell is the language to use for pure functional programming and I'd like to take it further.</p>
 <p>The last four languages, I think I took more time over them but actually ended up finishing fewer of the questions as they really began to tax me and there were many other pressures. The thing to bear in mind is this course is basically an intro to all these languages and you can decide which ones to take further. For me it's basically Erlang and Haskell. I have ideas for both and there are some great books out there as well.</p>
 <p>I'd like to put in a mention for <a href="http://golang.org/">Go</a> as well. I've been learning Go at the same time and I've already used it in one professional project. I like it a lot and so do other people. These are my top three languages to learn for the coming year. </p>
-    </div>
+        
+      </div>
 
-    <div id="col-md-2">
-      
-    </div>
+      <div class="col-md-3">
+        <h4>Related Posts</h4>
+        <ul class="list-unstyled">
+        
+        </ul>
+      </div>
 
-  <p class="clear"></p>
-    <hr />
-    <footer>
-      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-    </footer>
+    <p class="clear"></p>
+      <hr />
+      <footer>
+        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+      </footer>
+    </div>
   </div>
 
 
@@ -175,7 +183,7 @@
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $("#content img");
+    var images = $(".content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
         $(images[i]).addClass("left");
@@ -186,6 +194,10 @@
   });
 </script>
 
+
+<script type="text/javascript">
+  var s = skrollr.init();
+</script>
 
 <!--
 <script type="text/javascript">

@@ -1,6 +1,7 @@
 ---
 layout: post 
 title: Transsiberian Part 16 - China. All the way to (London) New York.
+tags: transsiberian holiday
 strapline: Just as with Russia, I want to write a quick review of China. 
 introtext: Lets start with the obvious - food! China has some of the best methods for cooking vegetables (and duck!) in the world. Crossing the border, I gorged myself on greens! I have to say though, Chinese food is a double edged sword. Vegetarian food is slightly harder to find. The Chinese don't really do baked goods, diary, confectionery (or anything sweet really), or decent beer! Refined sugar and ovens seem to have passed China by, which is really odd. In many ways, thinking back over the trip, Russia and Mongolia put up a really good fight for the top food spot. 
 

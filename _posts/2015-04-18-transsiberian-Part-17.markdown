@@ -1,6 +1,7 @@
 ---
 layout: post 
 title: Transsiberian Part 17 - DIY
+tags: transsiberian holiday
 strapline: In this final post about the Transsiberian, I figured I'd list some of the resources, tips and thoughts we had, so that it might help people who wish to visit these places or take the transsiberian. I've also got some nerdy stats to mention.
 introtext: In a nutshell, the trip is totally worth it. Some people have said that it's become too touristy (apparently) or they believe it's something it isn't. One thing for sure, it's all down to you, who you are and what you plan for. Sounds a bit fruity, but if you prefer fewer stops and talking to more people, you can do that. If you are more like me, and prefer quieter cabins and more stops, you can do that too. A lot of the trip is down to your personality and the kinds of things you want to get up to. Our trip involved many small city breaks and a few countryside visits. Some people prefer to stay on the train from one end to the other. This is also possible and results in a different experience.
 ---

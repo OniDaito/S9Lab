@@ -8,7 +8,7 @@
      \/     \/     \/                    \/        
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Introducing CoffeeGL</title>
@@ -69,48 +69,46 @@
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/skrollr.min.js"></script>
 
+
 </head>
 
 <body>
 
 <div id= "skrollr-body">
-  <div class="container">
 
-    <!-- nice background WebGL Stuff goes here -->
-    <div class="jumbotron">
-      <div id="scenery">
-      
-        <span id="rocket">
-          <span id="rocketGroup">
-            <img src="/images/strap/deutsche.jpg" />
-          </span>
-        </span>
+
+  <!-- nice background WebGL Stuff goes here -->
+  <div class="jumbotron">
+    <div id="page-title">
+      <h2> Introducing CoffeeGL - 2013-07-07 00:00:00 </h2>
+    </div>
+    <div id="scenery">
+      <img src="/images/strap/deutsche.jpg" />
+    </div>
+  </div>
+
+
+  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
-    <!-- main navbar -->
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </nav>
-  </div>
 
 
   <!--
@@ -134,13 +132,18 @@
       </div>
     </div> -->
 
-  <div class="container" id="title">
-  <div class="col-md-8"><p class="highlight toppad">Introducing CoffeeGL - 2013-07-07 00:00:00</p></div><div class ="clear"></div>
-  </div>
-  <hr class="tight_hr"/>
-  <div class="container" id="content">
+  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
 
-    <div id="col-md-6">
+    <!--<div class="container" id="title">
+      <div class="col-md-8"><p class="highlight toppad">Introducing CoffeeGL - 2013-07-07 00:00:00</p></div><div class ="clear"></div>
+    </div> -->
+
+
+    <hr class="tight_hr"/>
+    <div class="container">
+
+      <div class="col-md-9">
+    
       
 <p>WebGL is something I've been working in a lot over the last few months; indeed its the reason why I've not been blogging very much! I've recently worked on two large projects with a third currently underway and I'm somewhat concerned about the APIs we have to work with. I decided to write my own, in <a href="http://coffeescript.org/">CoffeeScript</a> which I call <a href="https://github.com/OniDaito/CoffeeGL">CoffeeGL</a>. Its in progress but already I have a <a href="">few examples</a> and I'm really happy with how its going.</p>
 <p>When working on the <a href="http://www.section9.co.uk/posts/2012-11-19-The-Carp-and-the-Seagull.html">Carp and Seagull</a> I got to grips with <a href="http://www.threejs.com">Three.js</a>; widely regarded as the defacto, goto guy for WebGL. It has many features and is fairly easy to use, but only if you follow the stock way of doing things. It gives you a lot but in a way, it almost gives you too much. There is almost no documentation either. Some of the things in Three are quite nice, such as the <a href="http://gametheorylabs.com/groups/judgementengine/wiki/4c55c/">uber-shader</a> paradigm and the various addons for models and resources. However, I'm not too fond of the maths, the actual render loop and a few other things that niggled. Also, it's written in pure javascript, which I think is a missed opportunity.</p>
@@ -149,17 +152,22 @@
 <p>Given javascript's history, I think its very impressive. No really! It's easy to hate on JS and many people do. But the fact remains, it was written in a very short time by a very talented individual who had pressure from idiots on all sides. Im glad we have it, but we don't have to suffer it's inadequecies anymore. </p>
 <p>I decided to go with Coffeescript and a node.js setup. Everything is written in modules that compile up into a single js file which you can use with your own CoffeeScript files. The API is inspired by <a href="https://www.libcinder.org">Cinder</a>; the king of WebGL Libraries. The scene-graph is quite simple and works how you would expect, or you can ignore it completely and just write basic GL calls with a few bits of geometry and shaders.</p>
 <p>Is it ready yet? Not really I'd say. More documentation is needed and Im looking at <a href="http://jashkenas.github.io/docco/">Docco</a> to fill the void. But for these who want to help or offer constructive criticism, its up over at <a href="https://github.com/OniDaito/CoffeeGL">github</a> for all to see.</p>
-    </div>
+        
+      </div>
 
-    <div id="col-md-2">
-      
-    </div>
+      <div class="col-md-3">
+        <h4>Related Posts</h4>
+        <ul class="list-unstyled">
+        
+        </ul>
+      </div>
 
-  <p class="clear"></p>
-    <hr />
-    <footer>
-      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-    </footer>
+    <p class="clear"></p>
+      <hr />
+      <footer>
+        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+      </footer>
+    </div>
   </div>
 
 
@@ -169,7 +177,7 @@
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $("#content img");
+    var images = $(".content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
         $(images[i]).addClass("left");
@@ -180,6 +188,10 @@
   });
 </script>
 
+
+<script type="text/javascript">
+  var s = skrollr.init();
+</script>
 
 <!--
 <script type="text/javascript">

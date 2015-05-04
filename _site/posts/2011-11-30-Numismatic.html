@@ -8,7 +8,7 @@
      \/     \/     \/                    \/        
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Numismatic Fun</title>
@@ -69,48 +69,46 @@
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/skrollr.min.js"></script>
 
+
 </head>
 
 <body>
 
 <div id= "skrollr-body">
-  <div class="container">
 
-    <!-- nice background WebGL Stuff goes here -->
-    <div class="jumbotron">
-      <div id="scenery">
-      
-        <span id="rocket">
-          <span id="rocketGroup">
-            <img src="/images/strap/deutsche.jpg" />
-          </span>
-        </span>
+
+  <!-- nice background WebGL Stuff goes here -->
+  <div class="jumbotron">
+    <div id="page-title">
+      <h2> Numismatic Fun - 2011-11-30 00:00:00 </h2>
+    </div>
+    <div id="scenery">
+      <img src="/images/strap/deutsche.jpg" />
+    </div>
+  </div>
+
+
+  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
-    <!-- main navbar -->
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </nav>
-  </div>
 
 
   <!--
@@ -134,13 +132,18 @@
       </div>
     </div> -->
 
-  <div class="container" id="title">
-  <div class="col-md-8"><p class="highlight toppad">Numismatic Fun - 2011-11-30 00:00:00</p></div><div class ="clear"></div>
-  </div>
-  <hr class="tight_hr"/>
-  <div class="container" id="content">
+  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
 
-    <div id="col-md-6">
+    <!--<div class="container" id="title">
+      <div class="col-md-8"><p class="highlight toppad">Numismatic Fun - 2011-11-30 00:00:00</p></div><div class ="clear"></div>
+    </div> -->
+
+
+    <hr class="tight_hr"/>
+    <div class="container">
+
+      <div class="col-md-9">
+    
       
 <p>I've been working on a small project for the excellent girlfriend involving the recognition of coins. I've been looking into some various different applications that attempt to do this using computer vision. Turns out its a hard program.</p>
 <p>I've also learnt a new word, clearly!</p>
@@ -150,17 +153,22 @@
 <p>Sadly, it isn't great on coins that aren't round or at least, not easily. It seems that perhaps training a haar classifier might be the best option? <a href="http://achuwilson.wordpress.com/2011/07/01/create-your-own-haar-classifier-for-detecting-objects-in-opencv/">This blog post</a> is a great introduction to the idea of training a classifier. It's an intensive task and the jury is still out on whether or not this will actually work. I'll be sure to post my results here when I get them.</p>
 <p>Currently, my classifier is still running, as has been for the last 3 days!</p>
 <p>At the moment, most of the research seems to be based around the recognition of old coins as oppose to new ones?</p>
-    </div>
+        
+      </div>
 
-    <div id="col-md-2">
-      
-    </div>
+      <div class="col-md-3">
+        <h4>Related Posts</h4>
+        <ul class="list-unstyled">
+        
+        </ul>
+      </div>
 
-  <p class="clear"></p>
-    <hr />
-    <footer>
-      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-    </footer>
+    <p class="clear"></p>
+      <hr />
+      <footer>
+        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+      </footer>
+    </div>
   </div>
 
 
@@ -170,7 +178,7 @@
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $("#content img");
+    var images = $(".content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
         $(images[i]).addClass("left");
@@ -181,6 +189,10 @@
   });
 </script>
 
+
+<script type="text/javascript">
+  var s = skrollr.init();
+</script>
 
 <!--
 <script type="text/javascript">

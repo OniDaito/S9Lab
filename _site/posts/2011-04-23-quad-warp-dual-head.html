@@ -8,7 +8,7 @@
      \/     \/     \/                    \/        
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Quad Warp, Dual Head</title>
@@ -69,48 +69,46 @@
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/skrollr.min.js"></script>
 
+
 </head>
 
 <body>
 
 <div id= "skrollr-body">
-  <div class="container">
 
-    <!-- nice background WebGL Stuff goes here -->
-    <div class="jumbotron">
-      <div id="scenery">
-      
-        <span id="rocket">
-          <span id="rocketGroup">
-            <img src="/images/strap/deutsche.jpg" />
-          </span>
-        </span>
+
+  <!-- nice background WebGL Stuff goes here -->
+  <div class="jumbotron">
+    <div id="page-title">
+      <h2> Quad Warp, Dual Head - 2011-04-23 00:00:00 </h2>
+    </div>
+    <div id="scenery">
+      <img src="/images/strap/deutsche.jpg" />
+    </div>
+  </div>
+
+
+  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
-    <!-- main navbar -->
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </nav>
-  </div>
 
 
   <!--
@@ -134,29 +132,39 @@
       </div>
     </div> -->
 
-  <div class="container" id="title">
-  <div class="col-md-8"><p class="highlight toppad">Quad Warp, Dual Head - 2011-04-23 00:00:00</p></div><div class ="clear"></div>
-  </div>
-  <hr class="tight_hr"/>
-  <div class="container" id="content">
+  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
 
-    <div id="col-md-6">
+    <!--<div class="container" id="title">
+      <div class="col-md-8"><p class="highlight toppad">Quad Warp, Dual Head - 2011-04-23 00:00:00</p></div><div class ="clear"></div>
+    </div> -->
+
+
+    <hr class="tight_hr"/>
+    <div class="container">
+
+      <div class="col-md-9">
+    
       
 <p><img alt="Quad Warp" src="http://2.bp.blogspot.com/-XEBSmLA0nLI/TbL-KdnM_FI/AAAAAAAAAy0/CCBZWSEhGxM/s320/quad.png" /></p>
 <p>I'm wokring on many things at the moment and this is one of them. As 'Only' is going to be up at Digit this year at the Lowry im looking to get some ideas on how best to get two sides of the piece to work best. Previously, I've tried a TCP stream between two machines and that worked quite well. There were issues with the speed however and the receiving machine was definitely slower but the effect looked quite nice.<br /><br />The second idea is to use one, quite hefy machine and two heads. This is probably the nicest solution but doubles the amount of FBOs and space I need one one card. My little Macbook Pro has problems dealing with it for sure. Questions arise such as rendering the geometry twice or rendering both views at once onto a wide texture. In addition, what happens if we need to use projectors? If we have to keystone and warp each view seperately then we could have a problem.</p>
 <p>So, in the above picture we have the front view in red, on the left and the rear view, on the right in green. Both are 1024x768 textures, mapped to a 12 x 12 set of quads which are warped using Memo Aktens Projection warping shader. The effect works quite well so hopefully, thats the projectors covered!</p>
 <p>How best to improve framerates though? There are, at least, 4 1024x768 textures (rising to 6 with SSAO) and at least 4 different shaders working. So far 15fps is the best which is about half of minimum. More work to do it seems.</p>
-    </div>
+        
+      </div>
 
-    <div id="col-md-2">
-      
-    </div>
+      <div class="col-md-3">
+        <h4>Related Posts</h4>
+        <ul class="list-unstyled">
+        
+        </ul>
+      </div>
 
-  <p class="clear"></p>
-    <hr />
-    <footer>
-      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-    </footer>
+    <p class="clear"></p>
+      <hr />
+      <footer>
+        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+      </footer>
+    </div>
   </div>
 
 
@@ -166,7 +174,7 @@
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $("#content img");
+    var images = $(".content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
         $(images[i]).addClass("left");
@@ -177,6 +185,10 @@
   });
 </script>
 
+
+<script type="text/javascript">
+  var s = skrollr.init();
+</script>
 
 <!--
 <script type="text/javascript">

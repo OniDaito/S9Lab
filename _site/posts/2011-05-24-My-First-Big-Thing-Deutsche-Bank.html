@@ -8,7 +8,7 @@
      \/     \/     \/                    \/        
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Deutsche Bank Installation</title>
@@ -69,48 +69,46 @@
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/skrollr.min.js"></script>
 
+
 </head>
 
 <body>
 
 <div id= "skrollr-body">
-  <div class="container">
 
-    <!-- nice background WebGL Stuff goes here -->
-    <div class="jumbotron">
-      <div id="scenery">
-      
-        <span id="rocket">
-          <span id="rocketGroup">
-            <img src="/images/strap/deutsche.jpg" />
-          </span>
-        </span>
+
+  <!-- nice background WebGL Stuff goes here -->
+  <div class="jumbotron">
+    <div id="page-title">
+      <h2> Deutsche Bank Installation - 2011-05-24 00:00:00 </h2>
+    </div>
+    <div id="scenery">
+      <img src="/images/strap/deutsche.jpg" />
+    </div>
+  </div>
+
+
+  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
-    <!-- main navbar -->
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-          </div>
-          <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </nav>
-  </div>
 
 
   <!--
@@ -134,13 +132,18 @@
       </div>
     </div> -->
 
-  <div class="container" id="title">
-  <div class="col-md-8"><p class="highlight toppad">Deutsche Bank Installation - 2011-05-24 00:00:00</p></div><div class ="clear"></div>
-  </div>
-  <hr class="tight_hr"/>
-  <div class="container" id="content">
+  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
 
-    <div id="col-md-6">
+    <!--<div class="container" id="title">
+      <div class="col-md-8"><p class="highlight toppad">Deutsche Bank Installation - 2011-05-24 00:00:00</p></div><div class ="clear"></div>
+    </div> -->
+
+
+    <hr class="tight_hr"/>
+    <div class="container">
+
+      <div class="col-md-9">
+    
       
 <p>It's arrived! Finally, out of NDA we have the <a href="http://www.msavisuals.com/deutsche_bank_hong_kong">Hong Kong Deutsche Bank Installation</a>. This was led by the rather talented <a href="http://www.field.io">Field.io</a> who decided to pass around some of the work to local creative, programming types such as <a href="http://www.msavisuals.com">MSAVisuals</a>. At the time, I'd left my job at <a href="http://www.casa.ucl.ac.uk">CASA, UCL</a> to come and work for Memo because I loved his work and it was high time I got my ass in gear and tried to do the work I love to do: computer graphics art. It was a no brainer at the time but it still scared me a lot to make the jump.</p>
 <p>Memo had already begun work on 'A Passion for the Planet' and asked me if I could work on the effects. Using MSAPhysics we came up with a particle system which I played with in order to add some dynamics to the scenes. So we had snow for the mountains, rain in the forest and, my personal favourite, sunspots for the Tea fields (giving the idea of the sun breaking through the cloud).</p>
@@ -155,17 +158,22 @@
 <p>Add a little fog for depth perception and some subtle shader tweaks here and there and the result was quite pleasing. </p>
 <p>Of course, nothing ever goes completely to plan. Its the right level of improv that makes a performance they say. Performance and Teamwork caused a few issues when it was run across the linked machines. For a while, we couldn't figure it out. Eventually, thanks to help from Dean MacNamee, we figured out that logging to a console was causing issues as the stream was not correctly defined. Quite often, Memo and I will log things to stderr and stdout and that seemed to be causing memory issues with Fields setup. Not only that, we changed OS twice, swapping between Windows and OSX. Thankfully, <a href="http://www.libcinder.org">Cinder</a> is great at making this almost a non-issue.</p>
 <p>On a personal level, it was humbling. I'm so glad to see this live and it felt like proof that I can do these things I've dreamed about doing. Many thoughts I had were dispelled though; it was a lot of hard work and the bar was much higher than on some projects I've worked on. I wouldn't have managed this on my own at the time if I'd not been teamed up with Memo. Workig with someone who knows how to program really well is great for learning but you really need to let your ego go and not get upset when the person you are freelancing for points out a few schoolboy errors you make. This is common in programming teams but it feels worse when you are freelancing because you are out there, on your own, trying to impress and do good work. On this project, there were down times for me but I suspect that is the case for anything worth doing. The final result, I feel, shows the amount of effort that went into this was truly epic, from all the people involved.</p>
-    </div>
+        
+      </div>
 
-    <div id="col-md-2">
-      
-    </div>
+      <div class="col-md-3">
+        <h4>Related Posts</h4>
+        <ul class="list-unstyled">
+        
+        </ul>
+      </div>
 
-  <p class="clear"></p>
-    <hr />
-    <footer>
-      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-    </footer>
+    <p class="clear"></p>
+      <hr />
+      <footer>
+        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+      </footer>
+    </div>
   </div>
 
 
@@ -175,7 +183,7 @@
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $("#content img");
+    var images = $(".content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
         $(images[i]).addClass("left");
@@ -186,6 +194,10 @@
   });
 </script>
 
+
+<script type="text/javascript">
+  var s = skrollr.init();
+</script>
 
 <!--
 <script type="text/javascript">
