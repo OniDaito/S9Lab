@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Leaving Google - 2012-11-05 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Leaving Google - 2012-11-05 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>It seems like the wrong thing to do. Anyone who is familar with the Podcast "Back-to-Work" or anyone with a goal in mind knows that its a bad idea to re-invent the wheel. If there is a good product out there that takes away a lot of hassle for you then you should use that to get what you need to get done, done! The thing is, this has various levels and for me, I like to get my hands dirty. I've been using Google for calendar and mail quite a lot and decided, just recently to step away. There were a few factors (work avoidance being one perhaps - a super form of procrastination) but lessons were learnt and good times had.</p>
 <p><img alt="baibai" src="http://images.smh.com.au/2010/01/15/1041660/googlechina5-420x0.jpg" /></p>
 <p>I run a few domains o n my own VPS. The thing about this is I need to run websites and therefore, email. I've been doing this happily on Ubuntu with Dovecot and Postfix. There are good guides and I think its more or less, running ok. I decided to use gmail because, lets face it, email anywhere, good spam filtering, multiple accounts and conversation view (probably the most import feature).</p>
@@ -118,17 +157,39 @@ sudo pear install -f  MDB2-2.5.0b3
 <p>With Davical, I can share calendars between various devices. At the moment, Im just using my iPhone's builtin client. Mountain Lion appears not to really like conencting to the caldav server but I reckon I can fix that.</p>
 <p>I still need a good solution for notes. I believe Roundcube can take care of that as well. Indeed, Davical may have answers for that. If the task manager doesnt work, maybe that's what I'll do.</p>
 <p>I have no real problems with Google, but I know quite a few people do. I've not kept up with the politics of it all but I do believe that keeping control of your data is important. Google, for my money (or not as the case may be), have never done me wrong but I guess I am part of their product. So far, I get a little more spam but not an awful lot and its quite good fun to see the rejections and n00bs trying to hammer my server. Bless.</p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -175,7 +236,7 @@ sudo pear install -f  MDB2-2.5.0b3
 
   });
 
-</script>
+</script> -->
 
 
 </body>

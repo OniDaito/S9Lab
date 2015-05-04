@@ -7,7 +7,7 @@ introtext: In a nutshell, the trip is totally worth it. Some people have said th
 
 In this final post about the Transsiberian, I figured I'd list some of the resources, tips and thoughts we had, so that it might help people who wish to visit these places or take the transsiberian. I've also got some nerdy stats for these who like numbers!
 
-In a nutshell, the trip is totally worth it. Some people have said that it's become too touristy (apparently) or they believe it's something it isn't. One thing for sure, it's all down to you, who you are and what you plan for. Sounds a bit fruity, but if you prefer fewer stops and talking to more people, you can do that. If you are more like me, and prefer quieter cabins and more stops, you can do that too. A lot of the trip is down to your personality and the kinds of things you want to get up to. Our trip involved many small city breaks and a few countryside visits. Some people prefer to stay on the train from one end to the other. This is also possible and results in a different experience.
+In a nutshell, the trip is totally worth it. Some people have said that it's become too touristy (apparently) or they believe it's something it isn't. One thing for sure, it's all down to you, who you are and what you plan for. Sounds a bit fruity, but if you prefer fewer stops and talking to more people, you can do that. If you are more like me, and prefer quieter cabins and more stops, you can do that too. A lot of the trip is down to your personality and the kinds of things you want to get up to. Our trip involved many small city breaks and a few countryside visits. Some people prefer to stay on the train from one end to the other. This is also possible and results in a different experience. 
 
 ![Bed explosion](https://farm8.staticflickr.com/7619/16728730439_f835f927b0.jpg)
 
@@ -19,13 +19,22 @@ The time of year is important to consider. We went in the off-season, for variou
 
 The trains themselves are not so far removed from the Caledonian Sleeper here in the UK, at least in terms of living. You have beds that have sheets, toilets that are mostly clean yet simple and windows. Very little is fancy but it's all well looked after. With hot water and the promise of noodles from the cabin attendants, you can't really go too far wrong, but having a the [handpresso](http://www.handpresso.com) was an absolute godsend! Do keep space for good food, drink and a bowl or thermal cup. We took sporks and dried fruits and a whole host of things that made the trip much more bearable. It may have seemed mad to other people but having a whole stash of coffee pods in my bag was totally worth it! Even with all that prep, you'll still be wanting tons of vegetables and fruit when you get off. I didn't risk buying things from the platforms, though I saw many people doing that.
 
+<div class="clearfix visible-xs"></div>
+
+<hr/>
+
 ![Baikal](https://farm9.staticflickr.com/8745/16294954803_99e5b1ed83.jpg)
 
 Russia is a cash based economy more or less. Some of the hotels take card but don't expect to use Chip and Pin. The same is true for Mongolia and China, to a lesser degree. We took out money from ATMs rather than using the post-office or bureau-de-change or similar. Don't carry all your cash around with you but do keep a couple of cards in-case a machine swallows one (we almost had that happen). We almost found ourselves short in China but mostly, we'd spent our money before we crossed the border. In Mongolia, a rather dodgy looking chap will offer to change money for you. The deal he offered wasn't crazy bad and it meant we at least had some Togrogs for Mongolia.
 
-One nerdy thing we got up to, was the recording of the GPS track through-out the trip. There are a few gaps here and there, as I got used to how the phone behaved. It appears that getting a GPS signal inside a train is not always so easy, and the battery life of my Samsung Galaxy Y, while better than an iPhone, is still not enough for an entire leg. That said, we managed to get most of it. In total, we covered 10,550km thereabouts (6550 miles roughly), not including the MTR from the Shenzen border. The most Western point was 30.33 degrees, with the most eastern being 116.4 degrees. The most northern, 59.93 with the most southern, 22.18. It's an amazing distance to cover via train, and truly one I've still not yet comprehended.
+
+<div class="clearfix visible-xs"></div>
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/Zyw2dPoNgHw" frameborder="0" allowfullscreen></iframe>
+
+One nerdy thing we got up to, was the recording of the GPS track through-out the trip. There are a few gaps here and there, as I got used to how the phone behaved. It appears that getting a GPS signal inside a train is not always so easy, and the battery life of my Samsung Galaxy Y, while better than an iPhone, is still not enough for an entire leg. That said, we managed to get most of it. In total, we covered 10,550km thereabouts (6550 miles roughly), not including the MTR from the Shenzen border. The most Western point was 30.33 degrees, with the most eastern being 116.4 degrees. The most northern, 59.93 with the most southern, 22.18. It's an amazing distance to cover via train, and truly one I've still not yet comprehended.
+
+
 
 Printing things out is still one of the best methods for getting around and getting hotels and train tickets. Its much easier to have a printed map that shows your station and your hotel. It's good to have the hotel confirmation printed (preferably in English and the local language) and its also good to have train ticket confirmations printed. [tutu.ru](http://www.tutu.ru) (Google Translate is your friend here) will give you e-tickets to print. [China DIY Travel](http://www.china-diy-travel.com/en/Search) will go one further and give you a bilingual sheet to give to a ticket seller. We ended up with half a book's worth of printed sheets. However, this stack is still smaller than two or three guidebooks. Mark off on your map what you want to see. Basically, read things in advance. You can take a PDF version of the guidebooks with you as well (takes up less space) but don't expect to be able to map read using a kindle version of the Lonely Planet guides. It's more hassle than it's worth. Do take the [Transsiberian Handbook](http://www.bookdepository.com/Trans-Siberian-Handbook-Bryn-Thomas/9781905864560) by Thomas Bryn though! It's the best!
 

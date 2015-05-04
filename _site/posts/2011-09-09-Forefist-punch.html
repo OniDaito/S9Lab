@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Forefist Punch - 2011-09-09 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Forefist Punch - 2011-09-09 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>I've caught up with a friend of mine over at <a href="http://finiteattentionspan.wordpress.com/">FiniteAttentionSpan</a> and the subject of Taekwondo came up. There are some quite evocative images and lessons learnt there, that can be applied to other situations in life. I trained for about 6 years and it's been a rocky ride. Now I'm older, I look at the lessons learnt, the tenets and even my black belt thesis with different eyes. </p>
 <p>I've been thinking about the concept of [flow](http://en.wikipedia.org/wiki/Flow_(psychology) in programming and my general practice of computer science, graphics and art. When I trained in Taekwondo it took me at least 3 to 4 years before I had my first flow moment. I remember to this day, breaking two pieces of wood with a jumping reverse side kick. Its a cool move when done right and there was no <em>effort</em> or rather, no <em>forcing</em> of effort. </p>
 <p>But what did that take? There is the idea of 10,000 hours of exercise in a subject before you master it. But that's not the whole truth. Each hour needs feedback and explanation. You need to know what you did right and wrong, to get feedback from yourself and from someone who knows more than you do. Every lesson would involve the walking-stance forefist punch and the L-Stance front kick. Every time, we'd have to punch harder and faster and improve or be corrected. It certainly helped.</p>
@@ -110,17 +149,39 @@
 <p>Recently, I worked on a piece of code that was written in Java. The time constraints were tight and the code was not legible or well constructed. I came in and was immediately stressed out. I did my best to figure out things but it took me an age to get the program to a state where it could work. In the end, it did (and you'll see the results on Sky1 sometime) but the originator of the code confessed he wasn't a programmer. But there we have it. Unless you practice the forefist-punch of programming, you can't make the good stuff.</p>
 <p>Ok, this is probably well known in other disciplines but when you have been programming for a while and working for different clients and on different projects to tight deadlines, what exercise can one do that is similar to the forefist punch? Im not sure I know the answer. My previous little knightmare bash script might be seen as such a thing. Maybe its the python scraper I wrote to look for places to live in London? I suspect other programmers and creative types have their practices. The idea of the speedproject is one. Set a time limit and see how far you can get. Of course, the last thing you want to do is step back to something simple and non-job/non-client critical but I think your practice would improve. </p>
 <p>I suspect I'll need to break out the C book again :)</p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -167,7 +228,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

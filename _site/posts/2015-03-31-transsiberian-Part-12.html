@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Transsiberian Part 12 - Mongolian Border with China - 2015-03-31 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Transsiberian Part 12 - Mongolian Border with China - 2015-03-31 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>Our train from Ulan Bataar leaves around 7:15 am, so another early start for us. It's cold in the morning - below zero in fact - but soon, it will be blazing hot. That's the thing with Mongolia. It's a place of extremes. Despite getting to the station on time, our train hasn't pulled in yet. This one has come all the way from Beijing to Moscow, and is now making it's way back again along the same route, so it probably had delays at the border.</p>
 <p><img alt="Our last big train" src="https://farm9.staticflickr.com/8685/16963825496_647e14c9a4.jpg" /></p>
 <p>The train is made up of Chinese cars, complete with their Red Star livery. We have the top of the line cabin, which consists of two bunks on one side of the cabin, with an armchair and, get this, a shared shower on the other side! Incredible! Or at least it would be if the tank in the hallway, feeding our shower, wasn't leaking everywhere. There is a real musty, stale smell that only seems to get worse as the trip goes on. No shared shower for us sadly. Nevertheless, the cabin is fairly plush, with dark, <em>wood effect</em> paneling, carpets and the like. Very swish.</p>
@@ -116,17 +155,39 @@
 <p>Despite the problems with the Carriage, we get quite a good night's sleep! The cabin is dark, the rails smooth and the engine seems quieter. Thankfully, we've been given vouchers for breakfast and lunch so we don't need to worry about not having any Yuan just yet. The Chinese car is basically a nice looking cafe. There is no ostentation like the Mongolian car, and no dingy, wood paneled or pleather seats like the Russian car. It's pretty clean and functional the breakfast is a quite passable boiled egg, bread and jam, with green tea.</p>
 <p><img alt="Winding through the Gobi desert" src="https://farm8.staticflickr.com/7609/16802331410_5122b4a959.jpg" /></p>
 <p>We catch our first glimpse of the Chinese countryside. Some looks like the desert we just left and some looks like back home - ploughed fields and rolling hills. I suspect this won't last, the closer we get to our next destination - Beijing! This train represents the last step of the <em>classic</em> Trans-Mongolian, Trans-Siberian routes, but it is not the last train on our journey to the East. </p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -173,7 +234,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

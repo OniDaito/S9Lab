@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Transsiberian Part 10 - Russian-around! - 2015-03-28 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Transsiberian Part 10 - Russian-around! - 2015-03-28 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>We leave Russia for Mongolia. Having some time to reflect on the various trains we've been on, I'm compelled to write a small summary of Russia, given the current headlines in the media and the various news we hear on the twitters and such like. The big two issues at the moment, for Westerners at least, are the issues with human rights (specifically LGBT issues) and the invasion of Ukraine. Lets start at the beginning though - Tsarist Russia.</p>
 <p>Some of the Tsarist rulers were quite forward thinking (Peter the Great, Catherine the Great, etc) but were quite often followed by ones who were not. Periods of enlightenment were short and difficult. Russia often took one step forward and two steps back. Witness the Hermitage and it's opulent splendor whilst the <em>serfs</em> suffer in poverty. When things got so bad with the Tsars, Lenin comes in and over-throws the regime. He wasn't exactly the nicest man in the world either, setting up the secret police and such. This revolution came pretty late in Russia's history and must have come as quite the shock, especially when it was soon followed by a brutal dictatorship run by Stalin. Then WW2 happens, and Russia is rocked by war and great loss. It's no wonder then, that Russia isn't a great fan of most of the world. It's had a lot of internal troubles to deal with through-out it's history.</p>
 <p>One key fact in all this is that Russia seems to want autocratic rule. It's almost as if the Russian populace has Stockholm Syndrome. After Stalin and the Soviet period ended, we have a set of Presidents, culminating in Putin who sets about the image of a strong leader - the right <em>man</em> for the job. Russian people want this deep down. It's all they've ever really known. The idea that introducing a capitalist society and democracy will follow is naive at best. Putin understands this I think, and goes to great lengths to show he's the boss.</p>
@@ -117,17 +156,39 @@
 <p>One thing I have learned as we traveled east, is that Russia is a federation. I never paid that much thought. I figured, <em>meh, Russia is Russia</em>. It isn't! Visiting Buryatia, you get a clear sense that although they are content (I guess) with being part of the Federation, they are proud of their heritage. To my eyes, they aren't Russian at all. Their attitudes are different too. I think a similar argument can be made for the United States. When a country is so big, how do you govern it well? <em>How Russia presents itself on the world stage is not really who it is.</em></p>
 <p>I've been subtly trolling Russia with my scarf as we wander around. I often wonder what a random person on the street, here in Siberia would think? Probably that it was all worthwhile and the government was probably doing a good job but more concerned with local issues, just like home. Or maybe not? It's not something you really want to bring up as a tourist, unless a local brings it up first. And we are tourists. It's really hard to understand a place fully, even if you've lived there for a while, but I definitely feel a bit more clued up since being here.</p>
 <p>I turn my attention to China next; another country viewed with suspicion by the west. Lets hope we can tunnel past the great firewall!</p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -174,7 +235,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

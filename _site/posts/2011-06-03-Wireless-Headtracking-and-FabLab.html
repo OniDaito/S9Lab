@@ -65,60 +65,121 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Wireless Headtracking and FabLab - 2011-06-03 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Wireless Headtracking and FabLab - 2011-06-03 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p><img alt="XBee Gyro unit in Custom Case" src="http://farm3.static.flickr.com/2130/5794083824_6cc8abfb7d.jpg" title="XBee Gyro Unit in Custom Case" /></p>
 <p>Two posts combined! I've been busy trying to figure out a good way of doing headtracking on the cheap. Vuzix have not been too helpful when it comes to their VR920 headset. I've managed to get some working results with the Windows drivers but there is an issue when it comes to OSX and Linux. It was decided we should build our own Gyro unit. Not knowing anything about such things, I went straight in.</p>
 <p>I ended up buying a set of different gyros and accelerometers including <a href="http://www.sparkfun.com/products/9431">Sparkfun 6DOF Razor</a> and the <a href="http://www.sparkfun.com/products/9184">Sparkfun Atomic 6DOF</a>. Both have been pretty easy to setup within Cinder on OSX but each has different challanges. I'll be putting it all into a Cinder Block over the next few days. The Atomic takes care of the XBee communication but requires that you write some code to decode it's frames. I had some issues with that as each value comes back as two bytes: the most significant bits and the least. There were some annoying padding bytes that gave me trouble under C++ but after that, getting some nice values out seemed fine. The razor requires that you implement the XBee standard somehow. I wrote some code in C++, based on the Java libraries from Processing. Getting reasonable values out of the Razor was not too hard.</p>
 <p>The problem I had was my belief that Gyros measure absolute position. They don't. This may seem obvious to most but its the force applied to them in order to keep them steady that is measured, and they also drift. This means combining accelerometer data and gyro data together is needed and really important to get right. I have investigated Kalman filters and a few other methods to get everythong straight but its still a work in progress.</p>
 <p>To keep everything in one place, I decided to build a custom case at <a href="http://www.fablabmanchester.org">Manchester FabLab</a>which is a great little place indeed! They are much more strict that London Hackspace but their kit is just a little bit neater and newer. It depends what you want from a workshop really? Both are good though Fablab restricts you to just Friday's and saturdays which sucks a little. Nevertheless, using Google Sketchup with the SVG Export plugin and Inkscape, you can produce a PDF that can be sent to a Laser cutter. Throw in some 3mm acrylic and bam! One case that holds the Atomic and a LiPoly Battery.</p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -165,7 +226,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

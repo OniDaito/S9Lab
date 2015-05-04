@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">UTOPIA Bio-informatics Toolkit - 2014-12-21 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">UTOPIA Bio-informatics Toolkit - 2014-12-21 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>My first ever job was to work on the UTOPIA code-base at the same university I did my undergraduate degree at - <a href="http://aig.cs.man.ac.uk">The University of Manchester</a>. I worked on converting lovely Linux based C++ into something Windows could run. 10 years later, I'm back on the Project, making it work for the three main operating systems. The code has been sitting idle for quite a while and there is a need, more than ever apparently, for sequence alignment tools and protein folding visualisations. I'm certainly not a geneticist or biologist but the general principles are quite interesting.</p>
 <p>UTOPIA is a collection of two programs and set of plugins written in Python. Cinema is a sequence alignment tool and Ambrosia is a 3D visualiation program. The two are designed to work together; one can visualise a particular section of a protein and analyse the 3D structure of certain elements. Both programs can load python plugins to import different sequences and alignments, allowing researchers to work with different on-line databases (of which there are many I've found).</p>
 <p><img alt="utopia" src="https://farm6.staticflickr.com/5479/14455846441_03628a8bce.jpg" /></p>
@@ -115,17 +154,39 @@
 <p><img alt="sequences" src="https://farm6.staticflickr.com/5504/14058530530_aa6d25e891.jpg" /></p>
 <p>UTOPIA deals with the concept of analyzing DNA sequences for various proteins. Sections of these sequences have different actions and correspond to physical structures that cause the protein to 'fold' in a certain way. Understanding why proteins fold and what similar proteins might do is a massive part of current research. If you know the action of one protein and you see another that looks similar and folds in the same way under a certain circumstance, maybe that circumstance will work for the first protein? Working this out computationally would lead to a massive combinatorial explosion, but creating the right tools for researchers is a valid and useful alternative.</p>
 <p>Projects like this tend to be hard-work; you've got quite a lot of code to work through and it's somewhat tricky getting your head around someone else's code. You can begin to see the different styles of the different programmers who worked on the project. It can be quite interesting at times. There is a very nice 'feel good' feeling that you are writing code for a useful purpose, for researchers who are trying to help others. You can download the utopia toolkit from <a href="http://utopia.section9.co.uk">http://utopia.section9.co.uk</a></p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -172,7 +233,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

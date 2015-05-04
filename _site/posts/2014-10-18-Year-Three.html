@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Year Three Review - 2014-10-18 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Year Three Review - 2014-10-18 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>Another year has passed and it's time for my yearly review. I like to keep these professional and helpful for people, though these two goals can conflict. If there is stuff here you want to learn more about, do email me. Often the tales I want to tell I really can't on-line, but a few beers down, I'm usually game!</p>
 <p>It's been an <em>emotional</em> year this year, with some excellent projects under my belt. <a href="https://www.section9.co.uk/posts/2014-05-28-Equatorie.html">The Equatorie</a>, <a href="https://www.section9.co.uk/posts/2014-02-13-Phantom-Limb-Oculus.html">Phantom Limb Mk3</a> and <a href="https://www.section9.co.uk/posts/2014-07-28-Kaleidoscope.html">EchoForms</a> have all been fantastic projects for me, to mention but a few. There have also been some difficult times. It's a year where I've had what I'd call a "Memo moment", only it's lasted for at least 6 months and is only now beginning to lift. </p>
 <p>When I worked for Memo Akten, he told me a tale whereby he was gaffer taping a projector to a ceiling in a dingy pub to get some installation working. At this point he realised "what the hell am I doing?". This year, there have been a series of projects and distractions where I should have said "no". Learning to say no is something everyone talks about, but it's something that's very important for a freelancer and hard to get right.</p>
@@ -116,17 +155,39 @@
 <p>The real joy of this job is that you have more freedom to explore what you are interested in the most. This year, I've not only written a lot of code, but I've looked at <a href="https://www.section9.co.uk/posts/2014-09-06-900-Pixel-Screen.html">LED Signage</a>, helped run a large <a href="https://www.section9.co.uk/posts/2014-09-06-Nook-Patient-Report-Forms.html">first aid team</a> at a festival, and even went to <a href="https://www.section9.co.uk/posts/2014-09-26-Echo-Forms-Live-Gig.html">paris, celebrity spotting</a>. </p>
 <p>People have begun to come to me for work, almost a year after I first spoke to them. This is something I'd say for freelancing; you never really know when someone will give you a call - it could be a long while but if you are good at what you do, and the client believes they can work with you, good things will happen. <em>Luck has to find you working.</em></p>
 <p>Also, turn off your mail client, block facebook and twitter, jog into work, and install a nice coffee machine and things will be awesome!</p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -173,7 +234,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Tailoring a Suit - 2013-12-17 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Tailoring a Suit - 2013-12-17 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>Right off the back of Wearable tech, here is a blog post about, well, a wearable! In fact, the best kind of wearable a man can have; a tailored suit, fitted to perfection and totally unique.</p>
 <p><img alt="suit you sir" src="http://farm4.staticflickr.com/3716/11399935266_23c128f177.jpg" /></p>
 <p>Last year, I was persuaded by my lovely girlfriend to make my own suit. I'd been complaining that most suits are quite boring, sad affairs and that any occasion worth a suit should have a good suit - one that makes you feel like the king of the world. She suggested that unless I want to spend an obscene amount of money, I should try to make one. A practice run was needed. For that, <a href="http://www.section9.co.uk/posts/2012-04-16-Waistcoat.html">I made a waist-coat</a> that some of you may have seen. I still wear it and love it dearly. With that under my belt, the two of us set to it.</p>
@@ -118,17 +157,39 @@
 <p>Overall, this project was hard. The plan was to finish the suit in time for a wedding in Greece. I managed to get the jacket finished but was behind on the trousers. Thankfully, the girlfriend managed to finish them off for me, whilst on the train! Apparently, people were giving her odd looks, <em>as if they'd never seen someone sewing up trousers before</em>. I know, right? The girlfriend did wonder if she was putting me through some kind of exquisite torture at some points; it was incredibly difficult. I've never really sewn anything like this before and the precision required is higher than anything else I've tried. The main thing is the order of the steps. It's not immediately obvious that one thing should happen before another but thanks to expert tuition, I didn't make these mistakes. </p>
 <p><img alt="label" src="http://farm8.staticflickr.com/7385/11400117896_dc49027a60.jpg" /></p>
 <p>section9 is now, clearly, a diffusion brand! Hah! Well, I think it will be a while before I attempt another suit. I did have a few ideas for this one. I'd prefer a fourth button for a smaller collar - and to stop the inside pocket from pulling when large items are placed in it. I'd also prefer something a little more interesting with the front buttons (PCBs maybe?) but in the end, these aren't going to happen because when I wear this suit, I feel like the proverbial <em>million dollars</em> which is really the best thing anyone can ask when they wear any clothing.</p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -175,7 +236,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

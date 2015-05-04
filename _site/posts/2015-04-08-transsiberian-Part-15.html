@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Transsiberian Part 15 - Hong Kong and Shenzen - 2015-04-08 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Transsiberian Part 15 - Hong Kong and Shenzen - 2015-04-08 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>Hong Kong! A city I've visited many times, around ten years ago. I'm pretty excited to be going back! However, I'm excited for another reason - Shenzen! So far, on this trip, we've not really seen much in the way of geekery; many of the hackspaces I've tried to contact either ignored me or probably don't exist. Shenzen, however, is the capital of electronics and manufacturing, possibly in the world. Our train cannot get there fast enough.</p>
 <p>In fact, the train really can't because it's delayed by about 40 minutes. Never-mind though. This Chinese sleeper train is much like the others we've been on. Second class is 4 bunks as before, though this train has a washroom in each carriage also. The ride is a little rough sadly. The fittings are somewhat more modern than their Russian counterparts. Hot water is of course available at all times. Chinese folk get mad if they can't get their instant noodles I bet.</p>
 <p>We leave our bags at a baggage storage place at Luo Hu station, then head out on the metro towards SeeedStudios. I've placed an order with them for some PCBs and I'm hoping to get a tour of their office and factory. Sadly, when we get there, they are closed! Apparently, it's a bank holiday which is annoying as the chap I was speaking to had assured me they were open. Never-mind. Back on the metro we head towards Hua Qiang Road and the electronics markets. I'm hoping they are still open and humming the song "I've got a golden ticket"; I'm expect Willy Wonka levels of electronics goodness.</p>
@@ -127,17 +166,39 @@
 <p><img alt="Bruce Lee" src="https://farm8.staticflickr.com/7726/17090037732_2a98bc5b6f.jpg" /></p>
 <p>We make our way, slowly towards the airport. Our bags are really heavy and I'm still struggling with the illness. I just about make it to the check-in desk! Fortunately, Katie has been a real trooper in helping me out, so we make it to the airport in good time. Thanks to air-miles, we are flying back business class, direct to Heathrow. I sleep for the first 4 hours; my body has just given up and needs to recover. Thankfully, it's possible to make the seat perfectly horizontal! Such luxury! The films are good and the one meal I'm awake for is quite tasty. The 12 hour flight passes quickly. By 11pm local time, Katie takes out the keys and opens the door of our flat.</p>
 <p><em>We are home.</em></p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -184,7 +245,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

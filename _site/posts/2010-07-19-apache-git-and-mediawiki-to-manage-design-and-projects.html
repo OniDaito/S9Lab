@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Apache, GIT and Mediawiki to manage design and projects - 2010-07-19 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Apache, GIT and Mediawiki to manage design and projects - 2010-07-19 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>I thought I'd put down my thoughts and experiences on keeping track of your personal projects and data. I've been through a lot of various methods. Everything is intertwined; backup, code repos, security, accessibility etc etc. My method certainly wont suit everyone but it may give you some thoughts. In a nutshell, I use Apache, GIT and Mediawiki on a small MiniITX machine with USB disk cloning to run all my systems.</p>
 <p>I've used subversion and mercurial before. Subversion was great because it support binary files; very useful when you have a large PSD to backup. However, when one of my hard-disks broke, I lost the most recent updates and couldn't get back the newer versions I had on my workstation. This was annoying. That, and subversions silly revision system meant a change was needed. Subversion doesn't really say what a repos or a directory really is. So if I updated one project, then another project the revision number for everything would go up twice! Not good.</p>
 <p>Mercurial was dead simple though. I converted a few of the SVN based projects over but found that quite tricky. Mercurial is what I use on a daily basis at work. Because it is written in Python it is quite straight forward and works well. However, it does suffer from serious flaws when branching (apparently) but also it is limited to filesizes under 10meg. I say limited - it complains about it but tries anyway. Creating a new repository remotely was also a pain. What if I'm working remotely and need to backup to my system at home? I wrote a quick python script to do this but it wasn't particularly good.</p>
@@ -111,17 +150,39 @@
 <p>So now you can backup code, keep notes, and access anywhere. All this needs to run on something. I use a fan-less, MiniITX board with one large SATA drive to store all this, running Ubuntu. Why you ask? Well I wanted something low power and capable with an emphasis on quiet. Using one SATA drive means that disk cloning is very easy. Plug in a USB enclosure, run dd_rescue and you get an identical copy of your drive. It's already saved me once and I heartily recommend it.</p>
 <p>If you set up all the right port forwards and certificates you can access your box over a home connection with reasonable speed. The whole thing works quite well and has some degrees of protection. Full disk encryption, arpwatch and Snort provide a good defence against intrusion and holding your wiki off-site on your webhost means you'll always have access, even if your home machine goes down (which it will once or twice)</p>
 <p>Overall, this has met my needs for security, remote access to everything and my various requirements for source control and backup. I heartily recommend something similar. It's all free software and it all works.</p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -168,7 +229,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

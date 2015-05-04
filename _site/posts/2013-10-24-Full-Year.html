@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Another year for S9 - 2013-10-24 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Another year for S9 - 2013-10-24 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p>I started section9 a while ago now. There were are few periods where the business was on hold, where I took a full-time or part time job, but around October 2012, I made the jump to being a limited company and going all the way. As Vinnie Jones once said - "Its been emotional".</p>
 <p>There are lots of parts to this, and figuring out where to begin is quite hard. The mundane things might be the place? Working out the tax and accounting rules was one hurdle and I got it wrong a few times. Going from a freelancer to a limited company has its issues. You are no longer one person. The company is a separate entity and it's wise to keep that in mind. I was given bad advice by the London Small Business people who suggested I invoice my own company. Almost no-one does this. A director is an employee and as such, needs to be setup with PAYE. You can have loans as a director and such, but I found it easiest to have a minimum PAYE and dividends setup. That way, you pay the tax you owe (hello Google! Starbucks!). I am a big fan of <a href="http://www.freeagent.com">Freeagent</a>; in fact I could not do all this without it. I paid for the services of an accountant to start me off and that was a smart move. If I grow the company more, an accountant is definitely someone I'd work with.</p>
 <p>Space is an issue. Having a place to work is actually hard to find. Im not a hot-desking person - I have too much gear! In the space of a year I've had 3 different offices! Yup! Three. The first was great but too cold in winter and the chap renting it out pretty much lived there. That made certain things not fun. I remember a <a href="http://www.mztek.org/">MzTek</a> event looking very surprised when I walked in. I'd come in for weekend work and they seemed quite surprised. I moved again to <a href="http://www.makieworld.com/">MakieLab</a> over in the Silicon Roundabout. A lovely office and one I'd considered way back but the problem here is it's definitely <em>their</em> office. I felt very much like an outsider. That's not to criticise these chaps - they do very good work - but they are really involved so we didn't talk much. In addition, they are immersed in the glamorous world of Silicon Roundabout which I am definitely not. Basically, I never felt cool enough. I moved again to my present office, much closer to home. It's cheap, bright and the landlady is nice. It's near <a href="http://hackspace.london.org.uk">London Hackspace</a> which is a plus and its quiet. It does however, have one major problem - it's lonely.</p>
@@ -113,17 +152,39 @@
 <p>Being freelance is great though. No really, it is. Lets start with the mundane again. I don't commute. Not really. I either walk or cycle to the office and there is the option of a park or a canal to walk down, which is brilliant! I get to set my own hours, choose my own tools (a bigger problem for some people than I had thought) and my own learning regime. These are really big wins. They come with responsibility too, granted, but these are important things to me so it's good to have control over them.</p>
 <p>One thing I didn't expect is that I'm somehow younger, or, to put it another way, I'm more in love with my subject than I was when I was at university or my mid twenties. I've heard this from another friend who works for a small Ruby outfit. I don't quite understand why, but I read more, talk more and get into it more now than at any other time, except for when I was quite young and playing around with a Commodore 64. </p>
 <p>To quote Tim Minchin, "I try to remind myself, even when I'm struggling, how incredibly lucky I am." Sometimes I think I've done all this myself but that blatantly isn't true, and I don't think its true for anyone going down this road. My partner is very supportive and wonderful. My friends and family have backed me up and some of the people I've worked with have been really fun. Yes, there are times when it's hard - REALLY hard - but it's worth it. Trust me! :)</p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -170,7 +231,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>

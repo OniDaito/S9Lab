@@ -65,44 +65,83 @@
   <meta name="DC.description" lang="en" content="" />
   <meta name="DC.subject" lang="en" content="" /> 
 
-  <script src="/js/jquery-1.8.3.min.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/skrollr.min.js"></script>
 
 </head>
 
 <body>
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
+
+<div id= "skrollr-body">
+  <div class="container">
+
+    <!-- nice background WebGL Stuff goes here -->
+    <div class="jumbotron">
+      <div id="scenery">
+      
+        <span id="rocket">
+          <span id="rocketGroup">
+            <img src="/images/strap/deutsche.jpg" />
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <!-- main navbar -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+  </div>
+
+
+  <!--
+   <div class="container">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="http://www.section9.co.uk" id="companyname">section9 dot co dot uk</a>
+      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
+      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
 
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li> <a href="/index.html">Home</a></li>
-          <li> <a href="/work.html">Work</a></li>
-          <li> <a href="/about.html">About</a></li>
-          <li> <a href="/contact.html">Contact</a></li>
-          <li class="active"><a href="/blog.html">Blog</a></li>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li ><a href="/index.html">Home</a></li>
+          <li ><a href="/work.html">Work</a></li>
+          <li ><a href="/about.html">About</a></li>
+          <li ><a href="/contact.html">Contact</a></li>
+          <li ><a href="/blog.html">Blog</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
-    </div>
+      </div>
+    </div> -->
+
+  <div class="container" id="title">
+  <div class="col-md-8"><p class="highlight toppad">Denied - 2011-08-14 00:00:00</p></div><div class ="clear"></div>
   </div>
-</div>
+  <hr class="tight_hr"/>
+  <div class="container" id="content">
 
-<div class="container-fluid" id="title">
-<div class="span12"><p class="highlight toppad">Denied - 2011-08-14 00:00:00</p></div><div class ="clear"></div>
-</div>
-<hr class="tight_hr"/>
-<div class="container-fluid" id="content">
-
-  <div id="blogblocks">
-    
+    <div id="col-md-6">
+      
 <p><a href="http://saito.section9.co.uk"><img alt="Denied" src="http://farm7.static.flickr.com/6076/6038601918_ab736c4a6f_m.jpg" /></a></p>
 <p>I've been looking at WebGL and I've been quite excited. The chance to merge design, the web and my favorite graphics library is not something I'd pass up. It's not all roses though because WebGL doesn't have uniform support across browsers. That said, it seems to be gaining ground.</p>
 <p><a href="http://saito.section9.co.uk">Denied</a> is an idea I'd had a while back, ever since I chatted to <a href="http://www.jonty.co.uk">Jonty Wareing</a> about Geolocating IP addresses. There is a nice library called <a href="http://www.maxmind.com/app/geolitecity">Geolitecity</a> that I looked into. Jonty gave me a bash script that I modified a little to convert my <em>hosts.deny</em> report into something a little more interesting. Turns out most of the evil people after my server are in Beijing. Who'd have thought it?</p>
@@ -111,17 +150,39 @@
 <p>Denied is a good example of my style; it's a mashup of many technologies. Firstly, the system runs on <a href="http://wiki.nginx.org/">nginx</a> with uwsgi on top. This provides python support which reads the data produced by Jonty's script and returns a nice stack of JSON for Jquery to read. On the client side, we have saito.js, a bunch of shaders, jquery, <a href="http://sylvester.jcoglan.com/">sylvester</a> and some nice HTML5 formatting and support. Every 30 seconds a request is made to nginx for more data, recreating the curves.</p>
 <p>The lighting is per-pixel with materials and light settings. The background is a quad with an alpha blend applied to give the burst effect. I wanted to try volumetric lighting but I'll leave that for another time. to create the etched surface of the globe, the standard technique of bump mapping was applied, though the tanget creation was a bit tricky. The maps of the planet are from <a href="http://visibleearth.nasa.gov/">NASA</a> though I couldn't find a bump map with a high enough resolution. I disabled zooming in this instance because it affected the lighting too much and I wanted it to be consistent. The curves have a different shader that alters their alpha value with a sine function. Add some blending to that and you get a pleasing effect.</p>
 <p>Overall, I'm really happy with the look. It was pure experimentation and just messing around with colours and values and ideas with the shaders. This works in firefox 5, Chrome standard and Chrome Canary. Im not sure about other browsers yet. Each browser has different support. Firefox seems to run fast but doesn't antialias things correctly. Standard Chrome has antialiasing but tends to eat up CPU too much, whereas Canary seems to have all the positives and none of the negatives. Hopefully we'll see some standardisation soon. </p>
+    </div>
 
+    <div id="col-md-2">
+      
+    </div>
+
+  <p class="clear"></p>
+    <hr />
+    <footer>
+      <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
+    </footer>
   </div>
 
-  <hr />
-  <footer>
-    <p><ul><li>© section9 dot co dot uk ltd 2013 - Benjamin Blundell - Registered Company 7794714 - 27 Old Gloucester Street, London WC1N 3AX</li><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-  </footer>
+
 </div>
 
+<script type="text/javascript">
+  $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $("#content img");
+    for(var i = 0; i < images.length; i++) {
+      if (i % 2 == 0){
+        $(images[i]).addClass("left");
+      } else {
+        $(images[i]).addClass("right");
+      }
+    }
+  });
+</script>
 
 
+<!--
 <script type="text/javascript">
   $(window).load(function(){
 
@@ -168,7 +229,7 @@
 
   });
 
-</script>
+</script> -->
 
 
 </body>
