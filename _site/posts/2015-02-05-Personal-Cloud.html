@@ -20,6 +20,8 @@
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/css/s9.css" rel="stylesheet" media="screen">
+  <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -74,77 +76,49 @@
 
 <body>
 
-<div id= "skrollr-body">
-
-
-  <!-- nice background WebGL Stuff goes here -->
-  <div class="jumbotron">
-    <div id="page-title">
-      <h2> Personal Cloud - 2015-02-05 00:00:00 </h2>
-    </div>
-    <div id="scenery">
-      <img src="/images/strap/deutsche.jpg" />
-    </div>
-  </div>
-
-
-  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+<nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
+          <img class="navbar-brand-image" src="/images/s9_tiny.png" alt="section9 logo" />
+
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+          <a class="navbar-brand" href="#">Benjamin J. Blundell</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li class="active"><a href="/blog.html">Blog</a></li>
+            <li><a href="/work.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../navbar/">section9<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">pxl.js</a></li>
+            <li><a href="#">qmul</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Personal Cloud</h2>
+        <h3>2015-02-05 00:00:00</h3>
+        <p>Your own, personal, cloud. Somewhere to keep your files. It gives you smiles!</p>
       </div>
     </div>
 
-
-
-  <!--
-   <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
-
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li ><a href="/index.html">Home</a></li>
-          <li ><a href="/work.html">Work</a></li>
-          <li ><a href="/about.html">About</a></li>
-          <li ><a href="/contact.html">Contact</a></li>
-          <li ><a href="/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div> -->
-
-  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
-
-    <!--<div class="container" id="title">
-      <div class="col-md-8"><p class="highlight toppad">Personal Cloud - 2015-02-05 00:00:00</p></div><div class ="clear"></div>
-    </div> -->
-
-
-    <hr class="tight_hr"/>
-    <div class="container">
-
-      <div class="col-md-9">
+    <div class ="container" id="content">
+    <div class="col-md-9">
     
-      
+    
 <p>The first blog post of the new year. It's been a hectic time here at section9. We've moved office for one thing and are still in the process of sorting everything out. Exciting times are ahead though.</p>
 <p>I wanted to write a small bit about the cloud. I've never really trusted it, and with all the leaks we've been seeing I think it best to keep certain things off the net altogether. Also, I take great joy in setting up my own solutions.</p>
 <p>Starting at the bottom end, I rely on two, 3TB drives. Both of these are formatted with <a href="https://en.wikipedia.org/wiki/Btrfs">btrfs</a> which I quite like the sound of. At present, one is slaved inside my large desktop machine. The other operates as the live disk, attached to a rather nifty <a href="http://cubieboard.org/tag/cubietruck/">cubietruck</a>. This small ARM based board is capable of running Linux and operating a SATA disk. Because of its lower power draw and the fact I can run software on it easily, I use it as my primary server machine. Both of these drives are encryped and use <a href="https://code.google.com/p/cryptsetup/">luks</a> to access them. So far good. Getting btrfs support for Cubietruck was a little tricky but possible.</p>
@@ -154,37 +128,65 @@
 <p>Backup is usually done with rsync scripts of various kinds. This seems to work for now, though a little more automation on that score might improve things I suspect. I use a USB harddisk to backup my main laptop, with Apple's time machine as an extra measure, since I carry the lappy with me everywhere.</p>
 <p>The setup still isn't perfect. The ideal would include an offsite backup somewhere else, which is next move. Speeding up OpenVPN might also help things though it's not been too bad since the switch to UDP. I hear certain countries are begining to block vpn traffic, but there are some tactics to get around this that I shall be investigating. I'd like to use gitlab at some point too, but there isn't support for ARM just yet and it's a rather heavy program to run.</p>
 <p>What is your setup? Which backup programs do you prefer? Always enjoy hearing the solutions people have come up with!</p>
-        
-      </div>
+    </div>
 
-      <div class="col-md-3">
-        <h4>Related Posts</h4>
-        <ul class="list-unstyled">
+    <div class="col-md-3">
+      <ul class="list-unstyled">
         
         </ul>
+    </div>
+
+
+    </div>
+
+
+    <footer>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Ghost in the CSh</h3>
+          <p>© Benamin J. Blundell 2015 - <a style="color: white" title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+
+        </div>
+        <div class="col-md-4">
+          <h3>Other places</h3>
+          <p class="places-icons">
+            <a href="https://github.com/OniDaito" title="GitHub"><i class="fa fa-github"></i></a>
+            <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow"><i class="fa fa-stack-overflow"></i></a>
+            <a href="https://www.flickr.com/photos/section9/" title="Flickr"><i class="fa fa-flickr"></i></a>
+            <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube"><i class="fa fa-youtube"></i></a>
+            <a href="https://vimeo.com/user1678273/videos" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+          </p>
+       </div>
+        <div class="col-md-4">
+          <h3>Contact</h3>
+           <p class="places-icons">
+           <a href="http://www.twitter.com/secti0n9" title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="mailto:ben@section9.co.uk" title="Email"><i class="fa fa-envelope-square"></i></a>
+            <a href="https://uk.linkedin.com/in/section9" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/benjamin.blundell" title="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+            <a href="/key.html" title="GPG Key"><i class="fa fa-lock"></i></a>
+          </p>
+        </div>
       </div>
 
-    <p class="clear"></p>
-      <hr />
-      <footer>
-        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-      </footer>
-    </div>
+
+     </footer>
   </div>
 
-
-</div>
 
 <script type="text/javascript">
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $(".content img");
+    var images = $("#content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
-        $(images[i]).addClass("left");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-left");
       } else {
-        $(images[i]).addClass("right");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-right");
       }
     }
   });
@@ -192,7 +194,7 @@
 
 
 <script type="text/javascript">
-  var s = skrollr.init();
+ 
 </script>
 
 <!--

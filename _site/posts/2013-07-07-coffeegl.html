@@ -20,6 +20,8 @@
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/css/s9.css" rel="stylesheet" media="screen">
+  <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -74,77 +76,49 @@
 
 <body>
 
-<div id= "skrollr-body">
-
-
-  <!-- nice background WebGL Stuff goes here -->
-  <div class="jumbotron">
-    <div id="page-title">
-      <h2> Introducing CoffeeGL - 2013-07-07 00:00:00 </h2>
-    </div>
-    <div id="scenery">
-      <img src="/images/strap/deutsche.jpg" />
-    </div>
-  </div>
-
-
-  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+<nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
+          <img class="navbar-brand-image" src="/images/s9_tiny.png" alt="section9 logo" />
+
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+          <a class="navbar-brand" href="#">Benjamin J. Blundell</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li class="active"><a href="/blog.html">Blog</a></li>
+            <li><a href="/work.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../navbar/">section9<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">pxl.js</a></li>
+            <li><a href="#">qmul</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Introducing CoffeeGL</h2>
+        <h3>2013-07-07 00:00:00</h3>
+        <p></p>
       </div>
     </div>
 
-
-
-  <!--
-   <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
-
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li ><a href="/index.html">Home</a></li>
-          <li ><a href="/work.html">Work</a></li>
-          <li ><a href="/about.html">About</a></li>
-          <li ><a href="/contact.html">Contact</a></li>
-          <li ><a href="/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div> -->
-
-  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
-
-    <!--<div class="container" id="title">
-      <div class="col-md-8"><p class="highlight toppad">Introducing CoffeeGL - 2013-07-07 00:00:00</p></div><div class ="clear"></div>
-    </div> -->
-
-
-    <hr class="tight_hr"/>
-    <div class="container">
-
-      <div class="col-md-9">
+    <div class ="container" id="content">
+    <div class="col-md-9">
     
-      
+    
 <p>WebGL is something I've been working in a lot over the last few months; indeed its the reason why I've not been blogging very much! I've recently worked on two large projects with a third currently underway and I'm somewhat concerned about the APIs we have to work with. I decided to write my own, in <a href="http://coffeescript.org/">CoffeeScript</a> which I call <a href="https://github.com/OniDaito/CoffeeGL">CoffeeGL</a>. Its in progress but already I have a <a href="">few examples</a> and I'm really happy with how its going.</p>
 <p>When working on the <a href="http://www.section9.co.uk/posts/2012-11-19-The-Carp-and-the-Seagull.html">Carp and Seagull</a> I got to grips with <a href="http://www.threejs.com">Three.js</a>; widely regarded as the defacto, goto guy for WebGL. It has many features and is fairly easy to use, but only if you follow the stock way of doing things. It gives you a lot but in a way, it almost gives you too much. There is almost no documentation either. Some of the things in Three are quite nice, such as the <a href="http://gametheorylabs.com/groups/judgementengine/wiki/4c55c/">uber-shader</a> paradigm and the various addons for models and resources. However, I'm not too fond of the maths, the actual render loop and a few other things that niggled. Also, it's written in pure javascript, which I think is a missed opportunity.</p>
 <p>Secondly, there is <a href="http://i-am-glow.com/">GLOW</a>. GLOW seems closer to the metal which I think is a good thing. Again, it suffers from lack of consistent documentation and the idea that a shader is tightly bound to it's geometry. Its an interesting way of tightly coupling shader and information but its also somewhat misleading, especially if you use a shader more than once, or if you have dynamic geometry. Again, its written in pure javascript. One really nice thing about GLOW is its caching system; it doesn't make any redundant GL calls which is really nice.</p>
@@ -152,37 +126,65 @@
 <p>Given javascript's history, I think its very impressive. No really! It's easy to hate on JS and many people do. But the fact remains, it was written in a very short time by a very talented individual who had pressure from idiots on all sides. Im glad we have it, but we don't have to suffer it's inadequecies anymore. </p>
 <p>I decided to go with Coffeescript and a node.js setup. Everything is written in modules that compile up into a single js file which you can use with your own CoffeeScript files. The API is inspired by <a href="https://www.libcinder.org">Cinder</a>; the king of WebGL Libraries. The scene-graph is quite simple and works how you would expect, or you can ignore it completely and just write basic GL calls with a few bits of geometry and shaders.</p>
 <p>Is it ready yet? Not really I'd say. More documentation is needed and Im looking at <a href="http://jashkenas.github.io/docco/">Docco</a> to fill the void. But for these who want to help or offer constructive criticism, its up over at <a href="https://github.com/OniDaito/CoffeeGL">github</a> for all to see.</p>
-        
-      </div>
+    </div>
 
-      <div class="col-md-3">
-        <h4>Related Posts</h4>
-        <ul class="list-unstyled">
+    <div class="col-md-3">
+      <ul class="list-unstyled">
         
         </ul>
+    </div>
+
+
+    </div>
+
+
+    <footer>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Ghost in the CSh</h3>
+          <p>© Benamin J. Blundell 2015 - <a style="color: white" title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+
+        </div>
+        <div class="col-md-4">
+          <h3>Other places</h3>
+          <p class="places-icons">
+            <a href="https://github.com/OniDaito" title="GitHub"><i class="fa fa-github"></i></a>
+            <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow"><i class="fa fa-stack-overflow"></i></a>
+            <a href="https://www.flickr.com/photos/section9/" title="Flickr"><i class="fa fa-flickr"></i></a>
+            <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube"><i class="fa fa-youtube"></i></a>
+            <a href="https://vimeo.com/user1678273/videos" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+          </p>
+       </div>
+        <div class="col-md-4">
+          <h3>Contact</h3>
+           <p class="places-icons">
+           <a href="http://www.twitter.com/secti0n9" title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="mailto:ben@section9.co.uk" title="Email"><i class="fa fa-envelope-square"></i></a>
+            <a href="https://uk.linkedin.com/in/section9" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/benjamin.blundell" title="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+            <a href="/key.html" title="GPG Key"><i class="fa fa-lock"></i></a>
+          </p>
+        </div>
       </div>
 
-    <p class="clear"></p>
-      <hr />
-      <footer>
-        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-      </footer>
-    </div>
+
+     </footer>
   </div>
 
-
-</div>
 
 <script type="text/javascript">
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $(".content img");
+    var images = $("#content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
-        $(images[i]).addClass("left");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-left");
       } else {
-        $(images[i]).addClass("right");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-right");
       }
     }
   });
@@ -190,7 +192,7 @@
 
 
 <script type="text/javascript">
-  var s = skrollr.init();
+ 
 </script>
 
 <!--

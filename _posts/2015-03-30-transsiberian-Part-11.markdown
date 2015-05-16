@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 11 - Ulan Bataar
+tags: transsiberian holiday
 strapline: It's clear from the museum and guidebooks that we've read that Mongolian life is nomadic at heart, and still is in some places.
 introtext: Our train pulls into Ulan-Bataar at 6am! This means we end up getting out of bed at 4:30am after having quite a broken night's sleep thanks to the cars being re-attached to various trains as we cross Mongolia.
 ---

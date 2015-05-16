@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 9 - Ulan-ude and the Border
+tags: transsiberian holiday
 strapline: My first impressions of Ulan-ude is that it is more grim than Irkutsk! 
 introtext: We pull into Ulan-ude late afternoon. The trip on the train is quite beautiful as it runs around the bottom edge of Lake Baikal. When this section was built, travelers were freaked out by the tunnels as there were no tunnels in European Russia at this time. Previously, a ferry was used to carry the train across. Now there is a winding track that goes through the mountains. It's a nice change from all the flat track we've been on so far. 
 ---

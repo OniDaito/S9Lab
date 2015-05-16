@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 6 - Yekaterinburg
+tags: transsiberian holiday
 strapline: Panic! Despair and calamity! My slippers have gone missing! 
 introtext: We are heading to Yekaterinburg via a 14 hour (roughly) day train. We are traveling third class which means there are no cabins and although the bunk layouts are sort of similar, there is a third bunk on the opposite side of the train. 
 ---

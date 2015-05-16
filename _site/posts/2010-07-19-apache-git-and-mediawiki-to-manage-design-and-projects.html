@@ -20,6 +20,8 @@
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/css/s9.css" rel="stylesheet" media="screen">
+  <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -74,77 +76,49 @@
 
 <body>
 
-<div id= "skrollr-body">
-
-
-  <!-- nice background WebGL Stuff goes here -->
-  <div class="jumbotron">
-    <div id="page-title">
-      <h2> Apache, GIT and Mediawiki to manage design and projects - 2010-07-19 00:00:00 </h2>
-    </div>
-    <div id="scenery">
-      <img src="/images/strap/deutsche.jpg" />
-    </div>
-  </div>
-
-
-  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+<nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
+          <img class="navbar-brand-image" src="/images/s9_tiny.png" alt="section9 logo" />
+
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+          <a class="navbar-brand" href="#">Benjamin J. Blundell</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li class="active"><a href="/blog.html">Blog</a></li>
+            <li><a href="/work.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../navbar/">section9<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">pxl.js</a></li>
+            <li><a href="#">qmul</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Apache, GIT and Mediawiki to manage design and projects</h2>
+        <h3>2010-07-19 00:00:00</h3>
+        <p></p>
       </div>
     </div>
 
-
-
-  <!--
-   <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
-
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li ><a href="/index.html">Home</a></li>
-          <li ><a href="/work.html">Work</a></li>
-          <li ><a href="/about.html">About</a></li>
-          <li ><a href="/contact.html">Contact</a></li>
-          <li ><a href="/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div> -->
-
-  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
-
-    <!--<div class="container" id="title">
-      <div class="col-md-8"><p class="highlight toppad">Apache, GIT and Mediawiki to manage design and projects - 2010-07-19 00:00:00</p></div><div class ="clear"></div>
-    </div> -->
-
-
-    <hr class="tight_hr"/>
-    <div class="container">
-
-      <div class="col-md-9">
+    <div class ="container" id="content">
+    <div class="col-md-9">
     
-      
+    
 <p>I thought I'd put down my thoughts and experiences on keeping track of your personal projects and data. I've been through a lot of various methods. Everything is intertwined; backup, code repos, security, accessibility etc etc. My method certainly wont suit everyone but it may give you some thoughts. In a nutshell, I use Apache, GIT and Mediawiki on a small MiniITX machine with USB disk cloning to run all my systems.</p>
 <p>I've used subversion and mercurial before. Subversion was great because it support binary files; very useful when you have a large PSD to backup. However, when one of my hard-disks broke, I lost the most recent updates and couldn't get back the newer versions I had on my workstation. This was annoying. That, and subversions silly revision system meant a change was needed. Subversion doesn't really say what a repos or a directory really is. So if I updated one project, then another project the revision number for everything would go up twice! Not good.</p>
 <p>Mercurial was dead simple though. I converted a few of the SVN based projects over but found that quite tricky. Mercurial is what I use on a daily basis at work. Because it is written in Python it is quite straight forward and works well. However, it does suffer from serious flaws when branching (apparently) but also it is limited to filesizes under 10meg. I say limited - it complains about it but tries anyway. Creating a new repository remotely was also a pain. What if I'm working remotely and need to backup to my system at home? I wrote a quick python script to do this but it wasn't particularly good.</p>
@@ -153,37 +127,65 @@
 <p>So now you can backup code, keep notes, and access anywhere. All this needs to run on something. I use a fan-less, MiniITX board with one large SATA drive to store all this, running Ubuntu. Why you ask? Well I wanted something low power and capable with an emphasis on quiet. Using one SATA drive means that disk cloning is very easy. Plug in a USB enclosure, run dd_rescue and you get an identical copy of your drive. It's already saved me once and I heartily recommend it.</p>
 <p>If you set up all the right port forwards and certificates you can access your box over a home connection with reasonable speed. The whole thing works quite well and has some degrees of protection. Full disk encryption, arpwatch and Snort provide a good defence against intrusion and holding your wiki off-site on your webhost means you'll always have access, even if your home machine goes down (which it will once or twice)</p>
 <p>Overall, this has met my needs for security, remote access to everything and my various requirements for source control and backup. I heartily recommend something similar. It's all free software and it all works.</p>
-        
-      </div>
+    </div>
 
-      <div class="col-md-3">
-        <h4>Related Posts</h4>
-        <ul class="list-unstyled">
+    <div class="col-md-3">
+      <ul class="list-unstyled">
         
         </ul>
+    </div>
+
+
+    </div>
+
+
+    <footer>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Ghost in the CSh</h3>
+          <p>© Benamin J. Blundell 2015 - <a style="color: white" title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+
+        </div>
+        <div class="col-md-4">
+          <h3>Other places</h3>
+          <p class="places-icons">
+            <a href="https://github.com/OniDaito" title="GitHub"><i class="fa fa-github"></i></a>
+            <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow"><i class="fa fa-stack-overflow"></i></a>
+            <a href="https://www.flickr.com/photos/section9/" title="Flickr"><i class="fa fa-flickr"></i></a>
+            <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube"><i class="fa fa-youtube"></i></a>
+            <a href="https://vimeo.com/user1678273/videos" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+          </p>
+       </div>
+        <div class="col-md-4">
+          <h3>Contact</h3>
+           <p class="places-icons">
+           <a href="http://www.twitter.com/secti0n9" title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="mailto:ben@section9.co.uk" title="Email"><i class="fa fa-envelope-square"></i></a>
+            <a href="https://uk.linkedin.com/in/section9" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/benjamin.blundell" title="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+            <a href="/key.html" title="GPG Key"><i class="fa fa-lock"></i></a>
+          </p>
+        </div>
       </div>
 
-    <p class="clear"></p>
-      <hr />
-      <footer>
-        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-      </footer>
-    </div>
+
+     </footer>
   </div>
 
-
-</div>
 
 <script type="text/javascript">
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $(".content img");
+    var images = $("#content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
-        $(images[i]).addClass("left");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-left");
       } else {
-        $(images[i]).addClass("right");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-right");
       }
     }
   });
@@ -191,7 +193,7 @@
 
 
 <script type="text/javascript">
-  var s = skrollr.init();
+ 
 </script>
 
 <!--

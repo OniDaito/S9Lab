@@ -20,6 +20,8 @@
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/css/s9.css" rel="stylesheet" media="screen">
+  <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -74,77 +76,49 @@
 
 <body>
 
-<div id= "skrollr-body">
-
-
-  <!-- nice background WebGL Stuff goes here -->
-  <div class="jumbotron">
-    <div id="page-title">
-      <h2> Astrolabe - 2012-01-18 00:00:00 </h2>
-    </div>
-    <div id="scenery">
-      <img src="/images/strap/deutsche.jpg" />
-    </div>
-  </div>
-
-
-  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+<nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
+          <img class="navbar-brand-image" src="/images/s9_tiny.png" alt="section9 logo" />
+
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+          <a class="navbar-brand" href="#">Benjamin J. Blundell</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li class="active"><a href="/blog.html">Blog</a></li>
+            <li><a href="/work.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../navbar/">section9<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">pxl.js</a></li>
+            <li><a href="#">qmul</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Astrolabe</h2>
+        <h3>2012-01-18 00:00:00</h3>
+        <p></p>
       </div>
     </div>
 
-
-
-  <!--
-   <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
-
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li ><a href="/index.html">Home</a></li>
-          <li ><a href="/work.html">Work</a></li>
-          <li ><a href="/about.html">About</a></li>
-          <li ><a href="/contact.html">Contact</a></li>
-          <li ><a href="/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div> -->
-
-  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
-
-    <!--<div class="container" id="title">
-      <div class="col-md-8"><p class="highlight toppad">Astrolabe - 2012-01-18 00:00:00</p></div><div class ="clear"></div>
-    </div> -->
-
-
-    <hr class="tight_hr"/>
-    <div class="container">
-
-      <div class="col-md-9">
+    <div class ="container" id="content">
+    <div class="col-md-9">
     
-      
+    
 <p>I've always been fascinated by space, the planets, their maps and photos. The Curator is one of only a handful of experts in the world studying medieval scientific instruments and the astrolabe definitely fits that category.</p>
 <p><img alt="Astrolabe" src="http://farm8.staticflickr.com/7011/6716956337_ee19b570ff.jpg" /></p>
 <p>As part of a project I'm working on, I decided to build my own Astrolabes - one from paper and another from perspex, in order to get a feel for their construction. The goal is to create a WebGL version for display. This version is taken from <a href="http://www.thingiverse.com/thing:3271">the one available at Thingiverse</a>.</p>
@@ -155,37 +129,65 @@
 <p><img alt="astrolabe" src="http://farm8.staticflickr.com/7158/6716964469_2057259913.jpg" /></p>
 <p>So, after a about 5 programs later and a lot of swearing and bitching, the Astrolabe was ready. There are problems with it. The text has not come out at all and there are a few markings missing. Etching on the backplate is slightly out of alingnment and the rete is incomplete; the star map should appear on it as well. I may use acetate glued to the back of the rete. Also, the outer bevel should be fixed and not move with the rete but the tolerance is too tight and despite my efforts to file down the edges, it still wouldn't move.</p>
 <p>But this is fast prototyping in plastic! Its only the first step.</p>
-        
-      </div>
+    </div>
 
-      <div class="col-md-3">
-        <h4>Related Posts</h4>
-        <ul class="list-unstyled">
+    <div class="col-md-3">
+      <ul class="list-unstyled">
         
         </ul>
+    </div>
+
+
+    </div>
+
+
+    <footer>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Ghost in the CSh</h3>
+          <p>© Benamin J. Blundell 2015 - <a style="color: white" title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+
+        </div>
+        <div class="col-md-4">
+          <h3>Other places</h3>
+          <p class="places-icons">
+            <a href="https://github.com/OniDaito" title="GitHub"><i class="fa fa-github"></i></a>
+            <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow"><i class="fa fa-stack-overflow"></i></a>
+            <a href="https://www.flickr.com/photos/section9/" title="Flickr"><i class="fa fa-flickr"></i></a>
+            <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube"><i class="fa fa-youtube"></i></a>
+            <a href="https://vimeo.com/user1678273/videos" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+          </p>
+       </div>
+        <div class="col-md-4">
+          <h3>Contact</h3>
+           <p class="places-icons">
+           <a href="http://www.twitter.com/secti0n9" title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="mailto:ben@section9.co.uk" title="Email"><i class="fa fa-envelope-square"></i></a>
+            <a href="https://uk.linkedin.com/in/section9" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/benjamin.blundell" title="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+            <a href="/key.html" title="GPG Key"><i class="fa fa-lock"></i></a>
+          </p>
+        </div>
       </div>
 
-    <p class="clear"></p>
-      <hr />
-      <footer>
-        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-      </footer>
-    </div>
+
+     </footer>
   </div>
 
-
-</div>
 
 <script type="text/javascript">
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $(".content img");
+    var images = $("#content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
-        $(images[i]).addClass("left");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-left");
       } else {
-        $(images[i]).addClass("right");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-right");
       }
     }
   });
@@ -193,7 +195,7 @@
 
 
 <script type="text/javascript">
-  var s = skrollr.init();
+ 
 </script>
 
 <!--

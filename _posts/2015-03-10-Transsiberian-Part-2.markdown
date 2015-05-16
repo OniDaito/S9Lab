@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 2 - Gear
+tags: transsiberian holiday
 strapline: What to take with you into the great Siberian Wilderness
 introtext: Packing for a long trip across several countries is a daunting task. You need to be able to carry everything, yet have enough clothes and gear to get through, with enough space left for all the souvenirs and gadgets from Shenzen. This trip also has a few interesting activities lined up that require us to take special equipment. Broadly, there are three categories; electronics, clothing and miscellaneous. Lets start with clothes.
 ---

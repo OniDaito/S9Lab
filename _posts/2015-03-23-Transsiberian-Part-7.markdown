@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 7 - The Rossiya
+tags: transsiberian holiday
 strapline: The Rossiya, also known as train number 2 when going east, is our home away from home for the next two days and nights.
 introtext: The Rossiya, also known as train number 2 when going east, is our home away from home for the next two days and nights. We are heading out from Yekaterinburg, just east of the Ural Mountains to Irkutsk, near Lake Baikal. This is the single longest leg of the trip and therefore we are going first class! We cross a large part of Siberia in one go, with only the occasional stops at stations to quickly stretch one's legs and get some fresh air.
 ---

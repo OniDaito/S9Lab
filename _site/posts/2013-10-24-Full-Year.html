@@ -20,6 +20,8 @@
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/css/s9.css" rel="stylesheet" media="screen">
+  <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -74,77 +76,49 @@
 
 <body>
 
-<div id= "skrollr-body">
-
-
-  <!-- nice background WebGL Stuff goes here -->
-  <div class="jumbotron">
-    <div id="page-title">
-      <h2> Another year for S9 - 2013-10-24 00:00:00 </h2>
-    </div>
-    <div id="scenery">
-      <img src="/images/strap/deutsche.jpg" />
-    </div>
-  </div>
-
-
-  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+<nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
+          <img class="navbar-brand-image" src="/images/s9_tiny.png" alt="section9 logo" />
+
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+          <a class="navbar-brand" href="#">Benjamin J. Blundell</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li class="active"><a href="/blog.html">Blog</a></li>
+            <li><a href="/work.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../navbar/">section9<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">pxl.js</a></li>
+            <li><a href="#">qmul</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Another year for S9</h2>
+        <h3>2013-10-24 00:00:00</h3>
+        <p>The first full year of making sure I can still eat.</p>
       </div>
     </div>
 
-
-
-  <!--
-   <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
-
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li ><a href="/index.html">Home</a></li>
-          <li ><a href="/work.html">Work</a></li>
-          <li ><a href="/about.html">About</a></li>
-          <li ><a href="/contact.html">Contact</a></li>
-          <li ><a href="/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div> -->
-
-  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
-
-    <!--<div class="container" id="title">
-      <div class="col-md-8"><p class="highlight toppad">Another year for S9 - 2013-10-24 00:00:00</p></div><div class ="clear"></div>
-    </div> -->
-
-
-    <hr class="tight_hr"/>
-    <div class="container">
-
-      <div class="col-md-9">
+    <div class ="container" id="content">
+    <div class="col-md-9">
     
-      
+    
 <p>I started section9 a while ago now. There were are few periods where the business was on hold, where I took a full-time or part time job, but around October 2012, I made the jump to being a limited company and going all the way. As Vinnie Jones once said - "Its been emotional".</p>
 <p>There are lots of parts to this, and figuring out where to begin is quite hard. The mundane things might be the place? Working out the tax and accounting rules was one hurdle and I got it wrong a few times. Going from a freelancer to a limited company has its issues. You are no longer one person. The company is a separate entity and it's wise to keep that in mind. I was given bad advice by the London Small Business people who suggested I invoice my own company. Almost no-one does this. A director is an employee and as such, needs to be setup with PAYE. You can have loans as a director and such, but I found it easiest to have a minimum PAYE and dividends setup. That way, you pay the tax you owe (hello Google! Starbucks!). I am a big fan of <a href="http://www.freeagent.com">Freeagent</a>; in fact I could not do all this without it. I paid for the services of an accountant to start me off and that was a smart move. If I grow the company more, an accountant is definitely someone I'd work with.</p>
 <p>Space is an issue. Having a place to work is actually hard to find. Im not a hot-desking person - I have too much gear! In the space of a year I've had 3 different offices! Yup! Three. The first was great but too cold in winter and the chap renting it out pretty much lived there. That made certain things not fun. I remember a <a href="http://www.mztek.org/">MzTek</a> event looking very surprised when I walked in. I'd come in for weekend work and they seemed quite surprised. I moved again to <a href="http://www.makieworld.com/">MakieLab</a> over in the Silicon Roundabout. A lovely office and one I'd considered way back but the problem here is it's definitely <em>their</em> office. I felt very much like an outsider. That's not to criticise these chaps - they do very good work - but they are really involved so we didn't talk much. In addition, they are immersed in the glamorous world of Silicon Roundabout which I am definitely not. Basically, I never felt cool enough. I moved again to my present office, much closer to home. It's cheap, bright and the landlady is nice. It's near <a href="http://hackspace.london.org.uk">London Hackspace</a> which is a plus and its quiet. It does however, have one major problem - it's lonely.</p>
@@ -155,37 +129,65 @@
 <p>Being freelance is great though. No really, it is. Lets start with the mundane again. I don't commute. Not really. I either walk or cycle to the office and there is the option of a park or a canal to walk down, which is brilliant! I get to set my own hours, choose my own tools (a bigger problem for some people than I had thought) and my own learning regime. These are really big wins. They come with responsibility too, granted, but these are important things to me so it's good to have control over them.</p>
 <p>One thing I didn't expect is that I'm somehow younger, or, to put it another way, I'm more in love with my subject than I was when I was at university or my mid twenties. I've heard this from another friend who works for a small Ruby outfit. I don't quite understand why, but I read more, talk more and get into it more now than at any other time, except for when I was quite young and playing around with a Commodore 64. </p>
 <p>To quote Tim Minchin, "I try to remind myself, even when I'm struggling, how incredibly lucky I am." Sometimes I think I've done all this myself but that blatantly isn't true, and I don't think its true for anyone going down this road. My partner is very supportive and wonderful. My friends and family have backed me up and some of the people I've worked with have been really fun. Yes, there are times when it's hard - REALLY hard - but it's worth it. Trust me! :)</p>
-        
-      </div>
+    </div>
 
-      <div class="col-md-3">
-        <h4>Related Posts</h4>
-        <ul class="list-unstyled">
+    <div class="col-md-3">
+      <ul class="list-unstyled">
         
         </ul>
+    </div>
+
+
+    </div>
+
+
+    <footer>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Ghost in the CSh</h3>
+          <p>© Benamin J. Blundell 2015 - <a style="color: white" title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+
+        </div>
+        <div class="col-md-4">
+          <h3>Other places</h3>
+          <p class="places-icons">
+            <a href="https://github.com/OniDaito" title="GitHub"><i class="fa fa-github"></i></a>
+            <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow"><i class="fa fa-stack-overflow"></i></a>
+            <a href="https://www.flickr.com/photos/section9/" title="Flickr"><i class="fa fa-flickr"></i></a>
+            <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube"><i class="fa fa-youtube"></i></a>
+            <a href="https://vimeo.com/user1678273/videos" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+          </p>
+       </div>
+        <div class="col-md-4">
+          <h3>Contact</h3>
+           <p class="places-icons">
+           <a href="http://www.twitter.com/secti0n9" title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="mailto:ben@section9.co.uk" title="Email"><i class="fa fa-envelope-square"></i></a>
+            <a href="https://uk.linkedin.com/in/section9" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/benjamin.blundell" title="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+            <a href="/key.html" title="GPG Key"><i class="fa fa-lock"></i></a>
+          </p>
+        </div>
       </div>
 
-    <p class="clear"></p>
-      <hr />
-      <footer>
-        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-      </footer>
-    </div>
+
+     </footer>
   </div>
 
-
-</div>
 
 <script type="text/javascript">
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $(".content img");
+    var images = $("#content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
-        $(images[i]).addClass("left");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-left");
       } else {
-        $(images[i]).addClass("right");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-right");
       }
     }
   });
@@ -193,7 +195,7 @@
 
 
 <script type="text/javascript">
-  var s = skrollr.init();
+ 
 </script>
 
 <!--

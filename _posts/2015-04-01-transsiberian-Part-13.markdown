@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 13 - Beijing
+tags: transsiberian holiday
 strapline: For the first time on this trip, I get a taste of home in the form of a delicious dark, craft ale!
 introtext: Beijing! The capital of the People's Republic of China and the last stop on the *official* route of the Transmongolian (well, as official as it could ever be I guess). For us, it's our first stop in China before we depart for the South. Our train winds into Beijing Station, past skyscrapers, residential blocks, highways and all manner of industrial buildings, giving us a small glimpse into this immense city.
 ---

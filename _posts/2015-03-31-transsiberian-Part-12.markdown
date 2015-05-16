@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 12 - Mongolian Border with China
+tags: transsiberian holiday
 strapline: Soon, we end up in the middle of the Gobi desert - one of these mythical places.
 introtext: Our train from Ulan Bataar leaves around 7:15 am, so another early start for us. It's cold in the morning - below zero in fact - but soon, it will be blazing hot. That's the thing with Mongolia. It's a place of extremes. Despite getting to the station on time, our train hasn't pulled in yet. This one has come all the way from Beijing to Moscow, and is now making it's way back again along the same route, so it probably had delays at the border.
 ---

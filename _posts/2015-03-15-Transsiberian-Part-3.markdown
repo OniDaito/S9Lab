@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 3 - St Petersburg
+tags: transsiberian holiday
 strapline: St Petersburg - the first stop on the Transsiberian / Transchina trip
 introtext: Squeeee! I'm actually in Russia, after all the planning and sorting and all the rest. Sometimes, when somethings been building up forever, it can be somewhat weird when it actually happens. Our trip starts in St Petersburg, up in the north west of Russia.
 ---

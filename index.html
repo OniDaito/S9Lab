@@ -6,6 +6,37 @@ idx: home
 
 {% block content %}
 
+<div class="jumbotron">
+  <div class="container">
+    <h2>{{site.posts[0].title}}</h2>
+    <h3>{{site.posts[0].date}}</h3>
+    <p>{{site.posts[0].strapline}}</p>
+    <button type="button" class="btn btn-primary">Read more on the blog</button>
+  </div>
+</div>
+
+
+ {% set foo = 0 %}
+  {% for post in site.posts %}
+    {% if post.category %}
+      {% if post.category == 'work' %}
+        
+        <div class="col-md-4">
+          <h3><a href="{{post.url}}" alt="{{ post.title }}">{{post.title}}</a></h3>
+          <p class="toppad"> {{post.introtext}} </p>
+          <a href="{{post.url}}"><button type="button" class="btn btn-sm btn-primary">Read More</button></a>
+     
+        </div>
+
+       {% set foo = foo + 1 %}
+      {% endif %}
+      {%- if foo % 3 == 0 %}<div class="clearfix"></div>{% endif %}
+      {%- if foo >= 9 %}{% break %}{% endif %}
+    {% endif %}
+  {% endfor %}
+
+
+<!--
   <div class="row-fluid">
     <div class ="span12" id="frontthumbs">
      
@@ -30,24 +61,9 @@ idx: home
   <div class="row-fluid">
     <div class="span4">
       <span class="lilhead">Latest Work</span>
-    </div>
+    </div>-->
 
-    {% set foo = 0 %}
-    {% for post in site.posts %}
-      {% if post.category %}
-        {% if post.category == 'work' %}
-          
-          <div class="span4">
-            <p class="highlight"><a href="{{post.url}}" alt="{{ post.title }}">{{post.title}}</a></p>
-            <p class="toppad"> {{post.introtext}} </p>
-            <p class="seemore"><a href="{{post.url}}">See more &raquo;</a></p>
-          </div>
-
-         {% set foo = foo + 1 %}
-        {% endif %}
-        {%- if foo >= 2 %}{% break %}{% endif %}
-      {% endif %}
-    {% endfor %}
+   
   
 
   </div>
@@ -81,28 +97,6 @@ idx: home
 
   <hr /> -->
 
-   <div class="row-fluid">
-
-    <div class="span4">
-      <span class="lilhead">Blog</span>
-     
-      
-    </div>
-
-    {% set foo = 0 %}
-      {% for post in site.posts %}
-        {% if not post.category %}
-            <div class="span4">
-              <p class="highlight"><a href="{{post.url}}" alt="{{ post.title }}">{{post.date.strftime('%d-%m-%Y') }} {{post.title}}</a></p>
-              <p class="toppad">{{post.introtext}} </p>
-              <p><a href="{{post.url}}">See more &raquo;</a></p>
-            </div>
-         {% set foo = foo + 1 %}
-        {% endif %}
-        {%- if foo >= 2 %}{% break %}{% endif %}
-      {% endfor %}
-
-  </div>
 
   <hr />
 

@@ -20,6 +20,8 @@
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-responsive.css" rel="stylesheet">
   <link href="/css/s9.css" rel="stylesheet" media="screen">
+  <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -74,77 +76,49 @@
 
 <body>
 
-<div id= "skrollr-body">
-
-
-  <!-- nice background WebGL Stuff goes here -->
-  <div class="jumbotron">
-    <div id="page-title">
-      <h2> Transsiberian Part 15 - Hong Kong and Shenzen - 2015-04-08 00:00:00 </h2>
-    </div>
-    <div id="scenery">
-      <img src="/images/strap/deutsche.jpg" />
-    </div>
-  </div>
-
-
-  <div class="navbar navbar-inverse skrollable skrollable-between" data-0="background-color:rgba(0,0,0,0);border-bottom:1px solid rgba(255, 255, 255, 0.33); box-shadow: 0 0 0px;" data-200="background-color:rgba(29, 21, 21, 0.94);border-bottom:1px solid rgba(53, 53, 53, 1); box-shadow: 0 0 15px;" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(154, 154, 154, 0.666667); -webkit-box-shadow: 0px 0px 7.5px; box-shadow: 0px 0px 7.5px; background-color: rgba(14, 10, 10, 0.470588);">
+<nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
+          <img class="navbar-brand-image" src="/images/s9_tiny.png" alt="section9 logo" />
+
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="/images/s9-57.png" alt="Section9 Logo"/></a>
+          <a class="navbar-brand" href="#">Benjamin J. Blundell</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li class="active"><a href="/blog.html">Blog</a></li>
+            <li><a href="/work.html">Projects</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="../navbar/">section9<span class="sr-only">(current)</span></a></li>
+            <li><a href="#">pxl.js</a></li>
+            <li><a href="#">qmul</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Transsiberian Part 15 - Hong Kong and Shenzen</h2>
+        <h3>2015-04-08 00:00:00</h3>
+        <p>Back on the metro we head towards Hua Qiang Road and the electronics markets. I'm hoping they are still open and humming the song "I've got a golden ticket"; I'm expect Willy Wonka levels of electronics goodness.</p>
       </div>
     </div>
 
-
-
-  <!--
-   <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="brand" href="http://www.section9.co.uk"><img class="brand" src = "/images/s9black.png" alt="section9 dot co dot uk ltd" /></a>
-      <a class="brand" href="#" id="companyname">section9 dot co dot uk</a>
-
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li ><a href="/index.html">Home</a></li>
-          <li ><a href="/work.html">Work</a></li>
-          <li ><a href="/about.html">About</a></li>
-          <li ><a href="/contact.html">Contact</a></li>
-          <li ><a href="/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div> -->
-
-  <div class="content skrollable skrollable-between" data-0="top:0px;" data-75p="top:-200px;" style="top: -29.9289188178077px;">
-
-    <!--<div class="container" id="title">
-      <div class="col-md-8"><p class="highlight toppad">Transsiberian Part 15 - Hong Kong and Shenzen - 2015-04-08 00:00:00</p></div><div class ="clear"></div>
-    </div> -->
-
-
-    <hr class="tight_hr"/>
-    <div class="container">
-
-      <div class="col-md-9">
+    <div class ="container" id="content">
+    <div class="col-md-9">
     
-      
+    
 <p>Hong Kong! A city I've visited many times, around ten years ago. I'm pretty excited to be going back! However, I'm excited for another reason - Shenzen! So far, on this trip, we've not really seen much in the way of geekery; many of the hackspaces I've tried to contact either ignored me or probably don't exist. Shenzen, however, is the capital of electronics and manufacturing, possibly in the world. Our train cannot get there fast enough.</p>
 <p>In fact, the train really can't because it's delayed by about 40 minutes. Never-mind though. This Chinese sleeper train is much like the others we've been on. Second class is 4 bunks as before, though this train has a washroom in each carriage also. The ride is a little rough sadly. The fittings are somewhat more modern than their Russian counterparts. Hot water is of course available at all times. Chinese folk get mad if they can't get their instant noodles I bet.</p>
 <p>We leave our bags at a baggage storage place at Luo Hu station, then head out on the metro towards SeeedStudios. I've placed an order with them for some PCBs and I'm hoping to get a tour of their office and factory. Sadly, when we get there, they are closed! Apparently, it's a bank holiday which is annoying as the chap I was speaking to had assured me they were open. Never-mind. Back on the metro we head towards Hua Qiang Road and the electronics markets. I'm hoping they are still open and humming the song "I've got a golden ticket"; I'm expect Willy Wonka levels of electronics goodness.</p>
@@ -169,37 +143,97 @@
 <p><img alt="Bruce Lee" src="https://farm8.staticflickr.com/7726/17090037732_2a98bc5b6f.jpg" /></p>
 <p>We make our way, slowly towards the airport. Our bags are really heavy and I'm still struggling with the illness. I just about make it to the check-in desk! Fortunately, Katie has been a real trooper in helping me out, so we make it to the airport in good time. Thanks to air-miles, we are flying back business class, direct to Heathrow. I sleep for the first 4 hours; my body has just given up and needs to recover. Thankfully, it's possible to make the seat perfectly horizontal! Such luxury! The films are good and the one meal I'm awake for is quite tasty. The 12 hour flight passes quickly. By 11pm local time, Katie takes out the keys and opens the door of our flat.</p>
 <p><em>We are home.</em></p>
-        
-      </div>
+    </div>
 
-      <div class="col-md-3">
-        <h4>Related Posts</h4>
-        <ul class="list-unstyled">
+    <div class="col-md-3">
+      <ul class="list-unstyled">
+        
+          <li><a href="/posts/2015-02-14-Transsiberian-Part-1.html">Transsiberian Part 1 - Planning</a></li>
+        
+          <li><a href="/posts/2015-03-10-Transsiberian-Part-2.html">Transsiberian Part 2 - Gear</a></li>
+        
+          <li><a href="/posts/2015-03-15-Transsiberian-Part-3.html">Transsiberian Part 3 - St Petersburg</a></li>
+        
+          <li><a href="/posts/2015-03-17-Transsiberian-Part-4.html">Transsiberian Part 4 - Moscow</a></li>
+        
+          <li><a href="/posts/2015-03-19-Transsiberian-Part-5.html">Transsiberian Part 5 - Kazan</a></li>
+        
+          <li><a href="/posts/2015-03-21-Transsiberian-Part-6.html">Transsiberian Part 6 - Yekaterinburg</a></li>
+        
+          <li><a href="/posts/2015-03-23-Transsiberian-Part-7.html">Transsiberian Part 7 - The Rossiya</a></li>
+        
+          <li><a href="/posts/2015-03-26-transsiberian-Part-8.html">Transsiberian Part 8 - Irkutsk, Listvyanka & Baikal</a></li>
+        
+          <li><a href="/posts/2015-03-27-transsiberian-Part-9.html">Transsiberian Part 9 - Ulan-ude and the Border</a></li>
+        
+          <li><a href="/posts/2015-03-28-transsiberian-Part-10.html">Transsiberian Part 10 - Russian-around!</a></li>
+        
+          <li><a href="/posts/2015-03-30-transsiberian-Part-11.html">Transsiberian Part 11 - Ulan Bataar</a></li>
+        
+          <li><a href="/posts/2015-03-31-transsiberian-Part-12.html">Transsiberian Part 12 - Mongolian Border with China</a></li>
+        
+          <li><a href="/posts/2015-04-01-transsiberian-Part-13.html">Transsiberian Part 13 - Beijing</a></li>
+        
+          <li><a href="/posts/2015-04-06-transsiberian-Part-14.html">Transsiberian Part 14 - Yangshuo and LongJi</a></li>
+        
+          <li><a href="/posts/2015-04-11-transsiberian-Part-16.html">Transsiberian Part 16 - China. All the way to (London) New York.</a></li>
+        
+          <li><a href="/posts/2015-04-18-transsiberian-Part-17.html">Transsiberian Part 17 - DIY</a></li>
         
         </ul>
+    </div>
+
+
+    </div>
+
+
+    <footer>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Ghost in the CSh</h3>
+          <p>© Benamin J. Blundell 2015 - <a style="color: white" title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+
+        </div>
+        <div class="col-md-4">
+          <h3>Other places</h3>
+          <p class="places-icons">
+            <a href="https://github.com/OniDaito" title="GitHub"><i class="fa fa-github"></i></a>
+            <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow"><i class="fa fa-stack-overflow"></i></a>
+            <a href="https://www.flickr.com/photos/section9/" title="Flickr"><i class="fa fa-flickr"></i></a>
+            <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube"><i class="fa fa-youtube"></i></a>
+            <a href="https://vimeo.com/user1678273/videos" title="Vimeo"><i class="fa fa-vimeo-square"></i></a>
+          </p>
+       </div>
+        <div class="col-md-4">
+          <h3>Contact</h3>
+           <p class="places-icons">
+           <a href="http://www.twitter.com/secti0n9" title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="mailto:ben@section9.co.uk" title="Email"><i class="fa fa-envelope-square"></i></a>
+            <a href="https://uk.linkedin.com/in/section9" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/benjamin.blundell" title="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+            <a href="/key.html" title="GPG Key"><i class="fa fa-lock"></i></a>
+          </p>
+        </div>
       </div>
 
-    <p class="clear"></p>
-      <hr />
-      <footer>
-        <p><ul><li> <a href="http://www.section9.co.uk/atom.xml">rss atom feed</a></li><li><a href="http://www.section9.co.uk/key.html">public gnupg key</a></li></p>
-      </footer>
-    </div>
+
+     </footer>
   </div>
 
-
-</div>
 
 <script type="text/javascript">
   $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $(".content img");
+    var images = $("#content img");
     for(var i = 0; i < images.length; i++) {
       if (i % 2 == 0){
-        $(images[i]).addClass("left");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-left");
       } else {
-        $(images[i]).addClass("right");
+        $(images[i]).addClass("img-responsive img-thumbnail pull-right");
       }
     }
   });
@@ -207,7 +241,7 @@
 
 
 <script type="text/javascript">
-  var s = skrollr.init();
+ 
 </script>
 
 <!--

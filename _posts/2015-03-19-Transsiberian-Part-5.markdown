@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 5 - Kazan
+tags: transsiberian holiday
 strapline: Despite sounding like something a comic book character would say, Kazan is also a town!
 introtext: Despite sounding like something a comic book character would say, Kazan is also a town! It is one of the major towns of Tatarstan which has had an interesting relationship with Russia over the years. Despite their bid for independence they are still part of the Russian Federation. It's allegedly a Muslim part of Russia, with crescent moons replacing slanty triple crosses.
 ---

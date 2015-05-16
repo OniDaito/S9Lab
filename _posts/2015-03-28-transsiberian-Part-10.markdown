@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 10 - Russian-around!
+tags: transsiberian holiday
 strapline: Some thoughts I've had about Russia as we leave for Mongolia
 introtext: We leave Russia for Mongolia. Having some time to reflect on the various trains we've been on, I'm compelled to write a small summary of Russia, given the current headlines in the media and the various news we hear on the twitters and such like. The big two issues at the moment, for Westerners at least, are the issues with human rights (specifically LGBT issues) and the invasion of Ukraine. Lets start at the beginning though - Tsarist Russia.
 

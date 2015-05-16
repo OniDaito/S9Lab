@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 4 - Moscow
+tags: transsiberian holiday
 strapline: I'm not exaggerating when I say the PA system near Red Square sounds just like the one in Papers Please.
 introtext: We enter Moscow on the "Red Star" number 1 service from St Petersburg. This is the first true railway journey of the trip. I'm quite excited! The train is the pride of the Russian Railway service, along with the Rossiya.
 ---

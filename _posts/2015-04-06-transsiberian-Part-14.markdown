@@ -1,6 +1,7 @@
 ---
 layout: post 
 title: Transsiberian Part 14 - Yangshuo and LongJi
+tags: transsiberian holiday
 strapline: You've all probably seen the photographs. This is the territory where there are eroded mini-mountains covered in trees and vegetation. There is mist covering the far mountains; you can imagine dragons and monks doing battle somewhere in and amongst them.
 introtext: After about 10 hours, we arrive in the city of Guilin. The train ride is quite peaceful and efficient. I guess that's what happens when you get the Germans to build your railway for you. We are greeted by our taxi driver, who drives us another hour out of the city, to the town of Yangshuo. 
 ---

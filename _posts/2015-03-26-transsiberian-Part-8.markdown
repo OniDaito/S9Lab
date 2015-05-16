@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Transsiberian Part 8 - Irkutsk, Listvyanka & Baikal
+tags: transsiberian holiday
 strapline: It's about half-way through the trip and we have run out of clean clothes. Pretty much the first thing we do is to figure out the washing machine and immediately run two massive stacks of clothes through it
 introtext: Listvyanka is a small settlement just at the mouth of the Angara River that runs past Irkutsk into Lake Baikal. As we emerge from the trees and snow, we see a huge expanse of gleaming white ice, surrounded by misty mountains reaching up to a perfectly clear, azure sky.
 ---

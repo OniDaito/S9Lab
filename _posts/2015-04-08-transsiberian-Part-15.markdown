@@ -1,6 +1,7 @@
 ---
 layout: post 
 title: Transsiberian Part 15 - Hong Kong and Shenzen
+tags: transsiberian holiday
 strapline: Back on the metro we head towards Hua Qiang Road and the electronics markets. I'm hoping they are still open and humming the song "I've got a golden ticket"; I'm expect Willy Wonka levels of electronics goodness.
 introtext: Hong Kong! A city I've visited many times, around ten years ago. I'm pretty excited to be going back! However, I'm excited for another reason - Shenzen! So far, on this trip, we've not really seen much in the way of geekery; many of the hackspaces I've tried to contact either ignored me or probably don't exist. Shenzen, however, is the capital of electronics and manufacturing, possibly in the world. Our train cannot get there fast enough.
 
