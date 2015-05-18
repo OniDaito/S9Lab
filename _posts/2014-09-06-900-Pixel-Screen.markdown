@@ -16,13 +16,15 @@ The first thing to say is the RGB Leds chosen are odd and annoying! They are rat
 
 To control the LEDs I decided on grouping the 30 rows into 6, 5 row blocks with each block attached to a pin on a Teensy 3.1. I quite like the Teensy range of boards; they have plenty of memory and enough heft to run something like this quite well. The [FastLED library](http://fastled.io/) for Arduino and Teensy works quite well for driving the LEDs but they react fairly slowly. I think the maximum frame-rate I've managed is about 3fps! You can see that in the video of Doom Guy.
 
-<iframe class="vine-embed" src="https://vine.co/v/MViiUllaTWb/embed/simple" width="320" height="320" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+<iframe style="float:left" class="vine-embed" src="https://vine.co/v/MViiUllaTWb/embed/simple" width="320" height="320" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
 
 Attached to the Teensy 3.1 is a [RaspberryPI](http://www.raspberrypi.org/) (of course!) that deals with the Twitter Stream. The idea I settled on was to monitor a twitter account for various images and simply pull down the various images at certain intervals. Fairly simple and it gets around the problem of writing an entire interface for updating the screen. At some point an MS Paint style interface would be lovely.
 
 ![New Zealand Story](https://farm6.staticflickr.com/5580/15133947106_d7d108ec80.jpg)
 
 I decided to etch a circuit board for the power lines and the Teensy board. Using Eagle, you can get the footprint for the Teensy quite easily. The rest is fairly straight forward. I have access to a proper etching tank and light box. After about 5 tries, I finally obtained a viable board. Its been a while since I've etched but I'm pleased with the result.
+
+<div class="clearfix"></div>
 
 ![Teensy on Board](https://farm6.staticflickr.com/5569/15133958786_f6c5d9b3fd.jpg)
 

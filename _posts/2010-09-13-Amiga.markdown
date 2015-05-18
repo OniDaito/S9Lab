@@ -1,0 +1,9 @@
+---
+layout: experiment 
+title: Amiga Bouncing Ball
+tags: experiment
+category: experiment
+liveurl: http://archive.section9.co.uk/amiga/
+strapline: A remake of the classic Amiga bouncing ball, written in processing.js. If you fancy a little nostalgia in your browser, this is for you.
+strapimage: amiga.png
+---
