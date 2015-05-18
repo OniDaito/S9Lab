@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bullseye's playground for Target & Psyop
+title: Bullseye's playground for Target and Psyop
 category: work
 strapline: Working with Psyop in NY for Target's mobile winter branding
 strapimage: bullseye.jpg
