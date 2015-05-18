@@ -4,22 +4,22 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Section9 Lab - Benjamin Blundell</title>
+ <title>Section9 - Benjamin Blundell</title>
  <link href="http://lab.section9.co.uk/atom.xml" rel="self"/>
  <link href="http://www.section9.co.uk"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://www.section9.co.uk/</id>
  <author>
    <name>Benjamin Blundell</name>
-   <email>oni@section9.co.uk</email>
+   <email>ben@section9.co.uk</email>
  </author>
 
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://lab.section9.co.uk{{ post.url }}"/>
+   <link href="http://www.section9.co.uk{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://lab.section9.co.uk{{ post.id }}</id>
+   <id>http://www.section9.co.uk{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}

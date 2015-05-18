@@ -48,6 +48,7 @@
   font-family: 'Anaheim', sans-serif;
 }
 
+
 /* Footer Styles */
 
 footer {
@@ -119,7 +120,6 @@ footer p {
 
 /* Content Div */
 
-/* Main Links */
 
 #content a {
   color: black;
@@ -132,6 +132,30 @@ footer p {
 
 #content img { 
   margin: 16px;
+}
+
+#content .experiment-strap-image {
+  margin-top: 0px;
+}
+
+#content .jumbotron-experiment {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#content .jumbotron-experiment p {
+  font-size: 16px;
+}
+
+#content h3 {
+  font-family: 'Anaheim', sans-serif;
+
+}
+
+#content .jumbotron-experiment p.experiment-title {
+  font-size: 26px;
 }
 
 

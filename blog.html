@@ -6,21 +6,17 @@ idx: blog
 
 {% block content %}
 {% for post in site.posts %}
- <div class="row-fluid">
+  {% if post.category != 'experiment' %}
+    <div class="col-md-12">
+      <a href="{{post.url}}"><h3>{{post.date.strftime('%d-%m-%Y') }} - {{post.title}}</h3></a>
 
-    <div class="span4">
-      <span class="lilhead"><a href="{{post.url}}">{{post.date.strftime('%d-%m-%Y') }} {{post.title}}</a></span>
+      <p class="toppad">{{post.introtext}} </p>
+      <a href="{{post.url}}"><button type="button" class="btn btn-sm btn-primary">Read More</button></a>    
     </div>
 
-    
-    <div class="span8">
-        <p class="toppad">{{post.introtext}} </p>
-        <p><a href="{{post.url}}">Read the full article &raquo;</a></p>
-    </div>
+    <hr />
+  {% endif %}
 
-  </div>
-
-  <hr />
   {% endfor %}
 
 {% endblock %}
