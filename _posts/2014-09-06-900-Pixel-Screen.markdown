@@ -29,28 +29,38 @@ Attached to the Teensy 3.1 is a [RaspberryPI](http://www.raspberrypi.org/) (of c
 I decided to etch a circuit board for the power lines and the Teensy board. Using Eagle, you can get the footprint for the Teensy quite easily. The rest is fairly straight forward. I have access to a proper etching tank and light box. After about 5 tries, I finally obtained a viable board. Its been a while since I've etched but I'm pleased with the result.
 
 
-<div class="clearfix"></div>
 
 ![Teensy on Board](https://farm6.staticflickr.com/5569/15133958786_f6c5d9b3fd.jpg)
 
 
 The actual physical build is quite tricky. I settled on using a waffle grid, laser-cut from several pieces of 3mm foam-board. It was designed to slot together with a gap at the bottom to allow the strips to pass through underneath. The strips themselves are adhesive and stick to the back board, which is painted white. I had considered painting the whole thing black to see if we could get more contrast. This might be something I try in the future.
 
+
+<div class="clearfix"></div>
 ![Foamboard Diffuser](https://farm4.staticflickr.com/3916/14970418668_aed42f07d0.jpg)
 
 The grid is stuck down with wood-glue onto the back board with the LEDS. At this point there is no going back to fix any broken LEDS, and there were quite a few! Once the board and grid are affixed together, batons are added to the top and bottom in order to hold the board in place inside the box.
+
+<div class="clearfix"></div>
 
 ![Foamboard Laser Cut](https://farm6.staticflickr.com/5560/15156592892_62813cc8e8.jpg)
 
 The box itself is made from 20mm Kanya aluminium extrusion, supplied by [Zapp Automation](http://www.zappautomation.co.uk/) who are quite reasonable and friendly. Its still quite expensive when you need a lot of it. The connectors are also quite annoying and expensive. It's unclear how to actually install the connectors; they work using a small grub screw that provides tension. I managed to drill the core holes correctly in the end, but I bodged a few of them sadly.
 
+<div class="clearfix"></div>
+
 ![Case with board](https://farm4.staticflickr.com/3837/14970409617_8f47d096d4.jpg)
 
 My friend, [Chris Paton](https://www.facebook.com/chris.paton.507?fref=ts) was kind enough to print me 8 end-caps with the [London Hackspace's](http://london.hackspace.org.uk) 3D printer. This is probably the best use I've yet found for such printers! With the frame in place, MDF panels are placed inside the frame. Unfortunately, they are much thinner than the internal slot, so I padded them out with draft exclusion tape ( a top tip from [Charles Yarnold](https://twitter.com/CharlesYarnold) - thanks!). This gives a tight fight but due to the compression required, the very final panel cannot be tightly fitted as all of the frame in in place at that point.
 
+<div class="clearfix"></div>
+
 ![Tension Connections](https://farm6.staticflickr.com/5586/14970252239_8ed9b24a21.jpg)
 
 The diffuser panel is 3mm perspex with a slightly grey, cloudy finish. This nicely diffuses the light and provides some good colour response. This sheet costs around £50 and is therefore not something you want to damage. It bows slightly because it is too thin for such a project. Gluing it to the waffle grid may be a solution. Thicker perspex might be better but would cost a lot more and may still flex at this size.
+
+
+<div class="clearfix"></div>
 
 ![EMF Lounge](https://farm4.staticflickr.com/3923/15156635162_ac4368a204.jpg)
 
