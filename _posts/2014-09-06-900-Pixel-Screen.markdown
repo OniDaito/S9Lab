@@ -22,11 +22,15 @@ Attached to the Teensy 3.1 is a [RaspberryPI](http://www.raspberrypi.org/) (of c
 
 ![New Zealand Story](https://farm6.staticflickr.com/5580/15133947106_d7d108ec80.jpg)
 
+<div class="clearfix"></div>
+
 I decided to etch a circuit board for the power lines and the Teensy board. Using Eagle, you can get the footprint for the Teensy quite easily. The rest is fairly straight forward. I have access to a proper etching tank and light box. After about 5 tries, I finally obtained a viable board. Its been a while since I've etched but I'm pleased with the result.
+
 
 <div class="clearfix"></div>
 
 ![Teensy on Board](https://farm6.staticflickr.com/5569/15133958786_f6c5d9b3fd.jpg)
+
 
 The actual physical build is quite tricky. I settled on using a waffle grid, laser-cut from several pieces of 3mm foam-board. It was designed to slot together with a gap at the bottom to allow the strips to pass through underneath. The strips themselves are adhesive and stick to the back board, which is painted white. I had considered painting the whole thing black to see if we could get more contrast. This might be something I try in the future.
 
