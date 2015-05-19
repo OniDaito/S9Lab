@@ -1,0 +1,21 @@
+---
+layout: post
+title: So long business, and thanks for all the pixels.
+strapline: I'm moving on to pastures new, at the lovely Queen Mary University
+introtext: A few of you will have noticed I've not been posting as much technical stuff of late. A lot has been happening behind the scenes. I've decided to close down my company and start a new job as a Scientific and Research Programmer at Queen Mary University of London.
+tags: thoughts business
+---
+
+A few of you will have noticed I've not been posting as much technical stuff of late. A lot has been happening behind the scenes. I've decided to close down my company and start a new job as a Scientific and Research Programmer at [Queen Mary University of London](http://www.qmul.ac.uk).
+
+I have many reasons for this: some good, some bad. Overall though, this feels like a very positive move. I've been working at the new job for the past 4 months or so now, getting to know the new team and the people around the place. So far I'm very happy.
+
+My new job involves some of the most fulfilling bits about the section9 business. Some of the best jobs I had at section9 were the ones where I helped academics make a thing. This is now pretty much my entire job at QMUL. It's my remit to go and be nosey and see what people are up to. I'm a programmer without portfolio and it's awesome!
+
+Sure, I've given up some things like the freedom to choose where and when I work. I miss the office and the coding den (although more on that in the future). I miss the feeling of being an indie; the making it on your own (although thats not strictly true), but I feel I've gained a lot more by this move. Im learning new things: more *real* programming with large clusters, HPC and large software projects, continuous integration and all the stuff you learn as a professional programmer *but* without all the crap that can often come with such a desk job.
+
+QMUL are being quite forward looking I think. There is a need for programmers and hackers in university research and rather than contract out, they just get the right person on staff. The team I'm in are mostly technical and come from quite a few different deparments and schools. CS, Physics, Maths, Bio-informatics and the NHS. It's great to be back in an environment where everyone is pretty smart, funny and committed to what they do.
+
+There are many reasons why I've made the jump. I've got plans for the future and many things I want to build. Expect many more blog posts here on a variety of topics. If you want to know more about the other reasons why I think the previous business had run it's course, catch me in the pub or on freenode (as oni). I'm sure I cna be persuaded.
+
+Ironically, now I'm working more on science code (Fortran is still a thing it seems), and HPC, I have more time for more pixels! There will be many more posts to come in the near future!

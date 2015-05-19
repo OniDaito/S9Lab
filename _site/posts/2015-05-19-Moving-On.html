@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Bullseye's playground for Target and Psyop</title>
+    <title>So long business, and thanks for all the pixels.</title>
     <meta name="author" content="Benjamin Blundell" />
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -306,9 +306,9 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h2>Bullseye's playground for Target and Psyop</h2>
-        <h3>12-12-2014</h3>
-        <p>Working with Psyop in NY for Target's mobile winter branding</p>
+        <h2>So long business, and thanks for all the pixels.</h2>
+        <h3>19-05-2015</h3>
+        <p>I'm moving on to pastures new, at the lovely Queen Mary University</p>
       </div>
     </div>
 
@@ -316,84 +316,51 @@
       <div class="col-md-9">
 
         
-<p><img alt="Cul8r" src="https://farm8.staticflickr.com/7524/15979186906_11c0d4d6ef.jpg" /></p>
-<p>Starting at the end of September, I was asked to help out with Target's latest marketing campaign; a set of mobile games running through WebGL, called <a href="http://www.bullseyesplayground.com/desktop">Bullseye's Playground</a>. A formidable challenge, given the variation of devices and such. With Apple's recent entry into WebGL, this only makes things more tricky. But thankfully, the company working on the Project, <a href="http://www.psyop.tv">Psyop</a> have some really talented people working for them.</p>
-<p>I was asked to work on two parts of the final piece; the game called Stuntzone and the Worldmap. The Stuntzone game is quite simple. You choose a car and a track and at certain points around the track, you are asked to perform some gestures in order to complete the track. If you manage to complete a track, you are presented with a short cut-scene.</p>
-<p>The tracks are represented by <a href="http://en.wikipedia.org/wiki/Non-uniform_rational_B-spline">NURB Curves</a>. I wrote a small class that would read in data and smoothly pan along the curve. To get the curves in the first place, I wrote a short python script that can export curves from an FBX File - that most lovely of 3D file formats. </p>
-<div class="clearfix"></div>
-
-<hr />
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/WhmlBz1ro0M" frameborder="0" allowfullscreen></iframe>
-
-<hr />
-
-<div class="clearfix"></div>
-
-<p>Stuntzone is split into two simple sections; a garage scene where you choose the cars and track, and the actual race itself. The effects are quite simple. There is a cubemap performing refection on the cars (ironically, these cars are made of plastic these days so probably don't reflect quite as much). There are a few particle systems for the snow and boost trails (inspired by Back to the Future :D ). </p>
-<p><img alt="BlizzardBoost" src="https://farm8.staticflickr.com/7478/15979186836_dc37fdc41f.jpg" /></p>
-<p>The worldmap scene involves an awful lot of curves and tweening. I went through quite a few variations of curves using a few sigmoid functions and similar. It turned out to be quite interesting as there are many functions out there to generate curves. You can see quite a few over at <a href="http://easings.net">Easings.net</a>. In addition, we had to have various hit targets to pickup the various taps and clicks the user might make.</p>
-<p>The technology for the 3D sections revolved around Three.js (again... annoyingly), with various supporting libraries. To bring everything together, we used <a href="http://bower.io">Bower</a>, <a href="http://gulpjs.com">Gulp</a> and a series of other, smaller libraries to take care of things like sound. I wrote some code to deal with gestures such as swipe, tap and double tap. I adapted some code I'd used for the <a href="https://www.section9.co.uk/posts/2014-05-28-Equatorie.html">Equatorie</a> which I'd tested before. </p>
-<p><img alt="WorldMap" src="https://farm8.staticflickr.com/7563/15819211157_1c7de9fc32.jpg" /></p>
-<p>One of the interesting things about the project was the use of the <a href="https://github.com/google/traceur-compiler">Traceur</a> compiler from Google, in order to provide <a href="http://people.mozilla.org/%7Ejorendorff/es6-draft.html">ES6</a> language constructs. I really like this, because it provides some very nice features. It's not quite as much of a departure from Javascript as CoffeeScript is, but it's definitely a step in the right direction. </p>
-<p>Testing on mobile devices is still tricky. This was made worse by recent upgrades to android that killed my remote debugging client under Chrome. Nevertheless, we managed to get through it in the end. Some Apple devices proved a little tricky. We certainly had to limit the number of triangles on screen at any one time, and really pull back on some of the assets. Quite a lot of the assets are held in local storage, only to be pulled into the browser at the last minute when they are needed. Stuntzone has quite a lot of assets and a large memory footprint.</p>
-<p>The team over at Psyop were great to work with - despite the time differences we managed to get everything together. Im sure the lead developer deserved an awful long holiday off after the Herculean task he pulled off!</p>
+<p>A few of you will have noticed I've not been posting as much technical stuff of late. A lot has been happening behind the scenes. I've decided to close down my company and start a new job as a Scientific and Research Programmer at <a href="http://www.qmul.ac.uk">Queen Mary University of London</a>.</p>
+<p>I have many reasons for this: some good, some bad. Overall though, this feels like a very positive move. I've been working at the new job for the past 4 months or so now, getting to know the new team and the people around the place. So far I'm very happy.</p>
+<p>My new job involves some of the most fulfilling bits about the section9 business. Some of the best jobs I had at section9 were the ones where I helped academics make a thing. This is now pretty much my entire job at QMUL. It's my remit to go and be nosey and see what people are up to. I'm a programmer without portfolio and it's awesome!</p>
+<p>Sure, I've given up some things like the freedom to choose where and when I work. I miss the office and the coding den (although more on that in the future). I miss the feeling of being an indie; the making it on your own (although thats not strictly true), but I feel I've gained a lot more by this move. Im learning new things: more <em>real</em> programming with large clusters, HPC and large software projects, continuous integration and all the stuff you learn as a professional programmer <em>but</em> without all the crap that can often come with such a desk job.</p>
+<p>QMUL are being quite forward looking I think. There is a need for programmers and hackers in university research and rather than contract out, they just get the right person on staff. The team I'm in are mostly technical and come from quite a few different deparments and schools. CS, Physics, Maths, Bio-informatics and the NHS. It's great to be back in an environment where everyone is pretty smart, funny and committed to what they do.</p>
+<p>There are many reasons why I've made the jump. I've got plans for the future and many things I want to build. Expect many more blog posts here on a variety of topics. If you want to know more about the other reasons why I think the previous business had run it's course, catch me in the pub or on freenode (as oni). I'm sure I cna be persuaded.</p>
+<p>Ironically, now I'm working more on science code (Fortran is still a thing it seems), and HPC, I have more time for more pixels! There will be many more posts to come in the near future!</p>
       </div>
 
       <div class="col-md-3">
         <ul class="list-unstyled">
           
-          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
+          <li><a href="/posts/2010-07-12-first-ever-installation-success.html">First Ever Installation Success</a></li>
           
-          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
+          <li><a href="/posts/2011-08-21-Freelance.html">A Digital Ronin - My year freelancing</a></li>
           
-          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
+          <li><a href="/posts/2011-08-31-Knightmare-Bash.html">Knightmare Bash</a></li>
           
-          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
+          <li><a href="/posts/2011-09-09-Forefist-punch.html">Forefist Punch</a></li>
           
-          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
+          <li><a href="/posts/2011-10-14-Late-Night-Coding.html">Late Night Coding</a></li>
           
-          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          <li><a href="/posts/2011-12-28-Lion-and-Linux-Together.html">Linux and Lion together at last (almost)</a></li>
           
-          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
+          <li><a href="/posts/2012-01-13-Mosaic.html">Mosaic</a></li>
           
-          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          <li><a href="/posts/2012-03-21-Resonate.html">Resonate Festival</a></li>
           
-          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
+          <li><a href="/posts/2012-04-02-New-Lab.html">New Lab</a></li>
           
-          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
+          <li><a href="/posts/2012-04-27-BSides.html">BSides London</a></li>
           
-          <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+          <li><a href="/posts/2012-06-05-Curator-Coin.html">The Curator's Coin</a></li>
           
-          <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
+          <li><a href="/posts/2012-06-15-Modern-Opengl.html">Modern OpenGL</a></li>
           
-          <li><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">Museum of Rural Life Smart Audio Guide</a></li>
+          <li><a href="/posts/2012-07-25-Graphics-Hackspace.html">Graphics Hackspace</a></li>
           
-          <li><a href="/posts/2013-07-12-BurberryKisses.html">Burberry Kisses, with Google and Grow Interactive</a></li>
+          <li><a href="/posts/2012-10-16-Raspberry-Pi.html">The Obligatory RaspberryPi Post</a></li>
           
-          <li><a href="/posts/2013-08-06-Photorealistic-Hands.html">Photo-realistic hands</a></li>
+          <li><a href="/posts/2012-11-05-Leaving-Google.html">Leaving Google</a></li>
           
-          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
+          <li><a href="/posts/2012-12-21-edX.html">edX</a></li>
           
-          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
-          
-          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
-          
-          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
-          
-          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
-          
-          <li><a href="/posts/2014-05-28-Equatorie.html">The Equatorie</a></li>
-          
-          <li><a href="/posts/2014-07-28-Kaleidoscope.html">Kaleidoscope for Lexus</a></li>
-          
-          <li><a href="/posts/2014-09-26-Echo-Forms-Live-Gig.html">Echoforms at Lexus NX Launch</a></li>
-          
-          <li><a href="/posts/2014-12-21-Utopia.html">UTOPIA Bio-informatics Toolkit</a></li>
-          
-          <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-          
-          <li><a href="/posts/2011-08-14-Denied.html">Denied</a></li>
+          <li><a href="/posts/2013-01-09-Computer-History.html">Computing History Records and Preservation</a></li>
           
         </ul>
       </div>
