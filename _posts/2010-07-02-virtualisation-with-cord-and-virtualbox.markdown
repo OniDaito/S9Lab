@@ -1,6 +1,7 @@
 --- 
 layout: post
 title: Virtualisation with CoRD and Virtualbox
+strapline: Setting up some virtual machines with CoRD and Virtualbox
 ---
 
 I though I'd put a little note up here regarding my thoughts on virtualisation for testing things like websites and other programs. Previously, I've used virtualbox on my linux box to run photoshop and similar and it has worked quite well considering. At work however, I thought a more distributed system with some dedicated hardware would do the trick.
