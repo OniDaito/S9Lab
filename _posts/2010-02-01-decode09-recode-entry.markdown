@@ -1,6 +1,8 @@
 --- 
 layout: post
 title: Decode09 - Recode Entry
+strapline: Attempting to enter the decode09 competition.
+
 ---
 
 <iframe src="https://player.vimeo.com/video/9129329" width="460" height="280" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
