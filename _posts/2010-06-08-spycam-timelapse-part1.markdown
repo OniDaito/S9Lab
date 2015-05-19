@@ -1,6 +1,8 @@
 --- 
 layout: post
 title: Spycam Timelapse
+strapline: Modifying a key-ring camera to take time lapse shots.
+
 ---
 
 <iframe width="460" height="360" src="https://www.youtube.com/embed/8BbnDAV95y4" frameborder="0" allowfullscreen></iframe>
