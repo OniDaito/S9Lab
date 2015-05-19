@@ -1,6 +1,7 @@
 --- 
 layout: post
 title: NIN Only Tribute
+strapline: A tribute to one of the best bands in the world!
 ---
 
 
