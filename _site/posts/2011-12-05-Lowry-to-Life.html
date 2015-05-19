@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -302,25 +314,36 @@
       <div class="col-md-9">
 
         
-<iframe src="https://player.vimeo.com/video/33123038" width="460" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
 <p>While I was up in the North, working on some personal projects, I was put in touch with a couple of lovely chaps, Alastair Eilbeck and James Bailey; two artists working on some interesting projects. They came to me with an idea for promoting The University of Salford and The Lowry. I've been a fan of some of Lowry's paintings and this was an opportunity not to be missed.</p>
 <p>The idea was to take members of the public into the painting of <a href="http://www.thelowry.com/gifts-and-souvenirs/prints-and-limited-editions/piccadilly-gardens-1954">Piccadilly Gardens</a>. To do this, I worked with the <a href="http://www.asus.com/Multimedia/Motion_Sensor/Xtion_PRO/">ASUS Xtion</a> and the OpenNI toolkit to extract the skeletons of the passers-by. </p>
+<div class="clearfix"></div>
+
+<p><hr />
+<iframe src="https://player.vimeo.com/video/33123038" width="460" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<div class="clearfix"></div>
+<hr /></p>
 <p>The Real location is the painting  and live people are converted to lifesize Lowry characters ( we set up the stage so that it matched the painting perspective). A combination of live people beamed from the real location and those in Salford, shown as small Lowry characters within the real painting (foreground and midground) made the installation complete.</p>
 <p>This is all quite straight-forward but of course, there are many problems. The first is the issue of calibration. Most calibrations with the kinect are personal and then stored for later use when the Kinect/Xbox actually recognises you. This is, of course, not practical in this situation, so we calibrated the system with Alastair and James and used that for all the participants.</p>
 <p>The second issue is the environment. The Kinect and Xtion are designed to work indoors, preferably with a solid wall behind the player. We had none of these so we spent a long time testing, the results of which you can see here.</p>
-<iframe width="460" height="280" src="https://www.youtube.com/embed/Npw1tbOMHqk" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
 
+<p><hr />
+<iframe width="460" height="280" src="https://www.youtube.com/embed/Npw1tbOMHqk" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr /></p>
 <p>It seems that the Xtion performs slightly better than the Kinect but the problem of tracking is a big issue. Data is often missed or incorrect. This means an attractive and artistic solution is needed. We hit on the idea of recreating the characters as puppets. This is where the wonderful <a href="http://box2d.org/">Box2D Library</a> came in so handy. It's a fantastic library, so donate to them if you use it.</p>
 <p>Working with puppets gave a much nicer effect that felt in-keeping with the Lowry style. </p>
 <p><img alt="Working late at Amaze" src="http://farm7.staticflickr.com/6111/6231847697_0e73bf9cf2.jpg" /></p>
 <p>Of course, there is more. The University of Salford wanted the display to run over two sites. The participants in the gardens would appear inside a painting, hanging on the wall at the Lowry itself (it turned out to be at Salford University but nevermind). In order to to make this work, I wrote a simple TCP server/client setup with the <a href="http://www.boost.org/doc/libs/1_48_0/doc/html/boost_asio.html">boost::asio</a> libraries that seemed to work quite well. As this is already a part of Cinder this could be integrated seemlessly.</p>
 <p>Everyone on this project was a hero, none more so than the illustrator Maria Pearson. Without her input, this would not have worked. Maria needed to create 4 views for the same character which were then mapped using a rather large XML file to the puppets themselves.</p>
-<p><img alt="Lowry Cutout Characters" src="http://lab.section9.co.uk/images/characters.jpg" /></p>
 <p>Initially, this process was quite time consuming, so extra features were added to the program to enable faster character creation. At one point, I thought we may need to actually create a seperate editor program but that turned out not to be the case.  </p>
 <p>It turned out to be a big event. It was covered in the <a href="http://menmedia.co.uk/manchestereveningnews/news/s/1464384_hi-tech-display-lets-you-join-lowrys-matchstick-men">Manchester Evening News</a> and <a href="http://www.youtube.com/watch?v=LhSUx_MlMAk&amp;feature=youtu.be&amp;t=3m23s">BBC North West Tonight</a> as well as the <a href="http://www.bbc.co.uk/news/uk-england-manchester-15643875">BBC News Website</a></p>
-<iframe width="460" height="280" src="https://www.youtube.com/embed/LhSUx_MlMAk&amp;start=203" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
 
+<p><hr />
+<iframe width="460" height="280" src="https://www.youtube.com/embed/LhSUx_MlMAk&amp;start=203" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr /></p>
 <p>I'd rather hoped the Manchester weather would actually do its usual thing of being overcast and grey as the Xtion performs better in such conditions. Sadly, this didn't happen at all. Terrible! You can never, EVER rely on the weather, even in a place as predictable as Manchester.</p>
 <p>One interesting and tricky aspect was the idea of history. Alastair and Jimi wanted people to appear on the painting, even if there were no actual participants at that time in the gardens. This meant saving certain characters to disk. For this, I decided to use <a href="http://www.mongodb.org/">MongoDB</a> with the C++ binding. The problem here is that although Cinder uses Boost, the version I had bundled was incompatibile with the version used by Mongo. Disaster! In the end, I needed to use both and simply do the usual hack of only passing simple types between the two classes. Essentially, the puppet strings are saved to the database a few times each second and recalled when there are no players on the scene.</p>
 <p>Technically, I couldn't have done this without Github and Cinder. I've written my own classes to take care of the skeletons and players and swap them in and out as they appear and disappear. Ultimately, github is great for messing with your code, revamping and refactoring as needed. Cinder is a great tool and it's use of boost certainly helped.</p>
@@ -331,6 +354,102 @@
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
+          
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
+          
+          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
+          
+          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
+          
+          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
+          
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
+          
+          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
+          
+          <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+          
+          <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
+          
+          <li><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">Museum of Rural Life Smart Audio Guide</a></li>
+          
+          <li><a href="/posts/2013-07-12-BurberryKisses.html">Burberry Kisses, with Google and Grow Interactive</a></li>
+          
+          <li><a href="/posts/2013-08-06-Photorealistic-Hands.html">Photo-realistic hands</a></li>
+          
+          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
+          
+          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
+          
+          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
+          
+          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
+          
+          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
+          
+          <li><a href="/posts/2014-05-28-Equatorie.html">The Equatorie</a></li>
+          
+          <li><a href="/posts/2014-07-28-Kaleidoscope.html">Kaleidoscope for Lexus</a></li>
+          
+          <li><a href="/posts/2014-09-26-Echo-Forms-Live-Gig.html">Echoforms at Lexus NX Launch</a></li>
+          
+          <li><a href="/posts/2014-12-12-Bullseye.html">Bullseye's playground for Target and Psyop</a></li>
+          
+          <li><a href="/posts/2014-12-21-Utopia.html">UTOPIA Bio-informatics Toolkit</a></li>
+          
+          <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
+          
+          <li><a href="/posts/2011-02-25-kinect-skeleton-for-skinning.html">Kinect Skeleton for Skinning</a></li>
+          
+          <li><a href="/posts/2011-05-08-canned-kinect.html">Canned Kinect</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2010-10-06-structured-light.html">Structured Light</a></li>
+          
+          <li><a href="/posts/2011-07-28-Skin.html">Skin</a></li>
+          
+          <li><a href="/posts/2011-11-30-Numismatic.html">Numismatic Fun</a></li>
+          
+          <li><a href="/posts/2012-05-08-StereoVision.html">Stereo Vision</a></li>
+          
+          <li><a href="/posts/2012-05-18-Coin-Vision.html">Coin Vision</a></li>
+          
+          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
+          
+          <li><a href="/posts/2010-02-01-decode09-recode-entry.html">Decode09 - Recode Entry</a></li>
+          
+          <li><a href="/posts/2010-02-28-nin-only-tribute.html">NIN Only Tribute</a></li>
+          
+          <li><a href="/posts/2010-12-21-cinder-shadow-volumes.html">Cinder Shadow Volumes</a></li>
+          
+          <li><a href="/posts/2011-01-26-projection-mapping.html">Projection Mapping</a></li>
+          
+          <li><a href="/posts/2011-02-04-cinder-skinning.html">Cinder Skinning</a></li>
+          
+          <li><a href="/posts/2011-03-15-depth-of-field-in-cinder.html">Depth of Field in Cinder</a></li>
+          
+          <li><a href="/posts/2011-03-18-screen-space-ambient-occlusion-again.html">Screen Space Ambient Occlusion, again</a></li>
+          
+          <li><a href="/posts/2011-04-23-quad-warp-dual-head.html">Quad Warp, Dual Head</a></li>
+          
+          <li><a href="/posts/2011-04-25-opengl-bottlenecks.html">OpenGL Bottlenecks</a></li>
+          
+          <li><a href="/posts/2011-11-02-Mongo-Fun.html">MongoDB Fun with Cinder</a></li>
+          
+          <li><a href="/posts/2012-06-15-Modern-Opengl.html">Modern OpenGL</a></li>
+          
+          <li><a href="/posts/2012-07-02-User-Interfaces-in-OpenGL.html">User Interfaces in OpenGL</a></li>
+          
+          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
+          
+          <li><a href="/posts/2012-12-13-Painless-Science.html">Phantom Limb at the Science Museum</a></li>
           
         </ul>
       </div>

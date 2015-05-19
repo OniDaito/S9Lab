@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The EMF TilDA Badge Doorbell
+tags: hacking avr electronics emfcamp
 strapline: Doing some overdue DIY with the EMF Camp badge, radio and AVR
 introtext: This doorbell is one of these projects that has been hanging around for ages, waiting to be finalised. It's the old cliche right? The girlfriend mentions a DIY style problem and you decide to step in. Over a year later, the job is actually done.
 ---
@@ -13,7 +14,11 @@ I started out using the radio breakout boards from [Sparkfun](https://www.sparkf
 
 My friend, Charles over at [Electric Laboratory](http://www.electriclaboratory.com/) came up with the idea that I should use the [EMF Tilda Badge](http://wiki-archive.emfcamp.org/2012/articles/b/a/d/Badge.html) instead, as they use the [nRF24L01](http://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRF24L01) chip. As the plus version of this chip had just been released, the non-plus versions were quite cheap; Charles had a load he wasn't using. I figured this would be a good use for the badge that had laid dormant in the months since EMF.
 
+<div class="clearfix"></div>
+<hr />
 <iframe width="420" height="315" src="https://www.youtube.com/embed/JYVXKp-iOjE" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr />
 
 After working with two EMF badges, I'd managed to get the interface working. There is a pretty good radio library for the Arduino called the [Mirf](http://playground.arduino.cc/InterfacingWithHardware/Nrf24L01) library, which you can find at the arduino playground. This pretty much takes care of the arduino end of things on the badge, however the Tilda is not without it's problems. Make sure that you hit reset just after you hit 'upload' in the arduino software, otherwise it wont write the program to the chip.
 
@@ -25,7 +30,13 @@ With communication working between two badges, the next step is to make some kin
 Programming the ATTiny85 was a bit of a challenge. Thankfully there are two really good sites [here](http://gizmosnack.blogspot.co.uk/2013/04/tutorial-nrf24l01-and-avr.html) and [also here](http://www.insidegadgets.com/2012/08/22/using-the-nrf24l01-wireless-module/). Both have really good tutorials on how to use the nRF24l01 with various chips. I ended up using the code from the second page, modified to send just one packet as fast as possible. The problem I had initially was very odd. One press of the button for a second would work, but then one would have to hold the button down for another 3 seconds for the doorbell to work a second time. The next attempt would only require a second, and so on, the pattern repeated. In the end, I stripped out as many delay functions as I could and the button now seems to work if you hold it down for about half a second. A quick tap wont cut it but a good press seems fine.
 
 
+<div class="clearfix"></div>
+<hr />
 <iframe width="420" height="315" src="https://www.youtube.com/embed/wz259k78GLk" frameborder="0" allowfullscreen></iframe>
+
+<div class="clearfix"></div>
+<hr />
+
 
 The excitement when the device finally sparked into life might have seemed excessive to onlookers but it felt so good to finally have something working that required only small amounts of power and could talk to something over distance with some intelligence. The final problem remained however. It needed to make a noise. I have almost no idea about audio electronics. My first thought was to use some powered speakers with the raspberrypi we had lying around but the girlfriend was not so impressed with the extra complications this was presenting. Another solution was needed.
 

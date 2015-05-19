@@ -2,6 +2,7 @@
 layout: post
 title: Phantom Limb Dev Diary Part 3
 strapline: Phantom Limb needs a graphics engine.
+tags: work opengl occulus vr
 introtext: One of the things you don’t find a lot of, is how people organise their graphics engines or similar. I’ve begun reading up on the Doom3 engine but it’s quite extreme, or rather, quite a lot to take in at once. Im concerned with how things like three.js, Cinder, or OpenFrameworks deals with the problem of the graphics Pipeline.
 ---
 
@@ -9,7 +10,7 @@ One of the things you don’t find a lot of, is how people organise their graphi
 
 Computer graphics has a pipeline and it has ways of doing things, especially with OpenGL. So really, there should be a fairly standard way of taking data from your CPU and throwing at the GPU with all the shaders and textures it needs. Turns out this is quite a hard task and it’s something I had to battle when I made CoffeeGL. I’m not a fan of scene-graphs but I do think there is something in encapsulating the data together with some hierarchy. Assuming we have dealt with our geometry (which is the subject of the next post) how do you deal with transformations, cameras, geometry and shaders all together?
 
-![node visitor](https://24.media.tumblr.com/ecbc39f61a345218e8819064b9a0948b/tumblr_mw7o44lfeD1si5olwo1_1280.png)
+![hellknight](http://media.tumblr.com/1676557706f135c0ed254a1d8545a463/tumblr_inline_mwguqsv88u1rjqjsc.png)
 
 I settled on the idea of a Node class. A Node has a minimum of a matrix; it represents a co-ordinate system or a position and orientation in space. It can have other things attached such as a camera (changes the matrices in the shader) and/or a shader, texture, geometry, etc etc. To facilitate this in Javascript is quite easy, but in C++ its another matter. I created a NodeBase class and created several subclasses; one for each item that can be added to a Node. When I create a Node (a implicitly shared object by the way) I can add a Shape, a camera or whatever to it. When I do, a pointer to a new node is placed inside the linked list within Node, called bases. 
 
@@ -22,9 +23,6 @@ I remembered the stack data structure - ah classic computer science! All the Nod
 To present the data to the shader, we use the ShaderVisitor. This is a static class declared only once. It has one job which is to have it’s templated sign function called by a NodeBase. When this happens, it calls the glUniform functions to pass data to the currently bound shader. This is almost identical to the Visitor pattern and allows me to make the correct OpenGL calls based on the type of the data being passed using templated functions.
 
 I use a similar approach with CoffeeGL only I create a pseudo -Node that is a collection of all the data collected as we move down the tree.
-
-
-![hellknight](http://media.tumblr.com/1676557706f135c0ed254a1d8545a463/tumblr_inline_mwguqsv88u1rjqjsc.png)
 
 Our hell-knight model is looking a lot more cheerful now! If cheerful is the right word :S Rather than use the predefined vertex positions, this monster is calculating the vertex positions on the fly, on the GPU itself. In order to do that, we pass a load of values to the vertex shader and ask it to work out the positions for us. This is classic Vertex Skinning on the GPU.
 

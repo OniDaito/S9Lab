@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Linux and Lion together at last (almost)
+tags: thoughts osx
+introtext: I must have spent an age getting this to work! Several forums and blog posts later I *think* I've managed to sort this. My laptop had been suffering from slow-downs with Lion installed and the wifi had begun to break. I figured it was high-time to re-install the lot. 
+strapline: Dual booting on a mac isn't the easiest of things.
 ---
 
 I must have spent an age getting this to work! Several forums and blog posts later I *think* I've managed to sort this. My laptop had been suffering from slow-downs with Lion installed and the wifi had begun to break. I figured it was high-time to re-install the lot. 

@@ -1,7 +1,12 @@
 ---
 layout: post
 title: Building a Vertical Touch Wall
+tags: electronics emfcamp opengl computervision
+strapline: Welding together a frame for a vertical touchscreen
+introtext: After watching the Mill Touch video and after Building my own touchtable, I've wanted to build a large touch wall of my own. Now that EMFCamp is not far away, we have a great oppotunity to build and test something in a field with a captive audience.
 ---
+
+![Welding](http://farm8.staticflickr.com/7268/7690304064_aa6eae01e5.jpg)
 
 After watching the [Mill
 Touch](http://www.themill.com/work/mill-touch/behind-the-scenes.aspx) video and after [Building my own
@@ -10,15 +15,13 @@ touchtable](http://blog.section9.co.uk/2010/09/12/touchtable-dj-decks.html), I'v
 something in a field with a captive audience. So, without further ado, I've
 begun the herculian task of building this thing.
 
-
-![Welding](http://farm8.staticflickr.com/7268/7690304064_aa6eae01e5.jpg)
-
-
 The Mill use a metal frame to hold a sheet of glass as a rear projection
 surface. Interference with lasers provides the blobs that can be tracked and
 turned into touches. Its a fairly simple thing to try but there are a lot of
 issues with this approach that boil down to filtering. First though, I needed
 to learn how to weld.
+
+<div class="clearfix"></div>
 
 Thanks to my friend Hipster Chris and the London Hackspace, we managed to get
 our arc welding on. Down the road, [One Stop Metal
@@ -30,7 +33,6 @@ rest is practice and patience. Im quite happy with the result though.
 
 
 ![Welding](http://farm9.staticflickr.com/8167/7690304364_abe321ba05.jpg)
-
 
 So far, the glass has actually been the easiest bit. I went on ebay and bought
 a coffee table that someone didn't really want. I suppose I coul have checked

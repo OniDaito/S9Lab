@@ -20,18 +20,19 @@ The time of year is important to consider. We went in the off-season, for variou
 
 The trains themselves are not so far removed from the Caledonian Sleeper here in the UK, at least in terms of living. You have beds that have sheets, toilets that are mostly clean yet simple and windows. Very little is fancy but it's all well looked after. With hot water and the promise of noodles from the cabin attendants, you can't really go too far wrong, but having a the [handpresso](http://www.handpresso.com) was an absolute godsend! Do keep space for good food, drink and a bowl or thermal cup. We took sporks and dried fruits and a whole host of things that made the trip much more bearable. It may have seemed mad to other people but having a whole stash of coffee pods in my bag was totally worth it! Even with all that prep, you'll still be wanting tons of vegetables and fruit when you get off. I didn't risk buying things from the platforms, though I saw many people doing that.
 
-<div class="clearfix visible-xs"></div>
-
+<div class="clearfix"></div>
 <hr/>
 
 ![Baikal](https://farm9.staticflickr.com/8745/16294954803_99e5b1ed83.jpg)
 
 Russia is a cash based economy more or less. Some of the hotels take card but don't expect to use Chip and Pin. The same is true for Mongolia and China, to a lesser degree. We took out money from ATMs rather than using the post-office or bureau-de-change or similar. Don't carry all your cash around with you but do keep a couple of cards in-case a machine swallows one (we almost had that happen). We almost found ourselves short in China but mostly, we'd spent our money before we crossed the border. In Mongolia, a rather dodgy looking chap will offer to change money for you. The deal he offered wasn't crazy bad and it meant we at least had some Togrogs for Mongolia.
 
-
-<div class="clearfix visible-xs"></div>
-
+<div class="clearfix"></div>
+<hr />
 <iframe width="420" height="315" src="https://www.youtube.com/embed/Zyw2dPoNgHw" frameborder="0" allowfullscreen></iframe>
+
+<div class="clearfix"></div>
+<hr/>
 
 One nerdy thing we got up to, was the recording of the GPS track through-out the trip. There are a few gaps here and there, as I got used to how the phone behaved. It appears that getting a GPS signal inside a train is not always so easy, and the battery life of my Samsung Galaxy Y, while better than an iPhone, is still not enough for an entire leg. That said, we managed to get most of it. In total, we covered 10,550km thereabouts (6550 miles roughly), not including the MTR from the Shenzen border. The most Western point was 30.33 degrees, with the most eastern being 116.4 degrees. The most northern, 59.93 with the most southern, 22.18. It's an amazing distance to cover via train, and truly one I've still not yet comprehended.
 
@@ -48,6 +49,8 @@ Speaking of technology, I think either the [X220 Thinkpad](http://www.cnet.com/p
 Language isn't too much of an issue, given that English is my native tongue. Be prepared to point, mime or gesticulate what it is you want. Learning a little Cyrillic does help. Most people were really friendly and there are many menus with translations and pictures. Many of the places we went were somewhat modified for tourists. The only time we had a real problem was with dealing with the one drunk Russian on a train, but then drunk people are the same the world over so theres no big issue there. I, personally, am not comfortable with not knowing the major language I'm surrounded by, for various reasons. Unfortunately, I only know a smattering of Japanese and Chinese is one of the hardest to learn.
 
 ![He say you Bladerunner](https://farm8.staticflickr.com/7611/17065570816_e8ca6c08e9.jpg)
+
+<div class="clearfix"></div>
 
  - [Baby Lemonade](https://www.booking.com/hotel/ru/baby-lemonade-hostel.html), St Petersburg
  - [Kitay Gorod Hotel](https://www.booking.com/hotel/ru/kitay-gorod.html), Moscow

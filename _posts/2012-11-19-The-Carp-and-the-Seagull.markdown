@@ -2,17 +2,18 @@
 layout: post
 title: The Carp and the Seagull
 category: work
+tags: work webgl
 strapline: An interactive movie, in WebGL, with Nexus Interactive
 strapimage: seagull.jpg
 introtext: A WebGL Interactive movie. The story revolves around our chap, Masato. He is a fisherman who is doomed, basically. The story is told in 4 chapters inside a cube. As the cube is spun we see the real world and the netherworld, lighting strikes, fish jump and our fisherman fishes. The story is a classic tale of one man's life going wrong. 
 ---
 
+![carp](http://farm9.staticflickr.com/8483/8198734967_a160a30da6.jpg)
+
 Recently, for the past 2 months, I've been involved with a company called
 [Nexus Interactive Arts](http://www.nexusinteractivearts.com/) on a webgl
 project called [The Carp and the Seagull](http://www.thecarpandtheseagull.com).
 Its an interactive movie directed by Evan Boehm and its rather good.
-
-![carp](http://farm9.staticflickr.com/8483/8198734967_a160a30da6.jpg)
 
 The story revolves around our chap, Masato. He is a fisherman who is doomed,
 basically. The story is told in 4 chapters inside a cube. As the cube is spun
@@ -55,6 +56,9 @@ Another chap, the lovely [Roxlu](http://www.roxlu.com/) came up with a simple
 binary format for our files. I wrote a quick JSON to binary python script and
 meshed it with Roxlu's loader. The compression rate was comparable, if not
 better than using gzip.
+
+<div class="clearfix"></div>
+
 
 With the assets out of the way, the rest was down to the arts team. I spent
 most of my time adding extra functionality, fixing bugs and working with the

@@ -1,12 +1,16 @@
 --- 
-wordpress_id: 108
 layout: post
 title: Cinder Skinning
+tags: opengl
+introtext: I've been having quite a hard time getting this working, but its finally done! Skinning inside Cinder has been the goal for the last week or so. Its been damn tricky as the FBX format is a beast to work with. However, in the end, I have emerged victorious.
+strapline: Learning how to skin a mesh!
 ---
 
-
+<div class="clearfix"></div>
+<hr />
 <iframe width="460" height="320" src="https://www.youtube.com/embed/K994B9EeNC0" frameborder="0" allowfullscreen></iframe>
-
+<div class="clearfix"></div>
+<hr />
 
 I've been having quite a hard time getting this working, but its finally done! Skinning inside Cinder has been the goal for the last week or so. Its been damn tricky as the FBX format is a beast to work with. However, in the end, I have emerged victorious.
 

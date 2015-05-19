@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Resonate Festival
+tags: thoughts
+strapline: As part of my final duties at CSM, I went to the Resonate Festival in Belgrade, Serbia.
+introtext: The festival itself had its fair share of rockstars - the lineup consisting of almost everyone who is anyone in my particular field. We'd decided to take some of the students along with us as they were perhaps more into it than I was. Ultimately, it was aimed at them. Most of the talks were rehashings of things I'd see before.
 ---
 
+![Me Papped](http://farm8.staticflickr.com/7046/7001136999_1ca162a76c.jpg)
 
 As part of my final duties at CSM, I went to the [Resonate Festival](http://resonate.io/2012/home) in Belgrade, Serbia.
-
-
-![Me Papped](http://farm8.staticflickr.com/7046/7001136999_1ca162a76c.jpg)
 
 
 The festival itself had its fair share of rockstars - the lineup consisting of almost everyone who is anyone in my particular field. We'd decided to take some of the students along with us as they were perhaps more into it than I was. Ultimately, it was aimed at them. Most of the talks were rehashings of things I'd see before.
@@ -27,8 +28,9 @@ So overall, was it worth it? Well, Serbia certainly is a fun place to visit and 
 I think, the next conference I go to, I'll need to be presenting. Otherwise, its just not really worth it. But there are plenty of opportunities for [Great Photos](http://www.flickr.com/photos/section9/sets/72157629265890474/)
 
 
-![girl and cube](http://farm8.staticflickr.com/7086/6855171714_ac4db8464c.jpg)
 
+<div class="clearfix"></div>
+![girl and cube](http://farm8.staticflickr.com/7086/6855171714_ac4db8464c.jpg)
 
 Also, how can one be glum when you get to visit the [Nikola Tesla Museum](http://www.tesla-museum.org/) :D
 

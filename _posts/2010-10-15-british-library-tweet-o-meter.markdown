@@ -1,8 +1,10 @@
 ---
 layout: post
 title: British Library Tweet-o-meter
+tags: work programming
+introtext: The tweet-o-meter is a set of meters that records the rate of tweets around the world.
+strapline: An installation at the British Library.
 ---
-
 
 ![british library](http://1.bp.blogspot.com/_WNXP2eEZSdg/TLgZ7orUsjI/AAAAAAAAAvI/XsScyCoLDeg/s320/DSC_4847.jpg)
 

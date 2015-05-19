@@ -2,35 +2,42 @@
 layout: post
 title: LED Pendant
 strapline: Another piece of geek jewellery
+tags: wearable hacking avr electronics
 introtext: Whilst working on the Doorbell I had another AVR  project on the go; a pendant for a necklace as an anniversery present. I had the idea after seeing a post on hackaday that described a simple project to turn an LED matrix into a fun, little necklace. I decided I'd give it a go.
 ---
 
-Whilst working on the [Doorbell](http://www.section9.co.uk/posts/2013-09-12-Doorbell.html) I had another [AVR](https://en.wikipedia.org/wiki/Atmel_AVR) project on the go; a pendant for a necklace as an anniversery present. I had the idea after seeing a post on [hackaday](http://hackaday.com/2012/10/12/led-matrix-pendants/) (where else?) that described a simple project to turn an LED matrix into a fun, little necklace. I decided I'd give it a go.
-
 ![KT](http://farm4.staticflickr.com/3694/10016329995_8c2f7c7ab2.jpg)
+
+Whilst working on the [Doorbell](http://www.section9.co.uk/posts/2013-09-12-Doorbell.html) I had another [AVR](https://en.wikipedia.org/wiki/Atmel_AVR) project on the go; a pendant for a necklace as an anniversery present. I had the idea after seeing a post on [hackaday](http://hackaday.com/2012/10/12/led-matrix-pendants/) (where else?) that described a simple project to turn an LED matrix into a fun, little necklace. I decided I'd give it a go.
 
 The design calls for an ATtiny2313 as this has the rather nice feature of the right number of legs being in the right places to solder directly onto the LED matrix! No bad thing at all. The parts are all quite straight forward, with one exception; the matrix itself.
 
 The tricky thing here is that American parts aren't always the same as British ones and finding a matching part can be tricky. Over in the east end of London, we have a large RS Components (up in Leeds, its Farnell for preference) so one can order and then go to the desk for a pickup. I looked around and found [this green LED matrix](http://uk.rs-online.com/web/p/led-displays/2473179/?origin=PSF_438237|cav) but when I got it wired up, bad things happened.
 
-
+<div class="clearfix"></div>
+<hr />
 <iframe width="420" height="315" src="https://www.youtube.com/embed/vbDU488Olc0" frameborder="0" allowfullscreen></iframe>
+<hr />
+<div class="clearfix"></div>
 
 ![Battery Holder](http://farm8.staticflickr.com/7313/10016314195_f43653c268.jpg)
 
 The issue is this unit has a common cathode. What one needs to do is set all the pins to a Hi-Z state except the column you want to light up. That column goes to +5v. The corresponding row needs to go to 0v but not the hi impedence state. That way, current flows through the dot in question. This meant re-writing the AVR driver. 
 Most of the code can be found [here on google](https://sites.google.com/site/tinymatrix/) for the basic setup. I used my venerable [bus pirate](http://dangerousprototypes.com/docs/Bus_Pirate) with a zero-insertion-force or ZIF socket. Programming the device is quite straightforward with the AVRDude tool-chain setup. Really, the hardest part was re-writing the driver section and making sure that the speed was up to scratch. I had a lot of issues with the button and trying to change the animations. Still, after persevering, I finally achieved what I wanted.
 
-Designing the case was tricky. I had two other projects on and the anniversery was nearing, so I ordered the necklace parts and finings from [Cooksons Gold](http://www.cooksongold.com/) and set to work on the design. I didn't have time to turn around the part at Shapeways or similar so I decided to go with a simple design in PLA, mostly because the 3D printed chique might work (I thought, in my head :S ). Fortunately, the [London Hackspace](http://www.london.hackspace.org.uk) now has a working 3D printer (I know, shock horror right?!). The [Lulzbot](http://www.lulzbot.com/) we have is now working quite well so off I went with Blender.
-
+<div class="clearfix"></div>
 ![3D Printed Enclosure](http://farm4.staticflickr.com/3831/10016375296_93cd6f201a.jpg)
 
+Designing the case was tricky. I had two other projects on and the anniversery was nearing, so I ordered the necklace parts and finings from [Cooksons Gold](http://www.cooksongold.com/) and set to work on the design. I didn't have time to turn around the part at Shapeways or similar so I decided to go with a simple design in PLA, mostly because the 3D printed chique might work (I thought, in my head :S ). Fortunately, the [London Hackspace](http://www.london.hackspace.org.uk) now has a working 3D printer (I know, shock horror right?!). The [Lulzbot](http://www.lulzbot.com/) we have is now working quite well so off I went with Blender.
+
+<div class="clearfix"></div>
 ![3D Printed Enclosure](http://farm8.staticflickr.com/7399/10016301694_ba5b1a99c2.jpg)
 
 [Blender](http://www.blender.org) is still my goto tool for 3D these days as it has all the features one could possibly want and it's only getting better and better. So with all that in mind, I mapped out the dimensions of the soldered pieces and the battery size and came up with a simple, yet slightly organic looking design to encase all the bits. Mounting the battery was the trickiest part. In the end, I laser cut a square of thin perspex with two notches to hold the clip in place. I used a compression fit (read, jamming it in really hard so it wouldnt move) and then soldered the AVR pins to the clip with some wire.
 
+<div class="clearfix"></div>
 ![Blender Designing](http://farm8.staticflickr.com/7300/10016656153_882292b8be.jpg)
 
 Overall, I was really happy with the result. I laser cut a box from reflective perspex, put in some padding and voila! I suspect there will be only a few occasions where the girlfriend can actually wear this but I think she liked it :)
-
+<div class="clearfix"></div>
 ![Final Result](http://farm6.staticflickr.com/5338/10016356626_f4353eeac6.jpg)

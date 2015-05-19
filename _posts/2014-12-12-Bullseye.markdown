@@ -2,20 +2,30 @@
 layout: post
 title: Bullseye's playground for Target and Psyop
 category: work
+tags: work webgl
 strapline: Working with Psyop in NY for Target's mobile winter branding
 strapimage: bullseye.jpg
 introtext: I was asked to help out with Target's latest marketing campaign; a set of mobile games running through WebGL, called Bullseye's Playground
 ---
 
+![Cul8r](https://farm8.staticflickr.com/7524/15979186906_11c0d4d6ef.jpg)
+
 Starting at the end of September, I was asked to help out with Target's latest marketing campaign; a set of mobile games running through WebGL, called [Bullseye's Playground](http://www.bullseyesplayground.com/desktop). A formidable challenge, given the variation of devices and such. With Apple's recent entry into WebGL, this only makes things more tricky. But thankfully, the company working on the Project, [Psyop](http://www.psyop.tv) have some really talented people working for them.
 
 I was asked to work on two parts of the final piece; the game called Stuntzone and the Worldmap. The Stuntzone game is quite simple. You choose a car and a track and at certain points around the track, you are asked to perform some gestures in order to complete the track. If you manage to complete a track, you are presented with a short cut-scene.
 
-![Cul8r](https://farm8.staticflickr.com/7524/15979186906_11c0d4d6ef.jpg)
-
 The tracks are represented by [NURB Curves](http://en.wikipedia.org/wiki/Non-uniform_rational_B-spline). I wrote a small class that would read in data and smoothly pan along the curve. To get the curves in the first place, I wrote a short python script that can export curves from an FBX File - that most lovely of 3D file formats. 
 
+<div class="clearfix"></div>
+
+<hr />
+
 <iframe width="560" height="315" src="//www.youtube.com/embed/WhmlBz1ro0M" frameborder="0" allowfullscreen></iframe>
+
+<hr />
+
+<div class="clearfix"></div>
+
 
 Stuntzone is split into two simple sections; a garage scene where you choose the cars and track, and the actual race itself. The effects are quite simple. There is a cubemap performing refection on the cars (ironically, these cars are made of plastic these days so probably don't reflect quite as much). There are a few particle systems for the snow and boost trails (inspired by Back to the Future :D ). 
 

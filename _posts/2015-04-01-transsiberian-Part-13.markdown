@@ -12,6 +12,9 @@ Beijing! The capital of the People's Republic of China and the last stop on the 
 
 Exiting the station, you are assaulted by the sheer *busy-ness* of the scene! Huge TV Screen, massive signs, gargantuan buildings and hordes of people. It noisy, crowded and already you can taste the smoke and smog that Beijing has become famous for. It's not too bad today, but combined with the cloud and mist, you can only just make out the skyscrapers looming not too far away, in the gloom. We hunt for an ATM (not easy) and a taxi (even harder) to get to our hostel.
 
+<div class="clearfix"></div>
+
+
 Our hostel is located in the area of Beijing famous for it's Hutongs - classic Chinese housing, like you see in the movies, made up of squat compounds with courtyards and tiny streets. The rooftops are your classic tiled affair that is oh-so-Chinese. Hutongs used to be all over the city but many have been cleared. The ones that are left are loved by tourists and have become quite affluent in places. In fact, the area is basically like Hoxton or Shoreditch in London; designer jewelery from porcelan shards, hipster Chinese kids, improv bands playing in cafes and of course, craft beers!
 
 ![Tasty Beer](https://farm9.staticflickr.com/8714/17014146422_8c844df39f.jpg)
@@ -20,21 +23,27 @@ For the first time on this trip, I get a taste of home in the form of a deliciou
 
 Near the hostel are the Bell and Drum towers. We are treated to a drumming performance and some views of the city. Given the pollution and cloud, we can't see very far at all and city actually doesn't look too big. Like other cities, the historic centre is quite flat. Dominating the southern view is the north end of the Forbidden city, with it's imposing gates. We buy some overpriced, yet tasty tea, having treated ourselves to a short tea ceremony/tasting session. Again we have to fight off people offering us tours, taxi rides and plastic tat. 
 
-![Drum tower from the Bell Tower](https://farm8.staticflickr.com/7632/16395467033_5c435cda3e.jpg)
 
 I finally meet the Great Firewall of China! Trying to access Facebook, all I get is a time-out. Using obfsproxy and OpenVPN seems to work fine, with Katie reporting that both standard OpenVPN to my server, and to Cambridge University appears to work. Reports of the Great Firewall doing naughty, deep packet inspection to block OpenVPN traffic seem to be exaggerated thus far. I've not checked Tor yet, but I probably will before the trip is over. The hostel's connection is a bit slow but passable.
 
-![Nine Dragon Screen](https://farm9.staticflickr.com/8736/16989596006_d0a42e07ba.jpg)
+
+<div class="clearfix"></div>
+![Drum tower from the Bell Tower](https://farm8.staticflickr.com/7632/16395467033_5c435cda3e.jpg)
 
 As predicted, we gorge ourselves on vegetables, greens and tasty fish at one of the restaurants in the hutong, having been deprived for much of the trip. Chinese cooking varies quite a bit across China, as you'd expect, with hotpot and Peking duck being classic dishes in Beijing. This meal is a set feast in the Yunnan style and is certainly nothing like any Chinese take-away anyone has ever had. That said, you can still find that sort of food here at some of the outlets nearby. Vegetarian food is becoming a little harder, oddly. Many things have meat added just as a garnish. The Chinese don't really believe chicken is a meat (for some crazy reason) but this area is pretty affluent and full of tourists, so the restaurants are getting used to the idea.
 
 The Forbidden City (actually it's called the Palace Museum - I guess because it's not verboten anymore) is huge! It's almost impossible to get around all the rooms in one day. Not only that, it's swarming with people. Most are locals, but there are plenty of tourists like us. The sheer grandeur of the place is designed to humble any visitors before they meet with the emperor or his agents. It certainly does portray that feeling. There are some amazing pieces in the collection, some wonderful gardens and squares and terrific architecture. It's not so dissimilar to the Hermitage in terms of *wow* factor.
+
+
+<div class="clearfix"></div>
 
 ![Forbidden City](https://farm8.staticflickr.com/7646/16828055090_a1ece2c15b.jpg)
 
 We visit the old observatory and I learn a little about how the Jesuits tried to convert China to Catholicism through the use of superior astronomical devices. The theory being that if they could prove their science was better, then maybe their god was better. The emperor, while superstitious, was not stupid and just kept on receiving shiny toys for his astrologers. They are housed on the rooftop of this observatory. From there we find a small shop selling items made from shards of porcelain. For some mad reason, when Mao Zedong started his cultural revolution, all porcelain was banned (probably too decadent or something) and so it was often smashed and thrown away. Today, there is an industry in making use of such shards in things like boxes and jewelery.
 
 We are having to adjust quite a bit since getting here. Gone is the Cyrllic; we have to focus on another language. The cost of things is basically the same as London; no barginous ruble exchange rate here. Finally, the weather has changed on us. It's warm but cloudy with occasional rain. Our arctic-style gear that we thought we'd need is now weighing us down so we've got some work to do in getting everything optimised.
+
+![Nine Dragon Screen](https://farm9.staticflickr.com/8736/16989596006_d0a42e07ba.jpg)
 
 Finally though, I get to try Peking Duck - *in Peking (Beijing)!* I'm very excited and the duck doesn't disappoint. We schlep out to a small restaurant in the east of town via the metro. The metro is fairly straight forward to use. Much like Moscow with it's one use RFID cards. However, unlike Moscow you pay different prices depending on the stations you are traveling between. Using a ticket machine makes it pretty easy though. As the train whizzes through the tunnels I'm amazed and shocked that they have persistance-of-vision based adverts. Despite the speeding train I can see adverts for some such product outside the windows. Advertising and LEDs have just got out of hand in this city. 
 

@@ -1,9 +1,16 @@
 ---
 layout: post
 title: Box2D and Puppets
+introtext: I've been looking at various physics libraries of late. I'd played a little with Bullet physics which was quite cool. I had trouble integrating it with the existing model I had for objects in my world. 
+strapline: Playing with physics libraries
+tags: programming
 ---
 
+<div class="clearfix"></div>
+<hr />
 <iframe src="https://player.vimeo.com/video/27285196?portrait=0" width="460" height="320" frameborder="0"></iframe>
+<div class="clearfix"></div>
+<hr />
 
 
 I've been looking at various physics libraries of late. I'd played a little with Bullet physics which was quite cool. I had trouble integrating it with the existing model I had for objects in my world. That said, it put me in a good position for working with [Box2D](http://www.box2d.org/) which is a great little library. My friend [Tom](http://imakethin.gs) used it in his famous iPod commerical spoof and I thought I'd give it a try for a small project I currently have going up North. The idea is to try and convert people into characters from a painting. The problem is that skeleton tracking with the kinect is not perfect and indeed, there are a lot of factor that can compound the issue.

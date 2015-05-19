@@ -39,6 +39,8 @@ At the end of the park is a monument to the Vostok Rocket; an actual Vostok test
 
 This park doesn't sound appealing at first glance, but I really enjoyed walking around it. To understand why, one can consider the coffee-shop we stopped off at in the middle of the park. From outside it looked like a concrete box. Inside, it's all black painted walls, smart cutlery, and cappucinos served by a glamouress waitress. As you look out towards the former, deserted Armenian pavilion, past the heras fencing around the building site, you can't help but feel that this place represents the modern Russia. Swanky restaurants embracing capitalism, but in their own way. Looking back at their past and seeing it in a different light, coming to terms with it and the new world, and moving on.
 
+<div class="clearfix"></div>
+
 ![Katie with Lenin](https://farm8.staticflickr.com/7655/16853271672_9cb765578e.jpg)
 
 North of Gorky Park is another cultural clue; the Muzeon Sculpture Park. This park started off life as little more than a dumping ground for all the statues the USSR didn't want on display around the city and elsewhere. Nowadays, people are huge fans of the busts and statues. The Lenins and Gorkys have been joined by contemporary sculptures. There are some real gems to be found around this place. So far, my trip total of Lenin statues sits at 7, with 3 of them from this park alone!

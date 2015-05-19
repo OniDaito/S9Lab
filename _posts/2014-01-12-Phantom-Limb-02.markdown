@@ -2,6 +2,7 @@
 layout: post
 title: Phantom Limb Dev Diary Part 2
 strapline: The second installment of the Phantom Limb Project
+tags: opengl kinect work vr
 introtext: So Ive been working on the Seburo backend and I’ve hit that old chestnut again - textures and images. Classically, I’ve had issues with this because its something that just needs to be done, and I get frustrated with how tedious it can be.
 ---
 
@@ -19,26 +20,18 @@ I’ve begun looking at the md5 format, specifically the md5mesh format as it lo
 
 NiTE2 has a lot of faff around it’s C/C++ based libs. Its rather complete but there is a lot of work I had to do, getting around all the rubbish they load up the libraries with. Happily, thats more or less done.
 
-
 ![hellknight](http://media.tumblr.com/b1f1f3f1404b3f35a20cad46393daf34/tumblr_inline_mvqwnquFAk1rjqjsc.png)
 
 Here is the mesh early in the process. You can just about make out this model. The classic hellknight is getting a revamp for PhantomLimb! :D Not that we’d ever use such a model in a production environment but it turns out that the MD5 Format supports bones and similar and is human readable. Not only that, but parsing it is relatively easy (well, I’m still not there yet but almost!)
 
 Previously, I’d used FBX which was quite expansive. The libraries for FBX are quite large and not opensourced. That said, the FBX format supports everything you need and can be exported to with blender.
 
-![hellknight](https://24.media.tumblr.com/6b08b7ef4e2260c968dd13d57f2aff63/tumblr_mvssw1G2MG1si5olwo1_500.png)
-
-Yep! There he is looking much less weedy! :D
 
 One of the things you don’t find a lot of, is how people organise their graphics engines or similar. I’ve begun reading up on the Doom3 engine but it’s quite extreme, or rather, quite a lot to take in at once. Im concerned with how things like three.js, Cinder, or OpenFrameworks deals with the problem of the graphics Pipeline.
 
 Computer graphics has a pipeline and it has ways of doing things, especially with OpenGL. So really, there should be a fairly standard way of taking data from your CPU and throwing at the GPU with all the shaders and textures it needs. Turns out this is quite a hard task and it’s something I had to battle when I made CoffeeGL.
 
 I’m not a fan of scene-graphs but I do think there is something in encapsulating the data together with some hierarchy. Assuming we have dealt with our geometry (which is the subject of the next post) how do you deal with transformations, cameras, geometry and shaders all together?
-
-
-![plans](https://24.media.tumblr.com/ecbc39f61a345218e8819064b9a0948b/tumblr_mw7o44lfeD1si5olwo1_500.png)
-
 
 I settled on the idea of a Node class. A Node has a minimum of a matrix; it represents a co-ordinate system or a position and orientation in space. It can have other things attached such as a camera (changes the matrices in the shader) and/or a shader, texture, geometry, etc etc.
 

@@ -2,29 +2,36 @@
 layout: post
 title: 900 RGB LED Screen 
 category: work
+tags: emfcamp leds hacking
 strapline: 900 LED Pixel Screen for EMFCamp2014
 strapimage: rgbscreen.jpg
 introtext: I've been interested in large pixel displays for a while now. As part of EMFCamp2014, I decided to submit a proposal to the shiny projects part of the camp. I wanted to create a 30 x 30 RGB LED screen after working with another designer chap and link it to the Internet, letting the festival go-ers update it with images over the weekend.
 
 ---
 
+![Love](https://farm4.staticflickr.com/3866/15156976315_1f2607d40a.jpg)
+
 I've been interested in large pixel displays for a while now. After seeing the excellent [PixelBrite Instructables Writeup](http://www.instructables.com/id/PixelBrite/), I decided to have a go myself. As part of [EMFCamp2014](http://www.emfcamp.org), I decided to submit a proposal to the shiny projects part of the camp. I wanted to create a 30 x 30 RGB LED screen after working with another designer chap and link it to the Internet, letting the festival go-ers update it with images over the weekend.
 
 The first thing to say is the RGB Leds chosen are odd and annoying! They are rated at 12v but they quickly draw a lot more current than my bench unit can supply. It turns out they run fine at 5 volts with a small drop in brightness. The strips themselves are [TM1809](http://www.ledlightinghut.com/tm1809-digital-intelligent-led-strip-set.html) LEDS that claim to be flexible, but really are not!
+<div class="clearfix"></div>
 
-![Love](https://farm4.staticflickr.com/3866/15156976315_1f2607d40a.jpg)
+![New Zealand Story](https://farm6.staticflickr.com/5580/15133947106_d7d108ec80.jpg)
 
 To control the LEDs I decided on grouping the 30 rows into 6, 5 row blocks with each block attached to a pin on a Teensy 3.1. I quite like the Teensy range of boards; they have plenty of memory and enough heft to run something like this quite well. The [FastLED library](http://fastled.io/) for Arduino and Teensy works quite well for driving the LEDs but they react fairly slowly. I think the maximum frame-rate I've managed is about 3fps! You can see that in the video of Doom Guy.
 
 
 Attached to the Teensy 3.1 is a [RaspberryPI](http://www.raspberrypi.org/) (of course!) that deals with the Twitter Stream. The idea I settled on was to monitor a twitter account for various images and simply pull down the various images at certain intervals. Fairly simple and it gets around the problem of writing an entire interface for updating the screen. At some point an MS Paint style interface would be lovely.
 
-![New Zealand Story](https://farm6.staticflickr.com/5580/15133947106_d7d108ec80.jpg)
+
 
 <div class="clearfix"></div>
+<hr/>
 
-<iframe style="float:right" class="vine-embed" src="https://vine.co/v/MViiUllaTWb/embed/simple" width="320" height="320" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+<iframe class="vine-embed" src="https://vine.co/v/MViiUllaTWb/embed/simple" width="320" height="320" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
 
+<hr/>
+<div class="clearfix"></div>
 
 I decided to etch a circuit board for the power lines and the Teensy board. Using Eagle, you can get the footprint for the Teensy quite easily. The rest is fairly straight forward. I have access to a proper etching tank and light box. After about 5 tries, I finally obtained a viable board. Its been a while since I've etched but I'm pleased with the result.
 

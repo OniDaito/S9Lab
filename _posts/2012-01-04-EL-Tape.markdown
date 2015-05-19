@@ -1,16 +1,18 @@
 ---
 layout: post
 title: EL-Tape Mesh Top
+tags: sewing electronics
+strapline: One way to use EL-Tape
+introtext: L-Tape and EL-Wire have been around for a few years. We've all seen Tron Guy and all the rest. For me, EL-Wire is only suitable for rigid objects. It looks naff when it's just sewn on with no thought or style behind it.
 ---
 
 ![EL-Mesh Top](http://farm8.staticflickr.com/7170/6630578629_63b3985040.jpg)
-
 
 EL-Tape and EL-Wire have been around for a few years. We've all seen [Tron Guy](http://www.google.co.uk/search?q=tron+guy&um=1&ie=UTF-8&hl=en&tbm=isch&source=og&sa=N&tab=wi&ei=AjkET63gLYra8APe-6DGAQ&biw=1505&bih=829&sei=BzkET4PbKdD_8QOklcmhBA) and all the rest. For me, EL-Wire is only suitable for rigid objects. It looks naff when it's just sewn on with no thought or style behind it. Lady Ada's [EL-Wire Bag](http://www.ladyada.net/make/tronbag/) is probably the best example of how EL-Wire should be used, in my humble design opinion. 
 
 EL-Tape has its own challenges though. It's flatter and wider as you'd expect and there have been a few good designs out there. The [Quora](http://io9.com/5708876/how-to-make-your-tron-costume-glow-with-electroluminescent-wire) costumes aren't bad and I'm sure you know of other examples. I wanted something that was work-a-day, fun and looked good without being cliche, or *tron-esque* though hinting at it of course.
 
-
+<div class="clearfix"></div>
 ![Mighty Singer](http://farm8.staticflickr.com/7015/6634147313_bb2a4cac3f.jpg)
 
 
@@ -19,6 +21,7 @@ The Curator is an excellent seamstress, among her many other talents, and I've b
 The wire for the invertor goes down the back. Im using the invertor and tape from [Adafruit Industries](http://www.adafruit.com/category/50) who I highly recommend. 
 
 
+<div class="clearfix"></div>
 ![El-Tape Mesh Top](http://farm8.staticflickr.com/7165/6630571803_583f97ed37.jpg)
 
 

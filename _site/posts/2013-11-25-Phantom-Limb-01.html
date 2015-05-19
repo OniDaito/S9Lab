@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -302,28 +314,114 @@
       <div class="col-md-9">
 
         
-<p>So the time has begun to start on Phantom Limb Part 3. For these who have not seen the previous versions of this project, the idea is to immerse a person, who suffers from phantom limb pain, inside a Virtual Reality simulation in order to learn more about the condition and hopefully, provide some comfort for the person in question. </p>
 <p><img alt="Phantom Limb at the Science Museum" src="http://media.tumblr.com/52c65092d1993c62efa4d84c6b68f155/tumblr_inline_mswjsajXDS1qz4rgp.jpg" /></p>
+<p>So the time has begun to start on Phantom Limb Part 3. For these who have not seen the previous versions of this project, the idea is to immerse a person, who suffers from phantom limb pain, inside a Virtual Reality simulation in order to learn more about the condition and hopefully, provide some comfort for the person in question. </p>
 <p>This is a project between <a href="http://aig.cs.man.ac.uk">The Advanced Interfaces Group (AIG) at the University of Manchester</a> and Section9.co.uk . We’ve worked together on Version 2 of the Phantom Limb Project which was presented at the Science Museum in London. One of the major problems with Version 2 was the lack of a good headset. Vuzix, at the time, had discontinued their best model of headset, which meant we had to create our own head-tracking hardware. Whilst this worked, it wasn’t quite good enough to enter clinical trials.</p>
 <p>Now, thanks to better depth cameras and the rise of the Oculus Rift, it becomes possible to create something even more immersive and robust. As I plan the development of this project, I’m beginning to think of the technologies we’ll be using. This is really the software engineering and geeky side of things that some people will find quite interesting. </p>
 <p>We are fortunate to have a couple of Oculus Rifts to work with over the course of this project, which is great! They replace the rather nasty Vuzix headset we were using previously. I’ve not yet tackled the API for this yet but from little I’ve seen it looks fairly robust.</p>
-<p><img alt="Oculus Rift" src="http://24.media.tumblr.com/dfcbd8076abd2c8d3ef52283d20b1453/tumblr_mutiauWpQy1si5olwo1_1280.jpg" /></p>
 <p>In previous versions, we used OpenNI and NITE to perform the tracking of the skeleton, mapped to an FBX model. FBX, an autodesk model format, is pretty cool. Despite it being proprietary, it works quite well, though MD5 from ID, being open, may be a better solution. That has yet to be decided.</p>
 <p>So its been a while since I’ve looked at C++ and a few things have changed. No longer is GCC King of the hill! It seems that there are a couple of options for the discerning coder these days; icc and clang. Now I’ve not tried icc but I’ve noticed Clang gaining a lot of traction these days. It certainly does kick out nicer error messages and I can see why Apple decided to use it. I’ve been playing with LLVM over in Javascript land and I can see the appeal.</p>
-<p>C++11 / C++0x is the real deal it seems. There has been a lot added recently that makes C++ quite a joy to use and not what it once was. Im still reading up but it looks like a lot of what boost once offered, is now in the core of C++11 which is great news. What isn’t so great is ubuntu and its support for newer technologies. Im trying to go for pure C++11 with clang but in Precise Pangolin LTS, that seems to be a bit of a problem. A lot of the libstdc++ libs are a little too old. Much has to be built from scratch, including GCC 4.8 and Clang itself. Thats a bit of a pain but I figure it saves trouble in the long run.</p>
+<p>C++11 / C++0x is the real deal it seems. There has been a lot added recently that makes C++ quite a joy to use and not what it once was. Im still reading up but it looks like a lot of what boost once offered, is now in the core of C++11 which is great news. What ismn’t so great is ubuntu and its support for newer technologies. Im trying to go for pure C++11 with clang but in Precise Pangolin LTS, that seems to be a bit of a problem. A lot of the libstdc++ libs are a little too old. Much has to be built from scratch, including GCC 4.8 and Clang itself. Thats a bit of a pain but I figure it saves trouble in the long run.</p>
 <p>In the meantime, OpenNI2 is looking rather nice and already works quite well with the new ASUS depth cameras we have. So far so good. I’ve been looking at my old C++ code for the previous Phantom Limb and going over the developments in OpenNI and NiTE and things have changed somewhat since I was last on this.</p>
 <p>The main problem I hit was threading. Looking things over, a lot of the threading support for C++11 lives inside the library libc++. This is an alternative to libstdc++ apparently, which I didn’t know. libc++ claims to run better with Clang and all the rest. This is fine on OSX as there is a good version of libc++ already built. However, under Linux, things are not so good.</p>
 <p>After spending far too long going around the houses as it were, I’ve managed to build libc++ with clang, under Ubuntu 12.04 using the instructions they actually give on the libc++ page! :O Shocker! Next time I’ll read more closely. Good news is, the code is neater and the builds are tight.</p>
 <p>I’ve recently been reading this book - <a href="http://www.amazon.co.uk/Modern-Design-Applied-Generic-Patterns/dp/0201704315/ref=wl_it_dp_o_pd_S_nC?ie=UTF8&amp;colid=2OVJQTBU03K7I&amp;coliid=IR2MO35GXT8YU">Modern C++ Design</a>. For a while, I’ve had a small Library called <a href="https://www.github.com/OniDaito/Seburo">Seburo</a> that I’ve used for previous work. It was… ok, but a little too complicated. In recent years I’ve paid very close attention to how professional programmers such as John Carmack, write C based engines and similar. Given C++11, Clang, OpenGL4+ and such, it seemed time to properly upgrade the library for the new phantom limb.</p>
 <p>Ever since I started using Cinder, I have been writing code that fits the <a href="http://qt-project.org/doc/qt-5.0/qtcore/implicit-sharing.html">Implicitly Shared Object Model</a>. What this means is that you can copy and pass around objects without having to worry about their memory not being cleaned up. To do this, you need to use shared_pointers quite a lot which is no bad thing.</p>
 <p>The principle is an object can be part of another object definition but perhaps it only needs initialising later on, or has some kind of dynamic memory layout or pointers. Lets take the example of a texture. Chances are, you’ll have a class that represents some geometry and it has a texture. In the class definition, if you define Texture t; you’ll end up constructing that texture when your geometry is constructed. Thats fine. But presumably, you need to load a texture in, given a URL or filename. You may not have that until runtime. So you might define a load function.</p>
-<p><img alt="A not so boring cuboid" src="http://24.media.tumblr.com/dc6c576cb9bcd116beb22bbbd877ea22/tumblr_mus2qaVFY31si5olwo1_500.png" /></p>
 <p>So if you load a texture, which can have any size, you probably have a pointer to some memory. How best to keep track of that? Also, maybe you want to have another reference to that texture, maybe passing it as a variable to another class? Do you really want to copy an entire texture, just to pass it around? The trick comes from the flyweight design pattern. Basically, all the pointers and specific data for that texture are held, not as class variables, but inside a struct that is pointed to by a shared pointer.</p>
 <p>What this means is, when we initialise our texture, we end up with the shared pointer pointing to the data in question. If we assign another variable to this texture or pass the texture as a parameter, we can do, without specifying a reference  as we just end up passing a shared pointer around instead. This is quite handy for objects owning data blocks assigned with new or malloc. I use this a lot in Seburo and <a href="http://libcinder.org/docs/dev/guide__impl_shared.html">Cinder</a> use it a lot too!</p>
       </div>
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
+          
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
+          
+          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
+          
+          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
+          
+          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
+          
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
+          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
+          
+          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
+          
+          <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+          
+          <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
+          
+          <li><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">Museum of Rural Life Smart Audio Guide</a></li>
+          
+          <li><a href="/posts/2013-07-12-BurberryKisses.html">Burberry Kisses, with Google and Grow Interactive</a></li>
+          
+          <li><a href="/posts/2013-08-06-Photorealistic-Hands.html">Photo-realistic hands</a></li>
+          
+          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
+          
+          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
+          
+          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
+          
+          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
+          
+          <li><a href="/posts/2014-05-28-Equatorie.html">The Equatorie</a></li>
+          
+          <li><a href="/posts/2014-07-28-Kaleidoscope.html">Kaleidoscope for Lexus</a></li>
+          
+          <li><a href="/posts/2014-09-26-Echo-Forms-Live-Gig.html">Echoforms at Lexus NX Launch</a></li>
+          
+          <li><a href="/posts/2014-12-12-Bullseye.html">Bullseye's playground for Target and Psyop</a></li>
+          
+          <li><a href="/posts/2014-12-21-Utopia.html">UTOPIA Bio-informatics Toolkit</a></li>
+          
+          <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
+          
+          <li><a href="/posts/2010-02-01-decode09-recode-entry.html">Decode09 - Recode Entry</a></li>
+          
+          <li><a href="/posts/2010-02-28-nin-only-tribute.html">NIN Only Tribute</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2010-10-06-structured-light.html">Structured Light</a></li>
+          
+          <li><a href="/posts/2010-12-21-cinder-shadow-volumes.html">Cinder Shadow Volumes</a></li>
+          
+          <li><a href="/posts/2011-01-26-projection-mapping.html">Projection Mapping</a></li>
+          
+          <li><a href="/posts/2011-02-04-cinder-skinning.html">Cinder Skinning</a></li>
+          
+          <li><a href="/posts/2011-02-25-kinect-skeleton-for-skinning.html">Kinect Skeleton for Skinning</a></li>
+          
+          <li><a href="/posts/2011-03-15-depth-of-field-in-cinder.html">Depth of Field in Cinder</a></li>
+          
+          <li><a href="/posts/2011-03-18-screen-space-ambient-occlusion-again.html">Screen Space Ambient Occlusion, again</a></li>
+          
+          <li><a href="/posts/2011-04-23-quad-warp-dual-head.html">Quad Warp, Dual Head</a></li>
+          
+          <li><a href="/posts/2011-04-25-opengl-bottlenecks.html">OpenGL Bottlenecks</a></li>
+          
+          <li><a href="/posts/2011-05-08-canned-kinect.html">Canned Kinect</a></li>
+          
+          <li><a href="/posts/2011-11-02-Mongo-Fun.html">MongoDB Fun with Cinder</a></li>
+          
+          <li><a href="/posts/2012-06-15-Modern-Opengl.html">Modern OpenGL</a></li>
+          
+          <li><a href="/posts/2012-07-02-User-Interfaces-in-OpenGL.html">User Interfaces in OpenGL</a></li>
+          
+          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
+          
+          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
+          
+          <li><a href="/posts/2012-12-13-Painless-Science.html">Phantom Limb at the Science Museum</a></li>
           
         </ul>
       </div>

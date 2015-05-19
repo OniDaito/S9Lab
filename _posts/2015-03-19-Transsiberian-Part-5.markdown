@@ -30,6 +30,8 @@ It's beginning to get knackering, this tourist lark! This trip is like backpacki
 
 I have my first concerns over the internet whilst we recuperate in the hotel. My VPN isn't working anymore. After bouncing through the London Hackspace's public machine, I manage t find out that my server is fine. Something is clearly wrong with the wifi here. Can't tell if I've been blacklisted but the routing to my box is sorted out by Jump, who I'm told aren't great at routing so perhaps it's that? Hard to say. Never-mind though. Thanks to Putty and a little SOCKS Proxy, I can still have a reasonably secure connection to upload photos and such.
 
+<div class="clearfix"></div>
+
 ![A Jacket made from communist note books](https://farm9.staticflickr.com/8683/16865765015_0d2214cb57.jpg)
 
 We go for a fancy dinner in town, and I do my best to get all the cliches in. Caviar (a small amount of the red kind) with other fish treats, beef stroganoff and Georgian wine (very cheeky and almost port like)! I'm big into trying all the new foods when I'm away somewhere and so far I've been quite happy with the things we've tried. Im told tipping it not something that is done in Russia (though I tend to do it everywhere else), but we do the usual British thing and try and be polite.

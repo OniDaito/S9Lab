@@ -1,11 +1,13 @@
 ---
 layout: post
 title: BSides London
+strapline: A went to a security conference in London
+introtext: It's not often I post about security stuff but I do like to know how the otherside lives. In my mind, I've always wanted to be an 'uber l33t haxor' but I just about rate script kiddie level. I'm not one for sniffing out exploits but one thing I do like is the intelligent vandalism side. Think Banksy, but in a more internet, technological sense. 
+tags: thoughts
 ---
 
 
 It's not often I post about security stuff but I do like to know how the otherside lives. In my mind, I've always wanted to be an 'uber l33t haxor' but I just about rate script kiddie level. I'm not one for sniffing out exploits but one thing I do like is the intelligent vandalism side. Think Banksy, but in a more internet, technological sense. I think that idea has potential. So I go to a few conferences here and there and [BSides London](http://www.securitybsides.org.uk) is one that has just been this week.
-
 
 Well the whole event was free! Free entry free coffee (that wasn't half bad), free sandwiches and pastries and loads of nice fruit. Thats already a good start. Of course, it was sponsored heavily but then, the sponsors weren't overtly in your face. I only had one chap talk to me about Ubikeys so all in all, not too bad. 
 

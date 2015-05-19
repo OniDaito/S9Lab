@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -294,7 +306,7 @@
       <div class="container">
         <h2>User Interfaces in OpenGL</h2>
         <h3>02-07-2012</h3>
-        <p></p>
+        <p>Some thoughts on OpenGL-based user interfaces.</p>
       </div>
     </div>
 
@@ -304,8 +316,8 @@
         
 <p>User Interfaces are the bane of most programmer's lives. They really are. UI people don't often understand the true horror faced by a programmer when they are asked to write good UX code. This goes double for OpenGL types because we have a certain sense of design aesthetic (from what I can tell, talking to people) when it comes to such things. Most UI looks ugly. Its not cool to look at and it's certainly not cool to code. When it comes to OpenGL programs, very few UI libraries stand out. I've had a really tough time lately getting a program structure together that I actually want to use and show off. </p>
 <p>What about <a href="http://qt.nokia.com/products/">QT</a> you say? Well, for starters, QT is massive, relies on C style pointers and causes segfaults a lot of the time. When it comes to OpenGL programs, you need to call a timer function for your draw calls, and heaven help you if you create a widget and have a function called update. I moved to QT because I thought their sliders and such would be useful. Sadly, the code base became quite coupled (which is a bad thing) and teasing things apart proved tricky. I'd like to be using modern C++ and not some Nokia owned library of doom. I have horror stories of learning QT 10 years back. No thanks!</p>
-<p>I thought about using <a href="https://github.com/rezaali/ofxUI">ofxUI</a> which looks really nice. The problem I had with it was there were no file-dialogs and <a href="http://www.openframeworks.cc">OpenFrameworks</a> wasn't built around multiple windows (which I'd rather not use anyway but I have little choice when running fullscreen applications on seperate monitors). I like OpenFrameworks more than I used to, but the CS Engineer in me prefers the beauty of Cinder. It's just more sexy.</p>
 <p><img alt="glfw" src="http://www.glfw.org/screenshots/anttweakbar.png" /></p>
+<p>I thought about using <a href="https://github.com/rezaali/ofxUI">ofxUI</a> which looks really nice. The problem I had with it was there were no file-dialogs and <a href="http://www.openframeworks.cc">OpenFrameworks</a> wasn't built around multiple windows (which I'd rather not use anyway but I have little choice when running fullscreen applications on seperate monitors). I like OpenFrameworks more than I used to, but the CS Engineer in me prefers the beauty of Cinder. It's just more sexy.</p>
 <p>It turns out that <a href="http://www.glfw.org/">GLFW</a> actually has support for multiple windows if you <a href="https://github.com/elmindreda/glfw">check out version3, multi-monitor branch from git</a>. Multi window applications <em>are a bad idea</em> I know but I have one application window, and one surrogate window that runs on a pico projector so there really is little choice. Annoying but there you go. Now GLFW doesn't actually have any GUI components of its own, so we need to add some.</p>
 <p><a href="http://www.antisphere.com/Wiki/tools:anttweakbar">AntTweakBar</a> was adopted by Cinder and to be honest, I've found little better. I've looked around and asked on IRC and all the usual places and they all suck. They either look poor, are overkill or aren't supported anymore. AntTweakBar is easy to use and works reasonably well.</p>
 <p>One problem, there is no file dialog. At this point I decided to give up looking for crossplatform solutions and settled with <a href="http://www.gtkmm.org/en/">gtkmm</a> as I'm running under Ubuntu at the moment. Not sure what I'll do when I port my toolkit to OSX but I'll probably hook into Cocoa or something with GLFW running the show. </p>
@@ -314,6 +326,64 @@
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-02-01-decode09-recode-entry.html">Decode09 - Recode Entry</a></li>
+          
+          <li><a href="/posts/2010-02-28-nin-only-tribute.html">NIN Only Tribute</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2010-10-06-structured-light.html">Structured Light</a></li>
+          
+          <li><a href="/posts/2010-12-21-cinder-shadow-volumes.html">Cinder Shadow Volumes</a></li>
+          
+          <li><a href="/posts/2011-01-26-projection-mapping.html">Projection Mapping</a></li>
+          
+          <li><a href="/posts/2011-02-04-cinder-skinning.html">Cinder Skinning</a></li>
+          
+          <li><a href="/posts/2011-02-25-kinect-skeleton-for-skinning.html">Kinect Skeleton for Skinning</a></li>
+          
+          <li><a href="/posts/2011-03-15-depth-of-field-in-cinder.html">Depth of Field in Cinder</a></li>
+          
+          <li><a href="/posts/2011-03-18-screen-space-ambient-occlusion-again.html">Screen Space Ambient Occlusion, again</a></li>
+          
+          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
+          
+          <li><a href="/posts/2011-04-23-quad-warp-dual-head.html">Quad Warp, Dual Head</a></li>
+          
+          <li><a href="/posts/2011-04-25-opengl-bottlenecks.html">OpenGL Bottlenecks</a></li>
+          
+          <li><a href="/posts/2011-05-08-canned-kinect.html">Canned Kinect</a></li>
+          
+          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
+          
+          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
+          
+          <li><a href="/posts/2011-11-02-Mongo-Fun.html">MongoDB Fun with Cinder</a></li>
+          
+          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-06-15-Modern-Opengl.html">Modern OpenGL</a></li>
+          
+          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
+          
+          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
+          
+          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
+          
+          <li><a href="/posts/2012-12-13-Painless-Science.html">Phantom Limb at the Science Museum</a></li>
+          
+          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
+          
+          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
+          
+          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
+          
+          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
+          
+          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
           
         </ul>
       </div>

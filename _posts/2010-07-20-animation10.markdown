@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: Animation10
+tags: work electronics
+introtext: Kids looking slightly confused but intrigued as to what is going on and what all these weird and wonderful things are. Most were totally drawn in by all the strange bits Manchester had managed to rustle up which was great news indeed.
+strapline: Getting kids into computing
 ---
 
 

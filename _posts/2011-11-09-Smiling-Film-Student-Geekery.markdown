@@ -2,15 +2,19 @@
 layout: post
 title: Smiling-Film-Student-Geekery
 category: work
+tags: work hacking osx
 strapline: Taking over 50 plus iMacs for fun a profit! A Botnet for art.
 strapimage: botnetart.jpg
 ---
 
+The following video was recorded by Opheila Finke; one of the students at CSM. She came to me with a request that blew me out of the water because I'd had a similar idea myself. She wanted all the machines in our lab to play a video at the same time. I've spent quite a bit of time on this but I'd never gotten to the stage where I could take over a screen remotely. It turns out this is indeed possible with one subtle command.
+
+<div class="clearfix"></div>
+<hr/>
 
 <iframe width="460" height="280" src="https://www.youtube.com/embed/mhAcRlNq9JU" frameborder="0" allowfullscreen></iframe>
-
-
-The above video was recorded by Opheila Finke; one of the students at CSM. She came to me with a request that blew me out of the water because I'd had a similar idea myself. She wanted all the machines in our lab to play a video at the same time. I've spent quite a bit of time on this but I'd never gotten to the stage where I could take over a screen remotely. It turns out this is indeed possible with one subtle command.
+<div class="clearfix"></div>
+<hr/>
 
 
 Using the screensaver, written in Quartz Composer by a colleague of mine, Sion Fletcher, seemed like the best idea as we could probably activate it remotely. Since I had the list of IP addresses and full sudo on all the boxes, setting up the screensaver was a doddle. Most of the leg work had been done. 

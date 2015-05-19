@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -302,25 +314,41 @@
       <div class="col-md-9">
 
         
+<p><img alt="Mark 3 PLP" src="https://31.media.tumblr.com/fa7b1bdbd7cb6c6b0f1ea0749d2caa73/tumblr_inline_n0bszbITiI1rjqjsc.jpg" /></p>
 <p>Working with the University of Manchester, I built a 3D engine that combines the oculus rift, the asus xtion and the MD5 Model format attempting to treat sufferers of <a href="http://en.wikipedia.org/wiki/Phantom_limb">Phantom Limb Pain</a>. This is version 3 of the project and is the best yet, thanks largely to the Oculus Rift.</p>
+<p>The general idea is simple. The mirror box has been shown to affect patients in a positive way. The patient places their remaining limb (their left arm, say) into the mirror box. They can then see a reflection of their arm where their missing right arm should be. By performing a set of exercises, studies have shown this can have a beneficial effect. </p>
+<div class="clearfix"></div>
+
+<hr/>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RSL_a4EVBTQ" frameborder="0" allowfullscreen></iframe>
 
-<p>The general idea is simple. The mirror box has been shown to affect patients in a positive way. The patient places their remaining limb (their left arm, say) into the mirror box. They can then see a reflection of their arm where their missing right arm should be. By performing a set of exercises, studies have shown this can have a beneficial effect. </p>
+<div class="clearfix"></div>
+
+<hr/>
+
+<p><img alt="Early PLP" src="http://aig.cs.man.ac.uk/research/phantomlimb/plp.png" /></p>
 <p>Using VR, we can do more than just mirror the limb. We can copy the position (so moving the real arm left moves the virtual one left), we can create a set of games rather than just boring exercises and we can easily mirror the legs as well as the arms. In addition, we can change various parameters to investigate what works for each individual.</p>
 <p>The early work used old VR helmets and a set of tracking devices similar to the ping-pong ball trackers, and amusingly, a sort of power glove.</p>
-<p><img alt="Early PLP" src="http://aig.cs.man.ac.uk/research/phantomlimb/plp.png" /></p>
 <p>The problem was the VR wasn't good enough and the kit difficult to use. It required special setup and the headset was much too heavy.</p>
 <p>Version 2 used the Vuzix headset some tracking software I built using XBee Radios. Vuzix were not very forthcoming in supporting Linux or OSX so custom head-tracking hardware was needed. It was around the time the Kinect came about, which allowed us to track the user much more easily. The project was deemed interesting enough to feature at the UK Science Museum:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1r-JCQ-4CcU" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
 
+<p><hr/>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1r-JCQ-4CcU" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr/></p>
 <p>When the Oculus was announced, we were very excited because it means we can create something we can actually give to clinics and non-computer health care professionals to actually take to people and use. Thus began Phantom Limb Mark3</p>
-<p><img alt="Mark 3 PLP" src="https://31.media.tumblr.com/fa7b1bdbd7cb6c6b0f1ea0749d2caa73/tumblr_inline_n0bszbITiI1rjqjsc.jpg" /></p>
 <p>This is me, playing the game on delivery day. The game itself is quite simple. Balls are fired at you and you have to bat them away with whichever arm you have. It's quite good fun!</p>
-<iframe width="480" height="360" src="https://www.youtube.com/embed/APkMj9h8D-k" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
 
 <p>Technically, the code is quite simple. I wrote my own 3D library / framework in the style of LibCinder (implicit shared objects with C++), with my own MD5 and OBJ parsers. I used Blender to modify some stock models from Turbosquid and Blendswap. MD5 supports bone animation (which is what we need for this to work, as oppose to morph targets or similar) and is a simple and elegant format. Previously, I'd used FBX which is good as it provides for everything but can be overkill and the libraries are quite chunky. GLFW provides the window manger, with GTK+ giving a very simple gui. </p>
 <p>Bullet Physics v3 is used to model the balls flying around. I'm quite a fan of bullet; it's so much fun to play with! The skinning uses code I wrote myself. Using blender, I create a basic skin and rig, export to MD5 format and import the mesh into my program. Skinning is performed using a maximum of 4 bones on the GPU with a vertex shader. Oculus distortion takes place with an FBO, geometry and fragment shader. Calibrating the model takes place in Blender. I suspect this will move into the application itself at some point.</p>
 <p>OpenNI2 and an Asus Xtion Pro are tracking my arms. OpenNI2 is vastly improved over version 1. Version 1 had one problem initially in that you had to stand in the PSI pose in order to calibrate your user. This is... somewhat tricky if you only have one arm! :S Thankfully, this requirement has been removed and tracking is much smoother.</p>
+<p><hr/>
+<iframe width="480" height="360" src="https://www.youtube.com/embed/APkMj9h8D-k" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr/></p>
 <p>I'm using a touchscreen LCD to show some simple options. The whole thing runs on Lubuntu quite happily. One reason I decided to write all this from scratch is that OpenFrameworks is the only viable framework for 3D graphics under Linux and besides, I've been keen to write my own engine for years! :) The cost of the PC and graphics card was quite low; one of the goals should this ever end up with the NHS!</p>
 <p>The graphics are quite simple; this is by design and also restricted by the time I had to spend and the funding available. We aren't sure yet whether-or-not a highly detailed scene would be better, or a simple one. Perhaps an Augmented Reality approach would be better? At present, these are open questions.</p>
 <p>I've been keeping a diary of my approaches and taking videos at every stage, over at <a href="http://phantomlimbmanchester.tumblr.com/">http://phantomlimbmanchester.tumblr.com/</a></p>
@@ -330,6 +358,94 @@
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
+          
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
+          
+          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
+          
+          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
+          
+          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
+          
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
+          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
+          
+          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
+          
+          <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+          
+          <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
+          
+          <li><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">Museum of Rural Life Smart Audio Guide</a></li>
+          
+          <li><a href="/posts/2013-07-12-BurberryKisses.html">Burberry Kisses, with Google and Grow Interactive</a></li>
+          
+          <li><a href="/posts/2013-08-06-Photorealistic-Hands.html">Photo-realistic hands</a></li>
+          
+          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
+          
+          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
+          
+          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
+          
+          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
+          
+          <li><a href="/posts/2014-05-28-Equatorie.html">The Equatorie</a></li>
+          
+          <li><a href="/posts/2014-07-28-Kaleidoscope.html">Kaleidoscope for Lexus</a></li>
+          
+          <li><a href="/posts/2014-09-26-Echo-Forms-Live-Gig.html">Echoforms at Lexus NX Launch</a></li>
+          
+          <li><a href="/posts/2014-12-12-Bullseye.html">Bullseye's playground for Target and Psyop</a></li>
+          
+          <li><a href="/posts/2014-12-21-Utopia.html">UTOPIA Bio-informatics Toolkit</a></li>
+          
+          <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
+          
+          <li><a href="/posts/2010-02-01-decode09-recode-entry.html">Decode09 - Recode Entry</a></li>
+          
+          <li><a href="/posts/2010-02-28-nin-only-tribute.html">NIN Only Tribute</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2010-10-06-structured-light.html">Structured Light</a></li>
+          
+          <li><a href="/posts/2010-12-21-cinder-shadow-volumes.html">Cinder Shadow Volumes</a></li>
+          
+          <li><a href="/posts/2011-01-26-projection-mapping.html">Projection Mapping</a></li>
+          
+          <li><a href="/posts/2011-02-04-cinder-skinning.html">Cinder Skinning</a></li>
+          
+          <li><a href="/posts/2011-02-25-kinect-skeleton-for-skinning.html">Kinect Skeleton for Skinning</a></li>
+          
+          <li><a href="/posts/2011-03-15-depth-of-field-in-cinder.html">Depth of Field in Cinder</a></li>
+          
+          <li><a href="/posts/2011-03-18-screen-space-ambient-occlusion-again.html">Screen Space Ambient Occlusion, again</a></li>
+          
+          <li><a href="/posts/2011-04-23-quad-warp-dual-head.html">Quad Warp, Dual Head</a></li>
+          
+          <li><a href="/posts/2011-04-25-opengl-bottlenecks.html">OpenGL Bottlenecks</a></li>
+          
+          <li><a href="/posts/2011-05-08-canned-kinect.html">Canned Kinect</a></li>
+          
+          <li><a href="/posts/2011-11-02-Mongo-Fun.html">MongoDB Fun with Cinder</a></li>
+          
+          <li><a href="/posts/2012-06-15-Modern-Opengl.html">Modern OpenGL</a></li>
+          
+          <li><a href="/posts/2012-07-02-User-Interfaces-in-OpenGL.html">User Interfaces in OpenGL</a></li>
+          
+          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
+          
+          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
+          
+          <li><a href="/posts/2012-12-13-Painless-Science.html">Phantom Limb at the Science Museum</a></li>
           
         </ul>
       </div>

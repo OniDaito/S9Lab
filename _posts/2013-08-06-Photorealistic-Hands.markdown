@@ -2,6 +2,7 @@
 layout: post
 title: Photo-realistic hands 
 category: work
+tags: work blender
 strapline: Rendering photorealistic hands for Manchester University
 strapimage: creepyhand.jpg
 introtext: The University of Manchester came to me, asking if I could render a series of hands that were as realistic as possible. The plan is to fool a human into thinking the resulting images are real. With that in place, certain parameters can be tweeked in order to facilitate an experiment into mirror neurons.

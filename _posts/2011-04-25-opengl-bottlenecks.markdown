@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: OpenGL Bottlenecks
+tags: opengl programming
+introtext: I must admit, there is a certain amount of bottlenecks and profiling you need to do in order to get a responsive framerate.
+strapline: Looking at where the bottle is a bit tight
 ---
 
 ![Profiler for OpenGL](http://developer.apple.com/library/mac/documentation/graphicsimaging/conceptual/OpenGL-MacProgGuide/art/opengl_profiler_window.jpg)

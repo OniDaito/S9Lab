@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: Depth of Field in Cinder
+introtext: Depth of Field is a lovely effect. I thought I'd have a look at how to do this in Cinder.
+strapline: Depth of Field is a lovely effect. I thought I'd have a look at how to do this in Cinder.
+tags: opengl
 ---
 
 ![Depth of Field](http://4.bp.blogspot.com/-cfpyOGIR_CY/TX9SLWtJJOI/AAAAAAAAAyM/KIgyfEQIOo8/s320/depthoffield.png)

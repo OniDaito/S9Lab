@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -294,7 +306,7 @@
       <div class="container">
         <h2>Mosaic</h2>
         <h3>13-01-2012</h3>
-        <p></p>
+        <p>Using OpenMP and some neat python to show students how to be secure, through intelligent vandalism!</p>
       </div>
     </div>
 
@@ -325,9 +337,13 @@ done
 </code></pre>
 <p>This worked more or less. There are probably improvements we can make to this but for now, I had around 300,000 images already! Quite a lot to pick from. </p>
 <p>Originally, I wanted to use an <em>off-the-shelf</em> solution. I found <a href="http://web.me.com/knarf/MacOSaiX/Download.html">MacOSaiX</a>, <a href="http://www.mazaika.com/mac/">Mazaika</a> and <a href="http://osxdaily.com/2007/02/02/easily-create-photo-mosaics-with-mozodojo/">Mozodojo</a>. The image below is created with Mazaika.</p>
-<p>The problem with all of these is they are limited to certain sizes, despite giving good results. I wanted this to be A0 at 300DPI when printed. The problem of course, is that the image sizes are huge. Most programs just can't cope with it. Mazaika is limited in how many you can use unless you buy it (and its too expensive for what it is) and the others can't cope. So, in the end, I decided to write my own.</p>
+<div class="clearfix"></div>
+
+<p><img alt="Mazaika first attempt" src="http://farm8.staticflickr.com/7018/6558676823_9357ac2381.jpg" />
+The problem with all of these is they are limited to certain sizes, despite giving good results. I wanted this to be A0 at 300DPI when printed. The problem of course, is that the image sizes are huge. Most programs just can't cope with it. Mazaika is limited in how many you can use unless you buy it (and its too expensive for what it is) and the others can't cope. So, in the end, I decided to write my own.</p>
 <p>Using <em>OpenCV</em> I came up with two programs that you can <a href="https://github.com/OniDaito/PhotoMosaic">get from my github page</a>. The first goes through the set of images and creates a text file of average RGB values. The second performs the matching based on this database. OpenCV is used throughout to process the images. The result was a program that took a while to run, but wouldn't crash.</p>
-<p><img alt="Mazaika first attempt" src="http://farm8.staticflickr.com/7018/6558676823_9357ac2381.jpg" /></p>
+<div class="clearfix"></div>
+
 <p><img alt="first attempt" src="http://farm8.staticflickr.com/7146/6653456325_2dec97ee53.jpg" /></p>
 <p>You can see that although it has worked, it's not brilliant. It matches well but I noticed that some areas were just too similar. I adjusted with a small amount of random jitter in the source colour.</p>
 <p>After looking around the web, I finally found <a href="http://en.wikipedia.org/wiki/OpenMP">OpenMP</a> which is a lovely concept, baked right into GCC. It allows you to take control of many cores on your machine, and create threads easily.</p>
@@ -339,6 +355,90 @@ done
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-03-13-iphone-rfid-reader.html">iPhone RFID Reader</a></li>
+          
+          <li><a href="/posts/2010-06-08-spycam-timelapse-part1.html">Spycam Timelapse</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2010-09-19-how-leaky-is-your-country.html">How Leaky is your Country?</a></li>
+          
+          <li><a href="/posts/2011-02-20-motorcycle-computer.html">Motorcycle Computer</a></li>
+          
+          <li><a href="/posts/2011-06-08-iPhone-Macro-Lens.html">iPhone Macro Lens Hack</a></li>
+          
+          <li><a href="/posts/2011-07-20-USB-Eartunnel.html">USB Eartunnel</a></li>
+          
+          <li><a href="/posts/2011-10-05-Defeating-Firewalls.html">Defeating Firewalls</a></li>
+          
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-03-10-Spying.html">Spying and starting services with OSX</a></li>
+          
+          <li><a href="/posts/2013-04-28-Hackspace-Burger-Part1.html">Hackspace Burger Part 1</a></li>
+          
+          <li><a href="/posts/2013-05-10-Hackspace-Burger-Part2.html">Hackspace Burger Part 2</a></li>
+          
+          <li><a href="/posts/2013-05-21-Hackspace-burger-finale.html">Hackspace Burger Finale</a></li>
+          
+          <li><a href="/posts/2013-09-12-Doorbell.html">The EMF TilDA Badge Doorbell</a></li>
+          
+          <li><a href="/posts/2013-09-30-Necklace.html">LED Pendant</a></li>
+          
+          <li><a href="/posts/2014-09-06-900-Pixel-Screen.html">900 RGB LED Screen</a></li>
+          
+          <li><a href="/posts/2014-09-06-Nook-Patient-Report-Forms.html">Nook Patient Report Forms</a></li>
+          
+          <li><a href="/posts/2010-07-19-apache-git-and-mediawiki-to-manage-design-and-projects.html">Apache, GIT and Mediawiki to manage design and projects</a></li>
+          
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
+          
+          <li><a href="/posts/2011-03-25-quartz-composer-programming.html">Quartz Composer Programming</a></li>
+          
+          <li><a href="/posts/2011-04-23-quad-warp-dual-head.html">Quad Warp, Dual Head</a></li>
+          
+          <li><a href="/posts/2011-04-25-opengl-bottlenecks.html">OpenGL Bottlenecks</a></li>
+          
+          <li><a href="/posts/2011-08-04-Box2D-and-Puppets.html">Box2D and Puppets</a></li>
+          
+          <li><a href="/posts/2011-08-31-Knightmare-Bash.html">Knightmare Bash</a></li>
+          
+          <li><a href="/posts/2011-09-25-Node-and-Mongo.html">Node and Mongo</a></li>
+          
+          <li><a href="/posts/2011-11-02-Mongo-Fun.html">MongoDB Fun with Cinder</a></li>
+          
+          <li><a href="/posts/2010-07-12-first-ever-installation-success.html">First Ever Installation Success</a></li>
+          
+          <li><a href="/posts/2011-08-21-Freelance.html">A Digital Ronin - My year freelancing</a></li>
+          
+          <li><a href="/posts/2011-09-09-Forefist-punch.html">Forefist Punch</a></li>
+          
+          <li><a href="/posts/2011-10-14-Late-Night-Coding.html">Late Night Coding</a></li>
+          
+          <li><a href="/posts/2011-12-28-Lion-and-Linux-Together.html">Linux and Lion together at last (almost)</a></li>
+          
+          <li><a href="/posts/2012-03-21-Resonate.html">Resonate Festival</a></li>
+          
+          <li><a href="/posts/2012-04-02-New-Lab.html">New Lab</a></li>
+          
+          <li><a href="/posts/2012-04-27-BSides.html">BSides London</a></li>
+          
+          <li><a href="/posts/2012-06-05-Curator-Coin.html">The Curator's Coin</a></li>
+          
+          <li><a href="/posts/2012-06-15-Modern-Opengl.html">Modern OpenGL</a></li>
+          
+          <li><a href="/posts/2012-07-25-Graphics-Hackspace.html">Graphics Hackspace</a></li>
+          
+          <li><a href="/posts/2012-10-16-Raspberry-Pi.html">The Obligatory RaspberryPi Post</a></li>
+          
+          <li><a href="/posts/2012-11-05-Leaving-Google.html">Leaving Google</a></li>
+          
+          <li><a href="/posts/2012-12-21-edX.html">edX</a></li>
+          
+          <li><a href="/posts/2013-01-09-Computer-History.html">Computing History Records and Preservation</a></li>
           
         </ul>
       </div>

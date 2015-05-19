@@ -1,8 +1,10 @@
 --- 
 layout: post
 title: Deutsche Bank Installation
-category: work
+category: work 
+tags: work opengl
 strapline: A massive installation for Deutsche Bank, written in Cinder
+introtext: It's arrived! Finally, out of NDA we have the Hong Kong Deutsche Bank Installation. This was led by the rather talented Field.io who decided to pass around some of the work to local creative, programming types such as MSAVisuals. 
 strapimage: deutsche.jpg
 ---
 
@@ -11,8 +13,11 @@ It's arrived! Finally, out of NDA we have the [Hong Kong Deutsche Bank Installat
 
 Memo had already begun work on 'A Passion for the Planet' and asked me if I could work on the effects. Using MSAPhysics we came up with a particle system which I played with in order to add some dynamics to the scenes. So we had snow for the mountains, rain in the forest and, my personal favourite, sunspots for the Tea fields (giving the idea of the sun breaking through the cloud).
 
-
+<div class="clearfix"></div>
+<hr />
 <object width="400" height="300"> <param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&set_id=72157626756999726&jump_to="></param> <param name="movie" value="https://www.flickr.com/apps/slideshow/show.swf?v=71649"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="https://www.flickr.com/apps/slideshow/show.swf?v=71649" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626756999726%2F&set_id=72157626756999726&jump_to=" width="400" height="300"></embed></object>
+<div class="clearfix"></div>
+<hr />
 
 
 A particle system requires a lot of thought when it comes to timing and precision. This went double because the system was to be synchronised across several machines in order to run on the large screen. A master clock was provided as part of the Field.kit base class we were asked to use. In addition, we were running with smaller images to begin with but we would need to scale everything up when the viewport was scaled. How big should a snowflake be on a small screen and a large screen? The same size? Smaller? Larger? Essentially, all the caluculations were made with respect to the variables coming through from the base class that Field had provided. 
@@ -21,8 +26,11 @@ The majority of the work for me came in with the "Performance and Teamwork" piec
 
 An early mockup was quite fast in arriving (at least for me) but much of the time was spent on refinements and other such issues. Initially, the scene was rendered in 2D with dots but it was decided to use spheres eventually. Keeping the speed high was an issue at the outset. We played around with depth testing and decided that the painters algorithm was more suitable in this instance. Remembering to keep everything synchronised with the master clock was also something to constantly keep in mind. 
 
-
+<div class="clearfix"></div>
+<hr />
 <object width="400" height="300"> <param name="flashvars" value="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&set_id=72157626757080626&jump_to="></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=71649"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=71649" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2Fshow%2F&page_show_back_url=%2Fphotos%2Ffliegerhorst%2Fsets%2F72157626757080626%2F&set_id=72157626757080626&jump_to=" width="400" height="300"></embed></object>
+<div class="clearfix"></div>
+<hr />
 
 Memo is a true artist and came up with many suggestions and help along the way. Little things here and there were picked up and I quickly learnt that 90% of the time is spent on 10% of the code which makes up for 99% of the overall experience. The reflections changed to sprites (hence the painters algorithm) with a custom texture and the whole particle system was revamped in order to allow for more interesting movement. 
 

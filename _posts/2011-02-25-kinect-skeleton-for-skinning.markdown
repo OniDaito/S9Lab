@@ -1,11 +1,17 @@
 --- 
 layout: post
 title: Kinect Skeleton for Skinning
+tags: kinect opengl
+introtext: So I've been looking at the Kinect quite a bit in relation to skinning. The Primesense team have done a really good job when it comes to full on skeleton tracking and its quite easy to get the positions of the various limbs, but when you are performing skinning, you need a rotation matrix. As we are dealing with 3D we need 3 axes defined. This is impossible with the kinect as it can't measure 'twist'.
+strapline: Skinning is made more fun with the kinect
+
 ---
 
-
+<div class="clearfix"></div>
+<hr />
 <iframe src="https://player.vimeo.com/video/http://vimeo.com/21351996" width="460" height="280" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
-
+<div class="clearfix"></div>
+<hr />
 
 So I've been looking at the Kinect quite a bit in relation to skinning. The Primesense team have done a really good job when it comes to full on skeleton tracking and its quite easy to get the positions of the various limbs, but when you are performing skinning, you need a rotation matrix. As we are dealing with 3D we need 3 axes defined. This is impossible with the kinect as it can't measure 'twist'.
 

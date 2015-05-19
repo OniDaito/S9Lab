@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: Weighted Companion Cube
+tags: 3dprinting
+strapline: No, Glados wont make you kill this one!
+introtext: It needs some internals I think and a lot of playing with but so far so good. I've attempted different configurations on the printer but with limited success. The process is not refined but I'l get it right eventually. The top and bottoms of the cube are suspended and therefore only partially work. To get it right would require some sort of pyramid shape of two halves of the cube. I attempted this but sadly, there were issues with Blender converting to something replicator-g can understand.
 ---
 
 

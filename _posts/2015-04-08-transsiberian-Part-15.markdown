@@ -23,16 +23,22 @@ We find 3 such buildings and case them all for the things we have on our list. H
 
 The upshot of all this is Shenzen is great, but you need a lot longer than 5 hours to experience it all. It also helps if you know who's who and who sells what. We only looked in 3 buildings but it was clear there were many more. Shenzen is a very new city it seems; all the metro stations are modern, shiny and clean. The roads and office blocks are the same. It's obvious this is a rich town. We head back to the Luo Hu station, reclaim our bags and head up the escalator to the border with Hong Kong. 
 
+<div class="clearfix"></div>
+
 Hong Kong lies across the river from Shenzen. You simply walk between one and the other. I say simply, there is nothing simple about it. Parts of the crossing are new, and others quite old. The path is wandering and as we cross we need to change money, charge my oyster card and go through customs, all the while avoiding the seeming mob of people. I never expected it to be so busy but its truly heaving. When we finally get to the MTR with all our bags we are shattered. Fortunately, most people get off at the next stop. We stay on till Tsim Cha Tsui; right on the waterfront of Victoria Harbour.
 
 ![Mong Kok](https://farm9.staticflickr.com/8756/16884138297_e1b70ca614.jpg)
 
 The classic view of Hong Kong is the one from either the Victoria Peak, or from Tsim Cha Tsui. The skyline of Hong Kong is unique and breath-taking. Hong Kong has 4 areas: the Island, Kowloon, the New Territories and the outlying islands (including Lantau island where the airport is). Our train whisks us through the New Territories and into Kowloon. We won't get chance to see all the lovely greenery on this trip sadly; we just have time for the city around the harbour. We stay at the YMCA Salisbury. It's basically a slightly Christian, very fancy hotel (and the cheapest around there with a harbour view).
 
+<div class="clearfix"></div>
+
 ![City Scape](https://farm9.staticflickr.com/8827/17090036762_bc61a75dec.jpg)
 
 At 8pm each night, they perform a light show with lasers and all the rest, from all the buildings around the waterfront. Apparently, it's the largest in the world, though you'd be forgiven if you thought it was just how Hong Kong looked normally. We checkout Mong Kok and grab a bite before sleeping. The next day, we head out on the Star Ferry (the best value cruise in the world given that it's about 20p) and head to the island, visiting many of the tourist sights, including the escalators suspended just above street level. Apparently, this is the Hong Kong answer to the hilly terrain problem! Annoyingly, Hong Kong is having a bank holiday on Tuesday as well , so many of the buildings we want to go inside, such as the Bank of China Tower, are closed.
 
+
+<div class="clearfix"></div>
 ![City Alleys](https://farm8.staticflickr.com/7703/16884137097_dba206c29d.jpg)
 
 Hong Kong is probably the most diverse city we've been to thus far, in terms of its people. Straight off the bat we meet people from India, UK, USA, UK, France and many other places. This is probably not surprising given its history and it's role in the world as a global financial hub. This also means that there are an interesting mix of religions and other groups here. I'm surprised to see two Falun Gong banners and stands around the place as well as some proselytizing Christian types. Missionaries were popular here at one time, and their legacy seems to still live on. Hong Kong is also obsessed with disinfecting things and wearing masks if you have a cough. Likely this is a hold-over from the SARS outbreak sometime back. It is odd though, to see stickers on escalator handrails that say "sanitised every 2 hours".
@@ -45,9 +51,13 @@ The centre of town has many fancy shops and malls that cater to Western and Asia
 
 There is much more I can say about Hong Kong in general. As I mentioned, I spent a fair bit of time there 10 years ago. It's not really that British anymore, at least to my eyes. Perhaps it's because many of the cities we've been to cater reasonably well for English speaking tourists. Many of the trappings of empire here have been absorbed and re-made by the new elites of the Asian world. Hong Kong is still, definitely unique in the greater scheme of modern China though it's becoming clear how they are slowly being converted back to the motherland.
 
+<div class="clearfix"></div>
+
 ![Hotel View](https://farm9.staticflickr.com/8766/16903976460_d828e2f1b2.jpg)
 
 The last night of the trip I succumb to food poisoning and end up bed ridden from about 5pm till the following morning with the worst belly-ache you can imagine. I won't go in to graphic details but it's not fun for anyone concerned. Clearly every adventure involves some peril but I hadn't expected this. I'm just about well enough to make my way to the Peninsula Hotel for Breakfast. It's the last day and we decide to end with some class. I have a mild breakfast I can just about keep down. The Peninsula is right next door to our hotel and it's one of the most expensive places to stay, pretty much anywhere I think. It's featured in Bond Movies and was where the Hong Kong Garrison surrendered to the Japanese in World War 2. It's a classy place.
+
+<div class="clearfix"></div>
 
 ![Bruce Lee](https://farm8.staticflickr.com/7726/17090037732_2a98bc5b6f.jpg)
 

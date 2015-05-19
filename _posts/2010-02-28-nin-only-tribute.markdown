@@ -2,11 +2,15 @@
 layout: post
 title: NIN Only Tribute
 strapline: A tribute to one of the best bands in the world!
+tags: opengl
+introtext: The best band in the world? For me, certainly. Trent Reznor has had a massive influence on me and the work that I do and it was high time that I got around to making this little experiment. I wanted to work on my shader, graphics and OpenCV computer vision skills and what better way than to try to recreate the NIN Video 'Only'.
 ---
 
-
+<div class="clearfix"></div>
+<hr/>
 <iframe src="https://player.vimeo.com/video/9788437" width="460" height="280" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
-
+<div class="clearfix"></div>
+<hr/>
 
 The best band in the world? For me, certainly. Trent Reznor has had a massive influence on me and the work that I do and it was high time that I got around to making this little experiment. I wanted to work on my shader, graphics and OpenCV computer vision skills and what better way than to try to recreate the NIN Video 'Only'.
 

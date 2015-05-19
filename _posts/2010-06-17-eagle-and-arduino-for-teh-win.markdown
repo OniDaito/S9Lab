@@ -2,7 +2,8 @@
 layout: post
 title: EAGLE and Arduino
 strapline: Some thoughts about using EAGLE to create Arduino interface boards
-
+introtext: For the main interaction of the Animation10 stand, I've needed to build a switch. Not just any switch but quite a fancy switch all told. It needs to have flashing lights, dials and an arduino in there just for kicks (and blog cred of course!). Most importantly, it needs a large red button because kids (and adults) can't resist pressing them. So first off, the prototype. 
+tags: electronics
 ---
 
 For the main interaction of the Animation10 stand, I've needed to build a switch. Not just any switch but quite a fancy switch all told. It needs to have flashing lights, dials and an arduino in there just for kicks (and blog cred of course!). Most importantly, it needs a large red button because kids (and adults) can't resist pressing them. So first off, the prototype. 

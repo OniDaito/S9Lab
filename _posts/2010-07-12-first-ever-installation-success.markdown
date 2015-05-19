@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: First Ever Installation Success
+tags: thoughts
+introtext: Yes, I am returning from the North after a very productive few days. The animation10 festival was a great success. A lot of school kids are now interested in retro PC parts, QR Codes and computer vision which can only be a good thing! The kids were a great laugh and there were some talented ones among them for sure. Had a nice chat with a 12 year old about Blender and Python! Amazing!
+strapline: Excited! First ever installation!
 ---
 
 Yes, I am returning from the North after a very productive few days. The animation10 festival was a great success. A lot of school kids are now interested in retro PC parts, QR Codes and computer vision which can only be a good thing! The kids were a great laugh and there were some talented ones among them for sure. Had a nice chat with a 12 year old about Blender and Python! Amazing!

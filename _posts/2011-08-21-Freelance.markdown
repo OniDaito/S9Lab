@@ -1,6 +1,9 @@
 ---
 layout: post
 title: A Digital Ronin - My year freelancing 
+introtext: I've had an interesting ride over the last few months. Since October last year, I left a well paid job at University of the South to pursue my love of computer graphics. Two things made me jump; the fact that the work I was doing quickly became dull and pointless and I'd been offered a job by Mr Jenkins.
+strapline: the names of the people and organisations have been anonymised to protect the guilty
+tags: thoughts business
 ---
 
 *the names of the people and organisations have been anonymised to protect the guilty*

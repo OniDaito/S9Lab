@@ -1,12 +1,14 @@
 --- 
 layout: post
 title: How Leaky is your Country?
+tags: server hacking programming
+introtext: Or rather, how much hammering can your server actually take? That is probably closer to the mark! I made the mistake of putting wikileaks in the URL. After wikileaks got hold of it, my server was absolutely hammered and as I hadn't managed to get it setup properly, it died rather quickly. It still seems up now though *touch wood*, after the initial rush has worn off.
+strapline: Promoting wikileaks with an interesting graphic
 ---
 
 ![leaky](http://3.bp.blogspot.com/_WNXP2eEZSdg/TJYfJfElNCI/AAAAAAAAAuY/WNiKkaDsyNQ/s1600/wikileaksleaky.png)
 
-
-
+<div class="clearfix"></div>
 
 Or rather, how much hammering can your server actually take? That is probably closer to the mark! I made the mistake of putting wikileaks in the URL. After wikileaks got hold of it, my server was absolutely hammered and as I hadn't managed to get it setup properly, it died rather quickly. It still seems up now though *touch wood*, after the initial rush has worn off.
 

@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -302,18 +314,23 @@
       <div class="col-md-9">
 
         
-<p>I've been interested in large pixel displays for a while now. After seeing the excellent <a href="http://www.instructables.com/id/PixelBrite/">PixelBrite Instructables Writeup</a>, I decided to have a go myself. As part of <a href="http://www.emfcamp.org">EMFCamp2014</a>, I decided to submit a proposal to the shiny projects part of the camp. I wanted to create a 30 x 30 RGB LED screen after working with another designer chap and link it to the Internet, letting the festival go-ers update it with images over the weekend.</p>
-<p>The first thing to say is the RGB Leds chosen are odd and annoying! They are rated at 12v but they quickly draw a lot more current than my bench unit can supply. It turns out they run fine at 5 volts with a small drop in brightness. The strips themselves are <a href="http://www.ledlightinghut.com/tm1809-digital-intelligent-led-strip-set.html">TM1809</a> LEDS that claim to be flexible, but really are not!</p>
 <p><img alt="Love" src="https://farm4.staticflickr.com/3866/15156976315_1f2607d40a.jpg" /></p>
+<p>I've been interested in large pixel displays for a while now. After seeing the excellent <a href="http://www.instructables.com/id/PixelBrite/">PixelBrite Instructables Writeup</a>, I decided to have a go myself. As part of <a href="http://www.emfcamp.org">EMFCamp2014</a>, I decided to submit a proposal to the shiny projects part of the camp. I wanted to create a 30 x 30 RGB LED screen after working with another designer chap and link it to the Internet, letting the festival go-ers update it with images over the weekend.</p>
+<p>The first thing to say is the RGB Leds chosen are odd and annoying! They are rated at 12v but they quickly draw a lot more current than my bench unit can supply. It turns out they run fine at 5 volts with a small drop in brightness. The strips themselves are <a href="http://www.ledlightinghut.com/tm1809-digital-intelligent-led-strip-set.html">TM1809</a> LEDS that claim to be flexible, but really are not!
+<div class="clearfix"></div></p>
+<p><img alt="New Zealand Story" src="https://farm6.staticflickr.com/5580/15133947106_d7d108ec80.jpg" /></p>
 <p>To control the LEDs I decided on grouping the 30 rows into 6, 5 row blocks with each block attached to a pin on a Teensy 3.1. I quite like the Teensy range of boards; they have plenty of memory and enough heft to run something like this quite well. The <a href="http://fastled.io/">FastLED library</a> for Arduino and Teensy works quite well for driving the LEDs but they react fairly slowly. I think the maximum frame-rate I've managed is about 3fps! You can see that in the video of Doom Guy.</p>
 <p>Attached to the Teensy 3.1 is a <a href="http://www.raspberrypi.org/">RaspberryPI</a> (of course!) that deals with the Twitter Stream. The idea I settled on was to monitor a twitter account for various images and simply pull down the various images at certain intervals. Fairly simple and it gets around the problem of writing an entire interface for updating the screen. At some point an MS Paint style interface would be lovely.</p>
-<p><img alt="New Zealand Story" src="https://farm6.staticflickr.com/5580/15133947106_d7d108ec80.jpg" /></p>
 <div class="clearfix"></div>
 
-<iframe style="float:right" class="vine-embed" src="https://vine.co/v/MViiUllaTWb/embed/simple" width="320" height="320" frameborder="0"></iframe>
+<hr/>
+
+<iframe class="vine-embed" src="https://vine.co/v/MViiUllaTWb/embed/simple" width="320" height="320" frameborder="0"></iframe>
 
 <script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
 
+<p><hr/>
+<div class="clearfix"></div></p>
 <p>I decided to etch a circuit board for the power lines and the Teensy board. Using Eagle, you can get the footprint for the Teensy quite easily. The rest is fairly straight forward. I have access to a proper etching tank and light box. After about 5 tries, I finally obtained a viable board. Its been a while since I've etched but I'm pleased with the result.</p>
 <p><img alt="Teensy on Board" src="https://farm6.staticflickr.com/5569/15133958786_f6c5d9b3fd.jpg" /></p>
 <p>The actual physical build is quite tricky. I settled on using a waffle grid, laser-cut from several pieces of 3mm foam-board. It was designed to slot together with a gap at the bottom to allow the strips to pass through underneath. The strips themselves are adhesive and stick to the back board, which is painted white. I had considered painting the whole thing black to see if we could get more contrast. This might be something I try in the future.</p>
@@ -341,6 +358,46 @@
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
+          
+          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
+          
+          <li><a href="/posts/2013-09-12-Doorbell.html">The EMF TilDA Badge Doorbell</a></li>
+          
+          <li><a href="/posts/2014-09-06-Nook-Patient-Report-Forms.html">Nook Patient Report Forms</a></li>
+          
+          <li><a href="/posts/2010-03-13-iphone-rfid-reader.html">iPhone RFID Reader</a></li>
+          
+          <li><a href="/posts/2010-06-08-spycam-timelapse-part1.html">Spycam Timelapse</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2010-09-19-how-leaky-is-your-country.html">How Leaky is your Country?</a></li>
+          
+          <li><a href="/posts/2011-02-20-motorcycle-computer.html">Motorcycle Computer</a></li>
+          
+          <li><a href="/posts/2011-06-08-iPhone-Macro-Lens.html">iPhone Macro Lens Hack</a></li>
+          
+          <li><a href="/posts/2011-07-20-USB-Eartunnel.html">USB Eartunnel</a></li>
+          
+          <li><a href="/posts/2011-10-05-Defeating-Firewalls.html">Defeating Firewalls</a></li>
+          
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
+          <li><a href="/posts/2012-01-13-Mosaic.html">Mosaic</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-03-10-Spying.html">Spying and starting services with OSX</a></li>
+          
+          <li><a href="/posts/2013-04-28-Hackspace-Burger-Part1.html">Hackspace Burger Part 1</a></li>
+          
+          <li><a href="/posts/2013-05-10-Hackspace-Burger-Part2.html">Hackspace Burger Part 2</a></li>
+          
+          <li><a href="/posts/2013-05-21-Hackspace-burger-finale.html">Hackspace Burger Finale</a></li>
+          
+          <li><a href="/posts/2013-09-30-Necklace.html">LED Pendant</a></li>
           
         </ul>
       </div>

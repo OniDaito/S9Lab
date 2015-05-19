@@ -2,22 +2,28 @@
 layout: post
 title: Phantom Limb Pain
 category: work
+tags: work opengl hacking vr
 strapline: Investigating Phantom Limb Pain with the Kinect and VR
 strapimage: phantom.jpg
 ---
 
 Over the summer, I worked with [Advanced Interfaces Group](http://aig.cs.man.ac.uk/home/home.php) at [The University of Manchester](http://www.manchester.ac.uk) on a research project to investigate [Phantom Limb Pain](http://en.wikipedia.org/wiki/Phantom_limb). Previously, Steve Pettifer and Toby Howard (the principle researchers) has tried VR and ping pong ball style tracking in order to recreate a virtual world and 'mirror' the missing limb. The idea is to create a more immersive version of the [Ramachandran Mirror Box](http://en.wikipedia.org/wiki/Mirror_box). It's a way to try and unlearn what has been learnt.
 
-
+<div class="clearfix"></div>
+<hr/>
 <iframe src="https://player.vimeo.com/video/36085689" width="460" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
+<div class="clearfix"></div>
+<hr/>
 
 Since the Kinect and cheaper VR goggles have become available, it seemed the right time to rebuild this system with modern technology in order to test what things affect pain relief. Although the mirror box only costs about 2 pounds, we can't easily change parameters and exercises, so there is definitely something to look at.
 
 The technical aspects of the project were quite interesting. The first problem is how to get from the Kinect to a moving person? The OpenNI team were the first to do this with the OGRE model Sinbad:
 
-
+<div class="clearfix"></div>
+<hr/>
 <iframe width="460" height="360" src="https://www.youtube.com/embed/Zl6O-Rf52Co" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr/>
 
 
 The technique is known as skinning. It works by attaching vertices to bones with weights. As the bones are transformed, the vertices follow the bones by a certain amount, relative to the weight. Imagine a lower arm bone moving up and down. The vertices in the lower arm will be attached with high weightings whereas the vertices in the leg will not. 

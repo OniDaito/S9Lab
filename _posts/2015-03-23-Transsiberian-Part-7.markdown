@@ -28,6 +28,8 @@ I've brought my laptop and a cheap point-and-shoot. I'm recording the trip for a
 
 Meals on the train consist mostly of what you bring with you though we are treated to dinner when we first board. I'm brought a breaded pork thing with chips and vegetables whilst Katie has roast potatoes and mushrooms. Again, I'm surprised that the vegetarian option is taken care of. We have access to a samovar boiler I mentioned earlier and large tea cups so things like cuppa-soups, instant borchst and noodles are no problem. We've brought the Bison Grass Vodka with us (of course! No cliches there at all) and a bottle of Russian Champagne to celebrate our exile...I mean, excursion to Siberia!
 
+<div class="clearfix"></div>
+
 ![People selling furs](https://farm8.staticflickr.com/7640/16892961862_c16b0386da.jpg)
 
 The dining car is a little more plush than the last one, with some wood and metal features and some bad eighties pop playing a little too loudly. We order a sort of hotpot stew. Katie gets Borscht and has to fish out some meat chunks but overall, the meal is not bad. The prices for some items are way more than you'd pay in the supermarket but these dining cars are essentially franchises so they can charge whatever they like. Katie's mobile phone still has reception, even out here past Bogotol. The wonders of modern technology!
@@ -38,6 +40,7 @@ At one point we go for a wander towards the back of the train and the smell alon
 
 We change time zones gradually as we cross Siberia. It's now Moscow time plus 5 hours. Seems a bit weird to be changing zones slowly. The kilometer markers on the tracks now line up with our guidebook, so as we pass one, we can check out where we are and what the local town is called, if it warrants an entry. This guidebook is somewhat special as it's lived in our bathroom for the past two years and has now come into it's own. Another classic thing to do is to read war and peace. Rather than do that however, Katie has brought the BBC Radio pod-cast adaptation instead.
 
+<div class="clearfix"></div>
 ![Station](https://farm9.staticflickr.com/8728/16867730006_72b4f10966.jpg)
 
 I'm really looking forward to a shower and a shave when we get to Irkutsk! Ready to loose my standard issue Siberian beard! 

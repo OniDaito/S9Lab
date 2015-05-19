@@ -132,7 +132,17 @@ footer p {
 
 #content img { 
   margin: 16px;
+  margin-top: 0px;
 }
+
+#content img.pull-left{
+  margin-left: 0px;
+}
+
+#content img.pull-right{
+  margin-right: 0px;
+}
+
 
 #content .experiment-strap-image {
   margin-top: 0px;

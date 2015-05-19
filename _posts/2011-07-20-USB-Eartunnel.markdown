@@ -1,20 +1,19 @@
 ---
 layout: post
 title: USB Eartunnel
+tags: hacking wearable electronics 3dprinting
+introtext: As well as printing out a few cases for electronics and a scan of my face, I figured I could prototype my little idea. 
+strapline: A little body modification.
 ---
 
 
 ![USB Eartunnel](http://farm7.static.flickr.com/6140/5958313197_b9c65c8404_z.jpg)
 
-
 As well as printing out a few cases for electronics and a scan of my face, I figured I could prototype my little idea. I guess thats the real strength of the whole makerbot and printing culture. I'd tried an RFID earring before but it was pretty crap and didn't work so well. I love the wires they use in Ghost in the Shell, like this:
-
-
-![Ghost in the Shell](http://img396.imageshack.us/img396/1391/major02yd8.jpg) 
-
 
 The problem is, in Ghost in the Shell, they tend to carry an attachment which looks like a collar that contains an extendible cable. Thats fine if you have an interface direct to the brain but for us mere dreamers, its probably not going to work. 
 
+<div class="clearfix"></div>
 
 ![Eartunnel](http://farm7.static.flickr.com/6141/5958871984_8b20103833_z.jpg)
 

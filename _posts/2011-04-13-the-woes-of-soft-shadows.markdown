@@ -2,6 +2,7 @@
 layout: post
 title: The Woes of Soft Shadows
 category: work
+tags: work opengl
 strapline: Soft shadows in Quartz Composer
 strapimage: quartzshadows.jpg
 introtext: I've been playing with soft shadows for a client and it's been one hell of a rocky ride I must say. There isn't really a nice way of doing it that I'm happy with. I've gone through PCF, PCSS, VSM and SAVSM and none of them seem to work right. I must admit, we are on the verge of very hardcore OpenGL here. But the basics of shadowmapping are quite simple.

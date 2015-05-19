@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -302,24 +314,86 @@
       <div class="col-md-9">
 
         
-<p>It's not often I do advertising work. It all depends on who I'm working with and what the challenge is. In this case, I was approached by <a href="http://hellicarandlewis.com">Hellicar &amp; Lewis</a> to build a WebGL based Kaleidoscope in about 4 days. No small order really, but I decided to step up and give it a bash. The final result is called <a href="http://nxperspectives.eu/en/nx_constructed.html">NX Constructed</a> and it's quite pretty.</p>
 <p><img alt="Kaleidoscope" src="https://farm3.staticflickr.com/2914/14763699654_8eb1908457.jpg" /></p>
+<p>It's not often I do advertising work. It all depends on who I'm working with and what the challenge is. In this case, I was approached by <a href="http://hellicarandlewis.com">Hellicar &amp; Lewis</a> to build a WebGL based Kaleidoscope in about 4 days. No small order really, but I decided to step up and give it a bash. The final result is called <a href="http://nxperspectives.eu/en/nx_constructed.html">NX Constructed</a> and it's quite pretty.</p>
 <p>Lexus approached Vice who approached Hellicar &amp; Lewis who approached me! It's funny how these chains seem to happen in the freelance world. They wanted someone who was pretty handy with WebGL and available on a tight time-frame. Fortunately, my current contract is quite flexible. The final product was definitely possible in the time, but it was tight. That kind of pressure is actually quite good for me, as I am ten times more productive.</p>
-<p>One thing that helped immensely was I could use whatever I wanted to get the job done. I chose to use <a href="http://www.coffeegl.com">CoffeeGL</a> of course, because I know it back to front. This proved very handy because I needed some different geometry types for this piece, along with some fairly accurate picking and per-vertex attributes. Using any other library would have been very time consuming and pointless.</p>
-<p><img alt="Kaleidoscope" src="https://farm4.staticflickr.com/3910/14579415979_93a7fb87ae.jpg" /></p>
+<div class="clearfix"></div>
+
+<p><img alt="Kaleidoscope" src="https://farm4.staticflickr.com/3910/14579415979_93a7fb87ae.jpg" />
+One thing that helped immensely was I could use whatever I wanted to get the job done. I chose to use <a href="http://www.coffeegl.com">CoffeeGL</a> of course, because I know it back to front. This proved very handy because I needed some different geometry types for this piece, along with some fairly accurate picking and per-vertex attributes. Using any other library would have been very time consuming and pointless.</p>
 <p>The project is really split into two halves. The first part involves the creation of the video. There is quite a good video of that process on <a href="https://www.youtube.com/watch?v=IpyAsbep3NM">Youtube</a>, that I've included here too. Taking video and projecting it, then re-recording it, seems like quite an interesting idea and it makes for a slightly rougher, yet interesting image. </p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IpyAsbep3NM" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+
+<p><hr />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IpyAsbep3NM" frameborder="0" allowfullscreen></iframe></p>
+<hr />
+
+<div class="clearfix"></div>
 
 <p>The second half was basically to do with me messing around with the Kaleidoscope. The basic premise is you need to mirror the texture co-ordinates over a triangle mesh. Each shared edge must have the same U,V co-ordinates. From that, you get your kaleidoscope. The interaction is worked out by projecting a ray from the camera view and seeing where it hits. You can get the code for this in the <a href="http://www.amazon.co.uk/Real-Time-Rendering-Third-Edition-Akenine-Moller/dp/1568814240%3FSubscriptionId%3DAKIAILSHYYTFIVPWUY6Q%26tag%3Dduc08-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1568814240">Realtime-rendering book</a>, which has a different take on the maths than I had.</p>
 <p><img alt="Kaleidoscope" src="https://farm4.staticflickr.com/3836/14579594587_c8a8abe0ed.jpg" /></p>
 <p>Wireframing is actually quite a hard thing to do in WebGL as the basic primitives for line drawing are not really there for you (line thickness anyone?). Thankfully, there is an excellent writeup by <a href="http://codeflow.org/entries/2012/aug/02/easy-wireframe-display-with-barycentric-coordinates/">Florian Boesch</a> where he talks about Barycentric co-ordinates, which are really handy. Using that information, I can create outlines and slightly cracked looking edges to give a more organic effect. Actually, that effect was a total experiment that I decided I liked.</p>
-<p>The movement is your basic spring function, calculated on the CPU (since the amount of geometry is low). I thought about using a web-worker and I may do that in version two. Balancing a physical system is always tricky but I think the final outcome is quite good fun to play with. We decided to mess around with some parts of the kaleidoscope; you'll notice that things don't always line up perfectly. It makes the whole thing just a little more interesting.</p>
+<div class="clearfix"></div>
+
 <p><img alt="Kaleidoscope" src="https://farm4.staticflickr.com/3916/14763699944_5a0c7607a6.jpg" /></p>
+<p>The movement is your basic spring function, calculated on the CPU (since the amount of geometry is low). I thought about using a web-worker and I may do that in version two. Balancing a physical system is always tricky but I think the final outcome is quite good fun to play with. We decided to mess around with some parts of the kaleidoscope; you'll notice that things don't always line up perfectly. It makes the whole thing just a little more interesting.</p>
 <p>Hellicar &amp; Lewis are fun to work with. I'd met Joel some time before, though this is the first time we'd worked together. Not only that, but another colleague, <a href="http://caimatthews.com/">Cai Matthews</a> was involved too. A pretty good team I thought. Overall, I'm really happy with how it worked out, especially given how long it took. Everyone worked really hard and I'm really glad that my own libraries are starting to, literally, pay off. Looking forward to making version two!</p>
       </div>
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
+          
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
+          
+          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
+          
+          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
+          
+          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
+          
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
+          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
+          
+          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
+          
+          <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+          
+          <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
+          
+          <li><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">Museum of Rural Life Smart Audio Guide</a></li>
+          
+          <li><a href="/posts/2013-07-12-BurberryKisses.html">Burberry Kisses, with Google and Grow Interactive</a></li>
+          
+          <li><a href="/posts/2013-08-06-Photorealistic-Hands.html">Photo-realistic hands</a></li>
+          
+          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
+          
+          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
+          
+          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
+          
+          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
+          
+          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
+          
+          <li><a href="/posts/2014-05-28-Equatorie.html">The Equatorie</a></li>
+          
+          <li><a href="/posts/2014-09-26-Echo-Forms-Live-Gig.html">Echoforms at Lexus NX Launch</a></li>
+          
+          <li><a href="/posts/2014-12-12-Bullseye.html">Bullseye's playground for Target and Psyop</a></li>
+          
+          <li><a href="/posts/2014-12-21-Utopia.html">UTOPIA Bio-informatics Toolkit</a></li>
+          
+          <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
+          
+          <li><a href="/posts/2011-08-14-Denied.html">Denied</a></li>
           
         </ul>
       </div>

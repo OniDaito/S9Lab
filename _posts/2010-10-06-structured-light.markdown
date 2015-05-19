@@ -1,17 +1,22 @@
 --- 
 layout: post
 title: Structured Light
+introtext:  A test of a simple structured light setup. The idea was to use a PS3 Eyetoy and the excellent code written by Kyle MacDonald
+strapline: If Radiohead can do it, so can I!
+tags: opengl computervision
 ---
 
 
 ![structured light](http://1.bp.blogspot.com/_WNXP2eEZSdg/TKxNmYrR5LI/AAAAAAAAAu4/uxCMLcIED8U/s1600/sl1.jpg)
-
+<div class="clearfix"></div>
 
 A test of a simple structured light setup. The idea was to use a PS3 Eyetoy and the excellent code written by Kyle MacDonald - <a href="http://sites.google.com/site/structuredlight/" rel="nofollow">sites.google.com/site/structuredlight/</a> and Memo Akten - <a href="http://www.memo.tv/" rel="nofollow">www.memo.tv</a>. There are <a href="http://www.flickr.com/photos/section9/">more photos on my Flickr page</a> and indeed, I'll be making some movies soon!
 
+<div class="clearfix"></div>
 
 ![structured light](http://4.bp.blogspot.com/_WNXP2eEZSdg/TKxNxAh9rhI/AAAAAAAAAvA/VIfk_jpbqfk/s1600/sl4.jpg)
 
+<div class="clearfix"></div>
 
 I strapped together Memo's code under Windows as I finally managed to get hold of the PS3 Eyetoy driver that allows you to do 60fps. There is a special OpenFrameworks 'addon' that is part of Community Core Vision that allows you to run OF programs with 60fps. They don't tell you this ANYWHERE so I'm telling you all now! 
 

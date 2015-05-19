@@ -1,15 +1,17 @@
 ---
 layout: post
 title: Phantom Limb at the Science Museum
+tags: vr opengl
+strapline: Our work, in the science museum
 introtext: Im quite excited to see this display. At the back of the Science Museum, in the Antenna area, there is a new exhibition called Painless that deals with the new ways researchers are tackling pain.
 ---
+
+![painless](http://farm9.staticflickr.com/8206/8262141878_df665d61b7.jpg)
 
 Im quite excited to see this display. At the back of the Science Museum, in the
 Antenna area, there is a new exhibition called
 [Painless](http://painlessexhibition.wordpress.com/) that deals with the
 new ways researchers are tackling pain.
-
-![painless](http://farm9.staticflickr.com/8206/8262141878_df665d61b7.jpg)
 
 The display features four different projects that cover the spectrum of odd
 pain-relief. My area focused on the phantom-limb syndrome. One delt with how
@@ -23,21 +25,25 @@ right, a feature object - in this case, a mirror box. This layout
 is repeated for each of the stations. Overall, I felt the layout was quite
 good.
 
+<div class="clearfix"></div>
+<hr />
 <iframe width="460" height="320" src="https://www.youtube.com/embed/1r-JCQ-4CcU"
 frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr />
+
+![painless](http://farm9.staticflickr.com/8059/8262141296_cac2f04048.jpg)
 
 About half-way through the video, you can see me, with my ubiquitous hat on,
 programming in the background, furiously, on my mac! The day the science museum
 came to the department was quite good fun. It was certainly interesting to see
 a film crew from the otherside.
 
-![painless](http://farm9.staticflickr.com/8059/8262141296_cac2f04048.jpg)
 
+![painless](http://farm9.staticflickr.com/8360/8261072119_9ca4817c0d.jpg)
 Im glad to see some of my work in a museum. I think this is one of the works
 I'm most proud of because it does seem to have some effect in making someone's
 life a little better, physically and measurably, which doesn't happen often in
 computer graphics.
-
-![painless](http://farm9.staticflickr.com/8360/8261072119_9ca4817c0d.jpg)
 
 Next time, I'll bring a better camera than my iPhone! :D 

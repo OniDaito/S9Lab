@@ -1,6 +1,9 @@
 ---
 layout: post
 title: OSX Admin for the lulz
+tags: osx
+introtext: At one of my jobs, I've been thrown into the deep end when it comes to sysadmin. I've always done this a little but largely on a Linux based platform. As I'm involved with an Arts University, most of the machines here are Apple based. It's a little bit different in certain cases and there are some fun things already installed. The first is the *screen sharing* app.
+strapline: Messing about with a room full of brand new iMacs
 ---
 
 

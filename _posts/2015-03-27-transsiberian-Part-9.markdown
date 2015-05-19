@@ -18,9 +18,11 @@ Perhaps the fact that the *tank count* has just gone up from one to *many* expla
 
 We are met by a lovely Buryat lady called Olga who speaks French and Russian. Katie pretty much takes over the conversation from here. Despite outside appearances, the flat is quite lovely inside. It's quite clear that she isn't Russian in the way I would think of Russians. She doesn't look European at all, the furnishings are more from Asia and her attitude is less serious and much more like a grandma.
 
-![Ulan Ude Railway Station](https://farm8.staticflickr.com/7592/16949502351_5a19730ef6.jpg)
-
 Ulan-ude has two separate areas. Up the hill is very Soviet, including the main star attraction - *a big bonce!* Ulan-ude has the largest Lenin head in the world. It is fitting really, that our last stop in Russia should feature his massive visage! Down the hill however, is the older town, complete with more Tsarist architecture and yes, you guessed it, wooden buildings. The stylings and the people also show that really, this isn't like western Russia. We take a look around one of the museums, learning a little more about the history of the place. Turns out Ulan ude was important for the tea routes into Russia from China. Wandering around the square we hear the PA from the station, funneled by all the concrete. Again, it sounds like the *Papers, Please* tannoy and is somewhat disturbing when complimented by all the remaining Soviet buildings.
+
+<div class="clearfix"></div>
+
+![Ulan Ude Railway Station](https://farm8.staticflickr.com/7592/16949502351_5a19730ef6.jpg)
 
 We decide to celebrate our last stop in Russia by ordering Russian champagne at a Mongolian restaurant. Mongolian food is mostly made up of meat, specifically mutton but others too, and dumplings known as Buuz. I've been pretty happy with the food in Russia so far. Russian champage I actually prefer to French; it doesn't make your breath smell horrible or give you a nasty headache. It's also about £5 a bottle if that. 
 
@@ -48,6 +50,8 @@ Only one carriage on the Russian train crosses the border. We are attached to a 
 Our cabin is subject to a search, which is slightly worrying because I've nabbed two railway nails from the track as souvenirs. Rusted and discarded, yet still pretty nasty in the wrong hands, but our rather mean looking police lady seems not to notice or care. After this interrogation we need sit around at the station some more. All in all, we end up spending over three hours in a town that could be described as the "arse end of nowhere." Still, it certainly feels like an adventure.
 
 As we finally pull away from the station, our Mongolian train friend (a middle-aged man I spoke to earlier), meets with his wife and their daughter. At the same time, another family with two young boys join the train. For the next couple of hours we become the *strange and interesting people who want to play with us*. My laptop has nothing on it to entertain a child but a Russian hat, the iPad camera app and drawing pens and paper seem to work wonders. Seeing a small boy wearing a massively over-sized ushanka is unbelievably cute and funny. At one point I add some fizzy vitamin C to a glass of water and their minds are literally blown. Clearly, I'm a wizard judging by the look on this kid's face! We end up entertaining small children for about an hour before they are all setup to leave the train.
+
+<div class="clearfix"></div>
 
 ![Rampaging Mongol Hordes](https://farm9.staticflickr.com/8726/16768011039_95d1e2e54a.jpg)
 

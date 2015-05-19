@@ -22,15 +22,21 @@ We spent about 4 hours (possibly more) looking at paintings by Leonardo, sculptu
 
 One can get quite a good view of St Petersburg from the cupola at St Isaacs Cathedral (they call it the collanade). Tickets are about £3 and you can get a 360 degree view of the St Petersburg skyline. The city is quite large; larger than I expected. You can see out to the docks with it's myriad of cranes, and over the otherside, to the Church on Spilled Blood.
 
+<div class="clearfix"></div>
+
 ![Church on Spilled Blood](https://farm8.staticflickr.com/7632/16201820964_1c35de4b7b.jpg)
 
 The Church on Spilled Blood is jawdroppingly beautiful from the outside, with it's enameled onion domes and intricate brickwork, but pay about £2 and you get to go inside and have your mind blown by the most exquisite mosaic work. Every single wall is covered in mosaics, all the way up to the massive dome in the centre. Now I'm not a religious person at all but I loved the scenes because the tile work looks slightly like pixel art and because of that, the shading and sharp lines make it look like something out of a graphic novel.
 
 Soviet era arcade machines are something I've wanted to look into for a few years. We all hear about the American and Japanese arcades but little known of these in Russia. Near the Church on Spilt Blood, is an inner courtyard featuring an arcade consisting solely of old arcade machines (with a branch in Moscow also). This place charges you about £4 and in return you get a set of coins to play the games with. There is a bar and a small cinema showing cartoons. 
 
+<div class="clearfix"></div>
+
 ![Torpedo Attack](https://farm9.staticflickr.com/8670/16823094141_b223b074a7.jpg)
 
 The games are quite unique - there are loads of nixie tubes (yay!) and many moving moving parts with electronics somewhat smushed into them. The majority of the games are shooting or driving games, with a few wacky ones such as "match the words to the road-signs game" and a "pull the paddle as hard as you can game". Some of our favorites include a weird tank game with model tanks and magnet, an old electronic driving game and a submarine torpedo game. 
+
+<div class="clearfix"></div>
 
 ![Traffic Signs Game](https://farm9.staticflickr.com/8632/16824173565_27349b993f.jpg)
 

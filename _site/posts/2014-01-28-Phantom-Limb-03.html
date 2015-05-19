@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -304,14 +316,13 @@
         
 <p>One of the things you don’t find a lot of, is how people organise their graphics engines or similar. I’ve begun reading up on the Doom3 engine but it’s quite extreme, or rather, quite a lot to take in at once. Im concerned with how things like three.js, Cinder, or OpenFrameworks deals with the problem of the graphics Pipeline.</p>
 <p>Computer graphics has a pipeline and it has ways of doing things, especially with OpenGL. So really, there should be a fairly standard way of taking data from your CPU and throwing at the GPU with all the shaders and textures it needs. Turns out this is quite a hard task and it’s something I had to battle when I made CoffeeGL. I’m not a fan of scene-graphs but I do think there is something in encapsulating the data together with some hierarchy. Assuming we have dealt with our geometry (which is the subject of the next post) how do you deal with transformations, cameras, geometry and shaders all together?</p>
-<p><img alt="node visitor" src="https://24.media.tumblr.com/ecbc39f61a345218e8819064b9a0948b/tumblr_mw7o44lfeD1si5olwo1_1280.png" /></p>
+<p><img alt="hellknight" src="http://media.tumblr.com/1676557706f135c0ed254a1d8545a463/tumblr_inline_mwguqsv88u1rjqjsc.png" /></p>
 <p>I settled on the idea of a Node class. A Node has a minimum of a matrix; it represents a co-ordinate system or a position and orientation in space. It can have other things attached such as a camera (changes the matrices in the shader) and/or a shader, texture, geometry, etc etc. To facilitate this in Javascript is quite easy, but in C++ its another matter. I created a NodeBase class and created several subclasses; one for each item that can be added to a Node. When I create a Node (a implicitly shared object by the way) I can add a Shape, a camera or whatever to it. When I do, a pointer to a new node is placed inside the linked list within Node, called bases. </p>
 <p>This linked list is ordered. The reason is that geometry should always be the last thing to be drawn, and the shader needs to be the first thing ‘drawn’ (or in reality, bound to the current context). This approach started off as the Decorator pattern but quickly changed into something more suited to this situation. Now, Nodes can have children in the classic, tree like way. In addition Nodes can appear in many places and because everything that is added to them is an implicit shared object, I can add the same camera to different nodes or the same texture to different nodes, in order to create my scene.</p>
 <p>Here in lies the problem I was having for most of the day. If a parent Node defines a Camera, for example, and then a child Node defines a camera, what should happen? Ideally the camera in child Node should override the parent, and indeed it does. Thats fine, but what about lights? What about the Model Matrix? The Model matrix is the matrix used locally for any geometry, lights or what have you. This needs to be multiplied down the hierarchy in order to work. This means a child Node’s matrix needs to be a combination of its own local matrix and its parents’ matrices. So what do you do?</p>
 <p>I remembered the stack data structure - ah classic computer science! All the NodeBases that contain the matrix have a static vector that represents the stack of matrices at this point. When we walk along the tree, we multiply the current local matrix with the last thing on the stack. We then add that result onto the stack. When we come out of our recursion, we pop the value off the stack. Job done!</p>
 <p>To present the data to the shader, we use the ShaderVisitor. This is a static class declared only once. It has one job which is to have it’s templated sign function called by a NodeBase. When this happens, it calls the glUniform functions to pass data to the currently bound shader. This is almost identical to the Visitor pattern and allows me to make the correct OpenGL calls based on the type of the data being passed using templated functions.</p>
 <p>I use a similar approach with CoffeeGL only I create a pseudo -Node that is a collection of all the data collected as we move down the tree.</p>
-<p><img alt="hellknight" src="http://media.tumblr.com/1676557706f135c0ed254a1d8545a463/tumblr_inline_mwguqsv88u1rjqjsc.png" /></p>
 <p>Our hell-knight model is looking a lot more cheerful now! If cheerful is the right word :S Rather than use the predefined vertex positions, this monster is calculating the vertex positions on the fly, on the GPU itself. In order to do that, we pass a load of values to the vertex shader and ask it to work out the positions for us. This is classic Vertex Skinning on the GPU.</p>
 <p>Trouble is, the FPS is a little slower than I’d like, though I’ve no doubt it’s faster than doing it all on the CPU; we’d have to upload fresh data to the GPU in the form of vertex arrays and that is not pleasant. Still, there is room for some changes. I had a lot of issues with this program because there were a few things I was unaware of:</p>
 <pre><code>glVertexAttribIPointer
@@ -336,6 +347,94 @@ glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex3Skin), reinterpret
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
+          
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
+          
+          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
+          
+          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
+          
+          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
+          
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
+          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
+          
+          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
+          
+          <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+          
+          <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
+          
+          <li><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">Museum of Rural Life Smart Audio Guide</a></li>
+          
+          <li><a href="/posts/2013-07-12-BurberryKisses.html">Burberry Kisses, with Google and Grow Interactive</a></li>
+          
+          <li><a href="/posts/2013-08-06-Photorealistic-Hands.html">Photo-realistic hands</a></li>
+          
+          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
+          
+          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
+          
+          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
+          
+          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
+          
+          <li><a href="/posts/2014-05-28-Equatorie.html">The Equatorie</a></li>
+          
+          <li><a href="/posts/2014-07-28-Kaleidoscope.html">Kaleidoscope for Lexus</a></li>
+          
+          <li><a href="/posts/2014-09-26-Echo-Forms-Live-Gig.html">Echoforms at Lexus NX Launch</a></li>
+          
+          <li><a href="/posts/2014-12-12-Bullseye.html">Bullseye's playground for Target and Psyop</a></li>
+          
+          <li><a href="/posts/2014-12-21-Utopia.html">UTOPIA Bio-informatics Toolkit</a></li>
+          
+          <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
+          
+          <li><a href="/posts/2010-02-01-decode09-recode-entry.html">Decode09 - Recode Entry</a></li>
+          
+          <li><a href="/posts/2010-02-28-nin-only-tribute.html">NIN Only Tribute</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2010-10-06-structured-light.html">Structured Light</a></li>
+          
+          <li><a href="/posts/2010-12-21-cinder-shadow-volumes.html">Cinder Shadow Volumes</a></li>
+          
+          <li><a href="/posts/2011-01-26-projection-mapping.html">Projection Mapping</a></li>
+          
+          <li><a href="/posts/2011-02-04-cinder-skinning.html">Cinder Skinning</a></li>
+          
+          <li><a href="/posts/2011-02-25-kinect-skeleton-for-skinning.html">Kinect Skeleton for Skinning</a></li>
+          
+          <li><a href="/posts/2011-03-15-depth-of-field-in-cinder.html">Depth of Field in Cinder</a></li>
+          
+          <li><a href="/posts/2011-03-18-screen-space-ambient-occlusion-again.html">Screen Space Ambient Occlusion, again</a></li>
+          
+          <li><a href="/posts/2011-04-23-quad-warp-dual-head.html">Quad Warp, Dual Head</a></li>
+          
+          <li><a href="/posts/2011-04-25-opengl-bottlenecks.html">OpenGL Bottlenecks</a></li>
+          
+          <li><a href="/posts/2011-05-08-canned-kinect.html">Canned Kinect</a></li>
+          
+          <li><a href="/posts/2011-11-02-Mongo-Fun.html">MongoDB Fun with Cinder</a></li>
+          
+          <li><a href="/posts/2012-06-15-Modern-Opengl.html">Modern OpenGL</a></li>
+          
+          <li><a href="/posts/2012-07-02-User-Interfaces-in-OpenGL.html">User Interfaces in OpenGL</a></li>
+          
+          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
+          
+          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
+          
+          <li><a href="/posts/2012-12-13-Painless-Science.html">Phantom Limb at the Science Museum</a></li>
           
         </ul>
       </div>

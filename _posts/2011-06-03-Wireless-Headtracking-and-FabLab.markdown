@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: Wireless Headtracking and FabLab
+tags: electronics
+introtext: Two posts combined! I've been busy trying to figure out a good way of doing headtracking on the cheap. Vuzix have not been too helpful when it comes to their VR920 headset. I've managed to get some working results with the Windows drivers but there is an issue when it comes to OSX and Linux. It was decided we should build our own Gyro unit. Not knowing anything about such things, I went straight in.
+strapline: Wireless, almost perfect headtracking
 ---
 
 ![XBee Gyro unit in Custom Case](http://farm3.static.flickr.com/2130/5794083824_6cc8abfb7d.jpg "XBee Gyro Unit in Custom Case")

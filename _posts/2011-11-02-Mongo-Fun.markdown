@@ -1,6 +1,9 @@
 ---
 layout: post
 title: MongoDB Fun with Cinder
+tags: opengl programming
+strapline: Learning a little NoSQL
+introtext: So I've been playing around with MongoDB for a little while now. Im certainly no expert but I get the feeling its pretty darn handy for smaller apps and webservers doing simple things or many, many small things.
 ---
 
 So I've been playing around with [MongoDB](http://www.mongodb.org) for a little while now. Im certainly no expert but I get the feeling its pretty darn handy for smaller apps and webservers doing simple things or many, many small things. At the moment, I'm using it with an art installation, written in [Cinder](http://libcinder.org/) that records the positions of various figures over time. The data is not very relational (in fact, it isn't at all) and so having a mongo setup seemed like the thing to do.
@@ -31,9 +34,9 @@ As mongo is running, you can pull up your terminal and login to your database wi
 
 You can issue commands such as:
 
-    db.<table>.count()
+    db.table.count()
 
 and 
-    db.<table>.drop()
+    db.table.drop()
 
 and many other things besides. So far, the integration works quite well providing you have the right boost libs for both Cinder and Mongo. Performance wise, I've not had chance to find out, though we will in a week or so.

@@ -2,15 +2,15 @@
 layout: post
 title: Museum of Rural Life Smart Audio Guide
 category: work
+tags: work android
 strapline: An automated recommendation system for museums
 strapimage: rurallife.jpg
 introtext: Have you ever been in a museum and wondered about what you might be missing? Things you might not have seen but want to see? Well, this is a step towards that. A system that tries to figure out other objects you might be interested in.
 ---
 
-Have you ever been in a museum and wondered about what you might be missing? Things you might not have seen but want to see? Well, this is a step towards that. A system that tries to figure out other objects you might be interested in.
-
 ![Rural Life](http://farm9.staticflickr.com/8530/8598489218_4fbd4774c8.jpg)
 
+Have you ever been in a museum and wondered about what you might be missing? Things you might not have seen but want to see? Well, this is a step towards that. A system that tries to figure out other objects you might be interested in.
 
 I was approached by Edinburgh College of Art to come up with a way of providing recommendations for museum visitors. The brief was quite wide but the timescale was extremely small. We only had around two and a half months to install, test and deploy an application. No mean feat, especially since we had quite a few ideas on what to do.
 
@@ -24,8 +24,11 @@ The approach we took was to create an audioguide that would play when a visitor 
 
 The RFID tags themselves were 13.56Mhz tags, mounted behind stickers on a 3D printed icon of the museum; a hybrid sculpture of various objects the museum displays, designed to stand out. Visitors would hold the phone near the sticker and the audio would start playing, along with written information on the object. 
 
+<div class="clearfix"></div>
+<hr/>
 <iframe width="460" height="315" src="https://www.youtube.com/embed/dHiEQRCDwgc" frameborder="0" allowfullscreen></iframe>
-
+<div class="clearfix"></div>
+<hr/>
 
 At the end of the visit, the user would hand the phone back. At this point, anonymised data is sent back to an awaiting server (AES encrypted to a Node.js / PostGreSQL setup running behind nginx for these interested). From here, we can analyse the data to make predictions. At present, the dataset is quite small but some interesting patterns have already been seen. The items scanned, the ratings these items are given, the start and end times and whether this person is a repeat visitor are all sent for analysis.
 

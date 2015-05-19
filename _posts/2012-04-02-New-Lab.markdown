@@ -1,6 +1,9 @@
 ---
 layout: post
 title: New Lab
+introtext: So I've left CSM and started section9.co.uk ltd and Im open for business with a new desk! :D
+tags: thoughts
+strapline: I have a lovely new desk!
 ---
 
 So I've left CSM and started section9.co.uk ltd and Im open for business with a new desk! :D

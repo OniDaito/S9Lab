@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Forefist Punch
+tags: thoughts
+introtext: I've caught up with a friend of mine over at FiniteAttentionSpan and the subject of Taekwondo came up. There are some quite evocative images and lessons learnt there, that can be applied to other situations in life. I trained for about 6 years and it's been a rocky ride. Now I'm older, I look at the lessons learnt, the tenets and even my black belt thesis with different eyes. 
+strapline: What is the programming equivalent of a kata?
+
 ---
 
 I've caught up with a friend of mine over at [FiniteAttentionSpan](http://finiteattentionspan.wordpress.com/) and the subject of Taekwondo came up. There are some quite evocative images and lessons learnt there, that can be applied to other situations in life. I trained for about 6 years and it's been a rocky ride. Now I'm older, I look at the lessons learnt, the tenets and even my black belt thesis with different eyes. 

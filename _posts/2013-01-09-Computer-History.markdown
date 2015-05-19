@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Computing History Records and Preservation 
-introtext:
+tags: thoughts holiday
+strapline: How do you record all this computing stuff and how well are we doing?
+introtext: Its the new year and christmas is over. Quite often, people go back to visit their parents and family at Christmas and this year was no exception. This prompted a bit of a trip down memory lane and on this trip, I discovered something amusing; an old VHS Tape of "The Net" - A BBC2 Program from the nineties.
 ---
 
 Its the new year and christmas is over. Quite often, people go back to visit
@@ -10,7 +12,11 @@ prompted a bit of a trip down memory lane and on this trip, I discovered
 something amusing; an old VHS Tape of "The Net" - A BBC2 Program from the
 nineties.
 
+<div class="clearfix"></div>
+<hr />
 <iframe width="460" height="360" src="https://www.youtube.com/embed/slkDBB6RSYQ?rel=0&amp;start=818" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr />
 
 Watching all the episodes I realised that many of the issues in computing we
 are still facing. One of these things is the recording of our digital heritage.

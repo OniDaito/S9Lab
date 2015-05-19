@@ -1,11 +1,15 @@
 --- 
 layout: post
 title: Cinder Shadow Volumes
+tags: opengl
+introtext: I was asked to come up with some shadows in Openframeworks on a tight timescale.... I kinda failed on that one, having gone down the wrong route of shadow maps (I'd previously used VSM for my first NIN project). Looking it over, it seems that shadow volumes, or some hybrid approach with both is probably best. I've spent far too long on this but so far, I've managed to get a reasonable approximation of depth pass shadow volumes going.
+strapline: Making pretty, realtime shadows
 ---
 
 
 ![shadows](http://4.bp.blogspot.com/_WNXP2eEZSdg/TRDT5e0crCI/AAAAAAAAAw8/iYnYGi-neIE/s1600/shadow1.jpg)
 
+<div class="clearfix"></div>
 
 I was asked to come up with some shadows in Openframeworks on a tight timescale.... I kinda failed on that one, having gone down the wrong route of shadow maps (I'd previously used VSM for my first NIN project). Looking it over, it seems that shadow volumes, or some hybrid approach with both is probably best. I've spent far too long on this but so far, I've managed to get a reasonable approximation of depth pass shadow volumes going.
 

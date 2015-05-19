@@ -1,12 +1,18 @@
 --- 
 layout: post
 title: TouchTable DJ Decks
+tags: electronics opengl computervision hacking
+strapline: Lets make a touch turntable!
+introtext: Although we didn't get this quite finished (I made the mistake of adding multiple touches too late in the game) we did get it sorted by the next hackspace tuesday meeting. Nevertheless, I soldiered on and it finally works.....ish
 ---
 
+<div class="clearfix"></div>
+<hr />
 <iframe src="https://player.vimeo.com/video/14897790?portrait=0" width="460" height="320" frameborder="0"></iframe>
+<div class="clearfix"></div>
+<hr />
 
-
-Although we didn't get this quite finished (I made the mistake of adding multiple touches too late in the game) we did get it sorted by the next hackspace tuesday meeting. Nevertheless, I soldiered on and it finally works.....ish<
+Although we didn't get this quite finished (I made the mistake of adding multiple touches too late in the game) we did get it sorted by the next hackspace tuesday meeting. Nevertheless, I soldiered on and it finally works.....ish
 
 
 The table works using the Frustrated Total Internal Reflection technique. Essentially, infrared is emitted into the perspex sheet. Where your finger touches, the infrared leaks out which is detected by a camera with a correct filter. Using <a href="http://www.google.com/url?sa=t&source=web&cd=2&ved=0CBcQFjAB&url=http%3A%2F%2Fnuicode.com%2Fprojects%2Ftbeta&ei=lc6MTI6JIoqqngfk89iOCw&usg=AFQjCNG78NLnV_-hOPAui4VEBRNrBq2T0Q&sig2=yT9M3nNucGKVPYDpo9Gr5A">Community Core Vision</a> (which uses OpenCV and Openframeworks), one can change these bright spots into touches.

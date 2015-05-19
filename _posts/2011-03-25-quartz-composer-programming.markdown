@@ -1,6 +1,10 @@
 --- 
 layout: post
 title: Quartz Composer Programming
+tags: programming
+introtext: I've been asked by a client to work on a set of patches for Quartz Composer. I was quite chuffed really because it meant playing with Shadows and other suchs cool things.
+strapline: Quartz Composer is odd!
+
 ---
 
 ![quartz](http://4.bp.blogspot.com/-FoRqxMeqWLY/TYys6hW_pXI/AAAAAAAAAyU/mv9YXumOqxo/s320/qc.png)
@@ -36,4 +40,4 @@ So, is that it then? No, there is one last thing. You need to be careful with th
 
     [executeSubpatches:time arguments:arguments];
 
-This executes your subpatches for you which works fine but remember that you have no control on state. You should, as a best practice, push and pop all you need to and nothing else. So inside my FBO code  I don't include a clear statement because there is another patch that does that for me.</div>
+This executes your subpatches for you which works fine but remember that you have no control on state. You should, as a best practice, push and pop all you need to and nothing else. So inside my FBO code  I don't include a clear statement because there is another patch that does that for me.

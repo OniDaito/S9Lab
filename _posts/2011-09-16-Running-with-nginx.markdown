@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Running with Nginx
+tags: server 
+introtext: So I've decided to play with Nginx on my server, leaving Apache behind. I must admit, I've had a lot of fun with it. It appears to be a good front end for funneling web requests to other services.
+strapline: Sorting out my webserver with some lovely nginx.
 ---
-
 
 So I've decided to play with [Nginx](http://wiki.nginx.org/) on my server, leaving Apache behind. I must admit, I've had a lot of fun with it. It appears to be a good front end for funneling web requests to other services. At the moment, I have various things running on my server such as:
 

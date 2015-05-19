@@ -2,6 +2,7 @@
 layout: post
 title: UTOPIA Bio-informatics Toolkit
 category: work
+tags: work university
 strapline: Rebuilding the UTOPIA Toolkit with the University of Manchester
 strapimage: utopia.jpg
 introtext: UTOPIA is a collection of two programs and set of plugins written in Python. Cinema is a sequence alignment tool and Ambrosia is a 3D visualiation program. The two are designed to work together; one can visualise a particular section of a protein and analyze the 3D structure of certain elements. Both programs can load python plugins to import different sequences and alignments, allowing researchers to work with different online databases (of which there are many I've found).

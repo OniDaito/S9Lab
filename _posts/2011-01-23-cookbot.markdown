@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: Cookbot
+tags: electronics food
+introtext: No, don't misread that (although a colleague of mine is working on something more 18 rated). This small bot is the beginning of (hopefully) even tastier meats. Its a hacked slow cooker that can hold a temperature reliably for a long period of time.
+strapline: Lets make a sous-vide cooker!
 ---
 
 ![cookbot](http://1.bp.blogspot.com/_WNXP2eEZSdg/TTx2cA6WeLI/AAAAAAAAAxI/K71wynEncz0/s320/DSC_5434.jpg)

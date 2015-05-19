@@ -2,12 +2,15 @@
 layout: post
 title: iPhone RFID Reader
 strapline: A small project to hack around with the iPhone and get it to read RFID tags.
-
+introtext: The idea behind this project is to see what the iPhone's serial is capable of and to try and have a little fun with RFID along the way. This reader works with the low frequency (125Khz) tags but I have a half working version for MiFARE Hi-Frequency as well.
+tags: electronics hacking
 ---
 
-
+<div class="clearfix"></div>
+<hr/>
 <iframe src="https://player.vimeo.com/video/10133832" width="460" height="280" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
+<div class="clearfix"></div>
+<hr/>
 
 The idea behind this project is to see what the iPhone's serial is capable of and to try and have a little fun with RFID along the way. This reader works with the low frequency (125Khz) tags but I have a half working version for MiFARE Hi-Frequency as well.
 
@@ -34,7 +37,6 @@ I should point out that I don't work for Sparkfun.
 ![rfid](http://4.bp.blogspot.com/_WNXP2eEZSdg/S5uZOisQ0MI/AAAAAAAAAoA/NwIthN0PcYY/s320/IMG_0194.JPG)
 
 
-
 The first stage is the wiring of the ID-12. You should attach it to the breakout board then attach a series of IC Sockets to the board so you can easily add and remove your wires later on. Wiring up the ID-12 is quite easy. This particular unit does need to be set to ASCII  output however. To do this you need to solder:
 <ul>  
 <li>A Red wire from 5V (11) to /RST (2)</li>
@@ -55,14 +57,7 @@ If this is confusing, there is an excellent write-up <a href="http://www.instruc
 
 The next step is to wire up the Logic Level Convertor. This is needed because the iPhone works at TTL3.3V whereas the ID12 runs at TTL5V. We need  to step up and down. This little board is quite easy to use. The Schematic and Instructions can be found <a href="http://www.sparkfun.com/datasheets/BreakoutBoards/Level-Converter-v10.pdf">in this PDF</a>. The key is to Solder the ID12's 5V, GRND and signal lines to the first channel on the High Voltage Side of the Board. 
 
-
-![rfid](http://2.bp.blogspot.com/_WNXP2eEZSdg/S5uZN4lZ3nI/AAAAAAAAAnw/XEEzpWJfgcA/s1600-h/IMG_0192.JPG)
-
-
 At this point, you can wire in the switch and the battery box into the High Voltage side of the circuit. Wire the positive of the battery into the switch and out of the switch into the logic board and the ID12. Wire the battery's ground wire into the GND of the logic level board and the ID12.
-
-
-![rfid](http://4.bp.blogspot.com/_WNXP2eEZSdg/S5uZOyAjYZI/AAAAAAAAAoI/iDgYkTy65Yo/s1600-h/IMG_0195.JPG)
 
 
 The next step is to work on the iPhone's connection. You should make yourself familiar with the connector. If you use a breakout board, this is quite easy. However, if you are using  an iPhone cable, things are a little trickier. Firstly, you should look at <a href="http://pinouts.ru/PortableDevices/ipod_pinout.shtml">Pinout.ru's iPod Guide</a> that lists the ports we need. We are aiming to use the iPhone's built in serial connection. The pins we need are:
@@ -75,10 +70,6 @@ The next step is to work on the iPhone's connection. You should make yourself fa
 
 We could use pin 12 for TX as well but the ID-12 doesn't need data sent to it and I have had significant problems in sending data FROM the iPhone. If anyone knows why this is so, do let me know. Regardless, the iPhone only needs to receive and this is well because these two pins are very close together.
 
-
-![rfid](http://2.bp.blogspot.com/_WNXP2eEZSdg/S5uhRnr66CI/AAAAAAAAAoY/_WuR7bLHYj8/s1600-h/IMG_0199.JPG)
-
-
 First, either solder your wires into the breakout board or open up the iPhone cable. To open a genuine iPhone cable, you need to run a thin blade around the inside of the plastic case.  A small amount of force should release the clips on either side and then pulling on the metal plug with a pair of pliers should do the job. Be careful at this stage though as its  VERY HANDY TO KEEP THE PLUG INTACT. 
 
 Taking apart the plug should reveal 4 cables. A genuine iPhone cable will have a sheath and small gold connectors. Cheaper cables will be glued in place and this can wreak the project. You dont want glue inside the unused sockets and the less force you need to remove the cables, the better.
@@ -86,7 +77,6 @@ Taking apart the plug should reveal 4 cables. A genuine iPhone cable will have a
 Removing the small plugs requires a lot of force and yet, you MUST be as delicate as possible. The connectors are attached to the wires with a very small amount of solder. If the connectors snap they cannot be used and if the solder snaps, you will need to solder them again and if you use too much, the plugs will not fit back into their sockets. Also, you are limited on how many times you can place the plugs as the sockets will wear out. I personally went through 5 cables with this method; two of them were genuine. The geunine ones wear much less.
 
 
-![rfid](http://3.bp.blogspot.com/_WNXP2eEZSdg/S5uhR6vCU3I/AAAAAAAAAog/X_yiQNPtu_o/s1600-h/IMG_0200.JPG)
 
 Place the black wire into the ground. You can decide which colour goes into which socket. I chose green for Pin12, white for Pin13 and Red for Pin18. Remember which is which!
 
@@ -116,9 +106,4 @@ works quite well for testing if you comment out the sending code.
 So now you have the ability to read RFID Tags. But you need some tags to read. For me, I quite like the idea of home automation and similar. There was an odd trend of implanting glass RFID tags into the flesh near your thumb but why bother with that when you can simply make an RFID earring? That way, you can remove it if need be or swap out the actual tag.
 
 
-![rfid](http://3.bp.blogspot.com/_WNXP2eEZSdg/S5uZV3xK4jI/AAAAAAAAAoQ/Z5Be4iI0x4s/s1600-h/IMG_0196.JPG)
-
-
-
-![rfid](http://4.bp.blogspot.com/_WNXP2eEZSdg/S5uZNwVPgyI/AAAAAAAAAno/GvzTy-02ZS8/s1600-h/earing-in.jpg)
 

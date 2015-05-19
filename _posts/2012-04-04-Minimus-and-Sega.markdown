@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Minimus and Sega
+tags: electronics present
+introtext: My sister has been a big fan of retro gaming for some time and for her birthday I decided to make a USB convertor for the sega megadrive pad in order to play [MAME](http://mamedev.org) the way it's meant to be played.
+strapline: Using the Minimus dev board to link a megadrive pad to a mac.
 ---
-
-My sister has been a big fan of retro gaming for some time and for her birthday I decided to make a USB convertor for the sega megadrive pad in order to play [MAME](http://mamedev.org) the way it's meant to be played.
-
 
 ![minimus](http://farm8.staticflickr.com/7179/7029645643_83b6a3ec75.jpg)
 
+My sister has been a big fan of retro gaming for some time and for her birthday I decided to make a USB convertor for the sega megadrive pad in order to play [MAME](http://mamedev.org) the way it's meant to be played.
 
 Now there were a few ways I could go about this. I saw a [blog post from dangerous prototypes](http://dangerousprototypes.com/forum/viewtopic.php?f=56&t=2971) that talked about using a PIC. Now I thought this would be a great time to test out the [Bus Pirate](http://dangerousprototypes.com/bus-pirate-manual/) (which is a great little toy) and learn how to program something a little different.
 

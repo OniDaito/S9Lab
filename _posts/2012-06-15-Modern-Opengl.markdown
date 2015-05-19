@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Modern OpenGL
+tags: opengl thoughts
+strapline: Some thoughts and code on modern OpenGL
+introtext: I've spent the last couple of weeks working on some code for The University of Leeds. Rather than actual research, this time has been spent on learning and adapting my code to be more compliant with OpenGL. I've done away with OpenFrameworks. 
 ---
-
 
 I've spent the last couple of weeks working on some code for The University of Leeds. Rather than actual research, this time has been spent on learning and adapting my code to be more compliant with OpenGL. I've done away with OpenFrameworks. It's now a mixture of [PCL](http://pointclouds.org/), [OpenCV](opencv.willowgarage.com), [Boost](http://www.boost.org/), [GLM](http://glm.g-truc.net/) and [QT](http://qt.nokia.com/products/). I'm not so happy about the last one but it works at least. I've effectively, almost recreated Cinder under Linux (well, kind of).
 

@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Spying and starting services with OSX
+introtext: Unbelievable! It's been almost a month since my last blog post which is, quite frankly, terrible. What have I been doing?
+tags: osx hacking
+strapline: How to spy and take control of many Macs for fun and profit!
 ---
-
 
 Unbelievable! It's been almost a month since my last blog post which is, quite frankly, terrible. What have I been doing?
 

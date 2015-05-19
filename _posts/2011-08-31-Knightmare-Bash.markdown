@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Knightmare Bash
+introtext: This little piece of bash script is the geekiest and therfore *coolest* thing I've written for the past few weeks. But it's had me thinking a little about programming, life and the universe
+tags: thoughts programming
+strapline: Spellcasting....
 ---
 
 So I came up with this today:

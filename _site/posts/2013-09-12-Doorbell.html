@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -306,13 +318,23 @@
 <p>We had a problem with several wireless doorbells; they interfered with many others around the area, including some electronic car alarms. At one point our doorbell decided to play sounds that were not even programmed into it in the first place, at least as far as we could tell. In the end, we decided we should just make our own.</p>
 <p>I started out using the radio breakout boards from <a href="https://www.sparkfun.com/products/10533">Sparkfun</a>. The noise on these boards was terrible however and I decided that another approach was needed. I spent a bit of time trying to filter the signals but it seemed more effort than it was worth.</p>
 <p>My friend, Charles over at <a href="http://www.electriclaboratory.com/">Electric Laboratory</a> came up with the idea that I should use the <a href="http://wiki-archive.emfcamp.org/2012/articles/b/a/d/Badge.html">EMF Tilda Badge</a> instead, as they use the <a href="http://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRF24L01">nRF24L01</a> chip. As the plus version of this chip had just been released, the non-plus versions were quite cheap; Charles had a load he wasn't using. I figured this would be a good use for the badge that had laid dormant in the months since EMF.</p>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/JYVXKp-iOjE" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
 
+<p><hr />
+<iframe width="420" height="315" src="https://www.youtube.com/embed/JYVXKp-iOjE" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr /></p>
 <p>After working with two EMF badges, I'd managed to get the interface working. There is a pretty good radio library for the Arduino called the <a href="http://playground.arduino.cc/InterfacingWithHardware/Nrf24L01">Mirf</a> library, which you can find at the arduino playground. This pretty much takes care of the arduino end of things on the badge, however the Tilda is not without it's problems. Make sure that you hit reset just after you hit 'upload' in the arduino software, otherwise it wont write the program to the chip.</p>
 <p>With communication working between two badges, the next step is to make some kind of switch to go outside the flat. This needs to run for a long time, drawing very little power. I needed some kind of embedded device. I like to use AVR chips generally as they are quite simple to program with a buspirate under Linux or OSX. I looked around and found out that the <a href="http://www.atmel.com/devices/attiny85.aspx">ATTiny85</a> would do the job with a few tweaks. I found the old casing for our previous doorbell and decided the thing to do would be to mount the new chip inside it so people would know intuitively that it was a doorbell.</p>
 <p><img alt="Doorbell Button" src="http://farm8.staticflickr.com/7452/9731190896_9603b0e085.jpg" /></p>
 <p>Programming the ATTiny85 was a bit of a challenge. Thankfully there are two really good sites <a href="http://gizmosnack.blogspot.co.uk/2013/04/tutorial-nrf24l01-and-avr.html">here</a> and <a href="http://www.insidegadgets.com/2012/08/22/using-the-nrf24l01-wireless-module/">also here</a>. Both have really good tutorials on how to use the nRF24l01 with various chips. I ended up using the code from the second page, modified to send just one packet as fast as possible. The problem I had initially was very odd. One press of the button for a second would work, but then one would have to hold the button down for another 3 seconds for the doorbell to work a second time. The next attempt would only require a second, and so on, the pattern repeated. In the end, I stripped out as many delay functions as I could and the button now seems to work if you hold it down for about half a second. A quick tap wont cut it but a good press seems fine.</p>
-<iframe width="420" height="315" src="https://www.youtube.com/embed/wz259k78GLk" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+
+<p><hr />
+<iframe width="420" height="315" src="https://www.youtube.com/embed/wz259k78GLk" frameborder="0" allowfullscreen></iframe></p>
+<div class="clearfix"></div>
+
+<hr />
 
 <p>The excitement when the device finally sparked into life might have seemed excessive to onlookers but it felt so good to finally have something working that required only small amounts of power and could talk to something over distance with some intelligence. The final problem remained however. It needed to make a noise. I have almost no idea about audio electronics. My first thought was to use some powered speakers with the raspberrypi we had lying around but the girlfriend was not so impressed with the extra complications this was presenting. Another solution was needed.</p>
 <p>Turns out the arduino can play square wave tones through a speaker just fine. The only problem is that the current through the digital pins is only around 30mA. Not really very much at all. I figured we needed an amplifier, but again, I've never used an op-amp in my life and can just about figure out an amplifier circuit. However, these folks over at the <a href="http://playground.arduino.cc/">Arduino Playground</a> mentioned that square wave amplification can be performed with a transitor or two and nothing else. </p>
@@ -322,6 +344,68 @@
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-03-13-iphone-rfid-reader.html">iPhone RFID Reader</a></li>
+          
+          <li><a href="/posts/2010-06-08-spycam-timelapse-part1.html">Spycam Timelapse</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2010-09-19-how-leaky-is-your-country.html">How Leaky is your Country?</a></li>
+          
+          <li><a href="/posts/2011-02-20-motorcycle-computer.html">Motorcycle Computer</a></li>
+          
+          <li><a href="/posts/2011-06-08-iPhone-Macro-Lens.html">iPhone Macro Lens Hack</a></li>
+          
+          <li><a href="/posts/2011-07-20-USB-Eartunnel.html">USB Eartunnel</a></li>
+          
+          <li><a href="/posts/2011-10-05-Defeating-Firewalls.html">Defeating Firewalls</a></li>
+          
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
+          <li><a href="/posts/2012-01-13-Mosaic.html">Mosaic</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-03-10-Spying.html">Spying and starting services with OSX</a></li>
+          
+          <li><a href="/posts/2013-04-28-Hackspace-Burger-Part1.html">Hackspace Burger Part 1</a></li>
+          
+          <li><a href="/posts/2013-05-10-Hackspace-Burger-Part2.html">Hackspace Burger Part 2</a></li>
+          
+          <li><a href="/posts/2013-05-21-Hackspace-burger-finale.html">Hackspace Burger Finale</a></li>
+          
+          <li><a href="/posts/2013-09-30-Necklace.html">LED Pendant</a></li>
+          
+          <li><a href="/posts/2014-09-06-900-Pixel-Screen.html">900 RGB LED Screen</a></li>
+          
+          <li><a href="/posts/2014-09-06-Nook-Patient-Report-Forms.html">Nook Patient Report Forms</a></li>
+          
+          <li><a href="/posts/2010-06-17-eagle-and-arduino-for-teh-win.html">EAGLE and Arduino</a></li>
+          
+          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
+          
+          <li><a href="/posts/2011-01-23-cookbot.html">Cookbot</a></li>
+          
+          <li><a href="/posts/2011-03-03-solar-charging-for-the-iphone.html">Solar Charging for the iPhone</a></li>
+          
+          <li><a href="/posts/2011-06-03-Wireless-Headtracking-and-FabLab.html">Wireless Headtracking and FabLab</a></li>
+          
+          <li><a href="/posts/2011-10-19-Solar-Minty-Mk2.html">Solar Minty Boost Mark2</a></li>
+          
+          <li><a href="/posts/2012-01-04-EL-Tape.html">EL-Tape Mesh Top</a></li>
+          
+          <li><a href="/posts/2012-04-04-Minimus-and-Sega.html">Minimus and Sega</a></li>
+          
+          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
+          
+          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
+          
+          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
+          
+          <li><a href="/posts/2012-10-16-Raspberry-Pi.html">The Obligatory RaspberryPi Post</a></li>
+          
+          <li><a href="/posts/2013-03-04-Timelapse.html">Linear Rail Time Lapse</a></li>
           
         </ul>
       </div>

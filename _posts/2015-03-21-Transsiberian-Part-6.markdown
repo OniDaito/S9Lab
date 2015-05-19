@@ -18,6 +18,7 @@ Yekaterinburg is quite special because it's the first stop in Asia. Past the Ura
 
 The journey itself passes reasonably quickly. We have lunch in the dining car which is straight out of the eighties yet again! It's all plastic and lime green pleather. The food isn't too bad considering it's on a train but be prepared to like grease and cheese. It's not too expensive and you can get a decent beer as well. I notice a few French tourists sitting in our car but the majority are Russians. Our drunken friend is given a severe telling off by the provodnitsa and sleeps off his hangover for the rest of the trip. I get on with some coding whilst Katie reads more about the history of Russia.
 
+<div class="clearfix"></div>
 ![Chess Players](https://farm9.staticflickr.com/8697/16271530114_4ed80f268e.jpg)
 
 We pull into Yekaterinburg at about 6pm local time. The hotel is a 3 star, ex soviet place just opposite the station. The usual dance of chargers and showers ensues. We have sushi and noodles for dinner in the restaurant next to the hotel. Vegetables and rice seem like just the thing for us right now. An evening of sorting out all the technology ensues. We have our VPN back but Katie's iPad is suffering a little bit; it's screen is a bit purple. Apparently this is a known problem and requires precise bashing. Typical! Apple products just can't handle backpacking! My Thinkpad however, is kicking ass!
@@ -30,6 +31,8 @@ The guidebook says that Yekaterinburg is drab on the outside but there's a lot g
 
 We visit the Photography museum which has a photography studio below it that has existed in the same building since it was started a hundred or more years ago! It's a lovely little place with some amazing photos of Yekaterinburg over the years. Not so long ago, it looked just like a town in the wild west of America; wooden buildings with raised porches and verandas. There are photos dating from World War 2 that seem to describe either a unit from here or patrolling near here. World War 2 is something the Russians really haven't forgotten and it's easy to understand why. The museum has some excellent aerial photos too, showing off modern Yekaterinburg and it's modern, high-rise blocks.
 
+<div class="clearfix"></div>
+
 ![Katie Keyboard](https://farm9.staticflickr.com/8705/16903896795_eed0f4f7ce.jpg)
 
 Further down the central canal is a strange monument; a Qwerty Keyboard made out of stones, set into the ground. There's even a wikipedia entry for this particular art! Apparently locals are a bit mystified as to why foreigners like it, but like it I do. We continue on to a very western looking mall with a very western feeling supermarket in order to stock up with food for the longest, single train journey we will take. From there we head out back into the centre, passing the old water town and damn that used to power the industry here, and is now an attraction.
@@ -39,6 +42,8 @@ Further up we enter the Museum of Literature. It's housed inside a beautiful woo
 I'm a bit in love with a cafe chain called *Stolle*. It sells *Saxon style* pies. These are basically tasty, tasty pies! Proper bottoms and everything! Two pies and coffees is about £6. Mine has rabbit in it whilst Katie's is vegetarian (we've had surprisingly few problems in that regard). We visited this cafe in St Petersburg too and it's quickly becoming my default choice. 
 
 We walk up to an embankment overlooking the Church on the Blood. Our final challenge here is to photograph the partial solar eclipse that is happening later today. The church is a memorial to the Romanovs - the last Tsars - who were murdered here by the Bolsheviks (Yekaterinburg has seen some important events!). I've never photographed the sun before but we are in totally the right spot for it. Through the viewfinder I can see the moon making a crescent out of the Sun, just over the omnipresent onion domes that have come to represent Russia in my mind. I just hope they come out!
+
+<div class="clearfix"></div>
 
 ![Yekaterinburg Station](https://farm8.staticflickr.com/7623/16686899027_e6ed146e95.jpg)
 

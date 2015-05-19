@@ -138,9 +138,6 @@
                 
                 
                 
-                <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-                
-                
                 
                 
                 
@@ -264,6 +261,21 @@
                 <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+                
+                
                 <li class="divider"></li>
                 <li><a href="/work.html">...and more!</a></li>
 
@@ -302,20 +314,92 @@
       <div class="col-md-9">
 
         
-<p>The Coins and Medals Department at the British Museum have a problem. They need to keep records of their collection. This involves scanning each and every coin, cropping the images, rotating them, stitching the two sides together and processing the filename. You can quickly imagine how labour intensive and tedious this job can be.</p>
 <p><img alt="Greek Coin" src="http://farm9.staticflickr.com/8334/8357960664_2ec6f31cec.jpg" /></p>
+<p>The Coins and Medals Department at the British Museum have a problem. They need to keep records of their collection. This involves scanning each and every coin, cropping the images, rotating them, stitching the two sides together and processing the filename. You can quickly imagine how labour intensive and tedious this job can be.</p>
 <p>The challenge was to speed-up this process so it became at least bareable. Rather than use cameras, the BM tends to use a varying array of scanners. Some of these are high grade and the others not. The results vary. Sometimes scanners pickup dust and scratches. Othertimes, the edge of the coin is out of focus. Some coins, such as the silver Greek coin tend to reflect a little too much.</p>
 <p>One solution is to scan a coin with the lid of scanner left up. On some scanners, this produces a sharp edge, with the remaining area black. This makes computer vision easy but the depth of the coin is lost. Losing data like this is not acceptable, so another solution needed to be found</p>
+<div class="clearfix"></div>
+
 <p><img alt="Scanner with Cloche" src="http://farm9.staticflickr.com/8217/8269948452_689fe76d87.jpg" /></p>
 <p>Katie and I tried a variety of different cloches with lights. Depending on the material and lights, different effects were achieved. In order to extract a coin from a background, one needs to have as distinct an edge as possible. The best result, we found, was a cloche made from frosted perspex. This cloche had two sides, allowing light to escape around the edges but with a lamp held above, provided a diffuse light source that minimised shadows and provided reasonable edges.</p>
+<div class="clearfix"></div>
+
 <p><img alt="Missed Coin" src="http://farm9.staticflickr.com/8490/8267197054_2f13ff0bb9.jpg" /></p>
 <p>The software proveded to be rather tricky. Firstly, how do you package a program for Windows XP that can be run straight from the desktop with no drivers? The answer? Package a python program using <a href="http://www.pyinstaller.org/">pyinstaller</a>. This packages up PyOpenCV rather nicely. I decided to go with pyGTK for the user-interface - simple and effective. </p>
-<p>The technique I settled on basically involved extracting edges and performing a series of morphological operations on a reduced size of image. From there, one can extract the largest contour and find the coin. The technique works fairly well though does require good lighting conditions. The longest operation is, in-fact, the final alpha blending of the extracted coin with its background. The edges are ever so slightly alpha blended to give a smoother, anti-aliased edge which works quite well, without losing data.</p>
+<div class="clearfix"></div>
+
 <p><img alt="More Coins" src="http://farm9.staticflickr.com/8046/8356888267_4d242e54e1.jpg" /></p>
+<p>The technique I settled on basically involved extracting edges and performing a series of morphological operations on a reduced size of image. From there, one can extract the largest contour and find the coin. The technique works fairly well though does require good lighting conditions. The longest operation is, in-fact, the final alpha blending of the extracted coin with its background. The edges are ever so slightly alpha blended to give a smoother, anti-aliased edge which works quite well, without losing data.</p>
       </div>
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
+          
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
+          
+          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
+          
+          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
+          
+          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
+          
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
+          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
+          
+          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
+          
+          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
+          
+          <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
+          
+          <li><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">Museum of Rural Life Smart Audio Guide</a></li>
+          
+          <li><a href="/posts/2013-07-12-BurberryKisses.html">Burberry Kisses, with Google and Grow Interactive</a></li>
+          
+          <li><a href="/posts/2013-08-06-Photorealistic-Hands.html">Photo-realistic hands</a></li>
+          
+          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
+          
+          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
+          
+          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
+          
+          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
+          
+          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
+          
+          <li><a href="/posts/2014-05-28-Equatorie.html">The Equatorie</a></li>
+          
+          <li><a href="/posts/2014-07-28-Kaleidoscope.html">Kaleidoscope for Lexus</a></li>
+          
+          <li><a href="/posts/2014-09-26-Echo-Forms-Live-Gig.html">Echoforms at Lexus NX Launch</a></li>
+          
+          <li><a href="/posts/2014-12-12-Bullseye.html">Bullseye's playground for Target and Psyop</a></li>
+          
+          <li><a href="/posts/2014-12-21-Utopia.html">UTOPIA Bio-informatics Toolkit</a></li>
+          
+          <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2010-10-06-structured-light.html">Structured Light</a></li>
+          
+          <li><a href="/posts/2011-05-08-canned-kinect.html">Canned Kinect</a></li>
+          
+          <li><a href="/posts/2011-07-28-Skin.html">Skin</a></li>
+          
+          <li><a href="/posts/2011-11-30-Numismatic.html">Numismatic Fun</a></li>
+          
+          <li><a href="/posts/2012-05-08-StereoVision.html">Stereo Vision</a></li>
+          
+          <li><a href="/posts/2012-05-18-Coin-Vision.html">Coin Vision</a></li>
+          
+          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
           
         </ul>
       </div>

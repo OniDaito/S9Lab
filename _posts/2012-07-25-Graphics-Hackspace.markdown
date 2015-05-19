@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Graphics Hackspace
+tags: thoughts
+strapline: So I'm starting a meetup night type thing.
+introtext: There has been a fair bit of interest at the London Hackspace regarding OpenGL and computer graphics in general. A while back, I ran a workshop on Python and it seemed quite succesful. Some people wondered about having a graphics workshop as well and I figured that might be no bad thing.
 ---
-
-
-There has been a fair bit of interest at the [London Hackspace]() regarding OpenGL and computer graphics in general. A while back, I ran a workshop on Python and it seemed quite succesful. Some people wondered about having a graphics workshop as well and I figured that might be no bad thing.
-
 
 ![Graphics Hackspace](http://farm8.staticflickr.com/7247/7602552370_661e97cec0.jpg)
 
+There has been a fair bit of interest at the [London Hackspace](http://london.hackspace.org.uk) regarding OpenGL and computer graphics in general. A while back, I ran a workshop on Python and it seemed quite succesful. Some people wondered about having a graphics workshop as well and I figured that might be no bad thing.
 
 Graphic Hackspace is basically, like the music hackspace. The plan is to have some talks and possibly a workshop afterwards. Im hoping the workshop will be on the basics of OpenGL and how to get something pretty up and running.
 

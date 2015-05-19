@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Node and Mongo
+strapline: It's all about the sexy new technologies!
+introtext: Recently, I've been working with a good client on a project that requires network communication between two sites and provision for a history feature.
+tags: programming
 ---
 
 Recently, I've been working with a good client on a project that requires network communication between two sites and provision for a history feature.One of the collaborators is a fan of [mongodb](http://www.mongodb.org/) and [nodejs](http://nodejs.org/) - two rather nifty projects that I've been meaning to work with for a while. I had no idea but dived in anyway.

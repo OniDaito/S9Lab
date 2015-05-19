@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: Solar Charging for the iPhone
+tags: electronics
+introtext: When you are out and about, camping on on the bike and what not, its a pain when your iPhone dies. There was the Minty Boost which was a great invention by Adafruit Industries
+strapline: Lets try solar power!
 ---
 
 

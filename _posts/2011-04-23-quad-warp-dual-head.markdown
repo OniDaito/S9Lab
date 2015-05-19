@@ -1,6 +1,9 @@
 --- 
 layout: post
 title: Quad Warp, Dual Head
+introtext: I'm wokring on many things at the moment and this is one of them. As 'Only' is going to be up at Digit this year at the Lowry im looking to get some ideas on how best to get two sides of the piece to work best. 
+tags: opengl programming
+strapline: Getting dual screens working for an installation
 ---
 
 ![Quad Warp](http://2.bp.blogspot.com/-XEBSmLA0nLI/TbL-KdnM_FI/AAAAAAAAAy0/CCBZWSEhGxM/s320/quad.png)
