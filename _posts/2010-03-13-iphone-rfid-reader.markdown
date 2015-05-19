@@ -1,6 +1,8 @@
 --- 
 layout: post
 title: iPhone RFID Reader
+strapline: A small project to hack around with the iPhone and get it to read RFID tags.
+
 ---
 
 
