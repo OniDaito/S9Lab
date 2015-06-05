@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Projection Mapping</title>
+    <title>Scientific Programming at Queen Mary</title>
     <meta name="author" content="Benjamin Blundell" />
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -308,9 +308,9 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h2>Projection Mapping</h2>
-        <h3>26-01-2011</h3>
-        <p>Projecting onto things in a smart way!</p>
+        <h2>Scientific Programming at Queen Mary</h2>
+        <h3>05-06-2015</h3>
+        <p>Or in other-words, messing around with OpenMPI, Intel compilers and large clusters.</p>
       </div>
     </div>
 
@@ -318,77 +318,89 @@
       <div class="col-md-9">
 
         
+<p>For the last six months, I've been working away at Queen Mary University of London. There was a large gap for the Transsiberian, but aside from that I've had a lot to learn in a short time. Starting a new job at a large organisation always involves a bit of ramping up. The first month or so, there was the usual 'getting to know the place', but now I'm right in the thick of it.</p>
+<p>Basically, my job can be summed up by this image!</p>
+<p><img alt="Enthusiastic Penguin" src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fweknowmemes.com%2Fwp-content%2Fuploads%2F2014%2F02%2Fenthusiastic-penguin-meme.jpg&amp;f=1" /></p>
 <div class="clearfix"></div>
 
-<p><hr />
-<iframe title="YouTube video player" class="youtube-player" type="text/html" width="460" height="320" src="https://www.youtube.com/embed/uES0HfGAqCc" frameborder="0" allowFullScreen></iframe>
-<div class="clearfix"></div>
-<hr /></p>
-<p>I've been wanting to play a lot with VDMX and Projection mapping. Memo over at MSA Visuals has <a href="http://memo.tv/projection_mapping_quad_warping_with_quartz_composer_vdmx">a rather good setup</a> which I decided to steal.</p>
-<p>So generally, it appears that you need to mesh together quite a few things. Memo's Quartz Composer setup appears to have a few extra hooks that VDMX can get hold of. Im not sure what these are. Also, it took me aaaaaages to figure out how to get shaders to work in Quartz Composer as it's not very intuitive. Pull out the inspector on a GLSL patch and select the second tab. That gives you the vertex and pixel shaders. We can edit and play around with that there.</p>
-<p>VDMX is a bit of a bitch as well, but it has soooo many cool features. Loading up the quartz composer file, you can then inspect this with the media inspector. Select what you want to warp and away you go. The result? Chairman Jonty projected onto a box! Awesome!</p>
+<p>My job is to help out wherever programming is needed, in and around the university. I'm the only one here doing that, though my boss chips in with programming bits here and there. So far I've had to look at:</p>
+<ul>
+<li><a href="http://www.open-mpi.org">OpenMPI</a> and MPI in general.</li>
+<li><a href="http://openmp.org/wp/">OpenMP</a> and how to speed up a couple of programs</li>
+<li>High Performance computing clusters and how they generally work</li>
+<li>A little bit of Erlang</li>
+<li>Working with a biologist to sort and compare really large lists!</li>
+<li>Learn <a href="https://en.wikipedia.org/wiki/Fortran">Fortran</a> and look at some <a href="http://en.wikipedia.org/wiki/Computational_fluid_dynamics">computational fluid dynamics</a> for a PhD student</li>
+<li>Write tests for a program in C++</li>
+<li>Read about <a href="https://developers.google.com/protocol-buffers/">Google Protocol buffers</a></li>
+<li>Join the Open Source project <a href="https://github.com/SOCI">SOCI</a> and update the codebase to C++11</li>
+<li>Write a little <a href="https://github.com/OniDaito/RayTracer">Raytracer</a> to learn about OpenMPI</li>
+<li>Read up on <a href="https://www.rabbitmq.com">RabbitMQ</a></li>
+<li>Learn and use <a href="https://www.docker.com">Docker</a> and <a href="https://www.vagrantup.com">Vagrant</a> for the first time.</li>
+<li>Understand the <a href="https://software.intel.com/en-us/intel-parallel-studio-xe">Intel compiler</a> and how best to profile with <a href="https://software.intel.com/en-us/intel-vtune-amplifier-xe/">VTune</a></li>
+<li>... and other things besides</li>
+</ul>
+<p>All of these are quite interesting and somewhat more <em>professional</em> than the things I was doing previously, or rather, some of these things are in common use <em>in the industry</em>. Test frameworks like BoostTest, cluster scheduling programs, test environments etc etc.</p>
+<p>So far, probably the most interesting thing was to read over <a href="http://www.researchgate.net/publication/225372754_R2KS_a_novel_measure_for_comparing_gene_expression_based_on_ranked_gene_lists">this paper on R2KS: a novel measure for comparing gene expression based on ranked gene lists</a>, and make it work on the really large cluster we have here. By doing so, theres a good chance our PhD student will get more results faster, which is a good thing considering he was hunting for new uses for old drugs. Pretty cool, and not often you get to work on such things. It certainly gives you a warm fuzzy feeling that you are doing some good out there in the world. At some point, I'll post the code up so you can all take a look.</p>
+<p>Being at a university has many perks, chief among which is meeting people from various different backgrounds. QMUL is quite small in terms of campus size, so it's easy to nip about and talk to people in digital humanities one minute, then dentistry the next. The work culture is somewhat more relaxed than in industry or the freelance world, but the work is perhaps even more challenging. For instance, I had no idea about Fortran before I came here, nor did I really understand biology or fluid dynamics, but it's great to be introduced to new problems where computer programming can help.</p>
       </div>
 
       <div class="col-md-3">
         <ul class="list-unstyled">
           
-          <li><a href="/posts/2010-02-01-decode09-recode-entry.html">Decode09 - Recode Entry</a></li>
+          <li><a href="/posts/2010-07-12-first-ever-installation-success.html">First Ever Installation Success</a></li>
           
-          <li><a href="/posts/2010-02-28-nin-only-tribute.html">NIN Only Tribute</a></li>
+          <li><a href="/posts/2011-08-21-Freelance.html">A Digital Ronin - My year freelancing</a></li>
           
-          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          <li><a href="/posts/2011-08-31-Knightmare-Bash.html">Knightmare Bash</a></li>
           
-          <li><a href="/posts/2010-10-06-structured-light.html">Structured Light</a></li>
+          <li><a href="/posts/2011-09-09-Forefist-punch.html">Forefist Punch</a></li>
           
-          <li><a href="/posts/2010-12-21-cinder-shadow-volumes.html">Cinder Shadow Volumes</a></li>
+          <li><a href="/posts/2011-10-14-Late-Night-Coding.html">Late Night Coding</a></li>
           
-          <li><a href="/posts/2011-02-04-cinder-skinning.html">Cinder Skinning</a></li>
+          <li><a href="/posts/2011-12-28-Lion-and-Linux-Together.html">Linux and Lion together at last (almost)</a></li>
           
-          <li><a href="/posts/2011-02-25-kinect-skeleton-for-skinning.html">Kinect Skeleton for Skinning</a></li>
+          <li><a href="/posts/2012-01-13-Mosaic.html">Mosaic</a></li>
           
-          <li><a href="/posts/2011-03-15-depth-of-field-in-cinder.html">Depth of Field in Cinder</a></li>
+          <li><a href="/posts/2012-03-21-Resonate.html">Resonate Festival</a></li>
           
-          <li><a href="/posts/2011-03-18-screen-space-ambient-occlusion-again.html">Screen Space Ambient Occlusion, again</a></li>
+          <li><a href="/posts/2012-04-02-New-Lab.html">New Lab</a></li>
           
-          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
+          <li><a href="/posts/2012-04-27-BSides.html">BSides London</a></li>
+          
+          <li><a href="/posts/2012-06-05-Curator-Coin.html">The Curator's Coin</a></li>
+          
+          <li><a href="/posts/2012-06-15-Modern-Opengl.html">Modern OpenGL</a></li>
+          
+          <li><a href="/posts/2012-07-25-Graphics-Hackspace.html">Graphics Hackspace</a></li>
+          
+          <li><a href="/posts/2012-10-16-Raspberry-Pi.html">The Obligatory RaspberryPi Post</a></li>
+          
+          <li><a href="/posts/2012-11-05-Leaving-Google.html">Leaving Google</a></li>
+          
+          <li><a href="/posts/2012-12-21-edX.html">edX</a></li>
+          
+          <li><a href="/posts/2013-01-09-Computer-History.html">Computing History Records and Preservation</a></li>
+          
+          <li><a href="/posts/2015-05-19-Moving-On.html">So long business, and thanks for all the pixels.</a></li>
+          
+          <li><a href="/posts/2010-07-19-apache-git-and-mediawiki-to-manage-design-and-projects.html">Apache, GIT and Mediawiki to manage design and projects</a></li>
+          
+          <li><a href="/posts/2010-09-19-how-leaky-is-your-country.html">How Leaky is your Country?</a></li>
+          
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
+          
+          <li><a href="/posts/2011-03-25-quartz-composer-programming.html">Quartz Composer Programming</a></li>
           
           <li><a href="/posts/2011-04-23-quad-warp-dual-head.html">Quad Warp, Dual Head</a></li>
           
           <li><a href="/posts/2011-04-25-opengl-bottlenecks.html">OpenGL Bottlenecks</a></li>
           
-          <li><a href="/posts/2011-05-08-canned-kinect.html">Canned Kinect</a></li>
+          <li><a href="/posts/2011-08-04-Box2D-and-Puppets.html">Box2D and Puppets</a></li>
           
-          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
-          
-          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
+          <li><a href="/posts/2011-09-25-Node-and-Mongo.html">Node and Mongo</a></li>
           
           <li><a href="/posts/2011-11-02-Mongo-Fun.html">MongoDB Fun with Cinder</a></li>
-          
-          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
-          
-          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
-          
-          <li><a href="/posts/2012-06-15-Modern-Opengl.html">Modern OpenGL</a></li>
-          
-          <li><a href="/posts/2012-07-02-User-Interfaces-in-OpenGL.html">User Interfaces in OpenGL</a></li>
-          
-          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
-          
-          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
-          
-          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
-          
-          <li><a href="/posts/2012-12-13-Painless-Science.html">Phantom Limb at the Science Museum</a></li>
-          
-          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
-          
-          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
-          
-          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
-          
-          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
-          
-          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
           
         </ul>
       </div>

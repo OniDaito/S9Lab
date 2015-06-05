@@ -1,0 +1,38 @@
+---
+layout: post
+title: Scientific Programming at Queen Mary
+strapline: Or in other-words, messing around with OpenMPI, Intel compilers and large clusters.
+introtext: For the last six months, I've been working away at Queen Mary University of London. There was a large gap for the Transsiberian, but aside from that I've had a lot to learn in a short time. Starting a new job at a large organisation always involves a bit of ramping up. The first month or so, there was the usual 'getting to know the place', but now I'm right in the thick of it.
+tags: thoughts business programming
+---
+
+For the last six months, I've been working away at Queen Mary University of London. There was a large gap for the Transsiberian, but aside from that I've had a lot to learn in a short time. Starting a new job at a large organisation always involves a bit of ramping up. The first month or so, there was the usual 'getting to know the place', but now I'm right in the thick of it.
+
+Basically, my job can be summed up by this image!
+
+![Enthusiastic Penguin](https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fweknowmemes.com%2Fwp-content%2Fuploads%2F2014%2F02%2Fenthusiastic-penguin-meme.jpg&f=1)
+
+<div class="clearfix"></div>
+
+My job is to help out wherever programming is needed, in and around the university. I'm the only one here doing that, though my boss chips in with programming bits here and there. So far I've had to look at:
+
+ - [OpenMPI](http://www.open-mpi.org) and MPI in general.
+ - [OpenMP](http://openmp.org/wp/) and how to speed up a couple of programs
+ - High Performance computing clusters and how they generally work
+ - A little bit of Erlang
+ - Working with a biologist to sort and compare really large lists!
+ - Learn [Fortran](https://en.wikipedia.org/wiki/Fortran) and look at some [computational fluid dynamics](http://en.wikipedia.org/wiki/Computational_fluid_dynamics) for a PhD student
+ - Write tests for a program in C++
+ - Read about [Google Protocol buffers](https://developers.google.com/protocol-buffers/)
+ - Join the Open Source project [SOCI](https://github.com/SOCI) and update the codebase to C++11
+ - Write a little [Raytracer](https://github.com/OniDaito/RayTracer) to learn about OpenMPI
+ - Read up on [RabbitMQ](https://www.rabbitmq.com)
+ - Learn and use [Docker](https://www.docker.com) and [Vagrant](https://www.vagrantup.com) for the first time.
+ - Understand the [Intel compiler](https://software.intel.com/en-us/intel-parallel-studio-xe) and how best to profile with [VTune](https://software.intel.com/en-us/intel-vtune-amplifier-xe/)
+ - ... and other things besides
+
+All of these are quite interesting and somewhat more *professional* than the things I was doing previously, or rather, some of these things are in common use *in the industry*. Test frameworks like BoostTest, cluster scheduling programs, test environments etc etc.
+
+So far, probably the most interesting thing was to read over [this paper on R2KS: a novel measure for comparing gene expression based on ranked gene lists](http://www.researchgate.net/publication/225372754_R2KS_a_novel_measure_for_comparing_gene_expression_based_on_ranked_gene_lists), and make it work on the really large cluster we have here. By doing so, theres a good chance our PhD student will get more results faster, which is a good thing considering he was hunting for new uses for old drugs. Pretty cool, and not often you get to work on such things. It certainly gives you a warm fuzzy feeling that you are doing some good out there in the world. At some point, I'll post the code up so you can all take a look.
+
+Being at a university has many perks, chief among which is meeting people from various different backgrounds. QMUL is quite small in terms of campus size, so it's easy to nip about and talk to people in digital humanities one minute, then dentistry the next. The work culture is somewhat more relaxed than in industry or the freelance world, but the work is perhaps even more challenging. For instance, I had no idea about Fortran before I came here, nor did I really understand biology or fluid dynamics, but it's great to be introduced to new problems where computer programming can help.
