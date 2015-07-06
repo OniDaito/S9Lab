@@ -2,7 +2,13 @@
       <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Section9 dot co dot uk ltd</title>
 <link href="http://www.section9.co.uk/atom.xml" />
-<updated>2015-06-17</updated>
+<updated>2015-07-06</updated>
+<entry>
+<title>R2kS - A Novel Measure for Comparing Gene Expression Based on Ranked Gene Lists</title>
+<link href="http://www.section9.co.uk/posts/2015-07-06-r2ks.html" />
+<updated>2015-07-06</updated>
+<title>R2kS - A Novel Measure for Comparing Gene Expression Based on Ranked Gene Lists</title>
+<id>139</id></entry>
 <entry>
 <title>Running your own server, on a real box!</title>
 <link href="http://www.section9.co.uk/posts/2015-06-17-new-server.html" />

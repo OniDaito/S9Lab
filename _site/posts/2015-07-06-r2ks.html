@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>USB Eartunnel</title>
+    <title>R2kS - A Novel Measure for Comparing Gene Expression Based on Ranked Gene Lists</title>
     <meta name="author" content="Benjamin Blundell" />
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -312,9 +312,9 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h2>USB Eartunnel</h2>
-        <h3>20-07-2011</h3>
-        <p>A little body modification.</p>
+        <h2>R2kS - A Novel Measure for Comparing Gene Expression Based on Ranked Gene Lists</h2>
+        <h3>06-07-2015</h3>
+        <p>An MPI based version of the algorithm described by Ni and Vingron, using dynamic programming to compute the Kolmogorov-Smirnov statistic.</p>
       </div>
     </div>
 
@@ -322,88 +322,95 @@
       <div class="col-md-9">
 
         
-<p><img alt="USB Eartunnel" src="http://farm7.static.flickr.com/6140/5958313197_b9c65c8404_z.jpg" /></p>
-<p>As well as printing out a few cases for electronics and a scan of my face, I figured I could prototype my little idea. I guess thats the real strength of the whole makerbot and printing culture. I'd tried an RFID earring before but it was pretty crap and didn't work so well. I love the wires they use in Ghost in the Shell, like this:</p>
-<p>The problem is, in Ghost in the Shell, they tend to carry an attachment which looks like a collar that contains an extendible cable. Thats fine if you have an interface direct to the brain but for us mere dreamers, its probably not going to work. </p>
-<div class="clearfix"></div>
-
-<p><img alt="Eartunnel" src="http://farm7.static.flickr.com/6141/5958871984_8b20103833_z.jpg" /></p>
-<p>It does work though, which I'm quite pleased about. I designed this in Google Sketchup then exported to STL. The walls are 1.5mm thick but I reckon we could get it down to around 1mm with the printer at fablab.</p>
-<p>Perhaps an RFID ring is a better idea? I'd really like to take the iCuffLink idea of Lady Ada and make that work with WiFi. Can you imagine it? A wifi pendant that glows in the presence of strong wifi! I'll get to it! :D</p>
+<p>One of the first jobs I've worked on for <a href="http://www.qmul.ac.uk">Queen Mary University</a> is a small program to compared two ordered lists. Pretty simple right? Well, not when you have lists 200 thousand plus elements wrong and several hundred thousand of theses lists! Now we have a lot of computing power for this but we have to apply a bit of brain power to harness all that metal. This is based on <a href="http://pubman.mpdl.mpg.de/pubman/item/escidoc:1702988/component/escidoc:1711821/Ni.pdf">this paper by Ni and Vingron</a></p>
+<p>A biologist came to me, asking for more runtime on the QMUL machines. Apparently, the job he wanted was going to take about 15 days or thereabouts! :O We looked at his code and it was a bit hard to follow to say the least! There was some <a href="http://openmp.org/wp/">OpenMP</a> lines in there but whether or not this was really making things faster was up for debate. Also, OpenMP is of somewhat limited use on our cluster because jobs are distributed based on cores that could be across the network. OpenMP isn't much use when you have different machines and nodes working on the same data. You have what is known as <a href="https://en.wikipedia.org/wiki/Non-uniform_memory_access">Non-uniform-memory-access</a> going on.</p>
+<p>I decided that this was probably a small enough, and fun enough problem to have a go writing it from scratch. I'm glad I did as the final code was much cleaner and properly formatted for use with <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a>. We used <a href="https://software.intel.com/en-us/intel-mpi-library/">IntelMPI</a> here at QMUL but I suspect this will work with <a href="http://www.open-mpi.org">OpenMPI</a> and <a href="http://www.mpich.org">MPICH</a> as well.</p>
+<p>The original paper describes the problem and solution thusly:</p>
+<blockquote>
+<p>Bioinformatics analyses frequently yield results in the form of lists of genes sorted by, for example, sequence similarity to a query sequence or degree of differential expression of a gene upon a change of cellular condition. Comparison of such results may depend strongly on the particular scoring system throughout the entire list, although the crucial information resides in which genes are ranked at the top of the list. </p>
+<p>Here, we propose to reduce the lists to the mere ranking of the genes and to compare only the ranked lists. To this end, we introduce a measure of similarity between ranked lists. Our measure puts particular emphasis on finding the same items near the top of the list, while the genes further down should not have a strong influence. </p>
+<p>Our approach can be understood as a special version of a two-dimensional Kolmogorov-Smirnov statistic. We present a dynamic programming algorithm for its computation and study the distribution of the similarity values. The performance on simulated and on real biological data is studied in comparison to other available measures.</p>
+</blockquote>
+<p>The key here is the use of <a href="https://en.wikipedia.org/wiki/Dynamic_programming">Dynamic Programming</a>, which makes sure we keep space (and often time) complexity down to a minimum. It took me a while to figure it all out but after a little help understanding the mathematic notation, it seemed easy enough to work through some small examples on paper. With the basic algorithm finished, it was reasonably easy to divide up the problem as each pair of lists can be compared separately.</p>
+<p>You can download, comment play or submit modifications to the code <a href="https://github.com/OniDaito/r2ks">on the github page</a></p>
       </div>
 
       <div class="col-md-3">
         <ul class="list-unstyled">
           
-          <li><a href="/posts/2010-03-13-iphone-rfid-reader.html">iPhone RFID Reader</a></li>
-          
-          <li><a href="/posts/2010-06-08-spycam-timelapse-part1.html">Spycam Timelapse</a></li>
-          
-          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          <li><a href="/posts/2010-07-19-apache-git-and-mediawiki-to-manage-design-and-projects.html">Apache, GIT and Mediawiki to manage design and projects</a></li>
           
           <li><a href="/posts/2010-09-19-how-leaky-is-your-country.html">How Leaky is your Country?</a></li>
           
-          <li><a href="/posts/2011-02-20-motorcycle-computer.html">Motorcycle Computer</a></li>
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
           
-          <li><a href="/posts/2011-06-08-iPhone-Macro-Lens.html">iPhone Macro Lens Hack</a></li>
+          <li><a href="/posts/2011-03-25-quartz-composer-programming.html">Quartz Composer Programming</a></li>
           
-          <li><a href="/posts/2011-10-05-Defeating-Firewalls.html">Defeating Firewalls</a></li>
+          <li><a href="/posts/2011-04-23-quad-warp-dual-head.html">Quad Warp, Dual Head</a></li>
           
-          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          <li><a href="/posts/2011-04-25-opengl-bottlenecks.html">OpenGL Bottlenecks</a></li>
+          
+          <li><a href="/posts/2011-08-04-Box2D-and-Puppets.html">Box2D and Puppets</a></li>
+          
+          <li><a href="/posts/2011-08-31-Knightmare-Bash.html">Knightmare Bash</a></li>
+          
+          <li><a href="/posts/2011-09-25-Node-and-Mongo.html">Node and Mongo</a></li>
+          
+          <li><a href="/posts/2011-11-02-Mongo-Fun.html">MongoDB Fun with Cinder</a></li>
           
           <li><a href="/posts/2012-01-13-Mosaic.html">Mosaic</a></li>
           
-          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
-          
-          <li><a href="/posts/2012-03-10-Spying.html">Spying and starting services with OSX</a></li>
-          
-          <li><a href="/posts/2013-04-28-Hackspace-Burger-Part1.html">Hackspace Burger Part 1</a></li>
-          
-          <li><a href="/posts/2013-05-10-Hackspace-Burger-Part2.html">Hackspace Burger Part 2</a></li>
-          
-          <li><a href="/posts/2013-05-21-Hackspace-burger-finale.html">Hackspace Burger Finale</a></li>
-          
-          <li><a href="/posts/2013-09-12-Doorbell.html">The EMF TilDA Badge Doorbell</a></li>
-          
-          <li><a href="/posts/2013-09-30-Necklace.html">LED Pendant</a></li>
-          
-          <li><a href="/posts/2014-09-06-900-Pixel-Screen.html">900 RGB LED Screen</a></li>
-          
-          <li><a href="/posts/2014-09-06-Nook-Patient-Report-Forms.html">Nook Patient Report Forms</a></li>
-          
-          <li><a href="/posts/2010-06-17-eagle-and-arduino-for-teh-win.html">EAGLE and Arduino</a></li>
+          <li><a href="/posts/2015-06-05-QMUL.html">Scientific Programming at Queen Mary</a></li>
           
           <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
           
-          <li><a href="/posts/2011-01-23-cookbot.html">Cookbot</a></li>
+          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
           
-          <li><a href="/posts/2011-03-03-solar-charging-for-the-iphone.html">Solar Charging for the iPhone</a></li>
+          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
           
-          <li><a href="/posts/2011-06-03-Wireless-Headtracking-and-FabLab.html">Wireless Headtracking and FabLab</a></li>
+          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
           
-          <li><a href="/posts/2011-10-19-Solar-Minty-Mk2.html">Solar Minty Boost Mark2</a></li>
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
           
-          <li><a href="/posts/2012-01-04-EL-Tape.html">EL-Tape Mesh Top</a></li>
+          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
           
-          <li><a href="/posts/2012-04-04-Minimus-and-Sega.html">Minimus and Sega</a></li>
-          
-          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
           
           <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
           
-          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
+          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
           
-          <li><a href="/posts/2012-10-16-Raspberry-Pi.html">The Obligatory RaspberryPi Post</a></li>
+          <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
           
-          <li><a href="/posts/2013-03-04-Timelapse.html">Linear Rail Time Lapse</a></li>
+          <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
           
-          <li><a href="/posts/2010-11-02-weighted-companion-cube.html">Weighted Companion Cube</a></li>
+          <li><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">Museum of Rural Life Smart Audio Guide</a></li>
           
-          <li><a href="/posts/2011-07-15-Vanity-in-Plastic.html">Vanity in Plastic</a></li>
+          <li><a href="/posts/2013-07-12-BurberryKisses.html">Burberry Kisses, with Google and Grow Interactive</a></li>
           
-          <li><a href="/posts/2011-12-21-Super-History-Girl-Necklace.html">Super History Girl Necklace</a></li>
+          <li><a href="/posts/2013-08-06-Photorealistic-Hands.html">Photo-realistic hands</a></li>
           
-          <li><a href="/posts/2012-06-05-Curator-Coin.html">The Curator's Coin</a></li>
+          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
+          
+          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
+          
+          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
+          
+          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
+          
+          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
+          
+          <li><a href="/posts/2014-05-28-Equatorie.html">The Equatorie</a></li>
+          
+          <li><a href="/posts/2014-07-28-Kaleidoscope.html">Kaleidoscope for Lexus</a></li>
+          
+          <li><a href="/posts/2014-09-26-Echo-Forms-Live-Gig.html">Echoforms at Lexus NX Launch</a></li>
+          
+          <li><a href="/posts/2014-12-12-Bullseye.html">Bullseye's playground for Target and Psyop</a></li>
+          
+          <li><a href="/posts/2014-12-21-Utopia.html">UTOPIA Bio-informatics Toolkit</a></li>
+          
+          <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
           
         </ul>
       </div>
