@@ -2,7 +2,13 @@
       <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Section9 dot co dot uk ltd</title>
 <link href="http://www.section9.co.uk/atom.xml" />
-<updated>2015-07-06</updated>
+<updated>2015-07-15</updated>
+<entry>
+<title>High Performance Computing at Daresbury</title>
+<link href="http://www.section9.co.uk/posts/2015-07-16-daresbury.html" />
+<updated>2015-07-16</updated>
+<title>High Performance Computing at Daresbury</title>
+<id>140</id></entry>
 <entry>
 <title>R2kS - A Novel Measure for Comparing Gene Expression Based on Ranked Gene Lists</title>
 <link href="http://www.section9.co.uk/posts/2015-07-06-r2ks.html" />
