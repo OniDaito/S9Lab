@@ -1,0 +1,46 @@
+---
+layout: post
+title: Transsiberian Slitscan 
+strapline: What does an 8 gigabyte slitscan of the world's longest train-ride look like and how do you make one?
+introtext: I wrote quite a bit about the Trans-siberian trip I recently went on. One thing I only briefly mentioned was the video I took of the trip. 
+tags: travel photography programming
+---
+
+I recently released [this image](http://archive.section9.co.uk/transsib). I wrote quite a bit about the [Transsiberian](https://www.section9.co.uk/posts/2015-04-18-transsiberian-Part-17.html) trip I recently went on. One thing I only briefly mentioned was the video I took of the trip. I bought a cheap, second-hand compact digital camera and filmed as much of the railway journey as I could. I wanted to create a single image that encompasses the feeling of a massive journey across the world. I'd recently been amazed by the work of [Adam Magyar](https://medium.com/matter/einsteins-camera-88aa8a185898) and thought something similar would work.
+
+![slitscan in full](https://farm1.staticflickr.com/388/19463174464_3659ca5705.jpg)
+
+I decided to buy a Canon A3000IS as it was dirt cheap and worked with video, but also with the [CHDK firmware](http://chdk.wikia.com/wiki/CHDK) which is some mad, voodoo type magic. It unlocks many extra features, the majority of which I didn't need in the end, but having some control over the video quality and the auto-focus proved very useful, as did the battery and time remaining. Coupling this with a suction cup mount, an extra battery and a few SD cards gave me the basics. Essentially, I could record for about an hour or so on one battery, and a little longer on the SD cards. Charging the battery took a little longer than it took to discharge so there was a short gap here and there.
+
+<div class="clearfix"></div>
+
+In the end, I had a large number of AVI files in various directories with ascending filenames. As part of my work, I was asked to learn [MATLAB](https://en.wikipedia.org/wiki/MATLAB) as it is used quite extensively by academics. I decided this was an ideal opportunity. Sadly, MATLAB on our cluster doesn't do too well with AVI files, so the first thing to do was convert the AVI files to MP4 files with OggVorbis as the codec (we are a linux shop here at [QMUL](http://www.qmul.ac.uk)). I did this on my mac with [ffmpeg](http://ffmpeg.org) before moving the file over to our cluster.
+
+![China slitscan](https://farm6.staticflickr.com/5713/20136580604_b1dd5992a9.jpg)
+
+MATLAB is pretty slow but when you've got a load of CPUs sitting idle, filling them up is no problem. The script reads the video and concatenates the centre column of pixels to an ever expanding image. This long strip is saved to disk then copied off the cluster, back to my laptop for storage. Some of the original images came in at several hundred megabytes before they were converted down into something more compressed. At several points, I broke the mac preview app. Only [The GIMP](http://www.gimp.org) managed to cope. 
+
+<div class="clearfix"></div>
+
+I wrote some python to read the images and come up with some dimensions. Turns out the total area is 3020758252 pixels. At 3 bytes per pixel, we end up with something like 8.4GiB of image. That's a considerable amount of data! Python's [Pillow](https://pypi.python.org/pypi/Pillow) library is pretty good but I don't believe it has [BigTIFF](http://bigtiff.org), which is the image file format I believe is the best. Most libTIFF libraries do have support for this however. I decided the thing to do was write some C++ code to handle it all, making sure bigtiff was compiled in. The documentation for the [LibPNG](http://www.libpng.org) and [LibTIFF](http://www.remotesensing.org/libtiff/) isn't great but I figured it out in the end, with the help of [some good examples](http://zarb.org/~gc/html/libpng.html). The resulting tiff is about 7.86 GB in size :O 
+
+![platform](https://farm6.staticflickr.com/5791/20732917416_5b0c0ae471.jpg)
+
+One odd thing. What is up with libtiff.org? Apparently it was hijacked but now has the original page for version 3.6.1. Weird!
+
+<div class="clearfix"></div>
+
+Obviously, this is real pain to view, so the next step is to find some kind of tile-based viewer. Some suggestions were [VIPS](http://www.vips.ecs.soton.ac.uk/index.php?title=VIPS), [VIPS with Zoomify](http://libvips.blogspot.co.uk/2013/03/making-deepzoom-zoomify-and-google-maps.html) and others, but I decided that [PanoJS](http://www.dimin.net/software/panojs/#Docs) was what I needed. Turns out there is a tool called [imgcnv](http://biodev.ece.ucsb.edu/projects/bioimage/downloader/download/category/4/file/233/imgcnv_macx_1-52.zip) (probably one of hundreds by that name) that would create PanoJS compatible tiles. I used that to create an awful lot of jpeg files. I then uploaded these to my personal webserver which promptly filled the disk! THankfully, given the way I virtualised it, I could expand the virtual hard-disk with relative ease.
+
+![Desert](https://farm1.staticflickr.com/742/20572437419_01f97d8c4d.jpg)
+
+Some of the images I've spotted inside the image are quite nice. Little houses in the middle of the Gobi Desert. Solitary figures on a plain grey platform. The green of China versus the white of Siberia, or the endless sand of Mongolia. One interesting thing to note are all the black sections in the lower half of the image. These aren't mistakes - it's all the tunnels in the Chinese section of the trip! Many more than in Russia. 
+
+![tunnels](https://farm1.staticflickr.com/609/20571195188_a07d84a07b.jpg)
+
+
+<div class="clearfix"></div>
+
+I'd do many things differently if I ever did this again. Go-pros instead of a crappy SLR, with better battery support and charger, possibly swapping between two cameras. Maybe use a 45 degree angle as oppose to directly perpendicular to travel. Maybe a polarizing filter? The software would need to be improved. No MATLAB and better transfer of the images (using a proper HDD or SSD for speed). Taking better advantage of the cluster would have been better. Getting a result much earlier would have guided me as to what image correction I'd have needed to use. Of course, you use what you have and taking very expensive gear on such a cheap would have been a risk. Still, I'm pretty happy [with the final result](http://archive.section9.co.uk/transsib).
+
+![cars](https://farm1.staticflickr.com/574/20136580774_4b30868f89.jpg)

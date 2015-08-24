@@ -11,7 +11,7 @@ idx: home
 <div class="jumbotron">
   <div class="container">
       {% for post in site.posts %}
-        {% if post.category != 'experiments' %}
+        {% if post.category != 'experiment' %}
 
           <h2>{{post.title}}</h2>
           <h3>{{post.date.strftime('%d-%m-%Y')}}</h3>
@@ -62,7 +62,7 @@ idx: home
 
        {% set foo = foo + 1 %}
       {% endif %}
-      {%- if foo >= 3 %}{% break %}{% endif %}
+      {%- if foo >= 4 %}{% break %}{% endif %}
     {% endfor %}
 
   
