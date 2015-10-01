@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Smiling-Film-Student-Geekery</title>
+    <title>A Twitter Spam Filter - Part 1</title>
     <meta name="author" content="Benjamin Blundell" />
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -329,9 +329,9 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h2>Smiling-Film-Student-Geekery</h2>
-        <h3>09-11-2011</h3>
-        <p>Taking over 50 plus iMacs for fun a profit! A Botnet for art.</p>
+        <h2>A Twitter Spam Filter - Part 1</h2>
+        <h3>01-10-2015</h3>
+        <p>Social media sucks and now I can quantify it with my very own robot.</p>
       </div>
     </div>
 
@@ -339,91 +339,86 @@
       <div class="col-md-9">
 
         
-<p>The following video was recorded by Opheila Finke; one of the students at CSM. She came to me with a request that blew me out of the water because I'd had a similar idea myself. She wanted all the machines in our lab to play a video at the same time. I've spent quite a bit of time on this but I'd never gotten to the stage where I could take over a screen remotely. It turns out this is indeed possible with one subtle command.</p>
+<p>Social media sucks!</p>
+<p>No really, it does, and now I can quantify it! Ok sure, it has some advantages but I'm willing to bet it probably leads to more anxiety, more stress and towards a version of humanity I'm not too fond of. I've spoken about <a href="https://www.section9.co.uk/posts/2015-07-30-social-media.html">Facebook in a previous post</a> but my solution for Twitter is far more interesting. I'll keep the motivational bit and my thoughts to the end of this article. Suffice to say, I've started to build a Twitter spam filter and here are the early results. Big thanks to <a href="https://twitter.com/multinormal">multinormal</a> for teaching me basic stats!</p>
+<p>Where does one begin? Firstly, we need to collect the data and store it. For that I use my own virtual machine, running Python3 with the <a href="https://pypi.python.org/pypi/twitter">twitter library</a> and a set of credentials. I'm recording data from the people I follow and the tweets I post. Secondly, we need a way to record what I think of a particular tweet. I've settled on the binary choice of 'like' or 'dislike'. At 4pm everyday, I receive an email with a set of tweets that have been run through a series of filters. If I so choose, I can click like or dislike and send an email back to the robot. The robot periodically checks it's email and updates it's filters as necessary. Using an email client on something like the iPhone is quite easy and somewhat pleasant. In addition, I can see the scores each tweet is given by each filter.</p>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/Go_xdJdkcCk" frameborder="0" allowfullscreen></iframe>
+
+<p>So what are the filters? I'm still investigating the best kinds of filters but so far, I have three major approaches: <a href="https://en.wikipedia.org/wiki/Chi-squared_test">a chi squared test</a> on the username, a series of <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic regressions</a> and a <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayesian filter</a>. The results of each filter are weighted and a threshold is set for whether a tweet is accepted or not. These weights are arbitrary and need some tweaking and testing, but more on that later. I should point out I'm not a statistician and that I totally expect to be schooled on my maths. Nevertheless, I'll present the results as best as I can.</p>
+<p>The Chi Squared Test simply looks at the number of tweets that I like by one person, and the number of tweets I hate by the same person. I use the <a href="http://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chisquare.html">scipy.stats.chisquare</a> and if the p value is equal to or less than 0.05 I'm happy to accept the result. Put another way, I want to say I'm 95% sure that I will love or hate what a particular user will post in the future. So far, this particular filter has cut down on a lot of noisy people who generally post rubbish. This filter is rebuilt every day with the fresh data from the entire set, since I started recording. </p>
+<p>Some people who have made the 'good' list include:</p>
+<ul>
+<li>CourtNewsUK</li>
+<li>ID_AA_Carmack</li>
+<li>SpaceFlightNow</li>
+</ul>
+<p>Some people who have made the naughty list (which is sadly, much longer) include:</p>
+<ul>
+<li>verge</li>
+<li>Ragworm</li>
+<li>WIRED</li>
+<li>thegrugq (he'd be much better if he didn't retweet all the time - context!)</li>
+<li>unity3d</li>
+<li>nesta_uk</li>
+<li>techwillsaveus</li>
+<li>YourAnonCentral</li>
+</ul>
+<p>... the list, sadly, goes on. To be honest, there are no big surprises in these lists so far. The way I've weighted the tests means they have to score pretty highly on the other two filters to make the cut.</p>
 <div class="clearfix"></div>
 
-<hr/>
-
-<iframe width="460" height="280" src="https://www.youtube.com/embed/mhAcRlNq9JU" frameborder="0" allowfullscreen></iframe>
-
+<p>The second filter is a set of logistic regressions. This is where things get interesting. We basically have a set of sub-filters that measure certain aspects of a tweet. We then attempt to draw our trend line to fit the like and dislike data-points, measuring the p values and gradients of said line. There are many things we can measure within a tweet. So far, I've looked at the following:</p>
+<ul>
+<li>The number of RTs in a message</li>
+<li>The number of @ symbols in a message</li>
+<li>The number of # symbols in a message</li>
+<li>The time the tweet was posted</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Flesch–Kincaid_readability_tests">Fleisch Kincaid</a> score of a message</li>
+<li>A naive attempt to measure whether the message is in the present progressive tense</li>
+</ul>
+<p>Because I have a lot of data, the p-values for these logistic tests turn out to be quite small. I've had to write the function myself as SciPy doesn't seem to have a logistic regression function as far as I know. This isn't really a problem as the formula is quite easy. We combine all the tests into one large filter, running the tweet past it, getting a score. </p>
+<p>I wondered about graphing the logistic filters somehow? Is there a clear split? One I built the filters, I decided to run the liked and disliked tweets against them. A logistic runs from 0 to 1 so in theory, we'd like to see disliked tweets clumped around one end of the scale, and liked tweets somewhere else.</p>
 <div class="clearfix"></div>
 
-<hr/>
+<p><img alt="logistic regression results" src="https://c2.staticflickr.com/6/5753/21850655771_43ca279d84.jpg" /></p>
+<p>The overall regression doesn't actually look to great. I've adjusted the graphs to reflect the fact there are 3 times as many dislikes as likes. Combining all the regressions gives some distinction between like and dislike but it seems a little tenuous.</p>
+<div class="clearfix"></div>
 
-<p>Using the screensaver, written in Quartz Composer by a colleague of mine, Sion Fletcher, seemed like the best idea as we could probably activate it remotely. Since I had the list of IP addresses and full sudo on all the boxes, setting up the screensaver was a doddle. Most of the leg work had been done. </p>
-<pre><code>/System/Library/Frameworks/ScreenSaver.framework/Versions/
-A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine
+<p><img alt="RT Logistic Regression" src="https://c1.staticflickr.com/1/757/21841057125_5af9373fcf.jpg" /></p>
+<p>This graph shows the number of re-tweets and its regression. The data is clumped as the number of RTs is an integer value, not a smooth transition.  Again, nothing really amazing here.</p>
+<div class="clearfix"></div>
+
+<p><img alt="Kincaid Logistic Regression" src="https://c1.staticflickr.com/1/741/21814919346_15dcf9dd63.jpg" /></p>
+<p>The Flesch-Kincaid score, however, does seem to discriminate, at least a little. This makes a lot of sense as tweets that involve some semblance of grammar, context and style do feature more in my 'likes' column. I've clearly got a lot more work to do with this filter.</p>
+<div class="clearfix"></div>
+
+<p>The final filter is a Bayesian analysis. I believe this technique is often used in the email spam filters of old. There is quite a good writeup on using <a href="http://webcache.googleusercontent.com/search?q=cache:knUOC770EFIJ:www.laurentluce.com/posts/twitter-sentiment-analysis-using-python-and-nltk/+&amp;cd=1&amp;hl=en&amp;ct=clnk&amp;gl=uk">Bayesian filters for twitter sentiment analysis</a>. I decided to follow this approach but replace sentiment analysis with like and dislike. In a nutshell, you end up with two lists of tuples: one list of the frequency of certain words in liked tweets, and the other being the frequency of certain words in disliked tweets. By having these figures and a known training data set, we can run a tweet past a Bayes filter and classify it.</p>
+<p>Initially, the filter didn't work quite so well. It turns out I dislike a lot more tweets than I like, therefore the Bayes filter is not starting from the assumption that a tweet has equal likelihood of being liked or disliked. Therefore, unlike the previous filters, the Bayes filter only considers the last 500 tweets in the database. This resulted in more tweets being classified as positive.</p>
+<p>Combining these three filters, as mentioned before, is an arbitrary task. The Chi Squared returns either a -1, +1 or 0 depending on whether or not it either dislikes, likes or is ambivalent about a person. The logistic regression filter returns a value between 0 and 1, whereas the Bayesian filter returns <em>either</em> a 0 or 1. I've arbitrarily set the weights to be 0.25, 0.5 and 0.25 with an acceptance threshold of 0.6. This gives the logistic filters a much greater say in the outcome. But is this actually any good? Well, we can test for that too.</p>
+<p>As well as the actual email, I receive two further emails which are much smaller. The first is a 1% sample from the tweets that were rejected. I am offered the chance to say whether or not these tweets were or were not correctly rejected. Essentially testing for true negatives and false negatives. The second email is a 1% sample of the tweets that were accepted. These form the true positives and false positives. Using the data from these responses, I can make a rough guess as to how well the spam filter is working, given the current settings.</p>
+<p>So, finally, some actual results!</p>
+<pre><code>* Start date: 5/08/2014
+* Date at time of taking stats: 30/09/2015
+* Total number of liked tweets: 817
+* Total number of disliked tweets: 2455
+* Number of people on the liked list: 16
+* Number of people of the disliked list: 141
+* Number of tweets posted by me: 901
+* Average number of tweets analysed each day: 2949
+* Average number of tweets accepted each day: 583
+* Number of true positives: 22
+* Number of false positives: 15
+* Number of true negatives: 90
+* Number of false negatives: 10
 </code></pre>
-<p>Running this starts the screen saver. So far so good. Of course, you'll get a lot of errors if you try and run this remotely over SSH, even with Sudo. These of you used to Linux (and lets face it, you are if you read this) will know all about XSessions and similar. Something like this didnt work:</p>
-<pre><code>sudo su student -c '/System/Library/Frameworks/ScreenSaver.framework/Versions/A
-/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
-</code></pre>
-<p>Now <em>student</em> is the logged in user and therefore, I figured we could attach to their XSession (or whatever the OSX equivalent is). This means there has to be a logged in user for attachment to work; I don't know of any way to connect when just the login screen is visible.</p>
-<p>The problem is, this didn't work! I was pulling my hair out until a good friend, MS7821 on the london-hack-space IRC channel pointed out that I wasn't setting the environment over the <em>su</em> command. Now I'd seen this before when playing with the Python subprocess module - you could indeed set the ENV variable. Can you spot the difference in the working command?</p>
-<pre><code>sudo su - student -c '/System/Library/Frameworks/ScreenSaver.framework/Versions/
-A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
-</code></pre>
-<p>The <em>-</em> is quite important after the su. It sets up the environment properly and that's great - it means the process can attach to the screen itself.</p>
-<p><img alt="1.8 tonnes of iMac doing my evil bidding" src="http://farm7.static.flickr.com/6100/6328718926_27f90ba92a.jpg" /></p>
-<p>If you scroll in to 2:45 on the video, you can see the effect we came up with. It's great when a student has the same or similar idea as you. You get to look like the worlds greatest hero when it goes well. Smiles, hugs and laughter was had! That day was a good day!</p>
+<p>There isn't quite enough data yet to say how well the filter is doing, we can see that I generally like only one quarter of all tweets in my time-line (so 75%). The robot is currently rejecting about 80% so it's performing close to my preferences. It correctly identifies true negatives 90% of the time. However only about 60% of what is sent to me I actually like. Its about 3 times easier to reject a tweet than to accept it so the robot is still slightly away from performing optimally. It still takes me about 40 minutes to skim through each email if I want to read every digest, so still a little too long. However, I can alter the weightings of the various filters to get a better result. </p>
+<p>Time has not really been taken into account with this analysis. With the exception of the Bayes filter, all the filters use all the data in their calculations. It is conceivable that my tastes could change over time. There are no real feedback loops in this system yet. I'm sure I could automate un-following people which would have a certain effect on the outcome. It might be the best approach is to go a little more real-time; altering sliders and values and only using the latest data.</p>
+<p>One thing that I'd really like to understand is serendipity. Ultimately, it would be nice to have people and tweets suggested to me. I had some trouble reading from the twitter main public feed with the python API I was using. I'm sure theres a way to fix that. The next step will be to automate following and unfollowing - the first of many feedback loops.</p>
+<p>There is clearly a lot more work to be done. I'm not convinced the logistic regressions are the best yet. There are many other <a href="https://en.wikipedia.org/wiki/Computational_linguistics">computational linguistics</a> methods available to analyse this data much better. I've been looking into a few here and there. The Bayesian filter could be improved quite a bit. Indeed, writing all this in Python, while fun, is certainly not the most efficient way (the code is quite nasty, as experiment code tends to be). The email could be prettier - but email works quite well as a way of collecting data I've found, particularly if you own the email server. That said, my sent folder certainly has a lot of rubbish in it now.  Other thoughts I've had include using some kind of confidence value from the Bayes filter, and improving the words used in the frequency analysis, using some kind of neural network approach, some kind of topic mapping and a whole host of other filters.</p>
+<p>All of this has come about for one reason really. I'm trying to channel my anger at social media into something more positive. The most interesting thing about Twitter isn't the reams and reams of words written by humans - it's the robots and the experiments taking place on the network that reveal things about ourselves. I've learned a little bit more about statistics which is no bad thing at all really. I've wanted an excuse to mess around with stats and thanks to the wonderful help from <a href="https://twitter.com/multinormal">multinormal</a>, I've gotten past the first hurdle.</p>
       </div>
 
       <div class="col-md-3">
         <ul class="list-unstyled">
-          
-          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
-          
-          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
-          
-          <li><a href="/posts/2011-04-13-the-woes-of-soft-shadows.html">The Woes of Soft Shadows</a></li>
-          
-          <li><a href="/posts/2011-05-24-My-First-Big-Thing-Deutsche-Bank.html">Deutsche Bank Installation</a></li>
-          
-          <li><a href="/posts/2011-06-15-only.html">Only Installation at the Lowry</a></li>
-          
-          <li><a href="/posts/2011-12-05-Lowry-to-Life.html">Lowry to Life</a></li>
-          
-          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
-          
-          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
-          
-          <li><a href="/posts/2012-08-17-Organ-Reconstruction.html">3D Organ Reconstruction</a></li>
-          
-          <li><a href="/posts/2012-11-19-The-Carp-and-the-Seagull.html">The Carp and the Seagull</a></li>
-          
-          <li><a href="/posts/2013-02-18-BritishMuseumCoins.html">Coin Detection at the British Museum</a></li>
-          
-          <li><a href="/posts/2013-04-08-Museum-of-Rural-Life.html">Museum of Rural Life Smart Audio Guide</a></li>
-          
-          <li><a href="/posts/2013-07-12-BurberryKisses.html">Burberry Kisses, with Google and Grow Interactive</a></li>
-          
-          <li><a href="/posts/2013-08-06-Photorealistic-Hands.html">Photo-realistic hands</a></li>
-          
-          <li><a href="/posts/2013-11-25-Phantom-Limb-01.html">Phantom Limb Dev Diary Part 1</a></li>
-          
-          <li><a href="/posts/2014-01-12-Phantom-Limb-02.html">Phantom Limb Dev Diary Part 2</a></li>
-          
-          <li><a href="/posts/2014-01-28-Phantom-Limb-03.html">Phantom Limb Dev Diary Part 3</a></li>
-          
-          <li><a href="/posts/2014-02-05-Phantom-Limb-04.html">Phantom Limb Dev Diary Part 4</a></li>
-          
-          <li><a href="/posts/2014-02-13-Phantom-Limb-Oculus.html">Oculus Rift, meet Phantom Limb Therapy</a></li>
-          
-          <li><a href="/posts/2014-05-28-Equatorie.html">The Equatorie</a></li>
-          
-          <li><a href="/posts/2014-07-28-Kaleidoscope.html">Kaleidoscope for Lexus</a></li>
-          
-          <li><a href="/posts/2014-09-26-Echo-Forms-Live-Gig.html">Echoforms at Lexus NX Launch</a></li>
-          
-          <li><a href="/posts/2014-12-12-Bullseye.html">Bullseye's playground for Target and Psyop</a></li>
-          
-          <li><a href="/posts/2014-12-21-Utopia.html">UTOPIA Bio-informatics Toolkit</a></li>
-          
-          <li><a href="/posts/2014-12-30-Tetris.html">Giant Tetris on a building; RI Xmas Lectures</a></li>
-          
-          <li><a href="/posts/2015-07-06-r2ks.html">R2kS - A Novel Measure for Comparing Gene Expression Based on Ranked Gene Lists</a></li>
-          
-          <li><a href="/posts/2015-07-16-daresbury.html">High Performance Computing at Daresbury</a></li>
           
           <li><a href="/posts/2010-03-13-iphone-rfid-reader.html">iPhone RFID Reader</a></li>
           
@@ -441,7 +436,11 @@ A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
           
           <li><a href="/posts/2011-10-05-Defeating-Firewalls.html">Defeating Firewalls</a></li>
           
+          <li><a href="/posts/2011-11-09-Smiling-Film-Student-Geekery.html">Smiling-Film-Student-Geekery</a></li>
+          
           <li><a href="/posts/2012-01-13-Mosaic.html">Mosaic</a></li>
+          
+          <li><a href="/posts/2012-02-3-Phantom-Limb.html">Phantom Limb Pain</a></li>
           
           <li><a href="/posts/2012-03-10-Spying.html">Spying and starting services with OSX</a></li>
           
@@ -461,11 +460,33 @@ A/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
           
           <li><a href="/posts/2015-08-16-cccamp.html">CCCamp2015</a></li>
           
-          <li><a href="/posts/2015-10-01-twitter-spam-filter-part1.html">A Twitter Spam Filter - Part 1</a></li>
+          <li><a href="/posts/2010-07-19-apache-git-and-mediawiki-to-manage-design-and-projects.html">Apache, GIT and Mediawiki to manage design and projects</a></li>
           
-          <li><a href="/posts/2011-10-26-OSX-Admin.html">OSX Admin for the lulz</a></li>
+          <li><a href="/posts/2010-10-15-british-library-tweet-o-meter.html">British Library Tweet-o-meter</a></li>
           
-          <li><a href="/posts/2011-12-28-Lion-and-Linux-Together.html">Linux and Lion together at last (almost)</a></li>
+          <li><a href="/posts/2011-03-25-quartz-composer-programming.html">Quartz Composer Programming</a></li>
+          
+          <li><a href="/posts/2011-04-23-quad-warp-dual-head.html">Quad Warp, Dual Head</a></li>
+          
+          <li><a href="/posts/2011-04-25-opengl-bottlenecks.html">OpenGL Bottlenecks</a></li>
+          
+          <li><a href="/posts/2011-08-04-Box2D-and-Puppets.html">Box2D and Puppets</a></li>
+          
+          <li><a href="/posts/2011-08-31-Knightmare-Bash.html">Knightmare Bash</a></li>
+          
+          <li><a href="/posts/2011-09-25-Node-and-Mongo.html">Node and Mongo</a></li>
+          
+          <li><a href="/posts/2011-11-02-Mongo-Fun.html">MongoDB Fun with Cinder</a></li>
+          
+          <li><a href="/posts/2015-06-05-QMUL.html">Scientific Programming at Queen Mary</a></li>
+          
+          <li><a href="/posts/2015-07-06-r2ks.html">R2kS - A Novel Measure for Comparing Gene Expression Based on Ranked Gene Lists</a></li>
+          
+          <li><a href="/posts/2015-07-16-daresbury.html">High Performance Computing at Daresbury</a></li>
+          
+          <li><a href="/posts/2015-08-25-slitscan-experiment.html">Transsiberian Slitscan</a></li>
+          
+          <li><a href="/posts/2015-08-25-slitscan.html">Transsiberian Slitscan</a></li>
           
         </ul>
       </div>
