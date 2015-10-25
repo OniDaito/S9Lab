@@ -2,7 +2,13 @@
       <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Section9 dot co dot uk ltd</title>
 <link href="http://www.section9.co.uk/atom.xml" />
-<updated>2015-10-01</updated>
+<updated>2015-10-25</updated>
+<entry>
+<title>Building a SmartWatch Part 1</title>
+<link href="http://www.section9.co.uk/posts/2015-10-26-smartwatch-part1.html" />
+<updated>2015-10-26</updated>
+<title>Building a SmartWatch Part 1</title>
+<id>147</id></entry>
 <entry>
 <title>A Twitter Spam Filter - Part 1</title>
 <link href="http://www.section9.co.uk/posts/2015-10-01-twitter-spam-filter-part1.html" />

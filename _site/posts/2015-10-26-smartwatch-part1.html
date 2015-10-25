@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Minimus and Sega</title>
+    <title>Building a SmartWatch Part 1</title>
     <meta name="author" content="Benjamin Blundell" />
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -331,9 +331,9 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h2>Minimus and Sega</h2>
-        <h3>04-04-2012</h3>
-        <p>Using the Minimus dev board to link a megadrive pad to a mac.</p>
+        <h2>Building a SmartWatch Part 1</h2>
+        <h3>26-10-2015</h3>
+        <p>I've embarked on a project to make my own smart-watch.</p>
       </div>
     </div>
 
@@ -341,17 +341,21 @@
       <div class="col-md-9">
 
         
-<p><img alt="minimus" src="http://farm8.staticflickr.com/7179/7029645643_83b6a3ec75.jpg" /></p>
-<p>My sister has been a big fan of retro gaming for some time and for her birthday I decided to make a USB convertor for the sega megadrive pad in order to play <a href="http://mamedev.org">MAME</a> the way it's meant to be played.</p>
-<p>Now there were a few ways I could go about this. I saw a <a href="http://dangerousprototypes.com/forum/viewtopic.php?f=56&amp;t=2971">blog post from dangerous prototypes</a> that talked about using a PIC. Now I thought this would be a great time to test out the <a href="http://dangerousprototypes.com/bus-pirate-manual/">Bus Pirate</a> (which is a great little toy) and learn how to program something a little different.</p>
-<p>Sadly, it turns out that this is not the case and you need a special adaptor to program PIC chips. What an utterly stupid thing to have done.</p>
-<p><img alt="minimus" src="http://farm7.staticflickr.com/6211/7029644525_1e4d78eee4.jpg" /></p>
-<p>So instead, I managed to find out about the <a href="http://www.minimususb.com/">minimus</a> thanks largely to <a href="http://imakethin.gs/">Tom Wyatt</a> and <a href="http://jamie.lentin.co.uk/embedded/arcade-joystick/">Jamie Lentin</a>. The minimus is based on everyone's favourite, AVR! Only this particular AVR chip has USB built in! You can pick up a minimus from <a href="http://www.modtraders.co.uk/">Mod Traders</a> and I highly suggest you do. The Minimus is powered by an Atmel AT90USB162. Its an 8-bit chip with 16K of memory. Its not quite as hefty as the Minimus 32 or the later arduino boards but at a fiver you'd be foolish not to buy at least 5. But here is the real clincher.</p>
-<p><a href="http://www.fourwalledcubicle.com/LUFA.php">LUFA</a> is a full USB stack that can run on the minimus. Yes, it means your small device can run as a USB joystick, keyboard or other HID device complete with all the manufacturer lines and data that normal USB devices have. It's a wonderous thing to behold.</p>
-<p>I used Linux and Ubuntu to build and flash my minimus. The instructions are simple enough. I've been fighting AVR and Atmel's corner for a little while now, largelty because of <a href="http://en.wikipedia.org/wiki/GNU_Compiler_CollectionArchitectures">AVR-GCC</a> which is brilliant! The best compiler (okokok maybe clang is good too) has support for AVR chips. No need for extra cash spent on a special programming box. Its all done over USB. Brilliant. So forget PIC, it's time is over. From now on, its AVR, FPGAs and maybe a little ARM.</p>
-<p><img alt="minimus" src="http://farm8.staticflickr.com/7229/7029644081_640d6f8fe4.jpg" /></p>
-<p>So, the actual Sega pad itself. Well the trick is to check out the latest version of LUFA and start with Jamie's joystick code, albeit somewhat adapted to having just 4 buttons. There is one major hack though for the SEGA pads. They multiplex the signals. So if you checkout <a href="http://pinouts.ru/Game/genesiscontroller_pinout.shtml">pinouts.ru</a> you can see that there is a select line. What you are not told is that it is up to you to turn this on and off and check which buttons are pressed. So the minimus needs to check as fast as it can, if the various buttons are high when the select line is on and when it isn't on. This took me quite a while to find. Also, the version of LUFA in Jamie's article doesn't work outside of Linux sadly, so for OSX compatibility (and windows for that matter) use the latest from Subversion.</p>
-<p>Finally, I ordered an adaptor from Farnell for the 9 pin Atari style port and laser cut a small perspex box to mount it all in. Some wire, a little soldering and some hot glue later and the final device works a treat! :D One happy sister and a pleased hacker! What can possibly be bad about that? So forget stupid PIC chips. It's AVR all the way baby!</p>
+<p>I have an issue with smart-watches. Watches in general fall into one of two categories: a tool to tell the time, or a fashion statement. Increasingly, I believe the latter category is larger than the first. With the advent of the iWatch, Pebble and the like, fashion and making a statement has moved into technology. It's not quite a new thing but nevertheless, it's something I'm not too fond of. My solution? Make your own smartwatch.</p>
+<p>There is a precedent for this. Steve Wozniack sports <a href="https://www.youtube.com/watch?v=m4R3hODnTGo">a pretty fly nixie tube watch</a> which he made himself. It's pretty cool, but also a statement of sorts too. I've been meaning to up my game with electronics anyway, so I've been working on a few initial prototypes.</p>
+<p><img alt="smartwatch" src="https://c1.staticflickr.com/1/670/22444952516_f5550abeb0.jpg" /></p>
+<p>I use <a href="http://www.rs-online.com/designspark/electronics/">DesignSpark</a> on the recommendation of a sparky friend of mine who has a successful business building bespoke electronics. I have a <a href="http://www.digikey.com/product-highlights/us/en/texas-instruments-stellaris-launchpad/2537">Stellaris Breakout Board</a> - the same board used in the cubesats - that I figure I can use for development. Most of the parts I've ordered from R.S Components though that might change in the future. I've previously used EAGLE, which I'd also recommend.</p>
+<p>I decided the first stage would be to build a breakout-board with the easy components attached. This includes a display, an SD Card, a small joystick button combo and a power supply for the OLED display. I've decided to go with a colour screen, the same used in the <a href="https://github.com/tricorderproject/arducordermini">tricorder</a> project, as it's fairly cheap and works with an <a href="https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus">SPI</a> interface. The SD card also has a straight forward interface, so I figured the only tricky part was the power supply. </p>
+<div class="clearfix"></div>
+
+<p>The first board was a little large and sadly, didn't work. I'd missed out a logic high line into the OLED driver chip. These boards I had made at <a href="http://www.seeedstudio.com/depot/">seeed studios</a> who you may remember I tried to visit on our <a href="https://www.section9.co.uk/posts/2015-04-08-transsiberian-Part-15.html">recent trip across Russia and China</a>. Sadly, the day we turned up in Shenzen was a Chinese public holiday. Oh well. The eagle-eyed amongst you will notice the wire I've hastily added in order to test whether or not I could save the board. Apparently not. In addition, the footprint for the SD Card reader wasn't quite right, so that also needed adjustment.</p>
+<p><img alt="first revision" src="https://c2.staticflickr.com/6/5629/22284149449_7abc1f39e5.jpg" /></p>
+<p>The second revision of the board is much tighter. I've added a ground-plane this time, which massively improves the layout. The number of vias is reduced as well as the number of traces. I've managed to shrink the board size down and repair the SD Card footprint. By moving it to the underside I save a lot of space. The boards were made by <a href="http://dirtypcbs.com">DirtyPCB</a> who are really cheap, sarcastic but had a quick turn-around and no faffing. So far they win over both Seeed and Ragworm. </p>
+<div class="clearfix"></div>
+
+<p><img alt="underside of mark2" src="https://c1.staticflickr.com/1/711/22283006210_dc839efc1c.jpg" /></p>
+<p>I had some issues getting the 13V OLED line to work. I felt sure I'd fixed it but it still wasn't working. It turned out there were three things to fix. Firstly, the diode was the wrong way around (an easy mistake to make when using surface mount parts). Secondly. the inductor package I'm using is really not meant to be hand soldered and the contacts were not seated properly. Finally, there was a short on the OLED connector. A single strand of solder braid had become caught between three of the pins. Once it was removed, the 13V line spluttered into life!</p>
+<p>With all the initial parts in place, the next step is to write some basic code and get the screen up and running. The next hardware step will probably involve mounting the actual CPU, it's timing crystal, lipoly power pack, programming headers and some sort of connecting to the outside world. I'm looking into GPRS as its practically free and low powered. </p>
       </div>
 
       <div class="col-md-3">
@@ -379,6 +383,8 @@
           
           <li><a href="/posts/2012-01-04-EL-Tape.html">EL-Tape Mesh Top</a></li>
           
+          <li><a href="/posts/2012-04-04-Minimus-and-Sega.html">Minimus and Sega</a></li>
+          
           <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
           
           <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
@@ -392,10 +398,6 @@
           <li><a href="/posts/2013-09-12-Doorbell.html">The EMF TilDA Badge Doorbell</a></li>
           
           <li><a href="/posts/2013-09-30-Necklace.html">LED Pendant</a></li>
-          
-          <li><a href="/posts/2015-10-26-smartwatch-part1.html">Building a SmartWatch Part 1</a></li>
-          
-          <li><a href="/posts/2011-12-21-Super-History-Girl-Necklace.html">Super History Girl Necklace</a></li>
           
         </ul>
       </div>
