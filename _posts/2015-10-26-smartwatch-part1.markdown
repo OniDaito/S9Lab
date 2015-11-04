@@ -8,7 +8,7 @@ tags: electronics
 
 I have an issue with smart-watches. Watches in general fall into one of two categories: a tool to tell the time, or a fashion statement. Increasingly, I believe the latter category is larger than the first. With the advent of the iWatch, Pebble and the like, fashion and making a statement has moved into technology. It's not quite a new thing but nevertheless, it's something I'm not too fond of. My solution? Make your own smartwatch.
 
-There is a precedent for this. Steve Wozniack sports [a pretty fly nixie tube watch](https://www.youtube.com/watch?v=m4R3hODnTGo) which he made himself. It's pretty cool, but also a statement of sorts too. I've been meaning to up my game with electronics anyway, so I've been working on a few initial prototypes.
+There is a precedent for this. Steve Wozniack sports [a pretty fly nixie tube watch](https://www.youtube.com/watch?v=m4R3hODnTGo). It's pretty cool, but also a statement of sorts too. I believe there is quite an underground scene of custom electronics watches. I've been meaning to up my game with electronics anyway, so I've been working on a few initial prototypes.
 
 ![smartwatch](https://c1.staticflickr.com/1/670/22444952516_f5550abeb0.jpg)
 
