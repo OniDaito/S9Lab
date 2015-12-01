@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Introducing CoffeeGL</title>
+    <title>Modding a Theremin</title>
     <meta name="author" content="Benjamin Blundell" />
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -333,9 +333,9 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h2>Introducing CoffeeGL</h2>
-        <h3>07-07-2013</h3>
-        <p></p>
+        <h2>Modding a Theremin</h2>
+        <h3>01-12-2015</h3>
+        <p>My partner loves playing music so I built her a theremin.</p>
       </div>
     </div>
 
@@ -343,17 +343,67 @@
       <div class="col-md-9">
 
         
-<p>WebGL is something I've been working in a lot over the last few months; indeed its the reason why I've not been blogging very much! I've recently worked on two large projects with a third currently underway and I'm somewhat concerned about the APIs we have to work with. I decided to write my own, in <a href="http://coffeescript.org/">CoffeeScript</a> which I call <a href="https://github.com/OniDaito/CoffeeGL">CoffeeGL</a>. Its in progress but already I have a <a href="">few examples</a> and I'm really happy with how its going.</p>
-<p>When working on the <a href="http://www.section9.co.uk/posts/2012-11-19-The-Carp-and-the-Seagull.html">Carp and Seagull</a> I got to grips with <a href="http://www.threejs.com">Three.js</a>; widely regarded as the defacto, goto guy for WebGL. It has many features and is fairly easy to use, but only if you follow the stock way of doing things. It gives you a lot but in a way, it almost gives you too much. There is almost no documentation either. Some of the things in Three are quite nice, such as the <a href="http://gametheorylabs.com/groups/judgementengine/wiki/4c55c/">uber-shader</a> paradigm and the various addons for models and resources. However, I'm not too fond of the maths, the actual render loop and a few other things that niggled. Also, it's written in pure javascript, which I think is a missed opportunity.</p>
-<p>Secondly, there is <a href="http://i-am-glow.com/">GLOW</a>. GLOW seems closer to the metal which I think is a good thing. Again, it suffers from lack of consistent documentation and the idea that a shader is tightly bound to it's geometry. Its an interesting way of tightly coupling shader and information but its also somewhat misleading, especially if you use a shader more than once, or if you have dynamic geometry. Again, its written in pure javascript. One really nice thing about GLOW is its caching system; it doesn't make any redundant GL calls which is really nice.</p>
-<p>Why is pure javascript a mistake? Because its all so easy to make mistakes that will cost you with javascript. Maybe if you are a robot, you can make it work for you, but there are some things I don't want to have to write again and again. There are more subtle things such as === should be the default instead of == , for x in y shouldn't really return an index... it's these subtle things that really need to be addressed in Javascript and maybe one day, they will be. </p>
-<p>Given javascript's history, I think its very impressive. No really! It's easy to hate on JS and many people do. But the fact remains, it was written in a very short time by a very talented individual who had pressure from idiots on all sides. Im glad we have it, but we don't have to suffer it's inadequecies anymore. </p>
-<p>I decided to go with Coffeescript and a node.js setup. Everything is written in modules that compile up into a single js file which you can use with your own CoffeeScript files. The API is inspired by <a href="https://www.libcinder.org">Cinder</a>; the king of WebGL Libraries. The scene-graph is quite simple and works how you would expect, or you can ignore it completely and just write basic GL calls with a few bits of geometry and shaders.</p>
-<p>Is it ready yet? Not really I'd say. More documentation is needed and Im looking at <a href="http://jashkenas.github.io/docco/">Docco</a> to fill the void. But for these who want to help or offer constructive criticism, its up over at <a href="https://github.com/OniDaito/CoffeeGL">github</a> for all to see.</p>
+<p>A while ago, my partner expressed an interest in theremins. I figured it would make a nice present for her, but simply buying one off the shelf doesn't quite have the level of love I was going for. I figured the best thing to do was to buy a kit and customise one. Theremins are quite complicated analogue electronics and I was short on time, so I figured modding was the way to go.</p>
+<p><img alt="theremin" src="https://c1.staticflickr.com/1/604/22736931033_5367a45080.jpg" /></p>
+<p>I went with the <a href="http://www.jaycar.com.au/Kits,-Science-%26-Learning/Electronic-Project-Kits/Audio/Theremin-Synthesiser-Kit-MkII/p/KC5475">Jaycar</a> model of theremin. Sadly, this company is based in Australia but there are occasionally one or two of these kits that appear on eBay. This reduces the shipping cost somewhat. Part of the reason I went for this kit is there is an <a href="http://www.thereminworld.com/Article/13272/jaycarsilicon-chip-theremin---a-metamorphosis">excellent modification on this page</a>. I figured I could at least modify the case; make something a little more appealing. </p>
+<div class="clearfix"></div>
+
+<p>The kit itself is fairly easy to solder together. I made one key error though - putting the two 8 pin ICs in the wrong place. It took me a while to figure out where I was going wrong. Running it through with a scope analyser and a friend soon solved that particular problem. With the electronics working, I set to work on the case.</p>
+<p><img alt="theremin" src="https://c2.staticflickr.com/6/5662/22996153619_caf62c39be.jpg" /></p>
+<p>The case itself is made from oak. My Dad, being into this sort of thing, cut and joined the box for me, sawing the pieces from a huge timber. I set to work on the sanding and varnishing, opting for a semi-gloss finish. The trick is to sand sand sand, then polish with a diluted solution, then sand again, then repeat and repeat and repeat. It's worth it though. The final results look and feel lovely.</p>
+<div class="clearfix"></div>
+
+<p><img alt="aerial" src="https://c2.staticflickr.com/6/5816/22736926903_68f5ac99a5.jpg" /></p>
+<p>The volume aerial is a little trickier. One needs to create a jig and bend a short length of aluminium tube around the pegs. With this done, one can drill the holes in the case and push the board and the aerial through. This bit was somewhat tricky as the drill bits I was using, although stated multi-purpose, were awful on wood. Nevertheless, the parts fitted snuggly. Having the case slightly too small on one axis meant I had to sand quite furiously but the board doesn't move around at all. </p>
+<p>The top of the case is made from a lovely sheet of blue frozen-looking perspex. Laser cut into the top is the word KTheremin. I quite like the contrast between the wood and plastic. A 12V AC adapter finishes off the unit. These are harder to find in the wild than their DC counterparts but again, eBay has one or two.</p>
+<div class="clearfix"></div>
+
+<p><img alt="theremin" src="https://c2.staticflickr.com/6/5764/22996148899_6121393c0b.jpg" /></p>
+<p>The final instrument works pretty well. Tuning is difficult but not impossible. The oversize volume aerial has too great a range and probably requires some adjustment but still works. <a href="http://www.thereminworld.com">Theremin World</a> has loads of advice on tuning, modding and all sorts of things. It was certainly a big help during this build.</p>
       </div>
 
       <div class="col-md-3">
         <ul class="list-unstyled">
+          
+          <li><a href="/posts/2010-03-13-iphone-rfid-reader.html">iPhone RFID Reader</a></li>
+          
+          <li><a href="/posts/2010-06-08-spycam-timelapse-part1.html">Spycam Timelapse</a></li>
+          
+          <li><a href="/posts/2010-06-17-eagle-and-arduino-for-teh-win.html">EAGLE and Arduino</a></li>
+          
+          <li><a href="/posts/2010-07-20-animation10.html">Animation10</a></li>
+          
+          <li><a href="/posts/2010-09-12-touchtable-dj-decks.html">TouchTable DJ Decks</a></li>
+          
+          <li><a href="/posts/2011-01-23-cookbot.html">Cookbot</a></li>
+          
+          <li><a href="/posts/2011-03-03-solar-charging-for-the-iphone.html">Solar Charging for the iPhone</a></li>
+          
+          <li><a href="/posts/2011-06-03-Wireless-Headtracking-and-FabLab.html">Wireless Headtracking and FabLab</a></li>
+          
+          <li><a href="/posts/2011-07-20-USB-Eartunnel.html">USB Eartunnel</a></li>
+          
+          <li><a href="/posts/2011-10-19-Solar-Minty-Mk2.html">Solar Minty Boost Mark2</a></li>
+          
+          <li><a href="/posts/2012-01-04-EL-Tape.html">EL-Tape Mesh Top</a></li>
+          
+          <li><a href="/posts/2012-04-04-Minimus-and-Sega.html">Minimus and Sega</a></li>
+          
+          <li><a href="/posts/2012-08-01-Touch-Wall.html">Building a Vertical Touch Wall</a></li>
+          
+          <li><a href="/posts/2012-08-10-Boom-Box.html">Animation12 - The Boom Box!</a></li>
+          
+          <li><a href="/posts/2012-09-04-Touch-Wall.html">A Touch Wall under the M1 Motorway</a></li>
+          
+          <li><a href="/posts/2012-10-16-Raspberry-Pi.html">The Obligatory RaspberryPi Post</a></li>
+          
+          <li><a href="/posts/2013-03-04-Timelapse.html">Linear Rail Time Lapse</a></li>
+          
+          <li><a href="/posts/2013-09-12-Doorbell.html">The EMF TilDA Badge Doorbell</a></li>
+          
+          <li><a href="/posts/2013-09-30-Necklace.html">LED Pendant</a></li>
+          
+          <li><a href="/posts/2015-10-26-smartwatch-part1.html">Building a SmartWatch Part 1</a></li>
           
         </ul>
       </div>
