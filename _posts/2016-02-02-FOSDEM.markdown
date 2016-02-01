@@ -1,0 +1,59 @@
+---
+layout: post
+title: FOSDEM 2016 
+introtext: I recently visited Brussels for the FOSDEM Conference. It's perhaps something that has been long overdue really. I've been using opensource software for a long time, and I'd heard of the conference a few years ago, but finally I've made it to Belgium! I figure I'll split this post into two part probably. I'll save the reports of talks till the end.  
+strapline: FOSDEM is the premier conference for all things open-source
+tags: conference work
+---
+
+I recently visited Brussels for the FOSDEM Conference. It's perhaps something that has been long overdue really. I've been using opensource software for a long time, and I'd heard of the conference a few years ago, but finally I've made it to Belgium! I figure I'll split this post into two part probably. I'll save the reports of talks till the end. 
+
+My first impression is that it's wet! It's also early and grey and reminds me very much of Manchester. The conference is held at the university which is outside the centre. To get there I brought a Brompton with me on the Eurostar. It's worth noting that the Eurostar will only allow you to bring a bicycle if it's in a bag, apparently. This is what we learned from reading up on it. Whether or not its still enforced is another matter. 
+
+![Bottles](https://c2.staticflickr.com/2/1582/24431404730_cc77d27937.jpg)
+
+Rather than go with a hotel I thought I'd try for AirBnB, selecting a small room in a lovely flat near the university. It seems a little more interesting somehow. After finally navigating my way there, using the excellent [maps.me](http://maps.me). I get a chance to ditch some gear and head over to some talks.
+
+<div class="clearfix"></div>
+The conference is quite large and appears to take over most of the university, with several buildings being drafted into use. There are a great many tracks, each with it's own room. Some rooms are a little small, with not a lot of room at all. In my first talk I have to sit on the floor, and I'm actually lucky to get in at all. This is a theme for the weekend I think. You often see signs on the door saying "Full". This wouldn't be so bad if the live stream was working, but it appears not to be. Oh well.
+
+![Full](http://c2.staticflickr.com/2/1521/24609148952_ceeda83be8.jpg)
+I recently visited Brussels for the FOSDEM Conference. It's perhaps something that has been long overdue really. I've been using opensource software for a long time, and I'd heard of the conference a few years ago, but finally I've made it to Belgium! I figure I'll split this post into two part probably. I'll save the reports of talks till the end. 
+
+
+The catering is not too bad. The coffee is acceptable and although catering vans are around, the selection is limited and not that appetising. One way it does excel though, is the beer. This being Belgium, having a decent bar is a point of pride!
+
+Most of my time is spent walking from one talk to another, trying to get the most out of the talks. I'm here on the company dollar so I need to be a little bit circumspect on which talks I decide to go to. I spot another colleague and a few people from the London Hackspace or similar. As I've said in the past, I don't really talk much to anyone at conferences; it's not really my thing.
+
+![Secret hidden hackspace](https://c2.staticflickr.com/2/1547/24098754434_4df5e5d3fe.jpg)
+
+From what I gather from the talks a lot of the people here are the people we rely on for so many things; the compilers we use, the libraries we reference and the tools that make our life easier. I'm quite humbled really - I've clearly got a lot to learn. 
+
+One of the best things about Belgium is the beer! After the conference, I made straight for the [Delirium cafe](http://dilirumcafe.be). This is like a beer mecca I've decided! I'm quite amazed at the number of beers on tap, let alone in bottles. I'd pretty much recommend taking the Eurostart to Brussels just for that alone! The cafe spans at least 3 floors, with another couple of venues around town.
+
+<div class="clearfix"></div>
+
+
+Every Fosdem [The Brussels Hackspace](https://hackerspace.be) puts on a little party. Their space is hidden away,across the river from the centre of town. The entrance is an impressive looking lift with a pretty cool robot voice, card activation console. The space itself is on the 4th floor and is very pretty on the inside. Of course it has a bar, but it also has a DJ. As you'd expect, it has all the usual things like work spaces, soldering irons, storage, a dusty-shop and a way to pay for beer with bitcoin.
+
+![belgian hackspace lift](https://c2.staticflickr.com/2/1536/24700731196_b865917f68.jpg)
+
+People generally go to conferences to talk to other people I think, and perhaps to figure out a little about what the state of the art is and what is generally going on in your field. I'm in two minds whether or not I'd go to FOSDEM again. I doubt I'd pay for myself to go (so thanks QMUL!) but as such conferences go, the talks were inspiring, or perhaps, the fact that so many people are keen to do so much for next to nothing. It's a nice feeling.
+
+If you aren't interested in the talks you can stop reading now. I'll briefly mention the ones I went to.
+
+Vulkan is a new API destined to replace OpenGL. The speaker mentions that few APIs have lasted for 24+ years, and that OpenGL has done an amazing job, but it's time that an API reflected how hardware actually works. Vulkan isn't out yet but theres bits online you can watch and learn from (you might hear me asking that question).
+
+I went to a talk about writing your own USB devices. This talk looked mostly at the software stack which was interesting, but perhaps nothing that couldn't be gleaned from 30 minutes of reading.
+
+![campus](https://c2.staticflickr.com/2/1695/24098756094_54423575af.jpg)
+
+It's becoming clear that containers and virtualisation is something that I really need to get behind and use a lot more often. I went to several talks about deployment, virtual machines, docker and all the rest. The Docker for Developers talk was simple but well delivered. It's nice to see how people at places like Red Hat, Twitter, Intel and the like do things (my background has really just been academia). Hearing that Twitter runs hundreds of thousands of containers on tens of thousands of machines but only hires about 10 people to look after it all is quite impressive.
+
+I'd hoped to see a talk on Rust, another talk on a remote WiFi camera, and another couple of talks but the rooms were all booked out. I eventually managed to get into the lightning talks sessions, listening to a chap talking about GUIX, another chap talking about clustershell (pretty much what it sounds like) and Scylla which is interesting as it combines kernel and application into one combined *thing* for more speed when doing *big-data-things*.
+
+Some of the talks were a little silly, but still interesting. Kubernates being used on a mini raspberry-pi cluster was quite good fun to see, and something that would be worth playing with. Emulating hardware in software was good to hear, particularly as it had a graphics bent (and the author is working on an Amiga emulator using the same techniques). Another talk focused on replacing the ruby part of Vagrant with a tool called 'oh-my-vagrant' which could be worth a play.
+
+I listened to a beginners talk on LLVM (apparently, this isn't an acronym anymore!), covering some of the tools and libs you may not have heard of, like a proper fuzzer (I had no idea). I was very happy to see the FairPhone 2 in the flesh for the first time. This is definitely the next phone I'll buy for sure (although my iPhone 4S is still doing fine for all the things I need it to do).
+
+If you work in open source, use open-source or like conferences with a little more of an *indie feel* then this is definitely the conference for you. Just bring a waterproof coat!
