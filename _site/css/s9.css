@@ -34,16 +34,13 @@
 
 }
 
-/* Jumbotron stylings */
 
-.jumbotron {
-  padding: 36px;
-}
 
-.jumbotron h2 {
+h2 {
   font-family: 'Anaheim', sans-serif;
 }
-.jumbotron h3 {
+
+h3 {
   margin-top: 0.5em;
   font-family: 'Anaheim', sans-serif;
 }
@@ -52,8 +49,6 @@
 /* Footer Styles */
 
 footer {
-  background-color: #1A003B;
-  color: #f8f8f8;
 }
 
 
@@ -62,6 +57,10 @@ footer h3 {
 }
 
 footer a {
+  color: #23527c;
+}
+
+footer a:hover {
   color: #A5F0FA;
 }
 
@@ -86,6 +85,7 @@ footer p {
   font-family: 'Anaheim', sans-serif;
   font-size: 14pt;
   font-weight: 500;
+  margin-top: 8px;
 }
 
 .navbar-brand a {
@@ -97,6 +97,7 @@ footer p {
   float: left;
   margin-left: 6px;
   margin-top: 12px;
+  margin-bottom: 6px;
   margin-right: 8px;
 }
 
@@ -108,14 +109,34 @@ footer p {
     margin-right: 8px;
   }
 
-
 }
 
-
-
-.navbar {
-  background-color: #A5F0FA;
+.strapimage {
+  width: 280px;
 }
+
+.strapimagediv {
+  position:relative;
+}
+
+.strapimagetext {
+  position:absolute;
+  top:6px; /* in conjunction with left property, decides the text position */
+  left:6px;
+  width:250px; /* optional, though better have one */
+}
+
+.strapimagetext p {
+  background-color: white;
+}
+.strapimagetext h5 {
+  background-color: white;
+}
+.strapimagetext h4 {
+  background-color: white;
+}
+
+.navbar {}
 
 
 /* Content Div */
@@ -128,19 +149,6 @@ footer p {
 
 #content a:hover {
   text-decoration: underline;
-}
-
-#content img { 
-  margin: 16px;
-  margin-top: 0px;
-}
-
-#content img.pull-left{
-  margin-left: 0px;
-}
-
-#content img.pull-right{
-  margin-right: 0px;
 }
 
 
@@ -159,15 +167,30 @@ footer p {
   font-size: 16px;
 }
 
-#content h3 {
+#content h4 {
   font-family: 'Anaheim', sans-serif;
-
 }
 
 #content .jumbotron-experiment p.experiment-title {
   font-size: 26px;
 }
 
+
+.post img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+       -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
 
 /* Paragraphs and intro texts */
 

@@ -4,75 +4,40 @@ title: section9 - Benjamin Blundell - Wouldn't it be nice if...
 idx: home
 ---
 
-<!-- Top Jumbotron - dont include experiments -->
 
 {% block content %}
-
-<div class="jumbotron">
+{% set foo = 0 %}
   <div class="container">
-      {% for post in site.posts %}
-        {% if post.category != 'experiment' %}
-
-          <h2>{{post.title}}</h2>
-          <h3>{{post.date.strftime('%d-%m-%Y')}}</h3>
-          <p>{{post.strapline}}</p>
-          <a href="{{post.url}}"><button type="button" class="btn btn-primary">Read more on the blog</button></a>
-        </div>
-        {% break %}
-      {% endif %}
-    {% endfor %}
-</div>
-
-<hr />
-
- {% set foo = 0 %}
-  {% for post in site.posts %}
-    {% if post.category %}
-      {% if post.category == 'work' or post.category == 'frontpage' %}
-        
-        <div class="col-md-4">
-          <h3><a href="{{post.url}}" alt="{{ post.title }}">{{post.title}}</a></h3>
-          <p class="toppad"> {{post.introtext}} </p>
-          <a href="{{post.url}}"><button type="button" class="btn btn-sm btn-primary">Read More</button></a>
-     
-        </div>
-
-       {% set foo = foo + 1 %}
-      {% endif %}
-      {%- if foo % 3 == 0 %}<div class="clearfix"></div>{% endif %}
-      {%- if foo >= 9 %}{% break %}{% endif %}
-    {% endif %}
-  {% endfor %}
-
-  <hr />
-
-  <!-- Experiments -->
-
-   {% set foo = 0 %}
     {% for post in site.posts %}
-      {% if post.category == 'experiment' %}
-          <div class="jumbotron jumbotron-experiment">
-            <div class="container">
-              <a href="{{post.liveurl}}"><img src="/images/strap/{{post.strapimage}}" class="img-responsive img-thumbnail pull-right experiment-strap-image" alt="{{post.title}}" /></a>
-              <p class="experiment-title">{{post.title}}</p>
+        <div class="col-md-4">
+          {% if post.strapimage %}
+          <div class="strapimagediv">
+            <img src="/images/strap/{{post.strapimage}}" alt="{{post.title}}" class="strapimage"/>
+            <div class="strapimagetext">
+              {% if post.liveurl %}
+                <h4><a href="{{post.liveurl}}">{{post.title}}</a></h4>
+              {% else %}
+                <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+              {% endif %}
+              <h5>{{post.date.strftime('%d-%m-%Y')}}</h5>
               <p>{{post.strapline}}</p>
-              <a href="{{post.liveurl}}"><button type="button" class="btn btn-sm btn-primary">Play Now</button></a>
             </div>
           </div>
+          {% else %}
+          <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+          <h5>{{post.date.strftime('%d-%m-%Y')}}</h5>
+          <p>{{post.strapline}}</p>
+          {% endif %}
+        </div>  
+        {% set foo = foo + 1 %}
+        {%- if foo % 3 == 0 %}<div class="clearfix"></div> <hr/>{% endif %}
 
-       {% set foo = foo + 1 %}
-      {% endif %}
-      {%- if foo >= 4 %}{% break %}{% endif %}
     {% endfor %}
-
-  
-
   </div>
 
 
   <script type="text/javascript">
     $(window).load(function(){
-     
     });
   </script>
 

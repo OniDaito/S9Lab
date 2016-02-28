@@ -79,99 +79,41 @@
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <img class="navbar-brand-image" src="/images/s9_tiny.png" alt="section9 logo" />
+          <img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" />
 
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+          
           <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li {% if page.idx == 'home' %}class="active"{% endif %}><a href="/index.html">Home</a></li>
-            <li {% if page.idx == 'blog' %}class="active"{% endif %}><a href="/blog.html">Blog</a></li>
-            
-
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Professional Work <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                {% set foo = 0 %}
-                {% for post in site.posts %}
-                {% if post.category %}
-                {% if post.category == 'work' %}
-                <li><a href="{{post.url}}">{{post.title}}</a></li>
-                {% set foo = foo + 1 %}
-                {% endif %}
-                {%- if foo >= 12 %}{% break %}{% endif %}
-                {% endif %}
-                {% endfor %}
-                <li class="divider"></li>
-                <li><a href="/work.html">...and more!</a></li>
-
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a href="/work.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Fun Experiments <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-
-
-
-                <li><a href="http://archive.section9.co.uk/transsib">Transsiberian Slitscan</a></li>
-                <li><a href="http://archive.section9.co.uk/asteroids">Asteroids</a></li>
-                <li><a href="http://echoforms.section9.co.uk/">EchoForms</a></li>
-                <li><a href="http://archive.section9.co.uk/amiga/">Amiga Bouncing Ball</a></li>
-
-
-              </ul>
-            </li>
-
-            <li {% if page.idx == 'about' %}class="active"{% endif %}><a href="/about.html">About</a></li>
-          </ul>
+         
+          
         </div>
       </div>
     </nav>
 
-    <div class="jumbotron">
-      <div class="container">
-        <h2>{{page.title}}</h2>
-        <h3>{{page.date.strftime('%d-%m-%Y')}}</h3>
-        <p>{{page.strapline}}</p>
-      </div>
-    </div>
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12">
 
-    <div class ="container" id="content">
-      <div class="col-md-9">
-
+        <h3>{{page.title}}</h3>
+        <h4>{{page.date.strftime('%d-%m-%Y')}}</h4>
         {% block content %}{% endblock %}
       </div>
 
-      <div class="col-md-3">
-        <ul class="list-unstyled">
-          {% for post in page.related %}
-          <li><a href="/posts/{{ post[0] }}.html">{{post[1]}}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-
-
+     
     </div>
-
+    
+    <hr />
 
     <footer>
 
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <h3>Ghost in the CSh</h3>
-            <p>© Benjamin J. Blundell 2015 - <a style="color: white" title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
 
           </div>
           <div class="col-md-4">
-            <h3>Other places</h3>
             <p class="places-icons">
               <a href="https://github.com/OniDaito" title="GitHub"><i class="fa fa-github"></i></a>
               <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow"><i class="fa fa-stack-overflow"></i></a>
@@ -181,7 +123,6 @@
             </p>
           </div>
           <div class="col-md-4">
-            <h3>Contact</h3>
             <p class="places-icons">
              <a href="http://www.twitter.com/secti0n9" title="Twitter"><i class="fa fa-twitter"></i></a>
              <a href="mailto:ben@section9.co.uk" title="Email"><i class="fa fa-envelope-square"></i></a>
@@ -196,18 +137,16 @@
      </footer>
    </div>
 
-
   <script type="text/javascript">
     $(window).load(function(){
 
     // Process all images in the post for  left / right align
-    var images = $("#content img");
+    var images = $(".post img");
     for(var i = 0; i < images.length; i++) {
-      if (i % 2 == 0){
-        $(images[i]).addClass("img-responsive img-thumbnail pull-left");
-      } else {
-        $(images[i]).addClass("img-responsive img-thumbnail pull-right");
-      }
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
     }
   });
   </script>
