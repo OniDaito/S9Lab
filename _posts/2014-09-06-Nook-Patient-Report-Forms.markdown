@@ -6,7 +6,7 @@ strapline: Running Patient Report forms on a nook instead of with paper
 introtext: Anyone who volunteers for St John Ambulance or similar, or works with the ambulnance service will know that patient report forms are a sort of necessary pain-in-the-backside. Paper forms generally require a flat surface, pen and dry conditions. Efforts to replace such forms with iPads and similar haven't caught on due to battery life, capacitative sensing and cost. Enter the Nook.
 ---
 
-![Nook Detail](https://farm6.staticflickr.com/5567/15106934241_f344e0762f.jpg)
+![Nook Detail](https://c2.staticflickr.com/6/5567/15106934241_4e1ae420ed.jpg)
 
 Anyone who volunteers for St John Ambulance or similar, or works with the ambulance service will know that patient report forms are a sort of necessary pain-in-the-backside. Paper forms generally require a flat surface, pen and dry conditions. Efforts to replace such forms with iPads and similar haven't caught on due to battery life, capacitative sensing and cost. Enter the [Nook](https://en.wikipedia.org/wiki/Nook_Simple_Touch)
 
@@ -23,7 +23,7 @@ Nooks run Android 2.3.3 which is fine for our purposes. I based the form on the 
 <div class="clearfix"></div>
 
 
-![Nook Signing](https://farm4.staticflickr.com/3889/15106946251_c7aeb0ccd4.jpg)
+![Nook Signing](https://c2.staticflickr.com/4/3889/15106946251_543fc60318.jpg)
 
 We first trailed the application around our local St John Ambulance unit, receiving some very useful feedback. It's not often you get to write issues such as "Will it work when covered in blood or vomit?" into your github repository! A valid concern however. One interesting issue which defeats some tablets is the ability to use nitrile gloves with a touch screen. Fortunately, the Nook gets around this issue.
 
@@ -31,7 +31,7 @@ We added an option for minor wounds. At a festival, you typically deal with a lo
 
 Working on the feedback, we added some more features, getting another couple of Nooks for the festival so we had enough for all the teams and one to train with. One thing people asked about, revolved around hand-over and returning patients. There is currently no support for this sort of transaction. The reasons become clear when data security comes to the fore.
 
-![Nook Stack](https://farm4.staticflickr.com/3886/14923294440_dbebf9a337.jpg)
+![Nook Stack](https://c2.staticflickr.com/4/3886/14923294440_19c63f50bc.jpg)
 
 We decided that each unit should be totally stand-alone, with no wifi connection of any kind. Once a PRF is completed, it is encrypted using RSA and a 1024 bit public key (yes, I shall increase the key size in the next version for sure!). This means no-one can read the PRF unless they take it to a person with the matching private key. This leads to a reasonable level of protection from prying eyes and theft but it does make patient handover tricky.
 
