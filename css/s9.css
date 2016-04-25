@@ -64,22 +64,19 @@ footer a:hover {
   color: #A5F0FA;
 }
 
-footer i {
-  padding-right: 18px;
-}
-
 
 footer p {
   font-size: 12pt;
 }
 
-.places-icons {
-  font-size: 18pt;
+.places-text {
+  font-size: 12pt;
+}
+.places-text a {
+  margin-right: 6px;
 }
 
  /* Top Bar Styles - overrides */
-
-
 
 .navbar-brand {
   font-family: 'Anaheim', sans-serif;
