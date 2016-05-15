@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Fortran, CUDA and Fluid Dynamics</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" />
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>Fortran, CUDA and Fluid Dynamics</h3>
+        <h4>16-05-2016</h4>
+        
+<p>I've been working on a project here at <a href="http://www.qmul.ac.uk">QMUL</a> for a while now, utilising <a href="https://en.wikipedia.org/wiki/Fortran">Fortran90</a>, <a href="http://www.nvidia.com/object/cuda_home_new.html">CUDA</a> and a library called <a href="http://oerc.ox.ac.uk/projects/op2">OP2</a>. It's been quite a ride really, with lots of things to learn. I've finally had a bit of a breakthrough getting things working, so it seems like a good time to share some thoughts.</p>
+<p>Fortran remains popular in the science fields. I think there are a few reasons for this. Firstly, later versions of Fortran are actually not so different from C, at least to programmer. Fortran is more setup for maths work. One clue is that it's array indexing actually starts from 1! Can you believe it? I know right? We all use 0 as the first index into an array or matrix as programmers, but then we get told off by these mathematicians who much prefer using 1 as the first number. There are other things built into the language that are based around the ranks or shapes of multidimensional arrays but overall, it's a compiled language that appears to have the longest lineage of all languages. I've heard many horror stories of Fortran77 and I certainly wouldn't want to be using that language today. When something works, academia is loathe to change it. This can be a benefit in certain circumstances, when it's the science that matters, but it does put an extra load on people like me who need to learn the language. Good thing I enjoy it!</p>
+<p>Fortran appears to have another up-side; automated differentiation. A program called <a href="http://www-sop.inria.fr/tropics/tapenade.html">Tapenade</a> exists which takes any function, and generates a derivative of that function. So if one has a function generating a value, you can automatically create a first or second order derivative from it. I'm still not sure why Fortran is amenable to this, or how it works. It really does sound like voodoo to me, but impressive non-the-less. This sort of thing, I'm told, is very helpful for people working in fluid dynamics research. </p>
+<p>The actual project I'm working on, is porting a fluid dynamics solver to run on a CUDA capable card. More specifically, we are looking at new ways of parallelising the code base to take advantage of all the new, sweet modern hardware! Rather than write CUDA code directly, we have been asked to trial a library called <a href="http://oerc.ox.ac.uk/projects/op2">OP2</a>. This library takes the approach that all the data should be organised into sets, with mappings between sets and data attached to items in the set. Some strict rules need to be followed, such as not having two set items, through indirection, pointing to the same data item, in order to avoid race conditions. However, if you plan things out, you can then call OP2's parallel loop constructs. OP2 does a clever job of either simulating on a single processor, splitting the work with <a href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a>, <a href="http://openmp.org">OpenMP</a> or <a href="http://www.nvidia.com/object/cuda_home_new.html">CUDA</a> with very little additional code.</p>
+<p>A large part of the work involves flattening a lot of function calls to create a single function, or <em>kernel</em>, that is executed in parallel, with the CUDA kernels being slightly different to these for OpenMP or MPI. The data in our original program is organised quite differently so that has required quite a lot of re-organisation. After this rather laborious process, I finally managed to get a version running on one of our Tesla cards here at the university. We achieved a speed that was equivalent to about 12 Intel i7 cores or thereabouts. Fast, but nowhere near as fast as it could be.</p>
+<p>One of the cool things about the CUDA tool kit are the profiling tools that come bundled in. <em>nvprof</em> is a really cool little program that provides some really useful stats, and runs on the command line. The <a href="http://docs.nvidia.com/cuda/profiler-users-guide/index.html">Visual Profiler</a> provides an awful lot of advice, with pretty graphs and suggestions on how to improve your code. It turned out, as I thought, that we are copying to and from the GPU too often, and incurring all the speed penalties you get with the PCIe bus. So how best to improve on that? </p>
+<p>The first thing is to try and load all the data once, and perform all the problem computation on the GPU. This should be possible and it's my next step. It means writing even more kernels; squashing down functions into one monstrous function which seems like a pity. This does mean we need a hefty GPU with enough memory to hold the entire problem space, but then Tesla cards are fairly beefy these days. If you ever do get to a point where you can't fit the entire problem set onto a card, you can use the new asynchronous streaming api and load data whilst still performing computation on what you have in memory, effectively pipelining the process. </p>
+<p>If you are using Python, C, C++ or any of these languages, you have access to many compilers and tools. With Fortran however, nvidia were caught on the hop! Realising there was a large Fortran community out there, nvidia bought the Portland Compiler (indeed the whole company) and began work on adapting it to work with CUDA. Unfortunately, this means you need to buy a licence if you wish to use it past a year, which is a shame. I've been told there are a few more bugs in PGI than you might be used to, but it seems to perform ok for me.</p>
+<p>We've changed hardware just recently, moving to a newer GeForce card, with the latest Ubuntu and PGI compiler. Unfortunately the code is fragile and the build no longer works. Problems like this are very closely tied to the hardware; you really do need to be concerned with how floating point precision works on this hardware and whether or not you need doubles or floats as we are dealing with engineering and scientific simulation. One piece of software is coming to the rescue though - <a href="http://docker.io">Docker</a>. Images of certain operating systems and CUDA versions are available, so building and testing on different platforms becomes possible.</p>
+<p>I still know very little about fluid dynamics mind you, though it does sound really interesting! :D</p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+
