@@ -1,0 +1,30 @@
+---
+layout: post
+title: Electronic Patient Report Forms for EMFCamp 2016 
+introtext: Two years ago, I built an ePRF system for EMFCamp. This year, we've improved it significantly.  
+strapline: The Electronic Patient Report Form lives again, stonger, faster, more crypted! 
+tags: medical programming emfcamp security
+---
+
+Two years ago, at [EMFCamp](http://www.emfcamp.org) I built our first [Electronic Patient Report Form](https://www.section9.co.uk/posts/2014-09-06-Nook-Patient-Report-Forms.html). It worked pretty well and we managed to get some useful statistics out of it. This year, for 2016, we've improved it given the feedback from the users.
+
+
+![eprf](https://c2.staticflickr.com/8/7301/28245178701_53b1ab46e9.jpg)
+
+The first thing we did was to allow the user to keep multiple PRFs on the go, on one device. The first version only allowed you to have one PRF open at a time; you had to either quit out or save it and encrypt it. This time, you can have as many PRFs as you like. The whole backend was re-written with sqlite3 support to hold all the data not currently in use.
+
+Since the previous version was released, Android studio has gone through quite a lot of changes, moving from Eclipse, to IntelliJ (a really good thing in my opinion) but this did mean the original project needed some much needed love and attention to bring it around. The Nooks we use are quite old now and therefore finding all the correct libraries and getting them to work is not so straight forward. Eventually, it all came together.
+
+![eprf](https://c2.staticflickr.com/8/7512/28323574735_e4fd111318.jpg)
+
+The next thing we did, was to remove quite a few options we don't really use. The original form was heavily based on the St John Ambulance PRF, but since then, we've looked at several others, including [Festival Medical](http://www.festival-medical.org), London Ambulance service and the German Ambulance service. Since we really only deal with first aid, our form is now stripped down and faster to navigate. We have added a couple of extra fields (such as a FAST test) but on the whole, we've trimmed things down.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R3RBH4eI7bI" frameborder="0" allowfullscreen></iframe>
+
+Finally, perhaps the most important thing was to improve the encryption. We used an asymmetric cipher, RSA, to encrypt our PRFs as that was the simplest solution at the time. However, the short blocksize of RSA meant combining blocks using ECB, which is a really bad idea. For stopping trivial attackers it was probably ok, given the threats we faced, but I figured we needed to improve, so I used a combination of RSA and AES - encrypting the key that unlocks the AES and the rest of the message; a much more accepted way of encrypting large files.
+
+![eprf](https://c1.staticflickr.com/9/8688/27707383904_1a1023cd3b.jpg)
+
+The design has been improved with better layouts and a funky new logo (thanks gmj!). Overall, it seems this version is much tighter. Coupled with some simple back-end scripts, we now have a solution to review previous PRFs in case of return patients (which is rare but does happen). Some things we want to improve on is some kind of easy reference to other PRFs. So in the case of a repeat visit, a new PRF could be created with a quick reference to a previous one. We don't have that at present but it should be easy to add. 
+
+The project lives on [over here on github](https://github.com/OniDaito/EMFMedical_ePRF) and comments are more than welcome! 

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Electronic Patient Report Forms for EMFCamp 2016</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" />
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>Electronic Patient Report Forms for EMFCamp 2016</h3>
+        <h4>15-07-2016</h4>
+        
+<p>Two years ago, at <a href="http://www.emfcamp.org">EMFCamp</a> I built our first <a href="https://www.section9.co.uk/posts/2014-09-06-Nook-Patient-Report-Forms.html">Electronic Patient Report Form</a>. It worked pretty well and we managed to get some useful statistics out of it. This year, for 2016, we've improved it given the feedback from the users.</p>
+<p><img alt="eprf" src="https://c2.staticflickr.com/8/7301/28245178701_53b1ab46e9.jpg" /></p>
+<p>The first thing we did was to allow the user to keep multiple PRFs on the go, on one device. The first version only allowed you to have one PRF open at a time; you had to either quit out or save it and encrypt it. This time, you can have as many PRFs as you like. The whole backend was re-written with sqlite3 support to hold all the data not currently in use.</p>
+<p>Since the previous version was released, Android studio has gone through quite a lot of changes, moving from Eclipse, to IntelliJ (a really good thing in my opinion) but this did mean the original project needed some much needed love and attention to bring it around. The Nooks we use are quite old now and therefore finding all the correct libraries and getting them to work is not so straight forward. Eventually, it all came together.</p>
+<p><img alt="eprf" src="https://c2.staticflickr.com/8/7512/28323574735_e4fd111318.jpg" /></p>
+<p>The next thing we did, was to remove quite a few options we don't really use. The original form was heavily based on the St John Ambulance PRF, but since then, we've looked at several others, including <a href="http://www.festival-medical.org">Festival Medical</a>, London Ambulance service and the German Ambulance service. Since we really only deal with first aid, our form is now stripped down and faster to navigate. We have added a couple of extra fields (such as a FAST test) but on the whole, we've trimmed things down.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R3RBH4eI7bI" frameborder="0" allowfullscreen></iframe>
+
+<p>Finally, perhaps the most important thing was to improve the encryption. We used an asymmetric cipher, RSA, to encrypt our PRFs as that was the simplest solution at the time. However, the short blocksize of RSA meant combining blocks using ECB, which is a really bad idea. For stopping trivial attackers it was probably ok, given the threats we faced, but I figured we needed to improve, so I used a combination of RSA and AES - encrypting the key that unlocks the AES and the rest of the message; a much more accepted way of encrypting large files.</p>
+<p><img alt="eprf" src="https://c1.staticflickr.com/9/8688/27707383904_1a1023cd3b.jpg" /></p>
+<p>The design has been improved with better layouts and a funky new logo (thanks gmj!). Overall, it seems this version is much tighter. Coupled with some simple back-end scripts, we now have a solution to review previous PRFs in case of return patients (which is rare but does happen). Some things we want to improve on is some kind of easy reference to other PRFs. So in the case of a repeat visit, a new PRF could be created with a quick reference to a previous one. We don't have that at present but it should be easy to add. </p>
+<p>The project lives on <a href="https://github.com/OniDaito/EMFMedical_ePRF">over here on github</a> and comments are more than welcome! </p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+
