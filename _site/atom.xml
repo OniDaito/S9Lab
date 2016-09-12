@@ -2,7 +2,13 @@
       <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Section9 dot co dot uk ltd</title>
 <link href="http://www.section9.co.uk/atom.xml" />
-<updated>2016-08-17</updated>
+<updated>2016-09-12</updated>
+<entry>
+<title>From Hackspace to Secret Hacking Lair</title>
+<link href="http://www.section9.co.uk/posts/2016-09-12-Hackspace-basement.html" />
+<updated>2016-09-12</updated>
+<title>From Hackspace to Secret Hacking Lair</title>
+<id>146</id></entry>
 <entry>
 <title>Electronic Magnetic Field Camp 2016</title>
 <link href="http://www.section9.co.uk/posts/2016-08-17-EMF-2016.html" />
@@ -50,7 +56,7 @@
 <link href="http://www.section9.co.uk/posts/2016-04-07-Revision.html" />
 <updated>2016-04-07</updated>
 <title>Revision 2016</title>
-<id>148</id></entry>
+<id>149</id></entry>
 <entry>
 <title>Driving through Morocco</title>
 <link href="http://www.section9.co.uk/posts/2016-03-16-Morocco.html" />
@@ -140,7 +146,7 @@
 <link href="http://www.section9.co.uk/posts/2015-06-05-QMUL.html" />
 <updated>2015-06-05</updated>
 <title>Scientific Programming at Queen Mary</title>
-<id>156</id></entry>
+<id>157</id></entry>
 <entry>
 <title>So long business, and thanks for all the pixels.</title>
 <link href="http://www.section9.co.uk/posts/2015-05-19-Moving-On.html" />
@@ -176,7 +182,7 @@
 <link href="http://www.section9.co.uk/posts/2015-04-01-transsiberian-Part-13.html" />
 <updated>2015-04-01</updated>
 <title>Transsiberian Part 13 - Beijing</title>
-<id>154</id></entry>
+<id>155</id></entry>
 <entry>
 <title>Transsiberian Part 12 - Mongolian Border with China</title>
 <link href="http://www.section9.co.uk/posts/2015-03-31-transsiberian-Part-12.html" />
@@ -194,7 +200,7 @@
 <link href="http://www.section9.co.uk/posts/2015-03-28-transsiberian-Part-10.html" />
 <updated>2015-03-28</updated>
 <title>Transsiberian Part 10 - Russian-around!</title>
-<id>146</id></entry>
+<id>147</id></entry>
 <entry>
 <title>Transsiberian Part 9 - Ulan-ude and the Border</title>
 <link href="http://www.section9.co.uk/posts/2015-03-27-transsiberian-Part-9.html" />
@@ -224,7 +230,7 @@
 <link href="http://www.section9.co.uk/posts/2015-03-19-Transsiberian-Part-5.html" />
 <updated>2015-03-19</updated>
 <title>Transsiberian Part 5 - Kazan</title>
-<id>158</id></entry>
+<id>159</id></entry>
 <entry>
 <title>Transsiberian Part 4 - Moscow</title>
 <link href="http://www.section9.co.uk/posts/2015-03-17-Transsiberian-Part-4.html" />
@@ -362,7 +368,7 @@
 <link href="http://www.section9.co.uk/posts/2014-01-12-Phantom-Limb-02.html" />
 <updated>2014-01-12</updated>
 <title>Phantom Limb Dev Diary Part 2</title>
-<id>149</id></entry>
+<id>150</id></entry>
 <entry>
 <title>Tailoring a Suit</title>
 <link href="http://www.section9.co.uk/posts/2013-12-17-Suit.html" />
@@ -392,7 +398,7 @@
 <link href="http://www.section9.co.uk/posts/2013-09-30-Necklace.html" />
 <updated>2013-09-30</updated>
 <title>LED Pendant</title>
-<id>150</id></entry>
+<id>151</id></entry>
 <entry>
 <title>The EMF TilDA Badge Doorbell</title>
 <link href="http://www.section9.co.uk/posts/2013-09-12-Doorbell.html" />
@@ -446,7 +452,7 @@
 <link href="http://www.section9.co.uk/posts/2013-03-04-Timelapse.html" />
 <updated>2013-03-04</updated>
 <title>Linear Rail Time Lapse</title>
-<id>147</id></entry>
+<id>148</id></entry>
 <entry>
 <title>Coin Detection at the British Museum</title>
 <link href="http://www.section9.co.uk/posts/2013-02-18-BritishMuseumCoins.html" />
@@ -572,7 +578,7 @@
 <link href="http://www.section9.co.uk/posts/2012-04-04-Minimus-and-Sega.html" />
 <updated>2012-04-04</updated>
 <title>Minimus and Sega</title>
-<id>157</id></entry>
+<id>158</id></entry>
 <entry>
 <title>New Lab</title>
 <link href="http://www.section9.co.uk/posts/2012-04-02-New-Lab.html" />
@@ -716,7 +722,7 @@
 <link href="http://www.section9.co.uk/posts/2011-08-14-Denied.html" />
 <updated>2011-08-14</updated>
 <title>Denied</title>
-<id>151</id></entry>
+<id>152</id></entry>
 <entry>
 <title>Box2D and Puppets</title>
 <link href="http://www.section9.co.uk/posts/2011-08-04-Box2D-and-Puppets.html" />
@@ -764,7 +770,7 @@
 <link href="http://www.section9.co.uk/posts/2011-06-15-only.html" />
 <updated>2011-06-15</updated>
 <title>Only Installation at the Lowry</title>
-<id>159</id></entry>
+<id>160</id></entry>
 <entry>
 <title>iPhone Macro Lens Hack</title>
 <link href="http://www.section9.co.uk/posts/2011-06-08-iPhone-Macro-Lens.html" />
@@ -800,7 +806,7 @@
 <link href="http://www.section9.co.uk/posts/2011-04-23-quad-warp-dual-head.html" />
 <updated>2011-04-23</updated>
 <title>Quad Warp, Dual Head</title>
-<id>155</id></entry>
+<id>156</id></entry>
 <entry>
 <title>The Woes of Soft Shadows</title>
 <link href="http://www.section9.co.uk/posts/2011-04-13-the-woes-of-soft-shadows.html" />
@@ -848,7 +854,7 @@
 <link href="http://www.section9.co.uk/posts/2011-02-04-cinder-skinning.html" />
 <updated>2011-02-04</updated>
 <title>Cinder Skinning</title>
-<id>153</id></entry>
+<id>154</id></entry>
 <entry>
 <title>Projection Mapping</title>
 <link href="http://www.section9.co.uk/posts/2011-01-26-projection-mapping.html" />
@@ -872,7 +878,7 @@
 <link href="http://www.section9.co.uk/posts/2010-11-02-weighted-companion-cube.html" />
 <updated>2010-11-02</updated>
 <title>Weighted Companion Cube</title>
-<id>152</id></entry>
+<id>153</id></entry>
 <entry>
 <title>British Library Tweet-o-meter</title>
 <link href="http://www.section9.co.uk/posts/2010-10-15-british-library-tweet-o-meter.html" />
