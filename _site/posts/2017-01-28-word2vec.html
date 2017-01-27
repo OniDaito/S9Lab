@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>word2vec, Tensorflow and Vector Counts</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" />
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>word2vec, Tensorflow and Vector Counts</h3>
+        <h4>28-01-2017</h4>
+        
+<p>So in addition to getting married, helping plan a move to the USA and learning all about bioinformatics, I've been working a lot with <a href="https://en.wikipedia.org/wiki/Word2vec">word2vec</a>, <a href="https://www.tensorflow.org">tensorflow</a> and various word vector counts to figure out similarities between verbs. It's a fun little project that sits right at the heart of natural language processing.</p>
+<p>The idea we have is to see if we can automatically find whether verbs are similar or dissimilar to each other. We have a nice list of english verbs from <a href="http://people.ds.cam.ac.uk/dsg40/simverb.html">this page at Oxford University</a>. This project has a set of verbs and a human rating as to how similar they are. There are test sets and training sets.</p>
+<p><a href="https://code.google.com/archive/p/word2vec/">word2vec</a> is an algorithm designed by google that creates a set of vectors that are designed to be added and subtracted together to allow some basic vector operations on words. Word2vec can do interesting things such as finding what word is most similar to another word or predicting what word would come next in a sentence or what word would we get if we ran the following equation : royal + queen - female = ? (king would be a good answer to that potentially).</p>
+<p><a href="http://www.tensorflow.org">Tensorflow</a> has been the deep-learning darling of the internet for a while now. It contains a couple of word2vec examples, with some tutorials on how these work. You can pose the same questions to this as you can to the original version.</p>
+<p>You need a large corpus/training set for word2vec and tensorflow. We use the <a href="http://wacky.sslmit.unibo.it/doku.php">ukwac</a> dataset. It's quite large (several gigabytes) as it is a snapshot of the .uk domain (from around 2008 I believe). The text is parsed into sentences and then tagged. So each word has it's type (verb, adverb, noun etc) and its role in sentence (object, root, subject etc) listed. This comes in very handy later on.</p>
+<p>So how do you start with all this? Well, its possible to remove all the tags and smush all the sentences back together into one large file and have word2vec process this one large file. That works quite well. Tensorflow is much more difficult. It requires a dictionary lookup and a whole set of integers. Rather than work on words, you create a dictionary of, say, the top 50,000 most common words and give them a number. You then process every sentence, replace it with a number or an 'unknown' placeholder if the word is not so common.</p>
+<p>I decided to pre-process the ukwac files with a program written in C++. I wanted to try memory mapped files from the <a href="http://www.boost.org">boost</a> library, mostly because I was interested but also because this program could then run on smaller machines. It works quite well and produces a set of files that tensorflow can read easily. I use <a href="http://openmp.org">openmp</a> to split the large files into blocks and process them in parallel, giving us some speedup. While a bit more complicated, it seems to work great.</p>
+<p>Vector counts are a different kettle of fish. Most vectors produced by Tensorflow or Word2vec are about 200 items long (maybe 400 if we are being cheeky), but vector counts are typically on the order of 5000 or so. Each vector is associated with a word and represents what other words appear <em>near</em> this word. We use a sliding window of a certain size to create this vector. For example, consider the last sentence. Withing 5 words of the word certain, we have "a, sliding, window, of, a, size, to,create, this and vector". The word 'a' occurs twice so the entry for 'a' in the 'certain' vector would go up by two.</p>
+<p>There are more details to it though. The basis is smaller than vocab for instance. But are we bothered by words like 'the' or 'a' for example? We choose our basis carefully and then compute these large vectors. Rather than use the raw counts, we work out the probability that a word will occur near another word.</p>
+<p>With all these vectors, we can then perform some maths, such as vector addition, multiplication and such, or more complicated things, such as adding together all the vectors of an intransitive verb's subjects. We can also use the <a href="https://en.wikipedia.org/wiki/Kronecker_product">kronecker product</a> to find any similar factors in pairs of vectors. I use <a href="http://www.numpy.org">numpy</a> and <a href="http://www.scipy.org">scipy</a> to perform most of the maths. I've looking into using <a href="http://cython.org">Cython</a> to try and speed things up, though the jury is out on that one. We use some basic stats such as <a href="https://en.wikipedia.org/wiki/Spearman's_rank_correlation_coefficient">spearmans rho</a> and the <a href="https://en.wikipedia.org/wiki/Resampling_%28statistics%29#Permutation_tests">permutation test</a>. </p>
+<p>With our python scripts, our preprocessed files and vectors, we can upload all these to a cluster. Using <a href="https://pypi.python.org/pypi/virtualenv">virtualenv</a> we can create custom jobs on our cluster and leverage <em>the power of supercomputing</em> Rarrgh! So far, the python side of things is a bit slow and is still running as I write this, but I'm quite keen to see the final results!</p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+
