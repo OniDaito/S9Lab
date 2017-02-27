@@ -1,0 +1,42 @@
+---
+layout: post
+title: Keeping track of a load of Molerats
+introtext: How do you improve an existing project for a long term study of animal behaviour
+strapline: How do you improve an existing project for a long term study of animal behaviour
+tags: science programming
+---
+
+One of the things you see a lot in programming jobs, but particularly in creative works and research outfits, is an interesting idea but with poor engineering. One of the reasons research software engineering now exists as a discipline is to counter the problem of unmaintained and difficult-to-use programs. There is a lot of flair in many research programs but researchers have very different priorities and the code suffers as a result. It makes reproducible results harder and there simply isn't enough time to do stuff right. Other areas have had technicians for a long time, but programming is only just getting there. This has become quite apparent in my latest project - tracking lots of molerats.
+
+Typically, a good researcher would hire out people to work on their projects with them. I used to do that here at section9 (and might go back to doing so in the near future) and whilst that can work, hiring a total stranger is really hard to get right. Even more difficult is managing a team of such people. I've have a good experience of that recently at Queen Mary but this particular project has had some ups and downs. Some parts of the system are not as reliable as others and so I was recommended by another academic to the leader of the molerat project to take a look and see if there was anything I can do.
+
+The project itself is a long term study of animal behaviour, mixed with an art installation. It seems to me a big part of this is getting involved with the live data, communicating science and thinking about art and technology. Ticks quite a few boxes for me. The system monitors a colony of molerats, living in the animal lab here at QMUL. To gain access one must fill out a health and safety questionnaire, including all sorts of questions about allergies, medical conditions and the like. Entering the lab involves wearing labcoats (Yes, the proper white ones for science!) and shoe covers. The lab itself is just a normal room but it's kept at a high temperature. Working in this room for any significant length of time is quite a challenge. Molerats are pretty much cold blooded - this saves on energy and since they live in Africa, underground, who needs warm blood right?
+
+The molerats live inside a series of tubes and boxes. Some of the tubes have wood inside for them to gnaw on. The noise is incredible! Lots and lots of tiny teeth, scratching at the plastic. These guys love to gnaw! The colonies are doing quite well it seems. I was introduced to some tiny baby molerats who are being well looked after. Above some of the tubes are RFID sensors that detect when a chipped molerat runs past. Above the colony are some sensors such as light, humidity and the like. These are linked to an Arduino and the whole thing is attached to a Mac Mini.
+
+This is where I begin to get concerned. A mac is perhaps not what I would have chosen to run this experiment. Not only that, there is no SSH access, just TeamViewer. To be fair, I actually got around to liking TeamViewer - it seems like a very good program. It's perhaps just overkill? One of the things I like to do when setting something like this up is to go with the absolute bare minimum. Less to get in the way and less to go wrong. However, coming in late in the day to a project means that you cant just do everything your way. You still need to add value but not just smash everything and start again. There is a tendency for programmers to do this and I can totally see why. No-one is as interested in your ideas as you, and programming is really a glimpse into someones thoughts. Nevertheless, I got to work seeing where my hours would be best spent.
+
+I'm told that the main problem was java crashing a lot. Apparently, running out of memory was a thing. The first thing I noticed was the code to pull off the readings from the RFID readers and enter these in the database. It was written in Processing and then wrapped inside an OSX container. This is a classic example of using the wrong tool for the job. Processing is great for quick sketches and playing with visual ideas. You don't write a secure, reliable, IO daemon in it. It appeared this was causing a lot of trouble, so I re-wrote a programm in C++ that could be daemonized and controlled with [launchd](https://en.wikipedia.org/wiki/Launchd). Launchd is the OSX daemon that controls various system daemons and gives you some reliability and control. I figure the best thing was to use what the OS provides as much as possible. Having fine control over the serial port, the polling and each device separately really helped. I used the [mysql connector](https://www.mysql.com/products/connector/) to write the values to the local database.
+
+This brings us to the second elephant in the room - [MariaDB](https://mariadb.org/). I'm generally a [Postgres](https://www.postgresql.org/) man, I have to say. But rather than change everything over and be annoying I figured, hey, lets see what we can do. The problem here was that we needed to not only have a local database, but a remote version that could be attached to a website for the public to take a look at. The original processing sketch was written to make a connection to both a local and remote database at the same time. There are several problems with this approach:
+
+1. The sketch doesn't check or retry if a connection fails. So you could end up running for ages without writing to the remote db
+2. Worse, it might actually crash or not start if a connection cant be made
+3. Even if a connection is made can we be sure if the databases are in sync?
+4. Processing connects on a port. This means exposing the port on the remote server to the entire internet.
+
+Again, the thing to do here is see what we get for free. What is tested and works? Mariadb is buggy (apparently) but we can improve things in a few easy ways:
+
+1. Use Mariadb replication. Built-in, robust, tried and tested database backup and replication.
+2. Use a VPN and bind Mariadb on that device instead. Increases security.
+3. Change the daemon to report connection failures early.
+
+This is what we ended up using. The [mariadb docs on replication](https://mariadb.com/kb/en/mariadb/standard-replication/) are a little sparse but easy to follow (not as bad as mysql connector I might add). It took a while to get replication to work. It turns out that setting the 'replicate_do_db' setting doesn't actually work right sadly. I spent far too long wondering why replication was apparently setup but data was not appearing. Another problem with mysql and mariadb is that it can't listen on an arbitrary number of devices and ports. Its none, one or all! For some reason, OSX [tunnelblick](https://tunnelblick.net/) provided OpenVPN doesn't like you connecting to the local atun0 interface. Linux was fine but for some reason I couldn't connect to the database from the mac desktop over the atun0 device. Strange, but clearly I don't know enough about tunnel devices. In the end, the sync worked great.
+
+One thing I did get concerned over were log files. If I was spewing out data, I'd have to make sure that I cleaned it up. OSX has some good scripts that can be found in
+
+    /etc/periodic/daily/
+
+Looking at the scripts found within, it's quite straightforward to write a script that clears the log each day. 
+
+I keep looking at the machine to make sure memory use isn't increasing, that data is still arriving and that synchronisation is working. So far so good. It feels nice to do good work and improve on things. I feel there is still some more to do on this project, but small steps seem to have worked in keeping the results coming in without sacrificing engineering quality. 
