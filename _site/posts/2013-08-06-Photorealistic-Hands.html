@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Photo-realistic hands</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://www.section9.co.uk"><img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" /></a>
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>Photo-realistic hands</h3>
+        <h4>06-08-2013</h4>
+        
+<p>The University of Manchester came to me, asking if I could render a series of hands that were as realistic as possible. The plan is to fool a human into thinking the resulting images are real. With that in place, certain parameters can be tweeked in order to facilitate an experiment into mirror neurons.</p>
+<p>The goal is to see which parameters effect the perception of realism the most or least and what effects these have on mirroring the actions the hand performs. I was tasked to render these hands. Previously, I had attempted this with 3D studio max, which I've never been very happy with. I find it a little messy, bloated and somewhat hard to control. I felt it was time to give blender a shot.</p>
+<p><img alt="Max Hand Post Process" src="http://farm8.staticflickr.com/7415/9308189446_ccafb86b77.jpg" /></p>
+<p>Blender uses the Cycles renderer. This has evolved quite a lot over the last few months. It now supports <a href="">Sub Surface Scattering</a>, which is essential for rendering things like Skin, marble, milk, apples or anything with that creamy, opaque look. I'd previously been looking over the best of the best when it comes to Blender Photo-realism and the results looked promising. I figured Blender might be able to punch at the same weight as 3DSMax</p>
+<p><img alt="Blender Hand" src="http://farm6.staticflickr.com/5348/8949103559_1c9bcb5e54.jpg" /></p>
+<p>The state of Blender can be seen in the second image. This hand was found for free at <a href="http://www.blendswap.com/">BlendSwap</a> - an excellent page for free blender models. I attempted to render it with Subsurface scattering, but the results were less than optimal. At present, the displacement setting within the Blender Cycles material node doesn't seem to work, which is a shame. One needs to use the displacement modifier in order to get all these lovely pits and creases in the human skin. Sadly, the resolution of these textures is not quite good enough for realism.</p>
+<p><img alt="Creepy Hand" src="http://farm4.staticflickr.com/3705/9296833206_8aaee57a6d.jpg" /></p>
+<p>Previously, we had spent around $80 USD on a hand for 3DSMax. The textures were very high resolution and included a set of textures for the Epidermal and Subdermal layers of skin, which we can set as parameters to our Suburface materials within Blender. In the previous image, you can see this model exaggerated, with all the creases and pits in their full glory. This doesn't look too bad, and is certainly closer. The problem here is that 3DSMax rigging and skinning doesn't translate into Blender, which meant I had to rig the model myself. This is not my forte at all and its a very tricky job. When the hand was posed, you could easily make out some problems with distortion. In addition, the nails on this model are a dead giveaway. They don't look real, no matter what I ended up doing.</p>
+<p><img alt="Distorted Hand" src="http://farm6.staticflickr.com/5491/9316499708_166c87f492.jpg" /></p>
+<p>Finally, I decided it might be better to go back to <a href="http://www.turbosquid.com">Turbosquid</a> and look for another hand that might have better nails and resonable textures. I found one and decided to rig it msyelf. It looked alright but I suddenly hit on the idea that placing the hand in a natural setting is one way to fool a person. I took both my desk and the chair I sit on and used these as backdrops for the blend using a technique known as <a href="http://www.blenderguru.com/videos/camera-mapping/">Camera Mapping</a>. This is quite easy to do in Blender and gives quite a pleasing result, especially if you use a SLR</p>
+<p><img alt="Chair Hand" src="http://farm3.staticflickr.com/2858/9320407303_e0621e39db.jpg" /></p>
+<p>One thing none of these models have is hair. Hair has been one of the hardest things to render in computer graphics for a long time. Cycles supports hair at present though I found it quite difficult to get the look I was going for as the hairs were quite thin and occasionally didn't show up at all. Given the problems I had with it, I decided to leave it off the model for now and hope that it wouldn't affect things too much.</p>
+<p><img alt="Hair Cube" src="http://farm6.staticflickr.com/5466/9255089894_4789c6f46a.jpg" /></p>
+<p>The final hurdle involved actually rendering the scene. We had 3 variables to change: the blockiness, the shininess and the colour / texture. Each variable had 10 frames and we had another 10 frames where all the variables were combined. Overall, 40 frames at 25% resolution (around 1024 x 768px) with 2000 samples per ray. That 99 tiles thereabouts. When I tried to render one frame on my desktop, Windows 7 actually broke! Clearly this would not do.</p>
+<p>In the end <a href="https://london.hackspace.org.uk/">London Hackspace</a> and <a href="http://aws.amazon.com/ec2/">Amazon EC2</a> came to the rescue. I tried the latter first; spinning up a Linux instance and downloading Blender. The render took about 30 minutes the first time around and worked a treat. I was then informed that we had a server machine with a great many cores and memory over at the London hackspace, so I moved to using that. It ran at about 1 Kilowatt hour, so it was easy enough to work out the power costs. Still, despite the power it took around 36 hours to render all the frames at a reasonable resolution.</p>
+<p><img alt="Blender Materials" src="http://farm4.staticflickr.com/3699/9400527972_4a58f00d7a.jpg" /></p>
+<p>Overall, it was a fun project and quite a difficult one. Skinning and rigging is perhaps the hardest part of this, along with having textures big enough to provide enough realism. You need at least 6 textures for anything involving skin, along with a really good lighting solution. Hands are really hard to get right, as we are all very familiar with our hands. I can think of only faces as being harder.</p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+

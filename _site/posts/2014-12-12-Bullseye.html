@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Bullseye's playground for Target and Psyop</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://www.section9.co.uk"><img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" /></a>
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>Bullseye's playground for Target and Psyop</h3>
+        <h4>12-12-2014</h4>
+        
+<p><img alt="Cul8r" src="https://farm8.staticflickr.com/7524/15979186906_11c0d4d6ef.jpg" /></p>
+<p>Starting at the end of September, I was asked to help out with Target's latest marketing campaign; a set of mobile games running through WebGL, called <a href="http://www.bullseyesplayground.com/desktop">Bullseye's Playground</a>. A formidable challenge, given the variation of devices and such. With Apple's recent entry into WebGL, this only makes things more tricky. But thankfully, the company working on the Project, <a href="http://www.psyop.tv">Psyop</a> have some really talented people working for them.</p>
+<p>I was asked to work on two parts of the final piece; the game called Stuntzone and the Worldmap. The Stuntzone game is quite simple. You choose a car and a track and at certain points around the track, you are asked to perform some gestures in order to complete the track. If you manage to complete a track, you are presented with a short cut-scene.</p>
+<p>The tracks are represented by <a href="http://en.wikipedia.org/wiki/Non-uniform_rational_B-spline">NURB Curves</a>. I wrote a small class that would read in data and smoothly pan along the curve. To get the curves in the first place, I wrote a short python script that can export curves from an FBX File - that most lovely of 3D file formats. </p>
+<div class="clearfix"></div>
+
+<hr />
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/WhmlBz1ro0M" frameborder="0" allowfullscreen></iframe>
+
+<hr />
+
+<div class="clearfix"></div>
+
+<p>Stuntzone is split into two simple sections; a garage scene where you choose the cars and track, and the actual race itself. The effects are quite simple. There is a cubemap performing refection on the cars (ironically, these cars are made of plastic these days so probably don't reflect quite as much). There are a few particle systems for the snow and boost trails (inspired by Back to the Future :D ). </p>
+<p><img alt="BlizzardBoost" src="https://farm8.staticflickr.com/7478/15979186836_dc37fdc41f.jpg" /></p>
+<p>The worldmap scene involves an awful lot of curves and tweening. I went through quite a few variations of curves using a few sigmoid functions and similar. It turned out to be quite interesting as there are many functions out there to generate curves. You can see quite a few over at <a href="http://easings.net">Easings.net</a>. In addition, we had to have various hit targets to pickup the various taps and clicks the user might make.</p>
+<p>The technology for the 3D sections revolved around Three.js (again... annoyingly), with various supporting libraries. To bring everything together, we used <a href="http://bower.io">Bower</a>, <a href="http://gulpjs.com">Gulp</a> and a series of other, smaller libraries to take care of things like sound. I wrote some code to deal with gestures such as swipe, tap and double tap. I adapted some code I'd used for the <a href="https://www.section9.co.uk/posts/2014-05-28-Equatorie.html">Equatorie</a> which I'd tested before. </p>
+<p><img alt="WorldMap" src="https://farm8.staticflickr.com/7563/15819211157_1c7de9fc32.jpg" /></p>
+<p>One of the interesting things about the project was the use of the <a href="https://github.com/google/traceur-compiler">Traceur</a> compiler from Google, in order to provide <a href="http://people.mozilla.org/%7Ejorendorff/es6-draft.html">ES6</a> language constructs. I really like this, because it provides some very nice features. It's not quite as much of a departure from Javascript as CoffeeScript is, but it's definitely a step in the right direction. </p>
+<p>Testing on mobile devices is still tricky. This was made worse by recent upgrades to android that killed my remote debugging client under Chrome. Nevertheless, we managed to get through it in the end. Some Apple devices proved a little tricky. We certainly had to limit the number of triangles on screen at any one time, and really pull back on some of the assets. Quite a lot of the assets are held in local storage, only to be pulled into the browser at the last minute when they are needed. Stuntzone has quite a lot of assets and a large memory footprint.</p>
+<p>The team over at Psyop were great to work with - despite the time differences we managed to get everything together. Im sure the lead developer deserved an awful long holiday off after the Herculean task he pulled off!</p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+

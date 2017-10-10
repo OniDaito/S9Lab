@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Stereo Vision</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://www.section9.co.uk"><img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" /></a>
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>Stereo Vision</h3>
+        <h4>08-05-2012</h4>
+        
+<p>So what have I been up to these last few months? I've not had a lot of chance to mess around in the graphics domain, largely because I've been working on a large project for The University of Leeds. I've been interested in computer vision for a while and this seemed like a good chance to get to grips with it. Im working on the reconstruction of meshes from multiple camera viewpoints. This leads me into the realms of stereo vision.</p>
+<div class="clearfix"></div>
+
+<p><hr/>
+<iframe width="460" height="360" src="https://www.youtube.com/embed/7Gx4IRoq1ow" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr/></p>
+<p>In the initial case, the idea is to place two cameras side-by-side. When a known point is located in both frames, one can begin to calibrate the cameras, use triangulation and work out the depth. Using OpenCV, many of these functions are defined for you. In the above video, we can see the disparity map beginning to take shape. The disparity map on the right, shows the distance from one point in the left image to the same point in the right image. This apparent distance is related to the depth.</p>
+<p>One needs to work out two sets of parameters before we can begin to calculate the disparity. The first set of parameters are called the Intrinsic Parameters - these are related to the distortion effects that are encountered when using any lens. Barrel distortion and tangential distortion can make straight lines look curved. The second set of parameters are called Extrinsic parameters which are related the setup of the two cameras. Modelling and solving these equations for these cameras is known as <a href="http://en.wikipedia.org/wiki/Camera_resectioning">Camera Resectioning</a>. Thankfully, OpenCV includes a method for this. </p>
+<p>The issue with not having straight lines might seem trivial but you can really see the effect when you look at photographs of skyscrapers or other tall buildings; they tend to curve as they reach for the sky. Of course, this has problems for determining the right correspondances between two images.</p>
+<p>No doubt, you'll have seen the chessboards everywhere when it comes to computer vision. Chessboards provide a good way to calibrate a camera as the intersections between the black squares form a good set of regular points on a plane. I've settled with a 9x6 chessboard with a wide, white edge, mounted on perspex. I take around 60 to 80 shots per camera when attempting to find the intrinsic values. So far, this seems to work most of the time. Im using Logitech C910 cameras for this experiment and they do have a reasonable amount of barrel distortion.</p>
+<p>The next step is to work out the Extrinsic Values. These are related to the setup and are not independent of the the view, unlike the intrinsic parameters. Depending on how your cameras are setup, these parameters will change. Again, OpenCV has another function that makes a pretty good guess at what these paramters should be. Again, you need a chessboard to generate a set of known points that can be seen from each camera. </p>
+<div class="clearfix"></div>
+
+<p><hr/>
+<iframe width="460" height="360" src="https://www.youtube.com/embed/D6DVhtsVmDE" frameborder="0" allowfullscreen></iframe>
+<div class="clearfix"></div>
+<hr/></p>
+<p>In the above video, I am generating a disparity map on the right hand side, then creating a simple mesh in the middle. Sadly, it's not quite perfect yet, but it's early days so far. </p>
+<p>I've found that OpenCV does provide a lot of useful functions but one needs to be aware that there are two versions out there, and many of the examples are not so useful. OpenCV2 is the main one to go for, and under Linux, building your own is a must. There are issues under unbuntu that revolve around the supporting libraries but these can be overcome with some clever symlinking. The <a href="http://www.laganiere.name/opencvCookbook/">OpenCV2 cookbook</a> is really not a bad place to start. The O'Reilly OpenCV book is fairly canon but be aware that the code examples cover OpenCV1 only and there are a few differences.</p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+

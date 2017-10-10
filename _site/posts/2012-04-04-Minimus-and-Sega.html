@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Minimus and Sega</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://www.section9.co.uk"><img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" /></a>
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>Minimus and Sega</h3>
+        <h4>04-04-2012</h4>
+        
+<p><img alt="minimus" src="http://farm8.staticflickr.com/7179/7029645643_83b6a3ec75.jpg" /></p>
+<p>My sister has been a big fan of retro gaming for some time and for her birthday I decided to make a USB convertor for the sega megadrive pad in order to play <a href="http://mamedev.org">MAME</a> the way it's meant to be played.</p>
+<p>Now there were a few ways I could go about this. I saw a <a href="http://dangerousprototypes.com/forum/viewtopic.php?f=56&amp;t=2971">blog post from dangerous prototypes</a> that talked about using a PIC. Now I thought this would be a great time to test out the <a href="http://dangerousprototypes.com/bus-pirate-manual/">Bus Pirate</a> (which is a great little toy) and learn how to program something a little different.</p>
+<p>Sadly, it turns out that this is not the case and you need a special adaptor to program PIC chips. What an utterly stupid thing to have done.</p>
+<p><img alt="minimus" src="http://farm7.staticflickr.com/6211/7029644525_1e4d78eee4.jpg" /></p>
+<p>So instead, I managed to find out about the <a href="http://www.minimususb.com/">minimus</a> thanks largely to <a href="http://imakethin.gs/">Tom Wyatt</a> and <a href="http://jamie.lentin.co.uk/embedded/arcade-joystick/">Jamie Lentin</a>. The minimus is based on everyone's favourite, AVR! Only this particular AVR chip has USB built in! You can pick up a minimus from <a href="http://www.modtraders.co.uk/">Mod Traders</a> and I highly suggest you do. The Minimus is powered by an Atmel AT90USB162. Its an 8-bit chip with 16K of memory. Its not quite as hefty as the Minimus 32 or the later arduino boards but at a fiver you'd be foolish not to buy at least 5. But here is the real clincher.</p>
+<p><a href="http://www.fourwalledcubicle.com/LUFA.php">LUFA</a> is a full USB stack that can run on the minimus. Yes, it means your small device can run as a USB joystick, keyboard or other HID device complete with all the manufacturer lines and data that normal USB devices have. It's a wonderous thing to behold.</p>
+<p>I used Linux and Ubuntu to build and flash my minimus. The instructions are simple enough. I've been fighting AVR and Atmel's corner for a little while now, largelty because of <a href="http://en.wikipedia.org/wiki/GNU_Compiler_CollectionArchitectures">AVR-GCC</a> which is brilliant! The best compiler (okokok maybe clang is good too) has support for AVR chips. No need for extra cash spent on a special programming box. Its all done over USB. Brilliant. So forget PIC, it's time is over. From now on, its AVR, FPGAs and maybe a little ARM.</p>
+<p><img alt="minimus" src="http://farm8.staticflickr.com/7229/7029644081_640d6f8fe4.jpg" /></p>
+<p>So, the actual Sega pad itself. Well the trick is to check out the latest version of LUFA and start with Jamie's joystick code, albeit somewhat adapted to having just 4 buttons. There is one major hack though for the SEGA pads. They multiplex the signals. So if you checkout <a href="http://pinouts.ru/Game/genesiscontroller_pinout.shtml">pinouts.ru</a> you can see that there is a select line. What you are not told is that it is up to you to turn this on and off and check which buttons are pressed. So the minimus needs to check as fast as it can, if the various buttons are high when the select line is on and when it isn't on. This took me quite a while to find. Also, the version of LUFA in Jamie's article doesn't work outside of Linux sadly, so for OSX compatibility (and windows for that matter) use the latest from Subversion.</p>
+<p>Finally, I ordered an adaptor from Farnell for the 9 pin Atari style port and laser cut a small perspex box to mount it all in. Some wire, a little soldering and some hot glue later and the final device works a treat! :D One happy sister and a pleased hacker! What can possibly be bad about that? So forget stupid PIC chips. It's AVR all the way baby!</p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+

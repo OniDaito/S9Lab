@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>PXLjs WebGL Engine first version</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://www.section9.co.uk"><img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" /></a>
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>PXLjs WebGL Engine first version</h3>
+        <h4>05-10-2016</h4>
+        
+<p>I've been working away on a pet project for some time now and it's hit the point where I feel I can say that a version of it, is there and more or less working. I call it <a href="https://www.pxljs.com">PXL.js</a> and yes, it's yet another annoyingly named javascript library. I sort of don't mind if people don't really use it, if I'm honest. This was more of a project born out of frustration with existing libraries and a <em>need</em> to see if I could do something better. It's been a challenge, trying to stick to one project and keep at it, but I'm glad I have.</p>
+<p><img alt="screenshot" src="https://c2.staticflickr.com/6/5202/29998231562_5db0c0ce50.jpg" /></p>
+<p>PXL.js is a <a href="https://www.khronos.org/webgl/">WebGL</a> engine that does a few simple things such as loading OBJ files, dealing with textures, setting up cameras, generating curves and many other functions you may want to do. I started working on it about 4 years ago probably, under the name CoffeeGL, as I use coffeescript to write my code. I first remember seeing coffeescript when I was working at CASA, over at UCL and I liked the look of it very much. I decided to learn it and use it to make a library for WebGL. It seemed to cut out a lot of the nasty gotchas that javascript occasionally throws up (the double vs triple equals to mention but one). Soon after, I was working on WebGL projects quite a bit and it seemed that three.js was the library to use. For many things it seemed to work ok, but very soon, it became more limiting than empowering. I'd tried a few other libraries that were much worse, and made me want to tear my hair out. That said I ended up with a fair bit of knowledge about how JS work was done, and what WebGL could do. </p>
+<p>I started with the user making their own shaders with some helper libraries, but it became clear that using materials and an ubershader might be the best way to go. You find yourself repeating a lot of shader-code for no good reason if you don't have some kind of lexer that builds your shader text from snippet of shader code. Using materials makes sense; it's a good way to think about shader effects, <em>but its not the only way</em>. I wanted to keep the door open for custom shaders as well as the times when you just want an ubershader to do the job. In the future, I'll be using ubershaders in other code too. It seems like the best way to go.</p>
+<p><img alt="screenshot" src="https://c2.staticflickr.com/6/5268/29998231512_02f92a34a4.jpg" /></p>
+<p>I use a scenegraph to keep hold of all the matrices and hierarchy you might need, taking the path through the nodes to draw things to the screen. This seems to work quite well but it could be made a lot more efficient using caching or perhaps someway of reducing the number of shader calls but on the whole, it makes sense to me at least and it seems to follow the way a lot of 3D programs seem to work, such as Blender. I'm quite proud of the maths library (even though it could be made better with some vectorisation) and learning the maths about curves was a lot of fun. </p>
+<p>This project was mostly a learning exercise in how to write a coherent library for other people to use, including API documents, tests, full build system and plenty of examples. I've not really done that before, on my own at any-rate. I had to re-learn things like skeletal animation on the GPU, Shaowmapping, the Phong equation and all that good stuff. Given that there are loads of engines and libraries out there that do this, why would you bother? Well, it's mostly because I enjoy it, and the learning experience has been really useful. There's a lot going on in javascript land but I believe that the real good stuff is learning about concepts. Things like <em>"how exactly do closures work?"</em> and <em>"what is the right way to present these functions to the user?"</em> rather than worrying about using the right <em>flavour of the month npm lib for your promises</em>. My library doesn't actually depend on any others for it to work. Sure, you need to install browserify and a few other things to <em>build</em> the library, but the whole thing is written by me. This means I know it's foibles and can write better WebGL for anyone who wants it, and indeed I did when I did the <a href="http://cudl.lib.cam.ac.uk/models/equatorie/">equatorie</a>. I get a bit defensive about it because I know that the way to go seems to be modular re-use and that I'm deliberately going against the grain but I think thats fine and healthy once in a while.</p>
+<p><img alt="screenshpt" src="https://c2.staticflickr.com/6/5690/30077863336_e7186ec732.jpg" /></p>
+<p>This library isn't done. I don't think any library really is but I'm glad I kept on with it, to the point where all the key bits are in place. Most of the code I've written has been small scale and I suppose this too but trying to get all the different mpoving parts into one coherent library for a larger audience is definitely a skill worth learning, even if other libraries exist. I deliberately didn't look too closely at the other WebGL engines as I figured working it out would be more worthwhile. It's very likely I'll move on to Vulkan and back to C++ land for a bit where the <em>real</em> graphics lives. I say real, you do get access to all the latest features on the various GPUs which is nice and indeed, the up-to-date shader languages, OpenGL specs and such. I'm at the point where I can just use this lib to make things and that feels nice. If you use it and like it (or even don't like it) do get in touch :) </p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+

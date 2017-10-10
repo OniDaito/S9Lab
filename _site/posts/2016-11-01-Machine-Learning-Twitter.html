@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Twitter meets SVM and Deep Learning</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://www.section9.co.uk"><img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" /></a>
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>Twitter meets SVM and Deep Learning</h3>
+        <h4>01-11-2016</h4>
+        
+<p>It's no secret that I'm not a fan of social media generally. It has potential to be amazing but appears to be going down a route that I'm not very comfortable with. One way that I deal with this is to write robots for Twitter in order to get around the problems of noise, irrelevance and hate speech. I've <a href="https://www.section9.co.uk/posts/2015-10-01-twitter-spam-filter-part1.html">previously written a robot</a> that filters out tweets that I don't really like. This cuts out a lot of things that stress me out or are just no fun to read. The problem here is this creates an echo chamber which is another major problem of social media. I've been trying to find a few ways around this and I've entered into the world of SVMs and Neural Nets.</p>
+<p><a href="https://en.wikipedia.org/wiki/Support_vector_machine">Support Vector Machines</a> are an odd thing I don't quite understand just yet. They seem to be a mix of methods, combined to create a system that draws a line between two classes. Think of data being labelled as either class A or class B. New data, when it arrives, will be automatically assigned one of these two categories based upon the data that has been entered previously. It's like drawing a line that divides data-points on a graph. It's possible to do this non-linearly as well, using higher dimensions than just two. I've not managed to do this yet, but it's probably next on the list.</p>
+<p><a href="https://www.quora.com/What-are-some-good-books-papers-for-learning-deep-learning">Deep learning for text</a> is quite a hot topic at the moment it would seem. I used <a href="https://github.com/StevenLOL/aicyber_semeval_2016_ivector/blob/master/System_1/system_1_baseline.py#L32">an example I was sent</a> from StackOverflow. I've been using <a href="https://www.tensorflow.org/">Tensorflow</a> for most of the time. I'm not sold on it yet, but the fact that you can mess around with it in Python is a pretty good bonus. Support for GPUs is also a plus point.</p>
+<p>Both of these methods have one thing in common: Word Vectors. How do you represent a sentence (or tweet) as a set of numbers which both of these methods require? Typically, you end up with a vector that is mostly a bunch of zeroes; what is called a sparse vector. Put another way, if you have a dictionary of 50,000 words, you can break up a sentence into a set of words. Each word represents a dimension; a dimension that goes from 0 to 50,000. It pretty much ignores any rules of grammar or semantics, preferring to learn from simply the position of the various tokens. This sort of thing has already been done quite well by the Google program <a href="https://code.google.com/archive/p/word2vec/">word2vec</a> which also has a <a href="https://en.wikipedia.org/wiki/Word2vec">wikipedia page</a>. In that example, the vectors are created themselves by a single layer neural net. This is a little "cart-before-the-horse" but the actual results are pretty cool.</p>
+<p>There are some good links for Support Vector Machines when it comes to Python. <a href="http://scikit-learn.org">SciKitLearn</a> is particularly good:</p>
+<ul>
+<li><a href="http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC">http://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC</a></li>
+<li><a href="http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html">http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html</a></li>
+<li><a href="http://www.nltk.org/api/nltk.classify.html#module-nltk.classify.svm">http://www.nltk.org/api/nltk.classify.html#module-nltk.classify.svm</a></li>
+</ul>
+<p>The <a href="http://www.nltk.org/">NLTK</a> tool-kit is closely aligned with scikit-learn, especially when it comes to SVMs. I found that getting the data into the formats scikit-learn needs was a little tricky</p>
+<pre><code>pos_cutoff = int(len(liked_ngrams)*0.75)
+neg_cutoff = int(len(disliked_ngrams)*0.75)
+
+training_set = [ (feat, 'pos') for feat in liked_ngrams[:pos_cutoff] ]
+training_set += [ (feat, 'neg') for feat in disliked_ngrams[:neg_cutoff]]
+
+# Finally, train the classifier and return
+classif = SklearnClassifier(LinearSVC())
+classif.train(training_set)
+</code></pre>
+<p>Preparing the raw text of the tweet looks a little like this:</p>
+<pre><code>tweet = row.text
+tokens = nltk.word_tokenize(tweet)
+tokens = [token.lower() for token in tokens if len(token) &gt; 1]
+bi_tokens = nltk.bigrams(tokens)
+tri_tokens = nltk.trigrams(tokens)
+a =[(word, True) for word in tokens]
+return dict(a)
+</code></pre>
+<p>One thing you can see is that I'm creating what are known as <a href="https://en.wikipedia.org/wiki/N-gram">bigrams and trigrams</a>. The theory goes that rather than just using words on their own, you can create a dictionary of ngrams too. This takes into account words that occur together, either in pairs or triples. I actually found this made the accuracy of the system worse, but it might very well be that the system is becoming over-trained, as the training set is only around 3000 items long.</p>
+<p>Tensorflow I've found to be much more complicated and I suspect a lot of that is due to the API and the kind of abstraction they've gone for. Nevertheless, there are some good resources out there. The one I've used is <a href="http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/">this one</a> which give a good description of the challenges.</p>
+<p>So far, I've found that SVM works quite well, cutting down 2200 tweets to about 300 tweets a day with a pretty good accuracy (though I do need to double check that). I think there's a lot more to understand. I found the neural net to be slow and less accurate but I have a feeling the word2vec project will come in very handy. I'll have more to say on that in the coming weeks.</p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+

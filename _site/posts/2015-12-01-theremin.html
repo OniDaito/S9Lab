@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Modding a Theremin</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://www.section9.co.uk"><img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" /></a>
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>Modding a Theremin</h3>
+        <h4>01-12-2015</h4>
+        
+<p>A while ago, my partner expressed an interest in theremins. I figured it would make a nice present for her, but simply buying one off the shelf doesn't quite have the level of love I was going for. I figured the best thing to do was to buy a kit and customise one. Theremins are quite complicated analogue electronics and I was short on time, so I figured modding was the way to go.</p>
+<p><img alt="theremin" src="https://c1.staticflickr.com/1/604/22736931033_5367a45080.jpg" /></p>
+<p>I went with the <a href="http://www.jaycar.com.au/Kits,-Science-%26-Learning/Electronic-Project-Kits/Audio/Theremin-Synthesiser-Kit-MkII/p/KC5475">Jaycar</a> model of theremin. Sadly, this company is based in Australia but there are occasionally one or two of these kits that appear on eBay. This reduces the shipping cost somewhat. Part of the reason I went for this kit is there is an <a href="http://www.thereminworld.com/Article/13272/jaycarsilicon-chip-theremin---a-metamorphosis">excellent modification on this page</a>. I figured I could at least modify the case; make something a little more appealing. </p>
+<div class="clearfix"></div>
+
+<p>The kit itself is fairly easy to solder together. I made one key error though - putting the two 8 pin ICs in the wrong place. It took me a while to figure out where I was going wrong. Running it through with a scope analyser and a friend soon solved that particular problem. With the electronics working, I set to work on the case.</p>
+<p><img alt="theremin" src="https://c2.staticflickr.com/6/5662/22996153619_caf62c39be.jpg" /></p>
+<p>The case itself is made from oak. My Dad, being into this sort of thing, cut and joined the box for me, sawing the pieces from a huge timber. I set to work on the sanding and varnishing, opting for a semi-gloss finish. The trick is to sand sand sand, then polish with a diluted solution, then sand again, then repeat and repeat and repeat. It's worth it though. The final results look and feel lovely.</p>
+<div class="clearfix"></div>
+
+<p><img alt="aerial" src="https://c2.staticflickr.com/6/5816/22736926903_68f5ac99a5.jpg" /></p>
+<p>The volume aerial is a little trickier. One needs to create a jig and bend a short length of aluminium tube around the pegs. With this done, one can drill the holes in the case and push the board and the aerial through. This bit was somewhat tricky as the drill bits I was using, although stated multi-purpose, were awful on wood. Nevertheless, the parts fitted snuggly. Having the case slightly too small on one axis meant I had to sand quite furiously but the board doesn't move around at all. </p>
+<p>The top of the case is made from a lovely sheet of blue frozen-looking perspex. Laser cut into the top is the word KTheremin. I quite like the contrast between the wood and plastic. A 12V AC adapter finishes off the unit. These are harder to find in the wild than their DC counterparts but again, eBay has one or two.</p>
+<div class="clearfix"></div>
+
+<p><img alt="theremin" src="https://c2.staticflickr.com/6/5764/22996148899_6121393c0b.jpg" /></p>
+<p>The final instrument works pretty well. Tuning is difficult but not impossible. The oversize volume aerial has too great a range and probably requires some adjustment but still works. <a href="http://www.thereminworld.com">Theremin World</a> has loads of advice on tuning, modding and all sorts of things. It was certainly a big help during this build.</p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+

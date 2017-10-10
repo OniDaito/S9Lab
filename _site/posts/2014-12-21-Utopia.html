@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>UTOPIA Bio-informatics Toolkit</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://www.section9.co.uk"><img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" /></a>
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>UTOPIA Bio-informatics Toolkit</h3>
+        <h4>21-12-2014</h4>
+        
+<p>My first ever job was to work on the UTOPIA code-base at the same university I did my undergraduate degree at - <a href="http://aig.cs.man.ac.uk">The University of Manchester</a>. I worked on converting lovely Linux based C++ into something Windows could run. 10 years later, I'm back on the Project, making it work for the three main operating systems. The code has been sitting idle for quite a while and there is a need, more than ever apparently, for sequence alignment tools and protein folding visualisations. I'm certainly not a geneticist or biologist but the general principles are quite interesting.</p>
+<p>UTOPIA is a collection of two programs and set of plugins written in Python. Cinema is a sequence alignment tool and Ambrosia is a 3D visualiation program. The two are designed to work together; one can visualise a particular section of a protein and analyse the 3D structure of certain elements. Both programs can load python plugins to import different sequences and alignments, allowing researchers to work with different on-line databases (of which there are many I've found).</p>
+<p><img alt="utopia" src="https://farm6.staticflickr.com/5479/14455846441_03628a8bce.jpg" /></p>
+<p>The code-base is largely C++ with some Python. The Python library and it's C bindings are used together so the entire C++ back-end can be accessed via Python. Using a python allows quick changes for when on-line services such as <a href="http://www.rcsb.org">RCSB</a> and similar. The user interface components are written with <a href="http://qt-project.org">Qt</a> as oppose to a native back-end, which has pros and cons. Qt and Python have both moved on since UTOPIA was first made, so it was high-time it was looked after.</p>
+<p>In order to tackle this code-base, dividing up into each logical component seemed like the best move. The UTOPIA Library itself, the Python back-end, the two major programs, their Internet components etc. To manage the build system, we decided that <a href="http://www.cmake.org">CMake</a> was the best option. I'm a huge fan of CMake as it can generate Visual Studio project files as well as <a href="http://martine.github.io/ninja/">Ninja</a> build files and OSX Make files. It can also do quite a good job of packaging things up for the different operating systems. </p>
+<p>The CMake files for UTOPIA are quite involved; almost as much as some of the code bases. Packaging for OSX proved somewhat difficult; the use of '''install-name-tool''' proved somewhat tricky. Packaging for OSX can be a little fraught because of all the paths and library particularities but all these can be overcome with CMake and a little bash. Rather than use an installer, the Windows and OSX versions are packaged as stand-alone applications. Windows simply has all the libraries included in the same directory whereas OSX contains all the libs inside its '''.app''' folder.</p>
+<p><img alt="alpha blending fail" src="https://farm6.staticflickr.com/5509/14065164479_3f76bf2dae.jpg" /></p>
+<p>Packaging for Linux proves a little more intensive. We decided to support '''rpm''' and '''deb''' as the main two packages. To make this work I included a lot of Bash scripts that will build the installers for you. In order to test them, I made use of a few virtual machines using the awesome <a href="https://www.virtualbox.org">VirtualBox</a>. We decided to support Fedora 20 and Ubuntu 14.04 upwards, and use the 64 bit versions of all the libraries. So if you are on a 32 Bit system, you may have to wait a while :P</p>
+<p>Rather than use Python3, we decided to upgrade to Python2.7 for now. Some of the libraries we depend on are still not available for Python3 but eventually, they will probably be upgraded. Packaging python is something I decided against doing; Linux has its package dependencies and OSX has Python installed by default. Only Windows causes problems, not least because of it's lack of a Python Debug library. Creating a debug build under Windows is somewhat fraught, unless you build the Debug library yourself.</p>
+<p><img alt="sequences" src="https://farm6.staticflickr.com/5504/14058530530_aa6d25e891.jpg" /></p>
+<p>UTOPIA deals with the concept of analyzing DNA sequences for various proteins. Sections of these sequences have different actions and correspond to physical structures that cause the protein to 'fold' in a certain way. Understanding why proteins fold and what similar proteins might do is a massive part of current research. If you know the action of one protein and you see another that looks similar and folds in the same way under a certain circumstance, maybe that circumstance will work for the first protein? Working this out computationally would lead to a massive combinatorial explosion, but creating the right tools for researchers is a valid and useful alternative.</p>
+<p>Projects like this tend to be hard-work; you've got quite a lot of code to work through and it's somewhat tricky getting your head around someone else's code. You can begin to see the different styles of the different programmers who worked on the project. It can be quite interesting at times. There is a very nice 'feel good' feeling that you are writing code for a useful purpose, for researchers who are trying to help others. You can download the utopia toolkit from <a href="http://utopia.section9.co.uk">http://utopia.section9.co.uk</a></p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+

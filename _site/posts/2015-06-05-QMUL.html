@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+                      __  .__              ________ 
+  ______ ____   _____/  |_|__| ____   ____/   __   \
+ /  ___// __ \_/ ___\   __\  |/  _ \ /    \____    /
+ \___ \\  ___/\  \___|  | |  (  <_> )   |  \ /    / 
+/____  >\___  >\___  >__| |__|\____/|___|  //____/ .co.uk 
+     \/     \/     \/                    \/        
+   -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Scientific Programming at Queen Mary</title>
+    <meta name="author" content="Benjamin Blundell" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Section9 ATOM Feed">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/s9.css" rel="stylesheet" media="screen">
+    <link href="/css/font-awesome.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/s9-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/s9-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/s9-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/s9-57.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <!-- META DATA - Need to Check and Update -->
+    <meta name="google-site-verification" content="Ew7bGq_-B5Djz3nNvxYt6abpW2fUBOU-rFKrlvIQwiU" /> 
+
+    <!-- General metadata -->
+    <meta name="generator" content="" />
+    <meta name="robots" content="index,follow" />
+    <meta name="revisit-after" content="2 days" />
+    <meta name="Author-Template" content="" />
+    <meta name="Author" content="Benjamin Blundell" />
+    <meta name="Publisher" content="Benjamin Blundell" />
+    <meta name="Publisher-Email" content="ben@section9.co.uk" />
+    <meta name="Coverage" content="UK" /> 
+
+    <!-- Dublin Core Metadata -->
+    <meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.date.created" lang="en" content="" />
+    <meta name="DC.format" lang="en" content="text/html" />
+    <meta name="DC.language" content="en" />
+    <meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+    <meta name="DC.coverage" lang="en" content="" />
+    <meta name="DC.identifier" content="" />    
+
+    <!-- eGMS Metadata -->
+    <meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+    <meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+    <meta name="Description" content="Benjamin Blundell, section9 dot co dot uk, the home of Benjamin Blundell. I make things with computers"/>
+    <meta name="DC.title" lang="en" content="section9 dot co dot uk - Benjamin Blundell" />
+    <meta name="DC.description" lang="en" content="" />
+    <meta name="DC.subject" lang="en" content="" /> 
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/skrollr.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="https://www.section9.co.uk"><img class="navbar-brand-image" src="/images/s9black_small.png" alt="section9 logo" /></a>
+
+          
+          <a class="navbar-brand" href="/index.html">Benjamin J. Blundell</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+         
+          
+        </div>
+      </div>
+    </nav>
+
+     
+    <div class ="container post" id="content">
+      <div class="col-md-12 col-lg-12">
+
+        <h3>Scientific Programming at Queen Mary</h3>
+        <h4>05-06-2015</h4>
+        
+<p>For the last six months, I've been working away at Queen Mary University of London. There was a large gap for the Transsiberian, but aside from that I've had a lot to learn in a short time. Starting a new job at a large organisation always involves a bit of ramping up. The first month or so, there was the usual 'getting to know the place', but now I'm right in the thick of it.</p>
+<p>Basically, my job can be summed up by this image!</p>
+<p><img alt="Enthusiastic Penguin" src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fweknowmemes.com%2Fwp-content%2Fuploads%2F2014%2F02%2Fenthusiastic-penguin-meme.jpg&amp;f=1" /></p>
+<div class="clearfix"></div>
+
+<p>My job is to help out wherever programming is needed, in and around the university. I'm the only one here doing that, though my boss chips in with programming bits here and there. So far I've had to look at:</p>
+<ul>
+<li><a href="http://www.open-mpi.org">OpenMPI</a> and MPI in general.</li>
+<li><a href="http://openmp.org/wp/">OpenMP</a> and how to speed up a couple of programs</li>
+<li>High Performance computing clusters and how they generally work</li>
+<li>A little bit of Erlang</li>
+<li>Working with a biologist to sort and compare really large lists!</li>
+<li>Learn <a href="https://en.wikipedia.org/wiki/Fortran">Fortran</a> and look at some <a href="http://en.wikipedia.org/wiki/Computational_fluid_dynamics">computational fluid dynamics</a> for a PhD student</li>
+<li>Write tests for a program in C++</li>
+<li>Read about <a href="https://developers.google.com/protocol-buffers/">Google Protocol buffers</a></li>
+<li>Join the Open Source project <a href="https://github.com/SOCI">SOCI</a> and update the codebase to C++11</li>
+<li>Write a little <a href="https://github.com/OniDaito/RayTracer">Raytracer</a> to learn about OpenMPI</li>
+<li>Read up on <a href="https://www.rabbitmq.com">RabbitMQ</a></li>
+<li>Learn and use <a href="https://www.docker.com">Docker</a> and <a href="https://www.vagrantup.com">Vagrant</a> for the first time.</li>
+<li>Understand the <a href="https://software.intel.com/en-us/intel-parallel-studio-xe">Intel compiler</a> and how best to profile with <a href="https://software.intel.com/en-us/intel-vtune-amplifier-xe/">VTune</a></li>
+<li>... and other things besides</li>
+</ul>
+<p>All of these are quite interesting and somewhat more <em>professional</em> than the things I was doing previously, or rather, some of these things are in common use <em>in the industry</em>. Test frameworks like BoostTest, cluster scheduling programs, test environments etc etc.</p>
+<p>So far, probably the most interesting thing was to read over <a href="http://www.researchgate.net/publication/225372754_R2KS_a_novel_measure_for_comparing_gene_expression_based_on_ranked_gene_lists">this paper on R2KS: a novel measure for comparing gene expression based on ranked gene lists</a>, and make it work on the really large cluster we have here. By doing so, theres a good chance our PhD student will get more results faster, which is a good thing considering he was hunting for new uses for old drugs. Pretty cool, and not often you get to work on such things. It certainly gives you a warm fuzzy feeling that you are doing some good out there in the world. At some point, I'll post the code up so you can all take a look.</p>
+<p>Being at a university has many perks, chief among which is meeting people from various different backgrounds. QMUL is quite small in terms of campus size, so it's easy to nip about and talk to people in digital humanities one minute, then dentistry the next. The work culture is somewhat more relaxed than in industry or the freelance world, but the work is perhaps even more challenging. For instance, I had no idea about Fortran before I came here, nor did I really understand biology or fluid dynamics, but it's great to be introduced to new problems where computer programming can help.</p>
+      </div>
+
+     
+    </div>
+    
+    <hr />
+
+    <footer>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p>© Benjamin J. Blundell 2015 - <a title="Share &amp; Enjoy — CC-BY" href="https://creativecommons.org/licenses/by/3.0/">CC-BY</a> <a href="/atom.xml" title="RSS"><i class="fa fa-rss"></i></a></p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+              <a href="https://github.com/OniDaito" title="GitHub">github</a>
+              <a href="http://stackoverflow.com/users/104324/oni" title="Stack-Overflow">stack-overflow</a>
+              <a href="https://www.flickr.com/photos/section9/" title="Flickr">flickr</a>
+              <a href="https://www.youtube.com/user/onidaito/videos" title="Youtube">youtube</a>
+              <a href="https://vimeo.com/user1678273/videos" title="Vimeo">vimeo</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <p class="places-text">
+             <a href="http://www.twitter.com/secti0n9" title="Twitter">twitter</a>
+             <a href="mailto:ben@section9.co.uk" title="Email">email</a>
+             <a href="https://uk.linkedin.com/in/section9" title="LinkedIn">linked-in</a>
+             <a href="https://plus.google.com/u/0/+BenjaminBlundell/posts" title="Google Plus">google+</a>
+             <a href="/key.html" title="GPG Key">gpg</a>
+           </p>
+         </div>
+       </div>
+
+
+     </footer>
+   </div>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+
+    // Process all images in the post for  left / right align
+    var images = $(".post img");
+    for(var i = 0; i < images.length; i++) {
+     
+      $(images[i]).addClass("img-responsive");
+      $(images[i]).attr("align","middle");
+    
+    }
+  });
+  </script>
+
+  </body>
+</html>
+
