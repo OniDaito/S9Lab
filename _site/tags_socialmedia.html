@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<!--
+   ___             _            _       _____                     __         
+  / _ )___ ___    (_)__ ___ _  (_)__   / ___/__  __ _  ___  __ __/ /____ ____
+ / _  / -_) _ \  / / _ `/  ' \/ / _ \_/ /__/ _ \/  ' \/ _ \/ // / __/ -_) __/
+/____/\__/_//_/_/ /\_,_/_/_/_/_/_//_(_)___/\___/_/_/_/ .__/\_,_/\__/\__/_/   
+             |___/                                  /_/                      
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-gb" class="skrollr skrollr-desktop">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title></title>
+		<meta name="author" content="Benjamin Blundell" />
+		<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="benjamin.computer ATOM Feed">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bc.css" rel="stylesheet" media="screen">
+		<link href="/css/tomorrow-night-eighties.css" rel="stylesheet">
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Fav and touch icons -->
+		<!--
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/bc-144.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/bc-114.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/bc-72.png">
+		<link rel="apple-touch-icon-precomposed" href="/images/bc-57.png">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		-->
+
+		<!-- META DATA - Need to Check and Update -->
+
+		<!-- General metadata -->
+		<meta name="generator" content="" />
+		<meta name="robots" content="index,follow" />
+		<meta name="revisit-after" content="2 days" />
+		<meta name="Author-Template" content="" />
+		<meta name="Author" content="Benjamin Blundell" />
+		<meta name="Publisher" content="Benjamin Blundell" />
+		<meta name="Publisher-Email" content="me@benjamin.computer" />
+		<meta name="Coverage" content="UK" /> 
+
+		<!-- Dublin Core Metadata -->
+		<meta name="DC.creator" lang="en" content="Benjamin Blundell" />
+		<meta name="DC.date.created" lang="en" content="" />
+		<meta name="DC.format" lang="en" content="text/html" />
+		<meta name="DC.language" content="en" />
+		<meta name="DC.publisher" lang="en" content="Benjamin Blundell" />
+		<meta name="DC.rights.copyright" lang="en" content="Benjamin Blundell" />
+		<meta name="DC.coverage" lang="en" content="" />
+		<meta name="DC.identifier" content="" />    
+
+		<!-- eGMS Metadata -->
+		<meta name="eGMS.status" lang="en" content="V1.0 Public Consumption" />
+
+		<meta name="Keywords" content="opengl, webgl, coffeescript, git, hpc, kinect, opengl, cinder,openframeworks, cpp, c++, programming, graphics, art, design, code" />
+		<meta name="Description" content="Benjamin Blundell, benjamin.computer. I make things with computers"/>
+		<meta name="DC.title" lang="en" content="benjamin.computer - Benjamin Blundell" />
+		<meta name="DC.description" lang="en" content="" />
+		<meta name="DC.subject" lang="en" content="" /> 
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+
+	<header>
+    
+
+      <div class="blog-header d-none d-lg-block">
+        <div class="container">
+          <h1 class="blog-title">
+          <pre>
+   ___             _            _       _____                     __         
+  / _ )___ ___    (_)__ ___ _  (_)__   / ___/__  __ _  ___  __ __/ /____ ____
+ / _  / -_) _ \  / / _ `/  ' \/ / _ \_/ /__/ _ \/  ' \/ _ \/ // / __/ -_) __/
+/____/\__/_//_/_/ /\_,_/_/_/_/_/_//_(_)___/\___/_/_/_/ .__/\_,_/\__/\__/_/   
+             |___/                                  /_/                      </pre>  
+          </h1>
+        </div>
+      </div>
+    </header>
+
+	<nav class="navbar d-md-none">
+			  <ul class="nav nav-pills flex-column">
+			  	<li class="nav-item">
+				  <a class="nav-link " href="/index.html">home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link " href="/blog.html">blog</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link " href="/work.html">professional projects</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="/contact.html">contact</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="/about.html">about</a>
+				</li>
+		
+			  </ul>
+	</nav>
+
+	<main class="container" role="main">
+		<div class="row">
+			<nav class="col-md-3 d-none d-md-block">
+			  <ul class="nav nav-pills flex-column">
+			  	<li class="nav-item">
+				  <a class="nav-link " href="/index.html">home</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link " href="/blog.html">blog</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link "  href="/work.html">professional projects</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link " href="/contact.html">contact</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="/about.html">about</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="/gpg.html">gpg-keys</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="https://www.section9.co.uk">section9</a>
+				</li>
+			  </ul>
+			  
+			  <hr />
+			  
+			  <ul class="nav nav-pills flex-column">
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			  </ul>
+			  
+			  <hr />
+			  
+			  <ul class="nav nav-pills flex-column">
+			   	<li class="nav-item">
+				  <a class="nav-link " href="http://archive.section9.co.uk/transsib/">Transsiberrian Slitscan</a>
+				</li>
+					<li class="nav-item">
+				  <a class="nav-link " href="http://archive.section9.co.uk/asteroids/">Asteroids in the browser</a>
+				</li>
+			  	<li class="nav-item">
+				  <a class="nav-link " href="http://archive.section9.co.uk/amiga/">Amiga Ball</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link " href="https://www.pxljs.com">PXL js</a>
+				</li>
+			
+			  </ul>
+			</nav>
+			
+			<div class="blog-main blog-post col-md-9 ml-auto">
+			
+				
+				<h2>All pages related to 'socialmedia'</h2>
+				<ul>
+					
+				<li><a href="/posts/2015-07-30-social-media.html">We need to talk about Social Media</a></li>	
+					
+				<li><a href="/posts/2016-11-01-Machine-Learning-Twitter.html">Twitter meets SVM and Deep Learning</a></li>	
+					
+				<li><a href="/posts/2018-09-05-twitter.html">Time to start leaving Twitter</a></li>	
+				
+					
+				</ul>
+			</div>	
+		
+			
+		</div>
+	</main>
+
+	
+	
+
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+	
+ </body>
+ </html>
+

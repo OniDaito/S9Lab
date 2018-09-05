@@ -1,0 +1,29 @@
+---
+layout: post
+title: Time to start leaving Twitter
+introtext: Twitter and social media generally sucks and we can do better. I'm leaving and you should too.
+strapline: Twitter and social media generally sucks and we can do better. I'm leaving and you should too.
+tags: technology twitter socialmedia politics
+---
+
+*tldr version: I'm slowly leaving twitter. I'll be reading DMs, mentions and the like for a while, and using an automatic posting system for blog posts, but eventually I'll leave completely. If you want to stay in touch go with whatsapp (+1 202 352 3588) or even better, signal (07957 927659). Thanks*
+
+So it's time to start leaving Twitter I think. I left Facebook ages ago and I reckon my life has improved a small amount. I never really did that much with Facebook anyway and it's utility was low. I left because of various reasons that I've mentioned [here](https://www.section9.co.uk/posts/2015-07-30-social-media.html). Twitter and social media generally sucks and we can do better. I'm leaving and you should too.t suffice to say, it was the right move. Now I'm thinking about Twitter in the same vein only the problems seem much more real.
+
+Back when I read Bruce Schnier's book on the subject, he mentioned Facebook could potentially swing a tight election. We've seen that happen with Cambridge Analytica in the Brexit vote. Both Twitter and Facebook have played a part in this - Twitter in particular is setup to make people angry with it's short post lengths. Our world feels much more polarised and I feel that social media carries a lot of responsibility for that. 
+
+There is of course, all the filter bubble stuff that's been going on for ages, and there's plenty of interesting research going on around that. Language use, sentiment analysis, all that stuff. It's clear to me that Twitter helps to create filter bubbles and echo-chambers that prevent human growth, rather than allow it to flourish.
+
+I recently read the book [Chaos Monkeys](https://en.wikipedia.org/wiki/Chaos_Monkeys) and I highly recommend you do too! It goes behind the scenes of Facebook and Twitter and the picture it paints is not a very nice one. It is not a place I want to be, nor one I can support. I was recently in San Francisco and I walked past the Twitter HQ. All the bright young things being bused in, avoiding all the homeless folks sitting outside. Seems like this is the future we are heading towards? I don't think I like it.
+
+I'm reminded of the story of the Emperor's New Clothes. When I left Facebook, everyone was like "it's social suicide" when in fact, I've had some of the best social interactions of my life since I left. It's all a facade - we believe we need it but really, deep down, we know we don't. Our nature is being taken advantage of in order to generate ad-dollars. But you all knew that already I'm guessing.
+
+I'm not immune to this either. No-one is. Problem is, the truth gets buried under all the noise, shouting, madness and rage that exists out there. I'm starting a PhD this month and finding out the truth is really what it's all about. I can't have this distraction, this background of noise invade the good work I want to do.
+
+There is an irony here. I actually heard about the PhD placement through Twitter. Yep! It is useful for some things. When I went through the massive cull of people I follow, things improved a bit for me. I can't say that Twitter has absolutely no utility at all - it does. I've met some cool FPGA people through it and for EMF camp organising, it was pretty handy indeed.
+
+My thinking along these lines is I only have so much energy. Combine this with the phrase "Information wants to be free. Information wants to be expensive" and my conclusion is that I could put my energy to use somewhere else and get the same or better effect. Lets consider EMF camp again. With Twitter's new algorithms, you could read a tweet saying "I'll be on stage in 5 minutes" only to find out later that the tweet was actually sent three hours ago! So which is more hassle? Using twitter or some sort of direct message? The latter seems more effort but chances are, you'll get a better answer.
+
+And really, this is where we hit the nub of it. Twitter doesn't care about you and you don't really care about Twitter. It's fluff. They'll give a voice to Nazis if it makes them cash. Do most Twitter users really care about what goes on there? I doubt it. Look at the damage they've done. Look around at the world where people care more about how many followers they have, about how someone 'is wrong on the interner', the personal data we share so freely yet the connections we have are less human with each passing day. Can we not do better? 
+
+So I think it's time to take moves away from Twitter. I'm headed over to Mastodon to see whats what, but also more point-to-point connections with Signal, Whatsapp and the like. IRC is back on the list, as are forums and Slack. Social media has done enough damage. We've had our fun, now lets get to fixing things.
